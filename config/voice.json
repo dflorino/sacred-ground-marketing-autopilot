@@ -1,0 +1,43 @@
+{
+  "brand": "Sacred Ground",
+  "location": "Tucson",
+  "tone": [
+    "warm",
+    "grounded",
+    "inviting",
+    "specific",
+    "never corporate",
+    "never generic promo-speak"
+  ],
+  "forbidden_phrases": [
+    "Don't miss out",
+    "Click the link in bio",
+    "Amazing opportunity",
+    "You won't want to miss",
+    "Happening soon",
+    "Join us for an incredible",
+    "Unlock your potential"
+  ],
+  "signoff_options": [
+    "See you on the floor.",
+    "We'll keep a seat warm.",
+    "Come as you are.",
+    "The door is open."
+  ],
+  "hashtags": {
+    "core": ["#SacredGround", "#Tucson", "#ShopSacredGround"],
+    "events": ["#TucsonEvents", "#CrystalShop", "#EnergyHealing"],
+    "instagram_extra": ["#TucsonAZ", "#HolisticTucson"]
+  },
+  "facebook_style": {
+    "length": "medium",
+    "include_full_links": true,
+    "line_breaks": true
+  },
+  "instagram_style": {
+    "length": "shorter_hook_then_detail",
+    "include_full_links": true,
+    "line_breaks": true,
+    "max_chars": 2100
+  }
+}

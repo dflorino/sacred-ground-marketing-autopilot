@@ -1,0 +1,129 @@
+{
+  "events": [
+    {
+      "id": 901,
+      "title": "Holistic Fair *",
+      "description": "<p>Vendors, readings, bodywork, and community — our signature Holistic Fair fills the shop with practitioners and curious neighbors.</p>",
+      "excerpt": "Vendors, readings, bodywork, and community under one roof.",
+      "url": "https://shopsacredground.com/event/holistic-fair/",
+      "start_date": "2026-07-09 10:00:00",
+      "end_date": "2026-07-09 16:00:00",
+      "all_day": false,
+      "featured": true,
+      "timezone": "America/Phoenix",
+      "image": {
+        "url": "https://shopsacredground.com/wp-content/uploads/holistic-fair.jpg"
+      },
+      "categories": [{ "name": "Special Event", "slug": "special-event" }],
+      "tags": [{ "name": "Fair" }],
+      "cost": "Free entry",
+      "venue": { "venue": "Sacred Ground" }
+    },
+    {
+      "id": 902,
+      "title": "Tarot with Tina",
+      "description": "<p>Intuitive tarot sessions in the reading nook.</p>",
+      "excerpt": "Intuitive tarot in the reading nook.",
+      "url": "https://shopsacredground.com/event/tarot-with-tina-july9/",
+      "start_date": "2026-07-09 17:00:00",
+      "end_date": "2026-07-09 20:00:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Phoenix",
+      "image": {
+        "url": "https://shopsacredground.com/wp-content/uploads/tina-tarot.jpg"
+      },
+      "categories": [{ "name": "Readings", "slug": "readings" }],
+      "tags": [],
+      "cost": "",
+      "venue": { "venue": "Sacred Ground" }
+    },
+    {
+      "id": 903,
+      "title": "Crystal Grid Workshop",
+      "description": "<p>Build a personal grid with guidance from the floor team.</p>",
+      "excerpt": "Build a personal crystal grid with guidance.",
+      "url": "https://shopsacredground.com/event/crystal-grid-workshop/",
+      "start_date": "2026-07-11 13:00:00",
+      "end_date": "2026-07-11 15:00:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Phoenix",
+      "image": null,
+      "categories": [{ "name": "Classes", "slug": "classes" }],
+      "tags": [{ "name": "Crystals" }],
+      "cost": "$45",
+      "venue": { "venue": "Sacred Ground" }
+    },
+    {
+      "id": 904,
+      "title": "Between the Worlds: Mediumship Development",
+      "description": "<p>A focused evening for developing mediumship skills in a held container.</p>",
+      "excerpt": "Mediumship development in a held container.",
+      "url": "https://shopsacredground.com/event/mediumship-development/",
+      "start_date": "2026-07-16 18:30:00",
+      "end_date": "2026-07-16 21:00:00",
+      "all_day": false,
+      "featured": true,
+      "timezone": "America/Phoenix",
+      "image": {
+        "url": "https://shopsacredground.com/wp-content/uploads/mediumship.jpg"
+      },
+      "categories": [{ "name": "Special Event", "slug": "special-event" }],
+      "tags": [],
+      "cost": "",
+      "venue": { "venue": "Sacred Ground" }
+    },
+    {
+      "id": 905,
+      "title": "Old Full Moon Circle",
+      "description": "<p>Past event that must never be promoted.</p>",
+      "excerpt": "Should be filtered out.",
+      "url": "https://shopsacredground.com/event/old-moon/",
+      "start_date": "2026-07-01 19:00:00",
+      "end_date": "2026-07-01 21:00:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Phoenix",
+      "image": null,
+      "categories": [],
+      "tags": [],
+      "cost": "",
+      "venue": { "venue": "Sacred Ground" }
+    },
+    {
+      "id": 906,
+      "title": "Broken Link Event",
+      "description": "<p>Missing URL must be skipped.</p>",
+      "excerpt": "No link.",
+      "url": "",
+      "start_date": "2026-07-10 12:00:00",
+      "end_date": "2026-07-10 13:00:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Phoenix",
+      "image": null,
+      "categories": [],
+      "tags": [],
+      "cost": "",
+      "venue": { "venue": "Sacred Ground" }
+    },
+    {
+      "id": 907,
+      "title": "Community Meditation",
+      "description": "<p>Static anchor — excluded from autopilot social.</p>",
+      "excerpt": "Excluded.",
+      "url": "https://shopsacredground.com/event/community-meditation/",
+      "start_date": "2026-07-09 12:00:00",
+      "end_date": "2026-07-09 12:30:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Phoenix",
+      "image": null,
+      "categories": [],
+      "tags": [],
+      "cost": "Free",
+      "venue": { "venue": "Sacred Ground" }
+    }
+  ]
+}

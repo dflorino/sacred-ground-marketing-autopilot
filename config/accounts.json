@@ -1,0 +1,14 @@
+{
+  "note": "ML Social account IDs for Phase 2+ scheduling. Phase 1 never publishes.",
+  "facebook": {
+    "accountId": "6a49a1f49d9472faae7c274e",
+    "displayName": "Sacred Ground",
+    "username": "shopsacredground"
+  },
+  "instagram": {
+    "accountId": "6a49a12e9d9472faae7c2220",
+    "displayName": "Sacred Ground",
+    "username": "shopsacredground"
+  },
+  "timezone": "America/Phoenix"
+}

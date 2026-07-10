@@ -1,0 +1,53 @@
+{
+  "service": "sacred-ground-marketing-autopilot",
+  "version": "1.0.0",
+  "timezone": "America/Phoenix",
+  "site_url": "https://shopsacredground.com",
+  "tec_events_url": "https://shopsacredground.com/wp-json/tribe/events/v1/events",
+  "default_phase": 1,
+  "platforms": ["facebook", "instagram"],
+  "campaigns": {
+    "today": {
+      "enabled": true,
+      "label": "Today at Sacred Ground",
+      "schedule_local_time": "09:00"
+    },
+    "week": {
+      "enabled": true,
+      "label": "This Week at Sacred Ground",
+      "weekday": "monday",
+      "schedule_local_time": "10:00"
+    },
+    "spotlight": {
+      "enabled": true,
+      "label": "Special Event Spotlight",
+      "reminder_days_before": [7, 3, 1],
+      "schedule_local_time": "11:00"
+    }
+  },
+  "special_category_names": [
+    "Special Event",
+    "Special Events",
+    "Featured",
+    "Holistic Fair",
+    "Fair"
+  ],
+  "special_title_keywords": [
+    "holistic fair",
+    "psychic fair",
+    "vendor fair",
+    "summer holistic fair",
+    "open house",
+    "anniversary",
+    "retreat",
+    "immersion"
+  ],
+  "spotlight_only_special": true,
+  "star_marks_featured_not_spotlight": true,
+  "exclude_title_substrings": [
+    "community meditation"
+  ],
+  "require_event_url": true,
+  "max_today_events_in_caption": 6,
+  "max_week_events_in_caption": 10
+}
