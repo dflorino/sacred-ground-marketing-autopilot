@@ -1,0 +1,95 @@
+{
+  "notes": "Today 7am image rules. Specialty rules win when an event matches. Never reuse the same URL within 7 calendar days. Robert also cannot run two days in a row.",
+  "no_repeat_days": 7,
+  "priority": [
+    "shaman_medium",
+    "akashic_records",
+    "reiki_share_3rd_sunday",
+    "robert",
+    "chakra_healing",
+    "reflexology",
+    "massage",
+    "astrology",
+    "tarot",
+    "reiki",
+    "holistic_center",
+    "tuesday_daily",
+    "multi_event_rotation"
+  ],
+  "rules": {
+    "shaman_medium": {
+      "label": "Shaman / medium day",
+      "match_any": ["shaman", "mediumship", "psychic medium", "spirit medium", "andean"],
+      "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Andean-mountain-peaks-with-con_1764776305.png",
+      "always_when_matched": true
+    },
+    "akashic_records": {
+      "label": "Akashic Records",
+      "match_any": ["akashic"],
+      "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Mystical-Akashic-Records-libra_1763937124.png"
+    },
+    "reiki_share_3rd_sunday": {
+      "label": "Reiki Share (3rd Sunday)",
+      "match_any": ["reiki share"],
+      "require_nth_weekday": { "weekday": "sunday", "nth": 3 },
+      "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_mystical-reiki-share-with-a-gl_1767925832.png"
+    },
+    "robert": {
+      "label": "Robert (cards) — not two days in a row",
+      "match_any": ["robert"],
+      "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Classic-playing-cards-fanned-o_1764775825.png",
+      "not_consecutive_days": true
+    },
+    "chakra_healing": {
+      "label": "Chakra healing",
+      "match_any": ["chakra"],
+      "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Astral-projection-energy-heali_1763319359.png"
+    },
+    "reflexology": {
+      "label": "Reflexology",
+      "match_any": ["reflexology"],
+      "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Reflexology-foot-chart-showing_1763319843.png"
+    },
+    "massage": {
+      "label": "Massage",
+      "match_any": ["massage"],
+      "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Inner-Knowing-Portal-cosmic_1766408244.png"
+    },
+    "astrology": {
+      "label": "Astrology",
+      "match_any": ["astrology", "horoscope", "birth chart", "natal chart"],
+      "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Celestial-astrology-chart-with_1762837219.png"
+    },
+    "tarot": {
+      "label": "Tarot",
+      "match_any": ["tarot"],
+      "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Intuitive-tarot-cards-floating_1762837337.png"
+    },
+    "reiki": {
+      "label": "Reiki event",
+      "match_any": ["reiki"],
+      "exclude_if_match_any": ["reiki share"],
+      "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Reiki-healing-hands-hovering-o_1764776353.png"
+    },
+    "holistic_center": {
+      "label": "Holistic center / fair",
+      "match_any": ["holistic fair", "holistic center", "psychic fair", "vendor fair"],
+      "url": "https://shopsacredground.com/wp-content/uploads/DSC2049-copy-scaled.jpg"
+    },
+    "tuesday_daily": {
+      "label": "Every Tuesday 7am Today post",
+      "require_weekday": "tuesday",
+      "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Close-up-intimate-view-of-a-sm_1762732993.png"
+    },
+    "multi_event_rotation": {
+      "label": "Multi-event day rotation (when no specialty rule wins)",
+      "min_events": 2,
+      "urls": [
+        "https://shopsacredground.com/wp-content/uploads/ai_generated_Lotus-flower-blooming-from-dar_1764775724.png",
+        "https://shopsacredground.com/wp-content/uploads/ai_generated_I-love-what-yo-created-make-t_1762818701.png",
+        "https://shopsacredground.com/wp-content/uploads/ai_generated_Flowing-energy-waves-and-somat_1763319536.png",
+        "https://shopsacredground.com/wp-content/uploads/ai_generated_Gentle-hands-holding-a-glowing_1764775709.png"
+      ]
+    }
+  }
+}

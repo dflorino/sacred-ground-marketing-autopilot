@@ -145,6 +145,10 @@ class AutopilotTests(unittest.TestCase):
         from marketing import captions, control, images, pipeline, publish, store
         from marketing.models import Event
 
+        # Isolate image usage ledger in temp state dir
+        images.IMAGE_USAGE_PATH = os.path.join(self._tmpdir, "state", "image_usage.json")
+        images.image_rules.cache_clear()
+
         store_url = images.store_image_url()
         self.assertTrue(store_url.startswith("https://"))
 
@@ -156,51 +160,127 @@ class AutopilotTests(unittest.TestCase):
             url="https://shopsacredground.com/book/tina/",
             image_url="https://example.com/tina.jpg",
         )
-        plan = images.plan_image([one], "today")
+        # Monday with single non-specialty event → featured photo
+        plan = images.plan_image([one], "today", day=date(2026, 8, 3))
         self.assertEqual(plan.source, "event_featured")
         self.assertEqual(plan.url, "https://example.com/tina.jpg")
 
+        # Tarot + massage multi-event → specialty (tarot/massage) before rotation
         multi = [
-            one,
             Event(
                 id=2,
-                title="Lisa",
+                title="Tarot with Tina",
                 start_date="2026-08-03 12:00:00",
                 end_date="2026-08-03 17:00:00",
-                url="https://shopsacredground.com/book/lisa/",
-                image_url="https://example.com/lisa.jpg",
+                url="https://shopsacredground.com/book/tina/",
+            ),
+            Event(
+                id=3,
+                title="Therapeutic Massage",
+                start_date="2026-08-03 13:00:00",
+                end_date="2026-08-03 15:00:00",
+                url="https://shopsacredground.com/book/massage/",
             ),
         ]
-        plan_m = images.plan_image(multi, "today")
-        self.assertEqual(plan_m.source, "store_photo")
-        self.assertEqual(plan_m.url, store_url)
+        plan_m = images.plan_image(multi, "today", day=date(2026, 8, 3))
+        self.assertEqual(plan_m.rule, "massage")  # massage before tarot in priority? massage is before tarot... wait priority has massage before astrology/tarot
+        self.assertIn("Inner-Knowing-Portal", plan_m.url or "")
 
-        plan_empty = images.plan_image([], "today")
-        self.assertEqual(plan_empty.source, "store_photo")
+        # Multi-event with no specialty → rotation pool
+        generic_multi = [
+            Event(
+                id=4,
+                title="Crystal Browse Hour",
+                start_date="2026-08-05 12:00:00",
+                end_date="2026-08-05 14:00:00",
+                url="https://shopsacredground.com/event/a/",
+            ),
+            Event(
+                id=5,
+                title="Tea & Chat",
+                start_date="2026-08-05 15:00:00",
+                end_date="2026-08-05 16:00:00",
+                url="https://shopsacredground.com/event/b/",
+            ),
+        ]
+        # Wednesday Aug 5 2026
+        plan_r = images.plan_image(generic_multi, "today", day=date(2026, 8, 5))
+        self.assertEqual(plan_r.rule, "multi_event_rotation")
+        self.assertTrue(plan_r.url)
+
+        # Tuesday override
+        tue = images.plan_image([one], "today", day=date(2026, 8, 4))  # Tuesday
+        self.assertEqual(tue.rule, "tuesday_daily")
+
+        # Shaman / medium always
+        shaman = images.plan_image(
+            [
+                Event(
+                    id=6,
+                    title="Andean Shaman Session",
+                    start_date="2026-08-06 12:00:00",
+                    end_date="2026-08-06 14:00:00",
+                    url="https://shopsacredground.com/event/shaman/",
+                )
+            ],
+            "today",
+            day=date(2026, 8, 6),
+        )
+        self.assertEqual(shaman.rule, "shaman_medium")
+
+        # Robert not two days in a row
+        robert_url = (
+            "https://shopsacredground.com/wp-content/uploads/"
+            "ai_generated_Classic-playing-cards-fanned-o_1764775825.png"
+        )
+        images.record_image_use(
+            day=date(2026, 8, 6), url=robert_url, rule="robert", campaign="today"
+        )
+        robert_ev = [
+            Event(
+                id=7,
+                title="Readings with Robert",
+                start_date="2026-08-07 12:00:00",
+                end_date="2026-08-07 17:00:00",
+                url="https://shopsacredground.com/event/robert/",
+                image_url="https://example.com/robert.jpg",
+            )
+        ]
+        robert_day2 = images.plan_image(robert_ev, "today", day=date(2026, 8, 7))
+        self.assertNotEqual(robert_day2.url, robert_url)
+
+        # 7-day no-repeat on rotation
+        images.record_image_use(
+            day=date(2026, 8, 5),
+            url=plan_r.url or "",
+            rule="multi_event_rotation",
+            campaign="today",
+        )
+        plan_r2 = images.plan_image(generic_multi, "today", day=date(2026, 8, 6))
+        self.assertEqual(plan_r2.rule, "multi_event_rotation")
+        self.assertNotEqual(plan_r2.url, plan_r.url)
+
+        plan_empty = images.plan_image([], "today", day=date(2026, 8, 10))
+        self.assertEqual(plan_empty.rule, "store_exterior")
         self.assertEqual(plan_empty.url, store_url)
 
         visit = captions.caption_today_visit("facebook", date(2026, 8, 4))
         self.assertIn("cool and unusual", visit["text"].lower())
         self.assertIn("chicagoland", visit["text"].lower())
 
-        # Empty calendar day still creates Today drafts
-        as_of = datetime(2026, 8, 4, 7, 0, tzinfo=ZoneInfo("America/Chicago"))
+        as_of = datetime(2026, 8, 10, 7, 0, tzinfo=ZoneInfo("America/Chicago"))
         result = pipeline.generate_batch(source="fixture", as_of=as_of)
         self.assertTrue(result["ok"])
         today = [d for d in result["drafts"] if d["campaign"] == "today"]
         self.assertEqual(len(today), 2)
         draft = store.get_draft(today[0]["id"])
         self.assertIn("empty_day_visit", draft.get("notes") or [])
-        self.assertEqual(draft["image"]["source"], "store_photo")
         self.assertTrue(draft["image"]["url"])
 
-        # Phase 2 + today auto_publish → ready to schedule
         control.set_phase(2)
         control.resume()
         result2 = pipeline.generate_batch(source="fixture", as_of=as_of)
-        # fingerprints already exist from first run
         self.assertEqual(result2["drafts_created"], 0)
-        # re-approve path: mark ready via publish gate on existing auto notes
         for d in store.list_drafts():
             if d["campaign"] == "today":
                 store.update_draft(

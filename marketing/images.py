@@ -1,10 +1,12 @@
 from __future__ import annotations
 
-from typing import List, Optional
+import os
+from datetime import date, timedelta
+from functools import lru_cache
+from typing import Any, Dict, List, Optional, Sequence, Tuple
 
 from .models import Event, ImagePlan
-from .paths import settings
-
+from .paths import CONFIG_DIR, STATE_DIR, ensure_dirs, read_json, settings, write_json
 
 STORE_EXTERIOR_DEFAULT = (
     "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.15-AM.png"
@@ -12,12 +14,22 @@ STORE_EXTERIOR_DEFAULT = (
 STORE_INTERIOR_DEFAULT = (
     "https://shopsacredground.com/wp-content/uploads/CD3C3C2E-620B-4933-BC24-11ED63552132-1.png"
 )
-# Back-compat alias — store fallback posts always use exterior.
 STORE_IMAGE_DEFAULT = STORE_EXTERIOR_DEFAULT
+
+IMAGE_USAGE_PATH = os.path.join(STATE_DIR, "image_usage.json")
+WEEKDAY_INDEX = {
+    "monday": 0,
+    "tuesday": 1,
+    "wednesday": 2,
+    "thursday": 3,
+    "friday": 4,
+    "saturday": 5,
+    "sunday": 6,
+}
 
 
 def store_exterior_url() -> str:
-    """Canonical Sacred Ground exterior — always-used shop photo for publish fallbacks."""
+    """Canonical Sacred Ground exterior — empty-day / last-resort fallback."""
     cfg = settings()
     brand = cfg.get("brand_images") or {}
     if brand.get("exterior_url"):
@@ -32,7 +44,6 @@ def store_exterior_url() -> str:
 
 
 def store_interior_url() -> str:
-    """Canonical Sacred Ground interior — kept for in-store creative when needed."""
     cfg = settings()
     brand = cfg.get("brand_images") or {}
     if brand.get("interior_url"):
@@ -41,60 +52,233 @@ def store_interior_url() -> str:
 
 
 def store_image_url() -> str:
-    """Publish fallback shop photo — always the exterior."""
     return store_exterior_url()
 
 
-def plan_image(events: List[Event], campaign: str) -> ImagePlan:
-    """
-    Image policy for auto-publish:
+@lru_cache(maxsize=1)
+def image_rules() -> Dict[str, Any]:
+    path = os.path.join(CONFIG_DIR, "image_rules.json")
+    with open(path, encoding="utf-8") as fh:
+        import json
 
-    today:
-      - exactly one event with a featured image → that event photo
-      - otherwise (0 events, multi-event, or missing featured) → store exterior
-    Never return generate_prompt without a URL — Zernio needs a media URL.
+        return json.load(fh)
+
+
+def load_image_usage() -> Dict[str, Any]:
+    ensure_dirs()
+    data = read_json(IMAGE_USAGE_PATH, {"history": []})
+    if not isinstance(data, dict):
+        return {"history": []}
+    data.setdefault("history", [])
+    return data
+
+
+def save_image_usage(data: Dict[str, Any]) -> None:
+    ensure_dirs()
+    write_json(IMAGE_USAGE_PATH, data)
+
+
+def record_image_use(
+    *,
+    day: date,
+    url: str,
+    rule: str,
+    campaign: str = "today",
+) -> None:
+    data = load_image_usage()
+    history = [
+        h
+        for h in (data.get("history") or [])
+        if not (h.get("date") == day.isoformat() and h.get("campaign") == campaign)
+    ]
+    history.append(
+        {
+            "date": day.isoformat(),
+            "url": url,
+            "rule": rule,
+            "campaign": campaign,
+        }
+    )
+    cutoff = (day - timedelta(days=30)).isoformat()
+    history = [h for h in history if (h.get("date") or "") >= cutoff]
+    data["history"] = sorted(history, key=lambda h: h.get("date") or "")
+    save_image_usage(data)
+
+
+def urls_used_before_day(day: date, within_days: int) -> set[str]:
+    """URLs used in the window [day-(within_days-1), day) — excludes today."""
+    cutoff = day - timedelta(days=within_days - 1)
+    used: set[str] = set()
+    for h in load_image_usage().get("history") or []:
+        try:
+            d = date.fromisoformat(str(h.get("date")))
+        except ValueError:
+            continue
+        if cutoff <= d < day and h.get("url"):
+            used.add(str(h["url"]))
+    return used
+
+
+def used_yesterday(url: str, day: date) -> bool:
+    y = (day - timedelta(days=1)).isoformat()
+    for h in load_image_usage().get("history") or []:
+        if h.get("date") == y and h.get("url") == url:
+            return True
+    return False
+
+
+def _event_haystack(events: Sequence[Event]) -> str:
+    bits: List[str] = []
+    for e in events:
+        bits.append(e.title or "")
+        bits.extend(e.categories or [])
+        bits.extend(e.tags or [])
+    return " ".join(bits).lower()
+
+
+def _nth_weekday_of_month(day: date, weekday_name: str, nth: int) -> bool:
+    want = WEEKDAY_INDEX[weekday_name.lower()]
+    if day.weekday() != want:
+        return False
+    return ((day.day - 1) // 7) + 1 == nth
+
+
+def _rule_matches(
+    rule: Dict[str, Any],
+    *,
+    events: Sequence[Event],
+    day: date,
+    haystack: str,
+) -> bool:
+    if rule.get("require_weekday"):
+        if day.weekday() != WEEKDAY_INDEX[str(rule["require_weekday"]).lower()]:
+            return False
+
+    nth = rule.get("require_nth_weekday")
+    if nth:
+        if not _nth_weekday_of_month(day, str(nth["weekday"]), int(nth["nth"])):
+            return False
+
+    min_events = rule.get("min_events")
+    if min_events is not None and len(events) < int(min_events):
+        return False
+
+    excludes = [x.lower() for x in (rule.get("exclude_if_match_any") or [])]
+    if excludes and any(x in haystack for x in excludes):
+        return False
+
+    needles = [x.lower() for x in (rule.get("match_any") or [])]
+    if needles:
+        return any(n in haystack for n in needles)
+
+    # No keyword needles: weekday-only or multi-event-only rules
+    if rule.get("require_weekday") or min_events is not None or nth:
+        return True
+    return False
+
+
+def _pick_from_urls(
+    urls: Sequence[str],
+    *,
+    day: date,
+    blocked: set[str],
+) -> Optional[str]:
+    available = [u for u in urls if u not in blocked]
+    if not available:
+        # All recently used — pick least-recently among pool by falling back to rotation
+        available = list(urls)
+    if not available:
+        return None
+    idx = day.toordinal() % len(available)
+    return available[idx]
+
+
+def select_today_image(
+    events: Sequence[Event],
+    day: date,
+) -> Tuple[str, str, str]:
+    """Return (url, rule_id, recommendation). Does not record usage."""
+    cfg = image_rules()
+    rules = cfg.get("rules") or {}
+    priority = list(cfg.get("priority") or [])
+    no_repeat = int(cfg.get("no_repeat_days") or 7)
+    blocked = urls_used_before_day(day, no_repeat)
+    haystack = _event_haystack(events)
+
+    for rule_id in priority:
+        rule = rules.get(rule_id) or {}
+        if not _rule_matches(rule, events=events, day=day, haystack=haystack):
+            continue
+
+        if rule_id == "multi_event_rotation":
+            url = _pick_from_urls(rule.get("urls") or [], day=day, blocked=blocked)
+            if not url:
+                continue
+            return (
+                url,
+                rule_id,
+                f"Multi-event day — rotation image ({rule.get('label')}).",
+            )
+
+        url = str(rule.get("url") or "")
+        if not url:
+            continue
+
+        if rule.get("not_consecutive_days") and used_yesterday(url, day):
+            continue
+
+        # 7-day uniqueness: skip if used recently (even "always" rules — next rule wins)
+        if url in blocked:
+            continue
+
+        return (
+            url,
+            rule_id,
+            f"Matched image rule: {rule.get('label') or rule_id}.",
+        )
+
+    if len(events) == 1 and events[0].image_url:
+        e = events[0]
+        return (
+            str(e.image_url),
+            "event_featured",
+            f"Use featured image for “{e.title}”.",
+        )
+
+    return (
+        store_exterior_url(),
+        "store_exterior",
+        "Store exterior fallback (empty day or no matching rule).",
+    )
+
+
+def plan_image(
+    events: List[Event],
+    campaign: str,
+    day: Optional[date] = None,
+) -> ImagePlan:
+    """
+    today: specialty rules + multi-event rotation + 7-day no-repeat,
+    then single event featured, then store exterior.
     """
     with_images = [e for e in events if e.image_url]
 
     if campaign == "today":
-        if len(events) == 1 and events[0].image_url:
-            e = events[0]
-            return ImagePlan(
-                source="event_featured",
-                url=e.image_url,
-                event_id=e.id,
-                recommendation=(
-                    f"Use featured image for “{e.title}” "
-                    "(brand with logo + cream footer before publish when possible)."
-                ),
-            )
-        url = store_image_url()
-        if not events:
-            return ImagePlan(
-                source="store_photo",
-                url=url,
-                recommendation=(
-                    "Empty calendar day — store exterior with visit/brand message "
-                    "+ logo + cream footer."
-                ),
-            )
-        if len(with_images) > 1:
-            return ImagePlan(
-                source="store_photo",
-                url=url,
-                recommendation=(
-                    f"Multi-event day ({len(events)} events, {len(with_images)} photos) — "
-                    "use store exterior so the post stays one clear brand image; "
-                    "list all events in the caption."
-                ),
-            )
+        from .ingest import today_local
+
+        on = day or today_local()
+        url, rule_id, rec = select_today_image(events, on)
+        source = {
+            "event_featured": "event_featured",
+            "store_exterior": "store_photo",
+            "multi_event_rotation": "rotation",
+        }.get(rule_id, "rule_library")
         return ImagePlan(
-            source="store_photo",
+            source=source,
             url=url,
-            recommendation=(
-                "No usable single featured image — store exterior fallback "
-                "+ logo + cream footer."
-            ),
+            event_id=events[0].id if len(events) == 1 else None,
+            recommendation=rec,
+            rule=rule_id,
         )
 
     if campaign == "week":
@@ -131,7 +315,6 @@ def plan_image(events: List[Event], campaign: str) -> ImagePlan:
             recommendation="Visit/brand day — store exterior + logo + cream footer.",
         )
 
-    # spotlight
     e = events[0]
     if e.image_url:
         return ImagePlan(

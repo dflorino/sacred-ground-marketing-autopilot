@@ -30,11 +30,12 @@ class Event:
 
 @dataclass
 class ImagePlan:
-    source: str  # event_featured | collage | generate_prompt | none
+    source: str  # event_featured | collage | generate_prompt | rule_library | rotation | store_photo
     url: Optional[str] = None
     event_id: Optional[int] = None
     prompt: Optional[str] = None
     recommendation: str = ""
+    rule: Optional[str] = None
 
     def to_dict(self) -> Dict[str, Any]:
         return asdict(self)
