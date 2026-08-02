@@ -30,6 +30,15 @@ def main(argv: Optional[List[str]] = None) -> int:
         default="auto",
         help="Event source. Automations must use live-strict (fail hard, no stale cache).",
     )
+    p_run.add_argument(
+        "--campaign",
+        action="append",
+        dest="campaigns",
+        choices=["today", "week", "week_ahead", "spotlight"],
+        default=None,
+        help="Limit draft creation to one or more campaigns (repeatable). "
+        "Daily Today automation should pass --campaign today.",
+    )
 
     p_list = sub.add_parser("list", help="List drafts")
     p_list.add_argument("--status", default=None)
@@ -97,7 +106,10 @@ def main(argv: Optional[List[str]] = None) -> int:
         return 0
 
     if args.cmd == "run":
-        result = pipeline.generate_batch(source=args.source)
+        result = pipeline.generate_batch(
+            source=args.source,
+            campaigns=args.campaigns,
+        )
         _print(result)
         return 0 if result.get("ok") else 1
 
