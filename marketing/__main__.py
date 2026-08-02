@@ -30,6 +30,25 @@ def main(argv: Optional[List[str]] = None) -> int:
         default="auto",
         help="Event source. Automations must use live-strict (fail hard, no stale cache).",
     )
+    p_run.add_argument(
+        "--campaign",
+        action="append",
+        dest="campaigns",
+        choices=["today", "week", "week_ahead", "spotlight"],
+        default=None,
+        help="Limit draft creation to one or more campaigns (repeatable). "
+        "Daily Today automation should pass --campaign today.",
+    )
+    p_run.add_argument(
+        "--publish",
+        action="store_true",
+        help="After creating/approving Today drafts, publish/schedule via Zernio.",
+    )
+
+    p_pub = sub.add_parser(
+        "publish-today",
+        help="Publish approved Today drafts via Zernio (compose must already be attached).",
+    )
 
     p_list = sub.add_parser("list", help="List drafts")
     p_list.add_argument("--status", default=None)
@@ -53,11 +72,6 @@ def main(argv: Optional[List[str]] = None) -> int:
     p_skip = sub.add_parser("skip", help="Manual override: skip a fingerprint")
     p_skip.add_argument("--fingerprint", required=True)
     p_skip.add_argument("--reason", default="manual_override")
-
-    sub.add_parser(
-        "publish-today",
-        help="Schedule/publish approved Today drafts via Zernio (needs ZERNIO_API_KEY)",
-    )
 
     sub.add_parser("status", help="Show pause/phase/counts")
     sub.add_parser("review", help="Human-readable review queue for Phase 1")
@@ -102,9 +116,19 @@ def main(argv: Optional[List[str]] = None) -> int:
         return 0
 
     if args.cmd == "run":
-        result = pipeline.generate_batch(source=args.source)
+        result = pipeline.generate_batch(
+            source=args.source,
+            campaigns=args.campaigns,
+            publish=bool(args.publish),
+        )
         _print(result)
         return 0 if result.get("ok") else 1
+
+    if args.cmd == "publish-today":
+        from . import publish as pub
+
+        _print(pub.publish_today_approved())
+        return 0
 
     if args.cmd == "list":
         _print(store.list_drafts(status=args.status))
@@ -142,13 +166,6 @@ def main(argv: Optional[List[str]] = None) -> int:
         store.skip_fingerprint(args.fingerprint, args.reason)
         _print({"ok": True, "fingerprint": args.fingerprint, "reason": args.reason})
         return 0
-
-    if args.cmd == "publish-today":
-        from . import publish
-
-        result = publish.publish_today_drafts()
-        _print(result)
-        return 0 if result.get("ok") else 1
 
     return 1
 

@@ -21,6 +21,7 @@ class AutopilotTests(unittest.TestCase):
         paths.DRAFTS_DIR = os.path.join(self._tmpdir, "drafts")
         paths.STATE_DIR = os.path.join(self._tmpdir, "state")
         paths.AUDIT_DIR = os.path.join(self._tmpdir, "audit")
+        paths.COMPOSITES_DIR = os.path.join(self._tmpdir, "composites")
         paths.CONTROL_PATH = os.path.join(paths.STATE_DIR, "control.json")
         paths.POSTED_PATH = os.path.join(paths.STATE_DIR, "posted.json")
         paths.OVERRIDES_PATH = os.path.join(paths.STATE_DIR, "overrides.json")
@@ -28,7 +29,15 @@ class AutopilotTests(unittest.TestCase):
         paths.FIXTURES_DIR = os.path.join(ROOT, "data", "fixtures")
         paths.settings.cache_clear()
         paths.voice.cache_clear()
+        paths.creative.cache_clear()
         paths.ensure_dirs()
+        # Unit tests expect Phase 1 draft-only behavior unless a test raises it
+        from marketing import control
+
+        control.set_phase(1)
+        # Unit tests should not require live image downloads / Zernio
+        os.environ["SGMA_SKIP_COMPOSE"] = "1"
+        os.environ.pop("ZERNIO_API_KEY", None)
 
     def tearDown(self) -> None:
         shutil.rmtree(self._tmpdir, ignore_errors=True)
