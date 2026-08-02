@@ -34,9 +34,11 @@ class ComposeTests(unittest.TestCase):
             self.assertEqual(meta["footer"]["website"], "shopsacredground.com")
             self.assertEqual(meta["footer"]["phone"], "847-749-3922")
             self.assertEqual(meta["overlay"]["campaign_word"], "TODAY")
+            self.assertFalse(meta.get("overlay_on_photo", True))
             with Image.open(out) as img:
                 self.assertEqual(img.size[0], 1080)
-                self.assertGreater(img.size[1], 1080)
+                # Photo square + tall footer band for event copy
+                self.assertGreaterEqual(img.size[1], 1080 + 300)
 
 
 if __name__ == "__main__":

@@ -1,5 +1,5 @@
 ---
-description: Sacred Ground logo + text overlay rules for FB/IG social creatives
+description: Sacred Ground logo + footer text rules for FB/IG social creatives
 alwaysApply: true
 ---
 
@@ -8,13 +8,22 @@ alwaysApply: true
 Every Sacred Ground social graphic for Autopilot / ML Social / Zernio **must** include:
 
 1. **Sacred Ground circular logo** — `config/brand/sacred-ground-logo-circle-transparent.png`
-2. **Short text overlay** on the photo (no black/dark panel behind text)
-3. **Website + phone in a clean footer band under the photo** (always)
+2. **Clean photo** — no event/campaign text painted over the image
+3. **Cream footer band under the photo** with event copy + website + phone (always)
 
-## Contact footer (required — always)
+## No text over the photo (required)
+
+- Do **not** place TODAY / event title / time / location over busy specialty art
+- Photo area = image + translucent circular logo only
+- All readable copy goes in the cream footer under the photo
+
+## Footer band (required — always)
 
 - Extend the canvas below the photo (cream/light band)
-- Always include, centered and readable:
+- Always include, centered and readable in black ink on cream:
+  - Campaign word (e.g. `TODAY`)
+  - Who / what (event title or visit line)
+  - Day·time · Arlington Heights (as fits)
   - `shopsacredground.com`
   - `847-749-3922`
 - Never place website/phone over busy photo areas (crystals, runes, faces, product)
@@ -22,30 +31,21 @@ Every Sacred Ground social graphic for Autopilot / ML Social / Zernio **must** i
 ## Type style (required)
 
 - Mix fonts (chunky + hand + one script accent) — avoid one rigid template font everywhere
-- **Readability first:** thick/bold type, true black on light images — **no white border/stroke/halo**
-- Soft cream wash behind mid-photo text if needed (not a black box)
-- Not every line arched — one playful curve is enough (e.g. TODAY)
+- **Readability first:** thick/bold type, true black on the cream footer — **no white border/stroke/halo**
 - Feel original / shop-made, not store-bought Canva template
 
 ## Layout (required)
 
 | Zone | Content |
 |---|---|
-| **Top (on photo)** | Campaign word — e.g. `TODAY` or `NEXT 7 DAYS` |
-| **Middle (on photo)** | Who / what + day·time · Arlington Heights |
-| **Below photo** | Footer band with website + phone |
-
-## Contrast rule (required)
-
-- **Light images (luma ≥ 140) → black text**
-- **Dark images (luma < 140) → gold text**
+| **Photo** | Specialty / rotation / store image + circular logo (bottom-left of photo) |
+| **Below photo** | TODAY + event lines + website + phone |
 
 ## Logo
 
 - Circular only; strip black/square background to true transparency
 - **Darker translucent** — about **80–90% opacity** (a smidge darker than a faint watermark; still not fully opaque)
 - Corner mark ~10–13% of image width; prefer bottom-left of the **photo** area (above footer)
-- Logo does **not** replace on-image event text
 
 ## Caption (platform text under the post)
 
@@ -56,4 +56,4 @@ Every Sacred Ground social graphic for Autopilot / ML Social / Zernio **must** i
 
 - Campaign `week_ahead`: next 7 days on FB+IG
 - Background: Sacred Ground store photo
-- Same footer rule: website + phone under the image
+- Same footer rule: event/planner copy + website + phone under the image
