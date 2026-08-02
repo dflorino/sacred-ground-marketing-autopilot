@@ -8,6 +8,11 @@
   "platforms": ["facebook", "instagram"],
   "brand_images": {
     "exterior_url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.15-AM.png",
+    "exterior_urls": [
+      "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.15-AM.png",
+      "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.28-AM-1.png",
+      "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.38-AM-1.png"
+    ],
     "interior_url": "https://shopsacredground.com/wp-content/uploads/CD3C3C2E-620B-4933-BC24-11ED63552132-1.png",
     "store_fallback": "exterior"
   },
@@ -33,12 +38,21 @@
     },
     "week_ahead": {
       "enabled": true,
-      "label": "Next 7 Days at Sacred Ground",
+      "label": "Next 3 Days at Sacred Ground",
       "schedule_local_time": "19:00",
-      "horizon_days": 7,
+      "platforms": ["facebook", "instagram"],
+      "source": "the_events_calendar",
+      "auto_publish": true,
+      "horizon_days": 3,
+      "image_urls": [
+        "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.15-AM.png",
+        "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.28-AM-1.png",
+        "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.38-AM-1.png"
+      ],
       "store_image_url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.15-AM.png",
       "cta_phone": "847-749-3922",
-      "cta_site": "shopsacredground.com"
+      "cta_site": "shopsacredground.com",
+      "notes": "Every evening 7pm CT: fixed opener + next-3-days list in caption (image stays exterior only). Skip if no upcoming events."
     },
     "spotlight": {
       "enabled": true,
@@ -72,5 +86,5 @@
   "require_event_url": true,
   "max_today_events_in_caption": 6,
   "max_week_events_in_caption": 10,
-  "max_week_ahead_events_in_caption": 14
+  "max_week_ahead_events_in_caption": 8
 }

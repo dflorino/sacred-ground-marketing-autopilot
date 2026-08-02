@@ -299,13 +299,31 @@ def plan_image(
         )
 
     if campaign == "week_ahead":
+        wa = (settings().get("campaigns") or {}).get("week_ahead") or {}
+        brand = settings().get("brand_images") or {}
+        urls = [str(u) for u in (wa.get("image_urls") or []) if u]
+        if not urls:
+            urls = [str(u) for u in (brand.get("exterior_urls") or []) if u]
+        if not urls and wa.get("image_url"):
+            urls = [str(wa["image_url"])]
+        if not urls and brand.get("exterior_url"):
+            urls = [str(brand["exterior_url"])]
+        if not urls:
+            urls = [store_exterior_url()]
+        # Rotate founder exterior storefront shots only — never interior.
+        from .ingest import today_local
+
+        on = day or today_local()
+        idx = on.toordinal() % len(urls)
+        url = urls[idx]
         return ImagePlan(
-            source="store_photo",
-            url=store_image_url(),
+            source="brand_week_ahead",
+            url=url,
             recommendation=(
-                "Use Sacred Ground store exterior with readable next-7-days "
-                "overlay + darker translucent logo."
+                "Founder exterior storefront photo rotation — "
+                "never interior or AI specialty art for week-ahead."
             ),
+            rule="week_ahead_exterior",
         )
 
     if campaign == "visit":

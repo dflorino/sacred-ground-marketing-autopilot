@@ -58,6 +58,10 @@ def main(argv: Optional[List[str]] = None) -> int:
         "publish-today",
         help="Schedule/publish approved Today drafts via Zernio (needs ZERNIO_API_KEY)",
     )
+    sub.add_parser(
+        "publish-week-ahead",
+        help="Schedule/publish week-ahead drafts via Zernio (needs ZERNIO_API_KEY)",
+    )
 
     sub.add_parser("status", help="Show pause/phase/counts")
     sub.add_parser("review", help="Human-readable review queue for Phase 1")
@@ -147,6 +151,13 @@ def main(argv: Optional[List[str]] = None) -> int:
         from . import publish
 
         result = publish.publish_today_drafts()
+        _print(result)
+        return 0 if result.get("ok") else 1
+
+    if args.cmd == "publish-week-ahead":
+        from . import publish
+
+        result = publish.publish_week_ahead_drafts()
         _print(result)
         return 0 if result.get("ok") else 1
 

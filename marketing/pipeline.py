@@ -246,15 +246,15 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
     elif not week_events:
         skipped_drafts.append({"campaign": "week", "reason": "no_events_this_week"})
 
-    # --- Week ahead (daily 7pm planner: next 7 days) ---
+    # --- Week ahead (daily 7pm planner: next few days in caption) ---
     wa_cfg = (cfg.get("campaigns") or {}).get("week_ahead") or {}
     if wa_cfg.get("enabled", True):
-        horizon = int(wa_cfg.get("horizon_days") or 7)
+        horizon = int(wa_cfg.get("horizon_days") or 3)
         ahead_events = classify.events_next_days(events, day, days=horizon)[
-            : int(cfg.get("max_week_ahead_events_in_caption") or 14)
+            : int(cfg.get("max_week_ahead_events_in_caption") or 8)
         ]
         if ahead_events:
-            img = images.plan_image(ahead_events, "week_ahead")
+            img = images.plan_image(ahead_events, "week_ahead", day=day)
             sched = schedule.schedule_week_ahead(day)
             for platform in platforms:
                 cap = captions.caption_week_ahead(ahead_events, platform, day)
@@ -269,6 +269,8 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                     notes=notes_base + ["daily_7pm_next_7_days"],
                 )
                 if draft:
+                    if wa_cfg.get("auto_publish") and not is_paused():
+                        draft = _auto_ready_for_publish(draft["id"])
                     created.append(draft)
                 else:
                     skipped_drafts.append(
@@ -280,7 +282,7 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                     )
         else:
             skipped_drafts.append(
-                {"campaign": "week_ahead", "reason": "no_events_next_7_days"}
+                {"campaign": "week_ahead", "reason": "no_events_in_horizon"}
             )
 
     # --- Spotlights + reminders ---

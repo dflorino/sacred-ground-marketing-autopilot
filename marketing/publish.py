@@ -195,8 +195,8 @@ def publish_draft(draft_id: str) -> Dict[str, Any]:
     }
 
 
-def publish_today_drafts(*, campaign: str = "today") -> Dict[str, Any]:
-    """Publish/schedule today's campaign drafts only (shop-local calendar day)."""
+def publish_campaign_drafts(*, campaign: str) -> Dict[str, Any]:
+    """Publish/schedule one campaign's drafts for the shop-local calendar day."""
     if not zernio_api_key():
         return {
             "ok": False,
@@ -205,6 +205,7 @@ def publish_today_drafts(*, campaign: str = "today") -> Dict[str, Any]:
                 "Add ZERNIO_API_KEY to Cursor Cloud Agent secrets "
                 "(Dashboard → Cloud Agents → Secrets), then re-run."
             ),
+            "campaign": campaign,
             "results": [],
         }
     from .ingest import today_local
@@ -217,15 +218,26 @@ def publish_today_drafts(*, campaign: str = "today") -> Dict[str, Any]:
         if d.get("status") in ("posted", "scheduled", "skipped", "rejected"):
             continue
         fp = d.get("fingerprint") or ""
-        # Fingerprints look like: today|2026-08-03|facebook|…
+        # Fingerprints look like: week_ahead|2026-08-03|facebook|…
         if f"|{day_key}|" not in f"|{fp}|":
             continue
         results.append(publish_draft(d["id"]))
     ok = bool(results) and all(r.get("ok") for r in results)
     return {
         "ok": ok,
+        "campaign": campaign,
         "day": day_key,
         "published_or_scheduled": sum(1 for r in results if r.get("ok")),
         "failed": sum(1 for r in results if not r.get("ok")),
         "results": results,
     }
+
+
+def publish_today_drafts(*, campaign: str = "today") -> Dict[str, Any]:
+    """Publish/schedule today's Today-campaign drafts (shop-local calendar day)."""
+    return publish_campaign_drafts(campaign=campaign)
+
+
+def publish_week_ahead_drafts() -> Dict[str, Any]:
+    """Publish/schedule tonight's week-ahead planner drafts."""
+    return publish_campaign_drafts(campaign="week_ahead")

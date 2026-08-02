@@ -38,12 +38,13 @@ def schedule_week(week_start: date) -> SchedulePlan:
 
 
 def schedule_week_ahead(day: date) -> SchedulePlan:
-    """Daily 7pm Central — next-7-days planner post."""
+    """Daily 7pm Central — short upcoming-days planner post."""
     cfg = settings()["campaigns"]["week_ahead"]
     when = _at_local(day, cfg.get("schedule_local_time") or "19:00")
+    horizon = int(cfg.get("horizon_days") or 3)
     return SchedulePlan(
         recommended_at=when.isoformat(),
-        rationale="Daily evening planner so people can book the next 7 days.",
+        rationale=f"Daily evening planner so people can book the next {horizon} days.",
     )
 
 
