@@ -65,11 +65,23 @@ Hard rules:
 | 5. No overwrite of reviewed drafts | **Implemented** in code: fingerprint block + save/update guards. |
 | 6. No Phase 1 publish | **Implemented** in code: `phase_1_drafts_only` even after approve. |
 
+## Cloud publish requirement
+
+Cloud Agents cannot use local ML Social MCP. Publishing uses Zernio HTTP:
+
+```bash
+python3 -m marketing run --source live-strict
+python3 -m marketing publish-today
+```
+
+Set secret **`ZERNIO_API_KEY`** in Cursor Cloud Agent secrets (Dashboard → Cloud Agents → Secrets). Create the key at [Zernio → Settings → API Keys](https://zernio.com/dashboard/api-keys).
+
 ## Blockers before activation
 
-1. Initialize git and push `sacred-ground-marketing-autopilot` to GitHub under an account Cloud Agent can access.
-2. Confirm Automations schedule UI is set to **7:00 AM America/Chicago** (not Phoenix, not a silent UTC substitute).
-3. Optional but recommended: one Cloud Agent dry run that only hits TEC REST and reports success/failure — still without activating the daily schedule.
+1. ~~Repo on GitHub~~ — `dflorino/sacred-ground-marketing-autopilot`
+2. Confirm Automations schedule UI is set to **7:00 AM America/Chicago**
+3. **`ZERNIO_API_KEY`** in Cloud Agent secrets (required for real FB/IG send)
+4. Disable duplicate Active automations so only one runs at 7am
 
 
 ## Daily week-ahead (proposed)

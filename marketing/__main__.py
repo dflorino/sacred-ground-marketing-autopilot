@@ -54,6 +54,11 @@ def main(argv: Optional[List[str]] = None) -> int:
     p_skip.add_argument("--fingerprint", required=True)
     p_skip.add_argument("--reason", default="manual_override")
 
+    sub.add_parser(
+        "publish-today",
+        help="Schedule/publish approved Today drafts via Zernio (needs ZERNIO_API_KEY)",
+    )
+
     sub.add_parser("status", help="Show pause/phase/counts")
     sub.add_parser("review", help="Human-readable review queue for Phase 1")
     sub.add_parser("version", help="Print version")
@@ -137,6 +142,13 @@ def main(argv: Optional[List[str]] = None) -> int:
         store.skip_fingerprint(args.fingerprint, args.reason)
         _print({"ok": True, "fingerprint": args.fingerprint, "reason": args.reason})
         return 0
+
+    if args.cmd == "publish-today":
+        from . import publish
+
+        result = publish.publish_today_drafts()
+        _print(result)
+        return 0 if result.get("ok") else 1
 
     return 1
 
