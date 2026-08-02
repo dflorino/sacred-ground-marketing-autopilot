@@ -14,17 +14,19 @@
     "notes": "Circular logo only. Strip black square. Darker translucent ~88% next renders."
   },
   "layout": {
-    "top": "campaign_word",
-    "middle": [
-      "who_what",
-      "day_time_location"
-    ],
+    "photo": "clean_image_plus_logo_only",
     "bottom": [
+      "campaign_word",
+      "who_what",
+      "day_time_location",
       "footer_band_website",
       "footer_band_phone"
     ],
+    "no_text_over_photo": true,
+    "applies_to_campaigns": ["today", "week", "week_ahead", "spotlight"],
     "no_black_box": true,
-    "footer_required": true
+    "footer_required": true,
+    "notes": "ALL social posts: clean photo + logo; campaign/event copy + website/phone in cream footer under the photo. Never paint text over the image."
   },
   "contrast": {
     "method": "mean_luma",
@@ -33,15 +35,18 @@
     "dark_image_text": "gold"
   },
   "overlay_text": {
-    "required": true,
+    "required": false,
+    "on_photo": false,
     "website_line": "shopsacredground.com",
     "never_on_image": [
       "street_address",
       "long_https_url",
       "hashtags",
-      "full_description"
+      "full_description",
+      "event_title",
+      "campaign_word",
+      "day_time_location"
     ],
-    "max_image_area_percent": 20,
     "no_white_border": true
   },
   "caption": {

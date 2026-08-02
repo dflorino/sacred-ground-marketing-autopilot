@@ -288,14 +288,17 @@ def plan_image(
                 url=with_images[0].image_url,
                 event_id=with_images[0].id,
                 recommendation=(
-                    f"Weekly collage from {len(with_images)} event image(s); "
-                    "warm shop atmosphere, readable titles optional as overlay in design tool."
+                    f"Weekly background from {len(with_images)} event image(s); "
+                    "compose adds logo + cream footer (no text over photo)."
                 ),
             )
         return ImagePlan(
             source="store_photo",
             url=store_image_url(),
-            recommendation="No event images this week — store exterior roundup visual.",
+            recommendation=(
+                "No event images this week — store exterior; "
+                "compose adds logo + cream footer (no text over photo)."
+            ),
         )
 
     if campaign == "week_ahead":
@@ -303,8 +306,8 @@ def plan_image(
             source="store_photo",
             url=store_image_url(),
             recommendation=(
-                "Use Sacred Ground store exterior with readable next-7-days "
-                "overlay + darker translucent logo."
+                "Store exterior background; compose adds logo + NEXT 7 DAYS "
+                "cream footer (no text over photo)."
             ),
         )
 
@@ -312,7 +315,10 @@ def plan_image(
         return ImagePlan(
             source="store_photo",
             url=store_image_url(),
-            recommendation="Visit/brand day — store exterior + logo + cream footer.",
+            recommendation=(
+                "Visit/brand day — store exterior; compose adds logo + cream footer "
+                "(no text over photo)."
+            ),
         )
 
     e = events[0]
