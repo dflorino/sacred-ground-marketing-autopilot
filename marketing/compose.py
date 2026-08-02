@@ -1,8 +1,7 @@
-"""Compose branded Today social graphics (logo + overlay + footer)."""
+"""Compose branded Today social graphics (photo + logo + footer text band)."""
 from __future__ import annotations
 
 import io
-import math
 import os
 import urllib.request
 from datetime import date
@@ -13,17 +12,18 @@ from .models import Event
 from .paths import COMPOSITES_DIR, FONTS_DIR, ROOT, creative, ensure_dirs, settings
 
 try:
-    from PIL import Image, ImageDraw, ImageFilter, ImageFont
+    from PIL import Image, ImageDraw, ImageFont
 except ImportError as exc:  # pragma: no cover
     raise RuntimeError("Pillow is required for social composites. pip install Pillow") from exc
 
 
 PHOTO_SIZE = 1080
-FOOTER_H = 160
+# Tall cream band under the photo — event copy lives here (not over the image).
+FOOTER_H = 340
 GOLD = (232, 196, 110, 255)
-GOLD_SOFT = (245, 220, 150, 255)
 INK = (22, 18, 14, 255)
 CREAM = (245, 236, 220, 255)
+RULE = (200, 170, 110, 180)
 
 
 def _font(name: str, size: int) -> ImageFont.FreeTypeFont:
@@ -87,7 +87,7 @@ def _time_bit(ev: Event) -> str:
 
 
 def overlay_copy(events: Sequence[Event], day: date) -> Dict[str, Any]:
-    """Short on-image lines — not the full caption."""
+    """Short lines for the footer band — not drawn over the photo."""
     loc = (creative().get("location") or "Arlington Heights")
     day_name = day.strftime("%A")
     if not events:
@@ -109,7 +109,7 @@ def overlay_copy(events: Sequence[Event], day: date) -> Dict[str, Any]:
             ],
         }
     lines: List[str] = []
-    for ev in list(events)[:4]:
+    for ev in list(events)[:3]:
         lines.append(f"{_short_title(ev.title, 34)} · {_time_bit(ev)}")
     lines.append(f"{day_name} · {loc}")
     return {"campaign_word": "TODAY", "lines": lines}
@@ -130,38 +130,8 @@ def _draw_centered(
 ) -> int:
     tw, th = _text_size(draw, font, text)
     x = (width - tw) // 2
-    # soft dark shadow only — never white stroke/halo
-    draw.text((x + 2, y + 2), text, font=font, fill=(0, 0, 0, 100))
     draw.text((x, y), text, font=font, fill=fill)
     return th
-
-
-def _draw_arched_word(
-    canvas: Image.Image,
-    text: str,
-    font: ImageFont.ImageFont,
-    fill: Tuple[int, int, int, int],
-    cy: int = 70,
-    radius: int = 520,
-) -> None:
-    draw = ImageDraw.Draw(canvas)
-    chars = list(text)
-    widths = [_text_size(draw, font, c)[0] + 6 for c in chars]
-    total = sum(widths) or 1
-    span = min(1.15, total / max(radius, 1))
-    angle = -span / 2
-    W = canvas.width
-    for c, w in zip(chars, widths):
-        mid = angle + (w / radius) / 2
-        ch_img = Image.new("RGBA", (w + 60, 180), (0, 0, 0, 0))
-        cd = ImageDraw.Draw(ch_img)
-        cd.text((22, 24), c, font=font, fill=(0, 0, 0, 90))
-        cd.text((20, 22), c, font=font, fill=fill)
-        rot = ch_img.rotate(-math.degrees(mid), resample=Image.Resampling.BICUBIC, expand=True)
-        rx = int(W / 2 + radius * math.sin(mid) - rot.width / 2)
-        ry = int(cy + radius * (1 - math.cos(mid)) - rot.height / 2 + 10)
-        canvas.alpha_composite(rot, (max(0, rx), max(0, ry)))
-        angle += w / radius
 
 
 def _apply_logo(canvas: Image.Image, photo_h: int) -> None:
@@ -195,65 +165,58 @@ def compose_today_graphic(
 ) -> Dict[str, Any]:
     """
     Build the final Today graphic:
-    photo + TODAY + short event lines + translucent logo + cream footer
-    with shopsacredground.com and phone.
+    clean photo + translucent logo + cream footer with event copy,
+    shopsacredground.com, and phone. No text painted over the photo.
     """
     ensure_dirs()
     os.makedirs(COMPOSITES_DIR, exist_ok=True)
 
     photo = _load_image(background_url)
     photo = photo.resize((PHOTO_SIZE, PHOTO_SIZE), Image.Resampling.LANCZOS)
-    fill, contrast_name = text_color_for(photo)
-    soft = GOLD_SOFT if contrast_name == "gold" else (40, 32, 24, 255)
+    _, contrast_name = text_color_for(photo)
 
     canvas = Image.new("RGBA", (PHOTO_SIZE, PHOTO_SIZE + FOOTER_H), CREAM)
-    # Soft cream wash behind mid text (never a black box)
-    wash = Image.new("RGBA", (PHOTO_SIZE, PHOTO_SIZE), (0, 0, 0, 0))
-    for y0, y1, a in ((30, 210, 50), (280, 720, 65)):
-        layer = Image.new("RGBA", (PHOTO_SIZE, PHOTO_SIZE), (0, 0, 0, 0))
-        ImageDraw.Draw(layer).ellipse((-100, y0, PHOTO_SIZE + 100, y1), fill=(250, 242, 225, a))
-        wash = Image.alpha_composite(wash, layer)
-    wash = wash.filter(ImageFilter.GaussianBlur(26))
-    photo_area = Image.alpha_composite(photo, wash)
-    canvas.paste(photo_area, (0, 0))
-
-    copy = overlay_copy(events, day)
-    f_today = _font("BubblegumSans-Regular.ttf", 112)
-    f_line = _font("IndieFlower-Regular.ttf", 48)
-    f_meta = _font("BubblegumSans-Regular.ttf", 40)
-    f_script = _font("Courgette-Regular.ttf", 44)
-    f_footer = _font("BubblegumSans-Regular.ttf", 36)
-    f_phone = _font("IndieFlower-Regular.ttf", 34)
-
-    _draw_arched_word(canvas, copy["campaign_word"], f_today, fill, cy=55, radius=540)
-
-    draw = ImageDraw.Draw(canvas)
-    y = 300 if len(copy["lines"]) <= 3 else 260
-    for i, line in enumerate(copy["lines"]):
-        font = f_script if i == len(copy["lines"]) - 1 and len(copy["lines"]) > 1 else (
-            f_meta if "·" in line and i > 0 else f_line
-        )
-        # Keep long multi-event lines a bit smaller
-        if len(line) > 40:
-            font = _font("IndieFlower-Regular.ttf", 42)
-        th = _draw_centered(draw, line, y, font, fill if i == 0 else soft, PHOTO_SIZE)
-        y += th + 28
-
+    canvas.paste(photo, (0, 0))
     _apply_logo(canvas, PHOTO_SIZE)
 
-    # Footer band (always): website + phone under the photo
+    copy = overlay_copy(events, day)
+    f_today = _font("BubblegumSans-Regular.ttf", 64)
+    f_title = _font("Courgette-Regular.ttf", 42)
+    f_meta = _font("IndieFlower-Regular.ttf", 34)
+    f_footer = _font("BubblegumSans-Regular.ttf", 34)
+    f_phone = _font("IndieFlower-Regular.ttf", 32)
+
+    draw = ImageDraw.Draw(canvas)
     website = ((creative().get("overlay_text") or {}).get("website_line") or "shopsacredground.com")
     phone = (
         ((settings().get("campaigns") or {}).get("week_ahead") or {}).get("cta_phone")
         or "847-749-3922"
     )
-    draw.line([(70, PHOTO_SIZE + 10), (PHOTO_SIZE - 70, PHOTO_SIZE + 10)], fill=(200, 170, 110, 160), width=2)
-    for text, font, yy in (
-        (website, f_footer, PHOTO_SIZE + 42),
-        (phone, f_phone, PHOTO_SIZE + 92),
-    ):
-        tw, _ = _text_size(draw, font, text)
-        draw.text(((PHOTO_SIZE - tw) // 2, yy), text, font=font, fill=INK)
+
+    # Soft gold rule between photo and footer copy
+    draw.line(
+        [(70, PHOTO_SIZE + 14), (PHOTO_SIZE - 70, PHOTO_SIZE + 14)],
+        fill=RULE,
+        width=2,
+    )
+
+    y = PHOTO_SIZE + 36
+    y += _draw_centered(draw, copy["campaign_word"], y, f_today, INK, PHOTO_SIZE) + 10
+    for i, line in enumerate(copy["lines"]):
+        font = f_title if i == 0 else f_meta
+        if len(line) > 44:
+            font = _font("IndieFlower-Regular.ttf", 30)
+        y += _draw_centered(draw, line, y, font, INK, PHOTO_SIZE) + 8
+
+    # Contact always last in the band
+    y = max(y + 6, PHOTO_SIZE + FOOTER_H - 96)
+    draw.line(
+        [(180, y - 8), (PHOTO_SIZE - 180, y - 8)],
+        fill=RULE,
+        width=1,
+    )
+    y += _draw_centered(draw, website, y, f_footer, INK, PHOTO_SIZE) + 6
+    _draw_centered(draw, phone, y, f_phone, INK, PHOTO_SIZE)
 
     if not out_path:
         out_path = os.path.join(COMPOSITES_DIR, f"today-{day.isoformat()}.png")
@@ -268,6 +231,7 @@ def compose_today_graphic(
         "width": rgb.width,
         "height": rgb.height,
         "overlay": copy,
-        "footer": {"website": website, "phone": phone},
+        "overlay_on_photo": False,
+        "footer": {"website": website, "phone": phone, "event_lines": copy["lines"]},
         "background_url": background_url,
     }
