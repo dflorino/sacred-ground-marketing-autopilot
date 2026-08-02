@@ -27,8 +27,26 @@ def _hashtags(platform: str, extra: Sequence[str] | None = None) -> List[str]:
     return out[:12]
 
 
-def _signoff(seed: str) -> str:
-    opts = voice().get("signoff_options") or ["See you on the floor."]
+def _signoff(seed: str, platform: str = "") -> str:
+    v = voice()
+    platform = (platform or "").lower()
+    if platform == "facebook":
+        opts = v.get("facebook_signoff_options") or v.get("signoff_options")
+    elif platform == "instagram":
+        opts = v.get("instagram_signoff_options") or v.get("signoff_options")
+    else:
+        opts = v.get("signoff_options")
+    opts = list(opts or ["Come as you are."])
+
+    banned = list((v.get("forbidden_signoffs_by_platform") or {}).get(platform) or [])
+    # Facebook must never use retail "on the floor" closings.
+    if platform == "facebook":
+        banned.extend(["See you on the floor.", "on the floor"])
+    banned_l = {b.lower() for b in banned if b}
+    opts = [o for o in opts if not any(b in o.lower() for b in banned_l)]
+    if not opts:
+        opts = ["Come as you are."]
+
     idx = int(hashlib.md5(seed.encode()).hexdigest(), 16) % len(opts)
     return opts[idx]
 
@@ -67,7 +85,7 @@ def caption_today(events: List[Event], platform: str, day: date) -> Dict:
         hook = f"Today at Sacred Ground — {day_label}."
         body = hook + "\n\n" + "\n".join(lines)
         body += "\n\nDetails & tickets on each event page."
-    body += "\n\n" + _signoff(f"today|{day.isoformat()}|{platform}")
+    body += "\n\n" + _signoff(f"today|{day.isoformat()}|{platform}", platform)
     tags = _hashtags(platform)
     text = body + "\n\n" + " ".join(tags)
     _assert_not_generic(text)
@@ -84,7 +102,7 @@ def caption_today_visit(platform: str, day: date) -> Dict:
         "Come browse when you need a little sparkle in the day.\n"
         "847-749-3922\n"
         "https://shopsacredground.com/\n\n"
-        + _signoff(f"today-visit|{day.isoformat()}|{platform}")
+        + _signoff(f"today-visit|{day.isoformat()}|{platform}", platform)
     )
     tags = _hashtags(platform)
     text = body + "\n\n" + " ".join(tags)
@@ -103,7 +121,7 @@ def caption_week(events: List[Event], platform: str, week_start: date) -> Dict:
     lines = [_event_line(e, True) for e in events]
     body = hook + "\n\n" + "\n".join(lines)
     body += "\n\nCome for one — or make a day of it."
-    body += "\n\n" + _signoff(f"week|{week_start.isoformat()}|{platform}")
+    body += "\n\n" + _signoff(f"week|{week_start.isoformat()}|{platform}", platform)
     tags = _hashtags(platform)
     text = body + "\n\n" + " ".join(tags)
     if platform == "instagram":
@@ -132,7 +150,7 @@ def caption_week_ahead(events: List[Event], platform: str, day: date) -> Dict:
     body += "\n\nPlan your week — call to book a session or grab your spot online."
     body += "\n847-749-3922"
     body += "\nhttps://shopsacredground.com/events/"
-    body += "\n\n" + _signoff(f"week_ahead|{day.isoformat()}|{platform}")
+    body += "\n\n" + _signoff(f"week_ahead|{day.isoformat()}|{platform}", platform)
     tags = _hashtags(platform)
     text = body + "\n\n" + " ".join(tags)
     if platform == "instagram":
@@ -161,7 +179,7 @@ def caption_spotlight(event: Event, platform: str, reminder_day: int | None = No
     if event.categories:
         parts.append("Filed under: " + ", ".join(event.categories[:3]))
     parts.append(event.url)
-    parts.append(_signoff(f"spotlight|{event.id}|{platform}|{reminder_day}"))
+    parts.append(_signoff(f"spotlight|{event.id}|{platform}|{reminder_day}", platform))
     body = "\n\n".join(parts)
     tags = _hashtags(platform, ["#SpecialEvent"] if event.is_special else None)
     text = body + "\n\n" + " ".join(tags)

@@ -196,7 +196,7 @@ def publish_draft(draft_id: str) -> Dict[str, Any]:
 
 
 def publish_today_drafts(*, campaign: str = "today") -> Dict[str, Any]:
-    """Publish/schedule approved Today drafts that are still draft/approved."""
+    """Publish/schedule today's campaign drafts only (shop-local calendar day)."""
     if not zernio_api_key():
         return {
             "ok": False,
@@ -207,16 +207,24 @@ def publish_today_drafts(*, campaign: str = "today") -> Dict[str, Any]:
             ),
             "results": [],
         }
+    from .ingest import today_local
+
+    day_key = today_local().isoformat()
     results: List[Dict[str, Any]] = []
     for d in store.list_drafts():
         if d.get("campaign") != campaign:
             continue
         if d.get("status") in ("posted", "scheduled", "skipped", "rejected"):
             continue
+        fp = d.get("fingerprint") or ""
+        # Fingerprints look like: today|2026-08-03|facebook|…
+        if f"|{day_key}|" not in f"|{fp}|":
+            continue
         results.append(publish_draft(d["id"]))
     ok = bool(results) and all(r.get("ok") for r in results)
     return {
         "ok": ok,
+        "day": day_key,
         "published_or_scheduled": sum(1 for r in results if r.get("ok")),
         "failed": sum(1 for r in results if not r.get("ok")),
         "results": results,

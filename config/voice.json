@@ -19,11 +19,27 @@
     "Unlock your potential"
   ],
   "signoff_options": [
-    "See you on the floor.",
-    "We'll keep a seat warm.",
     "Come as you are.",
+    "We'll keep a seat warm.",
     "The door is open."
   ],
+  "facebook_signoff_options": [
+    "Come as you are.",
+    "We'll keep a seat warm.",
+    "The door is open.",
+    "Hope to see you soon."
+  ],
+  "instagram_signoff_options": [
+    "Come as you are.",
+    "We'll keep a seat warm.",
+    "The door is open."
+  ],
+  "forbidden_signoffs_by_platform": {
+    "facebook": [
+      "See you on the floor.",
+      "on the floor"
+    ]
+  },
   "hashtags": {
     "core": ["#SacredGround", "#ArlingtonHeights", "#ShopSacredGround"],
     "events": ["#ChicagoEvents", "#CrystalShop", "#EnergyHealing"],
