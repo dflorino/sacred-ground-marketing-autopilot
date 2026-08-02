@@ -39,6 +39,16 @@ def main(argv: Optional[List[str]] = None) -> int:
         help="Limit draft creation to one or more campaigns (repeatable). "
         "Daily Today automation should pass --campaign today.",
     )
+    p_run.add_argument(
+        "--publish",
+        action="store_true",
+        help="After creating/approving Today drafts, publish/schedule via Zernio.",
+    )
+
+    p_pub = sub.add_parser(
+        "publish-today",
+        help="Publish approved Today drafts via Zernio (compose must already be attached).",
+    )
 
     p_list = sub.add_parser("list", help="List drafts")
     p_list.add_argument("--status", default=None)
@@ -109,9 +119,16 @@ def main(argv: Optional[List[str]] = None) -> int:
         result = pipeline.generate_batch(
             source=args.source,
             campaigns=args.campaigns,
+            publish=bool(args.publish),
         )
         _print(result)
         return 0 if result.get("ok") else 1
+
+    if args.cmd == "publish-today":
+        from . import publish as pub
+
+        _print(pub.publish_today_approved())
+        return 0
 
     if args.cmd == "list":
         _print(store.list_drafts(status=args.status))

@@ -1,9 +1,11 @@
 from __future__ import annotations
 
+import os
 from datetime import datetime
 from typing import Any, Dict, List, Optional
 
-from . import captions, classify, images, schedule, store
+from . import captions, classify, compose, images, schedule, store
+from . import publish as publish_mod
 from .control import is_paused, phase, publish_allowed
 from .ingest import load_events, today_local, tzinfo
 from .models import DraftPackage, Event
@@ -105,10 +107,88 @@ def _auto_ready_for_publish(draft_id: str) -> Dict[str, Any]:
     )
 
 
+def _attach_today_composite(
+    drafts: List[Dict[str, Any]],
+    events: List[Event],
+    day,
+    background_url: str,
+) -> Dict[str, Any]:
+    """Compose branded graphic once and attach to all Today drafts."""
+    if os.environ.get("SGMA_SKIP_COMPOSE") == "1":
+        return {
+            "path": None,
+            "public_url": background_url,
+            "contrast": "skipped",
+            "luma": None,
+            "overlay": None,
+            "url_via": "skipped",
+            "filename": None,
+        }
+    result = compose.compose_today_graphic(
+        background_url=background_url,
+        events=events,
+        day=day,
+    )
+    public_url = None
+    # Prefer Zernio-hosted https URL when API key is present
+    try:
+        from . import zernio
+
+        if zernio.configured():
+            public_url = zernio.upload_image(result["path"], filename=result["filename"])
+    except Exception as exc:  # keep local composite; publish step will retry/report
+        result["upload_error"] = str(exc)
+
+    # GitHub raw fallback for public repo (so media URL is https even without Zernio upload)
+    if not public_url:
+        branch = (
+            os.environ.get("GITHUB_REF_NAME")
+            or os.environ.get("COMPOSITE_BRANCH")
+            or "cursor/today-campaign-autopilot-c113"
+        )
+        public_url = (
+            "https://raw.githubusercontent.com/dflorino/sacred-ground-marketing-autopilot/"
+            f"{branch}/data/composites/{result['filename']}"
+        )
+        result["url_via"] = "github_raw"
+    else:
+        result["url_via"] = "zernio_media"
+
+    result["public_url"] = public_url
+    image_patch = {
+        "source": "composed_today",
+        "url": public_url,
+        "local_path": result["path"],
+        "event_id": events[0].id if len(events) == 1 else None,
+        "prompt": None,
+        "recommendation": (
+            f"Composed Today graphic ({result['contrast']} text, luma {result['luma']}) "
+            f"with translucent logo + website/phone footer."
+        ),
+        "rule": "composed",
+        "contrast": result["contrast"],
+        "luma": result["luma"],
+        "overlay": result.get("overlay"),
+    }
+    for d in drafts:
+        if d.get("campaign") != "today":
+            continue
+        updated = store.update_draft(
+            d["id"],
+            allow_content_update=True,
+            image=image_patch,
+            notes=list(d.get("notes") or [])
+            + [f"composed:{result['filename']}", f"contrast:{result['contrast']}"],
+        )
+        d.update(updated)
+    return result
+
+
 def generate_batch(
     source: str = "auto",
     as_of: Optional[datetime] = None,
     campaigns: Optional[List[str]] = None,
+    publish: bool = False,
 ) -> Dict[str, Any]:
     """
     Create draft packages for today / week / spotlights.
@@ -169,6 +249,9 @@ def generate_batch(
     if is_paused():
         notes_base.append("Autopilot paused — drafts only; no schedule/publish.")
 
+    composite_meta: Optional[Dict[str, Any]] = None
+    publish_results: Optional[Dict[str, Any]] = None
+
     # --- Today (events day OR empty-day visit post) ---
     today_cfg = (cfg.get("campaigns") or {}).get("today") or {}
     if _want("today") and today_cfg.get("enabled", True):
@@ -187,6 +270,7 @@ def generate_batch(
             rule_note = f"image_rule:{img.rule}" if getattr(img, "rule", None) else None
             day_notes = visit_notes + ([rule_note] if rule_note else [])
             today_created = 0
+            today_drafts: List[Dict[str, Any]] = []
             for platform in platforms:
                 cap = captions.caption_today(today_events, platform, day)
                 draft = _make_draft(
@@ -201,9 +285,7 @@ def generate_batch(
                     notes=day_notes,
                 )
                 if draft:
-                    if today_cfg.get("auto_publish") and not is_paused():
-                        draft = _auto_ready_for_publish(draft["id"])
-                    created.append(draft)
+                    today_drafts.append(draft)
                     today_created += 1
                 else:
                     skipped_drafts.append(
@@ -213,13 +295,33 @@ def generate_batch(
                             "reason": "duplicate_or_override",
                         }
                     )
-            if today_created and img.url:
+            if today_drafts and img.url:
+                try:
+                    composite_meta = _attach_today_composite(
+                        today_drafts,
+                        today_events,
+                        day,
+                        background_url=str(img.url),
+                    )
+                except Exception as exc:
+                    composite_meta = {"error": f"compose_failed:{exc}"}
+                    for draft in today_drafts:
+                        store.update_draft(
+                            draft["id"],
+                            allow_content_update=True,
+                            notes=list(draft.get("notes") or [])
+                            + [f"compose_failed:{exc}"],
+                        )
                 images.record_image_use(
                     day=day,
-                    url=img.url,
+                    url=str(img.url),
                     rule=str(img.rule or img.source),
                     campaign="today",
                 )
+            for draft in today_drafts:
+                if today_cfg.get("auto_publish") and not is_paused():
+                    draft = _auto_ready_for_publish(draft["id"])
+                created.append(draft)
         else:
             skipped_drafts.append({"campaign": "today", "reason": "no_events_today"})
 
@@ -352,6 +454,14 @@ def generate_batch(
                     if draft:
                         created.append(draft)
 
+    # Today auto_publish → send to Zernio when requested / campaign flag + phase 2
+    today_auto = bool(((cfg.get("campaigns") or {}).get("today") or {}).get("auto_publish"))
+    should_publish = bool(publish) or (
+        today_auto and phase() >= 2 and not is_paused() and _want("today")
+    )
+    if should_publish:
+        publish_results = publish_mod.publish_today_approved()
+
     return {
         "ok": True,
         "as_of": day.isoformat(),
@@ -360,8 +470,29 @@ def generate_batch(
         "events_valid": len(events),
         "events_skipped": skipped,
         "drafts_created": len(created),
-        "drafts": [{"id": d["id"], "campaign": d["campaign"], "platform": d["platform"], "fingerprint": d["fingerprint"]} for d in created],
+        "drafts": [
+            {
+                "id": d["id"],
+                "campaign": d["campaign"],
+                "platform": d["platform"],
+                "fingerprint": d["fingerprint"],
+                "image_url": (d.get("image") or {}).get("url"),
+                "status": d.get("status"),
+            }
+            for d in created
+        ],
         "draft_skips": skipped_drafts,
+        "composite": {
+            "path": (composite_meta or {}).get("path"),
+            "public_url": (composite_meta or {}).get("public_url"),
+            "contrast": (composite_meta or {}).get("contrast"),
+            "luma": (composite_meta or {}).get("luma"),
+            "overlay": (composite_meta or {}).get("overlay"),
+            "url_via": (composite_meta or {}).get("url_via"),
+        }
+        if composite_meta
+        else None,
+        "publish": publish_results,
         "phase": phase(),
         "paused": is_paused(),
     }
