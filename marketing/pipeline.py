@@ -105,13 +105,20 @@ def _auto_ready_for_publish(draft_id: str) -> Dict[str, Any]:
     )
 
 
-def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Dict[str, Any]:
+def generate_batch(
+    source: str = "auto",
+    as_of: Optional[datetime] = None,
+    campaigns: Optional[List[str]] = None,
+) -> Dict[str, Any]:
     """
     Create draft packages for today / week / spotlights.
 
     For Automations / production: use source="live-strict".
     If WordPress/TEC refresh fails, return ok=False and create zero drafts
     (never silently use stale cache).
+
+    campaigns: optional allow-list (e.g. ["today"]). When set, only those
+    campaign types are created — used by the daily Today automation.
 
     Respects pause for *publishing* only — drafts still generate when paused
     so the queue stays warm; set notes accordingly.
@@ -154,6 +161,9 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
     skipped_drafts: List[Dict[str, Any]] = []
     platforms = list(settings().get("platforms") or ["facebook", "instagram"])
     cfg = settings()
+    allowed = {c.strip().lower() for c in (campaigns or []) if c and str(c).strip()}
+    def _want(name: str) -> bool:
+        return (not allowed) or (name in allowed)
 
     notes_base: List[str] = []
     if is_paused():
@@ -161,7 +171,7 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
 
     # --- Today (events day OR empty-day visit post) ---
     today_cfg = (cfg.get("campaigns") or {}).get("today") or {}
-    if today_cfg.get("enabled", True):
+    if _want("today") and today_cfg.get("enabled", True):
         today_events = classify.events_on_day(events, day)[
             : int(cfg.get("max_today_events_in_caption") or 6)
         ]
@@ -218,7 +228,7 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
     week_events = classify.events_in_week(events, week_start)[
         : int(cfg.get("max_week_events_in_caption") or 10)
     ]
-    if week_events and cfg["campaigns"]["week"].get("enabled", True):
+    if _want("week") and week_events and cfg["campaigns"]["week"].get("enabled", True):
         img = images.plan_image(week_events, "week")
         sched = schedule.schedule_week(week_start)
         for platform in platforms:
@@ -243,12 +253,12 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                         "reason": "duplicate_or_override",
                     }
                 )
-    elif not week_events:
+    elif _want("week") and not week_events:
         skipped_drafts.append({"campaign": "week", "reason": "no_events_this_week"})
 
     # --- Week ahead (daily 7pm planner: next 7 days) ---
     wa_cfg = (cfg.get("campaigns") or {}).get("week_ahead") or {}
-    if wa_cfg.get("enabled", True):
+    if _want("week_ahead") and wa_cfg.get("enabled", True):
         horizon = int(wa_cfg.get("horizon_days") or 7)
         ahead_events = classify.events_next_days(events, day, days=horizon)[
             : int(cfg.get("max_week_ahead_events_in_caption") or 14)
@@ -284,7 +294,7 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
             )
 
     # --- Spotlights + reminders ---
-    if cfg["campaigns"]["spotlight"].get("enabled", True):
+    if _want("spotlight") and cfg["campaigns"]["spotlight"].get("enabled", True):
         for ev in classify.spotlight_candidates(events, on=day):
             img = images.plan_image([ev], "spotlight")
             # initial spotlight (extra=initial)
