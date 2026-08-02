@@ -141,13 +141,19 @@ def _auto_ready_for_publish(draft_id: str) -> Dict[str, Any]:
     )
 
 
-def _attach_today_composite(
+def _attach_composite(
     drafts: List[Dict[str, Any]],
+    *,
+    campaign: str,
     events: List[Event],
     day,
     background_url: str,
 ) -> Dict[str, Any]:
-    """Compose branded graphic once and attach to all Today drafts."""
+    """Compose branded graphic once and attach to matching campaign drafts.
+
+    Rule for ALL campaigns: clean photo + logo; event copy in cream footer
+    (never painted over the photo).
+    """
     if os.environ.get("SGMA_SKIP_COMPOSE") == "1":
         return {
             "path": None,
@@ -157,8 +163,10 @@ def _attach_today_composite(
             "overlay": None,
             "url_via": "skipped",
             "filename": None,
+            "campaign": campaign,
         }
-    result = compose.compose_today_graphic(
+    result = compose.compose_campaign_graphic(
+        campaign=campaign,
         background_url=background_url,
         events=events,
         day=day,
@@ -202,32 +210,49 @@ def _attach_today_composite(
 
     result["public_url"] = public_url
     image_patch = {
-        "source": "composed_today",
+        "source": f"composed_{campaign}",
         "url": public_url,
         "local_path": result["path"],
         "event_id": events[0].id if len(events) == 1 else None,
         "prompt": None,
         "recommendation": (
-            f"Composed Today graphic ({result['contrast']} text, luma {result['luma']}) "
-            f"with translucent logo + website/phone footer."
+            f"Composed {campaign} graphic — clean photo + logo; "
+            f"event copy in cream footer (no text over photo)."
         ),
         "rule": "composed",
         "contrast": result["contrast"],
         "luma": result["luma"],
         "overlay": result.get("overlay"),
+        "overlay_on_photo": False,
     }
     for d in drafts:
-        if d.get("campaign") != "today":
+        if d.get("campaign") != campaign:
             continue
         updated = store.update_draft(
             d["id"],
             allow_content_update=True,
             image=image_patch,
             notes=list(d.get("notes") or [])
-            + [f"composed:{result['filename']}", f"contrast:{result['contrast']}"],
+            + [f"composed:{result['filename']}", "footer_text_no_overlay"],
         )
         d.update(updated)
     return result
+
+
+def _attach_today_composite(
+    drafts: List[Dict[str, Any]],
+    events: List[Event],
+    day,
+    background_url: str,
+) -> Dict[str, Any]:
+    """Back-compat wrapper."""
+    return _attach_composite(
+        drafts,
+        campaign="today",
+        events=events,
+        day=day,
+        background_url=background_url,
+    )
 
 
 def generate_batch(
@@ -379,6 +404,7 @@ def generate_batch(
     if _want("week") and week_events and cfg["campaigns"]["week"].get("enabled", True):
         img = images.plan_image(week_events, "week")
         sched = schedule.schedule_week(week_start)
+        week_drafts: List[Dict[str, Any]] = []
         for platform in platforms:
             cap = captions.caption_week(week_events, platform, week_start)
             draft = _make_draft(
@@ -392,7 +418,7 @@ def generate_batch(
                 notes=notes_base,
             )
             if draft:
-                created.append(draft)
+                week_drafts.append(draft)
             else:
                 skipped_drafts.append(
                     {
@@ -401,6 +427,24 @@ def generate_batch(
                         "reason": "duplicate_or_override",
                     }
                 )
+        if week_drafts and img.url:
+            try:
+                _attach_composite(
+                    week_drafts,
+                    campaign="week",
+                    events=week_events,
+                    day=week_start,
+                    background_url=str(img.url),
+                )
+            except Exception as exc:
+                for draft in week_drafts:
+                    store.update_draft(
+                        draft["id"],
+                        allow_content_update=True,
+                        notes=list(draft.get("notes") or [])
+                        + [f"compose_failed:{exc}"],
+                    )
+        created.extend(week_drafts)
     elif _want("week") and not week_events:
         skipped_drafts.append({"campaign": "week", "reason": "no_events_this_week"})
 
@@ -414,6 +458,7 @@ def generate_batch(
         if ahead_events:
             img = images.plan_image(ahead_events, "week_ahead")
             sched = schedule.schedule_week_ahead(day)
+            wa_drafts: List[Dict[str, Any]] = []
             for platform in platforms:
                 cap = captions.caption_week_ahead(ahead_events, platform, day)
                 draft = _make_draft(
@@ -427,7 +472,7 @@ def generate_batch(
                     notes=notes_base + ["daily_7pm_next_7_days"],
                 )
                 if draft:
-                    created.append(draft)
+                    wa_drafts.append(draft)
                 else:
                     skipped_drafts.append(
                         {
@@ -436,6 +481,24 @@ def generate_batch(
                             "reason": "duplicate_or_override",
                         }
                     )
+            if wa_drafts and img.url:
+                try:
+                    _attach_composite(
+                        wa_drafts,
+                        campaign="week_ahead",
+                        events=ahead_events,
+                        day=day,
+                        background_url=str(img.url),
+                    )
+                except Exception as exc:
+                    for draft in wa_drafts:
+                        store.update_draft(
+                            draft["id"],
+                            allow_content_update=True,
+                            notes=list(draft.get("notes") or [])
+                            + [f"compose_failed:{exc}"],
+                        )
+            created.extend(wa_drafts)
         else:
             skipped_drafts.append(
                 {"campaign": "week_ahead", "reason": "no_events_next_7_days"}
@@ -445,6 +508,7 @@ def generate_batch(
     if _want("spotlight") and cfg["campaigns"]["spotlight"].get("enabled", True):
         for ev in classify.spotlight_candidates(events, on=day):
             img = images.plan_image([ev], "spotlight")
+            spot_drafts: List[Dict[str, Any]] = []
             # initial spotlight (extra=initial)
             sched0 = schedule.schedule_spotlight(ev, days_before=None)
             for platform in platforms:
@@ -461,7 +525,7 @@ def generate_batch(
                     notes=notes_base + ["special_event_spotlight"],
                 )
                 if draft:
-                    created.append(draft)
+                    spot_drafts.append(draft)
                 else:
                     skipped_drafts.append(
                         {
@@ -498,7 +562,26 @@ def generate_batch(
                         notes=notes_base + [f"reminder_{offset}d"],
                     )
                     if draft:
-                        created.append(draft)
+                        spot_drafts.append(draft)
+
+            if spot_drafts and img.url:
+                try:
+                    _attach_composite(
+                        spot_drafts,
+                        campaign="spotlight",
+                        events=[ev],
+                        day=day,
+                        background_url=str(img.url),
+                    )
+                except Exception as exc:
+                    for draft in spot_drafts:
+                        store.update_draft(
+                            draft["id"],
+                            allow_content_update=True,
+                            notes=list(draft.get("notes") or [])
+                            + [f"compose_failed:{exc}"],
+                        )
+            created.extend(spot_drafts)
 
     # Today auto_publish → send to Zernio when requested / campaign flag + phase 2
     today_auto = bool(((cfg.get("campaigns") or {}).get("today") or {}).get("auto_publish"))

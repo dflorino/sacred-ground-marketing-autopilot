@@ -40,6 +40,32 @@ class ComposeTests(unittest.TestCase):
                 # Photo square + tall footer band for event copy
                 self.assertGreaterEqual(img.size[1], 1080 + 300)
 
+    def test_all_campaigns_footer_no_overlay(self) -> None:
+        from marketing import compose
+
+        with tempfile.TemporaryDirectory() as td:
+            bg = os.path.join(td, "bg.png")
+            Image.new("RGB", (200, 200), (30, 30, 50)).save(bg)
+            expected = {
+                "today": "TODAY",
+                "week": "THIS WEEK",
+                "week_ahead": "NEXT 7 DAYS",
+                "spotlight": "SPOTLIGHT",
+            }
+            for campaign, word in expected.items():
+                out = os.path.join(td, f"{campaign}.png")
+                meta = compose.compose_campaign_graphic(
+                    campaign=campaign,
+                    background_url=bg,
+                    events=[],
+                    day=date(2026, 8, 10),
+                    out_path=out,
+                )
+                self.assertEqual(meta["overlay"]["campaign_word"], word)
+                self.assertFalse(meta["overlay_on_photo"])
+                self.assertEqual(meta["footer"]["website"], "shopsacredground.com")
+                self.assertTrue(os.path.exists(out))
+
 
 if __name__ == "__main__":
     unittest.main()

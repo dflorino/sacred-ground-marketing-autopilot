@@ -1,28 +1,31 @@
 ---
-description: Sacred Ground logo + footer text rules for FB/IG social creatives
+description: Sacred Ground logo + footer text rules for ALL FB/IG social creatives
 alwaysApply: true
 ---
 
 # Social image branding (Facebook + Instagram)
 
-Every Sacred Ground social graphic for Autopilot / ML Social / Zernio **must** include:
+Applies to **every** Autopilot / ML Social / Zernio campaign: `today`, `week`, `week_ahead`, `spotlight`.
+
+Every Sacred Ground social graphic **must** include:
 
 1. **Sacred Ground circular logo** — `config/brand/sacred-ground-logo-circle-transparent.png`
 2. **Clean photo** — no event/campaign text painted over the image
-3. **Cream footer band under the photo** with event copy + website + phone (always)
+3. **Cream footer band under the photo** with campaign/event copy + website + phone (always)
 
-## No text over the photo (required)
+## No text over the photo (required — all posts)
 
-- Do **not** place TODAY / event title / time / location over busy specialty art
+- Do **not** place campaign words, event titles, times, or location over the photo
 - Photo area = image + translucent circular logo only
 - All readable copy goes in the cream footer under the photo
+- This is mandatory for Today, This Week, Next 7 Days, and Spotlight alike
 
 ## Footer band (required — always)
 
 - Extend the canvas below the photo (cream/light band)
 - Always include, centered and readable in black ink on cream:
-  - Campaign word (e.g. `TODAY`)
-  - Who / what (event title or visit line)
+  - Campaign word (`TODAY` / `THIS WEEK` / `NEXT 7 DAYS` / `SPOTLIGHT`)
+  - Who / what (event title(s) or visit line — keep short)
   - Day·time · Arlington Heights (as fits)
   - `shopsacredground.com`
   - `847-749-3922`
@@ -38,8 +41,8 @@ Every Sacred Ground social graphic for Autopilot / ML Social / Zernio **must** i
 
 | Zone | Content |
 |---|---|
-| **Photo** | Specialty / rotation / store image + circular logo (bottom-left of photo) |
-| **Below photo** | TODAY + event lines + website + phone |
+| **Photo** | Specialty / rotation / store / event image + circular logo (bottom-left of photo) |
+| **Below photo** | Campaign word + event lines + website + phone |
 
 ## Logo
 
@@ -52,8 +55,10 @@ Every Sacred Ground social graphic for Autopilot / ML Social / Zernio **must** i
 - Warm experience language + clickable booking/event link
 - Phone/site may also appear in caption; footer on the graphic is still required
 
-## Daily week-ahead (7:00 PM America/Chicago)
+## Campaign backgrounds
 
-- Campaign `week_ahead`: next 7 days on FB+IG
-- Background: Sacred Ground store photo
-- Same footer rule: event/planner copy + website + phone under the image
+- **today** — image rules library / specialty / rotation / store exterior
+- **week** — event or store image
+- **week_ahead** — Sacred Ground store photo
+- **spotlight** — event featured or store fallback
+- All of the above still get the same footer layout (no text over photo)

@@ -23,9 +23,10 @@
       "footer_band_phone"
     ],
     "no_text_over_photo": true,
+    "applies_to_campaigns": ["today", "week", "week_ahead", "spotlight"],
     "no_black_box": true,
     "footer_required": true,
-    "notes": "Event copy lives in the cream footer under the photo so busy specialty images stay readable."
+    "notes": "ALL social posts: clean photo + logo; campaign/event copy + website/phone in cream footer under the photo. Never paint text over the image."
   },
   "contrast": {
     "method": "mean_luma",
