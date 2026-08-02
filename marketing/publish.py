@@ -114,6 +114,48 @@ def publish_draft(draft_id: str) -> Dict[str, Any]:
             "draft_id": draft_id,
             "message": "Set ZERNIO_API_KEY in the automation environment once.",
         }
+
+    # Cross-checkout guard: skip if Zernio already has a Today post today.
+    if d.get("campaign") == "today":
+        platform = d.get("platform") or ""
+        acct = (accounts().get(platform) or {}).get("accountId")
+        day_key = None
+        sched = (d.get("schedule_recommendation") or {}).get("recommended_at")
+        if sched:
+            try:
+                day_key = datetime.fromisoformat(sched).astimezone(tzinfo()).date()
+            except ValueError:
+                day_key = None
+        if day_key is None:
+            day_key = datetime.now(tzinfo()).date()
+        existing = zernio.existing_today_post(
+            platform=platform,
+            account_id=str(acct or ""),
+            day=day_key,
+        )
+        if existing:
+            external = {
+                "zernio_existing": {
+                    "id": existing.get("_id") or existing.get("id"),
+                    "status": existing.get("status"),
+                    "content": ((existing.get("content") or "")[:120]),
+                }
+            }
+            draft = mark_posted(draft_id, external=external)
+            store.update_draft(
+                draft_id,
+                notes=list(draft.get("notes") or [])
+                + ["skipped_publish: already_live_on_zernio_today"],
+            )
+            return {
+                "ok": True,
+                "state": "already_posted",
+                "draft_id": draft_id,
+                "skipped": True,
+                "reason": "already_live_on_zernio_today",
+                "zernio_post_id": existing.get("_id") or existing.get("id"),
+            }
+
     payload = schedule_payload(d)
     try:
         result = zernio.publish_draft_payload(payload)

@@ -1,4 +1,161 @@
 {
-  "fingerprints": {},
-  "updated_at": null
+  "fingerprints": {
+    "today|2026-08-02|facebook|25382": {
+      "draft_id": "sgma-2026-08-02-today-fb-4889be52",
+      "posted_at": "2026-08-02T14:19:54.679670-05:00",
+      "zernio": {
+        "post": {
+          "recycling": {
+            "enabled": false,
+            "gapFreq": "month",
+            "recycleCount": 0,
+            "contentVariations": [],
+            "contentVariationIndex": 0
+          },
+          "_id": "6a6f98502dd0069423932d72",
+          "userId": "6a49a0ca1f5ee39905d0dc6f",
+          "title": "",
+          "content": "Today at Sacred Ground — Tina’s Reiki & Tarot Readings.\n\nSunday, August 2 · 12:00 PM–5:00 PM\n\nStep into the wisdom of the cards, the runes, and healing Reiki energy. Tina’s sessions provide a sacred space for reflection, guidance, and deeper understanding. Whether seeking…\n\nhttps://shopsacredground.com/tina-3/\n\nSee you on the floor.\n\n#SacredGround #ArlingtonHeights #ShopSacredGround #ChicagoEvents #CrystalShop #EnergyHealing",
+          "mediaItems": [
+            {
+              "type": "image",
+              "url": "https://media.zernio.com/media/1785698383510_qdf1tz2e_today-2026-08-02.png",
+              "_id": "6a6f98502dd0069423932d73"
+            }
+          ],
+          "platforms": [
+            {
+              "platform": "facebook",
+              "accountId": {
+                "_id": "6a49a1f49d9472faae7c274e",
+                "platform": "facebook",
+                "profileId": "6a49a0ca1f5ee39905d0dc87",
+                "displayName": "Sacred Ground",
+                "isActive": true,
+                "profilePicture": "https://scontent-lhr11-1.xx.fbcdn.net/v/t39.30808-1/525520556_778113704730537_8989064612556217432_n.jpg?stp=c412.0.720.720a_cp0_dst-jpg_s50x50_tt6&_nc_cat=106&ccb=1-7&_nc_sid=f907e8&_nc_ohc=m7lYEFksLSwQ7kNvwE7HKhm&_nc_oc=AdoBvMmVa74VTzisaFzXnHz-j_pH2chawkIN4sO1FjnkphS7G07tKcUUryzvKEpgWCs&_nc_zt=24&_nc_ht=scontent-lhr11-1.xx&edm=AJdBtusEAAAA&_nc_gid=RY4l16zh5JaVcPfdlLU0pQ&_nc_tpa=Q5bMBQGQ8pKe5JREtBY8PFSyXA4EzJh48w2K7J43nlX38evlViNgkaTLwPq8ZDhjgTUtQWCsE3YL5DLS&oh=00_AQHZyg_EVnujwgP1CyrJah4_Xq2TCrBNeBbzI8o040Dqvw&oe=6A749FBC",
+                "username": "shopsacredground"
+              },
+              "profileId": "6a49a0ca1f5ee39905d0dc87",
+              "customMedia": [],
+              "scheduledFor": "2026-08-02T19:19:44.221Z",
+              "platformSpecificData": {
+                "__platformUserIdSnapshot": "10236438766043851:page:101428372368870",
+                "__usernameSnapshot": "shopsacredground",
+                "publishingStarted": "2026-08-02T19:19:45.042Z",
+                "lastPublishStage": "publishing"
+              },
+              "status": "published",
+              "publishAttempts": 0,
+              "contentHash": "2e3d01ed92c6a8c98a65f287c465f430",
+              "_id": "6a6f98502dd0069423932d74",
+              "platformPostId": "101428372368870_1076619718213266",
+              "platformPostUrl": "https://www.facebook.com/101428372368870_1076619718213266",
+              "publishedAt": "2026-08-02T19:19:52.696Z"
+            }
+          ],
+          "scheduledFor": "2026-08-02T19:19:44.221Z",
+          "timezone": "America/Chicago",
+          "status": "published",
+          "tags": [],
+          "hashtags": [],
+          "mentions": [],
+          "visibility": "public",
+          "crosspostingEnabled": true,
+          "metadata": {
+            "usageCounted": true
+          },
+          "publishAttempts": 0,
+          "createdAt": "2026-08-02T19:19:44.736Z",
+          "updatedAt": "2026-08-02T19:19:52.913Z",
+          "__v": 0,
+          "publishingClaimedAt": "2026-08-02T19:19:44.805Z"
+        },
+        "message": "Post published successfully"
+      },
+      "payload": {
+        "publishNow": true,
+        "scheduledFor": null,
+        "timezone": "America/Chicago"
+      }
+    },
+    "today|2026-08-02|instagram|25382": {
+      "draft_id": "sgma-2026-08-02-today-ig-e58d5348",
+      "posted_at": "2026-08-02T14:20:08.507361-05:00",
+      "zernio": {
+        "post": {
+          "recycling": {
+            "enabled": false,
+            "gapFreq": "month",
+            "recycleCount": 0,
+            "contentVariations": [],
+            "contentVariationIndex": 0
+          },
+          "_id": "6a6f985b00115913efdab0b1",
+          "userId": "6a49a0ca1f5ee39905d0dc6f",
+          "title": "",
+          "content": "Today at Sacred Ground — Tina’s Reiki & Tarot Readings.\n\nSunday, August 2 · 12:00 PM–5:00 PM\n\nStep into the wisdom of the cards, the runes, and healing Reiki energy. Tina’s sessions provide a sacred space for reflection, guidance, and deeper understanding. Whether seeking…\n\nhttps://shopsacredground.com/tina-3/\n\nThe door is open.\n\n#SacredGround #ArlingtonHeights #ShopSacredGround #ChicagoEvents #CrystalShop #EnergyHealing #Chicagoland #HolisticChicago",
+          "mediaItems": [
+            {
+              "type": "image",
+              "url": "https://media.zernio.com/media/1785698383510_qdf1tz2e_today-2026-08-02.png",
+              "_id": "6a6f985b00115913efdab0b2"
+            }
+          ],
+          "platforms": [
+            {
+              "platform": "instagram",
+              "accountId": {
+                "_id": "6a49a12e9d9472faae7c2220",
+                "profileId": "6a49a0ca1f5ee39905d0dc87",
+                "platform": "instagram",
+                "displayName": "Sacred Ground",
+                "isActive": true,
+                "profilePicture": "https://scontent-lhr11-1.cdninstagram.com/v/t51.2885-19/313932603_854045628963650_758437280360514790_n.jpg?stp=dst-jpg_s206x206_tt6&_nc_cat=107&ccb=7-5&_nc_sid=bf7eb4&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=VZuOOadmqvoQ7kNvwE1kUSZ&_nc_oc=AdoTiHQ9Zz27ZsIJWMwQlWOUK_IiqYEkwqx5IMtxXvqjwTZsbCT5rxV8tL-27LZ4zCQ&_nc_zt=24&_nc_ht=scontent-lhr11-1.cdninstagram.com&edm=AP4hL3IEAAAA&_nc_tpa=Q5bMBQGbObK6oIt1dxPHJY3YtKcKtZLiylFy6bhBC_-xDUnc66B0pUoKElvNHuO8ac18_TKb1IP1-plVQQ&oh=00_AQFHxCKZH8U7xSPIJRaEOgcs3Ksgm_dp9mrOqyQ4SLOnUw&oe=6A7480CA",
+                "username": "shopsacredground"
+              },
+              "profileId": "6a49a0ca1f5ee39905d0dc87",
+              "customMedia": [],
+              "scheduledFor": "2026-08-02T19:19:54.811Z",
+              "platformSpecificData": {
+                "__platformUserIdSnapshot": "27979692144969047",
+                "__usernameSnapshot": "shopsacredground",
+                "publishingStarted": "2026-08-02T19:19:56.090Z",
+                "lastPublishStage": "awaiting-finalize",
+                "containerCreatedAt": "2026-08-02T19:20:07.346Z",
+                "pendingContainerId": "18079332317677764",
+                "publishedCaption": "Today at Sacred Ground — Tina’s Reiki & Tarot Readings.\n\nSunday, August 2 · 12:00 PM–5:00 PM\n\nStep into the wisdom of the cards, the runes, and healing Reiki energy. Tina’s sessions provide a sacred space for reflection, guidance, and deeper understanding. Whether seeking…\n\nhttps://shopsacredground.com/tina-3/\n\nThe door is open.\n\n#SacredGround #ArlingtonHeights #ShopSacredGround #ChicagoEvents #CrystalShop #EnergyHealing #Chicagoland #HolisticChicago"
+              },
+              "status": "processing",
+              "publishAttempts": 0,
+              "contentHash": "2abf46a139e2c007602c8535a357ce7b",
+              "_id": "6a6f985b00115913efdab0b3"
+            }
+          ],
+          "scheduledFor": "2026-08-02T19:19:54.811Z",
+          "timezone": "America/Chicago",
+          "status": "publishing",
+          "tags": [],
+          "hashtags": [],
+          "mentions": [],
+          "visibility": "public",
+          "crosspostingEnabled": true,
+          "metadata": {
+            "usageCounted": true
+          },
+          "publishAttempts": 0,
+          "createdAt": "2026-08-02T19:19:55.669Z",
+          "updatedAt": "2026-08-02T19:20:07.970Z",
+          "__v": 0,
+          "publishingClaimedAt": "2026-08-02T19:19:55.799Z"
+        },
+        "message": "Post published successfully"
+      },
+      "payload": {
+        "publishNow": true,
+        "scheduledFor": null,
+        "timezone": "America/Chicago"
+      }
+    }
+  },
+  "updated_at": "2026-08-02T14:20:08.507368-05:00"
 }

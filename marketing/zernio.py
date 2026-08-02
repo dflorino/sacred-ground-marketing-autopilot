@@ -5,10 +5,13 @@ import json
 import os
 import urllib.error
 import urllib.request
+from datetime import date, datetime
 from typing import Any, Dict, List, Optional
+from zoneinfo import ZoneInfo
 
 
 API_BASE = os.environ.get("ZERNIO_API_BASE", "https://zernio.com/api/v1").rstrip("/")
+TODAY_CAPTION_PREFIX = "Today at Sacred Ground"
 
 
 class ZernioError(RuntimeError):
@@ -129,6 +132,86 @@ def create_post(payload: Dict[str, Any]) -> Dict[str, Any]:
         if k not in ("draft_id", "fingerprint") and v is not None
     }
     return _request("POST", "/posts", body=body)
+
+
+def list_posts(*, limit: int = 20) -> List[Dict[str, Any]]:
+    """GET /posts — newest first when the API provides that order."""
+    data = _request("GET", f"/posts?limit={int(limit)}")
+    posts = data.get("posts") or data.get("data") or []
+    return posts if isinstance(posts, list) else []
+
+
+def _account_id(value: Any) -> str:
+    if isinstance(value, dict):
+        return str(value.get("_id") or value.get("id") or "")
+    return str(value or "")
+
+
+def _post_chicago_date(post: Dict[str, Any]) -> Optional[date]:
+    """Best-effort America/Chicago calendar day for a Zernio post."""
+    tz = ZoneInfo("America/Chicago")
+    for key in ("publishedAt", "scheduledFor", "createdAt"):
+        raw = post.get(key)
+        if not raw:
+            continue
+        try:
+            when = datetime.fromisoformat(str(raw).replace("Z", "+00:00"))
+        except ValueError:
+            continue
+        return when.astimezone(tz).date()
+    for plat in post.get("platforms") or []:
+        raw = plat.get("publishedAt") or plat.get("scheduledFor")
+        if not raw:
+            continue
+        try:
+            when = datetime.fromisoformat(str(raw).replace("Z", "+00:00"))
+        except ValueError:
+            continue
+        return when.astimezone(tz).date()
+    return None
+
+
+def existing_today_post(
+    *,
+    platform: str,
+    account_id: str,
+    day: date,
+) -> Optional[Dict[str, Any]]:
+    """
+    Return an existing Zernio Today post for this platform/account on the
+    given America/Chicago calendar day, if any.
+
+    Used to prevent duplicate FB/IG Today publishes across fresh checkouts
+    that do not yet share a local posted ledger.
+    """
+    if not configured():
+        return None
+    try:
+        posts = list_posts(limit=25)
+    except ZernioError:
+        return None
+    platform = (platform or "").lower()
+    account_id = str(account_id or "")
+    for post in posts:
+        content = (post.get("content") or "").strip()
+        if not content.startswith(TODAY_CAPTION_PREFIX):
+            continue
+        post_day = _post_chicago_date(post)
+        if post_day != day:
+            continue
+        status = (post.get("status") or "").lower()
+        if status in ("failed", "error", "deleted", "cancelled", "canceled"):
+            continue
+        for plat in post.get("platforms") or []:
+            if (plat.get("platform") or "").lower() != platform:
+                continue
+            if _account_id(plat.get("accountId")) != account_id:
+                continue
+            plat_status = (plat.get("status") or status or "").lower()
+            if plat_status in ("failed", "error", "deleted", "cancelled", "canceled"):
+                continue
+            return post
+    return None
 
 
 def publish_draft_payload(payload: Dict[str, Any]) -> Dict[str, Any]:
