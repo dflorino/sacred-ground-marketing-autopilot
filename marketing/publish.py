@@ -12,10 +12,21 @@ def can_schedule(draft: Dict[str, Any]) -> tuple[bool, str]:
         return False, "autopilot_paused"
     if control.phase() < 2:
         return False, "phase_1_drafts_only"
-    if draft.get("approval_status") != "approved" and control.phase() < 3:
+    from .paths import settings
+
+    camp = (settings().get("campaigns") or {}).get(draft.get("campaign") or "") or {}
+    auto = bool(camp.get("auto_publish"))
+    if (
+        draft.get("approval_status") != "approved"
+        and control.phase() < 3
+        and not auto
+    ):
         return False, "awaiting_approval"
     if draft.get("status") in ("posted", "scheduled", "skipped", "rejected"):
         return False, f"status_{draft.get('status')}"
+    img = draft.get("image") or {}
+    if not img.get("url"):
+        return False, "missing_image_url"
     return True, "ok"
 
 
@@ -36,7 +47,7 @@ def schedule_payload(draft: Dict[str, Any]) -> Dict[str, Any]:
         "platforms": [{"accountId": account_id}],
         "mediaItems": media or None,
         "scheduledFor": sched,
-        "timezone": draft.get("timezone") or accounts().get("timezone") or "America/Phoenix",
+        "timezone": draft.get("timezone") or accounts().get("timezone") or "America/Chicago",
         "publishNow": False,
         "draft_id": draft["id"],
         "fingerprint": draft["fingerprint"],

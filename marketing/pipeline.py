@@ -22,6 +22,11 @@ def _links(events: List[Event]) -> List[str]:
     return [e.url for e in events if e.url]
 
 
+def _campaign_auto_publish(campaign: str) -> bool:
+    camp = (settings().get("campaigns") or {}).get(campaign) or {}
+    return bool(camp.get("auto_publish"))
+
+
 def _make_draft(
     *,
     campaign: str,
@@ -48,6 +53,12 @@ def _make_draft(
     created = _now_iso()
     did = store.draft_id(fp, created)
     allowed, reason = publish_allowed()
+    # Today auto-publish still needs Phase 2+ and not paused; campaign flag
+    # unlocks approval, but phase_1 / pause still block.
+    if allowed and _campaign_auto_publish(campaign):
+        reason = None
+    elif not allowed:
+        pass
     pkg = DraftPackage(
         id=did,
         version="1.0",
@@ -71,6 +82,27 @@ def _make_draft(
     out = pkg.to_dict()
     out["_path"] = path
     return out
+
+
+def _auto_ready_for_publish(draft_id: str) -> Dict[str, Any]:
+    """Mark today drafts approved when campaign auto_publish is on (Phase 2+)."""
+    allowed, reason = publish_allowed()
+    if not allowed:
+        return store.update_draft(
+            draft_id,
+            publish_blocked_reason=reason,
+            notes=list(store.get_draft(draft_id).get("notes") or [])
+            + [f"auto_publish pending: {reason}"],
+        )
+    return store.update_draft(
+        draft_id,
+        status="approved",
+        approval_status="approved",
+        reviewed_at=_now_iso(),
+        publish_blocked_reason=None,
+        notes=list(store.get_draft(draft_id).get("notes") or [])
+        + ["auto_publish: approved for schedule/send"],
+    )
 
 
 def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Dict[str, Any]:
@@ -127,37 +159,48 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
     if is_paused():
         notes_base.append("Autopilot paused — drafts only; no schedule/publish.")
 
-    # --- Today ---
-    today_events = classify.events_on_day(events, day)[
-        : int(cfg.get("max_today_events_in_caption") or 6)
-    ]
-    if today_events and cfg["campaigns"]["today"].get("enabled", True):
-        img = images.plan_image(today_events, "today")
-        sched = schedule.schedule_today(day)
-        for platform in platforms:
-            cap = captions.caption_today(today_events, platform, day)
-            draft = _make_draft(
-                campaign="today",
-                platform=platform,
-                date_key=day.isoformat(),
-                events=today_events,
-                caption=cap,
-                image=img,
-                sched=sched,
-                notes=notes_base,
+    # --- Today (events day OR empty-day visit post) ---
+    today_cfg = (cfg.get("campaigns") or {}).get("today") or {}
+    if today_cfg.get("enabled", True):
+        today_events = classify.events_on_day(events, day)[
+            : int(cfg.get("max_today_events_in_caption") or 6)
+        ]
+        empty_ok = bool(today_cfg.get("empty_day_fallback", True))
+        if today_events or empty_ok:
+            img = images.plan_image(today_events, "today")
+            sched = schedule.schedule_today(day)
+            visit_notes = (
+                notes_base + ["empty_day_visit"]
+                if not today_events
+                else notes_base
             )
-            if draft:
-                created.append(draft)
-            else:
-                skipped_drafts.append(
-                    {
-                        "campaign": "today",
-                        "platform": platform,
-                        "reason": "duplicate_or_override",
-                    }
+            for platform in platforms:
+                cap = captions.caption_today(today_events, platform, day)
+                draft = _make_draft(
+                    campaign="today",
+                    platform=platform,
+                    date_key=day.isoformat(),
+                    events=today_events,
+                    caption=cap,
+                    image=img,
+                    sched=sched,
+                    extra_fp="empty_visit" if not today_events else "",
+                    notes=visit_notes,
                 )
-    elif not today_events:
-        skipped_drafts.append({"campaign": "today", "reason": "no_events_today"})
+                if draft:
+                    if today_cfg.get("auto_publish") and not is_paused():
+                        draft = _auto_ready_for_publish(draft["id"])
+                    created.append(draft)
+                else:
+                    skipped_drafts.append(
+                        {
+                            "campaign": "today",
+                            "platform": platform,
+                            "reason": "duplicate_or_override",
+                        }
+                    )
+        else:
+            skipped_drafts.append({"campaign": "today", "reason": "no_events_today"})
 
     # --- Week (always refresh Monday key; generate any day for current week) ---
     week_start = classify.week_start_for(day)
@@ -191,6 +234,43 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                 )
     elif not week_events:
         skipped_drafts.append({"campaign": "week", "reason": "no_events_this_week"})
+
+    # --- Week ahead (daily 7pm planner: next 7 days) ---
+    wa_cfg = (cfg.get("campaigns") or {}).get("week_ahead") or {}
+    if wa_cfg.get("enabled", True):
+        horizon = int(wa_cfg.get("horizon_days") or 7)
+        ahead_events = classify.events_next_days(events, day, days=horizon)[
+            : int(cfg.get("max_week_ahead_events_in_caption") or 14)
+        ]
+        if ahead_events:
+            img = images.plan_image(ahead_events, "week_ahead")
+            sched = schedule.schedule_week_ahead(day)
+            for platform in platforms:
+                cap = captions.caption_week_ahead(ahead_events, platform, day)
+                draft = _make_draft(
+                    campaign="week_ahead",
+                    platform=platform,
+                    date_key=day.isoformat(),
+                    events=ahead_events,
+                    caption=cap,
+                    image=img,
+                    sched=sched,
+                    notes=notes_base + ["daily_7pm_next_7_days"],
+                )
+                if draft:
+                    created.append(draft)
+                else:
+                    skipped_drafts.append(
+                        {
+                            "campaign": "week_ahead",
+                            "platform": platform,
+                            "reason": "duplicate_or_override",
+                        }
+                    )
+        else:
+            skipped_drafts.append(
+                {"campaign": "week_ahead", "reason": "no_events_next_7_days"}
+            )
 
     # --- Spotlights + reminders ---
     if cfg["campaigns"]["spotlight"].get("enabled", True):

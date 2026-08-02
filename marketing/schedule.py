@@ -19,7 +19,7 @@ def schedule_today(day: date) -> SchedulePlan:
     when = _at_local(day, hhmm)
     return SchedulePlan(
         recommended_at=when.isoformat(),
-        rationale="Morning window so same-day visitors can plan a stop.",
+        rationale="Daily 7:00 AM Central — today's TEC events for same-day planning.",
     )
 
 
@@ -34,6 +34,16 @@ def schedule_week(week_start: date) -> SchedulePlan:
     return SchedulePlan(
         recommended_at=when.isoformat(),
         rationale="Weekly roundup at the start of the week.",
+    )
+
+
+def schedule_week_ahead(day: date) -> SchedulePlan:
+    """Daily 7pm Central — next-7-days planner post."""
+    cfg = settings()["campaigns"]["week_ahead"]
+    when = _at_local(day, cfg.get("schedule_local_time") or "19:00")
+    return SchedulePlan(
+        recommended_at=when.isoformat(),
+        rationale="Daily evening planner so people can book the next 7 days.",
     )
 
 

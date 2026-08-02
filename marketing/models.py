@@ -20,7 +20,7 @@ class Event:
     tags: List[str] = field(default_factory=list)
     cost: str = ""
     venue_name: str = "Sacred Ground"
-    timezone: str = "America/Phoenix"
+    timezone: str = "America/Chicago"
     is_special: bool = False
     is_one_time: bool = False
 

@@ -50,7 +50,7 @@ def _event_line(ev: Event, with_link: bool) -> str:
 
 def caption_today(events: List[Event], platform: str, day: date) -> Dict:
     if not events:
-        raise ValueError("today caption requires events")
+        return caption_today_visit(platform, day)
     day_label = day.strftime("%A, %B %d").replace(" 0", " ")
     with_links = platform == "facebook" or True
     lines = [_event_line(e, with_links) for e in events]
@@ -74,6 +74,24 @@ def caption_today(events: List[Event], platform: str, day: date) -> Dict:
     return {"text": text, "hashtags": tags, "hook": hook}
 
 
+def caption_today_visit(platform: str, day: date) -> Dict:
+    """Empty calendar day — still post a warm visit/brand invite."""
+    hook = "Visit Sacred Ground for cool and unusual things."
+    body = (
+        f"{hook}\n\n"
+        "Chicagoland’s most famous crystal shop — crystals, books, gifts, "
+        "and a floor full of curious finds in Arlington Heights.\n\n"
+        "Come browse when you need a little sparkle in the day.\n"
+        "847-749-3922\n"
+        "https://shopsacredground.com/\n\n"
+        + _signoff(f"today-visit|{day.isoformat()}|{platform}")
+    )
+    tags = _hashtags(platform)
+    text = body + "\n\n" + " ".join(tags)
+    _assert_not_generic(text)
+    return {"text": text, "hashtags": tags, "hook": hook}
+
+
 def caption_week(events: List[Event], platform: str, week_start: date) -> Dict:
     if not events:
         raise ValueError("week caption requires events")
@@ -90,6 +108,35 @@ def caption_week(events: List[Event], platform: str, week_start: date) -> Dict:
     text = body + "\n\n" + " ".join(tags)
     if platform == "instagram":
         max_chars = int(voice().get("instagram_style", {}).get("max_chars") or 2100)
+        if len(text) > max_chars:
+            text = text[: max_chars - 1].rsplit(" ", 1)[0] + "…"
+    _assert_not_generic(text)
+    return {"text": text, "hashtags": tags, "hook": hook}
+
+
+def caption_week_ahead(events: List[Event], platform: str, day: date) -> Dict:
+    """Daily evening planner — next 7 days so people can book ahead."""
+    if not events:
+        raise ValueError("week_ahead caption requires events")
+    from datetime import timedelta
+
+    cfg = voice()
+    end = day + timedelta(days=6)
+    range_label = (
+        f"{day.strftime('%a %b %d').replace(' 0', ' ')}"
+        f"–{end.strftime('%a %b %d').replace(' 0', ' ')}"
+    )
+    hook = f"What’s ahead at Sacred Ground ({range_label})."
+    lines = [_event_line(e, True) for e in events]
+    body = hook + "\n\n" + "\n".join(lines)
+    body += "\n\nPlan your week — call to book a session or grab your spot online."
+    body += "\n847-749-3922"
+    body += "\nhttps://shopsacredground.com/events/"
+    body += "\n\n" + _signoff(f"week_ahead|{day.isoformat()}|{platform}")
+    tags = _hashtags(platform)
+    text = body + "\n\n" + " ".join(tags)
+    if platform == "instagram":
+        max_chars = int(cfg.get("instagram_style", {}).get("max_chars") or 2100)
         if len(text) > max_chars:
             text = text[: max_chars - 1].rsplit(" ", 1)[0] + "…"
     _assert_not_generic(text)

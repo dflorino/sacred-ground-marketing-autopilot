@@ -1,6 +1,6 @@
 {
   "brand": "Sacred Ground",
-  "location": "Tucson",
+  "location": "Arlington Heights",
   "tone": [
     "warm",
     "grounded",
@@ -25,9 +25,9 @@
     "The door is open."
   ],
   "hashtags": {
-    "core": ["#SacredGround", "#Tucson", "#ShopSacredGround"],
-    "events": ["#TucsonEvents", "#CrystalShop", "#EnergyHealing"],
-    "instagram_extra": ["#TucsonAZ", "#HolisticTucson"]
+    "core": ["#SacredGround", "#ArlingtonHeights", "#ShopSacredGround"],
+    "events": ["#ChicagoEvents", "#CrystalShop", "#EnergyHealing"],
+    "instagram_extra": ["#Chicagoland", "#HolisticChicago"]
   },
   "facebook_style": {
     "length": "medium",

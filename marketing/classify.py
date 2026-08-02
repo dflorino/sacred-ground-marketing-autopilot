@@ -72,10 +72,24 @@ def is_upcoming_or_today(event: Event, on: Optional[date] = None) -> bool:
     return start.date() >= on
 
 
+def normalize_event_url(url: str) -> str:
+    """Turn relative booking paths into absolute Sacred Ground URLs."""
+    if not url:
+        return ""
+    u = url.strip()
+    if u.startswith("http://") or u.startswith("https://"):
+        return u
+    site = (settings().get("site_url") or "https://shopsacredground.com").rstrip("/")
+    if u.startswith("/"):
+        return site + u
+    return f"{site}/{u}"
+
+
 def has_required_link(event: Event) -> bool:
     if not settings().get("require_event_url", True):
         return True
-    return bool(event.url and event.url.startswith("http"))
+    event.url = normalize_event_url(event.url or "")
+    return bool(event.url.startswith("http"))
 
 
 def filter_valid(events: List[Event], on: Optional[date] = None) -> Tuple[List[Event], List[Dict]]:
@@ -114,6 +128,18 @@ def events_in_week(events: List[Event], week_start: date) -> List[Event]:
     for ev in events:
         start = parse_tec_datetime(ev.start_date)
         if start and week_start <= start.date() <= week_end:
+            out.append(ev)
+    out.sort(key=lambda e: e.start_date)
+    return out
+
+
+def events_next_days(events: List[Event], on: date, days: int = 7) -> List[Event]:
+    """Rolling window: today through today+(days-1)."""
+    end = on + timedelta(days=max(1, days) - 1)
+    out: List[Event] = []
+    for ev in events:
+        start = parse_tec_datetime(ev.start_date)
+        if start and on <= start.date() <= end:
             out.append(ev)
     out.sort(key=lambda e: e.start_date)
     return out

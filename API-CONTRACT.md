@@ -19,12 +19,12 @@ It does **not** publish in Phase 1. Publishing is gated by phase + approval + pa
   "approval_status": "pending",
   "fingerprint": "today|2026-07-09|facebook|412,415",
   "created_at": "2026-07-09T17:00:00-07:00",
-  "timezone": "America/Phoenix",
+  "timezone": "America/Chicago",
   "schedule_recommendation": {
-    "recommended_at": "2026-07-09T09:00:00-07:00",
+    "recommended_at": "2026-07-09T09:00:00-05:00",
     "rationale": "Morning shop-open window for same-day foot traffic"
   },
-  "caption": { "text": "...", "hashtags": ["#SacredGround", "#Tucson"] },
+  "caption": { "text": "...", "hashtags": ["#SacredGround", "#ArlingtonHeights"] },
   "image": {
     "source": "event_featured",
     "url": "https://...",

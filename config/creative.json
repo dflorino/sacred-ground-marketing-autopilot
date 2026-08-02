@@ -1,0 +1,84 @@
+{
+  "brand": "Sacred Ground",
+  "timezone": "America/Chicago",
+  "location": "Arlington Heights",
+  "logo": {
+    "required": true,
+    "path": "config/brand/sacred-ground-logo-circle-transparent.png",
+    "source_path": "config/brand/sacred-ground-logo-circle.png",
+    "background": "stripped_transparent",
+    "opacity": 0.88,
+    "placement": "bottom_left",
+    "max_width_percent": 13,
+    "min_width_percent": 10,
+    "notes": "Circular logo only. Strip black square. Darker translucent ~88% next renders."
+  },
+  "layout": {
+    "top": "campaign_word",
+    "middle": [
+      "who_what",
+      "day_time_location"
+    ],
+    "bottom": [
+      "footer_band_website",
+      "footer_band_phone"
+    ],
+    "no_black_box": true,
+    "footer_required": true
+  },
+  "contrast": {
+    "method": "mean_luma",
+    "light_threshold": 140,
+    "light_image_text": "black",
+    "dark_image_text": "gold"
+  },
+  "overlay_text": {
+    "required": true,
+    "website_line": "shopsacredground.com",
+    "never_on_image": [
+      "street_address",
+      "long_https_url",
+      "hashtags",
+      "full_description"
+    ],
+    "max_image_area_percent": 20,
+    "no_white_border": true
+  },
+  "caption": {
+    "include_experience_language": true,
+    "include_link": true,
+    "phone_and_address": "optional_in_caption_only_unless_on_image_bottom"
+  },
+  "type_style": {
+    "look": "handmade_un_ai",
+    "mix_fonts": true,
+    "prefer_curves_arcs_waves": true,
+    "avoid": "single rigid centered template stack",
+    "fonts_example": [
+      "BubblegumSans",
+      "DancingScript",
+      "IndieFlower",
+      "Courgette",
+      "Bradley Hand"
+    ]
+  },
+  "campaigns": {
+    "today": {
+      "time": "07:00 America/Chicago",
+      "platforms": ["facebook", "instagram"],
+      "image_policy": "single_event_featured_else_store",
+      "default_background": "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.15-AM.png",
+      "empty_day": "visit_brand_store_exterior",
+      "purpose": "same_day_events_or_visit_invite"
+    },
+    "week_ahead": {
+      "time": "19:00 America/Chicago",
+      "platforms": [
+        "facebook",
+        "instagram"
+      ],
+      "background": "store_exterior",
+      "purpose": "next_7_days_planner"
+    }
+  }
+}

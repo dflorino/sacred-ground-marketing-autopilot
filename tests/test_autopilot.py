@@ -53,7 +53,7 @@ class AutopilotTests(unittest.TestCase):
     def test_generate_batch_creates_today_week_spotlight(self) -> None:
         from marketing import pipeline, store
 
-        as_of = datetime(2026, 7, 9, 8, 0, tzinfo=ZoneInfo("America/Phoenix"))
+        as_of = datetime(2026, 7, 9, 8, 0, tzinfo=ZoneInfo("America/Chicago"))
         result = pipeline.generate_batch(source="fixture", as_of=as_of)
         self.assertTrue(result["ok"])
         self.assertGreaterEqual(result["drafts_created"], 4)
@@ -79,7 +79,7 @@ class AutopilotTests(unittest.TestCase):
     def test_approve_does_not_publish_phase1(self) -> None:
         from marketing import pipeline, store, control
 
-        as_of = datetime(2026, 7, 9, 8, 0, tzinfo=ZoneInfo("America/Phoenix"))
+        as_of = datetime(2026, 7, 9, 8, 0, tzinfo=ZoneInfo("America/Chicago"))
         pipeline.generate_batch(source="fixture", as_of=as_of)
         d = store.list_drafts()[0]
         out = pipeline.approve(d["id"])
@@ -101,7 +101,7 @@ class AutopilotTests(unittest.TestCase):
     def test_reviewed_draft_not_overwritten_or_recreated(self) -> None:
         from marketing import pipeline, store
 
-        as_of = datetime(2026, 7, 9, 8, 0, tzinfo=ZoneInfo("America/Phoenix"))
+        as_of = datetime(2026, 7, 9, 8, 0, tzinfo=ZoneInfo("America/Chicago"))
         pipeline.generate_batch(source="fixture", as_of=as_of)
         d = next(x for x in store.list_drafts() if x["campaign"] == "today" and x["platform"] == "facebook")
         original_caption = d["caption"]["text"]
@@ -140,6 +140,79 @@ class AutopilotTests(unittest.TestCase):
         self.assertEqual(fair.title, "Holistic Fair")
         self.assertTrue(fair.featured)
         self.assertTrue(fair.is_special)
+
+    def test_today_image_policy_and_empty_day_visit(self) -> None:
+        from marketing import captions, control, images, pipeline, publish, store
+        from marketing.models import Event
+
+        store_url = images.store_image_url()
+        self.assertTrue(store_url.startswith("https://"))
+
+        one = Event(
+            id=1,
+            title="Tina",
+            start_date="2026-08-03 12:00:00",
+            end_date="2026-08-03 17:00:00",
+            url="https://shopsacredground.com/book/tina/",
+            image_url="https://example.com/tina.jpg",
+        )
+        plan = images.plan_image([one], "today")
+        self.assertEqual(plan.source, "event_featured")
+        self.assertEqual(plan.url, "https://example.com/tina.jpg")
+
+        multi = [
+            one,
+            Event(
+                id=2,
+                title="Lisa",
+                start_date="2026-08-03 12:00:00",
+                end_date="2026-08-03 17:00:00",
+                url="https://shopsacredground.com/book/lisa/",
+                image_url="https://example.com/lisa.jpg",
+            ),
+        ]
+        plan_m = images.plan_image(multi, "today")
+        self.assertEqual(plan_m.source, "store_photo")
+        self.assertEqual(plan_m.url, store_url)
+
+        plan_empty = images.plan_image([], "today")
+        self.assertEqual(plan_empty.source, "store_photo")
+        self.assertEqual(plan_empty.url, store_url)
+
+        visit = captions.caption_today_visit("facebook", date(2026, 8, 4))
+        self.assertIn("cool and unusual", visit["text"].lower())
+        self.assertIn("chicagoland", visit["text"].lower())
+
+        # Empty calendar day still creates Today drafts
+        as_of = datetime(2026, 8, 4, 7, 0, tzinfo=ZoneInfo("America/Chicago"))
+        result = pipeline.generate_batch(source="fixture", as_of=as_of)
+        self.assertTrue(result["ok"])
+        today = [d for d in result["drafts"] if d["campaign"] == "today"]
+        self.assertEqual(len(today), 2)
+        draft = store.get_draft(today[0]["id"])
+        self.assertIn("empty_day_visit", draft.get("notes") or [])
+        self.assertEqual(draft["image"]["source"], "store_photo")
+        self.assertTrue(draft["image"]["url"])
+
+        # Phase 2 + today auto_publish → ready to schedule
+        control.set_phase(2)
+        control.resume()
+        result2 = pipeline.generate_batch(source="fixture", as_of=as_of)
+        # fingerprints already exist from first run
+        self.assertEqual(result2["drafts_created"], 0)
+        # re-approve path: mark ready via publish gate on existing auto notes
+        for d in store.list_drafts():
+            if d["campaign"] == "today":
+                store.update_draft(
+                    d["id"],
+                    status="approved",
+                    approval_status="approved",
+                    publish_blocked_reason=None,
+                )
+                ok, why = publish.can_schedule(store.get_draft(d["id"]))
+                self.assertTrue(ok, why)
+                payload = publish.schedule_payload(store.get_draft(d["id"]))
+                self.assertTrue(payload["mediaItems"])
 
 
 if __name__ == "__main__":

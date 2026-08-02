@@ -10,3 +10,5 @@ data/drafts/*.json
 data/audit/*
 !data/audit/.gitkeep
 *.tmp
+.tools/
+data/drafts/_preview-*.png

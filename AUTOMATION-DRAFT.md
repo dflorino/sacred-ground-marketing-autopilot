@@ -1,17 +1,31 @@
 # Automation draft (NOT activated)
 
-Phase 1 daily draft generation for Sacred Ground Marketing Autopilot.
+Daily Today posts for Sacred Ground Marketing Autopilot (Phase 2 + today auto_publish).
 
-**Status: proposed only — do not open or activate until blockers below are cleared.**
+**Status: code ready for Today auto-approve; daily Cloud Agent publish still needs GitHub + Automation.**
+
+## Image rules (locked)
+
+| Situation | Image used |
+|-----------|------------|
+| Exactly **one** today event **with** a featured photo | That event’s featured image |
+| Multi-event day, or one event with no photo | Store **exterior** (`Screenshot-2026-03-05-at-9.20.15-AM.png`) |
+| **Empty calendar** | Store exterior + visit/brand caption |
+
+Interior kept on file: `CD3C3C2E-620B-4933-BC24-11ED63552132-1.png` (not the auto-publish fallback).
+
+Never post without a real media URL. Never AI-generate a mystery image for auto-publish.
+
+Empty-day caption: “Visit Sacred Ground for cool and unusual things” / Chicagoland’s most famous crystal shop.
 
 ## Requirements reflected
 
-1. Schedule: **7:00 AM America/Chicago** (not Phoenix; not a fixed UTC conversion in this draft)
+1. Schedule: **7:00 AM America/Chicago**
 2. Live WordPress events only (`live-strict`)
 3. Repo must be on GitHub for Cloud Agent checkout
 4. WordPress refresh failure → **zero new drafts** + clear error report (no stale cache)
 5. Never overwrite edited / approved / rejected / reviewed drafts
-6. Phase 1: **never publish**, even after approve
+6. **Today** campaign: `auto_publish=true` (auto-approves in Phase 2+). Week/spotlight still need human approve.
 
 ## Proposed configuration
 
@@ -30,7 +44,7 @@ Phase 1 daily draft generation for Sacred Ground Marketing Autopilot.
 You are running Sacred Ground Marketing Autopilot in Phase 1 (drafts only).
 
 Hard rules:
-1. Schedule context is America/Chicago. Event times on posts remain America/Phoenix shop local.
+1. Schedule context is America/Chicago. Event times and shop-local post times are America/Chicago.
 2. Refresh events from live WordPress / The Events Calendar only:
    https://shopsacredground.com/wp-json/tribe/events/v1/events
    Run: python3 -m marketing run --source live-strict
@@ -56,3 +70,15 @@ Hard rules:
 1. Initialize git and push `sacred-ground-marketing-autopilot` to GitHub under an account Cloud Agent can access.
 2. Confirm Automations schedule UI is set to **7:00 AM America/Chicago** (not Phoenix, not a silent UTC substitute).
 3. Optional but recommended: one Cloud Agent dry run that only hits TEC REST and reports success/failure — still without activating the daily schedule.
+
+
+## Daily week-ahead (proposed)
+
+| Field | Value |
+|---|---|
+| Name | **SG Marketing Week-Ahead** |
+| Trigger | Every day at **7:00 PM America/Chicago** |
+| Command | `python3 -m marketing run --source live-strict` (week_ahead drafts) |
+| Platforms | Facebook + Instagram |
+| Art | Store interior composite + darker translucent logo |
+| Phase | 1 drafts until Founder approves Phase 2 publish |

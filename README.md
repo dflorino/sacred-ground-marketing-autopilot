@@ -46,9 +46,9 @@ python3 -m api.cli serve --port 8792
 
 | Phase | Behavior |
 |---|---|
-| **1 — Drafts** (default) | Create + store drafts. No ML Social publish. |
-| **2 — Schedule after approval** | Approved drafts may be scheduled via ML Social when `phase >= 2` and pause is off. |
-| **3 — Autopilot** | Trusted event types auto-approve + schedule when `phase >= 3`. |
+| **1 — Drafts** (default) | Create + store drafts inside Sacred Ground Marketing. No ML Social publish. |
+| **2 — Schedule after approval** | Approved drafts become a Marketing Package; the **Workflow Engine** records Founder approval and hands the package to ML Social (Social Distribution Adapter). Autopilot must not bypass the Engine. |
+| **3 — Autopilot** | Trusted event types may auto-approve *inside SG policy*; the Engine still releases the package to the adapter. |
 
 ```bash
 python3 -m marketing set-phase 1
@@ -57,7 +57,7 @@ python3 -m marketing set-phase 1
 ## Guarantees
 
 - No duplicate posts (fingerprint + posted ledger)
-- No old events (America/Phoenix calendar day)
+- No old events (America/Chicago calendar day)
 - No missing links (events without URL are excluded)
 - No generic captions (Sacred Ground voice + forbidden-phrase guard)
 - Event featured image when available; otherwise a creative image prompt
@@ -70,8 +70,8 @@ python3 -m marketing set-phase 1
 - **Events:** The Events Calendar REST  
   `https://shopsacredground.com/wp-json/tribe/events/v1/events`
 - **Fallback cache:** `data/cache/live_events.json` (refreshed from WordPress when REST is unreachable)
-- **Distribution (Phase 2+):** ML Social (`social_publish`) — gated; account IDs in `config/accounts.json`
-- **This repo** owns draft state, fingerprints, and approval
+- **Distribution (Phase 2+):** Workflow Engine releases an approved Marketing Package to ML Social (`social_publish`) — last mile only. Account IDs in `config/accounts.json`. See Sacred Ground **Distribution Rule** (`Sacred-Ground-Social-Distribution-Adapter-v1.0.md`).
+- **This repo** owns draft state and fingerprints under Marketing; Founder approval and adapter handoff are Workflow Engine responsibilities
 
 ## First live batch (2026-07-09)
 

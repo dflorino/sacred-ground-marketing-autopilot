@@ -1,22 +1,43 @@
 {
   "service": "sacred-ground-marketing-autopilot",
   "version": "1.0.0",
-  "timezone": "America/Phoenix",
+  "timezone": "America/Chicago",
   "site_url": "https://shopsacredground.com",
   "tec_events_url": "https://shopsacredground.com/wp-json/tribe/events/v1/events",
   "default_phase": 1,
   "platforms": ["facebook", "instagram"],
+  "brand_images": {
+    "exterior_url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.15-AM.png",
+    "interior_url": "https://shopsacredground.com/wp-content/uploads/CD3C3C2E-620B-4933-BC24-11ED63552132-1.png",
+    "store_fallback": "exterior"
+  },
   "campaigns": {
     "today": {
       "enabled": true,
       "label": "Today at Sacred Ground",
-      "schedule_local_time": "09:00"
+      "schedule_local_time": "07:00",
+      "platforms": ["facebook", "instagram"],
+      "source": "the_events_calendar",
+      "auto_publish": true,
+      "empty_day_fallback": true,
+      "default_image_url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.15-AM.png",
+      "image_policy": "single_event_featured_else_store_exterior",
+      "notes": "Every morning 7am CT: today's TEC events (1–N), or visit/brand post if empty. Image: one event photo if present, else store exterior."
     },
     "week": {
       "enabled": true,
       "label": "This Week at Sacred Ground",
       "weekday": "monday",
       "schedule_local_time": "10:00"
+    },
+    "week_ahead": {
+      "enabled": true,
+      "label": "Next 7 Days at Sacred Ground",
+      "schedule_local_time": "19:00",
+      "horizon_days": 7,
+      "store_image_url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.15-AM.png",
+      "cta_phone": "847-749-3922",
+      "cta_site": "shopsacredground.com"
     },
     "spotlight": {
       "enabled": true,
@@ -49,5 +70,6 @@
   ],
   "require_event_url": true,
   "max_today_events_in_caption": 6,
-  "max_week_events_in_caption": 10
+  "max_week_events_in_caption": 10,
+  "max_week_ahead_events_in_caption": 14
 }
