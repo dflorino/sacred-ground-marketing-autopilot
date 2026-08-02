@@ -16,6 +16,23 @@ def _now_iso() -> str:
     return datetime.now(tzinfo()).isoformat()
 
 
+def _git_rev() -> Optional[str]:
+    """Best-effort full commit SHA for GitHub raw composite URLs."""
+    import subprocess
+
+    try:
+        out = subprocess.check_output(
+            ["git", "rev-parse", "HEAD"],
+            stderr=subprocess.DEVNULL,
+            text=True,
+        ).strip()
+        if out and len(out) >= 7:
+            return out
+    except Exception:
+        pass
+    return None
+
+
 def _git_branch() -> Optional[str]:
     """Best-effort current branch name for GitHub raw composite URLs."""
     import subprocess
@@ -156,19 +173,30 @@ def _attach_today_composite(
     except Exception as exc:  # keep local composite; publish step will retry/report
         result["upload_error"] = str(exc)
 
-    # GitHub raw fallback for public repo (so media URL is https even without Zernio upload)
+    # GitHub raw fallback for public repo (so media URL is https even without Zernio upload).
+    # Prefer commit SHA: brand-new slashy branch names often 404 on raw.githubusercontent
+    # until CDN catches up; SHA URLs are immediately fetchable after push.
     if not public_url:
+        from urllib.parse import quote
+
+        rev = (
+            os.environ.get("GITHUB_SHA")
+            or os.environ.get("COMPOSITE_SHA")
+            or _git_rev()
+        )
         branch = (
             os.environ.get("GITHUB_REF_NAME")
             or os.environ.get("COMPOSITE_BRANCH")
             or _git_branch()
             or "main"
         )
+        ref = rev or quote(branch, safe="")
         public_url = (
             "https://raw.githubusercontent.com/dflorino/sacred-ground-marketing-autopilot/"
-            f"{branch}/data/composites/{result['filename']}"
+            f"{ref}/data/composites/{result['filename']}"
         )
-        result["url_via"] = "github_raw"
+        result["url_via"] = "github_raw_sha" if rev else "github_raw"
+        result["git_ref"] = ref
     else:
         result["url_via"] = "zernio_media"
 
