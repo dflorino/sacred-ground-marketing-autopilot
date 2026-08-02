@@ -1,8 +1,8 @@
 # Automation draft (NOT activated)
 
-Daily Today posts for Sacred Ground Marketing Autopilot (Phase 2 + today auto_publish).
+Daily Today drafts for Sacred Ground Marketing Autopilot — **preview before publish**.
 
-**Status: code ready for Today auto-approve; daily Cloud Agent publish still needs GitHub + Automation.**
+**Status: auto_publish OFF. Automation must never call Zernio publish until a human approves.**
 
 ## Image rules (locked)
 
