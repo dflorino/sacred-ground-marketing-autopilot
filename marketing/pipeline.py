@@ -16,6 +16,23 @@ def _now_iso() -> str:
     return datetime.now(tzinfo()).isoformat()
 
 
+def _git_branch() -> Optional[str]:
+    """Best-effort current branch name for GitHub raw composite URLs."""
+    import subprocess
+
+    try:
+        out = subprocess.check_output(
+            ["git", "rev-parse", "--abbrev-ref", "HEAD"],
+            stderr=subprocess.DEVNULL,
+            text=True,
+        ).strip()
+        if out and out != "HEAD":
+            return out
+    except Exception:
+        pass
+    return None
+
+
 def _event_dicts(events: List[Event]) -> List[Dict[str, Any]]:
     return [e.to_dict() for e in events]
 
@@ -144,7 +161,8 @@ def _attach_today_composite(
         branch = (
             os.environ.get("GITHUB_REF_NAME")
             or os.environ.get("COMPOSITE_BRANCH")
-            or "cursor/today-campaign-autopilot-c113"
+            or _git_branch()
+            or "main"
         )
         public_url = (
             "https://raw.githubusercontent.com/dflorino/sacred-ground-marketing-autopilot/"
