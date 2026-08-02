@@ -14,26 +14,21 @@ When events exist in WordPress, Autopilot creates reviewable drafts for:
 
 ```bash
 cd ~/Projects/sacred-ground-marketing-autopilot
+pip3 install -r requirements.txt
 
-# Generate draft batch (TEC REST → live cache → fixtures)
-python3 -m marketing run --source auto
+# Daily Today automation (compose branded graphic + Zernio publish)
+export ZERNIO_API_KEY=...   # once, in Cursor Automation secrets / env
+python3 -m marketing run --source live-strict --campaign today --publish
 
-# Or from the WordPress cache already in this repo
+# Local draft-only / review
 python3 -m marketing run --source cache
-
-# Human review queue
 python3 -m marketing review
-
-# Approve one draft (still does not publish in Phase 1)
 python3 -m marketing approve DRAFT_ID
-
-# Pause / resume autopilot
 python3 -m marketing pause
 python3 -m marketing resume
-
-# Manual override: skip a fingerprint so it won't regenerate
-python3 -m marketing skip --fingerprint FINGERPRINT --reason "manual post already live"
 ```
+
+Today graphics always include: auto black/gold text from image luma, translucent circular logo, and a cream footer with `shopsacredground.com` + `847-749-3922`.
 
 HTTP (optional local review surface):
 

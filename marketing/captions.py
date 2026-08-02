@@ -114,8 +114,17 @@ def caption_week(events: List[Event], platform: str, week_start: date) -> Dict:
     return {"text": text, "hashtags": tags, "hook": hook}
 
 
+def _week_ahead_signoff(seed: str) -> str:
+    opts = voice().get("week_ahead_signoff_options") or [
+        "We'll keep the lights on.",
+        "Tomorrow is another day.",
+    ]
+    idx = int(hashlib.md5(seed.encode()).hexdigest(), 16) % len(opts)
+    return opts[idx]
+
+
 def caption_week_ahead(events: List[Event], platform: str, day: date) -> Dict:
-    """Daily evening planner — next 7 days so people can book ahead."""
+    """Daily 7pm goodnight planner — next 7 days to look forward to."""
     if not events:
         raise ValueError("week_ahead caption requires events")
     from datetime import timedelta
@@ -126,13 +135,19 @@ def caption_week_ahead(events: List[Event], platform: str, day: date) -> Dict:
         f"{day.strftime('%a %b %d').replace(' 0', ' ')}"
         f"–{end.strftime('%a %b %d').replace(' 0', ' ')}"
     )
-    hook = f"What’s ahead at Sacred Ground ({range_label})."
+    hook = "As we bid you good night…"
     lines = [_event_line(e, True) for e in events]
-    body = hook + "\n\n" + "\n".join(lines)
-    body += "\n\nPlan your week — call to book a session or grab your spot online."
-    body += "\n847-749-3922"
-    body += "\nhttps://shopsacredground.com/events/"
-    body += "\n\n" + _signoff(f"week_ahead|{day.isoformat()}|{platform}")
+    body = (
+        f"{hook}\n\n"
+        "Here are a few things to look forward to in the days ahead "
+        f"({range_label}):\n\n"
+        + "\n".join(lines)
+        + "\n\nWe'll keep the lights on.\n"
+        "Tomorrow is another day.\n\n"
+        "847-749-3922\n"
+        "https://shopsacredground.com/events/\n\n"
+        + _week_ahead_signoff(f"week_ahead|{day.isoformat()}|{platform}")
+    )
     tags = _hashtags(platform)
     text = body + "\n\n" + " ".join(tags)
     if platform == "instagram":
