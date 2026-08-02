@@ -4,6 +4,7 @@ __pycache__/
 .venv/
 venv/
 .env
+config/secrets.local.json
 .DS_Store
 data/drafts/*.json
 !data/drafts/.gitkeep
