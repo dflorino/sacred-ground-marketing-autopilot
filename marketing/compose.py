@@ -1,4 +1,8 @@
-"""Compose branded Today social graphics (photo + logo + footer text band)."""
+"""Compose branded social graphics (photo + logo + footer text band).
+
+Applies to ALL campaigns: today, week, week_ahead, spotlight.
+No event/campaign text is painted over the photo.
+"""
 from __future__ import annotations
 
 import io
@@ -20,10 +24,18 @@ except ImportError as exc:  # pragma: no cover
 PHOTO_SIZE = 1080
 # Tall cream band under the photo — event copy lives here (not over the image).
 FOOTER_H = 340
-GOLD = (232, 196, 110, 255)
 INK = (22, 18, 14, 255)
 CREAM = (245, 236, 220, 255)
+GOLD = (232, 196, 110, 255)
 RULE = (200, 170, 110, 180)
+
+CAMPAIGN_WORDS = {
+    "today": "TODAY",
+    "week": "THIS WEEK",
+    "week_ahead": "NEXT 7 DAYS",
+    "spotlight": "SPOTLIGHT",
+    "visit": "TODAY",
+}
 
 
 def _font(name: str, size: int) -> ImageFont.FreeTypeFont:
@@ -80,39 +92,98 @@ def _short_title(title: str, max_len: int = 42) -> str:
 
 def _time_bit(ev: Event) -> str:
     when = format_when(ev)
-    # format_when includes weekday; keep the time portion when possible
     if "·" in when:
         return when.split("·", 1)[1].strip()
     return when
 
 
-def overlay_copy(events: Sequence[Event], day: date) -> Dict[str, Any]:
-    """Short lines for the footer band — not drawn over the photo."""
-    loc = (creative().get("location") or "Arlington Heights")
+def footer_copy(
+    campaign: str,
+    events: Sequence[Event],
+    day: date,
+) -> Dict[str, Any]:
+    """Short lines for the footer band — never drawn over the photo."""
+    loc = creative().get("location") or "Arlington Heights"
     day_name = day.strftime("%A")
-    if not events:
-        return {
-            "campaign_word": "TODAY",
-            "lines": [
-                "Visit Sacred Ground",
-                "Crystals · Books · Curious Finds",
-                f"{day_name} · {loc}",
-            ],
-        }
-    if len(events) == 1:
+    word = CAMPAIGN_WORDS.get(campaign, "SACRED GROUND")
+
+    if campaign in ("today", "visit") or (campaign == "today" and not events):
+        if not events:
+            return {
+                "campaign_word": word,
+                "lines": [
+                    "Visit Sacred Ground",
+                    "Crystals · Books · Curious Finds",
+                    f"{day_name} · {loc}",
+                ],
+            }
+        if len(events) == 1:
+            ev = events[0]
+            return {
+                "campaign_word": word,
+                "lines": [
+                    _short_title(ev.title, 48),
+                    f"{_time_bit(ev)} · {loc}",
+                ],
+            }
+        lines = [f"{_short_title(ev.title, 34)} · {_time_bit(ev)}" for ev in list(events)[:3]]
+        lines.append(f"{day_name} · {loc}")
+        return {"campaign_word": word, "lines": lines}
+
+    if campaign == "week":
+        if not events:
+            return {
+                "campaign_word": word,
+                "lines": [f"At Sacred Ground · {loc}", "See what’s on this week"],
+            }
+        lines = [f"{_short_title(ev.title, 36)} · {_time_bit(ev)}" for ev in list(events)[:3]]
+        if len(events) > 3:
+            lines.append(f"+{len(events) - 3} more · {loc}")
+        else:
+            lines.append(loc)
+        return {"campaign_word": word, "lines": lines}
+
+    if campaign == "week_ahead":
+        if not events:
+            return {
+                "campaign_word": word,
+                "lines": [f"At Sacred Ground · {loc}", "Come browse anytime"],
+            }
+        lines = [f"{_short_title(ev.title, 36)} · {_time_bit(ev)}" for ev in list(events)[:3]]
+        if len(events) > 3:
+            lines.append(f"+{len(events) - 3} more · {loc}")
+        else:
+            lines.append(loc)
+        return {"campaign_word": word, "lines": lines}
+
+    if campaign == "spotlight":
+        if not events:
+            return {
+                "campaign_word": word,
+                "lines": ["Special at Sacred Ground", loc],
+            }
         ev = events[0]
         return {
-            "campaign_word": "TODAY",
+            "campaign_word": word,
             "lines": [
                 _short_title(ev.title, 48),
                 f"{_time_bit(ev)} · {loc}",
             ],
         }
-    lines: List[str] = []
-    for ev in list(events)[:3]:
-        lines.append(f"{_short_title(ev.title, 34)} · {_time_bit(ev)}")
-    lines.append(f"{day_name} · {loc}")
-    return {"campaign_word": "TODAY", "lines": lines}
+
+    # Fallback
+    if events:
+        ev = events[0]
+        return {
+            "campaign_word": word,
+            "lines": [_short_title(ev.title, 48), f"{_time_bit(ev)} · {loc}"],
+        }
+    return {"campaign_word": word, "lines": [f"Sacred Ground · {loc}"]}
+
+
+# Back-compat alias used by older tests / callers
+def overlay_copy(events: Sequence[Event], day: date) -> Dict[str, Any]:
+    return footer_copy("today", events, day)
 
 
 def _text_size(draw: ImageDraw.ImageDraw, font: ImageFont.ImageFont, text: str) -> Tuple[int, int]:
@@ -156,20 +227,22 @@ def _apply_logo(canvas: Image.Image, photo_h: int) -> None:
     canvas.alpha_composite(logo, (margin, max(0, ly)))
 
 
-def compose_today_graphic(
+def compose_campaign_graphic(
     *,
+    campaign: str,
     background_url: str,
     events: Sequence[Event],
     day: date,
     out_path: Optional[str] = None,
 ) -> Dict[str, Any]:
     """
-    Build the final Today graphic:
-    clean photo + translucent logo + cream footer with event copy,
+    Build a branded graphic for any campaign:
+    clean photo + translucent logo + cream footer with campaign/event copy,
     shopsacredground.com, and phone. No text painted over the photo.
     """
     ensure_dirs()
     os.makedirs(COMPOSITES_DIR, exist_ok=True)
+    campaign = (campaign or "today").strip().lower()
 
     photo = _load_image(background_url)
     photo = photo.resize((PHOTO_SIZE, PHOTO_SIZE), Image.Resampling.LANCZOS)
@@ -179,10 +252,12 @@ def compose_today_graphic(
     canvas.paste(photo, (0, 0))
     _apply_logo(canvas, PHOTO_SIZE)
 
-    copy = overlay_copy(events, day)
-    f_today = _font("BubblegumSans-Regular.ttf", 64)
-    f_title = _font("Courgette-Regular.ttf", 42)
-    f_meta = _font("IndieFlower-Regular.ttf", 34)
+    copy = footer_copy(campaign, events, day)
+    # Slightly smaller campaign word for longer labels
+    word = copy["campaign_word"]
+    f_today = _font("BubblegumSans-Regular.ttf", 52 if len(word) > 8 else 64)
+    f_title = _font("Courgette-Regular.ttf", 40)
+    f_meta = _font("IndieFlower-Regular.ttf", 32)
     f_footer = _font("BubblegumSans-Regular.ttf", 34)
     f_phone = _font("IndieFlower-Regular.ttf", 32)
 
@@ -190,10 +265,10 @@ def compose_today_graphic(
     website = ((creative().get("overlay_text") or {}).get("website_line") or "shopsacredground.com")
     phone = (
         ((settings().get("campaigns") or {}).get("week_ahead") or {}).get("cta_phone")
+        or ((settings().get("campaigns") or {}).get("today") or {}).get("cta_phone")
         or "847-749-3922"
     )
 
-    # Soft gold rule between photo and footer copy
     draw.line(
         [(70, PHOTO_SIZE + 14), (PHOTO_SIZE - 70, PHOTO_SIZE + 14)],
         fill=RULE,
@@ -201,14 +276,13 @@ def compose_today_graphic(
     )
 
     y = PHOTO_SIZE + 36
-    y += _draw_centered(draw, copy["campaign_word"], y, f_today, INK, PHOTO_SIZE) + 10
+    y += _draw_centered(draw, word, y, f_today, INK, PHOTO_SIZE) + 10
     for i, line in enumerate(copy["lines"]):
         font = f_title if i == 0 else f_meta
         if len(line) > 44:
-            font = _font("IndieFlower-Regular.ttf", 30)
+            font = _font("IndieFlower-Regular.ttf", 28)
         y += _draw_centered(draw, line, y, font, INK, PHOTO_SIZE) + 8
 
-    # Contact always last in the band
     y = max(y + 6, PHOTO_SIZE + FOOTER_H - 96)
     draw.line(
         [(180, y - 8), (PHOTO_SIZE - 180, y - 8)],
@@ -219,13 +293,16 @@ def compose_today_graphic(
     _draw_centered(draw, phone, y, f_phone, INK, PHOTO_SIZE)
 
     if not out_path:
-        out_path = os.path.join(COMPOSITES_DIR, f"today-{day.isoformat()}.png")
+        out_path = os.path.join(
+            COMPOSITES_DIR, f"{campaign}-{day.isoformat()}.png"
+        )
     rgb = canvas.convert("RGB")
     rgb.save(out_path, "PNG", optimize=True)
 
     return {
         "path": out_path,
         "filename": os.path.basename(out_path),
+        "campaign": campaign,
         "contrast": contrast_name,
         "luma": round(mean_luma(photo), 1),
         "width": rgb.width,
@@ -235,3 +312,20 @@ def compose_today_graphic(
         "footer": {"website": website, "phone": phone, "event_lines": copy["lines"]},
         "background_url": background_url,
     }
+
+
+def compose_today_graphic(
+    *,
+    background_url: str,
+    events: Sequence[Event],
+    day: date,
+    out_path: Optional[str] = None,
+) -> Dict[str, Any]:
+    """Back-compat wrapper — Today uses the shared campaign compositor."""
+    return compose_campaign_graphic(
+        campaign="today",
+        background_url=background_url,
+        events=events,
+        day=day,
+        out_path=out_path,
+    )
