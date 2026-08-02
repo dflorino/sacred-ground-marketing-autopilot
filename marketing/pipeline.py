@@ -366,8 +366,9 @@ def generate_batch(
             : int(cfg.get("max_week_ahead_events_in_caption") or 14)
         ]
         if ahead_events:
-            img = images.plan_image(ahead_events, "week_ahead")
+            img = images.plan_image(ahead_events, "week_ahead", day=day)
             sched = schedule.schedule_week_ahead(day)
+            wa_created = 0
             for platform in platforms:
                 cap = captions.caption_week_ahead(ahead_events, platform, day)
                 draft = _make_draft(
@@ -378,10 +379,12 @@ def generate_batch(
                     caption=cap,
                     image=img,
                     sched=sched,
-                    notes=notes_base + ["daily_7pm_next_7_days"],
+                    notes=notes_base
+                    + ["daily_7pm_goodnight", f"image_rule:{img.rule or img.source}"],
                 )
                 if draft:
                     created.append(draft)
+                    wa_created += 1
                 else:
                     skipped_drafts.append(
                         {
@@ -390,6 +393,13 @@ def generate_batch(
                             "reason": "duplicate_or_override",
                         }
                     )
+            if wa_created and img.url:
+                images.record_image_use(
+                    day=day,
+                    url=img.url,
+                    rule=str(img.rule or "week_ahead_pool"),
+                    campaign="week_ahead",
+                )
         else:
             skipped_drafts.append(
                 {"campaign": "week_ahead", "reason": "no_events_next_7_days"}

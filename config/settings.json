@@ -36,9 +36,16 @@
       "label": "Next 7 Days at Sacred Ground",
       "schedule_local_time": "19:00",
       "horizon_days": 7,
-      "store_image_url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.15-AM.png",
+      "image_pool": [
+        "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.38-AM.png",
+        "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.05-AM.png",
+        "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.28-AM.png"
+      ],
+      "store_image_url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.38-AM.png",
       "cta_phone": "847-749-3922",
-      "cta_site": "shopsacredground.com"
+      "cta_site": "shopsacredground.com",
+      "caption_style": "goodnight_week_ahead",
+      "notes": "Daily 7pm CT goodnight post: rotate the 3 store photos, list next 7 days of events."
     },
     "spotlight": {
       "enabled": true,

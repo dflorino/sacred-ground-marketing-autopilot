@@ -78,8 +78,13 @@
         "facebook",
         "instagram"
       ],
-      "background": "store_exterior",
-      "purpose": "next_7_days_planner"
+      "background_pool": [
+        "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.38-AM.png",
+        "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.05-AM.png",
+        "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.28-AM.png"
+      ],
+      "purpose": "goodnight_next_7_days_planner",
+      "caption_tone": "As we bid you good night… things to look forward to… we'll keep the lights on… tomorrow is another day."
     }
   }
 }

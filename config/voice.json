@@ -24,6 +24,11 @@
     "Come as you are.",
     "The door is open."
   ],
+  "week_ahead_signoff_options": [
+    "We'll keep the lights on.",
+    "Tomorrow is another day.",
+    "Sleep well — we'll be here."
+  ],
   "hashtags": {
     "core": ["#SacredGround", "#ArlingtonHeights", "#ShopSacredGround"],
     "events": ["#ChicagoEvents", "#CrystalShop", "#EnergyHealing"],

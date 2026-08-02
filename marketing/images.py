@@ -55,6 +55,40 @@ def store_image_url() -> str:
     return store_exterior_url()
 
 
+def week_ahead_image_pool() -> List[str]:
+    """Fixed 3 store photos for the 7pm goodnight / week-ahead post."""
+    wa = (settings().get("campaigns") or {}).get("week_ahead") or {}
+    pool = [str(u) for u in (wa.get("image_pool") or []) if u]
+    if pool:
+        return pool
+    if wa.get("store_image_url"):
+        return [str(wa["store_image_url"])]
+    return [STORE_EXTERIOR_DEFAULT]
+
+
+def select_week_ahead_image(day: date) -> Tuple[str, str]:
+    """
+    Rotate the 3 evening store photos.
+    Prefer an image not used for week_ahead yesterday; otherwise day-index.
+    """
+    pool = week_ahead_image_pool()
+    if len(pool) == 1:
+        return pool[0], "week_ahead_pool"
+    used = {
+        h.get("url")
+        for h in (load_image_usage().get("history") or [])
+        if h.get("campaign") == "week_ahead"
+        and h.get("date") == (day - timedelta(days=1)).isoformat()
+    }
+    # Stable rotation, skip yesterday's pick when possible
+    start = day.toordinal() % len(pool)
+    for offset in range(len(pool)):
+        url = pool[(start + offset) % len(pool)]
+        if url not in used:
+            return url, "week_ahead_pool"
+    return pool[start], "week_ahead_pool"
+
+
 @lru_cache(maxsize=1)
 def image_rules() -> Dict[str, Any]:
     path = os.path.join(CONFIG_DIR, "image_rules.json")
@@ -299,13 +333,18 @@ def plan_image(
         )
 
     if campaign == "week_ahead":
+        from .ingest import today_local
+
+        on = day or today_local()
+        url, rule_id = select_week_ahead_image(on)
         return ImagePlan(
             source="store_photo",
-            url=store_image_url(),
+            url=url,
             recommendation=(
-                "Use Sacred Ground store exterior with readable next-7-days "
-                "overlay + darker translucent logo."
+                "Evening goodnight post — rotate one of the 3 locked store photos "
+                "with next-7-days overlay + darker translucent logo."
             ),
+            rule=rule_id,
         )
 
     if campaign == "visit":
