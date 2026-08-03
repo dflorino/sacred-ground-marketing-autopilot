@@ -158,6 +158,64 @@ def create_zernio_post(payload: Dict[str, Any]) -> Dict[str, Any]:
     return _http_json("POST", "posts", body=body)
 
 
+def get_zernio_post(post_id: str) -> Dict[str, Any]:
+    """GET /posts/{id}."""
+    return _http_json("GET", f"posts/{post_id}")
+
+
+def _parse_existing_post_id(error_text: str) -> Optional[str]:
+    """Extract existingPostId from a Zernio 409 duplicate-content error."""
+    if "zernio_http_409" not in error_text or "existingPostId" not in error_text:
+        return None
+    try:
+        raw = error_text.split("zernio_http_409:", 1)[1].strip()
+        data = json.loads(raw)
+        details = data.get("details") or {}
+        pid = details.get("existingPostId")
+        return str(pid) if pid else None
+    except Exception:
+        return None
+
+
+def _finalize_from_zernio(
+    draft_id: str,
+    result: Dict[str, Any],
+    *,
+    publish_now: bool,
+    already_exists: bool = False,
+) -> Dict[str, Any]:
+    post = (result.get("post") or result) if isinstance(result, dict) else {}
+    status = (post.get("status") or "").lower()
+    post_id = post.get("_id") or post.get("id")
+    external = {"zernio": result}
+    if already_exists:
+        # Trust Zernio's record: duplicate means content is already live or queued.
+        if status in ("published", "posted"):
+            mark_posted(draft_id, external=external)
+            final = "posted"
+        else:
+            mark_scheduled(draft_id, external=external)
+            final = "scheduled"
+    elif status == "published" or publish_now:
+        mark_posted(draft_id, external=external)
+        final = "posted"
+    else:
+        mark_scheduled(draft_id, external=external)
+        final = "scheduled"
+    out: Dict[str, Any] = {
+        "ok": True,
+        "draft_id": draft_id,
+        "status": final,
+        "zernio_status": status or None,
+        "zernio_post_id": post_id,
+        "zernio_url": f"https://zernio.com/posts/{post_id}" if post_id else None,
+        "external": external,
+    }
+    if already_exists:
+        out["already_exists"] = True
+    return out
+
+
 def publish_draft(draft_id: str) -> Dict[str, Any]:
     draft = store.get_draft(draft_id)
     if not draft:
@@ -171,28 +229,36 @@ def publish_draft(draft_id: str) -> Dict[str, Any]:
     try:
         result = create_zernio_post(payload)
     except Exception as exc:
+        existing_id = _parse_existing_post_id(str(exc))
+        if existing_id:
+            try:
+                result = get_zernio_post(existing_id)
+                return _finalize_from_zernio(
+                    draft_id,
+                    result,
+                    publish_now=bool(payload.get("publishNow")),
+                    already_exists=True,
+                )
+            except Exception as fetch_exc:
+                return {
+                    "ok": False,
+                    "error": str(exc),
+                    "fetch_error": str(fetch_exc),
+                    "existing_post_id": existing_id,
+                    "draft_id": draft_id,
+                    "payload": {k: v for k, v in payload.items() if k != "content"},
+                }
         return {
             "ok": False,
             "error": str(exc),
             "draft_id": draft_id,
             "payload": {k: v for k, v in payload.items() if k != "content"},
         }
-    post = (result.get("post") or result) if isinstance(result, dict) else {}
-    status = (post.get("status") or "").lower()
-    external = {"zernio": result}
-    if status == "published" or payload.get("publishNow"):
-        mark_posted(draft_id, external=external)
-        final = "posted"
-    else:
-        mark_scheduled(draft_id, external=external)
-        final = "scheduled"
-    return {
-        "ok": True,
-        "draft_id": draft_id,
-        "status": final,
-        "zernio_status": status or None,
-        "external": external,
-    }
+    return _finalize_from_zernio(
+        draft_id,
+        result,
+        publish_now=bool(payload.get("publishNow")),
+    )
 
 
 def publish_campaign_drafts(*, campaign: str) -> Dict[str, Any]:
