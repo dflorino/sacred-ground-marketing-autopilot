@@ -90,5 +90,6 @@
   "refs_dir": "assets/deneene-refs",
   "refs_png_dir": "assets/deneene-refs/png",
   "rejected_ai_dir": "assets/deneene-looks/_rejected",
-  "notes": "Rotate looks across TikTok/YouTube reels so AI-Deneene stays fresh. Indoor: clear glasses, none, or hats. Outdoor: sunglasses are a first-class part of the rotation (not optional fluff). Likeness comes only from real photo refs once an avatar tool (HeyGen / Hedra / etc.) is chosen — Cursor still-image gen is not the path."
+  "notes": "Rotate looks across TikTok/YouTube reels so AI-Deneene stays fresh. Indoor: clear glasses, none, or hats. Outdoor: sunglasses are a first-class part of the rotation (not optional fluff). Avatar stack locked to HeyGen (see config/reels.json). Likeness comes only from real photo refs — Cursor still-image gen is not the path."
 }
+

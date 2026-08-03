@@ -1,0 +1,36 @@
+{
+  "stack": "heygen",
+  "status": "locked",
+  "avatar": {
+    "provider": "heygen",
+    "role": "face_and_lip_sync"
+  },
+  "voice": {
+    "provider": "heygen",
+    "mode": "voice_clone_from_samples",
+    "samples_dir": "assets/deneene-voice",
+    "fallback_note": "ElevenLabs only if HeyGen voice clone is insufficient later"
+  },
+  "content": {
+    "source": "observatory_beneath_surface",
+    "wp_option_pattern": "eeo_daily_YYYY-MM-DD",
+    "field": "beneath_surface",
+    "day": "yesterday",
+    "target_duration_seconds": [30, 60],
+    "caption_link": "https://shopsacredground.com/sacred-ground-observatory/"
+  },
+  "looks": {
+    "config": "config/deneene_looks.json",
+    "rotate": true,
+    "include_outdoor_sunglasses": true
+  },
+  "publish": {
+    "phase": 1,
+    "approve_before_post": true,
+    "platforms": ["tiktok", "youtube_shorts"]
+  },
+  "founder_still_needed": [
+    "1–3 min clear voice samples in assets/deneene-voice/",
+    "Confirm HeyGen account / API access when ready"
+  ]
+}
