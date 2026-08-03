@@ -1,9 +1,11 @@
 from __future__ import annotations
 
+import os
 from datetime import datetime, timedelta
 from typing import Any, Dict, List, Optional
 
-from . import captions, classify, images, schedule, store
+from . import captions, classify, compose, images, schedule, store
+from . import publish as publish_mod
 from .control import is_paused, phase, publish_allowed
 from .ingest import load_events, today_local, tzinfo
 from .models import DraftPackage, Event
@@ -12,6 +14,23 @@ from .paths import settings
 
 def _now_iso() -> str:
     return datetime.now(tzinfo()).isoformat()
+
+
+def _git_branch() -> Optional[str]:
+    """Best-effort current branch name for GitHub raw composite URLs."""
+    import subprocess
+
+    try:
+        out = subprocess.check_output(
+            ["git", "rev-parse", "--abbrev-ref", "HEAD"],
+            stderr=subprocess.DEVNULL,
+            text=True,
+        ).strip()
+        if out and out != "HEAD":
+            return out
+    except Exception:
+        pass
+    return None
 
 
 def _event_dicts(events: List[Event]) -> List[Dict[str, Any]]:
@@ -105,13 +124,116 @@ def _auto_ready_for_publish(draft_id: str) -> Dict[str, Any]:
     )
 
 
-def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Dict[str, Any]:
+def _attach_today_composite(
+    drafts: List[Dict[str, Any]],
+    events: List[Event],
+    day,
+    background_url: str,
+) -> Dict[str, Any]:
+    """Compose branded graphic once and attach to all Today drafts."""
+    if os.environ.get("SGMA_SKIP_COMPOSE") == "1":
+        return {
+            "path": None,
+            "public_url": background_url,
+            "contrast": "skipped",
+            "luma": None,
+            "overlay": None,
+            "url_via": "skipped",
+            "filename": None,
+        }
+    result = compose.compose_today_graphic(
+        background_url=background_url,
+        events=events,
+        day=day,
+    )
+    public_url = None
+    # Prefer Zernio-hosted https URL when API key is present
+    try:
+        from . import zernio
+
+        if zernio.configured():
+            public_url = zernio.upload_image(result["path"], filename=result["filename"])
+    except Exception as exc:  # keep local composite; publish step will retry/report
+        result["upload_error"] = str(exc)
+
+    # GitHub raw fallback for public repo (so media URL is https even without Zernio upload)
+    if not public_url:
+        sha = (
+            os.environ.get("GITHUB_SHA")
+            or os.environ.get("COMPOSITE_SHA")
+            or None
+        )
+        if not sha:
+            import subprocess
+
+            try:
+                sha = subprocess.check_output(
+                    ["git", "rev-parse", "HEAD"],
+                    stderr=subprocess.DEVNULL,
+                    text=True,
+                ).strip()
+            except Exception:
+                sha = None
+        ref = sha or (
+            os.environ.get("GITHUB_REF_NAME")
+            or os.environ.get("COMPOSITE_BRANCH")
+            or _git_branch()
+            or "main"
+        )
+        public_url = (
+            "https://raw.githubusercontent.com/dflorino/sacred-ground-marketing-autopilot/"
+            f"{ref}/data/composites/{result['filename']}"
+        )
+        result["url_via"] = "github_raw"
+    else:
+        result["url_via"] = "zernio_media"
+
+    result["public_url"] = public_url
+    image_patch = {
+        "source": "composed_today",
+        "url": public_url,
+        "local_path": result["path"],
+        "event_id": events[0].id if len(events) == 1 else None,
+        "prompt": None,
+        "recommendation": (
+            f"Composed Today graphic ({result['contrast']} text, luma {result['luma']}) "
+            f"with translucent logo + website/phone footer."
+        ),
+        "rule": "composed",
+        "contrast": result["contrast"],
+        "luma": result["luma"],
+        "overlay": result.get("overlay"),
+        "background_rule": None,
+    }
+    for d in drafts:
+        if d.get("campaign") != "today":
+            continue
+        updated = store.update_draft(
+            d["id"],
+            allow_content_update=True,
+            image=image_patch,
+            notes=list(d.get("notes") or [])
+            + [f"composed:{result['filename']}", f"contrast:{result['contrast']}"],
+        )
+        d.update(updated)
+    return result
+
+
+def generate_batch(
+    source: str = "auto",
+    as_of: Optional[datetime] = None,
+    campaigns: Optional[List[str]] = None,
+    publish: bool = False,
+) -> Dict[str, Any]:
     """
     Create draft packages for today / week / spotlights.
 
     For Automations / production: use source="live-strict".
     If WordPress/TEC refresh fails, return ok=False and create zero drafts
     (never silently use stale cache).
+
+    campaigns: optional allow-list (e.g. ["today"]). When set, only those
+    campaign types are created — used by the daily Today automation.
 
     Respects pause for *publishing* only — drafts still generate when paused
     so the queue stays warm; set notes accordingly.
@@ -154,20 +276,29 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
     skipped_drafts: List[Dict[str, Any]] = []
     platforms = list(settings().get("platforms") or ["facebook", "instagram"])
     cfg = settings()
+    allowed = {c.strip().lower() for c in (campaigns or []) if c and str(c).strip()}
+
+    def _want(name: str) -> bool:
+        return (not allowed) or (name in allowed)
 
     notes_base: List[str] = []
     if is_paused():
         notes_base.append("Autopilot paused — drafts only; no schedule/publish.")
 
+    composite_meta: Optional[Dict[str, Any]] = None
+    publish_results: Optional[Dict[str, Any]] = None
+    today_image_rule: Optional[str] = None
+
     # --- Today (events day OR empty-day visit post) ---
     today_cfg = (cfg.get("campaigns") or {}).get("today") or {}
-    if today_cfg.get("enabled", True):
+    if _want("today") and today_cfg.get("enabled", True):
         today_events = classify.events_on_day(events, day)[
             : int(cfg.get("max_today_events_in_caption") or 6)
         ]
         empty_ok = bool(today_cfg.get("empty_day_fallback", True))
         if today_events or empty_ok:
             img = images.plan_image(today_events, "today", day=day)
+            today_image_rule = str(getattr(img, "rule", None) or img.source)
             sched = schedule.schedule_today(day)
             visit_notes = (
                 notes_base + ["empty_day_visit"]
@@ -176,7 +307,7 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
             )
             rule_note = f"image_rule:{img.rule}" if getattr(img, "rule", None) else None
             day_notes = visit_notes + ([rule_note] if rule_note else [])
-            today_created = 0
+            today_drafts: List[Dict[str, Any]] = []
             for platform in platforms:
                 cap = captions.caption_today(today_events, platform, day)
                 draft = _make_draft(
@@ -191,10 +322,7 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                     notes=day_notes,
                 )
                 if draft:
-                    if today_cfg.get("auto_publish") and not is_paused():
-                        draft = _auto_ready_for_publish(draft["id"])
-                    created.append(draft)
-                    today_created += 1
+                    today_drafts.append(draft)
                 else:
                     skipped_drafts.append(
                         {
@@ -203,13 +331,44 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                             "reason": "duplicate_or_override",
                         }
                     )
-            if today_created and img.url:
+            if today_drafts and img.url:
+                try:
+                    composite_meta = _attach_today_composite(
+                        today_drafts,
+                        today_events,
+                        day,
+                        background_url=str(img.url),
+                    )
+                    # Preserve specialty/rotation rule alongside composed graphic.
+                    for draft in today_drafts:
+                        image = dict(draft.get("image") or {})
+                        image["background_rule"] = today_image_rule
+                        image["background_url"] = str(img.url)
+                        updated = store.update_draft(
+                            draft["id"],
+                            allow_content_update=True,
+                            image=image,
+                        )
+                        draft.update(updated)
+                except Exception as exc:
+                    composite_meta = {"error": f"compose_failed:{exc}"}
+                    for draft in today_drafts:
+                        store.update_draft(
+                            draft["id"],
+                            allow_content_update=True,
+                            notes=list(draft.get("notes") or [])
+                            + [f"compose_failed:{exc}"],
+                        )
                 images.record_image_use(
                     day=day,
-                    url=img.url,
+                    url=str(img.url),
                     rule=str(img.rule or img.source),
                     campaign="today",
                 )
+            for draft in today_drafts:
+                if today_cfg.get("auto_publish") and not is_paused():
+                    draft = _auto_ready_for_publish(draft["id"])
+                created.append(draft)
         else:
             skipped_drafts.append({"campaign": "today", "reason": "no_events_today"})
 
@@ -218,7 +377,7 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
     week_events = classify.events_in_week(events, week_start)[
         : int(cfg.get("max_week_events_in_caption") or 10)
     ]
-    if week_events and cfg["campaigns"]["week"].get("enabled", True):
+    if _want("week") and week_events and cfg["campaigns"]["week"].get("enabled", True):
         img = images.plan_image(week_events, "week")
         sched = schedule.schedule_week(week_start)
         for platform in platforms:
@@ -243,12 +402,12 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                         "reason": "duplicate_or_override",
                     }
                 )
-    elif not week_events:
+    elif _want("week") and not week_events:
         skipped_drafts.append({"campaign": "week", "reason": "no_events_this_week"})
 
     # --- Week ahead (daily 7pm planner: upcoming days in caption) ---
     wa_cfg = (cfg.get("campaigns") or {}).get("week_ahead") or {}
-    if wa_cfg.get("enabled", True):
+    if _want("week_ahead") and wa_cfg.get("enabled", True):
         horizon = int(wa_cfg.get("horizon_days") or 3)
         # Evening posts look forward — default start tomorrow so finished
         # same-day sessions (e.g. noon–5) never appear at 7pm.
@@ -302,7 +461,7 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
             )
 
     # --- Spotlights + reminders ---
-    if cfg["campaigns"]["spotlight"].get("enabled", True):
+    if _want("spotlight") and cfg["campaigns"]["spotlight"].get("enabled", True):
         for ev in classify.spotlight_candidates(events, on=day):
             img = images.plan_image([ev], "spotlight")
             # initial spotlight (extra=initial)
@@ -359,6 +518,14 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                     if draft:
                         created.append(draft)
 
+    # Today auto_publish → send to Zernio when requested / campaign flag + phase 2
+    today_auto = bool(((cfg.get("campaigns") or {}).get("today") or {}).get("auto_publish"))
+    should_publish = bool(publish) or (
+        today_auto and phase() >= 2 and not is_paused() and _want("today")
+    )
+    if should_publish:
+        publish_results = publish_mod.publish_today_approved()
+
     return {
         "ok": True,
         "as_of": day.isoformat(),
@@ -367,8 +534,31 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
         "events_valid": len(events),
         "events_skipped": skipped,
         "drafts_created": len(created),
-        "drafts": [{"id": d["id"], "campaign": d["campaign"], "platform": d["platform"], "fingerprint": d["fingerprint"]} for d in created],
+        "drafts": [
+            {
+                "id": d["id"],
+                "campaign": d["campaign"],
+                "platform": d["platform"],
+                "fingerprint": d["fingerprint"],
+                "image_url": (d.get("image") or {}).get("url"),
+                "status": d.get("status"),
+            }
+            for d in created
+        ],
         "draft_skips": skipped_drafts,
+        "image_rule": today_image_rule,
+        "composite": {
+            "path": (composite_meta or {}).get("path"),
+            "public_url": (composite_meta or {}).get("public_url"),
+            "contrast": (composite_meta or {}).get("contrast"),
+            "luma": (composite_meta or {}).get("luma"),
+            "overlay": (composite_meta or {}).get("overlay"),
+            "url_via": (composite_meta or {}).get("url_via"),
+            "error": (composite_meta or {}).get("error"),
+        }
+        if composite_meta
+        else None,
+        "publish": publish_results,
         "phase": phase(),
         "paused": is_paused(),
     }
