@@ -12,3 +12,5 @@ data/audit/*
 *.tmp
 .tools/
 data/drafts/_preview-*.png
+# Rejected Cursor AI face samples (not likeness; keep local only)
+assets/deneene-looks/_rejected/
