@@ -1,4 +1,155 @@
 {
-  "fingerprints": {},
-  "updated_at": null
+  "fingerprints": {
+    "week_ahead|2026-08-02|facebook|23849,24175,25382": {
+      "draft_id": "sgma-2026-08-02-week_ahead-fb-22cbad8c",
+      "posted_at": "2026-08-02T19:01:14.381787-05:00",
+      "external": {
+        "zernio": {
+          "post": {
+            "recycling": {
+              "enabled": false,
+              "gapFreq": "month",
+              "recycleCount": 0,
+              "contentVariations": [],
+              "contentVariationIndex": 0
+            },
+            "_id": "6a6fda3d7118587bdb9c0634",
+            "userId": "6a49a0ca1f5ee39905d0dc6f",
+            "title": "",
+            "content": "As the shop settles in for the night, we’re reminded that tomorrow is another day—and there’s plenty to look forward to this week.\n\n• Tina’s Reiki & Tarot Readings — Sunday, August 2 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/tina-3/\n• Lisa Maria Intuitive Tarot — Monday, August 3 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/book/lisa-maria/\n• Amber | Customized Therapeutic Massage Sessions — Tuesday, August 4 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/book/amber/\n\nCall to book a session or grab your spot online.\n847-749-3922\nhttps://shopsacredground.com/events/\n\n#SacredGround #ArlingtonHeights #ShopSacredGround #ChicagoEvents #CrystalShop #EnergyHealing",
+            "mediaItems": [
+              {
+                "type": "image",
+                "url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.15-AM.png",
+                "_id": "6a6fda3d7118587bdb9c0635"
+              }
+            ],
+            "platforms": [
+              {
+                "platform": "facebook",
+                "accountId": {
+                  "_id": "6a49a1f49d9472faae7c274e",
+                  "platform": "facebook",
+                  "profileId": "6a49a0ca1f5ee39905d0dc87",
+                  "displayName": "Sacred Ground",
+                  "isActive": true,
+                  "profilePicture": "https://scontent-lhr11-1.xx.fbcdn.net/v/t39.30808-1/525520556_778113704730537_8989064612556217432_n.jpg?stp=c412.0.720.720a_cp0_dst-jpg_s50x50_tt6&_nc_cat=106&ccb=1-7&_nc_sid=f907e8&_nc_ohc=m7lYEFksLSwQ7kNvwE7HKhm&_nc_oc=AdoBvMmVa74VTzisaFzXnHz-j_pH2chawkIN4sO1FjnkphS7G07tKcUUryzvKEpgWCs&_nc_zt=24&_nc_ht=scontent-lhr11-1.xx&edm=AJdBtusEAAAA&_nc_gid=RY4l16zh5JaVcPfdlLU0pQ&_nc_tpa=Q5bMBQGQ8pKe5JREtBY8PFSyXA4EzJh48w2K7J43nlX38evlViNgkaTLwPq8ZDhjgTUtQWCsE3YL5DLS&oh=00_AQHZyg_EVnujwgP1CyrJah4_Xq2TCrBNeBbzI8o040Dqvw&oe=6A749FBC",
+                  "username": "shopsacredground"
+                },
+                "profileId": "6a49a0ca1f5ee39905d0dc87",
+                "customMedia": [],
+                "scheduledFor": "2026-08-03T00:01:01.155Z",
+                "platformSpecificData": {
+                  "__platformUserIdSnapshot": "10236438766043851:page:101428372368870",
+                  "__usernameSnapshot": "shopsacredground",
+                  "publishingStarted": "2026-08-03T00:01:02.165Z",
+                  "lastPublishStage": "publishing"
+                },
+                "status": "published",
+                "publishAttempts": 0,
+                "contentHash": "ef86e38d0628d399f1b4bd749c13d111",
+                "_id": "6a6fda3d7118587bdb9c0636",
+                "platformPostId": "101428372368870_1076761504865754",
+                "platformPostUrl": "https://www.facebook.com/101428372368870_1076761504865754",
+                "publishedAt": "2026-08-03T00:01:13.574Z"
+              }
+            ],
+            "scheduledFor": "2026-08-03T00:01:01.155Z",
+            "timezone": "America/Chicago",
+            "status": "published",
+            "tags": [],
+            "hashtags": [],
+            "mentions": [],
+            "visibility": "public",
+            "crosspostingEnabled": true,
+            "metadata": {
+              "usageCounted": true
+            },
+            "publishAttempts": 0,
+            "createdAt": "2026-08-03T00:01:01.731Z",
+            "updatedAt": "2026-08-03T00:01:13.800Z",
+            "__v": 0,
+            "publishingClaimedAt": "2026-08-03T00:01:01.868Z"
+          },
+          "message": "Post published successfully"
+        }
+      }
+    },
+    "week_ahead|2026-08-02|instagram|23849,24175,25382": {
+      "draft_id": "sgma-2026-08-02-week_ahead-ig-93473c1f",
+      "posted_at": "2026-08-02T19:01:28.552065-05:00",
+      "external": {
+        "zernio": {
+          "post": {
+            "recycling": {
+              "enabled": false,
+              "gapFreq": "month",
+              "recycleCount": 0,
+              "contentVariations": [],
+              "contentVariationIndex": 0
+            },
+            "_id": "6a6fda4c0d14b9ec8bddaf75",
+            "userId": "6a49a0ca1f5ee39905d0dc6f",
+            "title": "",
+            "content": "As the shop settles in for the night, we’re reminded that tomorrow is another day—and there’s plenty to look forward to this week.\n\n• Tina’s Reiki & Tarot Readings — Sunday, August 2 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/tina-3/\n• Lisa Maria Intuitive Tarot — Monday, August 3 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/book/lisa-maria/\n• Amber | Customized Therapeutic Massage Sessions — Tuesday, August 4 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/book/amber/\n\nCall to book a session or grab your spot online.\n847-749-3922\nhttps://shopsacredground.com/events/\n\n#SacredGround #ArlingtonHeights #ShopSacredGround #ChicagoEvents #CrystalShop #EnergyHealing #Chicagoland #HolisticChicago",
+            "mediaItems": [
+              {
+                "type": "image",
+                "url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.15-AM.png",
+                "_id": "6a6fda4c0d14b9ec8bddaf76"
+              }
+            ],
+            "platforms": [
+              {
+                "platform": "instagram",
+                "accountId": {
+                  "_id": "6a49a12e9d9472faae7c2220",
+                  "profileId": "6a49a0ca1f5ee39905d0dc87",
+                  "platform": "instagram",
+                  "displayName": "Sacred Ground",
+                  "isActive": true,
+                  "profilePicture": "https://scontent-lhr11-1.cdninstagram.com/v/t51.2885-19/313932603_854045628963650_758437280360514790_n.jpg?stp=dst-jpg_s206x206_tt6&_nc_cat=107&ccb=7-5&_nc_sid=bf7eb4&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=VZuOOadmqvoQ7kNvwE1kUSZ&_nc_oc=AdoTiHQ9Zz27ZsIJWMwQlWOUK_IiqYEkwqx5IMtxXvqjwTZsbCT5rxV8tL-27LZ4zCQ&_nc_zt=24&_nc_ht=scontent-lhr11-1.cdninstagram.com&edm=AP4hL3IEAAAA&_nc_tpa=Q5bMBQGbObK6oIt1dxPHJY3YtKcKtZLiylFy6bhBC_-xDUnc66B0pUoKElvNHuO8ac18_TKb1IP1-plVQQ&oh=00_AQFHxCKZH8U7xSPIJRaEOgcs3Ksgm_dp9mrOqyQ4SLOnUw&oe=6A7480CA",
+                  "username": "shopsacredground"
+                },
+                "profileId": "6a49a0ca1f5ee39905d0dc87",
+                "customMedia": [],
+                "scheduledFor": "2026-08-03T00:01:15.497Z",
+                "platformSpecificData": {
+                  "__platformUserIdSnapshot": "27979692144969047",
+                  "__usernameSnapshot": "shopsacredground",
+                  "publishingStarted": "2026-08-03T00:01:17.117Z",
+                  "lastPublishStage": "awaiting-finalize",
+                  "containerCreatedAt": "2026-08-03T00:01:26.874Z",
+                  "pendingContainerId": "18079354628677764",
+                  "publishedCaption": "As the shop settles in for the night, we’re reminded that tomorrow is another day—and there’s plenty to look forward to this week.\n\n• Tina’s Reiki & Tarot Readings — Sunday, August 2 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/tina-3/\n• Lisa Maria Intuitive Tarot — Monday, August 3 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/book/lisa-maria/\n• Amber | Customized Therapeutic Massage Sessions — Tuesday, August 4 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/book/amber/\n\nCall to book a session or grab your spot online.\n847-749-3922\nhttps://shopsacredground.com/events/\n\n#SacredGround #ArlingtonHeights #ShopSacredGround #ChicagoEvents #CrystalShop #EnergyHealing #Chicagoland #HolisticChicago"
+                },
+                "status": "processing",
+                "publishAttempts": 0,
+                "contentHash": "10f0df7e5a171d26ef0f9d2be75c8a22",
+                "_id": "6a6fda4c0d14b9ec8bddaf77"
+              }
+            ],
+            "scheduledFor": "2026-08-03T00:01:15.497Z",
+            "timezone": "America/Chicago",
+            "status": "publishing",
+            "tags": [],
+            "hashtags": [],
+            "mentions": [],
+            "visibility": "public",
+            "crosspostingEnabled": true,
+            "metadata": {
+              "usageCounted": true
+            },
+            "publishAttempts": 0,
+            "createdAt": "2026-08-03T00:01:16.534Z",
+            "updatedAt": "2026-08-03T00:01:26.971Z",
+            "__v": 0,
+            "publishingClaimedAt": "2026-08-03T00:01:16.675Z"
+          },
+          "message": "Post published successfully"
+        }
+      }
+    }
+  },
+  "updated_at": "2026-08-02T19:01:28.552073-05:00"
 }
