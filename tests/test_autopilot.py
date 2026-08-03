@@ -21,6 +21,8 @@ class AutopilotTests(unittest.TestCase):
         paths.DRAFTS_DIR = os.path.join(self._tmpdir, "drafts")
         paths.STATE_DIR = os.path.join(self._tmpdir, "state")
         paths.AUDIT_DIR = os.path.join(self._tmpdir, "audit")
+        paths.CACHE_DIR = os.path.join(self._tmpdir, "cache")
+        paths.COMPOSITES_DIR = os.path.join(self._tmpdir, "composites")
         paths.CONTROL_PATH = os.path.join(paths.STATE_DIR, "control.json")
         paths.POSTED_PATH = os.path.join(paths.STATE_DIR, "posted.json")
         paths.OVERRIDES_PATH = os.path.join(paths.STATE_DIR, "overrides.json")
@@ -28,9 +30,18 @@ class AutopilotTests(unittest.TestCase):
         paths.FIXTURES_DIR = os.path.join(ROOT, "data", "fixtures")
         paths.settings.cache_clear()
         paths.voice.cache_clear()
+        paths.accounts.cache_clear()
+        paths.creative.cache_clear()
         paths.ensure_dirs()
+        # Avoid network compose during unit tests
+        self._prev_skip = os.environ.get("SGMA_SKIP_COMPOSE")
+        os.environ["SGMA_SKIP_COMPOSE"] = "1"
 
     def tearDown(self) -> None:
+        if self._prev_skip is None:
+            os.environ.pop("SGMA_SKIP_COMPOSE", None)
+        else:
+            os.environ["SGMA_SKIP_COMPOSE"] = self._prev_skip
         shutil.rmtree(self._tmpdir, ignore_errors=True)
 
     def test_filter_drops_old_missing_link_excluded(self) -> None:
@@ -75,6 +86,20 @@ class AutopilotTests(unittest.TestCase):
         self.assertTrue(today_fb["links"])
         self.assertEqual(today_fb["approval_status"], "pending")
         self.assertEqual(today_fb["publish_blocked_reason"], "phase_1_drafts_only")
+
+    def test_campaign_filter_today_only(self) -> None:
+        from marketing import pipeline
+
+        as_of = datetime(2026, 7, 9, 8, 0, tzinfo=ZoneInfo("America/Chicago"))
+        result = pipeline.generate_batch(
+            source="fixture",
+            as_of=as_of,
+            campaigns=["today"],
+        )
+        self.assertTrue(result["ok"])
+        campaigns = {d["campaign"] for d in result["drafts"]}
+        self.assertEqual(campaigns, {"today"})
+        self.assertEqual(len(result["drafts"]), 2)
 
     def test_approve_does_not_publish_phase1(self) -> None:
         from marketing import pipeline, store, control
@@ -183,8 +208,8 @@ class AutopilotTests(unittest.TestCase):
             ),
         ]
         plan_m = images.plan_image(multi, "today", day=date(2026, 8, 3))
-        self.assertEqual(plan_m.rule, "massage")  # massage before tarot in priority? massage is before tarot... wait priority has massage before astrology/tarot
-        self.assertIn("Inner-Knowing-Portal", plan_m.url or "")
+        self.assertEqual(plan_m.rule, "massage")  # massage before tarot in priority
+        self.assertIn("sg-morning-massage", plan_m.url or "")
 
         # Multi-event with no specialty → rotation pool
         generic_multi = [
