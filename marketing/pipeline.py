@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from datetime import datetime
+from datetime import datetime, timedelta
 from typing import Any, Dict, List, Optional
 
 from . import captions, classify, images, schedule, store
@@ -246,13 +246,25 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
     elif not week_events:
         skipped_drafts.append({"campaign": "week", "reason": "no_events_this_week"})
 
-    # --- Week ahead (daily 7pm planner: next few days in caption) ---
+    # --- Week ahead (daily 7pm planner: upcoming days in caption) ---
     wa_cfg = (cfg.get("campaigns") or {}).get("week_ahead") or {}
     if wa_cfg.get("enabled", True):
         horizon = int(wa_cfg.get("horizon_days") or 3)
-        ahead_events = classify.events_next_days(events, day, days=horizon)[
-            : int(cfg.get("max_week_ahead_events_in_caption") or 8)
-        ]
+        # Evening posts look forward — default start tomorrow so finished
+        # same-day sessions (e.g. noon–5) never appear at 7pm.
+        start_offset = int(wa_cfg.get("horizon_start_offset_days") or 1)
+        window_start = day + timedelta(days=start_offset)
+        as_of_dt = as_of
+        if as_of_dt is None:
+            as_of_dt = datetime.now(tzinfo())
+        elif as_of_dt.tzinfo is None:
+            as_of_dt = as_of_dt.replace(tzinfo=tzinfo())
+        ahead_events = classify.events_next_days(
+            events,
+            window_start,
+            days=horizon,
+            after=as_of_dt,
+        )[: int(cfg.get("max_week_ahead_events_in_caption") or 8)]
         if ahead_events:
             img = images.plan_image(ahead_events, "week_ahead", day=day)
             sched = schedule.schedule_week_ahead(day)
@@ -266,7 +278,11 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                     caption=cap,
                     image=img,
                     sched=sched,
-                    notes=notes_base + ["daily_7pm_next_7_days"],
+                    notes=notes_base
+                    + [
+                        "daily_7pm_upcoming",
+                        f"horizon_start={window_start.isoformat()}",
+                    ],
                 )
                 if draft:
                     if wa_cfg.get("auto_publish") and not is_paused():
@@ -318,7 +334,6 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
 
             for offset in schedule.reminder_offsets():
                 from .ingest import parse_tec_datetime
-                from datetime import timedelta
 
                 start = parse_tec_datetime(ev.start_date)
                 if not start:

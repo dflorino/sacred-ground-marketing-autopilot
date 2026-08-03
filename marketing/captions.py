@@ -132,19 +132,37 @@ def caption_week(events: List[Event], platform: str, week_start: date) -> Dict:
     return {"text": text, "hashtags": tags, "hook": hook}
 
 
+def _week_ahead_opener(seed: str) -> str:
+    cfg = voice()
+    opts = list(cfg.get("week_ahead_openers") or [])
+    if not opts and cfg.get("week_ahead_opener"):
+        opts = [str(cfg["week_ahead_opener"])]
+    if not opts:
+        opts = [
+            "As the shop settles in for the night, we’re reminded that tomorrow’s another day—and there’s plenty to look forward to."
+        ]
+    # Never append stale “this week” closings.
+    opts = [o.rstrip() for o in opts if o and "this week" not in o.lower()]
+    if not opts:
+        opts = [
+            "As the shop settles in for the night, we’re reminded that tomorrow’s another day—and there’s plenty to look forward to."
+        ]
+    idx = int(hashlib.md5(seed.encode()).hexdigest(), 16) % len(opts)
+    return opts[idx]
+
+
 def caption_week_ahead(events: List[Event], platform: str, day: date) -> Dict:
-    """Daily evening planner — next few days in caption; exterior photo only."""
+    """Daily evening planner — upcoming days in caption; exterior photo only."""
     if not events:
         raise ValueError("week_ahead caption requires events")
 
     cfg = voice()
-    # Same opener every evening — do not rotate or rewrite.
-    hook = (
-        cfg.get("week_ahead_opener")
-        or "As the shop settles in for the night, we’re reminded that tomorrow is another day—and there’s plenty to look forward to this week."
-    )
+    hook = _week_ahead_opener(f"week_ahead|{day.isoformat()}|{platform}")
     lines = [_event_line(e, True) for e in events]
     body = hook + "\n\n" + "\n".join(lines)
+    night = (cfg.get("week_ahead_night_block") or "").strip()
+    if night:
+        body += "\n\n" + night
     body += "\n\nCall to book a session or grab your spot online."
     body += "\n847-749-3922"
     body += "\nhttps://shopsacredground.com/events/"

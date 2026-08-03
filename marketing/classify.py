@@ -133,14 +133,27 @@ def events_in_week(events: List[Event], week_start: date) -> List[Event]:
     return out
 
 
-def events_next_days(events: List[Event], on: date, days: int = 7) -> List[Event]:
-    """Rolling window: today through today+(days-1)."""
+def events_next_days(
+    events: List[Event],
+    on: date,
+    days: int = 7,
+    *,
+    after: Optional[datetime] = None,
+) -> List[Event]:
+    """Rolling window: on through on+(days-1). Optionally drop already-ended events."""
     end = on + timedelta(days=max(1, days) - 1)
     out: List[Event] = []
     for ev in events:
         start = parse_tec_datetime(ev.start_date)
-        if start and on <= start.date() <= end:
-            out.append(ev)
+        if not start or not (on <= start.date() <= end):
+            continue
+        if after is not None:
+            finish = parse_tec_datetime(ev.end_date) or start
+            if finish.tzinfo is None and after.tzinfo is not None:
+                finish = finish.replace(tzinfo=after.tzinfo)
+            if finish <= after:
+                continue
+        out.append(ev)
     out.sort(key=lambda e: e.start_date)
     return out
 
