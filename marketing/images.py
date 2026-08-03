@@ -299,39 +299,45 @@ def plan_image(
         )
 
     if campaign == "week_ahead":
-        # Locked policy: same uploaded storefront vein + seasonal outdoors
-        # (spring blooms / summer flowers / fall leaves / winter snow).
-        # Mornings own specialty art — never for week-ahead.
-        from .atmosphere import nighttime_plan
+        # Locked: eggplant-purple storefront; full_moon > holiday > season.
+        # Cart/outdoors change; mornings keep specialty library.
+        from .atmosphere import night_image_url, nighttime_plan
         from .ingest import today_local
 
-        wa = (settings().get("campaigns") or {}).get("week_ahead") or {}
-        brand = settings().get("brand_images") or {}
-        urls = [str(u) for u in (wa.get("image_urls") or []) if u]
-        if not urls:
-            urls = [str(u) for u in (brand.get("exterior_urls") or []) if u]
-        if not urls and wa.get("image_url"):
-            urls = [str(wa["image_url"])]
-        if not urls and brand.get("exterior_url"):
-            urls = [str(brand["exterior_url"])]
-        if not urls:
-            urls = [store_exterior_url()]
-
         on = day or today_local()
-        idx = on.toordinal() % len(urls)
-        url = urls[idx]
         atm = nighttime_plan(on)
+        url = night_image_url(on)
+        if not url:
+            wa = (settings().get("campaigns") or {}).get("week_ahead") or {}
+            brand = settings().get("brand_images") or {}
+            urls = [str(u) for u in (wa.get("image_urls") or []) if u]
+            if not urls:
+                urls = [str(u) for u in (brand.get("exterior_urls") or []) if u]
+            if not urls:
+                urls = [store_exterior_url()]
+            url = urls[on.toordinal() % len(urls)]
+
+        mode = atm.get("mode") or "season"
         season = atm.get("season") or "summer"
+        holiday = atm.get("holiday")
+        rule = (
+            "week_ahead_full_moon"
+            if mode == "full_moon"
+            else f"week_ahead_holiday_{holiday}"
+            if mode == "holiday"
+            else f"week_ahead_season_{season}"
+        )
+        label = holiday or season
         return ImagePlan(
             source="brand_week_ahead",
             url=url,
             prompt=str(atm.get("prompt_hint") or ""),
             recommendation=(
-                f"Night storefront ({season}): same Sacred Ground exterior vein "
-                f"+ seasonal outdoors — {atm.get('season_look')}. "
-                f"Sky mood={atm.get('mood')}. Events stay in caption only."
+                f"Night storefront ({mode}/{label}): eggplant-purple awnings, "
+                f"{atm.get('season_look')}. Cart: {atm.get('cart')}. "
+                "Events stay in caption only."
             ),
-            rule=f"week_ahead_exterior_{season}",
+            rule=rule,
         )
 
     if campaign == "visit":

@@ -53,9 +53,9 @@
       "store_image_url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.15-AM.png",
       "cta_phone": "847-749-3922",
       "cta_site": "shopsacredground.com",
-      "image_policy": "storefront_plus_season",
+      "image_policy": "storefront_season_holiday",
       "image_atmosphere_file": "config/image_atmosphere.json",
-      "notes": "Every evening 7pm CT: rotating openers (no “this week”), next 3 days starting tomorrow, Observatory + Library night block. Images: same uploaded Sacred Ground exterior storefront vein + seasonal outdoors (spring blooms, summer flowers, fall leaves, winter snow). No morning specialty art at night."
+      "notes": "Every evening 7pm CT: rotating openers (no “this week”), next 3 days starting tomorrow, Observatory + Library night block. Images: eggplant-purple awning storefront; full moon ONLY on full-moon nights; else holiday cart/outdoors (Halloween, Hanukkah, Christmas, Valentine’s) or season (varied cart — not always crystals). No morning specialty art at night."
     },
     "spotlight": {
       "enabled": true,
