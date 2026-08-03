@@ -1,4 +1,27 @@
 {
-  "fingerprints": {},
-  "updated_at": null
+  "fingerprints": {
+    "today|2026-08-03|facebook|23849": {
+      "draft_id": "sgma-2026-08-03-today-fb-af576af1",
+      "posted_at": "2026-08-03T07:04:21.515557-05:00",
+      "external": {
+        "zernio_existing": {
+          "id": "6a703d4759e826ab3f9d4ec4",
+          "status": "publishing",
+          "content": "Today at Sacred Ground — Lisa Maria Intuitive Tarot.\n\nMonday, August 3 · 12:00 PM–5:00 PM\n\nAn Intuitive Tarot reading wi"
+        }
+      }
+    },
+    "today|2026-08-03|instagram|23849": {
+      "draft_id": "sgma-2026-08-03-today-ig-9fd4946f",
+      "posted_at": "2026-08-03T07:04:22.693860-05:00",
+      "external": {
+        "zernio_existing": {
+          "id": "6a703d48a4040a3d3bd615f4",
+          "status": "publishing",
+          "content": "Today at Sacred Ground — Lisa Maria Intuitive Tarot.\n\nMonday, August 3 · 12:00 PM–5:00 PM\n\nAn Intuitive Tarot reading wi"
+        }
+      }
+    }
+  },
+  "updated_at": "2026-08-03T07:04:22.693871-05:00"
 }
