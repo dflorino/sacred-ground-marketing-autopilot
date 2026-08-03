@@ -2,6 +2,11 @@
 
 Drop **1–3 minutes** of clear speech here for the AI-Deneene reel voice clone.
 
+## Status
+
+- **Sample received (local):** `deneene-voice-sample-01.m4a` (~1:58, mono AAC 48 kHz). Copied from Desktop voice memo; kept **gitignored** for privacy.
+- Next: HeyGen account/API to clone voice for reels (see `REELS-PLAN.md` and `config/reels.json`).
+
 ## What to record
 
 - Warm, natural speaking voice (phone voice memo is fine)
@@ -12,6 +17,8 @@ Drop **1–3 minutes** of clear speech here for the AI-Deneene reel voice clone.
 ## Formats
 
 `.m4a`, `.mp3`, `.wav`, or `.mov` / `.mp4` with clear audio all work.
+
+Audio binaries in this folder are gitignored; this README stays tracked.
 
 ## Stack
 

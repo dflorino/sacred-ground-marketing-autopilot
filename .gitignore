@@ -14,3 +14,11 @@ data/audit/*
 data/drafts/_preview-*.png
 # Rejected Cursor AI face samples (not likeness; keep local only)
 assets/deneene-looks/_rejected/
+
+# Voice samples — privacy; keep local unless Founder asks to commit for cloud agents
+assets/deneene-voice/*.m4a
+assets/deneene-voice/*.mp3
+assets/deneene-voice/*.wav
+assets/deneene-voice/*.aac
+assets/deneene-voice/*.mov
+assets/deneene-voice/*.mp4
