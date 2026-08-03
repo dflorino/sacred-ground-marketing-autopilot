@@ -1,0 +1,56 @@
+{
+  "notes": "Sacred Ground image split. Morning = specialty library only (no seasons). Night = same uploaded storefront vein + seasonal outdoors (leaves, flowers, snow) + optional night sky mood.",
+  "daytime": {
+    "campaign": "today",
+    "mode": "specialty_library_only",
+    "seasons": false,
+    "source": "config/image_rules.json",
+    "how_it_works": "Keep using the uploaded specialty images (tarot, reiki, shamanic, etc.) exactly as today. No seasonal overlays for morning posts."
+  },
+  "nighttime": {
+    "campaign": "week_ahead",
+    "mode": "storefront_plus_season",
+    "base_style": "Same vein as the uploaded Sacred Ground exterior storefronts (blue awning, stone facade, crystal cart, warm interior glow). Do not invent a different building.",
+    "base_urls": [
+      "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.15-AM.png",
+      "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.28-AM-1.png",
+      "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.38-AM-1.png"
+    ],
+    "seasons": {
+      "spring": {
+        "months": [3, 4, 5],
+        "look": "spring blooms and fresh greenery around the storefront / sidewalk / planters"
+      },
+      "summer": {
+        "months": [6, 7, 8],
+        "look": "summer flowers and lush green around the storefront"
+      },
+      "fall": {
+        "months": [9, 10, 11],
+        "look": "autumn leaves (amber, rust, gold) around the storefront and sidewalk"
+      },
+      "winter": {
+        "months": [12, 1, 2],
+        "look": "soft winter snow on sidewalk, awning edge, and around the crystal cart — still inviting, not bleak"
+      }
+    },
+    "sky_moods": {
+      "default_rotation": ["sunset", "twilight", "starry", "window_glow"],
+      "moods": {
+        "sunset": "golden / pink evening sky, storefront lit",
+        "twilight": "blue hour, warm windows",
+        "starry": "clear night, soft stars, gentle shop glow",
+        "window_glow": "lit windows and shop warmth, quieter sky",
+        "full_moon": "large full moon — ONLY when the moon is actually full"
+      },
+      "full_moon": {
+        "enabled": true,
+        "overrides_rotation": true,
+        "source": "astronomical full moon for America/Chicago date"
+      }
+    },
+    "events_in_image": false,
+    "events_in_caption": true,
+    "how_it_combines": "Hero is always the same Sacred Ground exterior style. Season changes the outdoors (flowers / leaves / snow). Sky mood can still rotate (sunset, twilight, stars, full moon). Events stay in the caption."
+  }
+}

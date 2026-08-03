@@ -299,6 +299,12 @@ def plan_image(
         )
 
     if campaign == "week_ahead":
+        # Locked policy: same uploaded storefront vein + seasonal outdoors
+        # (spring blooms / summer flowers / fall leaves / winter snow).
+        # Mornings own specialty art — never for week-ahead.
+        from .atmosphere import nighttime_plan
+        from .ingest import today_local
+
         wa = (settings().get("campaigns") or {}).get("week_ahead") or {}
         brand = settings().get("brand_images") or {}
         urls = [str(u) for u in (wa.get("image_urls") or []) if u]
@@ -310,20 +316,22 @@ def plan_image(
             urls = [str(brand["exterior_url"])]
         if not urls:
             urls = [store_exterior_url()]
-        # Rotate founder exterior storefront shots only — never interior.
-        from .ingest import today_local
 
         on = day or today_local()
         idx = on.toordinal() % len(urls)
         url = urls[idx]
+        atm = nighttime_plan(on)
+        season = atm.get("season") or "summer"
         return ImagePlan(
             source="brand_week_ahead",
             url=url,
+            prompt=str(atm.get("prompt_hint") or ""),
             recommendation=(
-                "Founder exterior storefront photo rotation — "
-                "never interior or AI specialty art for week-ahead."
+                f"Night storefront ({season}): same Sacred Ground exterior vein "
+                f"+ seasonal outdoors — {atm.get('season_look')}. "
+                f"Sky mood={atm.get('mood')}. Events stay in caption only."
             ),
-            rule="week_ahead_exterior",
+            rule=f"week_ahead_exterior_{season}",
         )
 
     if campaign == "visit":

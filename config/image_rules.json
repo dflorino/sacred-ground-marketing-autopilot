@@ -1,5 +1,5 @@
 {
-  "notes": "Today 7am image rules. Specialty rules win when an event matches. Never reuse the same URL within 7 calendar days. Robert also cannot run two days in a row.",
+  "notes": "Today 7am image rules only — specialty library, no seasons. Specialty rules win when an event matches. Never reuse the same URL within 7 calendar days. Robert also cannot run two days in a row. Seasons live on nighttime storefronts only (see image_atmosphere.json)."}
   "no_repeat_days": 7,
   "priority": [
     "shaman_medium",
