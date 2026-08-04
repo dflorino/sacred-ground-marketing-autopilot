@@ -511,19 +511,84 @@ class AutopilotTests(unittest.TestCase):
         self.assertIn("Details & signup on each event page.", today)
         self.assertNotIn("ticket", today.lower())
 
-        for text in (today, week_ahead, week):
-            # Title line, then indented when, then indented URL (not packed on one line)
-            self.assertIn("• Amber | Customized Therapeutic Massage Sessions\n", text)
-            self.assertIn("  Tuesday, August 4 · 12:00 PM–5:00 PM\n", text)
+        # Today keeps full date·time on each event (single-day post)
+        self.assertIn("• Amber | Customized Therapeutic Massage Sessions\n", today)
+        self.assertIn("  Tuesday, August 4 · 12:00 PM–5:00 PM\n", today)
+        self.assertIn("  https://shopsacredground.com/book/amber/\n", today)
+        self.assertIn(
+            "https://shopsacredground.com/book/amber/\n\n• Divine Insight Sessions with Janel",
+            today,
+        )
+        self.assertRegex(today, r"\n\n#SacredGround")
+        self.assertNotIn("ticket", today.lower())
+
+        # Week / week-ahead: day header + time-only lines (no repeated weekday on every row)
+        for text in (week_ahead, week):
+            self.assertIn("Tuesday, August 4\n\n• Amber | Customized Therapeutic Massage Sessions\n", text)
+            self.assertIn("  12:00 PM–5:00 PM\n", text)
             self.assertIn("  https://shopsacredground.com/book/amber/\n", text)
-            # Blank line between event blocks (URL of first, then bullet of second)
+            self.assertNotIn("Tuesday, August 4 · 12:00 PM–5:00 PM", text)
             self.assertIn(
                 "https://shopsacredground.com/book/amber/\n\n• Divine Insight Sessions with Janel",
                 text,
             )
-            # Hashtags still separated by a blank line
             self.assertRegex(text, r"\n\n#SacredGround")
             self.assertNotIn("ticket", text.lower())
+
+    def test_caption_week_ahead_day_sections_scannable(self) -> None:
+        """Two-day night caption: clear day breaks, standalone goodnight, blank before tags."""
+        from marketing import captions
+        from marketing.models import Event
+        from marketing.paths import voice
+
+        wed_a = Event(
+            id=1,
+            title="Tina's Tarot & Rune Sessions",
+            start_date="2026-08-05 12:00:00",
+            end_date="2026-08-05 18:00:00",
+            url="https://shopsacredground.com/tina/",
+        )
+        wed_b = Event(
+            id=2,
+            title="Soul Alignment w/ Karen",
+            start_date="2026-08-05 19:00:00",
+            end_date="2026-08-05 22:00:00",
+            url="https://shopsacredground.com/karen/",
+        )
+        thu = Event(
+            id=3,
+            title="Tarot with Adie",
+            start_date="2026-08-06 12:00:00",
+            end_date="2026-08-06 17:00:00",
+            url="https://shopsacredground.com/book/adie/",
+        )
+        day = date(2026, 8, 4)
+        text = captions.caption_week_ahead([wed_a, wed_b, thu], "facebook", day)["text"]
+
+        # Day section headers with blank line before first event of that day
+        self.assertIn(
+            "Wednesday, August 5\n\n• Tina's Tarot & Rune Sessions\n  12:00 PM–6:00 PM\n"
+            "  https://shopsacredground.com/tina/",
+            text,
+        )
+        self.assertIn(
+            "https://shopsacredground.com/karen/\n\nThursday, August 6\n\n• Tarot with Adie\n"
+            "  12:00 PM–5:00 PM\n  https://shopsacredground.com/book/adie/",
+            text,
+        )
+        # Blank line between events on the same day
+        self.assertIn(
+            "https://shopsacredground.com/tina/\n\n• Soul Alignment w/ Karen",
+            text,
+        )
+        # Goodnight closer stands alone (blank line before it and before hashtags)
+        closers = list(voice().get("week_ahead_closers") or [])
+        self.assertTrue(any(c in text for c in closers))
+        self.assertRegex(text, r"\n\n(?:The door is always open|We wish you a good night|Good night|Sweet dreams|Rest easy|As the night settles|Sleep well|We’ll leave the lights on)")
+        self.assertRegex(text, r"\n\n#SacredGround")
+        # Door/light must not appear inside an event block
+        self.assertNotIn("Tina's Tarot & Rune Sessions\nThe door is always open", text)
+        self.assertNotIn("Doors close at 8:05pm\nThe door is always open", text)
 
     def test_caption_community_meditation_special_block(self) -> None:
         """Daytime meditation block only; door/light is a week-ahead goodnight closer."""

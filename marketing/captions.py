@@ -68,12 +68,24 @@ def _meditation_event_block() -> str:
     )
 
 
-def _event_block(ev: Event, with_link: bool) -> str:
-    """One scannable event: title, when, optional URL — each on its own line."""
+def _event_block(ev: Event, with_link: bool, *, under_day: bool = False) -> str:
+    """One scannable event: title, when, optional URL — each on its own line.
+
+    When under_day=True (week / week-ahead day sections), omit the weekday/date
+    from the when line — the day header already carries it.
+    """
     if is_community_meditation(ev):
         return _meditation_event_block()
     when = format_when(ev)
-    lines = [f"• {ev.title}", f"  {when}"]
+    if under_day and " · " in when:
+        when_line = when.split(" · ", 1)[1]
+    elif under_day:
+        when_line = ""  # all-day; day header is enough
+    else:
+        when_line = when
+    lines = [f"• {ev.title}"]
+    if when_line:
+        lines.append(f"  {when_line}")
     if with_link and ev.url:
         lines.append(f"  {ev.url}")
     return "\n".join(lines)
@@ -82,6 +94,32 @@ def _event_block(ev: Event, with_link: bool) -> str:
 def _join_event_blocks(events: Sequence[Event], with_link: bool = True) -> str:
     """Blank line between events so expanded FB/IG posts are easy to scan."""
     return "\n\n".join(_event_block(e, with_link) for e in events)
+
+
+def _join_event_blocks_by_day(events: Sequence[Event], with_link: bool = True) -> str:
+    """Group multi-day lists under clear day headers; blank line between events."""
+    from collections import OrderedDict
+
+    from .ingest import parse_tec_datetime
+
+    groups: "OrderedDict[tuple[str, str], list[Event]]" = OrderedDict()
+    for ev in events:
+        start = parse_tec_datetime(ev.start_date)
+        if start:
+            key = start.date().isoformat()
+            label = start.strftime("%A, %B %d").replace(" 0", " ")
+        else:
+            key = (ev.start_date or "")[:10] or "unknown"
+            label = key
+        groups.setdefault((key, label), []).append(ev)
+
+    sections: List[str] = []
+    for (_key, label), day_events in groups.items():
+        blocks = "\n\n".join(
+            _event_block(e, with_link, under_day=True) for e in day_events
+        )
+        sections.append(f"{label}\n\n{blocks}")
+    return "\n\n".join(sections)
 
 
 def caption_today(events: List[Event], platform: str, day: date) -> Dict:
@@ -139,7 +177,7 @@ def caption_week(events: List[Event], platform: str, week_start: date) -> Dict:
     week_end = week_start + timedelta(days=6)
     range_label = f"{week_start.strftime('%b %d').replace(' 0',' ')}–{week_end.strftime('%b %d').replace(' 0',' ')}"
     hook = f"This week at Sacred Ground ({range_label})."
-    body = hook + "\n\n" + _join_event_blocks(events, True)
+    body = hook + "\n\n" + _join_event_blocks_by_day(events, True)
     body += "\n\nCome for one — or make a day of it."
     body += "\n\n" + _signoff(f"week|{week_start.isoformat()}|{platform}", platform)
     tags = _hashtags(platform)
@@ -210,14 +248,16 @@ def caption_week_ahead(events: List[Event], platform: str, day: date) -> Dict:
     seed = f"week_ahead|{day.isoformat()}|{platform}"
     # Separate seeds so opener / night block / closer don't lock to the same index.
     hook = _week_ahead_opener(f"{seed}|opener")
-    body = hook + "\n\n" + _join_event_blocks(events, True)
+    body = hook + "\n\n" + _join_event_blocks_by_day(events, True)
     night = _week_ahead_night_block(f"{seed}|night")
     if night:
         body += "\n\n" + night
     body += "\n\nCall to book a session or grab your spot online."
     body += "\n847-749-3922"
     body += "\nhttps://shopsacredground.com/events/"
-    body += "\n\n" + _week_ahead_closer(f"{seed}|closer")
+    # Standalone goodnight — never glued to an event or meditation block.
+    closer = _week_ahead_closer(f"{seed}|closer")
+    body += "\n\n" + closer
     tags = _hashtags(platform)
     text = body + "\n\n" + " ".join(tags)
     if platform == "instagram":
