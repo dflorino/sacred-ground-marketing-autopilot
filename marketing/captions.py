@@ -4,7 +4,7 @@ import hashlib
 from datetime import date
 from typing import Dict, List, Sequence
 
-from .classify import format_when, short_blurb
+from .classify import format_when, is_community_meditation, short_blurb
 from .models import Event
 from .paths import voice
 
@@ -58,8 +58,20 @@ def _assert_not_generic(text: str) -> None:
             raise ValueError(f"Generic phrase blocked: {phrase}")
 
 
+def _meditation_event_block() -> str:
+    """Founder copy for Free Community Meditation — no time line, no booking URL."""
+    return (
+        "• Free Community Meditation\n"
+        "All are welcome\n"
+        "No sign-up needed\n"
+        "Doors close at 8:05pm o'clock"
+    )
+
+
 def _event_block(ev: Event, with_link: bool) -> str:
     """One scannable event: title, when, optional URL — each on its own line."""
+    if is_community_meditation(ev):
+        return _meditation_event_block()
     when = format_when(ev)
     lines = [f"• {ev.title}", f"  {when}"]
     if with_link and ev.url:
@@ -79,13 +91,17 @@ def caption_today(events: List[Event], platform: str, day: date) -> Dict:
     with_links = platform == "facebook" or True
     if len(events) == 1:
         ev = events[0]
-        blurb = short_blurb(ev, 180)
-        hook = f"Today at Sacred Ground — {ev.title}."
-        body_bits = [hook, format_when(ev)]
-        if blurb:
-            body_bits.append(blurb)
-        body_bits.append(ev.url)
-        body = "\n\n".join(body_bits)
+        if is_community_meditation(ev):
+            hook = "Today at Sacred Ground — Free Community Meditation."
+            body = hook + "\n\n" + _meditation_event_block()
+        else:
+            blurb = short_blurb(ev, 180)
+            hook = f"Today at Sacred Ground — {ev.title}."
+            body_bits = [hook, format_when(ev)]
+            if blurb:
+                body_bits.append(blurb)
+            body_bits.append(ev.url)
+            body = "\n\n".join(body_bits)
     else:
         hook = f"Today at Sacred Ground — {day_label}."
         body = hook + "\n\n" + _join_event_blocks(events, with_links)

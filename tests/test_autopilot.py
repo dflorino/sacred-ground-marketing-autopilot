@@ -525,6 +525,72 @@ class AutopilotTests(unittest.TestCase):
             self.assertRegex(text, r"\n\n#SacredGround")
             self.assertNotIn("ticket", text.lower())
 
+    def test_caption_community_meditation_special_block(self) -> None:
+        """Meditation uses Founder copy — no booking URL, no generic when line."""
+        from marketing import captions
+        from marketing.models import Event
+
+        janel = Event(
+            id=2,
+            title="Divine Insight Sessions with Janel: Akashic Records or Angel Card Readings",
+            start_date="2026-08-04 13:00:00",
+            end_date="2026-08-04 17:00:00",
+            url="https://shopsacredground.com/book/janel/",
+        )
+        meditation = Event(
+            id=99,
+            title="Free Community Meditation",
+            start_date="2026-08-04 19:00:00",
+            end_date="2026-08-04 20:00:00",
+            url="https://shopsacredground.com/event/free-community-meditation-2/",
+        )
+        day = date(2026, 8, 4)
+        special = (
+            "• Free Community Meditation\n"
+            "All are welcome\n"
+            "No sign-up needed\n"
+            "Doors close at 8:05pm o'clock"
+        )
+
+        today = captions.caption_today([janel, meditation], "facebook", day)["text"]
+        week_ahead = captions.caption_week_ahead(
+            [janel, meditation], "facebook", day
+        )["text"]
+        week = captions.caption_week([janel, meditation], "facebook", day)["text"]
+        solo = captions.caption_today([meditation], "instagram", day)["text"]
+
+        for text in (today, week_ahead, week, solo):
+            self.assertIn(special, text)
+            self.assertNotIn(
+                "https://shopsacredground.com/event/free-community-meditation-2/",
+                text,
+            )
+            # No generic Tuesday date/time line for meditation
+            self.assertNotIn("Tuesday, August 4 · 7:00 PM", text)
+            self.assertNotIn("7:00 PM–8:00 PM", text)
+
+        # Blank line between Janel block and meditation block
+        self.assertIn(
+            "https://shopsacredground.com/book/janel/\n\n• Free Community Meditation\n"
+            "All are welcome",
+            today,
+        )
+        # Janel still gets normal when + URL
+        self.assertIn("  Tuesday, August 4 · 1:00 PM–5:00 PM\n", today)
+        self.assertIn("  https://shopsacredground.com/book/janel/\n", today)
+
+        # Case-insensitive title match (stub / TEC variants)
+        stub = Event(
+            id=0,
+            title="Tuesday Community Meditation at Sacred Ground",
+            start_date="2026-08-04 19:00:00",
+            end_date="2026-08-04 20:00:00",
+            url="https://shopsacredground.com/event/meditation/",
+        )
+        stub_text = captions.caption_week([stub], "facebook", day)["text"]
+        self.assertIn(special, stub_text)
+        self.assertNotIn("https://shopsacredground.com/event/meditation/", stub_text)
+
 
 if __name__ == "__main__":
     unittest.main()
