@@ -1,0 +1,22 @@
+{
+  "history": [
+    {
+      "date": "2026-08-03",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-tarot.png",
+      "rule": "tarot",
+      "campaign": "today"
+    },
+    {
+      "date": "2026-08-03",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-summer-1.png",
+      "rule": "week_ahead_season_summer",
+      "campaign": "week_ahead"
+    },
+    {
+      "date": "2026-08-03",
+      "url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.28-AM-1.png",
+      "rule": "week_ahead_founder_exterior_retry",
+      "campaign": "week_ahead_fb_recovery"
+    }
+  ]
+}
