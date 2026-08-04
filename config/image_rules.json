@@ -69,8 +69,11 @@
     "tarot": {
       "label": "Tarot — Sacred Ground deck (FileBird: Tarot Deck SG)",
       "match_any": ["tarot"],
-      "url": "https://shopsacredground.com/wp-content/uploads/471D56FB-BDB9-4FC2-BC82-9100ADBBC5D0.png",
+      "url": "https://shopsacredground.com/wp-content/uploads/73094F05-FA72-4FDC-A26C-7B67F30280BD.png",
       "urls": [
+        "https://shopsacredground.com/wp-content/uploads/73094F05-FA72-4FDC-A26C-7B67F30280BD.png",
+        "https://shopsacredground.com/wp-content/uploads/F671685E-62CA-4159-AC99-1FB7C0E9B9D6.png",
+        "https://shopsacredground.com/wp-content/uploads/b2e57902-88b0-422f-b423-3dbc52fd2b92.png",
         "https://shopsacredground.com/wp-content/uploads/471D56FB-BDB9-4FC2-BC82-9100ADBBC5D0.png",
         "https://shopsacredground.com/wp-content/uploads/F9FE474F-4EB8-41C5-B5BB-C63EBDD80331.png",
         "https://shopsacredground.com/wp-content/uploads/AC01EBAC-9A70-43B6-84FD-CF52F9135B7B.png",
