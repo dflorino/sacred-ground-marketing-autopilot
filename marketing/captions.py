@@ -59,13 +59,12 @@ def _assert_not_generic(text: str) -> None:
 
 
 def _meditation_event_block() -> str:
-    """Founder copy for Free Community Meditation — no time line, no booking URL."""
+    """Daytime Free Community Meditation block — no time line, booking URL, or goodnight."""
     return (
         "• Free Community Meditation\n"
         "All are welcome\n"
         "No sign-up needed\n"
-        "Doors close at 8:05pm\n"
-        "The door is always open...we will leave the light on"
+        "Doors close at 8:05pm"
     )
 
 
@@ -198,7 +197,7 @@ def _week_ahead_closer(seed: str) -> str:
     return _pick_rotating(
         opts,
         seed,
-        "We wish you a good night — see you tomorrow. We’ll leave the lights on.",
+        "The door is always open...we will leave the light on",
     )
 
 

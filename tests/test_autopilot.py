@@ -549,9 +549,9 @@ class AutopilotTests(unittest.TestCase):
             "• Free Community Meditation\n"
             "All are welcome\n"
             "No sign-up needed\n"
-            "Doors close at 8:05pm\n"
-            "The door is always open...we will leave the light on"
+            "Doors close at 8:05pm"
         )
+        goodnight = "The door is always open...we will leave the light on"
 
         today = captions.caption_today([janel, meditation], "facebook", day)["text"]
         week_ahead = captions.caption_week_ahead(
@@ -569,6 +569,11 @@ class AutopilotTests(unittest.TestCase):
             # No generic Tuesday date/time line for meditation
             self.assertNotIn("Tuesday, August 4 · 7:00 PM", text)
             self.assertNotIn("7:00 PM–8:00 PM", text)
+
+        # Door/light is evening goodnight only — never inside daytime Today meditation
+        for text in (today, solo):
+            self.assertNotIn(goodnight, text)
+            self.assertNotIn("o'clock", text)
 
         # Blank line between Janel block and meditation block
         self.assertIn(
