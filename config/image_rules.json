@@ -1,6 +1,7 @@
 {
-  "notes": "Today 7am image rules only — specialty library, no seasons. Specialty rules win when an event matches. Never reuse the same URL within 7 calendar days. Robert also cannot run two days in a row. New purple/gold pack (sg-morning-*) approved Aug 2026. Seasons/holidays live on nighttime storefronts only (see image_atmosphere.json).",
+  "notes": "Today 7am image rules only — specialty library, no seasons. Never reuse the same URL within 7 calendar days. Robert also cannot run two days in a row. MIXED-DAY RULE: rarer specialties (chakra, reflexology, massage, akashic, shaman, runes, astrology, meditation) beat common ones (tarot, reiki) because tarot/reiki show up often — priority order enforces this. Seasons/holidays live on nighttime only (see image_atmosphere.json).",
   "no_repeat_days": 7,
+  "common_modalities_defer": ["tarot", "reiki"],
   "priority": [
     "shaman_medium",
     "akashic_records",
@@ -9,6 +10,7 @@
     "chakra_healing",
     "reflexology",
     "massage",
+    "tarot_runes",
     "meditation",
     "astrology",
     "tarot",
@@ -27,7 +29,7 @@
     "akashic_records": {
       "label": "Akashic Records",
       "match_any": ["akashic"],
-      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-akashic.png"
+      "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Mystical-Akashic-Records-libra_1763937124.png"
     },
     "reiki_share_3rd_sunday": {
       "label": "Reiki Share (3rd Sunday)",
@@ -42,19 +44,25 @@
       "not_consecutive_days": true
     },
     "chakra_healing": {
-      "label": "Chakra healing",
+      "label": "Chakra healing / balancing",
       "match_any": ["chakra"],
       "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-chakra.png"
     },
     "reflexology": {
       "label": "Reflexology",
       "match_any": ["reflexology"],
-      "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Reflexology-foot-chart-showing_1763319843.png"
+      "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Restorative-Touch-Abstract-Bo_1766408767.png"
     },
     "massage": {
       "label": "Massage",
       "match_any": ["massage"],
-      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-massage.png"
+      "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Inner-Knowing-Portal-cosmic_1766408244.png"
+    },
+    "tarot_runes": {
+      "label": "Tarot and runes day",
+      "match_any": ["rune", "runes"],
+      "url": "https://shopsacredground.com/wp-content/uploads/7347a0c3-962d-4a9f-b568-4b831db9a7e2.png",
+      "notes": "Wins over plain tarot when runes are on the calendar (e.g. Tarot & Runes)."
     },
     "meditation": {
       "label": "Meditation",
@@ -109,13 +117,14 @@
         "https://shopsacredground.com/wp-content/uploads/AF5B5496-1F86-4BBE-B1E0-30D1C47FDB8A.png",
         "https://shopsacredground.com/wp-content/uploads/699CBD3E-8973-4550-ABAC-2ED68D8D7C14.png"
       ],
-      "notes": "FileBird folder 'Tarot Deck SG'. Cards brand as Sacred Ground (SG sun logo + jewelry). Rotate full deck; Founder can trim to favorites (kings/queens/colorful majors)."
+      "notes": "Common modality — deferred when a rarer specialty shares the day."
     },
     "reiki": {
       "label": "Reiki event",
       "match_any": ["reiki"],
       "exclude_if_match_any": ["reiki share"],
-      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-reiki.png"
+      "url": "https://shopsacredground.com/wp-content/uploads/8B0B705D-F5BA-44B8-BAD3-6E3E8875901A.png",
+      "notes": "Common modality — deferred when a rarer specialty shares the day."
     },
     "holistic_center": {
       "label": "Holistic center / fair",

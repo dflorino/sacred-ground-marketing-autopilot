@@ -183,8 +183,64 @@ class AutopilotTests(unittest.TestCase):
             ),
         ]
         plan_m = images.plan_image(multi, "today", day=date(2026, 8, 3))
-        self.assertEqual(plan_m.rule, "massage")  # massage before tarot in priority? massage is before tarot... wait priority has massage before astrology/tarot
+        self.assertEqual(plan_m.rule, "massage")  # rarer specialty beats common tarot
         self.assertIn("Inner-Knowing-Portal", plan_m.url or "")
+
+        # Tarot + reflexology → reflexology (not tarot)
+        tarot_ref = [
+            Event(
+                id=21,
+                title="Intuitive Tarot",
+                start_date="2026-08-04 12:00:00",
+                end_date="2026-08-04 17:00:00",
+                url="https://shopsacredground.com/book/tarot/",
+            ),
+            Event(
+                id=22,
+                title="Reflexology Session",
+                start_date="2026-08-04 13:00:00",
+                end_date="2026-08-04 15:00:00",
+                url="https://shopsacredground.com/book/reflexology/",
+            ),
+        ]
+        plan_tr = images.plan_image(tarot_ref, "today", day=date(2026, 8, 4))
+        self.assertEqual(plan_tr.rule, "reflexology")
+        self.assertIn("Restorative-Touch", plan_tr.url or "")
+
+        # Reiki + chakra → chakra (not reiki)
+        reiki_chakra = [
+            Event(
+                id=23,
+                title="Reiki Healing",
+                start_date="2026-08-05 12:00:00",
+                end_date="2026-08-05 14:00:00",
+                url="https://shopsacredground.com/book/reiki/",
+            ),
+            Event(
+                id=24,
+                title="Chakra Balancing",
+                start_date="2026-08-05 15:00:00",
+                end_date="2026-08-05 17:00:00",
+                url="https://shopsacredground.com/book/chakra/",
+            ),
+        ]
+        plan_rc = images.plan_image(reiki_chakra, "today", day=date(2026, 8, 5))
+        self.assertEqual(plan_rc.rule, "chakra_healing")
+        self.assertIn("sg-morning-chakra", plan_rc.url or "")
+
+        # Tarot & Runes → dedicated runes plate (beats plain tarot)
+        runes_day = [
+            Event(
+                id=25,
+                title="Tina’s Tarot & Runes",
+                start_date="2026-08-06 12:00:00",
+                end_date="2026-08-06 17:00:00",
+                url="https://shopsacredground.com/tina/",
+            ),
+        ]
+        plan_runes = images.plan_image(runes_day, "today", day=date(2026, 8, 6))
+        self.assertEqual(plan_runes.rule, "tarot_runes")
+        self.assertIn("7347a0c3", plan_runes.url or "")
 
         # Multi-event with no specialty → rotation pool
         generic_multi = [

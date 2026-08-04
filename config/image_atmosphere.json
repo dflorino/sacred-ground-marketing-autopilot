@@ -90,6 +90,11 @@
     },
     "creative_pool": [
       {
+        "id": "library_night_watch",
+        "label": "Library — settle in and watch something at night",
+        "url": "https://shopsacredground.com/wp-content/uploads/f3131d37-8b4a-4546-889a-7b561bc4a8fc.png"
+      },
+      {
         "id": "bat_signal",
         "label": "Searchlights spelling Sacred Ground (bat-signal style)",
         "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-bat-signal.png"
