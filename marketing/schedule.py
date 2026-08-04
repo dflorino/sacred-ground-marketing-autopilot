@@ -41,7 +41,7 @@ def schedule_week_ahead(day: date) -> SchedulePlan:
     """Daily 7pm Central — short upcoming-days planner post."""
     cfg = settings()["campaigns"]["week_ahead"]
     when = _at_local(day, cfg.get("schedule_local_time") or "19:00")
-    horizon = int(cfg.get("horizon_days") or 3)
+    horizon = int(cfg.get("horizon_days") or 2)
     return SchedulePlan(
         recommended_at=when.isoformat(),
         rationale=f"Daily evening planner so people can book the next {horizon} days.",

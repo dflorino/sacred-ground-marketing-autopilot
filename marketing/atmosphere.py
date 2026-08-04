@@ -1,7 +1,8 @@
 """Day/night atmosphere plan for Sacred Ground social images.
 
 Morning (today): specialty library only — no seasons.
-Night (week_ahead): eggplant-purple storefront; priority full_moon > holiday > season.
+Night (week_ahead): priority full_moon > holiday > creative_pool rotation
+(night-sky creatives + season storefronts mixed in).
 """
 from __future__ import annotations
 
@@ -151,7 +152,30 @@ def nighttime_plan(day: date) -> Dict[str, Any]:
             ),
         }
 
-    # Priority 3: season
+    # Priority 3: creative pool (night skies + season storefronts)
+    pool = [p for p in (night.get("creative_pool") or []) if p.get("url")]
+    if pool:
+        pick = pool[day.toordinal() % len(pool)]
+        kind = str(pick.get("kind") or "creative")
+        label = str(pick.get("label") or pick.get("id") or "creative")
+        return {
+            "campaign": "week_ahead",
+            "mode": "creative",
+            "season": season,
+            "holiday": None,
+            "full_moon": False,
+            "creative_id": str(pick.get("id") or ""),
+            "image_url": str(pick.get("url") or ""),
+            "season_look": label,
+            "cart": str(s_meta.get("cart") or "") if kind == "storefront" else "",
+            "atmosphere": str(s_meta.get("lighting") or ""),
+            "prompt_hint": (
+                f"Sacred Ground nighttime creative plate ({label}). "
+                f"Base note: {base} Events stay in caption."
+            ),
+        }
+
+    # Fallback: season storefront if creative pool empty
     return {
         "campaign": "week_ahead",
         "mode": "season",

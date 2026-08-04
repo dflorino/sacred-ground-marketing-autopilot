@@ -1,5 +1,5 @@
 {
-  "notes": "Morning = specialty library only (no seasons). Night = eggplant-purple awning storefront; outdoors + cart change by holiday/season/lighting. Full moon image ONLY on actual full-moon nights.",
+  "notes": "Morning = specialty library only (no seasons). Night = creative sky pack by default; holidays + full moon still override. Season storefronts stay in the creative mix so the shop still appears. Full moon image ONLY on actual full-moon nights.",
   "daytime": {
     "campaign": "today",
     "mode": "specialty_library_only",
@@ -9,9 +9,9 @@
   },
   "nighttime": {
     "campaign": "week_ahead",
-    "mode": "storefront_season_holiday",
-    "priority": ["full_moon", "holiday", "season"],
-    "base_style": "Sacred Ground exterior storefront vein: tan stone facade, deep EGGPLANT PURPLE awnings (building + cart — never blue), white SACRED GROUND lettering with NO swoosh/dash/ornament between the words (plain space only — never red, never gold), warm interior glow. Cart merchandise changes by holiday/season — not always crystals.",
+    "mode": "creative_sky_rotation",
+    "priority": ["full_moon", "holiday", "creative"],
+    "base_style": "Sacred Ground night creatives: starry skies, searchlights, aurora, neon, logo-sun motifs — plus eggplant-purple storefront seasonals mixed into the creative pool. When a storefront plate is used: tan stone facade, deep EGGPLANT PURPLE awnings, white SACRED GROUND lettering with NO swoosh between the words.",
     "awning_color": "eggplant purple (aubergine / deep plum)",
     "awning_swoosh": "none — leave blank eggplant space between SACRED and GROUND",
     "full_moon": {
@@ -84,8 +84,134 @@
         "url": "https://shopsacredground.com/wp-content/uploads/sg-night-winter-1.png"
       }
     },
+    "creative_pool": [
+      {
+        "id": "bat_signal",
+        "label": "Searchlights spelling Sacred Ground (bat-signal style)",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-bat-signal.png"
+      },
+      {
+        "id": "aurora_neon",
+        "label": "Northern lights village with Sacred Ground neon",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-aurora-neon.png"
+      },
+      {
+        "id": "searchlights_hills",
+        "label": "Searchlights over misty hills",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-searchlights-hills.png"
+      },
+      {
+        "id": "aurora_winter_village",
+        "label": "Winter aurora village neon",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-aurora-winter-village.png"
+      },
+      {
+        "id": "milky_way",
+        "label": "Milky Way over quiet rooftops",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-milky-way.png"
+      },
+      {
+        "id": "sacred_geometry",
+        "label": "Sacred geometry in starry sky",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-sacred-geometry.png"
+      },
+      {
+        "id": "crystal_mountain",
+        "label": "Crystal mountains under stars",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-crystal-mountain.png"
+      },
+      {
+        "id": "moonlit_lake",
+        "label": "Moonlit lake",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-moonlit-lake.png"
+      },
+      {
+        "id": "nebula_beams",
+        "label": "Nebula with Sacred Ground light beams",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-nebula-beams.png"
+      },
+      {
+        "id": "aurora_store_silhouette",
+        "label": "Store silhouette under aurora",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-aurora-store-silhouette.png"
+      },
+      {
+        "id": "temple_pillars",
+        "label": "Temple pillars at twilight",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-temple-pillars.png"
+      },
+      {
+        "id": "star_trails",
+        "label": "Star trails over quiet street",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-star-trails.png"
+      },
+      {
+        "id": "neon_fog_alley",
+        "label": "Foggy alley neon Sacred Ground",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-neon-fog-alley.png"
+      },
+      {
+        "id": "firefly_meadow",
+        "label": "Firefly meadow under stars",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-firefly-meadow.png"
+      },
+      {
+        "id": "constellation_sun",
+        "label": "Constellation sun circle",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-constellation-sun.png"
+      },
+      {
+        "id": "neon_puddles",
+        "label": "Rainy street neon reflection",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-neon-puddles.png"
+      },
+      {
+        "id": "logo_sun_sky",
+        "label": "Logo sun in starry sky",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-logo-sun-sky-v2.png"
+      },
+      {
+        "id": "sun_in_moon",
+        "label": "Logo sun within full moon",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-sun-in-moon-v2.png"
+      },
+      {
+        "id": "logo_sun_horizon",
+        "label": "Logo sun over starry horizon",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-logo-sun-horizon.png"
+      },
+      {
+        "id": "cloud_beams",
+        "label": "Purple-gold beams through night clouds",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-cloud-beams.png"
+      },
+      {
+        "id": "season_spring_storefront",
+        "label": "Spring storefront (season mix)",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-spring-1.png",
+        "kind": "storefront"
+      },
+      {
+        "id": "season_summer_storefront",
+        "label": "Summer storefront (season mix)",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-summer-1.png",
+        "kind": "storefront"
+      },
+      {
+        "id": "season_fall_storefront",
+        "label": "Fall storefront (season mix)",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-fall.png",
+        "kind": "storefront"
+      },
+      {
+        "id": "season_winter_storefront",
+        "label": "Winter storefront (season mix)",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-winter-1.png",
+        "kind": "storefront"
+      }
+    ],
     "events_in_image": false,
     "events_in_caption": true,
-    "how_it_combines": "Priority: (1) full moon night → full-moon image only; (2) holiday window → holiday outdoors + themed cart; (3) else season outdoors + seasonal cart + lighting. Awning always eggplant purple. Events stay in caption."
+    "how_it_combines": "Priority: (1) full moon night → full-moon image only; (2) holiday window → holiday storefront; (3) else rotate creative_pool by calendar day (night-sky creatives + season storefronts mixed in). Events stay in caption. Week-ahead horizon is 2 days."
   }
 }

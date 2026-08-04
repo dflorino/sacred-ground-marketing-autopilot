@@ -249,7 +249,7 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
     # --- Week ahead (daily 7pm planner: upcoming days in caption) ---
     wa_cfg = (cfg.get("campaigns") or {}).get("week_ahead") or {}
     if wa_cfg.get("enabled", True):
-        horizon = int(wa_cfg.get("horizon_days") or 3)
+        horizon = int(wa_cfg.get("horizon_days") or 2)
         # Evening posts look forward — default start tomorrow so finished
         # same-day sessions (e.g. noon–5) never appear at 7pm.
         start_offset = int(wa_cfg.get("horizon_start_offset_days") or 1)

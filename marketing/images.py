@@ -299,8 +299,7 @@ def plan_image(
         )
 
     if campaign == "week_ahead":
-        # Locked: eggplant-purple storefront; full_moon > holiday > season.
-        # Cart/outdoors change; mornings keep specialty library.
+        # Priority: full_moon > holiday > creative_pool rotation.
         from .atmosphere import night_image_url, nighttime_plan
         from .ingest import today_local
 
@@ -317,25 +316,29 @@ def plan_image(
                 urls = [store_exterior_url()]
             url = urls[on.toordinal() % len(urls)]
 
-        mode = atm.get("mode") or "season"
+        mode = atm.get("mode") or "creative"
         season = atm.get("season") or "summer"
         holiday = atm.get("holiday")
-        rule = (
-            "week_ahead_full_moon"
-            if mode == "full_moon"
-            else f"week_ahead_holiday_{holiday}"
-            if mode == "holiday"
-            else f"week_ahead_season_{season}"
-        )
-        label = holiday or season
+        creative_id = atm.get("creative_id") or ""
+        if mode == "full_moon":
+            rule = "week_ahead_full_moon"
+            label = "full_moon"
+        elif mode == "holiday":
+            rule = f"week_ahead_holiday_{holiday}"
+            label = holiday
+        elif mode == "creative":
+            rule = f"week_ahead_creative_{creative_id or 'pool'}"
+            label = creative_id or "creative"
+        else:
+            rule = f"week_ahead_season_{season}"
+            label = season
         return ImagePlan(
             source="brand_week_ahead",
             url=url,
             prompt=str(atm.get("prompt_hint") or ""),
             recommendation=(
-                f"Night storefront ({mode}/{label}): eggplant-purple awnings, "
-                f"{atm.get('season_look')}. Cart: {atm.get('cart')}. "
-                "Events stay in caption only."
+                f"Night image ({mode}/{label}): {atm.get('season_look')}. "
+                f"Cart: {atm.get('cart') or 'n/a'}. Events stay in caption only."
             ),
             rule=rule,
         )

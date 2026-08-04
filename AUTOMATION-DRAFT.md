@@ -85,8 +85,8 @@ Hard rules:
 6. week_ahead has auto_publish=true. After a successful live-strict run, publish tonight's week-ahead posts only:
    python3 -m marketing publish-week-ahead
    Uses ZERNIO_API_KEY from Cloud Agent secrets. Do not call publish-today.
-7. Caption lists the next 3 days only. Image must be one of the founder exterior storefront photos — never interior, never AI specialty art.
-8. If there are no events in the next 3 days, report skip and do not invent events.
+7. Caption lists the next 2 days only. Image from night atmosphere pool (creative night skies + seasonal/holiday storefronts) — never morning specialty art.
+8. If there are no events in the next 2 days, report skip and do not invent events.
 9. Summarize: event count, platforms, image URL, publish results.
 ```
 
