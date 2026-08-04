@@ -158,6 +158,30 @@ def create_zernio_post(payload: Dict[str, Any]) -> Dict[str, Any]:
     return _http_json("POST", "posts", body=body)
 
 
+def _parse_zernio_duplicate(exc: Exception) -> Optional[Dict[str, Any]]:
+    """Extract existingPostId from a Zernio 409 duplicate-content error."""
+    msg = str(exc)
+    if "zernio_http_409" not in msg:
+        return None
+    raw = msg.split("zernio_http_409:", 1)[-1].strip()
+    try:
+        payload = json.loads(raw)
+    except json.JSONDecodeError:
+        return None
+    details = payload.get("details") if isinstance(payload, dict) else None
+    if not isinstance(details, dict):
+        return None
+    existing_id = details.get("existingPostId")
+    if not existing_id:
+        return None
+    return {
+        "existingPostId": existing_id,
+        "platform": details.get("platform"),
+        "accountId": details.get("accountId"),
+        "error": payload.get("error"),
+    }
+
+
 def publish_draft(draft_id: str) -> Dict[str, Any]:
     draft = store.get_draft(draft_id)
     if not draft:
@@ -171,6 +195,23 @@ def publish_draft(draft_id: str) -> Dict[str, Any]:
     try:
         result = create_zernio_post(payload)
     except Exception as exc:
+        dup = _parse_zernio_duplicate(exc)
+        if dup:
+            # Idempotent success: exact content already scheduled/posted in Zernio.
+            external = {"zernio_duplicate": dup}
+            if payload.get("publishNow"):
+                mark_posted(draft_id, external=external)
+                final = "posted"
+            else:
+                mark_scheduled(draft_id, external=external)
+                final = "scheduled"
+            return {
+                "ok": True,
+                "draft_id": draft_id,
+                "status": final,
+                "zernio_status": "duplicate_existing",
+                "external": external,
+            }
         return {
             "ok": False,
             "error": str(exc),
