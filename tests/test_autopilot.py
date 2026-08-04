@@ -242,7 +242,69 @@ class AutopilotTests(unittest.TestCase):
         self.assertEqual(plan_rc.rule, "chakra_healing")
         self.assertIn("sg-morning-chakra", plan_rc.url or "")
 
-        # Tarot & Runes → dedicated runes plate (beats plain tarot)
+        # Tarot + sound bath / sonic fusion → sound_healing (not tarot)
+        tarot_sound = [
+            Event(
+                id=31,
+                title="Tarot with Tina",
+                start_date="2026-08-07 12:00:00",
+                end_date="2026-08-07 17:00:00",
+                url="https://shopsacredground.com/book/tarot/",
+            ),
+            Event(
+                id=32,
+                title="Sonic Fusion Sound Bath",
+                start_date="2026-08-07 19:00:00",
+                end_date="2026-08-07 20:30:00",
+                url="https://shopsacredground.com/events/sonic-fusion/",
+            ),
+        ]
+        plan_ts = images.plan_image(tarot_sound, "today", day=date(2026, 8, 7))
+        self.assertEqual(plan_ts.rule, "sound_healing")
+        self.assertIn("gong", (plan_ts.url or "").lower())
+
+        # Tarot + reiki → reiki (reiki beats tarot when only those two)
+        tarot_reiki = [
+            Event(
+                id=33,
+                title="Intuitive Tarot",
+                start_date="2026-08-08 12:00:00",
+                end_date="2026-08-08 17:00:00",
+                url="https://shopsacredground.com/book/tarot/",
+            ),
+            Event(
+                id=34,
+                title="Reiki Healing",
+                start_date="2026-08-08 14:00:00",
+                end_date="2026-08-08 16:00:00",
+                url="https://shopsacredground.com/book/reiki/",
+            ),
+        ]
+        plan_treiki = images.plan_image(tarot_reiki, "today", day=date(2026, 8, 8))
+        self.assertEqual(plan_treiki.rule, "reiki")
+
+        # Reiki + crystal class → crystal_healing (not reiki)
+        reiki_crystal = [
+            Event(
+                id=35,
+                title="Reiki Session",
+                start_date="2026-08-09 12:00:00",
+                end_date="2026-08-09 14:00:00",
+                url="https://shopsacredground.com/book/reiki/",
+            ),
+            Event(
+                id=36,
+                title="Working with Crystals Workshop",
+                start_date="2026-08-09 15:00:00",
+                end_date="2026-08-09 17:00:00",
+                url="https://shopsacredground.com/event/crystal-workshop/",
+            ),
+        ]
+        plan_rcr = images.plan_image(reiki_crystal, "today", day=date(2026, 8, 9))
+        self.assertEqual(plan_rcr.rule, "crystal_healing")
+        self.assertTrue(plan_rcr.url)
+
+        # Tarot & Runes linked event → runes specialty plate (not a mixed-day pair case)
         runes_day = [
             Event(
                 id=25,

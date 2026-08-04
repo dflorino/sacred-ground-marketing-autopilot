@@ -1,5 +1,5 @@
 {
-  "notes": "Today 7am image rules only — specialty library, no seasons. Never reuse the same URL within 7 calendar days. Robert also cannot run two days in a row. MIXED-DAY RULE: rarer specialties beat common ones (tarot, reiki) via priority order. Seasons/holidays live on nighttime only (see image_atmosphere.json).",
+  "notes": "Today 7am image rules only — specialty library, no seasons. Never reuse the same URL within 7 calendar days. Robert also cannot run two days in a row. MIXED-DAY: rarer modalities always beat tarot and reiki; among tarot vs reiki alone, reiki wins; sound_healing beats tarot; crystal_healing beats reiki. Tarot & Runes is one linked event specialty (runes plate), not a mixed-day pair of competing modalities. Seasons/holidays live on nighttime only (see image_atmosphere.json).",
   "no_repeat_days": 7,
   "common_modalities_defer": ["tarot", "reiki"],
   "priority": [
@@ -20,8 +20,8 @@
     "tarot_runes",
     "meditation",
     "astrology",
-    "tarot",
     "reiki",
+    "tarot",
     "holistic_center",
     "tuesday_daily",
     "multi_event_rotation"
@@ -137,10 +137,10 @@
       ]
     },
     "tarot_runes": {
-      "label": "Tarot and runes day",
+      "label": "Tarot & Runes event",
       "match_any": ["rune", "runes"],
       "url": "https://shopsacredground.com/wp-content/uploads/7347a0c3-962d-4a9f-b568-4b831db9a7e2.png",
-      "notes": "Wins over plain tarot when runes are on the calendar."
+      "notes": "Specialty plate for the linked Tarot & Runes event title. Not a mixed-day priority case of separate tarot vs runes events."
     },
     "meditation": {
       "label": "Meditation",
@@ -206,14 +206,14 @@
         "https://shopsacredground.com/wp-content/uploads/AF5B5496-1F86-4BBE-B1E0-30D1C47FDB8A.png",
         "https://shopsacredground.com/wp-content/uploads/699CBD3E-8973-4550-ABAC-2ED68D8D7C14.png"
       ],
-      "notes": "Common modality — deferred when a rarer specialty shares the day."
+      "notes": "Weakest/default specialty — deferred when any rarer modality (including reiki) shares the day."
     },
     "reiki": {
       "label": "Reiki event",
       "match_any": ["reiki"],
       "exclude_if_match_any": ["reiki share"],
       "url": "https://shopsacredground.com/wp-content/uploads/8B0B705D-F5BA-44B8-BAD3-6E3E8875901A.png",
-      "notes": "Common modality — deferred when a rarer specialty shares the day."
+      "notes": "Common modality — beats tarot alone, but deferred when any rarer specialty (crystal, chakra, sound, etc.) shares the day."
     },
     "holistic_center": {
       "label": "Holistic center / fair",
