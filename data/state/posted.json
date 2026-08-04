@@ -1,4 +1,27 @@
 {
-  "fingerprints": {},
-  "updated_at": null
+  "fingerprints": {
+    "today|2026-08-04|facebook|24175,25809": {
+      "draft_id": "sgma-2026-08-04-today-fb-e365c815",
+      "posted_at": "2026-08-04T07:03:20.991235-05:00",
+      "external": {
+        "zernio_existing": {
+          "id": "6a718e3e852372080c70a5ae",
+          "status": "publishing",
+          "content": "Today at Sacred Ground — Tuesday, August 4.\n\n• Amber | Customized Therapeutic Massage Sessions — Tuesday, August 4 · 12:"
+        }
+      }
+    },
+    "today|2026-08-04|instagram|24175,25809": {
+      "draft_id": "sgma-2026-08-04-today-ig-3934807b",
+      "posted_at": "2026-08-04T07:03:21.236237-05:00",
+      "external": {
+        "zernio_existing": {
+          "id": "6a718e3f4501dff9dc6e20cd",
+          "status": "publishing",
+          "content": "Today at Sacred Ground — Tuesday, August 4.\n\n• Amber | Customized Therapeutic Massage Sessions — Tuesday, August 4 · 12:"
+        }
+      }
+    }
+  },
+  "updated_at": "2026-08-04T07:03:21.236245-05:00"
 }
