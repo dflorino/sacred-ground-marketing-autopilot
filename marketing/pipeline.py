@@ -268,6 +268,7 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
         if ahead_events:
             img = images.plan_image(ahead_events, "week_ahead", day=day)
             sched = schedule.schedule_week_ahead(day)
+            week_ahead_created = 0
             for platform in platforms:
                 cap = captions.caption_week_ahead(ahead_events, platform, day)
                 draft = _make_draft(
@@ -288,6 +289,7 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                     if wa_cfg.get("auto_publish") and not is_paused():
                         draft = _auto_ready_for_publish(draft["id"])
                     created.append(draft)
+                    week_ahead_created += 1
                 else:
                     skipped_drafts.append(
                         {
@@ -296,6 +298,13 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                             "reason": "duplicate_or_override",
                         }
                     )
+            if week_ahead_created and img.url:
+                images.record_image_use(
+                    day=day,
+                    url=img.url,
+                    rule=str(img.rule or img.source),
+                    campaign="week_ahead",
+                )
         else:
             skipped_drafts.append(
                 {"campaign": "week_ahead", "reason": "no_events_in_horizon"}

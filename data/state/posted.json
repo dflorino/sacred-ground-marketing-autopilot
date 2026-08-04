@@ -1,4 +1,165 @@
 {
-  "fingerprints": {},
-  "updated_at": null
+  "fingerprints": {
+    "week_ahead|2026-08-03|facebook|23979,24135,24175,24243,24618,24622,25809": {
+      "draft_id": "sgma-2026-08-03-week_ahead-fb-e3627980",
+      "posted_at": "2026-08-03T19:01:53.349848-05:00",
+      "external": {
+        "zernio": {
+          "post": {
+            "recycling": {
+              "enabled": false,
+              "gapFreq": "month",
+              "recycleCount": 0,
+              "contentVariations": [],
+              "contentVariationIndex": 0
+            },
+            "_id": "6a712bcbddaf19d067e45b42",
+            "userId": "6a49a0ca1f5ee39905d0dc6f",
+            "title": "",
+            "content": "As evening settles over the shop, we’re reminded tomorrow is another day—and there’s plenty coming up.\n\n• Amber | Customized Therapeutic Massage Sessions — Tuesday, August 4 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/book/amber/\n• Divine Insight Sessions with Janel: Akashic Records or Angel Card Readings — Tuesday, August 4 · 1:00 PM–5:00 PM\n  https://shopsacredground.com/book/janel/\n• Tina’s Tarot & Rune Sessions — Wednesday, August 5 · 12:00 PM–6:00 PM\n  https://shopsacredground.com/tina/\n• Soul Alignment w/ Karen: Intuitive Energy Reiki or Akashic Record Reading — Wednesday, August 5 · 7:00 PM–10:00 PM\n  https://shopsacredground.com/karen/\n• Tarot with Adie — Thursday, August 6 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/book/adie/\n• Tai Chi Gung with Sherry Gurley — Thursday, August 6 · 12:00 PM–1:00 PM\n  https://shopsacredground.com/sherry/\n• Quantum Alignment Series- Light Codes, Sound Frequencies & Light Language With Eve — Thursday, August 6 · 7:00 PM–9:00 PM\n  https://shopsacredground.com/book/eve-quantum-class/\n\nTonight doesn’t stop here.\nPeek at the Observatory — it changes every day.\nhttps://shopsacredground.com/sacred-ground-observatory/\n\nOr settle into the Library: download a meditation or playlist, find something to watch or listen to, or explore sacred chanting and music.\nhttps://shopsacredground.com/library/\n\nCall to book a session or grab your spot online.\n847-749-3922\nhttps://shopsacredground.com/events/\n\n#SacredGround #ArlingtonHeights #ShopSacredGround #ChicagoEvents #CrystalShop #EnergyHealing",
+            "mediaItems": [
+              {
+                "type": "image",
+                "url": "https://shopsacredground.com/wp-content/uploads/sg-night-summer-1.png",
+                "_id": "6a712bcbddaf19d067e45b43"
+              }
+            ],
+            "platforms": [
+              {
+                "platform": "facebook",
+                "accountId": {
+                  "_id": "6a49a1f49d9472faae7c274e",
+                  "platform": "facebook",
+                  "profileId": "6a49a0ca1f5ee39905d0dc87",
+                  "displayName": "Sacred Ground",
+                  "isActive": true,
+                  "profilePicture": "https://scontent-lhr11-1.xx.fbcdn.net/v/t39.30808-1/525520556_778113704730537_8989064612556217432_n.jpg?stp=c412.0.720.720a_cp0_dst-jpg_s50x50_tt6&_nc_cat=106&ccb=1-7&_nc_sid=f907e8&_nc_ohc=m7lYEFksLSwQ7kNvwFeqoQm&_nc_oc=AdqaZqX0johYPqkcm8ffgPgKle_JwQjhvCtYYBYeNXmwkFsK-XS0Kyl0-D3yumuhqs0&_nc_zt=24&_nc_ht=scontent-lhr11-1.xx&edm=AJdBtusEAAAA&_nc_gid=RZ5kTAEXMGdfwVKQzslDTg&_nc_tpa=Q5bMBQHxl9Omx8PAh_v5D8ufuw9talTIVa6Llhgn9OIdc2A8Cbjfk3o4B3T15YTPCJjRKsPuYAxxtpWb&oh=00_AQFN5mAHeLuNrnITI5vSm8GNIQQU1oyJ10xsFWBHmzvCFQ&oe=6A75F13C",
+                  "username": "shopsacredground"
+                },
+                "profileId": "6a49a0ca1f5ee39905d0dc87",
+                "customMedia": [],
+                "scheduledFor": "2026-08-04T00:01:15.505Z",
+                "platformSpecificData": {
+                  "__platformUserIdSnapshot": "10236438766043851:page:101428372368870",
+                  "__usernameSnapshot": "shopsacredground",
+                  "publishingStarted": null,
+                  "lastPublishStage": "publishing",
+                  "tiktokPublishingStarted": null
+                },
+                "status": "failed",
+                "publishAttempts": 0,
+                "contentHash": "35f0eb50bfb64f5c7920df4d3f6721ba",
+                "_id": "6a712bcbddaf19d067e45b44",
+                "errorCategory": "user_content",
+                "errorMessage": "Duplicate content detected: Facebook rejected these photos because the identical image was already posted to this Page. Facebook does not allow re-posting the same image, so please use a different or edited image and try again.",
+                "errorSource": "user"
+              }
+            ],
+            "scheduledFor": "2026-08-04T00:01:15.505Z",
+            "timezone": "America/Chicago",
+            "status": "failed",
+            "tags": [],
+            "hashtags": [],
+            "mentions": [],
+            "visibility": "public",
+            "crosspostingEnabled": true,
+            "metadata": {
+              "usageCounted": true,
+              "usageRefunded": true
+            },
+            "publishAttempts": 0,
+            "createdAt": "2026-08-04T00:01:15.909Z",
+            "updatedAt": "2026-08-04T00:01:53.035Z",
+            "__v": 0,
+            "publishingClaimedAt": "2026-08-04T00:01:15.999Z"
+          },
+          "message": "Post created but publishing failed",
+          "error": "All platforms failed",
+          "platformResults": [
+            {
+              "platform": "facebook",
+              "status": "failed",
+              "error": "Duplicate content detected: Facebook rejected these photos because the identical image was already posted to this Page. Facebook does not allow re-posting the same image, so please use a different or edited image and try again."
+            }
+          ]
+        }
+      }
+    },
+    "week_ahead|2026-08-03|instagram|23979,24135,24175,24243,24618,24622,25809": {
+      "draft_id": "sgma-2026-08-03-week_ahead-ig-2604480b",
+      "posted_at": "2026-08-03T19:02:05.585263-05:00",
+      "external": {
+        "zernio": {
+          "post": {
+            "recycling": {
+              "enabled": false,
+              "gapFreq": "month",
+              "recycleCount": 0,
+              "contentVariations": [],
+              "contentVariationIndex": 0
+            },
+            "_id": "6a712bf13b2eaeb956b09ac1",
+            "userId": "6a49a0ca1f5ee39905d0dc6f",
+            "title": "",
+            "content": "As the shop settles in for the night, we’re reminded that tomorrow’s another day—and there’s plenty to look forward to.\n\n• Amber | Customized Therapeutic Massage Sessions — Tuesday, August 4 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/book/amber/\n• Divine Insight Sessions with Janel: Akashic Records or Angel Card Readings — Tuesday, August 4 · 1:00 PM–5:00 PM\n  https://shopsacredground.com/book/janel/\n• Tina’s Tarot & Rune Sessions — Wednesday, August 5 · 12:00 PM–6:00 PM\n  https://shopsacredground.com/tina/\n• Soul Alignment w/ Karen: Intuitive Energy Reiki or Akashic Record Reading — Wednesday, August 5 · 7:00 PM–10:00 PM\n  https://shopsacredground.com/karen/\n• Tarot with Adie — Thursday, August 6 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/book/adie/\n• Tai Chi Gung with Sherry Gurley — Thursday, August 6 · 12:00 PM–1:00 PM\n  https://shopsacredground.com/sherry/\n• Quantum Alignment Series- Light Codes, Sound Frequencies & Light Language With Eve — Thursday, August 6 · 7:00 PM–9:00 PM\n  https://shopsacredground.com/book/eve-quantum-class/\n\nTonight doesn’t stop here.\nPeek at the Observatory — it changes every day.\nhttps://shopsacredground.com/sacred-ground-observatory/\n\nOr settle into the Library: download a meditation or playlist, find something to watch or listen to, or explore sacred chanting and music.\nhttps://shopsacredground.com/library/\n\nCall to book a session or grab your spot online.\n847-749-3922\nhttps://shopsacredground.com/events/\n\n#SacredGround #ArlingtonHeights #ShopSacredGround #ChicagoEvents #CrystalShop #EnergyHealing #Chicagoland #HolisticChicago",
+            "mediaItems": [
+              {
+                "type": "image",
+                "url": "https://shopsacredground.com/wp-content/uploads/sg-night-summer-1.png",
+                "_id": "6a712bf13b2eaeb956b09ac2"
+              }
+            ],
+            "platforms": [
+              {
+                "platform": "instagram",
+                "accountId": {
+                  "_id": "6a49a12e9d9472faae7c2220",
+                  "profileId": "6a49a0ca1f5ee39905d0dc87",
+                  "platform": "instagram",
+                  "displayName": "Sacred Ground",
+                  "isActive": true,
+                  "profilePicture": "https://scontent-lhr11-1.cdninstagram.com/v/t51.2885-19/313932603_854045628963650_758437280360514790_n.jpg?stp=dst-jpg_s206x206_tt6&_nc_cat=107&ccb=7-5&_nc_sid=bf7eb4&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=VZuOOadmqvoQ7kNvwFiU9xq&_nc_oc=Adr5UekLWg9hIeYBX_2C_uQdRmz6U0Pv6WcNe5NSwT2F7UZn6YBCMC1pUdELIH9GWRM&_nc_zt=24&_nc_ht=scontent-lhr11-1.cdninstagram.com&edm=AP4hL3IEAAAA&_nc_tpa=Q5bMBQFRK69-sKfER7hnlOGpom2cAUx7XWwyZllxIs9Zk8Dy1RqkhJTGYEQyp35-ekJD9qTgase6qAUHdA&oh=00_AQFxLd1-aFJEaX0rUg0r5Qc5xeSyDLFmGcrmWAbzn6nmFQ&oe=6A75D24A",
+                  "username": "shopsacredground"
+                },
+                "profileId": "6a49a0ca1f5ee39905d0dc87",
+                "customMedia": [],
+                "scheduledFor": "2026-08-04T00:01:53.528Z",
+                "platformSpecificData": {
+                  "__platformUserIdSnapshot": "27979692144969047",
+                  "__usernameSnapshot": "shopsacredground",
+                  "publishingStarted": "2026-08-04T00:01:54.364Z",
+                  "lastPublishStage": "awaiting-finalize",
+                  "containerCreatedAt": "2026-08-04T00:02:05.256Z",
+                  "pendingContainerId": "18079505369677764",
+                  "publishedCaption": "As the shop settles in for the night, we’re reminded that tomorrow’s another day—and there’s plenty to look forward to.\n\n• Amber | Customized Therapeutic Massage Sessions — Tuesday, August 4 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/book/amber/\n• Divine Insight Sessions with Janel: Akashic Records or Angel Card Readings — Tuesday, August 4 · 1:00 PM–5:00 PM\n  https://shopsacredground.com/book/janel/\n• Tina’s Tarot & Rune Sessions — Wednesday, August 5 · 12:00 PM–6:00 PM\n  https://shopsacredground.com/tina/\n• Soul Alignment w/ Karen: Intuitive Energy Reiki or Akashic Record Reading — Wednesday, August 5 · 7:00 PM–10:00 PM\n  https://shopsacredground.com/karen/\n• Tarot with Adie — Thursday, August 6 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/book/adie/\n• Tai Chi Gung with Sherry Gurley — Thursday, August 6 · 12:00 PM–1:00 PM\n  https://shopsacredground.com/sherry/\n• Quantum Alignment Series- Light Codes, Sound Frequencies & Light Language With Eve — Thursday, August 6 · 7:00 PM–9:00 PM\n  https://shopsacredground.com/book/eve-quantum-class/\n\nTonight doesn’t stop here.\nPeek at the Observatory — it changes every day.\nhttps://shopsacredground.com/sacred-ground-observatory/\n\nOr settle into the Library: download a meditation or playlist, find something to watch or listen to, or explore sacred chanting and music.\nhttps://shopsacredground.com/library/\n\nCall to book a session or grab your spot online.\n847-749-3922\nhttps://shopsacredground.com/events/\n\n#SacredGround #ArlingtonHeights #ShopSacredGround #ChicagoEvents #CrystalShop #EnergyHealing #Chicagoland #HolisticChicago"
+                },
+                "status": "processing",
+                "publishAttempts": 0,
+                "contentHash": "1f0614aa67c6b4e29fd543a7e8fa5fb5",
+                "_id": "6a712bf13b2eaeb956b09ac3"
+              }
+            ],
+            "scheduledFor": "2026-08-04T00:01:53.528Z",
+            "timezone": "America/Chicago",
+            "status": "publishing",
+            "tags": [],
+            "hashtags": [],
+            "mentions": [],
+            "visibility": "public",
+            "crosspostingEnabled": true,
+            "metadata": {
+              "usageCounted": true
+            },
+            "publishAttempts": 0,
+            "createdAt": "2026-08-04T00:01:53.827Z",
+            "updatedAt": "2026-08-04T00:02:05.271Z",
+            "__v": 0,
+            "publishingClaimedAt": "2026-08-04T00:01:53.936Z"
+          },
+          "message": "Post published successfully"
+        }
+      }
+    }
+  },
+  "updated_at": "2026-08-03T19:02:05.585271-05:00"
 }
