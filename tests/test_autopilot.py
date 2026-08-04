@@ -183,8 +183,8 @@ class AutopilotTests(unittest.TestCase):
             ),
         ]
         plan_m = images.plan_image(multi, "today", day=date(2026, 8, 3))
-        self.assertEqual(plan_m.rule, "massage")  # massage before tarot in priority? massage is before tarot... wait priority has massage before astrology/tarot
-        self.assertIn("Inner-Knowing-Portal", plan_m.url or "")
+        self.assertEqual(plan_m.rule, "massage")  # massage before tarot in priority
+        self.assertIn("sg-morning-massage", plan_m.url or "")
 
         # Multi-event with no specialty → rotation pool
         generic_multi = [
@@ -293,6 +293,33 @@ class AutopilotTests(unittest.TestCase):
                 self.assertTrue(ok, why)
                 payload = publish.schedule_payload(store.get_draft(d["id"]))
                 self.assertTrue(payload["mediaItems"])
+
+    def test_week_ahead_avoids_recent_night_image(self) -> None:
+        from marketing import images
+        from marketing.models import Event
+
+        images.IMAGE_USAGE_PATH = os.path.join(self._tmpdir, "state", "image_usage.json")
+        ev = Event(
+            id=11,
+            title="Tarot with Adie",
+            start_date="2026-08-04 12:00:00",
+            end_date="2026-08-04 17:00:00",
+            url="https://shopsacredground.com/book/adie/",
+        )
+        day = date(2026, 8, 3)
+        first = images.plan_image([ev], "week_ahead", day=day)
+        self.assertTrue(first.url)
+        self.assertTrue(str(first.rule).startswith("week_ahead_"))
+        images.record_image_use(
+            day=day,
+            url=first.url or "",
+            rule=str(first.rule or first.source),
+            campaign="week_ahead",
+        )
+        second = images.plan_image([ev], "week_ahead", day=date(2026, 8, 4))
+        self.assertNotEqual(second.url, first.url)
+        self.assertEqual(second.rule, "week_ahead_founder_exterior")
+        self.assertIn("Screenshot-2026-03-05", second.url or "")
 
 
 if __name__ == "__main__":
