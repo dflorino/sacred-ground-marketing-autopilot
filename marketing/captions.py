@@ -89,7 +89,7 @@ def caption_today(events: List[Event], platform: str, day: date) -> Dict:
     else:
         hook = f"Today at Sacred Ground — {day_label}."
         body = hook + "\n\n" + _join_event_blocks(events, with_links)
-        body += "\n\nDetails & tickets on each event page."
+        body += "\n\nDetails & signup on each event page."
     body += "\n\n" + _signoff(f"today|{day.isoformat()}|{platform}", platform)
     tags = _hashtags(platform)
     text = body + "\n\n" + " ".join(tags)

@@ -451,6 +451,9 @@ class AutopilotTests(unittest.TestCase):
         week_ahead = captions.caption_week_ahead([a, b], "facebook", day)["text"]
         week = captions.caption_week([a, b], "facebook", day)["text"]
 
+        self.assertIn("Details & signup on each event page.", today)
+        self.assertNotIn("ticket", today.lower())
+
         for text in (today, week_ahead, week):
             # Title line, then indented when, then indented URL (not packed on one line)
             self.assertIn("• Amber | Customized Therapeutic Massage Sessions\n", text)
@@ -463,6 +466,7 @@ class AutopilotTests(unittest.TestCase):
             )
             # Hashtags still separated by a blank line
             self.assertRegex(text, r"\n\n#SacredGround")
+            self.assertNotIn("ticket", text.lower())
 
 
 if __name__ == "__main__":
