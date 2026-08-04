@@ -186,6 +186,20 @@ class AutopilotTests(unittest.TestCase):
         self.assertEqual(plan_m.rule, "massage")  # rarer specialty beats common tarot
         self.assertIn("Inner-Knowing-Portal", plan_m.url or "")
 
+        # Sound bath should use gong plate, not generic meditation
+        sound = [
+            Event(
+                id=26,
+                title="Gong Sound Bath",
+                start_date="2026-08-07 19:00:00",
+                end_date="2026-08-07 20:30:00",
+                url="https://shopsacredground.com/events/gong/",
+            ),
+        ]
+        plan_sound = images.plan_image(sound, "today", day=date(2026, 8, 7))
+        self.assertEqual(plan_sound.rule, "sound_healing")
+        self.assertIn("gong", (plan_sound.url or "").lower())
+
         # Tarot + reflexology → reflexology (not tarot)
         tarot_ref = [
             Event(
