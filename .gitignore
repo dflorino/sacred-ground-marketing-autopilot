@@ -12,6 +12,8 @@ data/audit/*
 *.tmp
 .tools/
 data/drafts/_preview-*.png
+# Local previews of WP Tarot Deck SG (already on site)
+assets/sacred-realm-preview/
 # Rejected Cursor AI face samples (not likeness; keep local only)
 assets/deneene-looks/_rejected/
 

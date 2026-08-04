@@ -210,32 +210,31 @@ def select_today_image(
         if not _rule_matches(rule, events=events, day=day, haystack=haystack):
             continue
 
-        if rule_id == "multi_event_rotation":
-            url = _pick_from_urls(rule.get("urls") or [], day=day, blocked=blocked)
-            if not url:
-                continue
-            return (
-                url,
-                rule_id,
-                f"Multi-event day — rotation image ({rule.get('label')}).",
-            )
+        # Specialty rules may rotate a pool via "urls" (tarot deck, multi-event, etc.).
+        pool = [str(u) for u in (rule.get("urls") or []) if u]
+        primary = str(rule.get("url") or "")
+        if primary and primary not in pool:
+            pool.insert(0, primary)
+        if not pool:
+            continue
 
-        url = str(rule.get("url") or "")
+        if rule.get("not_consecutive_days"):
+            # Skip any pool URL used yesterday (Robert, etc.).
+            if any(used_yesterday(u, day) for u in pool):
+                continue
+
+        url = _pick_from_urls(pool, day=day, blocked=blocked)
         if not url:
             continue
 
-        if rule.get("not_consecutive_days") and used_yesterday(url, day):
-            continue
-
-        # 7-day uniqueness: skip if used recently (even "always" rules — next rule wins)
-        if url in blocked:
-            continue
-
-        return (
-            url,
-            rule_id,
-            f"Matched image rule: {rule.get('label') or rule_id}.",
-        )
+        label = rule.get("label") or rule_id
+        if rule_id == "multi_event_rotation":
+            rec = f"Multi-event day — rotation image ({label})."
+        elif len(pool) > 1:
+            rec = f"Matched image rule: {label} (rotating pool)."
+        else:
+            rec = f"Matched image rule: {label}."
+        return (url, rule_id, rec)
 
     if len(events) == 1 and events[0].image_url:
         e = events[0]
