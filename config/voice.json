@@ -27,11 +27,11 @@
   ],
   "week_ahead_night_block": "If you’re not done for the night yet…\nPeek at the Observatory — it changes every day.\nhttps://shopsacredground.com/sacred-ground-observatory/\n\nAnd don’t forget the Library: download a meditation or playlist, find something to watch or listen to, or explore sacred chanting and music.\nhttps://shopsacredground.com/library/",
   "tuesday_meditation_openers": [
-    "Tonight at Sacred Ground — Free Community Meditation.",
-    "Settle in with us tonight for Free Community Meditation.",
+    "Tonight at Sacred Ground — Free Community Meditation with {practitioner}.",
+    "Settle in with us tonight for Free Community Meditation — {style}.",
     "A quiet Tuesday invitation: Free Community Meditation at Sacred Ground.",
     "Join us tonight for Free Community Meditation — no experience needed.",
-    "Tuesday stillness at Sacred Ground: Free Community Meditation."
+    "Tuesday stillness at Sacred Ground: Free Community Meditation with {practitioner}."
   ],
   "week_ahead_closers": [
     "The door is always open...we will leave the light on",

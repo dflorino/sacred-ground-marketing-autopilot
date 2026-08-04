@@ -137,7 +137,7 @@ Hard rules:
 8. tuesday_meditation has auto_publish=true. After a successful live-strict run on a non-holiday Tuesday, publish today's meditation posts only:
    python3 -m marketing publish-tuesday-meditation
    Uses ZERNIO_API_KEY from Cloud Agent secrets. Do not call publish-today or publish-week-ahead.
-9. Caption is the dedicated meditation post (daytime meditation block: Free Community Meditation / All are welcome / No sign-up needed / Doors close at 8:05pm). No door/light goodnight closer. No o'clock. Not the morning Today lineup.
+9. Caption is the dedicated meditation post (daytime meditation block: Free Community Meditation / With [Practitioner] · [Style] from config/meditation_hosts.json ISO-week rotation / All are welcome / No sign-up needed / Doors close at 8:05pm). No door/light goodnight closer. No o'clock. Not the morning Today lineup. Do not regenerate or republish an already-published Tuesday (e.g. leave Aug 4 2026 as-is).
 10. Image from the meditation pool only (Om / silhouette / metaphysical journey / sg-morning-meditation).
 11. Summarize: platforms, image URL, scheduledFor (should be 4:00 PM America/Chicago unless already past), Zernio post IDs/links.
 ```

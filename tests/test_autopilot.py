@@ -28,6 +28,9 @@ class AutopilotTests(unittest.TestCase):
         paths.FIXTURES_DIR = os.path.join(ROOT, "data", "fixtures")
         paths.settings.cache_clear()
         paths.voice.cache_clear()
+        from marketing import meditation as meditation_mod
+
+        meditation_mod.clear_meditation_hosts_cache()
         paths.ensure_dirs()
 
     def tearDown(self) -> None:
@@ -595,6 +598,7 @@ class AutopilotTests(unittest.TestCase):
         import hashlib
 
         from marketing import captions
+        from marketing.meditation import meditation_event_block
         from marketing.models import Event
         from marketing.paths import voice
 
@@ -613,12 +617,9 @@ class AutopilotTests(unittest.TestCase):
             url="https://shopsacredground.com/event/free-community-meditation-2/",
         )
         day = date(2026, 8, 4)
-        daytime_block = (
-            "• Free Community Meditation\n"
-            "All are welcome\n"
-            "No sign-up needed\n"
-            "Doors close at 8:05pm"
-        )
+        daytime_block = meditation_event_block(day=day, event=meditation)
+        self.assertIn("With ", daytime_block)
+        self.assertIn("All are welcome", daytime_block)
         goodnight = "The door is always open...we will leave the light on"
 
         today = captions.caption_today([janel, meditation], "facebook", day)["text"]
@@ -667,9 +668,10 @@ class AutopilotTests(unittest.TestCase):
         # Blank line between Janel block and meditation block
         self.assertIn(
             "https://shopsacredground.com/book/janel/\n\n• Free Community Meditation\n"
-            "All are welcome",
+            "With ",
             today,
         )
+        self.assertIn("All are welcome", today)
         # Janel still gets normal when + URL
         self.assertIn("  Tuesday, August 4 · 1:00 PM–5:00 PM\n", today)
         self.assertIn("  https://shopsacredground.com/book/janel/\n", today)
@@ -717,19 +719,18 @@ class AutopilotTests(unittest.TestCase):
 
     def test_tuesday_meditation_caption_daytime_block_no_goodnight(self) -> None:
         from marketing import captions
+        from marketing.meditation import host_for_day, meditation_event_block
 
         day = date(2026, 8, 4)
-        daytime_block = (
-            "• Free Community Meditation\n"
-            "All are welcome\n"
-            "No sign-up needed\n"
-            "Doors close at 8:05pm"
-        )
+        daytime_block = meditation_event_block(day=day)
+        host = host_for_day(day)
+        self.assertIsNotNone(host)
         goodnight = "The door is always open...we will leave the light on"
 
         for platform in ("facebook", "instagram"):
             text = captions.caption_tuesday_meditation(platform, day)["text"]
             self.assertIn(daytime_block, text)
+            self.assertIn(f"With {host.practitioner} · {host.style}", text)
             self.assertIn("#SacredGround", text)
             self.assertNotIn(goodnight, text)
             self.assertNotIn("o'clock", text.lower())
@@ -738,6 +739,11 @@ class AutopilotTests(unittest.TestCase):
             self.assertNotIn(
                 "https://shopsacredground.com/event/free-community-meditation",
                 text,
+            )
+            # Opener mentions practitioner or style when host is known
+            self.assertTrue(
+                host.practitioner in text or host.style in text,
+                "standalone opener/block should surface host info",
             )
 
     def test_tuesday_meditation_pipeline_publishes_tuesdays_skips_holidays(self) -> None:
@@ -771,7 +777,8 @@ class AutopilotTests(unittest.TestCase):
         sched = tm_fb["schedule_recommendation"]["recommended_at"]
         self.assertTrue(sched.startswith("2026-08-04T16:00:00"))
         cap = tm_fb["caption"]["text"]
-        self.assertIn("• Free Community Meditation\nAll are welcome", cap)
+        self.assertIn("• Free Community Meditation\nWith ", cap)
+        self.assertIn("All are welcome", cap)
         self.assertNotIn("The door is always open", cap)
         self.assertNotIn("o'clock", cap.lower())
         self.assertIn(tm_fb["image"]["url"], pool)
@@ -801,6 +808,84 @@ class AutopilotTests(unittest.TestCase):
             if s.get("campaign") == "tuesday_meditation"
         }
         self.assertIn("not_tuesday", skip_w)
+
+    def test_meditation_host_iso_week_rotation_and_shared_block(self) -> None:
+        """Roster rotates by ISO week; Today + tuesday_meditation share one block helper."""
+        from marketing import captions
+        from marketing.meditation import (
+            MeditationHost,
+            host_for_day,
+            iso_week_rotation_index,
+            load_host_roster,
+            meditation_event_block,
+            parse_host_from_event,
+        )
+        from marketing.models import Event
+
+        roster = load_host_roster()
+        self.assertGreaterEqual(len(roster), 4)
+
+        tue_a = date(2026, 8, 11)  # next Tuesday after Aug 4
+        tue_b = date(2026, 8, 18)
+        self.assertEqual(tue_a.weekday(), 1)
+        self.assertEqual(tue_b.weekday(), 1)
+        self.assertNotEqual(
+            iso_week_rotation_index(tue_a, len(roster)),
+            iso_week_rotation_index(tue_b, len(roster)),
+        )
+        host_a = host_for_day(tue_a)
+        host_b = host_for_day(tue_b)
+        self.assertIsNotNone(host_a)
+        self.assertIsNotNone(host_b)
+        self.assertNotEqual(host_a, host_b)
+
+        block_a = meditation_event_block(day=tue_a)
+        block_b = meditation_event_block(day=tue_b)
+        self.assertIn(f"With {host_a.practitioner} · {host_a.style}", block_a)
+        self.assertIn(f"With {host_b.practitioner} · {host_b.style}", block_b)
+        self.assertNotEqual(block_a, block_b)
+
+        # Shared helper: Today meditation block == tuesday_meditation block for same day
+        med = Event(
+            id=99,
+            title="Free Community Meditation",
+            start_date=f"{tue_a.isoformat()} 19:00:00",
+            end_date=f"{tue_a.isoformat()} 20:00:00",
+            url="https://shopsacredground.com/event/free-community-meditation-2/",
+        )
+        today_text = captions.caption_today([med], "facebook", tue_a)["text"]
+        solo_text = captions.caption_tuesday_meditation("facebook", tue_a)["text"]
+        self.assertIn(block_a, today_text)
+        self.assertIn(block_a, solo_text)
+
+        # TEC-embedded host wins over roster
+        tec = Event(
+            id=1,
+            title="Free Community Meditation",
+            start_date=f"{tue_a.isoformat()} 19:00:00",
+            end_date=f"{tue_a.isoformat()} 20:00:00",
+            url="https://shopsacredground.com/event/free-community-meditation/",
+            description="With Pat Sample · Crystal bowl stillness. All are welcome.",
+        )
+        parsed = parse_host_from_event(tec)
+        self.assertEqual(
+            parsed,
+            MeditationHost(practitioner="Pat Sample", style="Crystal bowl stillness"),
+        )
+        self.assertIn(
+            "With Pat Sample · Crystal bowl stillness",
+            meditation_event_block(day=tue_a, event=tec),
+        )
+
+        # Empty roster → block without With line (still usable)
+        bare = meditation_event_block(day=tue_a, roster=[])
+        self.assertEqual(
+            bare,
+            "• Free Community Meditation\n"
+            "All are welcome\n"
+            "No sign-up needed\n"
+            "Doors close at 8:05pm",
+        )
 
 
 if __name__ == "__main__":

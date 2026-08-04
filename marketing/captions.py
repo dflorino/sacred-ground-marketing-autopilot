@@ -5,6 +5,11 @@ from datetime import date
 from typing import Dict, List, Sequence
 
 from .classify import format_when, is_community_meditation, short_blurb
+from .meditation import (
+    format_tuesday_meditation_opener,
+    host_for_day,
+    meditation_event_block,
+)
 from .models import Event
 from .paths import voice
 
@@ -58,16 +63,6 @@ def _assert_not_generic(text: str) -> None:
             raise ValueError(f"Generic phrase blocked: {phrase}")
 
 
-def _meditation_event_block() -> str:
-    """Daytime Free Community Meditation block — no time line, booking URL, or goodnight."""
-    return (
-        "• Free Community Meditation\n"
-        "All are welcome\n"
-        "No sign-up needed\n"
-        "Doors close at 8:05pm"
-    )
-
-
 def _event_block(ev: Event, with_link: bool, *, under_day: bool = False) -> str:
     """One scannable event: title, when, optional URL — each on its own line.
 
@@ -75,7 +70,7 @@ def _event_block(ev: Event, with_link: bool, *, under_day: bool = False) -> str:
     from the when line — the day header already carries it.
     """
     if is_community_meditation(ev):
-        return _meditation_event_block()
+        return meditation_event_block(event=ev)
     when = format_when(ev)
     if under_day and " · " in when:
         when_line = when.split(" · ", 1)[1]
@@ -131,7 +126,7 @@ def caption_today(events: List[Event], platform: str, day: date) -> Dict:
         ev = events[0]
         if is_community_meditation(ev):
             hook = "Today at Sacred Ground — Free Community Meditation."
-            body = hook + "\n\n" + _meditation_event_block()
+            body = hook + "\n\n" + meditation_event_block(day=day, event=ev)
         else:
             blurb = short_blurb(ev, 180)
             hook = f"Today at Sacred Ground — {ev.title}."
@@ -271,13 +266,15 @@ def caption_week_ahead(events: List[Event], platform: str, day: date) -> Dict:
 def caption_tuesday_meditation(platform: str, day: date) -> Dict:
     """Standalone Tuesday Free Community Meditation post (not the morning Today lineup)."""
     seed = f"tuesday_meditation|{day.isoformat()}|{platform}"
+    host = host_for_day(day)
     openers = list(voice().get("tuesday_meditation_openers") or [])
-    hook = _pick_rotating(
+    raw_hook = _pick_rotating(
         openers,
         f"{seed}|opener",
         "Tonight at Sacred Ground — Free Community Meditation.",
     )
-    body = hook + "\n\n" + _meditation_event_block()
+    hook = format_tuesday_meditation_opener(raw_hook, host)
+    body = hook + "\n\n" + meditation_event_block(day=day)
     body += "\n\n" + _signoff(seed, platform)
     tags = _hashtags(platform)
     text = body + "\n\n" + " ".join(tags)

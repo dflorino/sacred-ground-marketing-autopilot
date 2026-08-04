@@ -1,0 +1,30 @@
+{
+  "notes": "Weekly Free Community Meditation host/style rotation for Autopilot captions (Today + tuesday_meditation). TEC events do not name the rotating host — edit this roster to match the real Tuesday lineup. Index rotates by ISO week (America/Chicago Tuesday date). Prefer real Sacred Ground practitioners; styles are editable placeholders until the Founder locks the weekly schedule.",
+  "rotation": "iso_week",
+  "hosts": [
+    {
+      "practitioner": "Eve",
+      "style": "Guided quantum meditation"
+    },
+    {
+      "practitioner": "Andre Peraza",
+      "style": "Sound bath & drum journey"
+    },
+    {
+      "practitioner": "Rose",
+      "style": "Angelic energy meditation"
+    },
+    {
+      "practitioner": "Mother Lotus",
+      "style": "Heart-centered stillness"
+    },
+    {
+      "practitioner": "Cheryl",
+      "style": "Grounding breathwork"
+    },
+    {
+      "practitioner": "Amber",
+      "style": "Light & chakra meditation"
+    }
+  ]
+}
