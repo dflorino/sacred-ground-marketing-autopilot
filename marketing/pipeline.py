@@ -306,6 +306,79 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                 {"campaign": "week_ahead", "reason": "no_events_in_horizon"}
             )
 
+    # --- Tuesday Free Community Meditation (4pm CT dedicated post) ---
+    tm_cfg = (cfg.get("campaigns") or {}).get("tuesday_meditation") or {}
+    if tm_cfg.get("enabled", True):
+        if day.weekday() != 1:
+            skipped_drafts.append(
+                {"campaign": "tuesday_meditation", "reason": "not_tuesday"}
+            )
+        elif schedule.is_tuesday_meditation_holiday(day):
+            skipped_drafts.append(
+                {
+                    "campaign": "tuesday_meditation",
+                    "reason": "holiday_skip",
+                    "holiday": schedule.tuesday_meditation_holiday_name(day),
+                    "date": day.isoformat(),
+                }
+            )
+        else:
+            day_with_med = classify.ensure_tuesday_community_meditation(
+                classify.events_on_day(events, day),
+                day,
+            )
+            med_events = [
+                e for e in day_with_med if classify.is_community_meditation(e)
+            ]
+            if not med_events:
+                skipped_drafts.append(
+                    {
+                        "campaign": "tuesday_meditation",
+                        "reason": "meditation_missing",
+                    }
+                )
+            else:
+                img = images.plan_image(med_events, "tuesday_meditation", day=day)
+                sched = schedule.schedule_tuesday_meditation(day)
+                tm_platforms = list(tm_cfg.get("platforms") or platforms)
+                tm_created = 0
+                for platform in tm_platforms:
+                    cap = captions.caption_tuesday_meditation(platform, day)
+                    draft = _make_draft(
+                        campaign="tuesday_meditation",
+                        platform=platform,
+                        date_key=day.isoformat(),
+                        events=med_events,
+                        caption=cap,
+                        image=img,
+                        sched=sched,
+                        notes=notes_base
+                        + [
+                            "tuesday_4pm_meditation",
+                            f"image_rule:{img.rule}",
+                        ],
+                    )
+                    if draft:
+                        if tm_cfg.get("auto_publish") and not is_paused():
+                            draft = _auto_ready_for_publish(draft["id"])
+                        created.append(draft)
+                        tm_created += 1
+                    else:
+                        skipped_drafts.append(
+                            {
+                                "campaign": "tuesday_meditation",
+                                "platform": platform,
+                                "reason": "duplicate_or_override",
+                            }
+                        )
+                if tm_created and img.url:
+                    images.record_image_use(
+                        day=day,
+                        url=img.url,
+                        rule=str(img.rule or img.source),
+                        campaign="tuesday_meditation",
+                    )
+
     # --- Spotlights + reminders ---
     if cfg["campaigns"]["spotlight"].get("enabled", True):
         for ev in classify.spotlight_candidates(events, on=day):

@@ -241,3 +241,8 @@ def publish_today_drafts(*, campaign: str = "today") -> Dict[str, Any]:
 def publish_week_ahead_drafts() -> Dict[str, Any]:
     """Publish/schedule tonight's week-ahead planner drafts."""
     return publish_campaign_drafts(campaign="week_ahead")
+
+
+def publish_tuesday_meditation_drafts() -> Dict[str, Any]:
+    """Publish/schedule today's Tuesday meditation drafts (4pm CT)."""
+    return publish_campaign_drafts(campaign="tuesday_meditation")

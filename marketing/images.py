@@ -349,6 +349,37 @@ def plan_image(
             recommendation="Visit/brand day — store exterior + logo + cream footer.",
         )
 
+    if campaign == "tuesday_meditation":
+        from .ingest import today_local
+
+        on = day or today_local()
+        camp = (settings().get("campaigns") or {}).get("tuesday_meditation") or {}
+        pool = [str(u) for u in (camp.get("image_urls") or []) if u]
+        if not pool:
+            # Fallback to Today meditation specialty pool + metaphysical journey plate
+            med = (image_rules().get("rules") or {}).get("meditation") or {}
+            pool = [str(u) for u in (med.get("urls") or []) if u]
+            primary = str(med.get("url") or "")
+            if primary and primary not in pool:
+                pool.insert(0, primary)
+            journey = (
+                "https://shopsacredground.com/wp-content/uploads/"
+                "ai_generated_Metaphysical-spiritual-journey_1763939976.png"
+            )
+            if journey not in pool:
+                pool.append(journey)
+        if not pool:
+            pool = [store_exterior_url()]
+        no_repeat = int(image_rules().get("no_repeat_days") or 7)
+        blocked = urls_used_before_day(on, no_repeat)
+        url = _pick_from_urls(pool, day=on, blocked=blocked) or pool[0]
+        return ImagePlan(
+            source="meditation_pool",
+            url=url,
+            recommendation="Tuesday meditation post — rotating Om / silhouette / journey / morning meditation pool.",
+            rule="tuesday_meditation_pool",
+        )
+
     e = events[0]
     if e.image_url:
         return ImagePlan(

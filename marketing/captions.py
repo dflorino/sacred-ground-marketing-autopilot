@@ -268,6 +268,23 @@ def caption_week_ahead(events: List[Event], platform: str, day: date) -> Dict:
     return {"text": text, "hashtags": tags, "hook": hook}
 
 
+def caption_tuesday_meditation(platform: str, day: date) -> Dict:
+    """Standalone Tuesday Free Community Meditation post (not the morning Today lineup)."""
+    seed = f"tuesday_meditation|{day.isoformat()}|{platform}"
+    openers = list(voice().get("tuesday_meditation_openers") or [])
+    hook = _pick_rotating(
+        openers,
+        f"{seed}|opener",
+        "Tonight at Sacred Ground — Free Community Meditation.",
+    )
+    body = hook + "\n\n" + _meditation_event_block()
+    body += "\n\n" + _signoff(seed, platform)
+    tags = _hashtags(platform)
+    text = body + "\n\n" + " ".join(tags)
+    _assert_not_generic(text)
+    return {"text": text, "hashtags": tags, "hook": hook}
+
+
 def caption_spotlight(event: Event, platform: str, reminder_day: int | None = None) -> Dict:
     when = format_when(event)
     blurb = short_blurb(event, 220)

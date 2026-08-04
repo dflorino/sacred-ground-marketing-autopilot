@@ -98,3 +98,55 @@ Hard rules:
 4. Secret: `ZERNIO_API_KEY` (same as morning)
 5. Status: **Active**
 6. Keep separate from the 7am Today automation
+
+---
+
+# Automation draft — SG Tuesday Meditation 4pm Social (LIVE)
+
+Dedicated Free Community Meditation posts every Tuesday (Facebook + Instagram).
+
+**Status: auto_publish ON.** Every **Tuesday at 4:00 PM America/Chicago**.
+
+**Holiday skips (Chicago local date only):** Christmas Eve, Christmas Day, New Year’s Eve, New Year’s Day. All other Tuesdays must publish — no fail.
+
+Image: rotate meditation pool (Om, silhouette, metaphysical journey, sg-morning-meditation) with 7-day no-repeat.
+
+## Weekly commands (Cloud Agent)
+
+```bash
+python3 -m marketing run --source live-strict
+python3 -m marketing publish-tuesday-meditation
+```
+
+Do **not** call `publish-today` or `publish-week-ahead` in this automation.
+
+## Agent instructions
+
+```
+You are running Sacred Ground Marketing Autopilot for the Tuesday Free Community Meditation campaign.
+
+Hard rules:
+1. Timezone context is America/Chicago. Shop-local post time is 4:00 PM America/Chicago on Tuesdays only.
+2. Checkout this repo and run from the project root.
+3. Refresh live WordPress / The Events Calendar only:
+   python3 -m marketing run --source live-strict
+4. If the WordPress/TEC refresh fails: create NO new drafts, do not use stale cache, report wordpress_refresh_failed, and STOP. Do not publish.
+5. Never overwrite or recreate a draft that is edited, approved, rejected, skipped, locked, or otherwise reviewed.
+6. If the run reports draft_skips with reason holiday_skip for tuesday_meditation: that is expected on Christmas Eve, Christmas Day, New Year's Eve, or New Year's Day — report skip and STOP (do not invent a post).
+7. If today is not Tuesday, report not_tuesday and STOP.
+8. tuesday_meditation has auto_publish=true. After a successful live-strict run on a non-holiday Tuesday, publish today's meditation posts only:
+   python3 -m marketing publish-tuesday-meditation
+   Uses ZERNIO_API_KEY from Cloud Agent secrets. Do not call publish-today or publish-week-ahead.
+9. Caption is the dedicated meditation post (daytime meditation block: Free Community Meditation / All are welcome / No sign-up needed / Doors close at 8:05pm). No door/light goodnight closer. No o'clock. Not the morning Today lineup.
+10. Image from the meditation pool only (Om / silhouette / metaphysical journey / sg-morning-meditation).
+11. Summarize: platforms, image URL, scheduledFor (should be 4:00 PM America/Chicago unless already past), Zernio post IDs/links.
+```
+
+## Editor checklist — Tuesday 4pm
+
+1. Name: **SG Tuesday Meditation 4pm Social**
+2. Schedule: **Every Tuesday · 4:00 PM** · timezone **America/Chicago**
+3. Repo: `dflorino/sacred-ground-marketing-autopilot` · branch `main`
+4. Secret: `ZERNIO_API_KEY` (same as Today / week-ahead)
+5. Status: **Active**
+6. Keep separate from the 7am Today and 7pm week-ahead automations

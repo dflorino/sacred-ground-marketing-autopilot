@@ -687,6 +687,121 @@ class AutopilotTests(unittest.TestCase):
         self.assertNotIn(goodnight, stub_text)
         self.assertNotIn("https://shopsacredground.com/event/meditation/", stub_text)
 
+    def test_tuesday_meditation_schedule_and_holiday_skips(self) -> None:
+        from marketing import schedule
+
+        tue = date(2026, 8, 4)  # Tuesday, not a holiday
+        self.assertTrue(schedule.should_run_tuesday_meditation(tue))
+        self.assertFalse(schedule.is_tuesday_meditation_holiday(tue))
+        plan = schedule.schedule_tuesday_meditation(tue)
+        self.assertTrue(plan.recommended_at.startswith("2026-08-04T16:00:00"))
+
+        wed = date(2026, 8, 5)
+        self.assertFalse(schedule.should_run_tuesday_meditation(wed))
+
+        # Holiday Tuesdays must skip (Chicago local month/day)
+        xmas_eve_tue = date(2024, 12, 24)
+        xmas_day_tue = date(2029, 12, 25)
+        nye_tue = date(2024, 12, 31)
+        nyd_tue = date(2030, 1, 1)
+        for d, name in (
+            (xmas_eve_tue, "christmas_eve"),
+            (xmas_day_tue, "christmas_day"),
+            (nye_tue, "new_years_eve"),
+            (nyd_tue, "new_years_day"),
+        ):
+            self.assertEqual(d.weekday(), 1, msg=f"{d} should be Tuesday")
+            self.assertTrue(schedule.is_tuesday_meditation_holiday(d))
+            self.assertEqual(schedule.tuesday_meditation_holiday_name(d), name)
+            self.assertFalse(schedule.should_run_tuesday_meditation(d))
+
+    def test_tuesday_meditation_caption_daytime_block_no_goodnight(self) -> None:
+        from marketing import captions
+
+        day = date(2026, 8, 4)
+        daytime_block = (
+            "• Free Community Meditation\n"
+            "All are welcome\n"
+            "No sign-up needed\n"
+            "Doors close at 8:05pm"
+        )
+        goodnight = "The door is always open...we will leave the light on"
+
+        for platform in ("facebook", "instagram"):
+            text = captions.caption_tuesday_meditation(platform, day)["text"]
+            self.assertIn(daytime_block, text)
+            self.assertIn("#SacredGround", text)
+            self.assertNotIn(goodnight, text)
+            self.assertNotIn("o'clock", text.lower())
+            self.assertNotIn("leave the light", text.lower())
+            self.assertNotIn("7:00 PM", text)
+            self.assertNotIn(
+                "https://shopsacredground.com/event/free-community-meditation",
+                text,
+            )
+
+    def test_tuesday_meditation_pipeline_publishes_tuesdays_skips_holidays(self) -> None:
+        from marketing import images, pipeline, store
+        from marketing.paths import settings
+
+        images.IMAGE_USAGE_PATH = os.path.join(self._tmpdir, "state", "image_usage.json")
+        pool = list(
+            (settings().get("campaigns") or {})
+            .get("tuesday_meditation", {})
+            .get("image_urls")
+            or []
+        )
+        self.assertGreaterEqual(len(pool), 3)
+
+        # Ordinary Tuesday → FB + IG drafts at 4pm
+        as_of = datetime(2026, 8, 4, 10, 0, tzinfo=ZoneInfo("America/Chicago"))
+        result = pipeline.generate_batch(source="fixture", as_of=as_of)
+        self.assertTrue(result["ok"])
+        tm = [d for d in result["drafts"] if d["campaign"] == "tuesday_meditation"]
+        self.assertEqual(len(tm), 2)
+        platforms = {d["platform"] for d in tm}
+        self.assertEqual(platforms, {"facebook", "instagram"})
+
+        drafts = store.list_drafts()
+        tm_fb = next(
+            d
+            for d in drafts
+            if d["campaign"] == "tuesday_meditation" and d["platform"] == "facebook"
+        )
+        sched = tm_fb["schedule_recommendation"]["recommended_at"]
+        self.assertTrue(sched.startswith("2026-08-04T16:00:00"))
+        cap = tm_fb["caption"]["text"]
+        self.assertIn("• Free Community Meditation\nAll are welcome", cap)
+        self.assertNotIn("The door is always open", cap)
+        self.assertNotIn("o'clock", cap.lower())
+        self.assertIn(tm_fb["image"]["url"], pool)
+        self.assertEqual(tm_fb["image"]["rule"], "tuesday_meditation_pool")
+
+        # Holiday Tuesday → skip, no drafts
+        as_of_xmas = datetime(2024, 12, 24, 10, 0, tzinfo=ZoneInfo("America/Chicago"))
+        result_x = pipeline.generate_batch(source="fixture", as_of=as_of_xmas)
+        self.assertTrue(result_x["ok"])
+        tm_x = [
+            d for d in result_x["drafts"] if d["campaign"] == "tuesday_meditation"
+        ]
+        self.assertEqual(tm_x, [])
+        skip_reasons = {
+            s.get("reason")
+            for s in result_x.get("draft_skips") or []
+            if s.get("campaign") == "tuesday_meditation"
+        }
+        self.assertIn("holiday_skip", skip_reasons)
+
+        # Non-Tuesday → not_tuesday skip
+        as_of_wed = datetime(2026, 8, 5, 10, 0, tzinfo=ZoneInfo("America/Chicago"))
+        result_w = pipeline.generate_batch(source="fixture", as_of=as_of_wed)
+        skip_w = {
+            s.get("reason")
+            for s in result_w.get("draft_skips") or []
+            if s.get("campaign") == "tuesday_meditation"
+        }
+        self.assertIn("not_tuesday", skip_w)
+
 
 if __name__ == "__main__":
     unittest.main()

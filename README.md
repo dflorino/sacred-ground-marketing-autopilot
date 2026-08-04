@@ -4,8 +4,10 @@ Event-driven social marketing drafts from WordPress / The Events Calendar.
 
 When events exist in WordPress, Autopilot creates reviewable drafts for:
 
-- **Today at Sacred Ground** — daily Facebook + Instagram
+- **Today at Sacred Ground** — daily Facebook + Instagram (7:00 AM CT)
+- **Tuesday Free Community Meditation** — every Tuesday 4:00 PM CT (FB + IG); skips only Christmas Eve/Day and New Year’s Eve/Day
 - **This Week at Sacred Ground** — weekly roundup (FB + IG)
+- **Week Ahead** — daily evening planner (7:00 PM CT)
 - **Special Event Spotlight** — Holistic Fair / special one-time events (stronger caption + reminder schedule)
 
 **Phase 1 (default): drafts only.** Nothing publishes live until you approve a test batch.
@@ -33,7 +35,14 @@ python3 -m marketing resume
 
 # Manual override: skip a fingerprint so it won't regenerate
 python3 -m marketing skip --fingerprint FINGERPRINT --reason "manual post already live"
+
+# Phase 2+ publish helpers (need ZERNIO_API_KEY)
+python3 -m marketing publish-today
+python3 -m marketing publish-tuesday-meditation
+python3 -m marketing publish-week-ahead
 ```
+
+Live Cloud Agent schedules are documented in `AUTOMATION-DRAFT.md` (Today 7am · Tuesday meditation 4pm · Week-ahead 7pm).
 
 HTTP (optional local review surface):
 

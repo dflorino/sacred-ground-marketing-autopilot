@@ -62,6 +62,29 @@
       "label": "Special Event Spotlight",
       "reminder_days_before": [7, 3, 1],
       "schedule_local_time": "11:00"
+    },
+    "tuesday_meditation": {
+      "enabled": true,
+      "label": "Tuesday Free Community Meditation",
+      "weekday": "tuesday",
+      "schedule_local_time": "16:00",
+      "platforms": ["facebook", "instagram"],
+      "source": "the_events_calendar",
+      "auto_publish": true,
+      "image_policy": "meditation_pool_rotation",
+      "image_urls": [
+        "https://shopsacredground.com/wp-content/uploads/ai_generated_Sacred-Om-Aum-symbol-glowing-w_1763937092.png",
+        "https://shopsacredground.com/wp-content/uploads/ai_generated_Silhouette-of-person-meditatin_1763937058.png",
+        "https://shopsacredground.com/wp-content/uploads/ai_generated_Metaphysical-spiritual-journey_1763939976.png",
+        "https://shopsacredground.com/wp-content/uploads/sg-morning-meditation.png"
+      ],
+      "skip_holidays": [
+        "christmas_eve",
+        "christmas_day",
+        "new_years_eve",
+        "new_years_day"
+      ],
+      "notes": "Every Tuesday 4:00 PM America/Chicago: dedicated Free Community Meditation FB+IG post. Skip only Christmas Eve, Christmas Day, New Year's Eve, New Year's Day (Chicago local date). Image rotates Om / silhouette / metaphysical journey / sg-morning-meditation with 7-day no-repeat."
     }
   },
   "special_category_names": [

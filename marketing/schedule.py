@@ -48,6 +48,43 @@ def schedule_week_ahead(day: date) -> SchedulePlan:
     )
 
 
+# Chicago-local month/day skips for the dedicated Tuesday meditation post.
+# Only these four holidays; other closed days still get the post if Tuesday.
+_TUESDAY_MEDITATION_HOLIDAYS = {
+    (12, 24): "christmas_eve",
+    (12, 25): "christmas_day",
+    (12, 31): "new_years_eve",
+    (1, 1): "new_years_day",
+}
+
+
+def tuesday_meditation_holiday_name(day: date) -> Optional[str]:
+    """Return holiday skip key for Chicago local date, or None."""
+    return _TUESDAY_MEDITATION_HOLIDAYS.get((day.month, day.day))
+
+
+def is_tuesday_meditation_holiday(day: date) -> bool:
+    """True when the dedicated Tuesday meditation post must not run."""
+    return tuesday_meditation_holiday_name(day) is not None
+
+
+def should_run_tuesday_meditation(day: date) -> bool:
+    """Every Tuesday except the four configured holidays."""
+    if day.weekday() != 1:  # Tuesday
+        return False
+    return not is_tuesday_meditation_holiday(day)
+
+
+def schedule_tuesday_meditation(day: date) -> SchedulePlan:
+    """Tuesday 4:00 PM Central — dedicated Free Community Meditation post."""
+    cfg = settings()["campaigns"]["tuesday_meditation"]
+    when = _at_local(day, cfg.get("schedule_local_time") or "16:00")
+    return SchedulePlan(
+        recommended_at=when.isoformat(),
+        rationale="Every Tuesday 4:00 PM Central — Free Community Meditation reminder.",
+    )
+
+
 def schedule_spotlight(event: Event, days_before: Optional[int] = None) -> SchedulePlan:
     cfg = settings()["campaigns"]["spotlight"]
     start = parse_tec_datetime(event.start_date)
