@@ -526,9 +526,12 @@ class AutopilotTests(unittest.TestCase):
             self.assertNotIn("ticket", text.lower())
 
     def test_caption_community_meditation_special_block(self) -> None:
-        """Meditation uses Founder copy — no booking URL, no generic when line."""
+        """Daytime meditation block only; door/light is a week-ahead goodnight closer."""
+        import hashlib
+
         from marketing import captions
         from marketing.models import Event
+        from marketing.paths import voice
 
         janel = Event(
             id=2,
@@ -545,7 +548,7 @@ class AutopilotTests(unittest.TestCase):
             url="https://shopsacredground.com/event/free-community-meditation-2/",
         )
         day = date(2026, 8, 4)
-        special = (
+        daytime_block = (
             "• Free Community Meditation\n"
             "All are welcome\n"
             "No sign-up needed\n"
@@ -561,7 +564,8 @@ class AutopilotTests(unittest.TestCase):
         solo = captions.caption_today([meditation], "instagram", day)["text"]
 
         for text in (today, week_ahead, week, solo):
-            self.assertIn(special, text)
+            self.assertIn(daytime_block, text)
+            self.assertNotIn("o'clock", text.lower())
             self.assertNotIn(
                 "https://shopsacredground.com/event/free-community-meditation-2/",
                 text,
@@ -569,11 +573,31 @@ class AutopilotTests(unittest.TestCase):
             # No generic Tuesday date/time line for meditation
             self.assertNotIn("Tuesday, August 4 · 7:00 PM", text)
             self.assertNotIn("7:00 PM–8:00 PM", text)
+            # Goodnight must not be glued onto the daytime meditation block
+            self.assertNotIn(daytime_block + "\n" + goodnight, text)
 
-        # Door/light is evening goodnight only — never inside daytime Today meditation
-        for text in (today, solo):
+        # Daytime / non-night captions never use the evening goodnight closer
+        for text in (today, solo, week):
             self.assertNotIn(goodnight, text)
-            self.assertNotIn("o'clock", text)
+
+        # Week-ahead rotates standalone goodnight closers; door/light is one of them
+        closers = list(voice().get("week_ahead_closers") or [])
+        self.assertIn(goodnight, closers)
+        self.assertTrue(
+            any(c in week_ahead for c in closers),
+            "week_ahead should include a rotating goodnight closer",
+        )
+        # Prove the Founder goodnight line is selectable as a closer
+        hit = None
+        for i in range(500):
+            seed = f"goodnight-probe|{i}"
+            if int(hashlib.md5(seed.encode()).hexdigest(), 16) % len(closers) == closers.index(
+                goodnight
+            ):
+                hit = seed
+                break
+        self.assertIsNotNone(hit)
+        self.assertEqual(captions._week_ahead_closer(hit), goodnight)
 
         # Blank line between Janel block and meditation block
         self.assertIn(
@@ -594,7 +618,8 @@ class AutopilotTests(unittest.TestCase):
             url="https://shopsacredground.com/event/meditation/",
         )
         stub_text = captions.caption_week([stub], "facebook", day)["text"]
-        self.assertIn(special, stub_text)
+        self.assertIn(daytime_block, stub_text)
+        self.assertNotIn(goodnight, stub_text)
         self.assertNotIn("https://shopsacredground.com/event/meditation/", stub_text)
 
 
