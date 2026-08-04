@@ -1,4 +1,168 @@
 {
-  "fingerprints": {},
-  "updated_at": null
+  "fingerprints": {
+    "today|2026-08-04|facebook|24175,25809": {
+      "draft_id": "sgma-2026-08-04-today-fb-b49d769a",
+      "posted_at": "2026-08-04T07:04:17.025471-05:00",
+      "external": {
+        "zernio": {
+          "post": {
+            "recycling": {
+              "enabled": false,
+              "gapFreq": "month",
+              "recycleCount": 0,
+              "contentVariations": [],
+              "contentVariationIndex": 0
+            },
+            "_id": "6a718e3e852372080c70a5ae",
+            "userId": {
+              "name": "Deneene",
+              "image": "https://lh3.googleusercontent.com/a/ACg8ocJ3frluRHDDIuCZEbaD9iM3tAD9cP6h8VMymZst-T1cKKZ-wQ=s96-c",
+              "id": "6a49a0ca1f5ee39905d0dc6f"
+            },
+            "title": "",
+            "content": "Today at Sacred Ground — Tuesday, August 4.\n\n• Amber | Customized Therapeutic Massage Sessions — Tuesday, August 4 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/book/amber/\n• Divine Insight Sessions with Janel: Akashic Records or Angel Card Readings — Tuesday, August 4 · 1:00 PM–5:00 PM\n  https://shopsacredground.com/book/janel/\n\nDetails & tickets on each event page.\n\nThe door is open.\n\n#SacredGround #ArlingtonHeights #ShopSacredGround #ChicagoEvents #CrystalShop #EnergyHealing",
+            "mediaItems": [
+              {
+                "type": "image",
+                "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-akashic.png",
+                "_id": "6a718e3e852372080c70a5af"
+              }
+            ],
+            "platforms": [
+              {
+                "platform": "facebook",
+                "accountId": {
+                  "_id": "6a49a1f49d9472faae7c274e",
+                  "platform": "facebook",
+                  "profileId": "6a49a0ca1f5ee39905d0dc87",
+                  "displayName": "Sacred Ground",
+                  "isActive": true,
+                  "profilePicture": "https://scontent-lhr11-1.xx.fbcdn.net/v/t39.30808-1/525520556_778113704730537_8989064612556217432_n.jpg?stp=c412.0.720.720a_cp0_dst-jpg_s50x50_tt6&_nc_cat=106&ccb=1-7&_nc_sid=f907e8&_nc_ohc=m7lYEFksLSwQ7kNvwF7BcyX&_nc_oc=AdqXRdsD5L_MgsoTxS71j-S_aZj99O_NzklfD_NkMXWdncJaIqIfAAbxwITcqMCDVYw&_nc_zt=24&_nc_ht=scontent-lhr11-1.xx&edm=AJdBtusEAAAA&_nc_gid=RC9yZlyZkgFY6FnlBNH1Fg&_nc_tpa=Q5bMBQE8cAN0OUWeaQmVdU3UCByGJYiNB6NP39xk2pj4Z10xqLEvHvZYG_Oc5crgg0aAUV1D88plJJHG&oh=00_AQFFCO6RcAGYfV_PUimpVSBG870HkRVVYLNy5NmAX-3N7w&oe=6A7742BC",
+                  "username": "shopsacredground"
+                },
+                "profileId": "6a49a0ca1f5ee39905d0dc87",
+                "customMedia": [],
+                "scheduledFor": "2026-08-04T12:00:00.000Z",
+                "platformSpecificData": {
+                  "__platformUserIdSnapshot": "10236438766043851:page:101428372368870",
+                  "__usernameSnapshot": "shopsacredground",
+                  "lastPublishStage": "publishing",
+                  "publishingStarted": "2026-08-04T12:03:33.346Z"
+                },
+                "status": "published",
+                "publishAttempts": 1,
+                "contentHash": "b5275001a4553142986d945dff81a516",
+                "_id": "6a718e3e852372080c70a5b0",
+                "platformPostId": "101428372368870_1078070428068195",
+                "platformPostUrl": "https://www.facebook.com/101428372368870_1078070428068195",
+                "publishedAt": "2026-08-04T12:03:39.909Z"
+              }
+            ],
+            "scheduledFor": "2026-08-04T12:00:00.000Z",
+            "timezone": "America/Chicago",
+            "status": "published",
+            "tags": [],
+            "hashtags": [],
+            "mentions": [],
+            "visibility": "public",
+            "crosspostingEnabled": true,
+            "metadata": {
+              "usageCounted": true
+            },
+            "publishAttempts": 0,
+            "createdAt": "2026-08-04T07:01:18.617Z",
+            "updatedAt": "2026-08-04T12:03:40.109Z",
+            "__v": 0,
+            "publishingClaimedAt": "2026-08-04T12:00:49.708Z"
+          }
+        },
+        "reconciled_from_existing": true,
+        "existingPostId": "6a718e3e852372080c70a5ae"
+      }
+    },
+    "today|2026-08-04|instagram|24175,25809": {
+      "draft_id": "sgma-2026-08-04-today-ig-25ae387c",
+      "posted_at": "2026-08-04T07:04:17.262303-05:00",
+      "external": {
+        "zernio": {
+          "post": {
+            "recycling": {
+              "enabled": false,
+              "gapFreq": "month",
+              "recycleCount": 0,
+              "contentVariations": [],
+              "contentVariationIndex": 0
+            },
+            "_id": "6a718e3f4501dff9dc6e20cd",
+            "userId": {
+              "name": "Deneene",
+              "image": "https://lh3.googleusercontent.com/a/ACg8ocJ3frluRHDDIuCZEbaD9iM3tAD9cP6h8VMymZst-T1cKKZ-wQ=s96-c",
+              "id": "6a49a0ca1f5ee39905d0dc6f"
+            },
+            "title": "",
+            "content": "Today at Sacred Ground — Tuesday, August 4.\n\n• Amber | Customized Therapeutic Massage Sessions — Tuesday, August 4 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/book/amber/\n• Divine Insight Sessions with Janel: Akashic Records or Angel Card Readings — Tuesday, August 4 · 1:00 PM–5:00 PM\n  https://shopsacredground.com/book/janel/\n\nDetails & tickets on each event page.\n\nWe'll keep a seat warm.\n\n#SacredGround #ArlingtonHeights #ShopSacredGround #ChicagoEvents #CrystalShop #EnergyHealing #Chicagoland #HolisticChicago",
+            "mediaItems": [
+              {
+                "type": "image",
+                "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-akashic.png",
+                "_id": "6a718e3f4501dff9dc6e20ce"
+              }
+            ],
+            "platforms": [
+              {
+                "platform": "instagram",
+                "accountId": {
+                  "_id": "6a49a12e9d9472faae7c2220",
+                  "profileId": "6a49a0ca1f5ee39905d0dc87",
+                  "platform": "instagram",
+                  "displayName": "Sacred Ground",
+                  "isActive": true,
+                  "profilePicture": "https://scontent-lhr11-1.cdninstagram.com/v/t51.2885-19/313932603_854045628963650_758437280360514790_n.jpg?stp=dst-jpg_s206x206_tt6&_nc_cat=107&ccb=7-5&_nc_sid=bf7eb4&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=VZuOOadmqvoQ7kNvwESWo1P&_nc_oc=Ado1c233KvNbysP8GhJZwI2moPzMT8VJrIBeshss4CfpjrS87SyUWEOsVQSv9dzUe40&_nc_zt=24&_nc_ht=scontent-lhr11-1.cdninstagram.com&edm=AP4hL3IEAAAA&_nc_tpa=Q5bMBQHPdkpZU6nFjtwIEArtGHz9xOcAVzC7uUdIhjvydtvi1tzOQaZf9P1l5Cs9gfgO0eAWFIb-izgQYA&oh=00_AQHMIce-jF-DBES2tPCOo8usOKf096RQyAIDim8k5HO-Xg&oe=6A7723CA",
+                  "username": "shopsacredground"
+                },
+                "profileId": "6a49a0ca1f5ee39905d0dc87",
+                "customMedia": [],
+                "scheduledFor": "2026-08-04T12:00:00.000Z",
+                "platformSpecificData": {
+                  "__platformUserIdSnapshot": "27979692144969047",
+                  "__usernameSnapshot": "shopsacredground",
+                  "lastPublishStage": "awaiting-finalize",
+                  "publishingStarted": null,
+                  "containerCreatedAt": "2026-08-04T12:03:36.346Z",
+                  "pendingContainerId": null,
+                  "publishedCaption": "Today at Sacred Ground — Tuesday, August 4.\n\n• Amber | Customized Therapeutic Massage Sessions — Tuesday, August 4 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/book/amber/\n• Divine Insight Sessions with Janel: Akashic Records or Angel Card Readings — Tuesday, August 4 · 1:00 PM–5:00 PM\n  https://shopsacredground.com/book/janel/\n\nDetails & tickets on each event page.\n\nWe'll keep a seat warm.\n\n#SacredGround #ArlingtonHeights #ShopSacredGround #ChicagoEvents #CrystalShop #EnergyHealing #Chicagoland #HolisticChicago"
+                },
+                "status": "published",
+                "publishAttempts": 1,
+                "contentHash": "a941d37026e84104a29f8b5f640189dd",
+                "_id": "6a718e3f4501dff9dc6e20cf",
+                "platformPostId": "17922051204184783",
+                "platformPostUrl": "https://www.instagram.com/p/DbnhSObjXLe/",
+                "publishedAt": "2026-08-04T12:03:58.210Z"
+              }
+            ],
+            "scheduledFor": "2026-08-04T12:00:00.000Z",
+            "timezone": "America/Chicago",
+            "status": "published",
+            "tags": [],
+            "hashtags": [],
+            "mentions": [],
+            "visibility": "public",
+            "crosspostingEnabled": true,
+            "metadata": {
+              "usageCounted": true
+            },
+            "publishAttempts": 0,
+            "createdAt": "2026-08-04T07:01:19.851Z",
+            "updatedAt": "2026-08-04T12:03:58.322Z",
+            "__v": 0,
+            "publishingClaimedAt": "2026-08-04T12:00:49.708Z"
+          }
+        },
+        "reconciled_from_existing": true,
+        "existingPostId": "6a718e3f4501dff9dc6e20cd"
+      }
+    }
+  },
+  "updated_at": "2026-08-04T07:04:17.262314-05:00"
 }
