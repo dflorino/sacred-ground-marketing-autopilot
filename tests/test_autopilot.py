@@ -549,7 +549,8 @@ class AutopilotTests(unittest.TestCase):
             "• Free Community Meditation\n"
             "All are welcome\n"
             "No sign-up needed\n"
-            "Doors close at 8:05pm o'clock"
+            "Doors close at 8:05pm o'clock\n"
+            "The door is always open...we will leave the light on"
         )
 
         today = captions.caption_today([janel, meditation], "facebook", day)["text"]
