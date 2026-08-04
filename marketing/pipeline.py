@@ -162,9 +162,10 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
     # --- Today (events day OR empty-day visit post) ---
     today_cfg = (cfg.get("campaigns") or {}).get("today") or {}
     if today_cfg.get("enabled", True):
-        today_events = classify.events_on_day(events, day)[
-            : int(cfg.get("max_today_events_in_caption") or 6)
-        ]
+        today_events = classify.cap_events(
+            classify.events_on_day(events, day),
+            int(cfg.get("max_today_events_in_caption") or 6),
+        )
         empty_ok = bool(today_cfg.get("empty_day_fallback", True))
         if today_events or empty_ok:
             img = images.plan_image(today_events, "today", day=day)
@@ -215,9 +216,10 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
 
     # --- Week (always refresh Monday key; generate any day for current week) ---
     week_start = classify.week_start_for(day)
-    week_events = classify.events_in_week(events, week_start)[
-        : int(cfg.get("max_week_events_in_caption") or 10)
-    ]
+    week_events = classify.cap_events(
+        classify.events_in_week(events, week_start),
+        int(cfg.get("max_week_events_in_caption") or 10),
+    )
     if week_events and cfg["campaigns"]["week"].get("enabled", True):
         img = images.plan_image(week_events, "week")
         sched = schedule.schedule_week(week_start)
@@ -259,12 +261,15 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
             as_of_dt = datetime.now(tzinfo())
         elif as_of_dt.tzinfo is None:
             as_of_dt = as_of_dt.replace(tzinfo=tzinfo())
-        ahead_events = classify.events_next_days(
-            events,
-            window_start,
-            days=horizon,
-            after=as_of_dt,
-        )[: int(cfg.get("max_week_ahead_events_in_caption") or 8)]
+        ahead_events = classify.cap_events(
+            classify.events_next_days(
+                events,
+                window_start,
+                days=horizon,
+                after=as_of_dt,
+            ),
+            int(cfg.get("max_week_ahead_events_in_caption") or 8),
+        )
         if ahead_events:
             img = images.plan_image(ahead_events, "week_ahead", day=day)
             sched = schedule.schedule_week_ahead(day)

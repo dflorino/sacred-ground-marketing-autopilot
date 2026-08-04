@@ -84,8 +84,25 @@
   "spotlight_only_special": true,
   "star_marks_featured_not_spotlight": true,
   "exclude_title_substrings": [
-    "community meditation"
+    "internal closed"
   ],
+  "tuesday_community_meditation": {
+    "enabled": true,
+    "notes": "Standing Tuesday 7–8pm Free Community Meditation — always include in Today + week-ahead when that Tuesday is in scope. Inject stub only if TEC feed omitted it.",
+    "title_match_any": [
+      "community meditation",
+      "meditation free community"
+    ],
+    "stub": {
+      "id": 0,
+      "title": "Free Community Meditation",
+      "start_time": "19:00",
+      "end_time": "20:00",
+      "url": "https://shopsacredground.com/event/free-community-meditation/",
+      "cost": "Free",
+      "excerpt": "Weekly Tuesday night free community meditation at Sacred Ground."
+    }
+  },
   "require_event_url": true,
   "max_today_events_in_caption": 6,
   "max_week_events_in_caption": 10,

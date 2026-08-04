@@ -46,9 +46,66 @@ class AutopilotTests(unittest.TestCase):
         ids = {e.id for e in kept}
         self.assertIn(901, ids)
         self.assertIn(902, ids)
+        self.assertIn(907, ids)  # Free Community Meditation must not be title-excluded
         self.assertNotIn(905, ids)
         self.assertNotIn(906, ids)
-        self.assertNotIn(907, ids)
+        self.assertNotIn(908, ids)  # Internal Closed Training — intentional exclude
+
+    def test_tuesday_today_always_includes_community_meditation(self) -> None:
+        """Founder rule: Tuesday Today lineup always lists community meditation."""
+        from marketing import classify
+        from marketing.models import Event
+
+        tuesday = date(2026, 8, 4)  # Tuesday
+        amber = Event(
+            id=24175,
+            title="Amber | Customized Therapeutic Massage Sessions",
+            start_date="2026-08-04 12:00:00",
+            end_date="2026-08-04 17:00:00",
+            url="https://shopsacredground.com/book/amber/",
+            cost="$2 – $166",
+        )
+        meditation = Event(
+            id=21516,
+            title="Free Community Meditation",
+            start_date="2026-08-04 19:00:00",
+            end_date="2026-08-04 20:00:00",
+            url="https://shopsacredground.com/event/free-community-meditation-2/",
+            cost="Free",
+        )
+        kept, skipped = classify.filter_valid([amber, meditation], on=tuesday)
+        self.assertFalse(any(s["reason"] == "excluded_title" for s in skipped))
+        today = classify.events_on_day(kept, tuesday)
+        self.assertTrue(any(classify.is_community_meditation(e) for e in today))
+        self.assertEqual({e.id for e in today}, {24175, 21516})
+
+        # TEC omit → stub inject
+        kept2, _ = classify.filter_valid([amber], on=tuesday)
+        today2 = classify.events_on_day(kept2, tuesday)
+        self.assertTrue(any(classify.is_community_meditation(e) for e in today2))
+        self.assertTrue(any(e.id == 0 for e in today2))  # configured stub id
+
+        # Caption cap must not drop evening meditation
+        crowded = [
+            Event(
+                id=i,
+                title=f"Session {i}",
+                start_date=f"2026-08-04 {10 + i}:00:00",
+                end_date=f"2026-08-04 {11 + i}:00:00",
+                url=f"https://shopsacredground.com/event/{i}/",
+            )
+            for i in range(1, 8)
+        ] + [meditation]
+        kept3, _ = classify.filter_valid(crowded, on=tuesday)
+        capped = classify.cap_events(classify.events_on_day(kept3, tuesday), limit=6)
+        self.assertLessEqual(len(capped), 6)
+        self.assertTrue(any(classify.is_community_meditation(e) for e in capped))
+
+        # Week-ahead horizon that includes a Tuesday gets meditation too
+        ahead = classify.ensure_meditation_in_horizon([], date(2026, 8, 4), days=1)
+        self.assertEqual(len(ahead), 1)
+        self.assertTrue(classify.is_community_meditation(ahead[0]))
+        self.assertEqual(ahead[0].start_date, "2026-08-04 19:00:00")
 
     def test_generate_batch_creates_today_week_spotlight(self) -> None:
         from marketing import pipeline, store

@@ -70,6 +70,7 @@ python3 -m marketing set-phase 1
 - **Events:** The Events Calendar REST  
   `https://shopsacredground.com/wp-json/tribe/events/v1/events`
 - **Fallback cache:** `data/cache/live_events.json` (refreshed from WordPress when REST is unreachable)
+- **Event inclusion:** TEC `publish` only. Free + evening events are included. `exclude_title_substrings` is for rare staff-only titles — never community meditation. Tuesday Free Community Meditation is guaranteed (TEC event or configured stub).
 - **Distribution (Phase 2+):** Workflow Engine releases an approved Marketing Package to ML Social (`social_publish`) — last mile only. Account IDs in `config/accounts.json`. See Sacred Ground **Distribution Rule** (`Sacred-Ground-Social-Distribution-Adapter-v1.0.md`).
 - **This repo** owns draft state and fingerprints under Marketing; Founder approval and adapter handoff are Workflow Engine responsibilities
 
@@ -82,7 +83,7 @@ Generated from WordPress (43 upcoming events → 40 valid):
 | Today | FB + IG | Tai Chi Gung, Tarot With Adie, Quantum Alignment Series |
 | This Week | FB + IG | Roundup through Jul 12 incl. Summer Holistic Fair |
 | Spotlight | FB + IG | Summer Holistic Fair + day-before reminder |
-| Skipped | — | Community Meditation titles (excluded by config) |
+| Skipped | — | Only intentional title excludes (e.g. internal closed); free community meditation is always kept |
 
 All drafts: `approval_status=pending`, `publish_blocked_reason=phase_1_drafts_only`.
 

@@ -112,12 +112,124 @@ def filter_valid(events: List[Event], on: Optional[date] = None) -> Tuple[List[E
     return kept, skipped
 
 
+def _meditation_cfg() -> Dict:
+    return settings().get("tuesday_community_meditation") or {}
+
+
+def is_community_meditation(event: Event) -> bool:
+    """True for Free Community Meditation / Meditation Free Community Event titles."""
+    low = (event.title or "").lower()
+    needles = _meditation_cfg().get("title_match_any") or [
+        "community meditation",
+        "meditation free community",
+    ]
+    return any(str(n).lower() in low for n in needles)
+
+
+def _meditation_stub_for_day(day: date) -> Event:
+    """Build the standing Tuesday-night meditation when TEC omitted it."""
+    cfg = _meditation_cfg()
+    stub = cfg.get("stub") or {}
+    start_t = str(stub.get("start_time") or "19:00")
+    end_t = str(stub.get("end_time") or "20:00")
+    # Normalize HH:MM → HH:MM:00
+    if len(start_t) == 5:
+        start_t = f"{start_t}:00"
+    if len(end_t) == 5:
+        end_t = f"{end_t}:00"
+    day_s = day.isoformat()
+    return enrich(
+        Event(
+            id=int(stub.get("id") or 0),
+            title=str(stub.get("title") or "Free Community Meditation"),
+            start_date=f"{day_s} {start_t}",
+            end_date=f"{day_s} {end_t}",
+            url=normalize_event_url(str(stub.get("url") or "")),
+            description=str(stub.get("excerpt") or ""),
+            excerpt=str(stub.get("excerpt") or ""),
+            cost=str(stub.get("cost") or "Free"),
+            venue_name="Sacred Ground",
+            timezone="America/Chicago",
+        )
+    )
+
+
+def _has_meditation_on_day(events: List[Event], day: date) -> bool:
+    for ev in events:
+        if not is_community_meditation(ev):
+            continue
+        start = parse_tec_datetime(ev.start_date)
+        if start and start.date() == day:
+            return True
+    return False
+
+
+def ensure_tuesday_community_meditation(
+    events: List[Event],
+    day: date,
+) -> List[Event]:
+    """
+    Founder rule: every Tuesday lineup must include community meditation.
+
+    If `day` is Tuesday and no matching TEC event is present, inject the
+    configured standing stub (7–8pm CT Free Community Meditation).
+    """
+    cfg = _meditation_cfg()
+    if cfg.get("enabled", True) is False:
+        return events
+    # weekday(): Monday=0 … Tuesday=1
+    if day.weekday() != 1:
+        return events
+    if _has_meditation_on_day(events, day):
+        return events
+    out = list(events) + [_meditation_stub_for_day(day)]
+    out.sort(key=lambda e: e.start_date)
+    return out
+
+
+def ensure_meditation_in_horizon(
+    events: List[Event],
+    window_start: date,
+    days: int,
+) -> List[Event]:
+    """Inject Tuesday meditation for each Tuesday inside [window_start, +days)."""
+    cfg = _meditation_cfg()
+    if cfg.get("enabled", True) is False:
+        return events
+    out = list(events)
+    end = window_start + timedelta(days=max(1, days) - 1)
+    d = window_start
+    while d <= end:
+        if d.weekday() == 1 and not _has_meditation_on_day(out, d):
+            out.append(_meditation_stub_for_day(d))
+        d += timedelta(days=1)
+    out.sort(key=lambda e: e.start_date)
+    return out
+
+
+def cap_events(events: List[Event], limit: int) -> List[Event]:
+    """
+    Caption size cap. Community meditation is never dropped to make room —
+    trim other (usually earlier) events first when over limit.
+    """
+    if limit <= 0 or len(events) <= limit:
+        return list(events)
+    meds = [e for e in events if is_community_meditation(e)]
+    others = [e for e in events if not is_community_meditation(e)]
+    # Keep meditation even if it alone exceeds limit (pathological config).
+    room = max(0, limit - len(meds))
+    out = others[:room] + meds
+    out.sort(key=lambda e: e.start_date)
+    return out
+
+
 def events_on_day(events: List[Event], day: date) -> List[Event]:
     out: List[Event] = []
     for ev in events:
         start = parse_tec_datetime(ev.start_date)
         if start and start.date() == day:
             out.append(ev)
+    out = ensure_tuesday_community_meditation(out, day)
     out.sort(key=lambda e: e.start_date)
     return out
 
@@ -129,6 +241,7 @@ def events_in_week(events: List[Event], week_start: date) -> List[Event]:
         start = parse_tec_datetime(ev.start_date)
         if start and week_start <= start.date() <= week_end:
             out.append(ev)
+    out = ensure_meditation_in_horizon(out, week_start, days=7)
     out.sort(key=lambda e: e.start_date)
     return out
 
@@ -154,6 +267,21 @@ def events_next_days(
             if finish <= after:
                 continue
         out.append(ev)
+    out = ensure_meditation_in_horizon(out, on, days=days)
+    # Re-apply "after" so a stub that already ended tonight is not re-injected
+    if after is not None:
+        filtered: List[Event] = []
+        for ev in out:
+            start = parse_tec_datetime(ev.start_date)
+            if not start:
+                continue
+            finish = parse_tec_datetime(ev.end_date) or start
+            if finish.tzinfo is None and after.tzinfo is not None:
+                finish = finish.replace(tzinfo=after.tzinfo)
+            if finish <= after:
+                continue
+            filtered.append(ev)
+        out = filtered
     out.sort(key=lambda e: e.start_date)
     return out
 
