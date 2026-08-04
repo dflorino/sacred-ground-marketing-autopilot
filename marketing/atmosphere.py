@@ -132,28 +132,55 @@ def nighttime_plan(day: date) -> Dict[str, Any]:
             ),
         }
 
-    # Priority 2: holiday
+    # Priority 2: holiday (may rotate multiple holiday plates)
     hit = holiday_for(day)
     if hit:
         hid, h_meta = hit
+        urls = [str(u) for u in (h_meta.get("urls") or []) if u]
+        primary = str(h_meta.get("url") or "")
+        if primary and primary not in urls:
+            urls.insert(0, primary)
+        url = urls[day.toordinal() % len(urls)] if urls else ""
         return {
             "campaign": "week_ahead",
             "mode": "holiday",
             "season": season,
             "holiday": hid,
             "full_moon": False,
-            "image_url": str(h_meta.get("url") or ""),
+            "image_url": url,
             "season_look": str(h_meta.get("look") or hid),
             "cart": str(h_meta.get("cart") or ""),
             "prompt_hint": (
-                f"Sacred Ground nighttime storefront HOLIDAY={hid}. Base: {base} "
+                f"Sacred Ground nighttime HOLIDAY={hid}. Base: {base} "
                 f"Outdoors: {h_meta.get('look')}. Cart: {h_meta.get('cart')}. "
-                "Do not invent a different building. Events stay in caption."
+                "Events stay in caption."
             ),
         }
 
-    # Priority 3: creative pool (night skies + season storefronts)
-    pool = [p for p in (night.get("creative_pool") or []) if p.get("url")]
+    # Priority 3: creative night skies + current-season storefront only
+    pool: List[Dict[str, Any]] = []
+    for p in night.get("creative_pool") or []:
+        if not p.get("url"):
+            continue
+        # Season storefront plates only appear in their own season.
+        if p.get("kind") == "storefront":
+            p_season = str(p.get("season") or "")
+            if p_season and p_season != season:
+                continue
+        pool.append(p)
+
+    season_url = str(s_meta.get("url") or "")
+    if season_url and not any(str(p.get("url")) == season_url for p in pool):
+        pool.append(
+            {
+                "id": f"season_{season}_storefront",
+                "label": f"{season.title()} storefront",
+                "url": season_url,
+                "kind": "storefront",
+                "season": season,
+            }
+        )
+
     if pool:
         pick = pool[day.toordinal() % len(pool)]
         kind = str(pick.get("kind") or "creative")

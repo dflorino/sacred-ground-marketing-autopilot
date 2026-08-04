@@ -132,40 +132,73 @@ def caption_week(events: List[Event], platform: str, week_start: date) -> Dict:
     return {"text": text, "hashtags": tags, "hook": hook}
 
 
+def _pick_rotating(opts: List[str], seed: str, fallback: str) -> str:
+    cleaned = [o.rstrip() for o in opts if o and str(o).strip()]
+    if not cleaned:
+        return fallback
+    idx = int(hashlib.md5(seed.encode()).hexdigest(), 16) % len(cleaned)
+    return cleaned[idx]
+
+
 def _week_ahead_opener(seed: str) -> str:
     cfg = voice()
     opts = list(cfg.get("week_ahead_openers") or [])
     if not opts and cfg.get("week_ahead_opener"):
         opts = [str(cfg["week_ahead_opener"])]
-    if not opts:
-        opts = [
-            "As the shop settles in for the night, we’re reminded that tomorrow’s another day—and there’s plenty to look forward to."
-        ]
     # Never append stale “this week” closings.
-    opts = [o.rstrip() for o in opts if o and "this week" not in o.lower()]
-    if not opts:
-        opts = [
-            "As the shop settles in for the night, we’re reminded that tomorrow’s another day—and there’s plenty to look forward to."
-        ]
-    idx = int(hashlib.md5(seed.encode()).hexdigest(), 16) % len(opts)
-    return opts[idx]
+    opts = [o for o in opts if o and "this week" not in o.lower()]
+    return _pick_rotating(
+        opts,
+        seed,
+        "As the shop settles in for the night, we’re reminded that tomorrow’s another day—and there’s plenty to look forward to.",
+    )
+
+
+def _week_ahead_night_block(seed: str) -> str:
+    cfg = voice()
+    opts = list(cfg.get("week_ahead_night_blocks") or [])
+    if not opts and cfg.get("week_ahead_night_block"):
+        opts = [str(cfg["week_ahead_night_block"])]
+    return _pick_rotating(
+        opts,
+        seed,
+        "If you’re not done for the night yet…\n"
+        "Peek at the Observatory — it changes every day.\n"
+        "https://shopsacredground.com/sacred-ground-observatory/\n\n"
+        "And don’t forget the Library: download a meditation or playlist, "
+        "find something to watch or listen to, or explore sacred chanting and music.\n"
+        "https://shopsacredground.com/library/",
+    )
+
+
+def _week_ahead_closer(seed: str) -> str:
+    cfg = voice()
+    opts = list(cfg.get("week_ahead_closers") or [])
+    return _pick_rotating(
+        opts,
+        seed,
+        "We wish you a good night — see you tomorrow. We’ll leave the lights on.",
+    )
 
 
 def caption_week_ahead(events: List[Event], platform: str, day: date) -> Dict:
-    """Daily evening planner — upcoming days in caption; exterior photo only."""
+    """Daily evening planner — upcoming days in caption; night creative photo."""
     if not events:
         raise ValueError("week_ahead caption requires events")
 
     cfg = voice()
-    hook = _week_ahead_opener(f"week_ahead|{day.isoformat()}|{platform}")
+    seed = f"week_ahead|{day.isoformat()}|{platform}"
+    # Separate seeds so opener / night block / closer don't lock to the same index.
+    hook = _week_ahead_opener(f"{seed}|opener")
     lines = [_event_line(e, True) for e in events]
     body = hook + "\n\n" + "\n".join(lines)
-    night = (cfg.get("week_ahead_night_block") or "").strip()
+    night = _week_ahead_night_block(f"{seed}|night")
     if night:
         body += "\n\n" + night
     body += "\n\nCall to book a session or grab your spot online."
     body += "\n847-749-3922"
     body += "\nhttps://shopsacredground.com/events/"
+    body += "\n\n" + _week_ahead_closer(f"{seed}|closer")
     tags = _hashtags(platform)
     text = body + "\n\n" + " ".join(tags)
     if platform == "instagram":

@@ -13,9 +13,29 @@
     "As the shop settles in for the night, we’re reminded that tomorrow’s another day—and there’s plenty to look forward to.",
     "As the shop settles in for the night, tomorrow is another day—and there’s plenty waiting ahead.",
     "Lights dim at Sacred Ground, and tomorrow is another day with plenty to look forward to.",
-    "As evening settles over the shop, we’re reminded tomorrow is another day—and there’s plenty coming up."
+    "As evening settles over the shop, we’re reminded tomorrow is another day—and there’s plenty coming up.",
+    "As the night comes to a close at Sacred Ground, tomorrow is already quietly waiting with more to explore.",
+    "The day softens into evening here — and there’s still a little more on the calendar ahead.",
+    "Closing time draws near, but the next couple of days already have some beautiful invitations waiting."
   ],
-  "week_ahead_night_block": "Tonight doesn’t stop here.\nPeek at the Observatory — it changes every day.\nhttps://shopsacredground.com/sacred-ground-observatory/\n\nOr settle into the Library: download a meditation or playlist, find something to watch or listen to, or explore sacred chanting and music.\nhttps://shopsacredground.com/library/",
+  "week_ahead_night_blocks": [
+    "If you’re not done for the night yet…\nPeek at the Observatory — it changes every day.\nhttps://shopsacredground.com/sacred-ground-observatory/\n\nAnd don’t forget the Library: download a meditation or playlist, find something to watch or listen to, or explore sacred chanting and music.\nhttps://shopsacredground.com/library/",
+    "Not ready to call it a night?\nThe Observatory is still open for a quiet look — it changes every day.\nhttps://shopsacredground.com/sacred-ground-observatory/\n\nOr settle into the Library: meditations, playlists, something to watch or listen to, sacred chanting and music.\nhttps://shopsacredground.com/library/",
+    "Before you turn in — if the evening still has a little room in it…\nVisit the Observatory. It changes every day.\nhttps://shopsacredground.com/sacred-ground-observatory/\n\nOr wander the Library for a meditation, a playlist, or something gentle to watch or hear.\nhttps://shopsacredground.com/library/",
+    "Tonight doesn’t have to end at the door.\nPeek at the Observatory — fresh each day.\nhttps://shopsacredground.com/sacred-ground-observatory/\n\nDon’t forget the Library either: download a meditation or playlist, find something to watch or listen to, or explore sacred chanting and music.\nhttps://shopsacredground.com/library/",
+    "If the night still feels open…\nThe Observatory is waiting — it changes every day.\nhttps://shopsacredground.com/sacred-ground-observatory/\n\nAnd the Library is there when you want something soft to land in: meditations, playlists, video, chanting, and music.\nhttps://shopsacredground.com/library/"
+  ],
+  "week_ahead_night_block": "If you’re not done for the night yet…\nPeek at the Observatory — it changes every day.\nhttps://shopsacredground.com/sacred-ground-observatory/\n\nAnd don’t forget the Library: download a meditation or playlist, find something to watch or listen to, or explore sacred chanting and music.\nhttps://shopsacredground.com/library/",
+  "week_ahead_closers": [
+    "We wish you a good night — see you tomorrow. We’ll leave the lights on.",
+    "Good night from Sacred Ground. Tomorrow’s another day, and we’ll be here.",
+    "Sweet dreams. We’ll leave the lights on for you.",
+    "Rest easy tonight — we’ll see you tomorrow.",
+    "As the night settles, we wish you peace. See you tomorrow.",
+    "Good night. The door will be open again tomorrow.",
+    "Sleep well — Sacred Ground will be waiting when morning comes.",
+    "We’ll leave the lights on. Good night, and see you soon."
+  ],
   "forbidden_phrases": [
     "Don't miss out",
     "Click the link in bio",

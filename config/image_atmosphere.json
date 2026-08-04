@@ -1,5 +1,5 @@
 {
-  "notes": "Morning = specialty library only (no seasons). Night = creative sky pack by default; holidays + full moon still override. Season storefronts stay in the creative mix so the shop still appears. Full moon image ONLY on actual full-moon nights.",
+  "notes": "Morning = specialty library only (no seasons). Night = creative sky pack by default; holidays + full moon still override. Current-season storefront only mixes into creatives (never wrong-season). Holiday windows may rotate multiple holiday plates. Full moon image ONLY on actual full-moon nights.",
   "daytime": {
     "campaign": "today",
     "mode": "specialty_library_only",
@@ -32,9 +32,13 @@
       "christmas": {
         "label": "Christmas",
         "windows": [{ "start": "12-13", "end": "12-26" }],
-        "look": "soft snow, evergreen, warm holiday lights",
+        "look": "soft snow, evergreen, warm holiday lights — storefront or forest Christmas tree",
         "cart": "evergreen, ornaments, pinecones, berries — not crystals",
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-christmas.png"
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-christmas.png",
+        "urls": [
+          "https://shopsacredground.com/wp-content/uploads/sg-night-christmas.png",
+          "https://shopsacredground.com/wp-content/uploads/sg-night-creative-christmas-forest-tree.png"
+        ]
       },
       "hanukkah": {
         "label": "Hanukkah",
@@ -189,29 +193,33 @@
         "id": "season_spring_storefront",
         "label": "Spring storefront (season mix)",
         "url": "https://shopsacredground.com/wp-content/uploads/sg-night-spring-1.png",
-        "kind": "storefront"
+        "kind": "storefront",
+        "season": "spring"
       },
       {
         "id": "season_summer_storefront",
         "label": "Summer storefront (season mix)",
         "url": "https://shopsacredground.com/wp-content/uploads/sg-night-summer-1.png",
-        "kind": "storefront"
+        "kind": "storefront",
+        "season": "summer"
       },
       {
         "id": "season_fall_storefront",
         "label": "Fall storefront (season mix)",
         "url": "https://shopsacredground.com/wp-content/uploads/sg-night-fall.png",
-        "kind": "storefront"
+        "kind": "storefront",
+        "season": "fall"
       },
       {
         "id": "season_winter_storefront",
         "label": "Winter storefront (season mix)",
         "url": "https://shopsacredground.com/wp-content/uploads/sg-night-winter-1.png",
-        "kind": "storefront"
+        "kind": "storefront",
+        "season": "winter"
       }
     ],
     "events_in_image": false,
     "events_in_caption": true,
-    "how_it_combines": "Priority: (1) full moon night → full-moon image only; (2) holiday window → holiday storefront; (3) else rotate creative_pool by calendar day (night-sky creatives + season storefronts mixed in). Events stay in caption. Week-ahead horizon is 2 days."
+    "how_it_combines": "Priority: (1) full moon night → full-moon image only; (2) holiday window → rotate that holiday’s urls (Christmas includes forest tree); (3) else rotate creative night skies + ONLY the current-season storefront. Events stay in caption. Week-ahead horizon is 2 days."
   }
 }
