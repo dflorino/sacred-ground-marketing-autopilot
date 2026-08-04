@@ -1,0 +1,69 @@
+{
+  "batch": "01",
+  "timezone": "America/Chicago",
+  "platforms": ["tiktok", "youtube_shorts"],
+  "target_duration_seconds": [15, 30],
+  "voice_notes": "Warm, grounded, never corporate. Match config/voice.json tone. Avoid forbidden_phrases.",
+  "scripts": [
+    {
+      "id": "welcome",
+      "title": "Welcome to Sacred Ground",
+      "approx_seconds": 20,
+      "background_preference": ["exterior_dusk", "logo_wall"],
+      "onscreen_text": ["Welcome", "Arlington Heights"],
+      "spoken": "Hi — I’m Deneene, and this is Sacred Ground in Arlington Heights.\n\nWe’re a crystal shop and a healing space… a place to breathe, browse, and come as you are.\n\nCome say hello. The door is open.",
+      "caption": "Welcome to Sacred Ground — crystals, healing, and a warm seat in Arlington Heights. shopsacredground.com · 847-749-3922",
+      "links": ["https://shopsacredground.com/"]
+    },
+    {
+      "id": "meditation_tuesday",
+      "title": "Free Community Meditation (Tuesday)",
+      "approx_seconds": 25,
+      "background_preference": ["aisle_soft", "books_incense"],
+      "onscreen_text": ["Free Community Meditation", "Tuesdays"],
+      "spoken": "Tuesdays at Sacred Ground, we gather for Free Community Meditation.\n\nNo experience needed. Just show up, settle in, and let the room hold you for a little while.\n\nWe’d love to sit with you. Details are on our site — shopsacredground.com.",
+      "caption": "Free Community Meditation — Tuesdays at Sacred Ground. Come as you are. shopsacredground.com",
+      "links": ["https://shopsacredground.com/"]
+    },
+    {
+      "id": "shop_vibe",
+      "title": "Shop vibe — soft light, real shelves",
+      "approx_seconds": 20,
+      "background_preference": ["crystal_cases", "aisle"],
+      "onscreen_text": ["Come browse"],
+      "spoken": "If you’ve been craving a quiet place that still feels alive… this is it.\n\nCases of crystals, warm light, and room to wander without rushing.\n\nCome browse. Stay as long as you need. We’ll leave the light on.",
+      "caption": "Soft light, real shelves, and room to breathe — Sacred Ground, Arlington Heights. shopsacredground.com",
+      "links": ["https://shopsacredground.com/"]
+    },
+    {
+      "id": "observatory_teaser",
+      "title": "Observatory — Beneath the Surface",
+      "approx_seconds": 25,
+      "background_preference": ["exterior_dusk", "interior_calm"],
+      "onscreen_text": ["Observatory", "daily"],
+      "spoken": "Every day, our Observatory offers a quiet look Beneath the Surface —\n\na little insight for whoever needs it.\n\nPeek when you have a moment. It changes every day.\nshopsacredground.com/sacred-ground-observatory",
+      "caption": "A quiet daily look Beneath the Surface — Sacred Ground Observatory. https://shopsacredground.com/sacred-ground-observatory/",
+      "links": ["https://shopsacredground.com/sacred-ground-observatory/"]
+    },
+    {
+      "id": "come_as_you_are",
+      "title": "Come as you are",
+      "approx_seconds": 18,
+      "background_preference": ["logo_wall", "open_floor"],
+      "onscreen_text": ["Come as you are"],
+      "spoken": "You don’t have to know what you’re looking for.\n\nYou can come for a crystal, a reading, a class — or just to feel a little more grounded.\n\nCome as you are. We’ll keep a seat warm.",
+      "caption": "Come as you are — Sacred Ground, Arlington Heights. shopsacredground.com · 847-749-3922",
+      "links": ["https://shopsacredground.com/"]
+    },
+    {
+      "id": "readings_soft_invite",
+      "title": "Readings — soft invite",
+      "approx_seconds": 22,
+      "background_preference": ["shelf_soft", "crystal_cases"],
+      "onscreen_text": ["Readings", "by appointment"],
+      "spoken": "When you’re ready for a little clarity, our practitioners are here —\n\ntarot, energy work, and gentle guidance, offered with care.\n\nBrowse the calendar on our site, and book what feels right.\nWe’ll meet you there.",
+      "caption": "Readings and energy work at Sacred Ground — book what feels right. shopsacredground.com",
+      "links": ["https://shopsacredground.com/"]
+    }
+  ]
+}

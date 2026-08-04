@@ -1,23 +1,61 @@
 {
   "stack": "heygen",
-  "status": "locked",
+  "status": "scaffolded_ready_for_first_reel",
+  "timezone": "America/Chicago",
   "avatar": {
     "provider": "heygen",
-    "role": "face_and_lip_sync"
+    "role": "face_and_lip_sync",
+    "notes": "Digital Twin / Presenter from assets/deneene-refs. Never Cursor stills."
   },
   "voice": {
     "provider": "heygen",
-    "mode": "voice_clone_from_samples",
+    "mode": "voice_clone",
+    "clone_source": "fish_heygen_clone",
     "samples_dir": "assets/deneene-voice",
-    "fallback_note": "ElevenLabs only if HeyGen voice clone is insufficient later"
+    "status": "working_per_founder",
+    "fallback_note": "ElevenLabs only if HeyGen/Fish clone is insufficient later"
+  },
+  "backgrounds": {
+    "dir": "assets/heygen/backgrounds",
+    "exterior_canonical": "assets/heygen/sg-store-background.jpg",
+    "shoot_priority": ["crystal_cases", "aisles", "logo_wall", "books_incense", "open_floor"],
+    "aspect": "prefer_portrait_9_16_for_shorts"
+  },
+  "scripts": {
+    "batch_markdown": "data/reels/scripts-batch-01.md",
+    "batch_json": "config/reel_scripts.json",
+    "first_recommended": "welcome"
+  },
+  "heygen": {
+    "api_base": "https://api.heygen.com",
+    "create_video_path": "/v3/videos",
+    "list_avatars_path": "/v3/avatars",
+    "list_voices_path": "/v3/voices",
+    "env": {
+      "api_key": "HEYGEN_API_KEY",
+      "avatar_id": "HEYGEN_AVATAR_ID",
+      "voice_id": "HEYGEN_VOICE_ID",
+      "background_asset_id": "HEYGEN_BACKGROUND_ASSET_ID"
+    },
+    "avatar_id": null,
+    "voice_id": null,
+    "background_asset_id": null,
+    "default_aspect_ratio": "9:16",
+    "default_resolution": "1080p",
+    "dry_run_script": "scripts/heygen_dry_run.py",
+    "notes": "IDs stay null in git — set via env. Do not commit API keys."
   },
   "content": {
-    "source": "observatory_beneath_surface",
+    "sources": [
+      "reel_scripts_batch",
+      "observatory_beneath_surface"
+    ],
     "wp_option_pattern": "eeo_daily_YYYY-MM-DD",
     "field": "beneath_surface",
     "day": "yesterday",
-    "target_duration_seconds": [30, 60],
-    "caption_link": "https://shopsacredground.com/sacred-ground-observatory/"
+    "target_duration_seconds": [15, 30],
+    "caption_link": "https://shopsacredground.com/sacred-ground-observatory/",
+    "shop_link": "https://shopsacredground.com/"
   },
   "looks": {
     "config": "config/deneene_looks.json",
@@ -27,10 +65,22 @@
   "publish": {
     "phase": 1,
     "approve_before_post": true,
-    "platforms": ["tiktok", "youtube_shorts"]
+    "platforms": ["tiktok", "youtube_shorts"],
+    "auto_publish": false,
+    "note": "Separate from FB/IG Zernio autopilot — do not wire silent TikTok/YT publish in v1"
+  },
+  "isolation": {
+    "does_not_touch": [
+      "marketing publish-today",
+      "marketing publish-week-ahead",
+      "marketing publish-tuesday-meditation",
+      "ZERNIO_API_KEY morning/evening path"
+    ]
   },
   "founder_still_needed": [
-    "1–3 min clear voice samples in assets/deneene-voice/",
-    "Confirm HeyGen account / API access when ready"
+    "Interior/case background photos → assets/heygen/backgrounds/",
+    "Optional: HEYGEN_API_KEY + HEYGEN_AVATAR_ID + HEYGEN_VOICE_ID in .env for API generate",
+    "Approve first draft reel before any TikTok/YouTube post",
+    "Cadence (optional): e.g. 3×/week or 1/day from scripts + Observatory"
   ]
 }

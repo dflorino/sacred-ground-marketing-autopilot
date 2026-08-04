@@ -99,14 +99,18 @@ All drafts: `approval_status=pending`, `publish_blocked_reason=phase_1_drafts_on
 ## Layout
 
 ```
-config/          voice, accounts, defaults
+config/          voice, accounts, defaults, reels.json + reel_scripts.json
 marketing/       ingest → classify → captions → images → schedule → store
 api/             optional read API for Dashboard later
 data/drafts/     draft JSON files
 data/cache/      live WordPress event export
 data/state/      pause, phase, posted ledger, overrides
 data/fixtures/   offline sample events for tests
-scripts/         one-shot runners + WP import
+data/reels/      TikTok / YouTube Shorts scripts (HeyGen path)
+assets/heygen/   store backgrounds for AI-Deneene reels
+scripts/         one-shot runners + WP import + heygen_dry_run.py
 ```
+
+**Reels (TikTok / YouTube Shorts):** separate from FB/IG Zernio publish. See `REELS-PLAN.md`. Dry-run: `python3 scripts/heygen_dry_run.py`.
 
 See `API-CONTRACT.md` for the draft artifact shape.

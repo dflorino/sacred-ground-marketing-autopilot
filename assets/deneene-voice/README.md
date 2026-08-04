@@ -1,13 +1,15 @@
 # Deneene voice samples (HeyGen clone)
 
-Drop **1–3 minutes** of clear speech here for the AI-Deneene reel voice clone.
+Drop clear speech samples here for the AI-Deneene reel voice clone.
 
 ## Status
 
-- **Sample received (local):** `deneene-voice-sample-01.m4a` (~1:58, mono AAC 48 kHz). Copied from Desktop voice memo; kept **gitignored** for privacy.
-- Next: HeyGen account/API to clone voice for reels (see `REELS-PLAN.md` and `config/reels.json`).
+- **Clone working** in HeyGen (Fish path) — Founder confirmed.
+- Local sample (gitignored): `deneene-voice-sample-01.m4a` (~1:58) if present on disk.
+- Recording / upload checklist: `heygen-clone-script.md`
+- Reels next: store backgrounds + batch scripts → first TikTok / YouTube Short (see `REELS-PLAN.md`).
 
-## What to record
+## What to record (if re-cloning)
 
 - Warm, natural speaking voice (phone voice memo is fine)
 - Quiet room — no heavy background music or TV
@@ -22,4 +24,4 @@ Audio binaries in this folder are gitignored; this README stays tracked.
 
 ## Stack
 
-Reels use **HeyGen** for avatar + lip-sync; voice clone is from these samples via HeyGen (primary). See `REELS-PLAN.md` and `config/reels.json`.
+Reels use **HeyGen** for avatar + lip-sync; voice = HeyGen/Fish clone from these samples. See `REELS-PLAN.md` and `config/reels.json`.
