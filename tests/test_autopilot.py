@@ -549,7 +549,7 @@ class AutopilotTests(unittest.TestCase):
             "• Free Community Meditation\n"
             "All are welcome\n"
             "No sign-up needed\n"
-            "Doors close at 8:05pm o'clock\n"
+            "Doors close at 8:05pm\n"
             "The door is always open...we will leave the light on"
         )
 
