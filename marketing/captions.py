@@ -58,12 +58,18 @@ def _assert_not_generic(text: str) -> None:
             raise ValueError(f"Generic phrase blocked: {phrase}")
 
 
-def _event_line(ev: Event, with_link: bool) -> str:
+def _event_block(ev: Event, with_link: bool) -> str:
+    """One scannable event: title, when, optional URL — each on its own line."""
     when = format_when(ev)
-    line = f"• {ev.title} — {when}"
+    lines = [f"• {ev.title}", f"  {when}"]
     if with_link and ev.url:
-        line += f"\n  {ev.url}"
-    return line
+        lines.append(f"  {ev.url}")
+    return "\n".join(lines)
+
+
+def _join_event_blocks(events: Sequence[Event], with_link: bool = True) -> str:
+    """Blank line between events so expanded FB/IG posts are easy to scan."""
+    return "\n\n".join(_event_block(e, with_link) for e in events)
 
 
 def caption_today(events: List[Event], platform: str, day: date) -> Dict:
@@ -71,7 +77,6 @@ def caption_today(events: List[Event], platform: str, day: date) -> Dict:
         return caption_today_visit(platform, day)
     day_label = day.strftime("%A, %B %d").replace(" 0", " ")
     with_links = platform == "facebook" or True
-    lines = [_event_line(e, with_links) for e in events]
     if len(events) == 1:
         ev = events[0]
         blurb = short_blurb(ev, 180)
@@ -83,7 +88,7 @@ def caption_today(events: List[Event], platform: str, day: date) -> Dict:
         body = "\n\n".join(body_bits)
     else:
         hook = f"Today at Sacred Ground — {day_label}."
-        body = hook + "\n\n" + "\n".join(lines)
+        body = hook + "\n\n" + _join_event_blocks(events, with_links)
         body += "\n\nDetails & tickets on each event page."
     body += "\n\n" + _signoff(f"today|{day.isoformat()}|{platform}", platform)
     tags = _hashtags(platform)
@@ -118,8 +123,7 @@ def caption_week(events: List[Event], platform: str, week_start: date) -> Dict:
     week_end = week_start + timedelta(days=6)
     range_label = f"{week_start.strftime('%b %d').replace(' 0',' ')}–{week_end.strftime('%b %d').replace(' 0',' ')}"
     hook = f"This week at Sacred Ground ({range_label})."
-    lines = [_event_line(e, True) for e in events]
-    body = hook + "\n\n" + "\n".join(lines)
+    body = hook + "\n\n" + _join_event_blocks(events, True)
     body += "\n\nCome for one — or make a day of it."
     body += "\n\n" + _signoff(f"week|{week_start.isoformat()}|{platform}", platform)
     tags = _hashtags(platform)
@@ -190,8 +194,7 @@ def caption_week_ahead(events: List[Event], platform: str, day: date) -> Dict:
     seed = f"week_ahead|{day.isoformat()}|{platform}"
     # Separate seeds so opener / night block / closer don't lock to the same index.
     hook = _week_ahead_opener(f"{seed}|opener")
-    lines = [_event_line(e, True) for e in events]
-    body = hook + "\n\n" + "\n".join(lines)
+    body = hook + "\n\n" + _join_event_blocks(events, True)
     night = _week_ahead_night_block(f"{seed}|night")
     if night:
         body += "\n\n" + night

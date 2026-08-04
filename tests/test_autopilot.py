@@ -426,6 +426,44 @@ class AutopilotTests(unittest.TestCase):
                 payload = publish.schedule_payload(store.get_draft(d["id"]))
                 self.assertTrue(payload["mediaItems"])
 
+    def test_caption_event_blocks_are_spaced_and_scannable(self) -> None:
+        """Multi-event Today + Week-Ahead captions: blank line between events, URL alone."""
+        from marketing import captions
+        from marketing.models import Event
+
+        a = Event(
+            id=1,
+            title="Amber | Customized Therapeutic Massage Sessions",
+            start_date="2026-08-04 12:00:00",
+            end_date="2026-08-04 17:00:00",
+            url="https://shopsacredground.com/book/amber/",
+        )
+        b = Event(
+            id=2,
+            title="Divine Insight Sessions with Janel: Akashic Records or Angel Card Readings",
+            start_date="2026-08-04 13:00:00",
+            end_date="2026-08-04 17:00:00",
+            url="https://shopsacredground.com/book/janel/",
+        )
+        day = date(2026, 8, 4)
+
+        today = captions.caption_today([a, b], "facebook", day)["text"]
+        week_ahead = captions.caption_week_ahead([a, b], "facebook", day)["text"]
+        week = captions.caption_week([a, b], "facebook", day)["text"]
+
+        for text in (today, week_ahead, week):
+            # Title line, then indented when, then indented URL (not packed on one line)
+            self.assertIn("• Amber | Customized Therapeutic Massage Sessions\n", text)
+            self.assertIn("  Tuesday, August 4 · 12:00 PM–5:00 PM\n", text)
+            self.assertIn("  https://shopsacredground.com/book/amber/\n", text)
+            # Blank line between event blocks (URL of first, then bullet of second)
+            self.assertIn(
+                "https://shopsacredground.com/book/amber/\n\n• Divine Insight Sessions with Janel",
+                text,
+            )
+            # Hashtags still separated by a blank line
+            self.assertRegex(text, r"\n\n#SacredGround")
+
 
 if __name__ == "__main__":
     unittest.main()
