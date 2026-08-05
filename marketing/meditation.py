@@ -11,9 +11,24 @@ from typing import Any, Dict, List, Optional, Sequence
 
 from .ingest import parse_tec_datetime
 from .models import Event
-from .paths import CONFIG_DIR, _load_json
+from .paths import CONFIG_DIR, _load_json, settings
 
 MEDITATION_HOSTS_PATH = os.path.join(CONFIG_DIR, "meditation_hosts.json")
+
+# Fallback only if config/settings.json omits doors_close_display.
+_DEFAULT_DOORS_CLOSE_DISPLAY = "7:05pm"
+
+
+def doors_close_display() -> str:
+    """Single source of truth for caption 'Doors close at …' (Founder-editable in settings)."""
+    cfg = settings().get("tuesday_community_meditation") or {}
+    raw = str(cfg.get("doors_close_display") or "").strip()
+    return raw or _DEFAULT_DOORS_CLOSE_DISPLAY
+
+
+def doors_close_line() -> str:
+    """Caption line — no o'clock; e.g. 'Doors close at 7:05pm'."""
+    return f"Doors close at {doors_close_display()}"
 
 
 @dataclass(frozen=True)
@@ -131,7 +146,7 @@ def meditation_event_block(
         [
             "All are welcome",
             "No sign-up needed",
-            "Doors close at 8:05pm",
+            doors_close_line(),
         ]
     )
     return "\n".join(lines)

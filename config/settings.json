@@ -111,7 +111,8 @@
   ],
   "tuesday_community_meditation": {
     "enabled": true,
-    "notes": "Standing Tuesday 7–8pm Free Community Meditation — always include in Today + week-ahead when that Tuesday is in scope. Inject stub only if TEC feed omitted it. Weekly host/style for captions: config/meditation_hosts.json (ISO-week rotation; TEC parse wins when present).",
+    "notes": "Standing Tuesday 7–8pm Free Community Meditation — always include in Today + week-ahead when that Tuesday is in scope. Inject stub only if TEC feed omitted it. Weekly host/style for captions: config/meditation_hosts.json (ISO-week rotation; TEC parse wins when present). Caption doors-close line: doors_close_display (single source of truth).",
+    "doors_close_display": "7:05pm",
     "title_match_any": [
       "community meditation",
       "meditation free community"

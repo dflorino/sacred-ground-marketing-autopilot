@@ -1,0 +1,21 @@
+---
+description: Free Community Meditation doors-close time (7:05pm) — single source of truth
+globs: marketing/**/*.py,config/settings.json,config/voice.json,AUTOMATION-DRAFT.md,tests/**/*.py
+alwaysApply: false
+---
+
+# Free Community Meditation — doors close
+
+**Doors close at 7:05pm** (no o'clock). Not 8:05pm.
+
+## Single source of truth
+
+- Config: `config/settings.json` → `tuesday_community_meditation.doors_close_display` = `"7:05pm"`
+- Caption line built only via `marketing.meditation.doors_close_line()` / `meditation_event_block()`
+- Used by Morning Today, week-ahead (when meditation is listed), and Tuesday 4pm `tuesday_meditation`
+
+## Do not
+
+- Hardcode `8:05` / `8:05pm` / `Doors close at …` in captions, tests, or agent instructions
+- Drift between campaign paths — always go through `meditation_event_block`
+- Use "o'clock" on the doors-close line

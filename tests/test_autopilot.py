@@ -591,7 +591,7 @@ class AutopilotTests(unittest.TestCase):
         self.assertRegex(text, r"\n\n#SacredGround")
         # Door/light must not appear inside an event block
         self.assertNotIn("Tina's Tarot & Rune Sessions\nThe door is always open", text)
-        self.assertNotIn("Doors close at 8:05pm\nThe door is always open", text)
+        self.assertNotIn("Doors close at 7:05pm\nThe door is always open", text)
 
     def test_caption_community_meditation_special_block(self) -> None:
         """Daytime meditation block only; door/light is a week-ahead goodnight closer."""
@@ -631,6 +631,8 @@ class AutopilotTests(unittest.TestCase):
 
         for text in (today, week_ahead, week, solo):
             self.assertIn(daytime_block, text)
+            self.assertIn("Doors close at 7:05pm", text)
+            self.assertNotIn("8:05", text)
             self.assertNotIn("o'clock", text.lower())
             self.assertNotIn(
                 "https://shopsacredground.com/event/free-community-meditation-2/",
@@ -730,6 +732,8 @@ class AutopilotTests(unittest.TestCase):
         for platform in ("facebook", "instagram"):
             text = captions.caption_tuesday_meditation(platform, day)["text"]
             self.assertIn(daytime_block, text)
+            self.assertIn("Doors close at 7:05pm", text)
+            self.assertNotIn("8:05", text)
             self.assertIn(f"With {host.practitioner} · {host.style}", text)
             self.assertIn("#SacredGround", text)
             self.assertNotIn(goodnight, text)
@@ -884,7 +888,7 @@ class AutopilotTests(unittest.TestCase):
             "• Free Community Meditation\n"
             "All are welcome\n"
             "No sign-up needed\n"
-            "Doors close at 8:05pm",
+            "Doors close at 7:05pm",
         )
 
 
