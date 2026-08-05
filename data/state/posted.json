@@ -1,4 +1,35 @@
 {
-  "fingerprints": {},
-  "updated_at": null
+  "fingerprints": {
+    "today|2026-08-05|facebook|24243,24618": {
+      "draft_id": "sgma-2026-08-05-today-fb-0322d722",
+      "posted_at": "2026-08-05T07:02:00.249054-05:00",
+      "external": {
+        "zernio": {
+          "post": {
+            "_id": "6a72dfa5413d454281cc001c",
+            "status": "publishing"
+          },
+          "dedupe": "already_exists_within_24h",
+          "existingPostId": "6a72dfa5413d454281cc001c",
+          "platform": "facebook"
+        }
+      }
+    },
+    "today|2026-08-05|instagram|24243,24618": {
+      "draft_id": "sgma-2026-08-05-today-ig-e503edce",
+      "posted_at": "2026-08-05T07:02:00.249611-05:00",
+      "external": {
+        "zernio": {
+          "post": {
+            "_id": "6a72dfa69fcc9d49421e1ded",
+            "status": "publishing"
+          },
+          "dedupe": "already_exists_within_24h",
+          "existingPostId": "6a72dfa69fcc9d49421e1ded",
+          "platform": "instagram"
+        }
+      }
+    }
+  },
+  "updated_at": "2026-08-05T07:02:00.249617-05:00"
 }
