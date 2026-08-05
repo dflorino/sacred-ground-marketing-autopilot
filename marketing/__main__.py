@@ -140,15 +140,7 @@ def main(argv: Optional[List[str]] = None) -> int:
         d = store.get_draft(args.draft_id)
         if not d:
             print(f"Unknown draft: {args.draft_id}", file=sys.stderr)
-        
-    if args.cmd == "publish-tuesday-meditation":
-        from . import publish
-
-        result = publish.publish_tuesday_meditation_drafts()
-        _print(result)
-        return 0 if result.get("ok") else 1
-
-    return 1
+            return 1
         _print(d)
         return 0
 
@@ -188,6 +180,13 @@ def main(argv: Optional[List[str]] = None) -> int:
         from . import publish
 
         result = publish.publish_week_ahead_drafts()
+        _print(result)
+        return 0 if result.get("ok") else 1
+
+    if args.cmd == "publish-tuesday-meditation":
+        from . import publish
+
+        result = publish.publish_tuesday_meditation_drafts()
         _print(result)
         return 0 if result.get("ok") else 1
 
