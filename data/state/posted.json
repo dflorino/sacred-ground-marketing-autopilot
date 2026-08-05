@@ -1,4 +1,27 @@
 {
-  "fingerprints": {},
-  "updated_at": null
+  "fingerprints": {
+    "today|2026-08-05|facebook|24243,24618": {
+      "draft_id": "sgma-2026-08-05-today-fb-e09581c8",
+      "posted_at": "2026-08-05T07:04:10.425222-05:00",
+      "external": {
+        "zernio_existing": {
+          "id": "6a72dfa5413d454281cc001c",
+          "status": "publishing",
+          "content": "Today at Sacred Ground — Wednesday, August 5.\n\n• Tina’s Tarot & Rune Sessions\n  Wednesday, August 5 · 12:00 PM–6:00 PM\n "
+        }
+      }
+    },
+    "today|2026-08-05|instagram|24243,24618": {
+      "draft_id": "sgma-2026-08-05-today-ig-21e081e4",
+      "posted_at": "2026-08-05T07:04:10.938834-05:00",
+      "external": {
+        "zernio_existing": {
+          "id": "6a72dfa69fcc9d49421e1ded",
+          "status": "publishing",
+          "content": "Today at Sacred Ground — Wednesday, August 5.\n\n• Tina’s Tarot & Rune Sessions\n  Wednesday, August 5 · 12:00 PM–6:00 PM\n "
+        }
+      }
+    }
+  },
+  "updated_at": "2026-08-05T07:04:10.938841-05:00"
 }
