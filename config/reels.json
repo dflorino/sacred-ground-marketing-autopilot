@@ -1,6 +1,6 @@
 {
   "stack": "heygen",
-  "status": "scaffolded_ready_for_first_reel",
+  "status": "scaffolded_ig_fb_reels_daily_not_auto_yet",
   "timezone": "America/Chicago",
   "avatar": {
     "provider": "heygen",
@@ -50,6 +50,7 @@
       "reel_scripts_batch",
       "observatory_beneath_surface"
     ],
+    "rotation": "welcome_batch_then_beneath_surface",
     "wp_option_pattern": "eeo_daily_YYYY-MM-DD",
     "field": "beneath_surface",
     "day": "yesterday",
@@ -64,23 +65,37 @@
   },
   "publish": {
     "phase": 1,
+    "campaign": "daily_reel",
     "approve_before_post": true,
-    "platforms": ["tiktok", "youtube_shorts"],
     "auto_publish": false,
-    "note": "Separate from FB/IG Zernio autopilot — do not wire silent TikTok/YT publish in v1"
+    "schedule_local_time": "10:30",
+    "format": "9:16",
+    "media_type": "video",
+    "platforms_primary": ["instagram_reels", "facebook_reels"],
+    "platforms_optional_later": ["tiktok", "youtube_shorts"],
+    "platforms": ["instagram_reels", "facebook_reels"],
+    "zernio_account_map": {
+      "instagram_reels": "instagram",
+      "facebook_reels": "facebook",
+      "note": "Same FB/IG account IDs in config/accounts.json once video/Reels publish is supported"
+    },
+    "works_today": "FB+IG still-image posts via Zernio (today / week_ahead / tuesday_meditation)",
+    "not_ready": "HeyGen generate → public video URL → Zernio/ML Social or Meta Reels API with type=video",
+    "note": "Daily IG+FB Reels are the Founder target. Do not silent-publish video until the video path is verified. TikTok/YouTube Shorts optional later."
   },
   "isolation": {
     "does_not_touch": [
       "marketing publish-today",
       "marketing publish-week-ahead",
       "marketing publish-tuesday-meditation",
-      "ZERNIO_API_KEY morning/evening path"
+      "ZERNIO_API_KEY morning/evening/tuesday image path"
     ]
   },
   "founder_still_needed": [
     "Interior/case background photos → assets/heygen/backgrounds/",
     "Optional: HEYGEN_API_KEY + HEYGEN_AVATAR_ID + HEYGEN_VOICE_ID in .env for API generate",
-    "Approve first draft reel before any TikTok/YouTube post",
-    "Cadence (optional): e.g. 3×/week or 1/day from scripts + Observatory"
+    "Approve first draft reel before any public IG/FB Reels post",
+    "Confirm Zernio/ML Social accepts video media for Instagram Reels + Facebook Reels (or use Meta Reels API)",
+    "Host generated 9:16 MP4 at a stable HTTPS URL for Zernio mediaItems"
   ]
 }

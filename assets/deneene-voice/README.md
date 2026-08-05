@@ -7,7 +7,7 @@ Drop clear speech samples here for the AI-Deneene reel voice clone.
 - **Clone working** in HeyGen (Fish path) — Founder confirmed.
 - Local sample (gitignored): `deneene-voice-sample-01.m4a` (~1:58) if present on disk.
 - Recording / upload checklist: `heygen-clone-script.md`
-- Reels next: store backgrounds + batch scripts → first TikTok / YouTube Short (see `REELS-PLAN.md`).
+- Reels next: store backgrounds + batch scripts → first Instagram + Facebook Reel (see `REELS-PLAN.md`).
 
 ## What to record (if re-cloning)
 

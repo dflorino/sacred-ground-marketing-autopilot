@@ -150,3 +150,60 @@ Hard rules:
 4. Secret: `ZERNIO_API_KEY` (same as Today / week-ahead)
 5. Status: **Active**
 6. Keep separate from the 7am Today and 7pm week-ahead automations
+
+---
+
+# Automation draft — SG Daily Reels 10:30am (SCAFFOLD — NOT LIVE)
+
+Daily AI-Deneene short-form video for **Instagram Reels + Facebook Reels**.
+
+**Status: NOT Active.** Scaffold only. `daily_reel.auto_publish=false`. Do **not** turn this automation on until a 9:16 video has been posted successfully via Zernio/ML Social (or Meta Reels) end-to-end.
+
+Suggested time: **10:30 AM America/Chicago** (late morning — clears 7am Today, 4pm Tuesday meditation, 7pm week-ahead image jobs).
+
+TikTok / YouTube Shorts = optional later (same asset).
+
+## What works today (do not confuse)
+
+| Path | Status |
+|---|---|
+| FB+IG **image** posts (Today / week-ahead / Tuesday meditation) via Zernio | **Live** |
+| HeyGen generate → hosted MP4 → Zernio/Meta **Reels** | **Not wired** |
+
+## Secrets (when ready)
+
+- `ZERNIO_API_KEY` — social publish (already used by image jobs)
+- `HEYGEN_API_KEY`, `HEYGEN_AVATAR_ID`, `HEYGEN_VOICE_ID` — only if API generate (never commit)
+
+## Commands (scaffold / dry only)
+
+```bash
+python3 -m marketing reels-status
+python3 scripts/heygen_dry_run.py
+```
+
+There is **no** `publish-daily-reel` command yet — do not invent one in Cloud Agent until video publish is implemented and tested.
+
+## Agent instructions (future — do not activate)
+
+```
+You are running Sacred Ground Marketing Autopilot for the daily_reel campaign (IG + FB Reels).
+
+Hard rules:
+1. Timezone America/Chicago. Suggested post time 10:30 AM.
+2. Format must be 9:16 video — never post a still as a Reel from this job.
+3. Do NOT call publish-today, publish-week-ahead, or publish-tuesday-meditation.
+4. auto_publish is false until Founder enables it after a successful video publish proof.
+5. If video URL or Reels publish API is missing: report blocked and STOP. Do not fall back to image posts.
+6. Caption from welcome-batch rotation or Observatory beneath_surface (yesterday).
+7. Summarize: script id, platforms (instagram_reels + facebook_reels), video URL, publish results or blockers.
+```
+
+## Editor checklist — only after video path works
+
+1. Name: **SG Daily Reels 10:30am**
+2. Schedule: **Daily · 10:30 AM** · timezone **America/Chicago**
+3. Repo: `dflorino/sacred-ground-marketing-autopilot` · `main`
+4. Secrets: `ZERNIO_API_KEY` (+ optional `HEYGEN_*`)
+5. Status: **Inactive** until Founder approves first auto run
+6. Keep separate from image automations (7am / 4pm / 7pm)

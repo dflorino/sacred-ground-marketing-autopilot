@@ -85,6 +85,22 @@
         "new_years_day"
       ],
       "notes": "Every Tuesday 4:00 PM America/Chicago: dedicated Free Community Meditation FB+IG post. Skip only Christmas Eve, Christmas Day, New Year's Eve, New Year's Day (Chicago local date). Image rotates Om / silhouette / metaphysical journey / sg-morning-meditation with 7-day no-repeat."
+    },
+    "daily_reel": {
+      "enabled": false,
+      "label": "Daily AI-Deneene Reel (IG + FB Reels)",
+      "schedule_local_time": "10:30",
+      "platforms": ["instagram_reels", "facebook_reels"],
+      "optional_platforms": ["tiktok", "youtube_shorts"],
+      "format": "9:16",
+      "media_type": "video",
+      "source": "heygen",
+      "auto_publish": false,
+      "approve_before_post": true,
+      "reels_config": "config/reels.json",
+      "scripts_config": "config/reel_scripts.json",
+      "content_rotation": ["welcome_batch", "observatory_beneath_surface"],
+      "notes": "Scaffold only. Target: daily Instagram Reels + Facebook Reels at 10:30 AM America/Chicago. Image FB/IG via Zernio works today; video path needs HeyGen generate + hosted MP4 URL + Zernio/ML Social (or Meta) Reels support. Do not enable or auto_publish until video publish is verified. Does not touch today/week_ahead/tuesday_meditation."
     }
   },
   "special_category_names": [

@@ -1,7 +1,8 @@
 # Sacred Ground reels — batch 01
 
-Short scripts for **TikTok + YouTube Shorts** (~15–30s spoken).  
-Warm Sacred Ground voice. Approve-before-post (Phase 1).
+Short scripts for **Instagram Reels + Facebook Reels** (~15–30s spoken).  
+TikTok / YouTube Shorts optional later (same 9:16).  
+Warm Sacred Ground voice. Approve-before-post until video auto-publish is proven.
 
 **Caption link (most):** https://shopsacredground.com/  
 **Observatory:** https://shopsacredground.com/sacred-ground-observatory/  

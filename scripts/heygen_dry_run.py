@@ -137,10 +137,17 @@ def status_report() -> Dict[str, Any]:
             "1. Drop interior photos in assets/heygen/backgrounds/",
             "2. HeyGen UI: avatar + Fish/clone voice + script from data/reels/scripts-batch-01.md (#1 welcome)",
             "3. Custom background: exterior plate or new interior",
-            "4. Export 9:16 → Founder approve → post TikTok + YouTube Shorts",
-            "5. Optional later: set HEYGEN_API_KEY + avatar/voice IDs → --probe / --generate",
+            "4. Export 9:16 → Founder approve → post Instagram Reels + Facebook Reels",
+            "5. Optional later: same file to TikTok / YouTube Shorts",
+            "6. Optional API: set HEYGEN_API_KEY + avatar/voice IDs → --probe / --generate",
         ],
-        "note": "FB/IG morning+evening autopilot is unchanged — this script is reels-only.",
+        "target_platforms": (reels.get("publish") or {}).get("platforms_primary")
+        or (reels.get("publish") or {}).get("platforms"),
+        "optional_platforms": (reels.get("publish") or {}).get("platforms_optional_later"),
+        "note": (
+            "Image FB/IG autopilot (today/week_ahead/tuesday_meditation) is unchanged. "
+            "Video/Reels auto-publish is NOT ready — use python3 -m marketing reels-status."
+        ),
     }
 
 

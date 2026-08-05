@@ -21,9 +21,10 @@ Clone is live in HeyGen (Fish path) per Founder. Local samples stay gitignored u
 
 ## Pipeline
 
-- Plan: `REELS-PLAN.md`
-- Config: `config/reels.json`
+- Plan: `REELS-PLAN.md` (primary: Instagram + Facebook Reels)
+- Config: `config/reels.json` · campaign stub `daily_reel` in `config/settings.json`
 - Scripts: `data/reels/scripts-batch-01.md`
+- Status: `python3 -m marketing reels-status`
 - Dry-run: `python3 scripts/heygen_dry_run.py`
 
 Audio binaries (`*.m4a`, etc.) in this folder are gitignored.

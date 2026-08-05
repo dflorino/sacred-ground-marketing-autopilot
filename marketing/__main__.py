@@ -66,6 +66,10 @@ def main(argv: Optional[List[str]] = None) -> int:
         "publish-tuesday-meditation",
         help="Schedule/publish Tuesday meditation drafts via Zernio (needs ZERNIO_API_KEY)",
     )
+    sub.add_parser(
+        "reels-status",
+        help="HeyGen daily Reels readiness + dry plan (IG+FB; does NOT publish)",
+    )
 
     sub.add_parser("status", help="Show pause/phase/counts")
     sub.add_parser("review", help="Human-readable review queue for Phase 1")
@@ -171,6 +175,17 @@ def main(argv: Optional[List[str]] = None) -> int:
         result = publish.publish_tuesday_meditation_drafts()
         _print(result)
         return 0 if result.get("ok") else 1
+
+    if args.cmd == "reels-status":
+        from . import reels
+
+        _print(
+            {
+                "readiness": reels.readiness(),
+                "plan": reels.plan_daily_reel(),
+            }
+        )
+        return 0
 
     return 1
 

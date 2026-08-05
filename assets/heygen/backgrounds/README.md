@@ -1,6 +1,6 @@
 # HeyGen store backgrounds — shoot list
 
-Drop **new interior / case** photos here for AI-Deneene reels (TikTok + YouTube Shorts).
+Drop **new interior / case** photos here for AI-Deneene reels (Instagram + Facebook Reels primary; TikTok/YT optional later).
 
 Exterior storefront is already covered (`../sg-store-background.jpg` and `assets/refs/exterior-*.png`). **Today’s priority: interiors.**
 

@@ -85,6 +85,19 @@ def schedule_tuesday_meditation(day: date) -> SchedulePlan:
     )
 
 
+def schedule_daily_reel(day: date) -> SchedulePlan:
+    """Late-morning Central — daily IG + FB Reels (scaffold; not auto-published)."""
+    cfg = (settings().get("campaigns") or {}).get("daily_reel") or {}
+    when = _at_local(day, cfg.get("schedule_local_time") or "10:30")
+    return SchedulePlan(
+        recommended_at=when.isoformat(),
+        rationale=(
+            "Daily late-morning Reels (Instagram + Facebook) — "
+            "HeyGen 9:16 video; approve-before-post until video publish is verified."
+        ),
+    )
+
+
 def schedule_spotlight(event: Event, days_before: Optional[int] = None) -> SchedulePlan:
     cfg = settings()["campaigns"]["spotlight"]
     start = parse_tec_datetime(event.start_date)

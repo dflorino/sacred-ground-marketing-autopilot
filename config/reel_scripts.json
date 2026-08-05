@@ -1,7 +1,8 @@
 {
   "batch": "01",
   "timezone": "America/Chicago",
-  "platforms": ["tiktok", "youtube_shorts"],
+  "platforms": ["instagram_reels", "facebook_reels"],
+  "optional_platforms": ["tiktok", "youtube_shorts"],
   "target_duration_seconds": [15, 30],
   "voice_notes": "Warm, grounded, never corporate. Match config/voice.json tone. Avoid forbidden_phrases.",
   "scripts": [

@@ -106,11 +106,11 @@ data/drafts/     draft JSON files
 data/cache/      live WordPress event export
 data/state/      pause, phase, posted ledger, overrides
 data/fixtures/   offline sample events for tests
-data/reels/      TikTok / YouTube Shorts scripts (HeyGen path)
+data/reels/      HeyGen reel scripts (IG + FB Reels primary)
 assets/heygen/   store backgrounds for AI-Deneene reels
 scripts/         one-shot runners + WP import + heygen_dry_run.py
 ```
 
-**Reels (TikTok / YouTube Shorts):** separate from FB/IG Zernio publish. See `REELS-PLAN.md`. Dry-run: `python3 scripts/heygen_dry_run.py`.
+**Reels (Instagram + Facebook Reels daily target):** HeyGen 9:16 video path — scaffolded, **not** auto-published yet. Image Today/week-ahead/Tuesday jobs stay on Zernio. See `REELS-PLAN.md`. Status: `python3 -m marketing reels-status`. Dry-run: `python3 scripts/heygen_dry_run.py`.
 
 See `API-CONTRACT.md` for the draft artifact shape.
