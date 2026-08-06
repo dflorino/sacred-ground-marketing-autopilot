@@ -38,12 +38,12 @@
     },
     "week_ahead": {
       "enabled": true,
-      "label": "Next 2 Days at Sacred Ground",
+      "label": "Next 3 Days at Sacred Ground",
       "schedule_local_time": "19:00",
       "platforms": ["facebook", "instagram"],
       "source": "the_events_calendar",
       "auto_publish": true,
-      "horizon_days": 2,
+      "horizon_days": 3,
       "horizon_start_offset_days": 1,
       "image_urls": [
         "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.15-AM.png",
@@ -53,9 +53,8 @@
       "store_image_url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.15-AM.png",
       "cta_phone": "847-749-3922",
       "cta_site": "shopsacredground.com",
-      "image_policy": "creative_sky_rotation",
-      "image_atmosphere_file": "config/image_atmosphere.json",
-      "notes": "Every evening 7pm CT: rotating openers (no “this week”), next 2 days starting tomorrow, Observatory + Library night block. Images: creative night-sky pack + seasonal/holiday storefronts; full moon ONLY on full-moon nights. No morning specialty art at night."
+      "image_policy": "founder_exterior_rotation",
+      "notes": "Every evening 7pm CT: rotating openers (no “this week”), next 3 days starting tomorrow. Image: rotate the 3 founder exterior storefront photos only — never interior, never AI specialty/night-sky art. Schedule list lives in the caption."
     },
     "spotlight": {
       "enabled": true,

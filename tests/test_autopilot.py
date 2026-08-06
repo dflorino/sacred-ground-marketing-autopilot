@@ -539,7 +539,7 @@ class AutopilotTests(unittest.TestCase):
             self.assertNotIn("ticket", text.lower())
 
     def test_caption_week_ahead_day_sections_scannable(self) -> None:
-        """Two-day night caption: clear day breaks, standalone goodnight, blank before tags."""
+        """Week-ahead caption: clear day breaks, standalone goodnight, blank before tags."""
         from marketing import captions
         from marketing.models import Event
         from marketing.paths import voice

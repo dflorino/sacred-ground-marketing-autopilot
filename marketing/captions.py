@@ -235,7 +235,7 @@ def _week_ahead_closer(seed: str) -> str:
 
 
 def caption_week_ahead(events: List[Event], platform: str, day: date) -> Dict:
-    """Daily evening planner — upcoming days in caption; night creative photo."""
+    """Daily evening planner — next days in caption; founder exterior photo."""
     if not events:
         raise ValueError("week_ahead caption requires events")
 
