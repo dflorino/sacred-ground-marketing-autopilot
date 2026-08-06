@@ -40,13 +40,15 @@ PRICE_RE = re.compile(
 )
 
 NOTES = (
-    "Date-keyed Cheryl-style finished morning flyers (logo + event text + "
-    f"{WEBSITE} / {PHONE} already baked in). When a flyer exists for the "
-    "Chicago calendar day, Autopilot uses it first and MUST skip brand overlays "
-    "(prebranded: true). NEVER include $, dollar amounts, ticket costs, or "
-    '"$55"-style prices on flyer graphics, labels, or prompts — do not bake '
-    "Event.cost / TEC cost onto the image. Empty days get a warm visit flyer "
-    "(not storefront-only). 1–3 events max on the graphic."
+    "Sacred Ground daily flyer template (Thursday-style): gold standard "
+    "assets/sg-morning-flyer-2026-08-06-today-collage.png. Header WEEKDAY AT "
+    "Sacred Ground + Mind • Body • Spirit • Community; LEFT stacked rounded "
+    "event cards; RIGHT evocative graphics in clear zones; FOOTER logo + "
+    f"{WEBSITE} + {PHONE} + come-as-you-are. Dark elegant + gold accents "
+    "(vary by day). Easy to read — not collage soup. Versions of the system, "
+    "not exact clones. Date-keyed flyers are prebranded (skip overlays). NEVER "
+    "include $, dollar amounts, ticket costs, or \"$55\"-style prices on flyer "
+    "graphics. Empty days get a warm visit flyer. 1–3 events max."
 )
 
 

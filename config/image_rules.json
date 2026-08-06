@@ -1,7 +1,10 @@
 {
-  "notes": "Today 7am image rules only — specialty library, no seasons. Never reuse the same URL within 7 calendar days. Robert also cannot run two days in a row. MIXED-DAY: rarer modalities always beat tarot and reiki; among tarot vs reiki alone, reiki wins; sound_healing beats tarot; crystal_healing beats reiki. Tarot & Runes is one linked event specialty (runes plate), not a mixed-day pair of competing modalities. Date-keyed Cheryl-style flyers in morning_flyers.json win first (prebranded — skip overlays). Morning flyers NEVER show $, prices, or ticket costs. Prefer generate-morning-flyers so every day has a flyer; empty / no-specialty days rarely use demoted morning_creative; store exterior remains last resort. Seasons/holidays live on nighttime only (see image_atmosphere.json).",
+  "notes": "Today 7am image rules only — specialty library, no seasons. Never reuse the same URL within 7 calendar days. Robert also cannot run two days in a row. MIXED-DAY: rarer modalities always beat tarot and reiki; among tarot vs reiki alone, reiki wins; sound_healing beats tarot; crystal_healing beats reiki. Tarot & Runes is one linked event specialty (runes plate), not a mixed-day pair of competing modalities. Date-keyed Thursday-style flyers in morning_flyers.json win first (prebranded — skip overlays). Morning flyers NEVER show $, prices, or ticket costs. Prefer generate-morning-flyers / polished Thursday-layout assets so every day has a flyer. Atmospheric sg-morning-creative-* plates were deleted — empty / no-specialty days fall through to specialty pools then store exterior. Seasons/holidays live on nighttime only (see image_atmosphere.json).",
   "no_repeat_days": 7,
-  "common_modalities_defer": ["tarot", "reiki"],
+  "common_modalities_defer": [
+    "tarot",
+    "reiki"
+  ],
   "priority": [
     "shaman_medium",
     "egyptian",
@@ -27,80 +30,103 @@
     "tuesday_daily",
     "multi_event_rotation"
   ],
-  "morning_creative": {
-    "label": "Demoted atmospheric morning plates (rare fallback only)",
-    "notes": "Founder rejected atmospheric pack as main empty-day look. Kept as rare mix after specialty miss / no date flyer — prefer morning_flyers.json and specialty rules. Clean plates — no baked-in website/phone.",
-    "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-creative-crystal-still.png",
-    "urls": [
-      "https://shopsacredground.com/wp-content/uploads/sg-morning-creative-crystal-still.png",
-      "https://shopsacredground.com/wp-content/uploads/sg-morning-creative-cream-geometry.png",
-      "https://shopsacredground.com/wp-content/uploads/sg-morning-creative-store-interior.png"
-    ]
-  },
   "rules": {
     "shaman_medium": {
       "label": "Shaman / medium day",
-      "match_any": ["shaman", "mediumship", "psychic medium", "spirit medium", "andean"],
+      "match_any": [
+        "shaman",
+        "mediumship",
+        "psychic medium",
+        "spirit medium",
+        "andean"
+      ],
       "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Shamanic-drum-journey-ceremony_1763319933.png",
       "urls": [
         "https://shopsacredground.com/wp-content/uploads/ai_generated_Shamanic-drum-journey-ceremony_1763319933.png",
         "https://shopsacredground.com/wp-content/uploads/ai_generated_Ethereal-spirit-medium-connect_1763319692.png",
-        "https://shopsacredground.com/wp-content/uploads/sg-morning-shamanic.png",
-        "https://shopsacredground.com/wp-content/uploads/sg-morning-creative-shaman-drum.png"
+        "https://shopsacredground.com/wp-content/uploads/sg-morning-shamanic.png"
       ],
       "always_when_matched": true
     },
     "egyptian": {
       "label": "Egyptian / Egyptian healing",
-      "match_any": ["egyptian", "egypt", "kemetic", "isis", "osiris", "anubis"],
+      "match_any": [
+        "egyptian",
+        "egypt",
+        "kemetic",
+        "isis",
+        "osiris",
+        "anubis"
+      ],
       "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Great-Pyramid-of-Giza-aligned_1763936961.png"
     },
     "angel": {
       "label": "Angel events",
-      "match_any": ["angel", "angels", "angelic", "archangel"],
+      "match_any": [
+        "angel",
+        "angels",
+        "angelic",
+        "archangel"
+      ],
       "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Luminous-angel-wings-made-of-p_1763319369.png",
       "urls": [
         "https://shopsacredground.com/wp-content/uploads/ai_generated_Luminous-angel-wings-made-of-p_1763319369.png",
-        "https://shopsacredground.com/wp-content/uploads/ai_generated_Ethereal-angel-wings-made-of-g_1764775330.png",
-        "https://shopsacredground.com/wp-content/uploads/sg-morning-creative-angel-light.png"
+        "https://shopsacredground.com/wp-content/uploads/ai_generated_Ethereal-angel-wings-made-of-g_1764775330.png"
       ]
     },
     "quantum_galactic": {
       "label": "Quantum healing / galactic",
-      "match_any": ["quantum", "galactic", "light language", "light codes", "starseed"],
+      "match_any": [
+        "quantum",
+        "galactic",
+        "light language",
+        "light codes",
+        "starseed"
+      ],
       "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Quantum-healing-energy-space-w_1762925278.png",
       "urls": [
         "https://shopsacredground.com/wp-content/uploads/ai_generated_Quantum-healing-energy-space-w_1762925278.png",
         "https://shopsacredground.com/wp-content/uploads/ai_generated_I-love-what-yo-created-make-t_1762818701.png",
-        "https://shopsacredground.com/wp-content/uploads/ai-generated-a-black-womans-etheric-body-s-1769183637.png",
-        "https://shopsacredground.com/wp-content/uploads/sg-morning-creative-quantum-dawn.png"
+        "https://shopsacredground.com/wp-content/uploads/ai-generated-a-black-womans-etheric-body-s-1769183637.png"
       ]
     },
     "akashic_records": {
       "label": "Akashic Records",
-      "match_any": ["akashic"],
+      "match_any": [
+        "akashic"
+      ],
       "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Ancient-glowing-book-with-gold_1764775297.png",
       "urls": [
         "https://shopsacredground.com/wp-content/uploads/ai_generated_Ancient-glowing-book-with-gold_1764775297.png",
         "https://shopsacredground.com/wp-content/uploads/ai_generated_Mystical-Akashic-Records-libra_1763937124.png",
-        "https://shopsacredground.com/wp-content/uploads/sg-morning-akashic.png",
-        "https://shopsacredground.com/wp-content/uploads/sg-morning-creative-akashic-book.png"
+        "https://shopsacredground.com/wp-content/uploads/sg-morning-akashic.png"
       ]
     },
     "crystal_healing": {
       "label": "Crystal healing / crystal workshops",
-      "match_any": ["crystal healing", "crystal workshop", "crystals workshop", "working with crystals", "crystal grid", "how to clean", "clear and charge"],
+      "match_any": [
+        "crystal healing",
+        "crystal workshop",
+        "crystals workshop",
+        "working with crystals",
+        "crystal grid",
+        "how to clean",
+        "clear and charge"
+      ],
       "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Array-of-luminous-healing-crys_1763319490.png",
       "urls": [
         "https://shopsacredground.com/wp-content/uploads/ai_generated_Array-of-luminous-healing-crys_1763319490.png",
         "https://shopsacredground.com/wp-content/uploads/ai_generated_An-overhead-view-of-a-perfectl_1766407640.png",
-        "https://shopsacredground.com/wp-content/uploads/ai_generated_mystical-How-To-Clean-Clear-a_1766464931.png",
-        "https://shopsacredground.com/wp-content/uploads/sg-morning-creative-crystal-still.png"
+        "https://shopsacredground.com/wp-content/uploads/ai_generated_mystical-How-To-Clean-Clear-a_1766464931.png"
       ]
     },
     "numerology": {
       "label": "Numerology",
-      "match_any": ["numerology", "life path", "soul number"],
+      "match_any": [
+        "numerology",
+        "life path",
+        "soul number"
+      ],
       "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Mystical-numerology-scene-with_1763938111.png",
       "urls": [
         "https://shopsacredground.com/wp-content/uploads/ai_generated_Mystical-numerology-scene-with_1763938111.png",
@@ -109,94 +135,125 @@
     },
     "moon_circle": {
       "label": "Women's Moon Circles",
-      "match_any": ["moon circle", "moon circles", "women's circle", "womens circle", "women’s circle"],
+      "match_any": [
+        "moon circle",
+        "moon circles",
+        "women's circle",
+        "womens circle",
+        "women’s circle"
+      ],
       "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Womens-Moon-Circles-Women-s_1766409186.png"
     },
     "sound_healing": {
       "label": "Sound healing / gong / sonic fusion",
-      "match_any": ["sound healing", "sound bath", "gong", "sonic fusion", "singing bowl", "crystal bowl"],
-      "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Large-ornate-gong-with-intrica_1763319567.png",
-      "urls": [
-        "https://shopsacredground.com/wp-content/uploads/ai_generated_Large-ornate-gong-with-intrica_1763319567.png",
-        "https://shopsacredground.com/wp-content/uploads/sg-morning-creative-sound-bowls.png"
-      ]
+      "match_any": [
+        "sound healing",
+        "sound bath",
+        "gong",
+        "sonic fusion",
+        "singing bowl",
+        "crystal bowl"
+      ],
+      "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Large-ornate-gong-with-intrica_1763319567.png"
     },
     "reiki_share_3rd_sunday": {
       "label": "Reiki Share (3rd Sunday)",
-      "match_any": ["reiki share"],
-      "require_nth_weekday": { "weekday": "sunday", "nth": 3 },
+      "match_any": [
+        "reiki share"
+      ],
+      "require_nth_weekday": {
+        "weekday": "sunday",
+        "nth": 3
+      },
       "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-reiki-share.png"
     },
     "robert": {
       "label": "Robert (cards) — not two days in a row",
-      "match_any": ["robert"],
+      "match_any": [
+        "robert"
+      ],
       "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Ethereal-angel-wings-made-of-g_1764775330.png",
       "urls": [
         "https://shopsacredground.com/wp-content/uploads/ai_generated_Ethereal-angel-wings-made-of-g_1764775330.png",
-        "https://shopsacredground.com/wp-content/uploads/sg-morning-cards.png",
-        "https://shopsacredground.com/wp-content/uploads/sg-morning-creative-coffee-cards.png"
+        "https://shopsacredground.com/wp-content/uploads/sg-morning-cards.png"
       ],
       "not_consecutive_days": true
     },
     "chakra_healing": {
       "label": "Chakra healing / balancing",
-      "match_any": ["chakra"],
-      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-chakra.png",
-      "urls": [
-        "https://shopsacredground.com/wp-content/uploads/sg-morning-chakra.png",
-        "https://shopsacredground.com/wp-content/uploads/sg-morning-creative-chakra-orbs.png"
-      ]
+      "match_any": [
+        "chakra"
+      ],
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-chakra.png"
     },
     "reflexology": {
       "label": "Reflexology",
-      "match_any": ["reflexology"],
-      "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Restorative-Touch-Abstract-Bo_1766408767.png",
-      "urls": [
-        "https://shopsacredground.com/wp-content/uploads/ai_generated_Restorative-Touch-Abstract-Bo_1766408767.png",
-        "https://shopsacredground.com/wp-content/uploads/sg-morning-creative-wellness-spa.png"
-      ]
+      "match_any": [
+        "reflexology"
+      ],
+      "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Restorative-Touch-Abstract-Bo_1766408767.png"
     },
     "massage": {
       "label": "Massage",
-      "match_any": ["massage"],
+      "match_any": [
+        "massage"
+      ],
       "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Inner-Knowing-Portal-cosmic_1766408164.png",
       "urls": [
         "https://shopsacredground.com/wp-content/uploads/ai_generated_Inner-Knowing-Portal-cosmic_1766408164.png",
-        "https://shopsacredground.com/wp-content/uploads/ai_generated_Inner-Knowing-Portal-cosmic_1766408244.png",
-        "https://shopsacredground.com/wp-content/uploads/sg-morning-creative-wellness-spa.png"
+        "https://shopsacredground.com/wp-content/uploads/ai_generated_Inner-Knowing-Portal-cosmic_1766408244.png"
       ]
     },
     "tai_chi": {
       "label": "Tai Chi / Tai Chi Gung",
-      "match_any": ["tai chi", "tai-chi", "taichi"],
-      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-creative-tai-chi.png",
+      "match_any": [
+        "tai chi",
+        "tai-chi",
+        "taichi"
+      ],
+      "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Quantum-healing-energy-space-w_1762925278.png",
       "urls": [
-        "https://shopsacredground.com/wp-content/uploads/sg-morning-creative-tai-chi.png",
-        "https://shopsacredground.com/wp-content/uploads/sg-morning-creative-quantum-dawn.png"
+        "https://shopsacredground.com/wp-content/uploads/ai_generated_Quantum-healing-energy-space-w_1762925278.png",
+        "https://shopsacredground.com/wp-content/uploads/sg-morning-energy-waves.png"
       ]
     },
     "tarot_runes": {
       "label": "Tarot & Runes event",
-      "match_any": ["rune", "runes"],
+      "match_any": [
+        "rune",
+        "runes"
+      ],
       "url": "https://shopsacredground.com/wp-content/uploads/7347a0c3-962d-4a9f-b568-4b831db9a7e2.png",
       "notes": "Specialty plate for the linked Tarot & Runes event title. Not a mixed-day priority case of separate tarot vs runes events."
     },
     "meditation": {
       "label": "Meditation",
-      "match_any": ["meditation", "breathwork", "guided meditation"],
-      "exclude_if_match_any": ["sound bath", "sound healing", "gong"],
+      "match_any": [
+        "meditation",
+        "breathwork",
+        "guided meditation"
+      ],
+      "exclude_if_match_any": [
+        "sound bath",
+        "sound healing",
+        "gong"
+      ],
       "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Sacred-Om-Aum-symbol-glowing-w_1763937092.png",
       "urls": [
         "https://shopsacredground.com/wp-content/uploads/ai_generated_Sacred-Om-Aum-symbol-glowing-w_1763937092.png",
         "https://shopsacredground.com/wp-content/uploads/ai_generated_Silhouette-of-person-meditatin_1763937058.png",
-        "https://shopsacredground.com/wp-content/uploads/sg-morning-meditation.png",
-        "https://shopsacredground.com/wp-content/uploads/sg-morning-creative-cushions.png",
-        "https://shopsacredground.com/wp-content/uploads/sg-morning-creative-lotus-mist.png"
+        "https://shopsacredground.com/wp-content/uploads/sg-morning-meditation.png"
       ]
     },
     "astrology": {
       "label": "Astrology",
-      "match_any": ["astrology", "horoscope", "birth chart", "natal chart", "zodiac"],
+      "match_any": [
+        "astrology",
+        "horoscope",
+        "birth chart",
+        "natal chart",
+        "zodiac"
+      ],
       "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Zodiac-wheel-with-glowing-cons_1764775346.png",
       "urls": [
         "https://shopsacredground.com/wp-content/uploads/ai_generated_Zodiac-wheel-with-glowing-cons_1764775346.png",
@@ -206,7 +263,9 @@
     },
     "tarot": {
       "label": "Tarot — Sacred Ground deck (FileBird: Tarot Deck SG)",
-      "match_any": ["tarot"],
+      "match_any": [
+        "tarot"
+      ],
       "url": "https://shopsacredground.com/wp-content/uploads/73094F05-FA72-4FDC-A26C-7B67F30280BD.png",
       "urls": [
         "https://shopsacredground.com/wp-content/uploads/73094F05-FA72-4FDC-A26C-7B67F30280BD.png",
@@ -251,30 +310,33 @@
     },
     "reiki": {
       "label": "Reiki event",
-      "match_any": ["reiki"],
-      "exclude_if_match_any": ["reiki share"],
+      "match_any": [
+        "reiki"
+      ],
+      "exclude_if_match_any": [
+        "reiki share"
+      ],
       "url": "https://shopsacredground.com/wp-content/uploads/8B0B705D-F5BA-44B8-BAD3-6E3E8875901A.png",
       "urls": [
         "https://shopsacredground.com/wp-content/uploads/8B0B705D-F5BA-44B8-BAD3-6E3E8875901A.png",
-        "https://shopsacredground.com/wp-content/uploads/sg-morning-creative-reiki-hands.png",
         "https://shopsacredground.com/wp-content/uploads/sg-morning-reiki.png"
       ],
       "notes": "Common modality — beats tarot alone, but deferred when any rarer specialty (crystal, chakra, sound, etc.) shares the day."
     },
     "holistic_center": {
       "label": "Holistic center / fair",
-      "match_any": ["holistic fair", "holistic center", "psychic fair", "vendor fair"],
+      "match_any": [
+        "holistic fair",
+        "holistic center",
+        "psychic fair",
+        "vendor fair"
+      ],
       "url": "https://shopsacredground.com/wp-content/uploads/DSC2049-copy-scaled.jpg"
     },
     "tuesday_daily": {
       "label": "Every Tuesday 7am Today post",
       "require_weekday": "tuesday",
-      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-meditation.png",
-      "urls": [
-        "https://shopsacredground.com/wp-content/uploads/sg-morning-meditation.png",
-        "https://shopsacredground.com/wp-content/uploads/sg-morning-creative-cushions.png",
-        "https://shopsacredground.com/wp-content/uploads/sg-morning-creative-lotus-mist.png"
-      ]
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-meditation.png"
     },
     "multi_event_rotation": {
       "label": "Multi-event day rotation (when no specialty rule wins)",
@@ -284,7 +346,8 @@
         "https://shopsacredground.com/wp-content/uploads/sg-morning-energy-waves.png",
         "https://shopsacredground.com/wp-content/uploads/sg-morning-glowing-hands.png",
         "https://shopsacredground.com/wp-content/uploads/sg-morning-meditation.png"
-      ]
+      ],
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-multi-lotus.png"
     }
   }
 }

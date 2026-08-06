@@ -1,5 +1,5 @@
 {
-  "notes": "Date-keyed Cheryl-style finished morning flyers (logo + event text + shopsacredground.com / 847-749-3922 already baked in). When a flyer exists for the Chicago calendar day, Autopilot uses it first and MUST skip brand overlays (prebranded: true). NEVER include $, dollar amounts, ticket costs, or \"$55\"-style prices on flyer graphics, labels, or prompts — do not bake Event.cost / TEC cost onto the image. Empty days get a warm visit flyer (not storefront-only). 1–3 events max on the graphic.",
+  "notes": "Sacred Ground daily flyer template (Thursday-style): gold standard is assets/sg-morning-flyer-2026-08-06-today-collage.png. Layout system — header WEEKDAY AT Sacred Ground + Mind • Body • Spirit • Community; LEFT stacked rounded event cards (icon + name + host + time + short keywords); RIGHT evocative graphics in clear zones; FOOTER circular logo + shopsacredground.com + 847-749-3922 + come-as-you-are energy. Dark elegant palette with gold accents (vary colors by day). Easy to read — not collage soup. Versions of this system, not exact clones. Date-keyed finished flyers are prebranded (skip overlays). NEVER include $, dollar amounts, ticket costs, or \"$55\"-style prices on flyer graphics, labels, or prompts. Empty days get a warm visit flyer. 1–3 events max.",
   "prebranded_default": true,
   "flyers": {
     "2026-08-05": {
@@ -28,7 +28,9 @@
       ],
       "prebranded": true,
       "media_id": 25887,
-      "alt_media_ids": [25889]
+      "alt_media_ids": [
+        25889
+      ]
     },
     "2026-08-07": {
       "label": "Reflexology Reset with Cheryl (+ Robert)",
@@ -55,20 +57,23 @@
       "media_id": 25890
     },
     "2026-08-09": {
-      "label": "Janel + Solar Plexus + Quantum Chakras",
+      "label": "Sunday — Randa & Richard, Eve & Thor, Janel",
       "covers": [
-        "Divine Insight Sessions with Janel",
-        "Restore Your Solar Plexus",
-        "Quantum Chakras Event"
+        "Restore Your Solar Plexus-Third Chakra with Randa Clark & Richard Popp",
+        "Quantum Chakras Event; An Immersive Healing Experience Through Live Music, Sound Bath, Guided Meditation, & Intuitive Energy Healing",
+        "Divine Insight Sessions with Janel: Akashic Records or Angel Card Readings"
       ],
       "local": "assets/sg-morning-flyer-2026-08-09-chakras.png",
-      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-09-chakras.png",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-09-chakras-1.png",
       "prebranded": true,
-      "media_id": 25894
+      "media_id": 25899,
+      "template": "thursday-style"
     },
     "2026-08-10": {
       "label": "Lisa Maria Intuitive Tarot",
-      "covers": ["Lisa Maria Intuitive Tarot"],
+      "covers": [
+        "Lisa Maria Intuitive Tarot"
+      ],
       "local": "assets/sg-morning-flyer-2026-08-10-lisa-tarot.png",
       "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-10-lisa-tarot.png",
       "prebranded": true,
@@ -88,7 +93,9 @@
     },
     "2026-08-12": {
       "label": "Tuesdays with Tina — Tarot & Runes",
-      "covers": ["Tina’s Tarot & Rune Sessions"],
+      "covers": [
+        "Tina’s Tarot & Rune Sessions"
+      ],
       "local": "assets/sg-morning-flyer-2026-08-12-tina.png",
       "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-12-tina.png",
       "prebranded": true,
@@ -119,5 +126,22 @@
       "prebranded": true,
       "media_id": 25898
     }
+  },
+  "template": {
+    "name": "Sacred Ground daily flyer template (Thursday-style)",
+    "gold_standard_local": "assets/sg-morning-flyer-2026-08-06-today-collage.png",
+    "gold_standard_url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-06-today-collage.png",
+    "layout": [
+      "Header: {WEEKDAY} AT + Sacred Ground (script) + Mind • Body • Spirit • Community",
+      "Left: 1–3 stacked rounded event cards (icon, title, host, time, keywords)",
+      "Right: evocative graphics aligned to cards (clear zones)",
+      "Footer: logo + shopsacredground.com + 847-749-3922 + come-as-you-are"
+    ],
+    "rules": [
+      "No prices on graphic",
+      "Dark elegant + gold accents; vary palette by day",
+      "Easy to read — not collage soup",
+      "Versions of the system, not exact daily clones"
+    ]
   }
 }

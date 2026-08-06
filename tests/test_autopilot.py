@@ -494,11 +494,11 @@ class AutopilotTests(unittest.TestCase):
         self.assertIn("sg-morning-flyer-", plan_flyer.url or "")
         self.assertTrue(images.skip_brand_overlays(plan_flyer))
 
-        # Empty non-Tuesday with no date flyer → demoted morning_creative (rare).
+        # Empty non-Tuesday with no date flyer → store exterior (creative pack removed).
         plan_empty = images.plan_image([], "today", day=date(2026, 9, 2))
-        self.assertEqual(plan_empty.rule, "morning_creative")
+        self.assertEqual(plan_empty.rule, "store_exterior")
         self.assertTrue(plan_empty.url)
-        self.assertIn("sg-morning-creative-", plan_empty.url or "")
+        self.assertNotIn("sg-morning-creative-", plan_empty.url or "")
         self.assertFalse(plan_empty.prebranded)
 
         visit = captions.caption_today_visit("facebook", date(2026, 8, 4))
