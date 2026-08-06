@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import urllib.error
 import urllib.request
 from datetime import datetime
@@ -13,6 +14,10 @@ from . import control, store
 from .paths import accounts
 
 ZERNIO_API_BASE = os.environ.get("ZERNIO_API_BASE", "https://zernio.com/api/v1")
+_EXISTING_POST_ID_RE = re.compile(
+    r'"existingPostId"\s*:\s*"([^"]+)"',
+    re.IGNORECASE,
+)
 
 
 def can_schedule(draft: Dict[str, Any]) -> tuple[bool, str]:
@@ -158,6 +163,78 @@ def create_zernio_post(payload: Dict[str, Any]) -> Dict[str, Any]:
     return _http_json("POST", "posts", body=body)
 
 
+def get_zernio_post(post_id: str) -> Dict[str, Any]:
+    """GET /posts/{id}."""
+    return _http_json("GET", f"posts/{post_id}")
+
+
+def parse_existing_post_id(error_text: str) -> Optional[str]:
+    """Extract existingPostId from a Zernio 409 error body/string."""
+    if not error_text:
+        return None
+    m = _EXISTING_POST_ID_RE.search(error_text)
+    return m.group(1) if m else None
+
+
+def _finalize_from_zernio_post(
+    draft_id: str,
+    result: Dict[str, Any],
+    *,
+    publish_now_fallback: bool = False,
+    dedupe_409: bool = False,
+    existing_post_id: Optional[str] = None,
+) -> Dict[str, Any]:
+    post = (result.get("post") or result) if isinstance(result, dict) else {}
+    status = (post.get("status") or "").lower()
+    external: Dict[str, Any] = {"zernio": result}
+    if dedupe_409:
+        external["dedupe_409"] = True
+    if existing_post_id:
+        external["existingPostId"] = existing_post_id
+    if dedupe_409:
+        # Trust Zernio's existing post status (do not force-posted just because
+        # our local recommended time already passed).
+        if status in ("published", "publishing", "posted"):
+            mark_posted(draft_id, external=external)
+            final = "posted"
+        else:
+            mark_scheduled(draft_id, external=external)
+            final = "scheduled"
+    elif status == "published" or publish_now_fallback:
+        mark_posted(draft_id, external=external)
+        final = "posted"
+    else:
+        mark_scheduled(draft_id, external=external)
+        final = "scheduled"
+    return {
+        "ok": True,
+        "draft_id": draft_id,
+        "status": final,
+        "zernio_status": status or None,
+        "external": external,
+        "dedupe_409": bool(dedupe_409),
+    }
+
+
+def sync_draft_from_existing_post(draft_id: str, existing_post_id: str) -> Dict[str, Any]:
+    """On Zernio 409 dedupe: GET the existing post and mark local draft accordingly."""
+    try:
+        result = get_zernio_post(existing_post_id)
+    except Exception as exc:
+        return {
+            "ok": False,
+            "error": f"zernio_409_sync_failed:{exc}",
+            "draft_id": draft_id,
+            "existingPostId": existing_post_id,
+        }
+    return _finalize_from_zernio_post(
+        draft_id,
+        result,
+        dedupe_409=True,
+        existing_post_id=existing_post_id,
+    )
+
+
 def publish_draft(draft_id: str) -> Dict[str, Any]:
     draft = store.get_draft(draft_id)
     if not draft:
@@ -171,28 +248,31 @@ def publish_draft(draft_id: str) -> Dict[str, Any]:
     try:
         result = create_zernio_post(payload)
     except Exception as exc:
+        err = str(exc)
+        existing_id = parse_existing_post_id(err) if "zernio_http_409" in err else None
+        if existing_id:
+            synced = sync_draft_from_existing_post(draft_id, existing_id)
+            if synced.get("ok"):
+                synced["payload"] = {k: v for k, v in payload.items() if k != "content"}
+                return synced
+            return {
+                "ok": False,
+                "error": synced.get("error") or err,
+                "draft_id": draft_id,
+                "existingPostId": existing_id,
+                "payload": {k: v for k, v in payload.items() if k != "content"},
+            }
         return {
             "ok": False,
-            "error": str(exc),
+            "error": err,
             "draft_id": draft_id,
             "payload": {k: v for k, v in payload.items() if k != "content"},
         }
-    post = (result.get("post") or result) if isinstance(result, dict) else {}
-    status = (post.get("status") or "").lower()
-    external = {"zernio": result}
-    if status == "published" or payload.get("publishNow"):
-        mark_posted(draft_id, external=external)
-        final = "posted"
-    else:
-        mark_scheduled(draft_id, external=external)
-        final = "scheduled"
-    return {
-        "ok": True,
-        "draft_id": draft_id,
-        "status": final,
-        "zernio_status": status or None,
-        "external": external,
-    }
+    return _finalize_from_zernio_post(
+        draft_id,
+        result if isinstance(result, dict) else {},
+        publish_now_fallback=bool(payload.get("publishNow")),
+    )
 
 
 def publish_campaign_drafts(*, campaign: str) -> Dict[str, Any]:
@@ -262,12 +342,40 @@ def publish_campaign_drafts(*, campaign: str) -> Dict[str, Any]:
         publish_draft(d["id"]) for d in candidates
     ]
     results = publish_results + skipped_stale
-    ok = bool(candidates) and all(r.get("ok") for r in publish_results)
+
+    # Already scheduled/posted for this shop-local day counts as success
+    # (common on re-runs / Zernio 409 dedupe sync).
+    already_done: List[Dict[str, Any]] = []
+    if not candidates:
+        for d in store.list_drafts():
+            if d.get("campaign") != campaign:
+                continue
+            fp = d.get("fingerprint") or ""
+            if f"|{day_key}|" not in f"|{fp}|":
+                continue
+            if d.get("status") in ("posted", "scheduled"):
+                already_done.append(
+                    {
+                        "ok": True,
+                        "draft_id": d["id"],
+                        "status": d.get("status"),
+                        "already": True,
+                    }
+                )
+        results = already_done + results
+
+    ok = (bool(candidates) and all(r.get("ok") for r in publish_results)) or bool(
+        already_done
+    )
     return {
         "ok": ok,
         "campaign": campaign,
         "day": day_key,
-        "published_or_scheduled": sum(1 for r in publish_results if r.get("ok")),
+        "published_or_scheduled": sum(
+            1
+            for r in results
+            if r.get("ok") and (r.get("status") in ("posted", "scheduled") or r.get("already"))
+        ),
         "failed": sum(1 for r in results if not r.get("ok")),
         "results": results,
     }

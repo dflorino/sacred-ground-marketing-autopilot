@@ -1348,6 +1348,99 @@ class AutopilotTests(unittest.TestCase):
                     f"{day_key} has price-like text: {b!r}",
                 )
 
+    def test_pick_events_for_flyer_equal_start_times(self) -> None:
+        """Same score + start must not crash sort (Event is not orderable)."""
+        from marketing import morning_flyers as mf
+        from marketing.models import Event
+
+        a = Event(
+            id=10,
+            title="Tarot A",
+            start_date="2026-08-06 12:00:00",
+            end_date="2026-08-06 17:00:00",
+            url="https://shopsacredground.com/a/",
+        )
+        b = Event(
+            id=11,
+            title="Tarot B",
+            start_date="2026-08-06 12:00:00",
+            end_date="2026-08-06 17:00:00",
+            url="https://shopsacredground.com/b/",
+        )
+        picked = mf.pick_events_for_flyer([a, b], limit=2)
+        self.assertEqual(len(picked), 2)
+        self.assertEqual({e.id for e in picked}, {10, 11})
+
+    def test_zernio_409_dedupe_syncs_local_draft(self) -> None:
+        """409 with existingPostId GETs the post and marks draft scheduled/posted."""
+        from marketing import control, publish, store
+
+        control.set_phase(2)
+        control.resume()
+        store.save_draft(
+            {
+                "id": "sgma-test-today-fb",
+                "version": "1.0",
+                "campaign": "today",
+                "platform": "facebook",
+                "status": "approved",
+                "approval_status": "approved",
+                "fingerprint": "today|2026-08-06|facebook|1",
+                "created_at": "2026-08-06T07:00:00-05:00",
+                "timezone": "America/Chicago",
+                "schedule_recommendation": {
+                    "recommended_at": "2026-08-06T07:00:00-05:00",
+                    "rationale": "test",
+                    "reminder_of": None,
+                },
+                "caption": {"text": "hello", "hashtags": [], "hook": "hello"},
+                "image": {
+                    "source": "morning_flyer",
+                    "url": "https://example.com/x.png",
+                    "rule": "morning_flyer",
+                },
+                "events": [],
+                "links": [],
+                "phase": 2,
+                "publish_blocked_reason": None,
+                "notes": [],
+            }
+        )
+
+        err = 'zernio_http_409: {"error":"dup","details":{"existingPostId":"abc123"}}'
+        self.assertEqual(publish.parse_existing_post_id(err), "abc123")
+
+        calls = {"get": 0}
+
+        def fake_get(post_id: str):
+            calls["get"] += 1
+            self.assertEqual(post_id, "abc123")
+            return {"post": {"_id": "abc123", "status": "scheduled"}}
+
+        def boom(_payload):
+            raise RuntimeError(err)
+
+        orig_create = publish.create_zernio_post
+        orig_get = publish.get_zernio_post
+        orig_key = publish.zernio_api_key
+        try:
+            publish.zernio_api_key = lambda: "test-key"  # type: ignore
+            publish.create_zernio_post = boom  # type: ignore
+            publish.get_zernio_post = fake_get  # type: ignore
+            result = publish.publish_draft("sgma-test-today-fb")
+        finally:
+            publish.create_zernio_post = orig_create  # type: ignore
+            publish.get_zernio_post = orig_get  # type: ignore
+            publish.zernio_api_key = orig_key  # type: ignore
+
+        self.assertTrue(result.get("ok"), result)
+        self.assertTrue(result.get("dedupe_409"))
+        self.assertEqual(result.get("status"), "scheduled")
+        self.assertEqual(calls["get"], 1)
+        saved = store.get_draft("sgma-test-today-fb")
+        self.assertEqual(saved.get("status"), "scheduled")
+        self.assertTrue((saved.get("external") or {}).get("dedupe_409"))
+
 
 if __name__ == "__main__":
     unittest.main()
