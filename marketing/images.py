@@ -64,6 +64,48 @@ def image_rules() -> Dict[str, Any]:
         return json.load(fh)
 
 
+@lru_cache(maxsize=1)
+def morning_flyers() -> Dict[str, Any]:
+    path = os.path.join(CONFIG_DIR, "morning_flyers.json")
+    if not os.path.isfile(path):
+        return {"flyers": {}, "prebranded_default": True}
+    with open(path, encoding="utf-8") as fh:
+        import json
+
+        data = json.load(fh)
+    if not isinstance(data, dict):
+        return {"flyers": {}, "prebranded_default": True}
+    data.setdefault("flyers", {})
+    data.setdefault("prebranded_default", True)
+    return data
+
+
+def skip_brand_overlays(image: Any) -> bool:
+    """
+    True when the plate is a finished flyer (logo + footer + event text baked in).
+    Accepts ImagePlan, dict, or any object with a prebranded attribute/key.
+    """
+    if image is None:
+        return False
+    if isinstance(image, dict):
+        if image.get("prebranded") is True:
+            return True
+        rule = str(image.get("rule") or "")
+        url = str(image.get("url") or "")
+        return rule == "morning_flyer" or "sg-morning-flyer-" in url
+    if getattr(image, "prebranded", False):
+        return True
+    rule = str(getattr(image, "rule", "") or "")
+    url = str(getattr(image, "url", "") or "")
+    return rule == "morning_flyer" or "sg-morning-flyer-" in url
+
+
+def _flyer_for_day(day: date) -> Optional[Dict[str, Any]]:
+    flyers = morning_flyers().get("flyers") or {}
+    entry = flyers.get(day.isoformat())
+    return entry if isinstance(entry, dict) else None
+
+
 def load_image_usage() -> Dict[str, Any]:
     ensure_dirs()
     data = read_json(IMAGE_USAGE_PATH, {"history": []})
@@ -254,6 +296,32 @@ def select_today_image(
     # that cannot diversify and fall through to the next eligible rule/pool.
     prefer_unique = bool(excluded)
 
+    # Date-keyed finished flyers beat specialty / atmospheric plates.
+    flyer = _flyer_for_day(day)
+    if flyer:
+        pool = [str(u) for u in (flyer.get("urls") or []) if u]
+        primary = str(flyer.get("url") or "")
+        if primary and primary not in pool:
+            pool.insert(0, primary)
+        if pool:
+            url = _pick_from_urls(
+                pool,
+                day=day,
+                blocked=blocked,
+                platform=platform,
+                exclude=excluded,
+                prefer_unique=prefer_unique,
+            )
+            if not url and not prefer_unique:
+                url = pool[0]
+            if url:
+                label = flyer.get("label") or day.isoformat()
+                return (
+                    url,
+                    "morning_flyer",
+                    f"Prebranded morning flyer for {day.isoformat()} ({label}). Skip overlays.",
+                )
+
     for rule_id in priority:
         rule = rules.get(rule_id) or {}
         if not _rule_matches(rule, events=events, day=day, haystack=haystack):
@@ -370,13 +438,18 @@ def plan_image(
             "store_exterior": "store_photo",
             "multi_event_rotation": "rotation",
             "morning_creative": "rotation",
+            "morning_flyer": "morning_flyer",
         }.get(rule_id, "rule_library")
+        prebranded = rule_id == "morning_flyer" or skip_brand_overlays(
+            {"rule": rule_id, "url": url}
+        )
         return ImagePlan(
             source=source,
             url=url,
             event_id=events[0].id if len(events) == 1 else None,
             recommendation=rec,
             rule=rule_id,
+            prebranded=prebranded,
         )
 
     if campaign == "week":

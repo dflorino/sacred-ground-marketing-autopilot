@@ -246,17 +246,18 @@ class AutopilotTests(unittest.TestCase):
         self.assertEqual(plan_m.rule, "massage")  # rarer specialty beats common tarot
         self.assertTrue(plan_m.url)
 
+        # Specialty tests use Sept dates (no date-keyed morning flyers).
         # Sound bath should use sound_healing pool (gong / bowls), not meditation
         sound = [
             Event(
                 id=26,
                 title="Gong Sound Bath",
-                start_date="2026-08-07 19:00:00",
-                end_date="2026-08-07 20:30:00",
+                start_date="2026-09-07 19:00:00",
+                end_date="2026-09-07 20:30:00",
                 url="https://shopsacredground.com/events/gong/",
             ),
         ]
-        plan_sound = images.plan_image(sound, "today", day=date(2026, 8, 7))
+        plan_sound = images.plan_image(sound, "today", day=date(2026, 9, 7))
         self.assertEqual(plan_sound.rule, "sound_healing")
         sound_url = (plan_sound.url or "").lower()
         self.assertTrue(
@@ -290,19 +291,19 @@ class AutopilotTests(unittest.TestCase):
             Event(
                 id=23,
                 title="Reiki Healing",
-                start_date="2026-08-05 12:00:00",
-                end_date="2026-08-05 14:00:00",
+                start_date="2026-09-02 12:00:00",
+                end_date="2026-09-02 14:00:00",
                 url="https://shopsacredground.com/book/reiki/",
             ),
             Event(
                 id=24,
                 title="Chakra Balancing",
-                start_date="2026-08-05 15:00:00",
-                end_date="2026-08-05 17:00:00",
+                start_date="2026-09-02 15:00:00",
+                end_date="2026-09-02 17:00:00",
                 url="https://shopsacredground.com/book/chakra/",
             ),
         ]
-        plan_rc = images.plan_image(reiki_chakra, "today", day=date(2026, 8, 5))
+        plan_rc = images.plan_image(reiki_chakra, "today", day=date(2026, 9, 2))
         self.assertEqual(plan_rc.rule, "chakra_healing")
         chakra_url = (plan_rc.url or "").lower()
         self.assertTrue(
@@ -315,19 +316,19 @@ class AutopilotTests(unittest.TestCase):
             Event(
                 id=31,
                 title="Tarot with Tina",
-                start_date="2026-08-07 12:00:00",
-                end_date="2026-08-07 17:00:00",
+                start_date="2026-09-07 12:00:00",
+                end_date="2026-09-07 17:00:00",
                 url="https://shopsacredground.com/book/tarot/",
             ),
             Event(
                 id=32,
                 title="Sonic Fusion Sound Bath",
-                start_date="2026-08-07 19:00:00",
-                end_date="2026-08-07 20:30:00",
+                start_date="2026-09-07 19:00:00",
+                end_date="2026-09-07 20:30:00",
                 url="https://shopsacredground.com/events/sonic-fusion/",
             ),
         ]
-        plan_ts = images.plan_image(tarot_sound, "today", day=date(2026, 8, 7))
+        plan_ts = images.plan_image(tarot_sound, "today", day=date(2026, 9, 7))
         self.assertEqual(plan_ts.rule, "sound_healing")
         ts_url = (plan_ts.url or "").lower()
         self.assertTrue(
@@ -340,19 +341,19 @@ class AutopilotTests(unittest.TestCase):
             Event(
                 id=33,
                 title="Intuitive Tarot",
-                start_date="2026-08-08 12:00:00",
-                end_date="2026-08-08 17:00:00",
+                start_date="2026-09-08 12:00:00",
+                end_date="2026-09-08 17:00:00",
                 url="https://shopsacredground.com/book/tarot/",
             ),
             Event(
                 id=34,
                 title="Reiki Healing",
-                start_date="2026-08-08 14:00:00",
-                end_date="2026-08-08 16:00:00",
+                start_date="2026-09-08 14:00:00",
+                end_date="2026-09-08 16:00:00",
                 url="https://shopsacredground.com/book/reiki/",
             ),
         ]
-        plan_treiki = images.plan_image(tarot_reiki, "today", day=date(2026, 8, 8))
+        plan_treiki = images.plan_image(tarot_reiki, "today", day=date(2026, 9, 8))
         self.assertEqual(plan_treiki.rule, "reiki")
 
         # Reiki + crystal class → crystal_healing (not reiki)
@@ -360,19 +361,19 @@ class AutopilotTests(unittest.TestCase):
             Event(
                 id=35,
                 title="Reiki Session",
-                start_date="2026-08-09 12:00:00",
-                end_date="2026-08-09 14:00:00",
+                start_date="2026-09-09 12:00:00",
+                end_date="2026-09-09 14:00:00",
                 url="https://shopsacredground.com/book/reiki/",
             ),
             Event(
                 id=36,
                 title="Working with Crystals Workshop",
-                start_date="2026-08-09 15:00:00",
-                end_date="2026-08-09 17:00:00",
+                start_date="2026-09-09 15:00:00",
+                end_date="2026-09-09 17:00:00",
                 url="https://shopsacredground.com/event/crystal-workshop/",
             ),
         ]
-        plan_rcr = images.plan_image(reiki_crystal, "today", day=date(2026, 8, 9))
+        plan_rcr = images.plan_image(reiki_crystal, "today", day=date(2026, 9, 9))
         self.assertEqual(plan_rcr.rule, "crystal_healing")
         self.assertTrue(plan_rcr.url)
 
@@ -381,12 +382,12 @@ class AutopilotTests(unittest.TestCase):
             Event(
                 id=25,
                 title="Tina’s Tarot & Runes",
-                start_date="2026-08-06 12:00:00",
-                end_date="2026-08-06 17:00:00",
+                start_date="2026-09-03 12:00:00",
+                end_date="2026-09-03 17:00:00",
                 url="https://shopsacredground.com/tina/",
             ),
         ]
-        plan_runes = images.plan_image(runes_day, "today", day=date(2026, 8, 6))
+        plan_runes = images.plan_image(runes_day, "today", day=date(2026, 9, 3))
         self.assertEqual(plan_runes.rule, "tarot_runes")
         self.assertIn("7347a0c3", plan_runes.url or "")
 
@@ -395,20 +396,19 @@ class AutopilotTests(unittest.TestCase):
             Event(
                 id=4,
                 title="Crystal Browse Hour",
-                start_date="2026-08-05 12:00:00",
-                end_date="2026-08-05 14:00:00",
+                start_date="2026-09-02 12:00:00",
+                end_date="2026-09-02 14:00:00",
                 url="https://shopsacredground.com/event/a/",
             ),
             Event(
                 id=5,
                 title="Tea & Chat",
-                start_date="2026-08-05 15:00:00",
-                end_date="2026-08-05 16:00:00",
+                start_date="2026-09-02 15:00:00",
+                end_date="2026-09-02 16:00:00",
                 url="https://shopsacredground.com/event/b/",
             ),
         ]
-        # Wednesday Aug 5 2026
-        plan_r = images.plan_image(generic_multi, "today", day=date(2026, 8, 5))
+        plan_r = images.plan_image(generic_multi, "today", day=date(2026, 9, 2))
         self.assertEqual(plan_r.rule, "multi_event_rotation")
         self.assertTrue(plan_r.url)
 
@@ -422,13 +422,13 @@ class AutopilotTests(unittest.TestCase):
                 Event(
                     id=6,
                     title="Andean Shaman Session",
-                    start_date="2026-08-06 12:00:00",
-                    end_date="2026-08-06 14:00:00",
+                    start_date="2026-09-03 12:00:00",
+                    end_date="2026-09-03 14:00:00",
                     url="https://shopsacredground.com/event/shaman/",
                 )
             ],
             "today",
-            day=date(2026, 8, 6),
+            day=date(2026, 9, 3),
         )
         self.assertEqual(shaman.rule, "shaman_medium")
 
@@ -438,36 +438,51 @@ class AutopilotTests(unittest.TestCase):
             "ai_generated_Classic-playing-cards-fanned-o_1764775825.png"
         )
         images.record_image_use(
-            day=date(2026, 8, 6), url=robert_url, rule="robert", campaign="today"
+            day=date(2026, 9, 3), url=robert_url, rule="robert", campaign="today"
         )
         robert_ev = [
             Event(
                 id=7,
                 title="Readings with Robert",
-                start_date="2026-08-07 12:00:00",
-                end_date="2026-08-07 17:00:00",
+                start_date="2026-09-04 12:00:00",
+                end_date="2026-09-04 17:00:00",
                 url="https://shopsacredground.com/event/robert/",
                 image_url="https://example.com/robert.jpg",
             )
         ]
-        robert_day2 = images.plan_image(robert_ev, "today", day=date(2026, 8, 7))
+        robert_day2 = images.plan_image(robert_ev, "today", day=date(2026, 9, 4))
         self.assertNotEqual(robert_day2.url, robert_url)
 
         # 7-day no-repeat on rotation
         images.record_image_use(
-            day=date(2026, 8, 5),
+            day=date(2026, 9, 2),
             url=plan_r.url or "",
             rule="multi_event_rotation",
             campaign="today",
         )
-        plan_r2 = images.plan_image(generic_multi, "today", day=date(2026, 8, 6))
+        plan_r2 = images.plan_image(generic_multi, "today", day=date(2026, 9, 3))
         self.assertEqual(plan_r2.rule, "multi_event_rotation")
         self.assertNotEqual(plan_r2.url, plan_r.url)
 
-        plan_empty = images.plan_image([], "today", day=date(2026, 8, 10))
+        # Date-keyed finished flyer beats specialty on Aug 5.
+        plan_flyer_day = images.plan_image(reiki_chakra, "today", day=date(2026, 8, 5))
+        self.assertEqual(plan_flyer_day.rule, "morning_flyer")
+        self.assertTrue(plan_flyer_day.prebranded)
+        self.assertTrue(images.skip_brand_overlays(plan_flyer_day))
+
+        # Date-keyed finished flyer wins even with no events that day.
+        plan_flyer = images.plan_image([], "today", day=date(2026, 8, 10))
+        self.assertEqual(plan_flyer.rule, "morning_flyer")
+        self.assertTrue(plan_flyer.prebranded)
+        self.assertIn("sg-morning-flyer-", plan_flyer.url or "")
+        self.assertTrue(images.skip_brand_overlays(plan_flyer))
+
+        # Empty non-Tuesday with no date flyer → demoted morning_creative (rare).
+        plan_empty = images.plan_image([], "today", day=date(2026, 9, 2))
         self.assertEqual(plan_empty.rule, "morning_creative")
         self.assertTrue(plan_empty.url)
         self.assertIn("sg-morning-creative-", plan_empty.url or "")
+        self.assertFalse(plan_empty.prebranded)
 
         visit = captions.caption_today_visit("facebook", date(2026, 8, 4))
         self.assertIn("cool and unusual", visit["text"].lower())
@@ -992,22 +1007,23 @@ class AutopilotTests(unittest.TestCase):
 
         images.IMAGE_USAGE_PATH = os.path.join(self._tmpdir, "state", "image_usage.json")
         images.image_rules.cache_clear()
+        images.morning_flyers.cache_clear()
         atmosphere_config.cache_clear()
 
-        day = date(2026, 8, 5)  # Wednesday — multi-event rotation pool
+        day = date(2026, 9, 2)  # Wednesday — no date flyer; multi-event rotation pool
         generic_multi = [
             Event(
                 id=401,
                 title="Crystal Browse Hour",
-                start_date="2026-08-05 12:00:00",
-                end_date="2026-08-05 14:00:00",
+                start_date="2026-09-02 12:00:00",
+                end_date="2026-09-02 14:00:00",
                 url="https://shopsacredground.com/event/a/",
             ),
             Event(
                 id=402,
                 title="Tea & Chat",
-                start_date="2026-08-05 15:00:00",
-                end_date="2026-08-05 16:00:00",
+                start_date="2026-09-02 15:00:00",
+                end_date="2026-09-02 16:00:00",
                 url="https://shopsacredground.com/event/b/",
             ),
         ]
@@ -1026,6 +1042,21 @@ class AutopilotTests(unittest.TestCase):
         self.assertTrue(fb.url)
         self.assertTrue(ig.url)
         self.assertNotEqual(fb.url, ig.url)
+
+        # Prebranded morning flyer pool (Aug 6) also diversifies FB vs IG
+        flyer_day = date(2026, 8, 6)
+        f_fb = images.plan_image([], "today", day=flyer_day, platform="facebook")
+        f_ig = images.plan_image(
+            [],
+            "today",
+            day=flyer_day,
+            platform="instagram",
+            exclude_urls=[f_fb.url or ""],
+        )
+        self.assertEqual(f_fb.rule, "morning_flyer")
+        self.assertEqual(f_ig.rule, "morning_flyer")
+        self.assertTrue(f_fb.prebranded and f_ig.prebranded)
+        self.assertNotEqual(f_fb.url, f_ig.url)
 
         # Specialty with multi-URL pool (massage) → different cards from same rule
         massage_day = [
@@ -1058,24 +1089,24 @@ class AutopilotTests(unittest.TestCase):
         self.assertEqual(m_fb.rule, "massage")
         self.assertNotEqual(m_fb.url, m_ig.url)
 
-        # Single-URL specialty (sound) → second platform falls through rather than duplicate
+        # Sound specialty pool → second platform takes another plate (no date flyer)
         sound = [
             Event(
                 id=405,
                 title="Gong Sound Bath",
-                start_date="2026-08-07 19:00:00",
-                end_date="2026-08-07 20:30:00",
+                start_date="2026-09-07 19:00:00",
+                end_date="2026-09-07 20:30:00",
                 url="https://shopsacredground.com/events/gong/",
             ),
             Event(
                 id=406,
                 title="Tarot with Tina",
-                start_date="2026-08-07 12:00:00",
-                end_date="2026-08-07 17:00:00",
+                start_date="2026-09-07 12:00:00",
+                end_date="2026-09-07 17:00:00",
                 url="https://shopsacredground.com/book/tarot/",
             ),
         ]
-        s_day = date(2026, 8, 7)
+        s_day = date(2026, 9, 7)
         s_fb = images.plan_image(sound, "today", day=s_day, platform="facebook")
         s_ig = images.plan_image(
             sound,

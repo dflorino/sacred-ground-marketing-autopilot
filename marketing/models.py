@@ -36,6 +36,9 @@ class ImagePlan:
     prompt: Optional[str] = None
     recommendation: str = ""
     rule: Optional[str] = None
+    # Finished Cheryl-style flyers already include logo + footer + event text.
+    # Composite / overlay steps must skip heavy branding when True.
+    prebranded: bool = False
 
     def to_dict(self) -> Dict[str, Any]:
         return asdict(self)

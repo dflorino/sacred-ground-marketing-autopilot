@@ -1,0 +1,123 @@
+{
+  "notes": "Date-keyed Cheryl-style finished morning flyers (logo + event text + shopsacredground.com / 847-749-3922 already baked in). When a flyer exists for the Chicago calendar day, Autopilot uses it first and MUST skip brand overlays (prebranded: true).",
+  "prebranded_default": true,
+  "flyers": {
+    "2026-08-05": {
+      "label": "Tina Tarot & Runes + Karen Soul Alignment",
+      "covers": [
+        "Tina’s Tarot & Rune Sessions",
+        "Soul Alignment w/ Karen"
+      ],
+      "local": "assets/sg-morning-flyer-2026-08-05-tina-karen.png",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-05-tina-karen.png",
+      "prebranded": true,
+      "media_id": 25886
+    },
+    "2026-08-06": {
+      "label": "Thursday collage — Tai Chi, Adie Tarot, Eve Quantum",
+      "covers": [
+        "Tai Chi Gung with Sherry Gurley",
+        "Tarot with Adie",
+        "Quantum Alignment Series — Light Codes with Eve"
+      ],
+      "local": "assets/sg-morning-flyer-2026-08-06-today-collage.png",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-06-today-collage.png",
+      "urls": [
+        "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-06-today-collage.png",
+        "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-06-eve-quantum.png"
+      ],
+      "prebranded": true,
+      "media_id": 25887,
+      "alt_media_ids": [25889]
+    },
+    "2026-08-07": {
+      "label": "Reflexology Reset with Cheryl (+ Robert)",
+      "covers": [
+        "The Reflexology Reset: Restorative Wellness w/ Cheryl",
+        "Keeper of the Cards: Robert"
+      ],
+      "local": "assets/sg-morning-flyer-2026-08-07-reflexology.png",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-07-reflexology.png",
+      "prebranded": true,
+      "media_id": 25888
+    },
+    "2026-08-08": {
+      "label": "Shaman Medium Melissa (+ Adie, Robert, Andre)",
+      "covers": [
+        "Shaman Medium Melissa",
+        "Tarot with Adie",
+        "Keeper of the Cards: Robert",
+        "Tarot With Andre"
+      ],
+      "local": "assets/sg-morning-flyer-2026-08-08-shaman.png",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-08-shaman.png",
+      "prebranded": true,
+      "media_id": 25890
+    },
+    "2026-08-09": {
+      "label": "Janel + Solar Plexus + Quantum Chakras",
+      "covers": [
+        "Divine Insight Sessions with Janel",
+        "Restore Your Solar Plexus",
+        "Quantum Chakras Event"
+      ],
+      "local": "assets/sg-morning-flyer-2026-08-09-chakras.png",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-09-chakras.png",
+      "prebranded": true,
+      "media_id": 25894
+    },
+    "2026-08-10": {
+      "label": "Lisa Maria Intuitive Tarot",
+      "covers": ["Lisa Maria Intuitive Tarot"],
+      "local": "assets/sg-morning-flyer-2026-08-10-lisa-tarot.png",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-10-lisa-tarot.png",
+      "prebranded": true,
+      "media_id": 25891
+    },
+    "2026-08-11": {
+      "label": "Free Community Meditation — Awaken Your Inner Light",
+      "covers": [
+        "Free Community Meditation",
+        "Astrology & Tarot With Lisa",
+        "Amber | Customized Therapeutic Massage"
+      ],
+      "local": "assets/sg-morning-flyer-2026-08-11-meditation.png",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-11-meditation.png",
+      "prebranded": true,
+      "media_id": 25892
+    },
+    "2026-08-12": {
+      "label": "Tuesdays with Tina — Tarot & Runes",
+      "covers": ["Tina’s Tarot & Rune Sessions"],
+      "local": "assets/sg-morning-flyer-2026-08-12-tina.png",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-12-tina.png",
+      "prebranded": true,
+      "media_id": 25893
+    },
+    "2026-08-13": {
+      "label": "Eve Quantum Manifesting (+ Tai Chi, Adie)",
+      "covers": [
+        "Quantum Alignment Series With Eve",
+        "Tai Chi Gung with Sherry Gurley",
+        "Tarot with Adie"
+      ],
+      "local": "assets/sg-morning-flyer-2026-08-13-eve.png",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-13-eve.png",
+      "prebranded": true,
+      "media_id": 25896
+    },
+    "2026-08-14": {
+      "label": "Sound Bath / Shamanic Drum with Andre",
+      "covers": [
+        "Sound Bath or Shamanic Drum Journey With Andre",
+        "Divine Insight Sessions with Janel",
+        "Keeper of the Cards: Robert",
+        "Reiki with Renee"
+      ],
+      "local": "assets/sg-morning-flyer-2026-08-14-soundbath.png",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-14-soundbath.png",
+      "prebranded": true,
+      "media_id": 25895
+    }
+  }
+}

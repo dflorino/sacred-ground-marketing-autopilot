@@ -42,7 +42,9 @@
       "full_description"
     ],
     "max_image_area_percent": 20,
-    "no_white_border": true
+    "no_white_border": true,
+    "skip_when_prebranded": true,
+    "notes": "When image.prebranded is true (morning_flyer / sg-morning-flyer-*), skip logo + TODAY overlay + cream footer — flyer is already finished."
   },
   "caption": {
     "include_experience_language": true,
