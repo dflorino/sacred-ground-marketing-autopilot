@@ -298,48 +298,26 @@ def plan_image(
         )
 
     if campaign == "week_ahead":
-        # Priority: full_moon > holiday > creative_pool rotation.
-        from .atmosphere import night_image_url, nighttime_plan
+        # Locked: rotate founder exterior storefront photos only.
+        # Never interior, never AI specialty / night-sky creatives.
         from .ingest import today_local
 
         on = day or today_local()
-        atm = nighttime_plan(on)
-        url = night_image_url(on)
-        if not url:
-            wa = (settings().get("campaigns") or {}).get("week_ahead") or {}
-            brand = settings().get("brand_images") or {}
-            urls = [str(u) for u in (wa.get("image_urls") or []) if u]
-            if not urls:
-                urls = [str(u) for u in (brand.get("exterior_urls") or []) if u]
-            if not urls:
-                urls = [store_exterior_url()]
-            url = urls[on.toordinal() % len(urls)]
-
-        mode = atm.get("mode") or "creative"
-        season = atm.get("season") or "summer"
-        holiday = atm.get("holiday")
-        creative_id = atm.get("creative_id") or ""
-        if mode == "full_moon":
-            rule = "week_ahead_full_moon"
-            label = "full_moon"
-        elif mode == "holiday":
-            rule = f"week_ahead_holiday_{holiday}"
-            label = holiday
-        elif mode == "creative":
-            rule = f"week_ahead_creative_{creative_id or 'pool'}"
-            label = creative_id or "creative"
-        else:
-            rule = f"week_ahead_season_{season}"
-            label = season
+        wa = (settings().get("campaigns") or {}).get("week_ahead") or {}
+        brand = settings().get("brand_images") or {}
+        urls = [str(u) for u in (wa.get("image_urls") or []) if u]
+        if not urls:
+            urls = [str(u) for u in (brand.get("exterior_urls") or []) if u]
+        if not urls:
+            urls = [store_exterior_url()]
+        url = urls[on.toordinal() % len(urls)]
         return ImagePlan(
             source="brand_week_ahead",
             url=url,
-            prompt=str(atm.get("prompt_hint") or ""),
             recommendation=(
-                f"Night image ({mode}/{label}): {atm.get('season_look')}. "
-                f"Cart: {atm.get('cart') or 'n/a'}. Events stay in caption only."
+                "Founder exterior storefront rotation — events stay in caption only."
             ),
-            rule=rule,
+            rule="week_ahead_founder_exterior",
         )
 
     if campaign == "visit":

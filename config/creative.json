@@ -78,11 +78,10 @@
         "facebook",
         "instagram"
       ],
-      "background": "store_exterior_plus_season",
-      "image_policy": "config/image_atmosphere.json",
-      "approved_reference": "assets/sg-example-night-fall-storefront.png",
+      "background": "founder_exterior_storefront",
+      "image_policy": "founder_exterior_rotation",
       "purpose": "next_3_days_planner",
-      "notes": "Locked: same exterior storefront vein as uploaded brand exteriors; seasons change outdoors only. Mornings use specialty library with no seasons."
+      "notes": "Locked: rotate the 3 founder exterior storefront photos only. Never interior, never AI specialty/night-sky art. Events stay in caption."
     }
   }
 }
