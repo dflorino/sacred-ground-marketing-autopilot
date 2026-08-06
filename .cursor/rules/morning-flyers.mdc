@@ -26,6 +26,13 @@ Use **versions of this layout system** — not an exact clone every day (stale),
 - No invented practitioner faces — symbols/silhouettes OK; Tina circle only with approved refs
 - `prebranded: true` → skip logo/TODAY/cream footer overlays
 
+## Layout mix (required)
+
+- **~75%** of new/future morning flyers → Thursday-style clear card layout (default)
+- **~25%** may be artistic single-event hero layouts **IF still readable**
+- Multi-event days → prefer Thursday-style cards
+- `generate-morning-flyers` / `build_generation_prompt` defaults to Thursday-style
+
 ## Never put prices on flyers
 
 - **Never** include `$`, dollar amounts, ticket costs, session fees, or “$55 / $99” style prices on morning flyer graphics.
@@ -43,3 +50,4 @@ Use **versions of this layout system** — not an exact clone every day (stale),
 
 - Do not restore rejected atmospheric `sg-morning-creative-*` plates into rotation
 - Do not overwrite a Founder-loved day’s flyer when redesigning other dates
+- Do not overwrite the Aug 6 gold standard (`sg-morning-flyer-2026-08-06-today-collage.png`)

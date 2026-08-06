@@ -1283,6 +1283,22 @@ class AutopilotTests(unittest.TestCase):
             self.assertFalse(mf.text_has_price(part), part)
         prompt = mf.build_generation_prompt(date(2026, 8, 7), copy)
         self.assertIn("do NOT include any prices", prompt)
+        self.assertIn("Thursday-style", prompt)
+        # Multi-event → thursday_cards; single-event days may roll artistic.
+        self.assertEqual(
+            mf.choose_layout_style(date(2026, 8, 7), [priced]),
+            mf.LAYOUT_THURSDAY,
+        )
+        artistic_day = date(2026, 8, 12)  # ordinal % 4 == 0
+        self.assertEqual(
+            mf.choose_layout_style(artistic_day, [priced]),
+            mf.LAYOUT_ARTISTIC,
+        )
+        art_prompt = mf.build_generation_prompt(
+            artistic_day, copy, layout=mf.LAYOUT_ARTISTIC
+        )
+        self.assertIn("artistic single-event hero", art_prompt)
+        self.assertIn("do NOT include any prices", art_prompt)
         # cost itself is priced — we only assert flyer fields
         self.assertTrue(mf.text_has_price(priced.cost))
         self.assertNotIn(priced.cost, copy["label"])

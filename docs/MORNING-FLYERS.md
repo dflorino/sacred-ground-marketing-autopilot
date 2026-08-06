@@ -20,6 +20,15 @@ Use **versions of this layout system** — beautiful and easy to read — not an
 - **No prices** on the graphic
 - No invented practitioner faces — symbols/silhouettes OK
 
+## Layout mix (required)
+
+| Share | Style | When |
+|---|---|---|
+| **~75%** | **Thursday-style clear card layout** | Default for new/future flyers; always prefer for multi-event days |
+| **~25%** | Artistic single-event hero | Only when still highly readable; one primary event; short ALSO TODAY line OK |
+
+`generate-morning-flyers` / `build_generation_prompt` defaults to Thursday-style cards. Deterministic mix: multi-event days → cards; ~1/4 of single-event days may roll artistic hero. Do not ship chaotic collage soup in either bucket.
+
 ## Hard rule — no prices
 
 Never put `$`, dollar amounts, ticket costs, or “$55”-style fees on morning flyer graphics. Do not use TEC `cost` on the image. Captions may still link to booking.
@@ -32,9 +41,9 @@ Never put `$`, dollar amounts, ticket costs, or “$55”-style fees on morning 
    python3 -m marketing generate-morning-flyers --days 7 --source live-strict
    ```
 
-   Writes local PNGs under `assets/sg-morning-flyer-YYYY-MM-DD-*.png`, appends config entries (`prebranded: true`).
+   Writes local PNGs under `assets/sg-morning-flyer-YYYY-MM-DD-*.png`, appends config entries (`prebranded: true`). Prompts default to Thursday-style cards (~75%).
 
-2. **Polish to Thursday-style** when a day needs Founder-quality art — keep the card layout system; update `url` / `media_id` after WordPress upload.
+2. **Polish to Thursday-style** when a day needs Founder-quality art — keep the card layout system for most days; update `url` / `media_id` after WordPress upload.
 
 3. **Upload missing URLs** — if the CLI reports `needs_upload`, upload via WordPress MCP `upload_media`, then set `url` + `media_id` in `morning_flyers.json` (or re-run with `--set-url` after upload).
 
@@ -58,6 +67,7 @@ Never put `$`, dollar amounts, ticket costs, or “$55”-style fees on morning 
 | Footer | Logo + shopsacredground.com + 847-749-3922 |
 | Faces | Tina circle only with real ref photos; otherwise symbols |
 | Overlays | `prebranded: true` → skip brand overlays |
+| Layout mix | ~75% Thursday cards / ~25% readable artistic hero |
 
 ## Rejected: atmospheric creative plates
 
@@ -65,4 +75,4 @@ The plain `sg-morning-creative-*` pack was removed from `assets/` and `config/im
 
 ## Local render vs AI polish
 
-Default backend is a local PIL compositor (sustainable offline). Agents may replace a day’s asset with a higher-fidelity pass that follows the **Thursday-style template** — still **no prices** — then update `url` / `media_id`. Never overwrite a Founder-loved day’s flyer when redesigning other dates.
+Default backend is a local PIL compositor (sustainable offline). Agents may replace a day’s asset with a higher-fidelity pass that follows the **Thursday-style template** (~75% of the time) — still **no prices** — then update `url` / `media_id`. Never overwrite a Founder-loved day’s flyer when redesigning other dates. Never overwrite the Aug 6 gold standard.

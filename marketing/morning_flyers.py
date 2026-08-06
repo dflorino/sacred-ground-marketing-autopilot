@@ -39,16 +39,25 @@ PRICE_RE = re.compile(
     re.IGNORECASE | re.VERBOSE,
 )
 
+# ~75% Thursday-style clear cards; up to ~25% artistic single-event hero.
+THURSDAY_CARDS_SHARE = 0.75
+LAYOUT_THURSDAY = "thursday_cards"
+LAYOUT_ARTISTIC = "artistic_hero"
+
 NOTES = (
     "Sacred Ground daily flyer template (Thursday-style): gold standard "
-    "assets/sg-morning-flyer-2026-08-06-today-collage.png. Header WEEKDAY AT "
-    "Sacred Ground + Mind • Body • Spirit • Community; LEFT stacked rounded "
-    "event cards; RIGHT evocative graphics in clear zones; FOOTER logo + "
+    "assets/sg-morning-flyer-2026-08-06-today-collage.png. ~75% of new/future "
+    "morning flyers MUST use Thursday-style clear stacked event cards (left "
+    "cards + right graphics + logo footer); up to ~25% may be artistic "
+    "single-event hero layouts IF still readable. Header WEEKDAY AT Sacred "
+    "Ground + Mind • Body • Spirit • Community; LEFT stacked rounded event "
+    "cards; RIGHT evocative graphics in clear zones; FOOTER logo + "
     f"{WEBSITE} + {PHONE} + come-as-you-are. Dark elegant + gold accents "
     "(vary by day). Easy to read — not collage soup. Versions of the system, "
     "not exact clones. Date-keyed flyers are prebranded (skip overlays). NEVER "
     "include $, dollar amounts, ticket costs, or \"$55\"-style prices on flyer "
-    "graphics. Empty days get a warm visit flyer. 1–3 events max."
+    "graphics. Empty days get a warm visit flyer. 1–3 events max. No invented "
+    "practitioner faces."
 )
 
 
@@ -144,7 +153,7 @@ def _event_time_line(ev: Event) -> str:
 
 def pick_events_for_flyer(events: Sequence[Event], limit: int = MAX_EVENTS_ON_FLYER) -> List[Event]:
     """Prefer featured/special, then earlier start; hard-cap for graphic space."""
-    scored: List[Tuple[int, str, Event]] = []
+    scored: List[Tuple[int, str, int, Event]] = []
     for ev in events:
         score = 0
         if getattr(ev, "featured", False) or getattr(ev, "is_special", False):
@@ -154,9 +163,33 @@ def pick_events_for_flyer(events: Sequence[Event], limit: int = MAX_EVENTS_ON_FL
             score += 4
         if any(k in low for k in ("sound bath", "shaman", "quantum", "reflexology", "chakra")):
             score += 3
-        scored.append((-score, ev.start_date or "", ev))
+        eid = int(getattr(ev, "id", 0) or 0)
+        scored.append((-score, ev.start_date or "", eid, ev))
     scored.sort()
-    return [e for _, __, e in scored[: max(0, limit)]]
+    return [e for _, __, ___, e in scored[: max(0, limit)]]
+
+
+def choose_layout_style(
+    day: date,
+    events: Optional[Sequence[Event]] = None,
+    *,
+    force: Optional[str] = None,
+) -> str:
+    """
+    Deterministic layout mix: ~75% thursday_cards, ~25% artistic_hero.
+
+    Multi-event days (2+) always prefer Thursday-style cards for readability.
+    Single-event / empty days may roll the artistic 25% bucket via day hash.
+    """
+    if force in (LAYOUT_THURSDAY, LAYOUT_ARTISTIC):
+        return force
+    picked = pick_events_for_flyer(events or [])
+    if len(picked) >= 2:
+        return LAYOUT_THURSDAY
+    # Stable ~25% artistic: day ordinal mod 4 == 0 → artistic (1/4).
+    if (day.toordinal() % 4) == 0 and len(picked) <= 1:
+        return LAYOUT_ARTISTIC
+    return LAYOUT_THURSDAY
 
 
 def build_flyer_copy(day: date, events: Sequence[Event]) -> Dict[str, Any]:
@@ -214,8 +247,14 @@ def build_flyer_copy(day: date, events: Sequence[Event]) -> Dict[str, Any]:
     }
 
 
-def build_generation_prompt(day: date, copy: Dict[str, Any]) -> str:
-    """Prompt for mlimg / GenerateImage polish — still hard-bans prices."""
+def build_generation_prompt(
+    day: date,
+    copy: Dict[str, Any],
+    *,
+    layout: Optional[str] = None,
+    events: Optional[Sequence[Event]] = None,
+) -> str:
+    """Prompt for mlimg / GenerateImage polish — defaults to Thursday-style cards."""
     also = copy.get("also") or []
     also_bit = ""
     if also:
@@ -226,17 +265,35 @@ def build_generation_prompt(day: date, copy: Dict[str, Any]) -> str:
             " Empty calendar visit day: warm invite to come into Sacred Ground "
             "(crystals, quiet wonder) — not a plain storefront photo."
         )
-    return (
-        f"Sacred Ground Cheryl-style mystical Canva morning flyer, square 1080x1080. "
+    style = layout or choose_layout_style(day, events)
+    weekday = day.strftime("%A").upper()
+    shared = (
         f"Chicago date {day.isoformat()}. Primary: {copy.get('primary')}. "
         f"Date/time text: {copy.get('date_short')}. "
         f"{also_bit}{visit} "
-        "Sacred geometry accents, elegant mixed fonts (script + serif), "
-        "circular Sacred Ground sun-face logo, footer with shopsacredground.com "
-        "and 847-749-3922. Prebranded finished flyer. "
+        "Elegant mixed fonts (script + serif), circular Sacred Ground sun-face "
+        f"logo, footer with {WEBSITE} and {PHONE}. Prebranded finished flyer. "
         "CRITICAL: do NOT include any prices, dollar signs, ticket costs, or "
         "dollar amounts anywhere on the graphic. No invented practitioner faces "
-        "unless a real photo reference is provided."
+        "unless a real photo reference is provided. Vary gold/jewel accents by "
+        "day — versions of the system, not exact clones."
+    )
+    if style == LAYOUT_ARTISTIC:
+        return (
+            "Sacred Ground artistic single-event hero morning flyer, square "
+            f"1080x1080. Still highly readable — not collage soup. {shared} "
+            "Centered hero composition OK for one primary event; keep text "
+            "high-contrast; secondary events as a short ALSO TODAY line only."
+        )
+    # Default / 75% path: Thursday-style clear cards.
+    return (
+        "Sacred Ground Thursday-style clear card morning flyer, square 1080x1080. "
+        "Gold-standard layout system (do not clone colors): HEADER "
+        f"'{weekday} AT' + Sacred Ground gold script + "
+        "'Mind • Body • Spirit • Community'; LEFT 1–3 stacked rounded event "
+        "cards (icon + title + host + time + short keywords); RIGHT evocative "
+        "graphics in clear zones aligned to those cards; FOOTER logo + website "
+        f"+ phone + come-as-you-are. Dark elegant + gold accents. {shared}"
     )
 
 
@@ -458,12 +515,14 @@ def register_flyer(
     if os.path.isabs(local) and local.startswith(ROOT + os.sep):
         rel_local = os.path.relpath(local, ROOT)
 
+    layout = choose_layout_style(day, events or [])
     entry: Dict[str, Any] = {
         "label": copy["label"],
         "covers": list(copy.get("covers") or []),
         "local": rel_local.replace("\\", "/"),
         "url": url or "",
         "prebranded": True,
+        "template": "thursday-style" if layout == LAYOUT_THURSDAY else "artistic_hero",
     }
     if media_id is not None:
         entry["media_id"] = int(media_id)
@@ -472,7 +531,21 @@ def register_flyer(
 
     data = load_flyers_config()
     flyers = data.setdefault("flyers", {})
+    # Preserve Founder-set template / urls when re-registering same day.
+    prev = flyers.get(day.isoformat())
+    if isinstance(prev, dict):
+        for key in ("urls", "alt_media_ids", "alt_local", "alt_template"):
+            if key in prev and key not in entry:
+                entry[key] = prev[key]
+        if prev.get("template") and not events:
+            entry["template"] = prev["template"]
     flyers[day.isoformat()] = entry
+    # Keep layout_mix metadata stable on every save.
+    data["layout_mix"] = {
+        "thursday_cards_share": THURSDAY_CARDS_SHARE,
+        "artistic_hero_share": round(1.0 - THURSDAY_CARDS_SHARE, 2),
+        "default": LAYOUT_THURSDAY,
+    }
     save_flyers_config(data)
     return entry
 
@@ -490,12 +563,16 @@ def ensure_flyer_for_day(
     existing = flyer_entry_for_day(day)
     if existing and not force:
         url = str(existing.get("url") or "")
+        copy_existing = build_flyer_copy(day, events)
         return {
             "day": day.isoformat(),
             "action": "exists",
             "needs_upload": not bool(url),
             "entry": existing,
-            "prompt": build_generation_prompt(day, build_flyer_copy(day, events)),
+            "layout": choose_layout_style(day, events),
+            "prompt": build_generation_prompt(
+                day, copy_existing, events=events
+            ),
         }
 
     day_events: List[Event] = []
@@ -517,13 +594,15 @@ def ensure_flyer_for_day(
     copy = build_flyer_copy(day, day_events)
     out = render_local_flyer(day, day_events)
     entry = register_flyer(day, local=out, url="", copy=copy, events=day_events)
+    layout = choose_layout_style(day, day_events)
     return {
         "day": day.isoformat(),
         "action": "created",
         "needs_upload": True,
         "entry": entry,
         "local": out,
-        "prompt": build_generation_prompt(day, copy),
+        "layout": layout,
+        "prompt": build_generation_prompt(day, copy, layout=layout, events=day_events),
     }
 
 
