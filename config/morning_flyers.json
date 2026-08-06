@@ -54,24 +54,25 @@
       ]
     },
     "2026-08-08": {
-      "label": "Tarot + Shaman Medium Melissa +",
+      "label": "Shaman Medium Melissa + Tarot with Andre + Lions Gate Meditation with Eve",
       "covers": [
-        "Tarot With Andre",
         "Shaman Medium Melissa",
-        "Tarot with Adie"
+        "Tarot With Andre",
+        "Lions Gate Meditation with Eve"
       ],
-      "local": "assets/sg-morning-flyer-2026-08-08-shaman.png",
-      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-08-shaman-1.png",
+      "local": "assets/sg-morning-flyer-2026-08-08-lions-gate.png",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-08-lions-gate.png",
       "prebranded": true,
       "template": "thursday-style",
-      "media_id": 25904,
-      "local_instagram": "assets/sg-morning-flyer-2026-08-08-tarot-b.png",
-      "url_instagram": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-08-tarot-b.png",
-      "media_id_instagram": 25911,
+      "media_id": 25924,
+      "local_instagram": "assets/sg-morning-flyer-2026-08-08-lions-gate-b.png",
+      "url_instagram": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-08-lions-gate-b.png",
+      "media_id_instagram": 25925,
       "urls": [
-        "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-08-shaman-1.png",
-        "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-08-tarot-b.png"
-      ]
+        "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-08-lions-gate.png",
+        "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-08-lions-gate-b.png"
+      ],
+      "note": "Updated for Lions Gate Meditation with Eve 8pm (TEC 25926). Dual full-day Thursday-style variants; no prices. Prior shaman/tarot-b plates retired from rotation."
     },
     "2026-08-09": {
       "label": "Quantum Chakras Event; An Immersive Healing Experience Through Live Musi + Restore Your Solar Plexus-Third Chakra +",
