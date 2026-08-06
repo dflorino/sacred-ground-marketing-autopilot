@@ -66,13 +66,9 @@ def image_rules() -> Dict[str, Any]:
 
 @lru_cache(maxsize=1)
 def morning_flyers() -> Dict[str, Any]:
-    path = os.path.join(CONFIG_DIR, "morning_flyers.json")
-    if not os.path.isfile(path):
-        return {"flyers": {}, "prebranded_default": True}
-    with open(path, encoding="utf-8") as fh:
-        import json
+    from . import morning_flyers as mf
 
-        data = json.load(fh)
+    data = mf.load_flyers_config()
     if not isinstance(data, dict):
         return {"flyers": {}, "prebranded_default": True}
     data.setdefault("flyers", {})

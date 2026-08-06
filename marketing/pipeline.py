@@ -159,6 +159,22 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
     if is_paused():
         notes_base.append("Autopilot paused — drafts only; no schedule/publish.")
 
+    # Ensure Cheryl-style morning flyer for today (generate-if-missing).
+    flyer_ensure: Dict[str, Any] = {}
+    try:
+        from . import morning_flyers as mf
+
+        flyer_ensure = mf.ensure_flyers_for_range(
+            days=1, start=day, events=events, force=False
+        )
+        if flyer_ensure.get("needs_upload"):
+            notes_base.append(
+                "morning_flyer_needs_upload:"
+                + ",".join(flyer_ensure.get("needs_upload") or [])
+            )
+    except Exception as exc:
+        notes_base.append(f"morning_flyer_ensure_failed:{exc}")
+
     # --- Today (events day OR empty-day visit post) ---
     today_cfg = (cfg.get("campaigns") or {}).get("today") or {}
     if today_cfg.get("enabled", True):
@@ -493,6 +509,17 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
         "draft_skips": skipped_drafts,
         "phase": phase(),
         "paused": is_paused(),
+        "morning_flyers": {
+            "needs_upload": list((flyer_ensure or {}).get("needs_upload") or []),
+            "ensured": [
+                {
+                    "day": r.get("day"),
+                    "action": r.get("action"),
+                    "needs_upload": r.get("needs_upload"),
+                }
+                for r in ((flyer_ensure or {}).get("results") or [])
+            ],
+        },
     }
 
 

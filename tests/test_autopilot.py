@@ -29,9 +29,26 @@ class AutopilotTests(unittest.TestCase):
         paths.settings.cache_clear()
         paths.voice.cache_clear()
         from marketing import meditation as meditation_mod
+        from marketing import morning_flyers as mf
+        from marketing import images as images_mod
 
         meditation_mod.clear_meditation_hosts_cache()
         paths.ensure_dirs()
+
+        # Isolate morning flyer config/assets so ensure-if-missing never
+        # writes into the real repo config during tests.
+        self._mf = mf
+        flyers_src = os.path.join(ROOT, "config", "morning_flyers.json")
+        self._mf_path = os.path.join(self._tmpdir, "morning_flyers.json")
+        if os.path.isfile(flyers_src):
+            shutil.copy2(flyers_src, self._mf_path)
+        else:
+            with open(self._mf_path, "w", encoding="utf-8") as fh:
+                fh.write('{"prebranded_default": true, "flyers": {}}\n')
+        mf.FLYERS_PATH = self._mf_path
+        mf.ASSETS_DIR = os.path.join(self._tmpdir, "assets")
+        os.makedirs(mf.ASSETS_DIR, exist_ok=True)
+        images_mod.morning_flyers.cache_clear()
 
     def tearDown(self) -> None:
         shutil.rmtree(self._tmpdir, ignore_errors=True)
@@ -1237,6 +1254,99 @@ class AutopilotTests(unittest.TestCase):
         }
         self.assertTrue(store.is_stale_week_ahead_draft(stale, 2))
         self.assertFalse(store.is_stale_week_ahead_draft(fresh, 2))
+
+    def test_morning_flyer_no_price_rule(self) -> None:
+        from marketing import morning_flyers as mf
+        from marketing.models import Event
+
+        self.assertTrue(mf.text_has_price("$99"))
+        self.assertTrue(mf.text_has_price("Sessions from $55"))
+        self.assertTrue(mf.text_has_price("ticket: $20"))
+        self.assertFalse(mf.text_has_price("Free Community Meditation"))
+        self.assertFalse(mf.text_has_price("Reflexology Reset with Cheryl"))
+
+        priced = Event(
+            id=1,
+            title="The Reflexology Reset",
+            start_date="2026-08-07 11:00:00",
+            end_date="2026-08-07 15:00:00",
+            url="https://shopsacredground.com/cheryl-2/",
+            cost="$99",
+        )
+        copy = mf.build_flyer_copy(date(2026, 8, 7), [priced])
+        blob = " ".join(
+            [copy["label"], *copy["covers"], *copy["lines"], copy["primary"], priced.cost]
+        )
+        # Graphic copy must be price-free even when Event.cost is set.
+        self.assertFalse(mf.text_has_price(copy["label"]))
+        for part in copy["covers"] + copy["lines"] + [copy["primary"]]:
+            self.assertFalse(mf.text_has_price(part), part)
+        prompt = mf.build_generation_prompt(date(2026, 8, 7), copy)
+        self.assertIn("do NOT include any prices", prompt)
+        # cost itself is priced — we only assert flyer fields
+        self.assertTrue(mf.text_has_price(priced.cost))
+        self.assertNotIn(priced.cost, copy["label"])
+        self.assertNotIn("$", " ".join(copy["covers"] + copy["lines"]))
+
+        with self.assertRaises(ValueError):
+            mf.assert_price_free("Book for $55 today")
+
+    def test_morning_flyer_ensure_empty_day_and_prebranded(self) -> None:
+        from marketing import images, morning_flyers as mf
+
+        images.IMAGE_USAGE_PATH = os.path.join(self._tmpdir, "state", "image_usage.json")
+        images.image_rules.cache_clear()
+        images.morning_flyers.cache_clear()
+
+        empty_day = date(2026, 9, 15)
+        info = mf.ensure_flyer_for_day(empty_day, [], force=True)
+        self.assertEqual(info["action"], "created")
+        self.assertTrue(info["needs_upload"])
+        entry = info["entry"]
+        self.assertTrue(entry.get("prebranded"))
+        self.assertTrue(entry.get("empty_day"))
+        self.assertIn("visit", (entry.get("label") or "").lower())
+        self.assertTrue(os.path.isfile(info["local"]))
+
+        # Date-keyed selection only when public URL is set.
+        plan_no_url = images.plan_image([], "today", day=empty_day)
+        self.assertNotEqual(plan_no_url.rule, "morning_flyer")
+
+        mf.set_flyer_url(
+            empty_day,
+            "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-test-visit.png",
+            media_id=99999,
+        )
+        images.morning_flyers.cache_clear()
+        plan = images.plan_image([], "today", day=empty_day)
+        self.assertEqual(plan.rule, "morning_flyer")
+        self.assertTrue(plan.prebranded)
+        self.assertTrue(images.skip_brand_overlays(plan))
+
+        # Existing day is not regenerated without --force
+        again = mf.ensure_flyer_for_day(empty_day, [], force=False)
+        self.assertEqual(again["action"], "exists")
+        self.assertFalse(again["needs_upload"])
+
+    def test_config_morning_flyers_price_free(self) -> None:
+        """Repo morning_flyers.json labels/covers must never carry $ prices."""
+        from marketing import morning_flyers as mf
+
+        # Read the real committed config (not the tmp copy).
+        real = os.path.join(ROOT, "config", "morning_flyers.json")
+        with open(real, encoding="utf-8") as fh:
+            import json
+
+            data = json.load(fh)
+        self.assertIn("NEVER include", data.get("notes") or "")
+        for day_key, entry in (data.get("flyers") or {}).items():
+            bits = [str(entry.get("label") or "")]
+            bits.extend(str(c) for c in (entry.get("covers") or []))
+            for b in bits:
+                self.assertFalse(
+                    mf.text_has_price(b),
+                    f"{day_key} has price-like text: {b!r}",
+                )
 
 
 if __name__ == "__main__":

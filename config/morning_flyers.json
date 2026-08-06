@@ -1,5 +1,5 @@
 {
-  "notes": "Date-keyed Cheryl-style finished morning flyers (logo + event text + shopsacredground.com / 847-749-3922 already baked in). When a flyer exists for the Chicago calendar day, Autopilot uses it first and MUST skip brand overlays (prebranded: true).",
+  "notes": "Date-keyed Cheryl-style finished morning flyers (logo + event text + shopsacredground.com / 847-749-3922 already baked in). When a flyer exists for the Chicago calendar day, Autopilot uses it first and MUST skip brand overlays (prebranded: true). NEVER include $, dollar amounts, ticket costs, or \"$55\"-style prices on flyer graphics, labels, or prompts — do not bake Event.cost / TEC cost onto the image. Empty days get a warm visit flyer (not storefront-only). 1–3 events max on the graphic.",
   "prebranded_default": true,
   "flyers": {
     "2026-08-05": {
@@ -37,9 +37,9 @@
         "Keeper of the Cards: Robert"
       ],
       "local": "assets/sg-morning-flyer-2026-08-07-reflexology.png",
-      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-07-reflexology.png",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-07-reflexology-1.png",
       "prebranded": true,
-      "media_id": 25888
+      "media_id": 25897
     },
     "2026-08-08": {
       "label": "Shaman Medium Melissa (+ Adie, Robert, Andre)",
@@ -115,9 +115,9 @@
         "Reiki with Renee"
       ],
       "local": "assets/sg-morning-flyer-2026-08-14-soundbath.png",
-      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-14-soundbath.png",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-14-soundbath-1.png",
       "prebranded": true,
-      "media_id": 25895
+      "media_id": 25898
     }
   }
 }

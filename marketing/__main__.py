@@ -71,6 +71,43 @@ def main(argv: Optional[List[str]] = None) -> int:
         help="HeyGen daily Reels readiness + dry plan (IG+FB; does NOT publish)",
     )
 
+    p_flyers = sub.add_parser(
+        "generate-morning-flyers",
+        help=(
+            "Prebuild Cheryl-style morning flyers for the next N Chicago days "
+            "(local render + config; upload URLs via MCP when needed)"
+        ),
+    )
+    p_flyers.add_argument(
+        "--days",
+        type=int,
+        default=7,
+        help="Number of days starting today America/Chicago (default 7)",
+    )
+    p_flyers.add_argument(
+        "--source",
+        choices=["auto", "live", "live-strict", "cache", "fixture"],
+        default="cache",
+        help="Event source for flyer content (default cache)",
+    )
+    p_flyers.add_argument(
+        "--force",
+        action="store_true",
+        help="Regenerate even when a flyer entry already exists",
+    )
+    p_flyers.add_argument(
+        "--set-url",
+        nargs=2,
+        metavar=("DATE", "URL"),
+        help="Register a public WP URL for an existing day (YYYY-MM-DD URL)",
+    )
+    p_flyers.add_argument(
+        "--media-id",
+        type=int,
+        default=None,
+        help="Optional media_id when using --set-url",
+    )
+
     sub.add_parser("status", help="Show pause/phase/counts")
     sub.add_parser("review", help="Human-readable review queue for Phase 1")
     sub.add_parser("version", help="Print version")
@@ -186,6 +223,26 @@ def main(argv: Optional[List[str]] = None) -> int:
             }
         )
         return 0
+
+    if args.cmd == "generate-morning-flyers":
+        from datetime import date as date_cls
+
+        from . import morning_flyers as mf
+
+        if args.set_url:
+            day_s, url = args.set_url
+            entry = mf.set_flyer_url(
+                date_cls.fromisoformat(day_s), url, media_id=args.media_id
+            )
+            _print({"ok": True, "day": day_s, "entry": entry})
+            return 0
+
+        src = "live" if args.source == "live-strict" else args.source
+        result = mf.ensure_flyers_for_range(
+            days=args.days, source=src, force=args.force
+        )
+        _print(result)
+        return 0 if result.get("ok") else 1
 
     return 1
 

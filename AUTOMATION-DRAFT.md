@@ -8,20 +8,29 @@ Daily Today posts for Sacred Ground Marketing Autopilot.
 
 | Situation | Image used |
 |-----------|------------|
-| Specialty match (tarot, reiki, etc.) | Rule library URL (7-day no-repeat) |
-| Multi-event / no specialty | Store exterior or rotation rules |
-| **Empty calendar** | Store exterior + visit/brand caption |
+| **Date flyer in `morning_flyers.json`** | Cheryl-style prebranded flyer (preferred every day) |
+| Specialty match (tarot, reiki, etc.) | Rule library URL (7-day no-repeat) — only if no date flyer URL |
+| Multi-event / no specialty | Rotation rules — only if no date flyer |
+| **Empty calendar** | Warm visit flyer (generate-if-missing) + visit caption — not storefront-only |
+
+**Never put prices on morning flyers** — no `$`, dollar amounts, or ticket costs on the graphic.
 
 Never post without a real media URL.
 
 ## Daily commands (Cloud Agent)
 
 ```bash
+# Prefer weekly prebuild (or run days=1 at 7am). Generate-if-missing before Today.
+python3 -m marketing generate-morning-flyers --days 7 --source live-strict
+# If needs_upload: MCP upload_media each local PNG → set url/media_id:
+#   python3 -m marketing generate-morning-flyers --set-url YYYY-MM-DD https://…/file.png --media-id N
 python3 -m marketing run --source live-strict
 python3 -m marketing publish-today
 ```
 
 Secret required: **`ZERNIO_API_KEY`** (Cursor Cloud Agent secrets).
+
+See also: `docs/MORNING-FLYERS.md`, `.cursor/rules/morning-flyers.mdc`.
 
 ## Agent instructions
 
@@ -31,15 +40,20 @@ You are running Sacred Ground Marketing Autopilot for the daily Today campaign.
 Hard rules:
 1. Timezone context is America/Chicago. Shop-local post time is 7:00 AM America/Chicago.
 2. Checkout this repo and run from the project root.
-3. Refresh live WordPress / The Events Calendar only:
+3. Ensure Cheryl-style morning flyer(s) before drafts (every day gets a flyer; never prices/$ on graphics):
+   python3 -m marketing generate-morning-flyers --days 1 --source live-strict
+   If the JSON reports needs_upload: upload each local assets/sg-morning-flyer-*.png via WordPress MCP upload_media, then:
+   python3 -m marketing generate-morning-flyers --set-url YYYY-MM-DD <public-url> --media-id <id>
+   Prefer a weekly --days 7 prebuild so 7am is not inventing art cold.
+4. Refresh live WordPress / The Events Calendar only:
    python3 -m marketing run --source live-strict
-4. If the WordPress/TEC refresh fails: create NO new drafts, do not use stale cache, report wordpress_refresh_failed, and STOP. Do not publish.
-5. Never overwrite or recreate a draft that is edited, approved, rejected, skipped, locked, or otherwise reviewed. Fingerprints that already exist must be left alone.
-6. Today campaign has auto_publish=true. After a successful live-strict run, publish today's posts:
+5. If the WordPress/TEC refresh fails: create NO new drafts, do not use stale cache, report wordpress_refresh_failed, and STOP. Do not publish.
+6. Never overwrite or recreate a draft that is edited, approved, rejected, skipped, locked, or otherwise reviewed. Fingerprints that already exist must be left alone.
+7. Today campaign has auto_publish=true. After a successful live-strict run, publish today's posts:
    python3 -m marketing publish-today
-   This uses ZERNIO_API_KEY from Cloud Agent secrets. Do not skip publish unless step 4 failed or the key is missing.
-7. Only Facebook + Instagram Today posts. Do not publish week / week_ahead / spotlight.
-8. After the run, summarize: events (or empty-day visit), platforms, image URL/rule, publish results (posted/scheduled/errors). Include Zernio post links when available.
+   This uses ZERNIO_API_KEY from Cloud Agent secrets. Do not skip publish unless step 5 failed or the key is missing.
+8. Only Facebook + Instagram Today posts. Do not publish week / week_ahead / spotlight.
+9. After the run, summarize: events (or empty-day visit), platforms, image URL/rule (expect morning_flyer when configured), publish results (posted/scheduled/errors). Include Zernio post links when available.
 ```
 
 ## Editor checklist — morning
