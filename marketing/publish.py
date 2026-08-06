@@ -158,6 +158,57 @@ def create_zernio_post(payload: Dict[str, Any]) -> Dict[str, Any]:
     return _http_json("POST", "posts", body=body)
 
 
+def _parse_zernio_409(exc: Exception) -> Optional[str]:
+    """Return existingPostId when Zernio rejects a duplicate within 24h."""
+    msg = str(exc)
+    if "zernio_http_409" not in msg:
+        return None
+    try:
+        # RuntimeError text: zernio_http_409: {json…}
+        raw = msg.split("zernio_http_409:", 1)[1].strip()
+        data = json.loads(raw)
+        details = data.get("details") or {}
+        existing = details.get("existingPostId")
+        return str(existing) if existing else None
+    except Exception:
+        return None
+
+
+def fetch_zernio_post(post_id: str) -> Dict[str, Any]:
+    return _http_json("GET", f"posts/{post_id}")
+
+
+def sync_draft_to_existing_post(draft_id: str, existing_post_id: str) -> Dict[str, Any]:
+    """Treat Zernio 409 dedupe as success and align local draft status."""
+    data = fetch_zernio_post(existing_post_id)
+    post = (data.get("post") or data) if isinstance(data, dict) else {}
+    platforms = post.get("platforms") or []
+    plat = platforms[0] if platforms else {}
+    zstatus = (
+        (plat.get("status") or post.get("status") or "")
+    ).lower()
+    external = {
+        "zernio": data,
+        "existingPostId": existing_post_id,
+        "dedupe": "zernio_http_409",
+    }
+    if zstatus in ("published", "posted", "success"):
+        mark_posted(draft_id, external=external)
+        final = "posted"
+    else:
+        mark_scheduled(draft_id, external=external)
+        final = "scheduled"
+    return {
+        "ok": True,
+        "draft_id": draft_id,
+        "status": final,
+        "zernio_status": zstatus or post.get("status"),
+        "dedupe": True,
+        "existingPostId": existing_post_id,
+        "external": external,
+    }
+
+
 def publish_draft(draft_id: str) -> Dict[str, Any]:
     draft = store.get_draft(draft_id)
     if not draft:
@@ -171,6 +222,17 @@ def publish_draft(draft_id: str) -> Dict[str, Any]:
     try:
         result = create_zernio_post(payload)
     except Exception as exc:
+        existing = _parse_zernio_409(exc)
+        if existing:
+            try:
+                return sync_draft_to_existing_post(draft_id, existing)
+            except Exception as sync_exc:
+                return {
+                    "ok": False,
+                    "error": f"zernio_409_sync_failed: {sync_exc}",
+                    "draft_id": draft_id,
+                    "existingPostId": existing,
+                }
         return {
             "ok": False,
             "error": str(exc),
