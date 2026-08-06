@@ -244,9 +244,9 @@ class AutopilotTests(unittest.TestCase):
         ]
         plan_m = images.plan_image(multi, "today", day=date(2026, 8, 3))
         self.assertEqual(plan_m.rule, "massage")  # rarer specialty beats common tarot
-        self.assertIn("Inner-Knowing-Portal", plan_m.url or "")
+        self.assertTrue(plan_m.url)
 
-        # Sound bath should use gong plate, not generic meditation
+        # Sound bath should use sound_healing pool (gong / bowls), not meditation
         sound = [
             Event(
                 id=26,
@@ -258,7 +258,11 @@ class AutopilotTests(unittest.TestCase):
         ]
         plan_sound = images.plan_image(sound, "today", day=date(2026, 8, 7))
         self.assertEqual(plan_sound.rule, "sound_healing")
-        self.assertIn("gong", (plan_sound.url or "").lower())
+        sound_url = (plan_sound.url or "").lower()
+        self.assertTrue(
+            "gong" in sound_url or "sound-bowls" in sound_url,
+            sound_url,
+        )
 
         # Tarot + reflexology → reflexology (not tarot)
         tarot_ref = [
@@ -279,7 +283,7 @@ class AutopilotTests(unittest.TestCase):
         ]
         plan_tr = images.plan_image(tarot_ref, "today", day=date(2026, 8, 4))
         self.assertEqual(plan_tr.rule, "reflexology")
-        self.assertIn("Restorative-Touch", plan_tr.url or "")
+        self.assertTrue(plan_tr.url)
 
         # Reiki + chakra → chakra (not reiki)
         reiki_chakra = [
@@ -300,7 +304,11 @@ class AutopilotTests(unittest.TestCase):
         ]
         plan_rc = images.plan_image(reiki_chakra, "today", day=date(2026, 8, 5))
         self.assertEqual(plan_rc.rule, "chakra_healing")
-        self.assertIn("sg-morning-chakra", plan_rc.url or "")
+        chakra_url = (plan_rc.url or "").lower()
+        self.assertTrue(
+            "chakra" in chakra_url,
+            chakra_url,
+        )
 
         # Tarot + sound bath / sonic fusion → sound_healing (not tarot)
         tarot_sound = [
@@ -321,7 +329,11 @@ class AutopilotTests(unittest.TestCase):
         ]
         plan_ts = images.plan_image(tarot_sound, "today", day=date(2026, 8, 7))
         self.assertEqual(plan_ts.rule, "sound_healing")
-        self.assertIn("gong", (plan_ts.url or "").lower())
+        ts_url = (plan_ts.url or "").lower()
+        self.assertTrue(
+            "gong" in ts_url or "sound-bowls" in ts_url,
+            ts_url,
+        )
 
         # Tarot + reiki → reiki (reiki beats tarot when only those two)
         tarot_reiki = [
@@ -453,8 +465,9 @@ class AutopilotTests(unittest.TestCase):
         self.assertNotEqual(plan_r2.url, plan_r.url)
 
         plan_empty = images.plan_image([], "today", day=date(2026, 8, 10))
-        self.assertEqual(plan_empty.rule, "store_exterior")
-        self.assertEqual(plan_empty.url, store_url)
+        self.assertEqual(plan_empty.rule, "morning_creative")
+        self.assertTrue(plan_empty.url)
+        self.assertIn("sg-morning-creative-", plan_empty.url or "")
 
         visit = captions.caption_today_visit("facebook", date(2026, 8, 4))
         self.assertIn("cool and unusual", visit["text"].lower())

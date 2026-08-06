@@ -302,6 +302,29 @@ def select_today_image(
                 f"Use featured image for “{e.title}”.",
             )
 
+    # General morning creative pool — empty days / no specialty / no featured.
+    # Top-level config key (sibling of "rules"), not inside the specialty map.
+    creative = cfg.get("morning_creative") or {}
+    cpool = [str(u) for u in (creative.get("urls") or []) if u]
+    cprimary = str(creative.get("url") or "")
+    if cprimary and cprimary not in cpool:
+        cpool.insert(0, cprimary)
+    if cpool:
+        curl = _pick_from_urls(
+            cpool,
+            day=day,
+            blocked=blocked,
+            platform=platform,
+            exclude=excluded,
+            prefer_unique=prefer_unique,
+        )
+        if curl:
+            return (
+                curl,
+                "morning_creative",
+                "Morning creative rotation (empty day or no specialty match).",
+            )
+
     exterior = store_exterior_url()
     if exterior not in excluded or not prefer_unique:
         return (
@@ -346,6 +369,7 @@ def plan_image(
             "event_featured": "event_featured",
             "store_exterior": "store_photo",
             "multi_event_rotation": "rotation",
+            "morning_creative": "rotation",
         }.get(rule_id, "rule_library")
         return ImagePlan(
             source=source,
