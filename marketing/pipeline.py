@@ -168,17 +168,26 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
         )
         empty_ok = bool(today_cfg.get("empty_day_fallback", True))
         if today_events or empty_ok:
-            img = images.plan_image(today_events, "today", day=day)
             sched = schedule.schedule_today(day)
             visit_notes = (
                 notes_base + ["empty_day_visit"]
                 if not today_events
                 else notes_base
             )
-            rule_note = f"image_rule:{img.rule}" if getattr(img, "rule", None) else None
-            day_notes = visit_notes + ([rule_note] if rule_note else [])
             today_created = 0
+            claimed_urls: List[str] = []
             for platform in platforms:
+                img = images.plan_image(
+                    today_events,
+                    "today",
+                    day=day,
+                    platform=platform,
+                    exclude_urls=claimed_urls,
+                )
+                rule_note = (
+                    f"image_rule:{img.rule}" if getattr(img, "rule", None) else None
+                )
+                day_notes = visit_notes + ([rule_note] if rule_note else [])
                 cap = captions.caption_today(today_events, platform, day)
                 draft = _make_draft(
                     campaign="today",
@@ -196,6 +205,15 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                         draft = _auto_ready_for_publish(draft["id"])
                     created.append(draft)
                     today_created += 1
+                    if img.url:
+                        claimed_urls.append(str(img.url))
+                        images.record_image_use(
+                            day=day,
+                            url=img.url,
+                            rule=str(img.rule or img.source),
+                            campaign="today",
+                            platform=platform,
+                        )
                 else:
                     skipped_drafts.append(
                         {
@@ -204,13 +222,6 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                             "reason": "duplicate_or_override",
                         }
                     )
-            if today_created and img.url:
-                images.record_image_use(
-                    day=day,
-                    url=img.url,
-                    rule=str(img.rule or img.source),
-                    campaign="today",
-                )
         else:
             skipped_drafts.append({"campaign": "today", "reason": "no_events_today"})
 
@@ -283,11 +294,25 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
             )
         )
         if ahead_events:
-            img = images.plan_image(ahead_events, "week_ahead", day=day)
             sched = schedule.schedule_week_ahead(day)
             wa_created = 0
+            claimed_urls: List[str] = []
             for platform in platforms:
+                img = images.plan_image(
+                    ahead_events,
+                    "week_ahead",
+                    day=day,
+                    platform=platform,
+                    exclude_urls=claimed_urls,
+                )
                 cap = captions.caption_week_ahead(ahead_events, platform, day)
+                wa_notes = notes_base + [
+                    "daily_7pm_upcoming",
+                    f"horizon_days={horizon}",
+                    f"horizon_start={window_start.isoformat()}",
+                ]
+                if img.rule:
+                    wa_notes.append(f"image_rule:{img.rule}")
                 draft = _make_draft(
                     campaign="week_ahead",
                     platform=platform,
@@ -296,18 +321,22 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                     caption=cap,
                     image=img,
                     sched=sched,
-                    notes=notes_base
-                    + [
-                        "daily_7pm_upcoming",
-                        f"horizon_days={horizon}",
-                        f"horizon_start={window_start.isoformat()}",
-                    ],
+                    notes=wa_notes,
                 )
                 if draft:
                     if wa_cfg.get("auto_publish") and not is_paused():
                         draft = _auto_ready_for_publish(draft["id"])
                     created.append(draft)
                     wa_created += 1
+                    if img.url:
+                        claimed_urls.append(str(img.url))
+                        images.record_image_use(
+                            day=day,
+                            url=img.url,
+                            rule=str(img.rule or img.source),
+                            campaign="week_ahead",
+                            platform=platform,
+                        )
                 else:
                     skipped_drafts.append(
                         {
@@ -316,13 +345,6 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                             "reason": "duplicate_or_override",
                         }
                     )
-            if wa_created and img.url:
-                images.record_image_use(
-                    day=day,
-                    url=img.url,
-                    rule=str(img.rule or img.source),
-                    campaign="week_ahead",
-                )
         else:
             skipped_drafts.append(
                 {"campaign": "week_ahead", "reason": "no_events_in_horizon"}

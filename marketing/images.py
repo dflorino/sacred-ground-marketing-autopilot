@@ -84,24 +84,41 @@ def record_image_use(
     url: str,
     rule: str,
     campaign: str = "today",
+    platform: str = "",
 ) -> None:
+    """Record a used URL. When platform is set, FB/IG can each keep a row for the same day."""
     data = load_image_usage()
-    history = [
-        h
-        for h in (data.get("history") or [])
-        if not (h.get("date") == day.isoformat() and h.get("campaign") == campaign)
-    ]
-    history.append(
-        {
-            "date": day.isoformat(),
-            "url": url,
-            "rule": rule,
-            "campaign": campaign,
-        }
-    )
+    plat = str(platform or "")
+    history = []
+    for h in data.get("history") or []:
+        same_day_camp = (
+            h.get("date") == day.isoformat() and h.get("campaign") == campaign
+        )
+        if not same_day_camp:
+            history.append(h)
+            continue
+        # Platform-scoped replace: empty platform clears all rows for that day/campaign
+        # (legacy / shared-pool campaigns like tuesday_meditation).
+        if not plat:
+            continue
+        if str(h.get("platform") or "") == plat:
+            continue
+        history.append(h)
+    entry: Dict[str, Any] = {
+        "date": day.isoformat(),
+        "url": url,
+        "rule": rule,
+        "campaign": campaign,
+    }
+    if plat:
+        entry["platform"] = plat
+    history.append(entry)
     cutoff = (day - timedelta(days=30)).isoformat()
     history = [h for h in history if (h.get("date") or "") >= cutoff]
-    data["history"] = sorted(history, key=lambda h: h.get("date") or "")
+    data["history"] = sorted(
+        history,
+        key=lambda h: (h.get("date") or "", h.get("platform") or "", h.get("url") or ""),
+    )
     save_image_usage(data)
 
 
@@ -177,25 +194,53 @@ def _rule_matches(
     return False
 
 
+def platform_salt(platform: Optional[str]) -> int:
+    """Deterministic offset so FB vs IG land on different pool indices."""
+    if not platform:
+        return 0
+    key = str(platform).lower().strip()
+    if key in ("facebook", "fb"):
+        return 0
+    if key in ("instagram", "ig"):
+        return 1
+    return sum(ord(c) for c in key) % 97
+
+
 def _pick_from_urls(
     urls: Sequence[str],
     *,
     day: date,
     blocked: set[str],
+    platform: Optional[str] = None,
+    exclude: Optional[Sequence[str]] = None,
+    prefer_unique: bool = False,
 ) -> Optional[str]:
-    available = [u for u in urls if u not in blocked]
+    """
+    Day-ordinal + platform-salt rotation over an eligible pool.
+
+    When prefer_unique is True and every pool URL is excluded, return None so the
+    caller can try another specialty / general pool instead of duplicating.
+    """
+    excluded = {str(u) for u in (exclude or []) if u}
+    available = [u for u in urls if u not in blocked and u not in excluded]
     if not available:
-        # All recently used — pick least-recently among pool by falling back to rotation
+        # All recently used — rotate among non-excluded pool members
+        available = [u for u in urls if u not in excluded]
+    if not available:
+        if prefer_unique:
+            return None
         available = list(urls)
     if not available:
         return None
-    idx = day.toordinal() % len(available)
+    idx = (day.toordinal() + platform_salt(platform)) % len(available)
     return available[idx]
 
 
 def select_today_image(
     events: Sequence[Event],
     day: date,
+    platform: Optional[str] = None,
+    exclude_urls: Optional[Sequence[str]] = None,
 ) -> Tuple[str, str, str]:
     """Return (url, rule_id, recommendation). Does not record usage."""
     cfg = image_rules()
@@ -204,6 +249,10 @@ def select_today_image(
     no_repeat = int(cfg.get("no_repeat_days") or 7)
     blocked = urls_used_before_day(day, no_repeat)
     haystack = _event_haystack(events)
+    excluded = [str(u) for u in (exclude_urls or []) if u]
+    # When the other platform already claimed a URL, skip single-URL specialties
+    # that cannot diversify and fall through to the next eligible rule/pool.
+    prefer_unique = bool(excluded)
 
     for rule_id in priority:
         rule = rules.get(rule_id) or {}
@@ -223,7 +272,14 @@ def select_today_image(
             if any(used_yesterday(u, day) for u in pool):
                 continue
 
-        url = _pick_from_urls(pool, day=day, blocked=blocked)
+        url = _pick_from_urls(
+            pool,
+            day=day,
+            blocked=blocked,
+            platform=platform,
+            exclude=excluded,
+            prefer_unique=prefer_unique,
+        )
         if not url:
             continue
 
@@ -238,14 +294,25 @@ def select_today_image(
 
     if len(events) == 1 and events[0].image_url:
         e = events[0]
+        featured = str(e.image_url)
+        if featured not in excluded:
+            return (
+                featured,
+                "event_featured",
+                f"Use featured image for “{e.title}”.",
+            )
+
+    exterior = store_exterior_url()
+    if exterior not in excluded or not prefer_unique:
         return (
-            str(e.image_url),
-            "event_featured",
-            f"Use featured image for “{e.title}”.",
+            exterior,
+            "store_exterior",
+            "Store exterior fallback (empty day or no matching rule).",
         )
 
+    # Last resort: may duplicate the other platform when no other plate exists.
     return (
-        store_exterior_url(),
+        excluded[0] if excluded else exterior,
         "store_exterior",
         "Store exterior fallback (empty day or no matching rule).",
     )
@@ -255,18 +322,26 @@ def plan_image(
     events: List[Event],
     campaign: str,
     day: Optional[date] = None,
+    platform: Optional[str] = None,
+    exclude_urls: Optional[Sequence[str]] = None,
 ) -> ImagePlan:
     """
     today: specialty rules + multi-event rotation + 7-day no-repeat,
     then single event featured, then store exterior.
+
+    platform / exclude_urls: used by today + week_ahead so FB and IG can take
+    different URLs from the same day's eligible pool.
     """
     with_images = [e for e in events if e.image_url]
+    excluded = [str(u) for u in (exclude_urls or []) if u]
 
     if campaign == "today":
         from .ingest import today_local
 
         on = day or today_local()
-        url, rule_id, rec = select_today_image(events, on)
+        url, rule_id, rec = select_today_image(
+            events, on, platform=platform, exclude_urls=excluded
+        )
         source = {
             "event_featured": "event_featured",
             "store_exterior": "store_photo",
@@ -301,16 +376,24 @@ def plan_image(
         # Priority: full_moon > holiday > creative_pool rotation.
         # Never fall back to the old founder Screenshot exterior trio when the
         # creative night pack is configured — that path caused storefront-only weeks.
-        from .atmosphere import night_image_url, nighttime_plan, season_meta
+        from .atmosphere import nighttime_plan, season_meta
         from .ingest import today_local
 
         on = day or today_local()
-        atm = nighttime_plan(on)
-        url = night_image_url(on)
+        atm = nighttime_plan(on, platform=platform, exclude_urls=excluded)
+        url = str(atm.get("image_url") or "")
         if not url:
             # Last resort: current-season night plate from atmosphere, then brand exterior.
             season_url = str(season_meta(on).get("url") or "")
             url = season_url or store_exterior_url()
+            if url in excluded and season_url and season_url != url:
+                url = season_url
+            if url in excluded:
+                # Prefer any non-excluded season/exterior; else keep last resort.
+                for candidate in (season_url, store_exterior_url()):
+                    if candidate and candidate not in excluded:
+                        url = candidate
+                        break
 
         mode = atm.get("mode") or "creative"
         season = atm.get("season") or "summer"

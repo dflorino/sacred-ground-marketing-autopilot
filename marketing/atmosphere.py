@@ -10,7 +10,7 @@ import json
 from datetime import date, datetime, timedelta
 from functools import lru_cache
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Sequence, Tuple
 
 from .paths import ROOT
 
@@ -140,6 +140,16 @@ def _eligible_creative_pool(day: date) -> Tuple[List[Dict[str, Any]], List[Dict[
     return creatives, storefronts
 
 
+def _is_storefront_usage(hit: Dict[str, Any]) -> bool:
+    rule = str(hit.get("rule") or "")
+    url = str(hit.get("url") or "")
+    return "storefront" in rule or (
+        "sg-night-" in url
+        and "creative" not in url
+        and any(s in url for s in ("spring", "summer", "fall", "winter"))
+    )
+
+
 def _recent_storefront_streak(day: date, lookback: int = 3) -> int:
     """How many consecutive prior nights used a storefront plate (0 if unknown)."""
     try:
@@ -147,81 +157,114 @@ def _recent_storefront_streak(day: date, lookback: int = 3) -> int:
     except Exception:
         return 0
     history = load_image_usage().get("history") or []
-    by_date = {
-        str(h.get("date")): h
-        for h in history
-        if h.get("campaign") == "week_ahead" and h.get("url")
-    }
+    by_date: Dict[str, List[Dict[str, Any]]] = {}
+    for h in history:
+        if h.get("campaign") == "week_ahead" and h.get("url"):
+            by_date.setdefault(str(h.get("date")), []).append(h)
     streak = 0
     for i in range(1, lookback + 1):
         prev = (day - timedelta(days=i)).isoformat()
-        hit = by_date.get(prev)
-        if not hit:
+        hits = by_date.get(prev) or []
+        if not hits:
             break
-        rule = str(hit.get("rule") or "")
-        url = str(hit.get("url") or "")
-        if "storefront" in rule or (
-            "sg-night-" in url
-            and "creative" not in url
-            and any(s in url for s in ("spring", "summer", "fall", "winter"))
-        ):
+        # A night counts as storefront if either platform used a storefront plate.
+        if any(_is_storefront_usage(h) for h in hits):
             streak += 1
         else:
             break
     return streak
 
 
-def _pick_night_creative(day: date) -> Dict[str, Any]:
+def _rotate_pool(
+    items: Sequence[Dict[str, Any]],
+    day: date,
+    platform: Optional[str] = None,
+) -> Dict[str, Any]:
+    if not items:
+        return {}
+    from .images import platform_salt
+
+    idx = (day.toordinal() + platform_salt(platform)) % len(items)
+    return items[idx]
+
+
+def _pick_night_creative(
+    day: date,
+    platform: Optional[str] = None,
+    exclude_urls: Optional[Sequence[str]] = None,
+) -> Dict[str, Any]:
     """
     Rotate creative night plates by default.
 
     In-season storefronts may appear at most every 5th creative-mode night,
     and never after a recent storefront streak — so creatives cannot get stuck
     behind founder exterior / season storefront photos.
+
+    exclude_urls: URLs already claimed by the other platform tonight.
     """
+    excluded = {str(u) for u in (exclude_urls or []) if u}
     creatives, storefronts = _eligible_creative_pool(day)
-    if not creatives and storefronts:
-        return storefronts[day.toordinal() % len(storefronts)]
-    if not creatives:
-        return {}
+    creatives_avail = [p for p in creatives if str(p.get("url") or "") not in excluded]
+    storefronts_avail = [
+        p for p in storefronts if str(p.get("url") or "") not in excluded
+    ]
+
+    if not creatives_avail and storefronts_avail:
+        return _rotate_pool(storefronts_avail, day, platform)
+    if not creatives_avail and not storefronts_avail:
+        # Nothing unique left — fall back to full pools (may duplicate).
+        if not creatives and storefronts:
+            return _rotate_pool(storefronts, day, platform)
+        if not creatives:
+            return {}
+        creatives_avail = list(creatives)
+        storefronts_avail = list(storefronts)
 
     # Storefront slot: every 5th night only, and only if no recent streak.
     allow_storefront = (
-        bool(storefronts)
+        bool(storefronts_avail)
         and (day.toordinal() % 5 == 0)
         and _recent_storefront_streak(day, lookback=3) == 0
     )
     if allow_storefront:
-        return storefronts[day.toordinal() % len(storefronts)]
+        return _rotate_pool(storefronts_avail, day, platform)
 
-    # Stable day rotation across creatives (not storefronts).
-    return creatives[day.toordinal() % len(creatives)]
+    # Stable day + platform rotation across creatives (not storefronts).
+    return _rotate_pool(creatives_avail, day, platform)
 
 
-def nighttime_plan(day: date) -> Dict[str, Any]:
+def nighttime_plan(
+    day: date,
+    platform: Optional[str] = None,
+    exclude_urls: Optional[Sequence[str]] = None,
+) -> Dict[str, Any]:
     night = atmosphere_config().get("nighttime") or {}
     base = night.get("base_style") or "Sacred Ground exterior storefront"
     season = season_for(day)
     s_meta = season_meta(day)
+    excluded = {str(u) for u in (exclude_urls or []) if u}
+    from .images import platform_salt
 
-    # Priority 1: full moon only
+    # Priority 1: full moon only (single plate — if other platform took it, diversify)
     full_cfg = night.get("full_moon") or {}
     if full_cfg.get("enabled", True) and is_full_moon(day):
         url = str(full_cfg.get("url") or "")
-        return {
-            "campaign": "week_ahead",
-            "mode": "full_moon",
-            "season": season,
-            "holiday": None,
-            "full_moon": True,
-            "image_url": url,
-            "season_look": "full moon night — dedicated full-moon storefront only",
-            "cart": "as shown on full-moon plate",
-            "prompt_hint": (
-                f"Sacred Ground nighttime storefront FULL MOON only. Base: {base} "
-                "Use the dedicated full-moon image. Do not paint events onto the image."
-            ),
-        }
+        if url and url not in excluded:
+            return {
+                "campaign": "week_ahead",
+                "mode": "full_moon",
+                "season": season,
+                "holiday": None,
+                "full_moon": True,
+                "image_url": url,
+                "season_look": "full moon night — dedicated full-moon storefront only",
+                "cart": "as shown on full-moon plate",
+                "prompt_hint": (
+                    f"Sacred Ground nighttime storefront FULL MOON only. Base: {base} "
+                    "Use the dedicated full-moon image. Do not paint events onto the image."
+                ),
+            }
+        # Fall through to holiday/creative so FB ≠ IG when possible.
 
     # Priority 2: holiday (may rotate multiple holiday plates)
     hit = holiday_for(day)
@@ -231,25 +274,30 @@ def nighttime_plan(day: date) -> Dict[str, Any]:
         primary = str(h_meta.get("url") or "")
         if primary and primary not in urls:
             urls.insert(0, primary)
-        url = urls[day.toordinal() % len(urls)] if urls else ""
-        return {
-            "campaign": "week_ahead",
-            "mode": "holiday",
-            "season": season,
-            "holiday": hid,
-            "full_moon": False,
-            "image_url": url,
-            "season_look": str(h_meta.get("look") or hid),
-            "cart": str(h_meta.get("cart") or ""),
-            "prompt_hint": (
-                f"Sacred Ground nighttime HOLIDAY={hid}. Base: {base} "
-                f"Outdoors: {h_meta.get('look')}. Cart: {h_meta.get('cart')}. "
-                "Events stay in caption."
-            ),
-        }
+        available = [u for u in urls if u not in excluded]
+        if available:
+            url = available[
+                (day.toordinal() + platform_salt(platform)) % len(available)
+            ]
+            return {
+                "campaign": "week_ahead",
+                "mode": "holiday",
+                "season": season,
+                "holiday": hid,
+                "full_moon": False,
+                "image_url": url,
+                "season_look": str(h_meta.get("look") or hid),
+                "cart": str(h_meta.get("cart") or ""),
+                "prompt_hint": (
+                    f"Sacred Ground nighttime HOLIDAY={hid}. Base: {base} "
+                    f"Outdoors: {h_meta.get('look')}. Cart: {h_meta.get('cart')}. "
+                    "Events stay in caption."
+                ),
+            }
+        # Single holiday plate already used by the other platform — diversify via creatives.
 
     # Priority 3: creative night skies (storefront only sparse / streak-safe)
-    pick = _pick_night_creative(day)
+    pick = _pick_night_creative(day, platform=platform, exclude_urls=list(excluded))
     if pick:
         kind = str(pick.get("kind") or "creative")
         label = str(pick.get("label") or pick.get("id") or "creative")
@@ -271,13 +319,16 @@ def nighttime_plan(day: date) -> Dict[str, Any]:
         }
 
     # Fallback: season storefront if creative pool empty
+    season_url = str(s_meta.get("url") or "")
+    if season_url and season_url in excluded:
+        season_url = ""
     return {
         "campaign": "week_ahead",
         "mode": "season",
         "season": season,
         "holiday": None,
         "full_moon": False,
-        "image_url": str(s_meta.get("url") or ""),
+        "image_url": season_url,
         "season_look": str(s_meta.get("look") or season),
         "cart": str(s_meta.get("cart") or ""),
         "atmosphere": str(s_meta.get("lighting") or ""),
@@ -289,7 +340,11 @@ def nighttime_plan(day: date) -> Dict[str, Any]:
     }
 
 
-def night_image_url(day: date) -> Optional[str]:
-    plan = nighttime_plan(day)
+def night_image_url(
+    day: date,
+    platform: Optional[str] = None,
+    exclude_urls: Optional[Sequence[str]] = None,
+) -> Optional[str]:
+    plan = nighttime_plan(day, platform=platform, exclude_urls=exclude_urls)
     url = plan.get("image_url")
     return str(url) if url else None

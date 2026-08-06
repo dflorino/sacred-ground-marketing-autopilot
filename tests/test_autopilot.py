@@ -971,6 +971,176 @@ class AutopilotTests(unittest.TestCase):
         # Not stuck on one plate
         self.assertGreaterEqual(len(set(ids)), 8)
 
+    def test_fb_ig_distinct_images_today_and_week_ahead(self) -> None:
+        """Today + week_ahead: FB ≠ IG when the pool has 2+ options; meditation stays shared."""
+        from marketing import images, pipeline, store
+        from marketing.atmosphere import atmosphere_config, nighttime_plan
+        from marketing.models import Event
+
+        images.IMAGE_USAGE_PATH = os.path.join(self._tmpdir, "state", "image_usage.json")
+        images.image_rules.cache_clear()
+        atmosphere_config.cache_clear()
+
+        day = date(2026, 8, 5)  # Wednesday — multi-event rotation pool
+        generic_multi = [
+            Event(
+                id=401,
+                title="Crystal Browse Hour",
+                start_date="2026-08-05 12:00:00",
+                end_date="2026-08-05 14:00:00",
+                url="https://shopsacredground.com/event/a/",
+            ),
+            Event(
+                id=402,
+                title="Tea & Chat",
+                start_date="2026-08-05 15:00:00",
+                end_date="2026-08-05 16:00:00",
+                url="https://shopsacredground.com/event/b/",
+            ),
+        ]
+        fb = images.plan_image(
+            generic_multi, "today", day=day, platform="facebook"
+        )
+        ig = images.plan_image(
+            generic_multi,
+            "today",
+            day=day,
+            platform="instagram",
+            exclude_urls=[fb.url or ""],
+        )
+        self.assertEqual(fb.rule, "multi_event_rotation")
+        self.assertEqual(ig.rule, "multi_event_rotation")
+        self.assertTrue(fb.url)
+        self.assertTrue(ig.url)
+        self.assertNotEqual(fb.url, ig.url)
+
+        # Specialty with multi-URL pool (massage) → different cards from same rule
+        massage_day = [
+            Event(
+                id=403,
+                title="Therapeutic Massage",
+                start_date="2026-08-03 13:00:00",
+                end_date="2026-08-03 15:00:00",
+                url="https://shopsacredground.com/book/massage/",
+            ),
+            Event(
+                id=404,
+                title="Tarot with Tina",
+                start_date="2026-08-03 12:00:00",
+                end_date="2026-08-03 17:00:00",
+                url="https://shopsacredground.com/book/tina/",
+            ),
+        ]
+        m_day = date(2026, 8, 3)
+        m_fb = images.plan_image(
+            massage_day, "today", day=m_day, platform="facebook"
+        )
+        m_ig = images.plan_image(
+            massage_day,
+            "today",
+            day=m_day,
+            platform="instagram",
+            exclude_urls=[m_fb.url or ""],
+        )
+        self.assertEqual(m_fb.rule, "massage")
+        self.assertNotEqual(m_fb.url, m_ig.url)
+
+        # Single-URL specialty (sound) → second platform falls through rather than duplicate
+        sound = [
+            Event(
+                id=405,
+                title="Gong Sound Bath",
+                start_date="2026-08-07 19:00:00",
+                end_date="2026-08-07 20:30:00",
+                url="https://shopsacredground.com/events/gong/",
+            ),
+            Event(
+                id=406,
+                title="Tarot with Tina",
+                start_date="2026-08-07 12:00:00",
+                end_date="2026-08-07 17:00:00",
+                url="https://shopsacredground.com/book/tarot/",
+            ),
+        ]
+        s_day = date(2026, 8, 7)
+        s_fb = images.plan_image(sound, "today", day=s_day, platform="facebook")
+        s_ig = images.plan_image(
+            sound,
+            "today",
+            day=s_day,
+            platform="instagram",
+            exclude_urls=[s_fb.url or ""],
+        )
+        self.assertEqual(s_fb.rule, "sound_healing")
+        self.assertNotEqual(s_fb.url, s_ig.url)
+
+        # Night week_ahead: FB ≠ IG on a normal creative night
+        night = date(2026, 8, 5)
+        n_fb = nighttime_plan(night, platform="facebook")
+        n_ig = nighttime_plan(
+            night,
+            platform="instagram",
+            exclude_urls=[str(n_fb.get("image_url") or "")],
+        )
+        self.assertTrue(n_fb.get("image_url"))
+        self.assertTrue(n_ig.get("image_url"))
+        self.assertNotEqual(n_fb.get("image_url"), n_ig.get("image_url"))
+        # Same day without exclude is stable
+        n_fb2 = nighttime_plan(night, platform="facebook")
+        self.assertEqual(n_fb.get("image_url"), n_fb2.get("image_url"))
+
+        wa_fb = images.plan_image([], "week_ahead", day=night, platform="facebook")
+        wa_ig = images.plan_image(
+            [],
+            "week_ahead",
+            day=night,
+            platform="instagram",
+            exclude_urls=[wa_fb.url or ""],
+        )
+        self.assertNotEqual(wa_fb.url, wa_ig.url)
+
+        # Pipeline wiring: Today drafts get distinct images; meditation stays shared
+        as_of = datetime(2026, 8, 4, 10, 0, tzinfo=ZoneInfo("America/Chicago"))
+        result = pipeline.generate_batch(source="fixture", as_of=as_of)
+        self.assertTrue(result["ok"])
+        drafts = store.list_drafts()
+        today_fb = next(
+            d
+            for d in drafts
+            if d["campaign"] == "today" and d["platform"] == "facebook"
+        )
+        today_ig = next(
+            d
+            for d in drafts
+            if d["campaign"] == "today" and d["platform"] == "instagram"
+        )
+        # Tuesday morning uses tuesday_daily (single URL) — IG may fall through
+        self.assertTrue(today_fb["image"]["url"])
+        self.assertTrue(today_ig["image"]["url"])
+
+        tm_fb = next(
+            d
+            for d in drafts
+            if d["campaign"] == "tuesday_meditation" and d["platform"] == "facebook"
+        )
+        tm_ig = next(
+            d
+            for d in drafts
+            if d["campaign"] == "tuesday_meditation" and d["platform"] == "instagram"
+        )
+        self.assertEqual(tm_fb["image"]["url"], tm_ig["image"]["url"])
+
+        # Usage ledger keeps both platform rows for today
+        usage = images.load_image_usage()
+        today_rows = [
+            h
+            for h in usage.get("history") or []
+            if h.get("campaign") == "today" and h.get("date") == "2026-08-04"
+        ]
+        plats = {str(h.get("platform") or "") for h in today_rows}
+        self.assertIn("facebook", plats)
+        self.assertIn("instagram", plats)
+
     def test_week_ahead_closers_pool_and_day_rotation(self) -> None:
         from marketing import captions
         from marketing.paths import voice
