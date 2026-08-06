@@ -158,14 +158,23 @@ def list_drafts(status: Optional[str] = None) -> List[Dict[str, Any]]:
     return out
 
 
-def update_draft(draft_id_str: str, **fields: Any) -> Dict[str, Any]:
-    """Status / approval updates only — never regenerates caption/image content here."""
+def update_draft(
+    draft_id_str: str,
+    *,
+    allow_content_update: bool = False,
+    **fields: Any,
+) -> Dict[str, Any]:
+    """Status / approval updates. Content is immutable once reviewed unless allowed."""
     d = get_draft(draft_id_str)
     if not d:
         raise KeyError(f"Unknown draft: {draft_id_str}")
     # Content fields are immutable once reviewed
     content_keys = {"caption", "image", "events", "links", "fingerprint", "campaign", "platform"}
-    if is_reviewed(d) and content_keys.intersection(fields.keys()):
+    if (
+        is_reviewed(d)
+        and content_keys.intersection(fields.keys())
+        and not allow_content_update
+    ):
         raise PermissionError(
             f"Refusing to change content on reviewed draft {draft_id_str}"
         )
