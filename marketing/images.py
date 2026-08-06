@@ -293,30 +293,18 @@ def select_today_image(
     prefer_unique = bool(excluded)
 
     # Date-keyed finished flyers beat specialty / atmospheric plates.
+    # FB and IG always share the same primary URL — never rotate urls[] / alts
+    # per platform (that can drop events or surface price-bearing specialty alts).
     flyer = _flyer_for_day(day)
     if flyer:
-        pool = [str(u) for u in (flyer.get("urls") or []) if u]
-        primary = str(flyer.get("url") or "")
-        if primary and primary not in pool:
-            pool.insert(0, primary)
-        if pool:
-            url = _pick_from_urls(
-                pool,
-                day=day,
-                blocked=blocked,
-                platform=platform,
-                exclude=excluded,
-                prefer_unique=prefer_unique,
+        primary = str(flyer.get("url") or "").strip()
+        if primary:
+            label = flyer.get("label") or day.isoformat()
+            return (
+                primary,
+                "morning_flyer",
+                f"Prebranded morning flyer for {day.isoformat()} ({label}). Skip overlays.",
             )
-            if not url and not prefer_unique:
-                url = pool[0]
-            if url:
-                label = flyer.get("label") or day.isoformat()
-                return (
-                    url,
-                    "morning_flyer",
-                    f"Prebranded morning flyer for {day.isoformat()} ({label}). Skip overlays.",
-                )
 
     for rule_id in priority:
         rule = rules.get(rule_id) or {}

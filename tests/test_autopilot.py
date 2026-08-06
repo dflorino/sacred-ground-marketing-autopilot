@@ -1060,7 +1060,8 @@ class AutopilotTests(unittest.TestCase):
         self.assertTrue(ig.url)
         self.assertNotEqual(fb.url, ig.url)
 
-        # Prebranded morning flyer pool (Aug 6) also diversifies FB vs IG
+        # Date-keyed morning flyers: FB and IG must share the same primary URL
+        # (full-day info; no per-platform alt that can drop events or show prices).
         flyer_day = date(2026, 8, 6)
         f_fb = images.plan_image([], "today", day=flyer_day, platform="facebook")
         f_ig = images.plan_image(
@@ -1073,7 +1074,10 @@ class AutopilotTests(unittest.TestCase):
         self.assertEqual(f_fb.rule, "morning_flyer")
         self.assertEqual(f_ig.rule, "morning_flyer")
         self.assertTrue(f_fb.prebranded and f_ig.prebranded)
-        self.assertNotEqual(f_fb.url, f_ig.url)
+        self.assertEqual(f_fb.url, f_ig.url)
+        # Primary only — never the eve-quantum alt.
+        self.assertNotIn("eve-quantum", f_fb.url or "")
+        self.assertIn("sg-morning-flyer-2026-08-06-today-collage", f_fb.url or "")
 
         # Specialty with multi-URL pool (massage) → different cards from same rule
         massage_day = [

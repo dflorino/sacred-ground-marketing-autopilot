@@ -33,6 +33,10 @@ Use **versions of this layout system** — beautiful and easy to read — not an
 
 Never put `$`, dollar amounts, ticket costs, or “$55”-style fees on morning flyer graphics. Do not use TEC `cost` on the image. Captions may still link to booking.
 
+## Hard rule — Facebook = Instagram image
+
+For date-keyed morning flyers, **Facebook and Instagram always use the same primary `url`**. Do not put a secondary alt in `urls[]` for per-platform diversification — that can give IG an incomplete single-event graphic (or a price-bearing plate) while FB gets the full-day collage. Specialty / atmospheric pools may still diversify FB vs IG; morning_flyers date keys do not.
+
 ## Daily system
 
 1. **Prefer prebuild (next 7 days)** — more reliable than inventing AI art at 7:00 AM:
