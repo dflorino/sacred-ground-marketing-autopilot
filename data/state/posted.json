@@ -1,4 +1,27 @@
 {
-  "fingerprints": {},
-  "updated_at": null
+  "fingerprints": {
+    "today|2026-08-06|facebook|23979,24135,24622": {
+      "draft_id": "sgma-2026-08-06-today-fb-ca8ed014",
+      "posted_at": "2026-08-06T07:03:54.345658-05:00",
+      "external": {
+        "zernio_existing": {
+          "id": "6a74315d2db17f56ca4a83f9",
+          "status": "publishing",
+          "content": "Today at Sacred Ground — Thursday, August 6.\n\n• Tarot with Adie\n  Thursday, August 6 · 12:00 PM–5:00 PM\n  https://shopsa"
+        }
+      }
+    },
+    "today|2026-08-06|instagram|23979,24135,24622": {
+      "draft_id": "sgma-2026-08-06-today-ig-cf31eb60",
+      "posted_at": "2026-08-06T07:03:54.679451-05:00",
+      "external": {
+        "zernio_existing": {
+          "id": "6a74315edaa22415dadd5590",
+          "status": "publishing",
+          "content": "Today at Sacred Ground — Thursday, August 6.\n\n• Tarot with Adie\n  Thursday, August 6 · 12:00 PM–5:00 PM\n  https://shopsa"
+        }
+      }
+    }
+  },
+  "updated_at": "2026-08-06T07:03:54.679456-05:00"
 }

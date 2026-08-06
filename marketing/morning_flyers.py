@@ -142,7 +142,7 @@ def _event_time_line(ev: Event) -> str:
 
 def pick_events_for_flyer(events: Sequence[Event], limit: int = MAX_EVENTS_ON_FLYER) -> List[Event]:
     """Prefer featured/special, then earlier start; hard-cap for graphic space."""
-    scored: List[Tuple[int, str, Event]] = []
+    scored: List[Tuple[int, str, int, Event]] = []
     for ev in events:
         score = 0
         if getattr(ev, "featured", False) or getattr(ev, "is_special", False):
@@ -152,9 +152,9 @@ def pick_events_for_flyer(events: Sequence[Event], limit: int = MAX_EVENTS_ON_FL
             score += 4
         if any(k in low for k in ("sound bath", "shaman", "quantum", "reflexology", "chakra")):
             score += 3
-        scored.append((-score, ev.start_date or "", ev))
-    scored.sort()
-    return [e for _, __, e in scored[: max(0, limit)]]
+        scored.append((-score, ev.start_date or "", int(ev.id or 0), ev))
+    scored.sort(key=lambda t: (t[0], t[1], t[2]))
+    return [e for *_, e in scored[: max(0, limit)]]
 
 
 def build_flyer_copy(day: date, events: Sequence[Event]) -> Dict[str, Any]:
