@@ -293,18 +293,46 @@ def select_today_image(
     prefer_unique = bool(excluded)
 
     # Date-keyed finished flyers beat specialty / atmospheric plates.
-    # FB and IG always share the same primary URL — never rotate urls[] / alts
-    # per platform (that can drop events or surface price-bearing specialty alts).
+    # FB → url / urls[0]; IG → url_instagram / urls[1]. Both must be full-day
+    # complete flyers (same covers). Temporarily share when only one exists.
     flyer = _flyer_for_day(day)
     if flyer:
-        primary = str(flyer.get("url") or "").strip()
-        if primary:
+        from . import morning_flyers as mf
+
+        chosen, temporarily_shared = mf.select_flyer_url_for_platform(flyer, platform)
+        if chosen:
             label = flyer.get("label") or day.isoformat()
-            return (
-                primary,
-                "morning_flyer",
-                f"Prebranded morning flyer for {day.isoformat()} ({label}). Skip overlays.",
-            )
+            if temporarily_shared:
+                import sys
+
+                protected = day.isoformat() in mf.PROTECTED_DAYS
+                if protected:
+                    print(
+                        f"[morning_flyer] {day.isoformat()}: protected single full-day "
+                        f"flyer — FB+IG share by design (do not split/republish)",
+                        file=sys.stderr,
+                    )
+                    rec = (
+                        f"Prebranded morning flyer for {day.isoformat()} ({label}) — "
+                        "protected single variant shared on FB+IG. Skip overlays."
+                    )
+                else:
+                    print(
+                        f"[morning_flyer] {day.isoformat()}: only one full-day variant — "
+                        f"temporarily sharing on FB+IG until second is built",
+                        file=sys.stderr,
+                    )
+                    rec = (
+                        f"Prebranded morning flyer for {day.isoformat()} ({label}) — "
+                        "temporarily shared (second full-day variant missing). Skip overlays."
+                    )
+            else:
+                plat = (platform or "facebook").lower()
+                rec = (
+                    f"Prebranded morning flyer for {day.isoformat()} ({label}) — "
+                    f"{plat} variant. Skip overlays."
+                )
+            return (chosen, "morning_flyer", rec)
 
     for rule_id in priority:
         rule = rules.get(rule_id) or {}

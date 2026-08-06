@@ -54,11 +54,19 @@ NOTES = (
     "cards; RIGHT evocative graphics in clear zones; FOOTER logo + "
     f"{WEBSITE} + {PHONE} + come-as-you-are. Dark elegant + gold accents "
     "(vary by day). Easy to read — not collage soup. Versions of the system, "
-    "not exact clones. Date-keyed flyers are prebranded (skip overlays). NEVER "
-    "include $, dollar amounts, ticket costs, or \"$55\"-style prices on flyer "
-    "graphics. Empty days get a warm visit flyer. 1–3 events max. No invented "
-    "practitioner faces."
+    "not exact clones. Date-keyed flyers are prebranded (skip overlays). "
+    "Facebook and Instagram MUST use DIFFERENT full-day flyer visuals "
+    "(url + url_instagram, or urls:[fb, ig]) — same events/info on both, "
+    "never an incomplete single-event alt. NEVER include $, dollar amounts, "
+    "ticket costs, or \"$55\"-style prices on flyer graphics. Empty days get "
+    "a warm visit flyer. 1–3 events max. No invented practitioner faces."
 )
+
+# Founder-approved gold standard — do not overwrite or force a second variant.
+PROTECTED_DAYS = frozenset({"2026-08-06"})
+
+VARIANT_A = "a"
+VARIANT_B = "b"
 
 
 def text_has_price(text: str) -> bool:
@@ -114,6 +122,54 @@ def flyer_entry_for_day(day: date) -> Optional[Dict[str, Any]]:
     flyers = load_flyers_config().get("flyers") or {}
     entry = flyers.get(day.isoformat())
     return entry if isinstance(entry, dict) else None
+
+
+def resolve_flyer_urls(entry: Dict[str, Any]) -> Tuple[str, str]:
+    """
+    Return (facebook_url, instagram_url) for a morning_flyers date entry.
+
+    Prefer explicit `url` + `url_instagram`. Fallback: `urls[0]` / `urls[1]`.
+    Missing IG falls back to FB (caller may log temporary share).
+    """
+    fb = str(entry.get("url") or "").strip()
+    ig = str(entry.get("url_instagram") or "").strip()
+    urls = [str(u).strip() for u in (entry.get("urls") or []) if str(u).strip()]
+    if not fb and urls:
+        fb = urls[0]
+    if not ig and len(urls) >= 2:
+        ig = urls[1]
+    if not ig:
+        ig = fb
+    return fb, ig
+
+
+def select_flyer_url_for_platform(
+    entry: Dict[str, Any],
+    platform: Optional[str] = None,
+) -> Tuple[str, bool]:
+    """
+    Pick the flyer URL for a platform.
+
+    Returns (url, temporarily_shared). temporarily_shared is True when only one
+    full-day variant exists so FB and IG must share until the second is built.
+    """
+    fb, ig = resolve_flyer_urls(entry)
+    if not fb and not ig:
+        return "", False
+    key = (platform or "").lower().strip()
+    if key in ("instagram", "ig"):
+        chosen = ig or fb
+    else:
+        chosen = fb or ig
+    # Temporarily shared when the resolved pair collapses to one unique URL.
+    temporarily_shared = len({u for u in (fb, ig) if u}) < 2
+    return chosen, temporarily_shared
+
+
+def has_dual_flyer_variants(entry: Dict[str, Any]) -> bool:
+    """True when two distinct public full-day flyer URLs are configured."""
+    fb, ig = resolve_flyer_urls(entry)
+    return bool(fb and ig and fb != ig)
 
 
 def _short_title(title: str) -> str:
@@ -316,10 +372,14 @@ def _pick_fonts() -> Dict[str, Any]:
     return {
         "title": _font(serif_bold if os.path.isfile(serif_bold) else serif, 54),
         "title_sm": _font(serif, 36),
+        "card_title": _font(serif_bold if os.path.isfile(serif_bold) else serif, 28),
+        "card_body": _font(sans, 22),
         "script": _font(script, 48) if os.path.isfile(script) else _font(serif, 48),
+        "script_sm": _font(script, 36) if os.path.isfile(script) else _font(serif, 36),
         "body": _font(sans, 28),
-        "small": _font(sans, 22),
-        "footer": _font(sans, 24),
+        "small": _font(sans, 20),
+        "header": _font(serif_bold if os.path.isfile(serif_bold) else serif, 42),
+        "footer": _font(sans, 22),
     }
 
 
@@ -333,6 +393,16 @@ def _draw_geometry(draw, cx: int, cy: int, r: int, fill, width: int = 2) -> None
         draw.ellipse((x - r, y - r, x + r, y + r), outline=fill, width=max(1, width - 1))
 
 
+def _draw_crescent(draw, cx: int, cy: int, r: int, fill, width: int = 3) -> None:
+    draw.ellipse((cx - r, cy - r, cx + r, cy + r), outline=fill, width=width)
+    inset = int(r * 0.35)
+    draw.ellipse(
+        (cx - r + inset, cy - r, cx + r + inset, cy + r),
+        outline=fill,
+        width=max(1, width - 1),
+    )
+
+
 def _tina_circle_path(events: Sequence[Event]) -> Optional[str]:
     if not any("tina" in (e.title or "").lower() for e in events):
         return None
@@ -342,245 +412,269 @@ def _tina_circle_path(events: Sequence[Event]) -> Optional[str]:
     return None
 
 
+def _variant_palette(variant: str) -> Dict[str, Any]:
+    """Two Thursday-style palettes — same layout system, different color/right art."""
+    key = (variant or VARIANT_A).lower().strip()
+    if key in (VARIANT_B, "b", "ig", "instagram", "alt"):
+        return {
+            "id": VARIANT_B,
+            "bg_top": (42, 22, 48),
+            "bg_bot": (18, 12, 28),
+            "gold": (220, 170, 120),
+            "gold_soft": (220, 170, 120, 100),
+            "accent": (160, 90, 130),
+            "card_fills": [(72, 38, 68), (48, 32, 72), (36, 44, 70)],
+            "card_text": (250, 244, 236),
+            "muted": (210, 190, 200),
+            "footer": (20, 14, 30),
+            "right_mode": "crescent",
+        }
+    return {
+        "id": VARIANT_A,
+        "bg_top": (22, 36, 52),
+        "bg_bot": (12, 22, 38),
+        "gold": (212, 175, 95),
+        "gold_soft": (212, 175, 95, 100),
+        "accent": (70, 110, 120),
+        "card_fills": [(34, 68, 58), (52, 36, 68), (28, 42, 72)],
+        "card_text": (250, 246, 236),
+        "muted": (190, 200, 210),
+        "footer": (16, 24, 40),
+        "right_mode": "seed",
+    }
+
+
+def _host_from_title(title: str) -> str:
+    t = title or ""
+    for sep in (" with ", " With ", " w/ ", " W/ ", ": "):
+        if sep in t:
+            bit = t.split(sep)[-1].strip()
+            # Drop long descriptors after host
+            for cut in (" — ", " - ", "|"):
+                if cut in bit:
+                    bit = bit.split(cut)[0].strip()
+            return bit[:40]
+    return ""
+
+
+def _keywords_for_event(ev: Event) -> str:
+    low = (ev.title or "").lower()
+    if "tai chi" in low:
+        return "Move · Breathe · Flow"
+    if "tarot" in low or "rune" in low:
+        return "Clarity · Guidance · Insight"
+    if "quantum" in low:
+        return "Expand · Align · Shift"
+    if "reflexology" in low:
+        return "Rest · Restore · Renew"
+    if "meditation" in low:
+        return "Breathe · Soften · Awaken"
+    if "sound" in low or "drum" in low:
+        return "Sound · Journey · Release"
+    if "reiki" in low:
+        return "Balance · Ease · Heal"
+    if "shaman" in low:
+        return "Spirit · Guidance · Insight"
+    if "chakra" in low:
+        return "Align · Open · Restore"
+    if "massage" in low:
+        return "Ease · Restore · Care"
+    if "akashic" in low or "angel" in low or "janel" in low:
+        return "Insight · Clarity · Light"
+    return "Come as you are"
+
+
+def _default_flyer_paths(day: date, slug: str, variant: str) -> str:
+    suffix = "" if variant == VARIANT_A else f"-{variant}"
+    return os.path.join(
+        ASSETS_DIR, f"sg-morning-flyer-{day.isoformat()}-{slug}{suffix}.png"
+    )
+
+
 def render_local_flyer(
     day: date,
     events: Sequence[Event],
     *,
     out_path: Optional[str] = None,
+    variant: str = VARIANT_A,
 ) -> str:
     """
-    Render a sustainable Cheryl-style 1080 square with PIL.
-    Never draws prices. Includes logo + website + phone footer.
+    Render a Thursday-style 1080 square (stacked event cards + right graphics).
+
+    `variant` a/b changes palette + right-side art so FB and IG can diverge while
+    carrying the same full-day event information. Never draws prices.
     """
     from PIL import Image, ImageDraw, ImageFilter
 
     copy = build_flyer_copy(day, events)
     fonts = _pick_fonts()
+    pal = _variant_palette(variant)
+    picked = pick_events_for_flyer(events)
 
-    # Soft mystical gradient (cream → lavender → dusk)
-    img = Image.new("RGB", (CANVAS, CANVAS), (245, 236, 220))
+    img = Image.new("RGB", (CANVAS, CANVAS), pal["bg_bot"])
     px = img.load()
     for y in range(CANVAS):
         t = y / (CANVAS - 1)
-        r = int(245 - 40 * t)
-        g = int(236 - 70 * t)
-        b = int(220 + 35 * t)
+        r = int(pal["bg_top"][0] * (1 - t) + pal["bg_bot"][0] * t)
+        g = int(pal["bg_top"][1] * (1 - t) + pal["bg_bot"][1] * t)
+        b = int(pal["bg_top"][2] * (1 - t) + pal["bg_bot"][2] * t)
         for x in range(CANVAS):
-            # slight radial warmth
-            dx = (x - CANVAS / 2) / CANVAS
-            warm = int(12 * (1 - abs(dx)))
-            px[x, y] = (min(255, r + warm), min(255, g + warm // 2), b)
+            px[x, y] = (r, g, b)
 
     draw = ImageDraw.Draw(img, "RGBA")
-    gold = (196, 155, 78, 90)
-    _draw_geometry(draw, 160, 150, 70, gold, 2)
-    _draw_geometry(draw, 920, 200, 55, (120, 90, 160, 70), 2)
+    gold = pal["gold"]
+    gold_soft = pal["gold_soft"]
 
-    # Soft cream card
-    card = (255, 250, 240, 210)
-    draw.rounded_rectangle((60, 80, 1020, 820), radius=36, fill=card)
+    # Soft mist / texture wash on right half
+    for y in range(120, 860):
+        for x in range(620, CANVAS):
+            fade = (x - 620) / 460
+            base = px[x, y]
+            bump = int(18 * fade)
+            px[x, y] = (
+                min(255, base[0] + bump),
+                min(255, base[1] + bump // 2),
+                min(255, base[2] + bump // 3),
+            )
 
-    # Title
-    primary = str(copy["primary"])
-    title_font = fonts["title"] if len(primary) < 28 else fonts["title_sm"]
-    draw.text((100, 120), primary, font=title_font, fill=(35, 45, 70))
+    weekday = day.strftime("%A").upper()
+    draw.text((70, 48), f"{weekday} AT", font=fonts["header"], fill=gold)
+    draw.text((70, 96), "Sacred Ground", font=fonts["script"], fill=gold)
+    draw.text(
+        (70, 155),
+        "Mind • Body • Spirit • Community",
+        font=fonts["small"],
+        fill=pal["muted"],
+    )
 
-    y = 200
-    if copy.get("empty_day"):
-        draw.text(
-            (100, y),
-            "Visit us today",
-            font=fonts["script"],
-            fill=(140, 90, 50),
-        )
-        y += 70
-        for ln in (
-            "Crystals · tools · quiet wonder",
-            "Arlington Heights",
-            str(copy["date_short"]),
-        ):
-            draw.text((100, y), ln, font=fonts["body"], fill=(50, 55, 75))
-            y += 42
+    # Right-side evocative graphics (variant-specific)
+    if pal["right_mode"] == "crescent":
+        _draw_crescent(draw, 820, 280, 90, gold_soft, 3)
+        _draw_geometry(draw, 900, 520, 55, (pal["accent"][0], pal["accent"][1], pal["accent"][2], 90), 2)
+        _draw_crescent(draw, 780, 700, 60, gold_soft, 2)
     else:
-        draw.text(
-            (100, y),
-            str(copy["date_short"]),
-            font=fonts["body"],
-            fill=(70, 55, 100),
-        )
-        y += 48
-        # Time from primary event
-        picked = pick_events_for_flyer(events)
-        if picked:
-            tl = _event_time_line(picked[0])
-            if tl:
-                assert_price_free(tl)
-                draw.text((100, y), tl, font=fonts["title_sm"], fill=(40, 50, 80))
-                y += 50
-        also = copy.get("also") or []
-        if also:
-            y += 10
-            draw.rounded_rectangle(
-                (100, y, 980, y + 40 + 36 * len(also)),
-                radius=18,
-                fill=(40, 70, 90, 230),
-            )
-            draw.text(
-                (120, y + 12),
-                "ALSO TODAY",
-                font=fonts["small"],
-                fill=(220, 190, 120),
-            )
-            yy = y + 42
-            for name in also:
-                assert_price_free(name)
-                draw.text((120, yy), name, font=fonts["body"], fill=(250, 248, 240))
-                yy += 34
+        _draw_geometry(draw, 820, 260, 75, gold_soft, 2)
+        _draw_geometry(draw, 900, 480, 50, (pal["accent"][0], pal["accent"][1], pal["accent"][2], 80), 2)
+        _draw_geometry(draw, 760, 680, 65, gold_soft, 2)
 
-    # Optional Tina circle (real photo only)
+    # Left stacked event cards (or visit card)
+    card_x0, card_x1 = 60, 620
+    if copy.get("empty_day") or not picked:
+        y0 = 210
+        draw.rounded_rectangle(
+            (card_x0, y0, card_x1, y0 + 280),
+            radius=28,
+            fill=(*pal["card_fills"][0], 235),
+        )
+        draw.text((card_x0 + 28, y0 + 36), "SACRED GROUND TODAY", font=fonts["card_title"], fill=gold)
+        draw.text((card_x0 + 28, y0 + 90), "Crystals · readings · quiet wonder", font=fonts["card_body"], fill=pal["card_text"])
+        draw.text((card_x0 + 28, y0 + 130), "Come browse · Arlington Heights", font=fonts["card_body"], fill=pal["card_text"])
+        draw.text((card_x0 + 28, y0 + 180), str(copy["date_short"]), font=fonts["small"], fill=pal["muted"])
+    else:
+        n = len(picked)
+        top = 200
+        bottom = 860
+        gap = 14
+        card_h = (bottom - top - gap * (n - 1)) // n
+        for i, ev in enumerate(picked):
+            y0 = top + i * (card_h + gap)
+            fill = pal["card_fills"][i % len(pal["card_fills"])]
+            draw.rounded_rectangle(
+                (card_x0, y0, card_x1, y0 + card_h),
+                radius=24,
+                fill=(*fill, 235),
+            )
+            # Icon circle
+            icx, icy, ir = card_x0 + 48, y0 + card_h // 2, 28
+            draw.ellipse((icx - ir, icy - ir, icx + ir, icy + ir), outline=gold, width=2)
+            if pal["right_mode"] == "crescent":
+                _draw_crescent(draw, icx, icy, 14, gold_soft, 2)
+            else:
+                _draw_geometry(draw, icx, icy, 12, gold_soft, 1)
+
+            title = _short_title(ev.title).upper()
+            if len(title) > 34:
+                title = title[:33] + "…"
+            host = _host_from_title(ev.title)
+            time_ln = _event_time_line(ev)
+            keywords = _keywords_for_event(ev)
+            assert_price_free(title, host, time_ln, keywords)
+
+            tx = card_x0 + 95
+            draw.text((tx, y0 + 22), title, font=fonts["card_title"], fill=pal["card_text"])
+            yy = y0 + 58
+            if host:
+                draw.text((tx, yy), host, font=fonts["small"], fill=gold)
+                yy += 28
+            if time_ln:
+                draw.text((tx, yy), time_ln, font=fonts["card_body"], fill=pal["card_text"])
+                yy += 30
+            draw.text((tx, min(yy, y0 + card_h - 36)), keywords, font=fonts["small"], fill=pal["muted"])
+
+    # Optional Tina circle (real photo only) — top-right of photo area
     tina = _tina_circle_path(events)
     if tina:
         try:
             circ = Image.open(tina).convert("RGBA")
-            circ = circ.resize((220, 220), Image.Resampling.LANCZOS)
-            img.paste(circ, (780, 120), circ)
+            circ = circ.resize((160, 160), Image.Resampling.LANCZOS)
+            img.paste(circ, (860, 180), circ)
         except OSError:
             pass
 
     # Footer band
-    footer_h = 160
-    draw.rectangle((0, CANVAS - footer_h, CANVAS, CANVAS), fill=(25, 35, 65))
+    footer_h = 150
+    draw.rectangle((0, CANVAS - footer_h, CANVAS, CANVAS), fill=pal["footer"])
     if os.path.isfile(LOGO_PATH):
         try:
             logo = Image.open(LOGO_PATH).convert("RGBA")
-            logo = logo.resize((120, 120), Image.Resampling.LANCZOS)
-            # ~85% opacity
+            logo = logo.resize((110, 110), Image.Resampling.LANCZOS)
             alpha = logo.split()[-1].point(lambda a: int(a * 0.85))
             logo.putalpha(alpha)
-            img.paste(logo, (40, CANVAS - footer_h + 20), logo)
+            img.paste(logo, (36, CANVAS - footer_h + 20), logo)
         except OSError:
             pass
     draw.text(
-        (180, CANVAS - footer_h + 45),
+        (170, CANVAS - footer_h + 40),
         WEBSITE,
         font=fonts["footer"],
-        fill=(240, 220, 160),
+        fill=gold,
     )
     draw.text(
-        (180, CANVAS - footer_h + 85),
+        (170, CANVAS - footer_h + 78),
         PHONE,
         font=fonts["footer"],
         fill=(250, 250, 250),
     )
     draw.text(
-        (620, CANVAS - footer_h + 65),
-        "Your sacred space",
-        font=fonts["script"],
-        fill=(210, 180, 110),
+        (520, CANVAS - footer_h + 52),
+        "Come as you are",
+        font=fonts["script_sm"],
+        fill=gold,
     )
 
-    # Soften slightly
     img = img.filter(ImageFilter.SMOOTH_MORE)
-
-    # Final text safety: filenames and copy already checked; re-check copy.
     assert_price_free(copy["label"], *copy.get("covers") or [], *copy.get("lines") or [])
 
     if not out_path:
         os.makedirs(ASSETS_DIR, exist_ok=True)
-        out_path = os.path.join(
-            ASSETS_DIR, f"sg-morning-flyer-{day.isoformat()}-{copy['slug']}.png"
-        )
+        out_path = _default_flyer_paths(day, str(copy["slug"]), pal["id"])
     os.makedirs(os.path.dirname(out_path) or ".", exist_ok=True)
     img.save(out_path, "PNG", optimize=True)
     return out_path
 
 
-def register_flyer(
-    day: date,
-    *,
-    local: str,
-    url: str = "",
-    media_id: Optional[int] = None,
-    copy: Optional[Dict[str, Any]] = None,
-    events: Optional[Sequence[Event]] = None,
-) -> Dict[str, Any]:
-    """Append/update a day entry in morning_flyers.json."""
-    copy = copy or build_flyer_copy(day, events or [])
-    assert_price_free(
-        copy.get("label") or "",
-        *(copy.get("covers") or []),
-        *(copy.get("lines") or []),
-    )
-    rel_local = local
-    if os.path.isabs(local) and local.startswith(ROOT + os.sep):
-        rel_local = os.path.relpath(local, ROOT)
-
-    layout = choose_layout_style(day, events or [])
-    entry: Dict[str, Any] = {
-        "label": copy["label"],
-        "covers": list(copy.get("covers") or []),
-        "local": rel_local.replace("\\", "/"),
-        "url": url or "",
-        "prebranded": True,
-        "template": "thursday-style" if layout == LAYOUT_THURSDAY else "artistic_hero",
-    }
-    if media_id is not None:
-        entry["media_id"] = int(media_id)
-    if copy.get("empty_day"):
-        entry["empty_day"] = True
-
-    data = load_flyers_config()
-    flyers = data.setdefault("flyers", {})
-    # Preserve Founder-set template / urls when re-registering same day.
-    prev = flyers.get(day.isoformat())
-    if isinstance(prev, dict):
-        for key in ("urls", "alt_media_ids", "alt_local", "alt_template"):
-            if key in prev and key not in entry:
-                entry[key] = prev[key]
-        if prev.get("template") and not events:
-            entry["template"] = prev["template"]
-    flyers[day.isoformat()] = entry
-    # Keep layout_mix metadata stable on every save.
-    data["layout_mix"] = {
-        "thursday_cards_share": THURSDAY_CARDS_SHARE,
-        "artistic_hero_share": round(1.0 - THURSDAY_CARDS_SHARE, 2),
-        "default": LAYOUT_THURSDAY,
-    }
-    save_flyers_config(data)
-    return entry
+def _rel_asset(path: str) -> str:
+    if os.path.isabs(path) and path.startswith(ROOT + os.sep):
+        return os.path.relpath(path, ROOT).replace("\\", "/")
+    return path.replace("\\", "/")
 
 
-def ensure_flyer_for_day(
-    day: date,
-    events: Sequence[Event],
-    *,
-    force: bool = False,
-) -> Dict[str, Any]:
-    """
-    Ensure a flyer exists for Chicago `day`.
-    Returns status dict: action=exists|created, needs_upload, entry, prompt.
-    """
-    existing = flyer_entry_for_day(day)
-    if existing and not force:
-        url = str(existing.get("url") or "")
-        copy_existing = build_flyer_copy(day, events)
-        return {
-            "day": day.isoformat(),
-            "action": "exists",
-            "needs_upload": not bool(url),
-            "entry": existing,
-            "layout": choose_layout_style(day, events),
-            "prompt": build_generation_prompt(
-                day, copy_existing, events=events
-            ),
-        }
-
+def _day_events(day: date, events: Sequence[Event]) -> List[Event]:
     day_events: List[Event] = []
     for e in events:
         start = parse_tec_datetime(e.start_date)
         if start and start.date() == day:
             day_events.append(e)
-    # Caller may already pass a day-scoped list (no other dates).
     if not day_events and events:
         only_today = True
         for e in events:
@@ -590,19 +684,282 @@ def ensure_flyer_for_day(
                 break
         if only_today:
             day_events = list(events)
+    return day_events
 
+
+def register_flyer(
+    day: date,
+    *,
+    local: str,
+    url: str = "",
+    media_id: Optional[int] = None,
+    local_instagram: str = "",
+    url_instagram: str = "",
+    media_id_instagram: Optional[int] = None,
+    copy: Optional[Dict[str, Any]] = None,
+    events: Optional[Sequence[Event]] = None,
+    merge: bool = True,
+) -> Dict[str, Any]:
+    """Append/update a day entry in morning_flyers.json (FB url + optional IG variant)."""
+    copy = copy or build_flyer_copy(day, events or [])
+    assert_price_free(
+        copy.get("label") or "",
+        *(copy.get("covers") or []),
+        *(copy.get("lines") or []),
+    )
+
+    layout = choose_layout_style(day, events or [])
+    entry: Dict[str, Any] = {
+        "label": copy["label"],
+        "covers": list(copy.get("covers") or []),
+        "local": _rel_asset(local) if local else "",
+        "url": url or "",
+        "prebranded": True,
+        "template": "thursday-style" if layout == LAYOUT_THURSDAY else "artistic_hero",
+    }
+    if media_id is not None:
+        entry["media_id"] = int(media_id)
+    if local_instagram:
+        entry["local_instagram"] = _rel_asset(local_instagram)
+    if url_instagram:
+        entry["url_instagram"] = url_instagram
+    if media_id_instagram is not None:
+        entry["media_id_instagram"] = int(media_id_instagram)
+    if copy.get("empty_day"):
+        entry["empty_day"] = True
+
+    data = load_flyers_config()
+    flyers = data.setdefault("flyers", {})
+    prev = flyers.get(day.isoformat()) if merge else None
+    if isinstance(prev, dict):
+        # Preserve Founder-set fields; never wipe the other platform's URL/local.
+        for key in (
+            "url",
+            "media_id",
+            "local",
+            "url_instagram",
+            "media_id_instagram",
+            "local_instagram",
+            "urls",
+            "alt_media_ids",
+            "alt_local",
+            "alt_template",
+            "note",
+            "template",
+        ):
+            if key in prev and not entry.get(key):
+                entry[key] = prev[key]
+        # Explicit new locals/urls win when provided.
+        if local:
+            entry["local"] = _rel_asset(local)
+        if url:
+            entry["url"] = url
+        if local_instagram:
+            entry["local_instagram"] = _rel_asset(local_instagram)
+        if url_instagram:
+            entry["url_instagram"] = url_instagram
+        if media_id is not None:
+            entry["media_id"] = int(media_id)
+        if media_id_instagram is not None:
+            entry["media_id_instagram"] = int(media_id_instagram)
+        if prev.get("template") and not events:
+            entry["template"] = prev["template"]
+
+    fb_u = str(entry.get("url") or "").strip()
+    ig_u = str(entry.get("url_instagram") or "").strip()
+    if fb_u and ig_u and fb_u != ig_u:
+        entry["urls"] = [fb_u, ig_u]
+    elif "urls" in entry and not (fb_u and ig_u and fb_u != ig_u):
+        # Keep legacy urls only when dual variants are not yet both public.
+        pass
+
+    flyers[day.isoformat()] = entry
+    data["layout_mix"] = {
+        "thursday_cards_share": THURSDAY_CARDS_SHARE,
+        "artistic_hero_share": round(1.0 - THURSDAY_CARDS_SHARE, 2),
+        "default": LAYOUT_THURSDAY,
+        "platform_variants": "facebook=url / first; instagram=url_instagram / second",
+    }
+    save_flyers_config(data)
+    return entry
+
+
+def _ensure_second_variant(
+    day: date,
+    day_events: Sequence[Event],
+    existing: Dict[str, Any],
+    copy: Dict[str, Any],
+) -> Dict[str, Any]:
+    """Build Instagram (variant B) when FB exists but IG variant is missing."""
+    if day.isoformat() in PROTECTED_DAYS:
+        return existing
+    if has_dual_flyer_variants(existing):
+        return existing
+    local_ig = str(existing.get("local_instagram") or "").strip()
+    abs_ig = (
+        local_ig
+        if os.path.isabs(local_ig)
+        else os.path.join(ROOT, local_ig)
+        if local_ig
+        else ""
+    )
+    if not abs_ig or not os.path.isfile(abs_ig):
+        abs_ig = render_local_flyer(
+            day,
+            day_events,
+            variant=VARIANT_B,
+            out_path=_default_flyer_paths(day, str(copy["slug"]), VARIANT_B),
+        )
+    return register_flyer(
+        day,
+        local=str(existing.get("local") or ""),
+        url=str(existing.get("url") or ""),
+        media_id=existing.get("media_id"),
+        local_instagram=abs_ig,
+        url_instagram=str(existing.get("url_instagram") or ""),
+        media_id_instagram=existing.get("media_id_instagram"),
+        copy=copy,
+        events=day_events,
+        merge=True,
+    )
+
+
+def ensure_flyer_for_day(
+    day: date,
+    events: Sequence[Event],
+    *,
+    force: bool = False,
+) -> Dict[str, Any]:
+    """
+    Ensure dual full-day flyer variants exist for Chicago `day`.
+
+    Variant A → Facebook (`url` / `local`); variant B → Instagram
+    (`url_instagram` / `local_instagram`). Same covers/events; different art.
+    Returns status dict: action=exists|created|augmented, needs_upload, entry, …
+    """
+    day_events = _day_events(day, events)
     copy = build_flyer_copy(day, day_events)
-    out = render_local_flyer(day, day_events)
-    entry = register_flyer(day, local=out, url="", copy=copy, events=day_events)
     layout = choose_layout_style(day, day_events)
+    prompt = build_generation_prompt(day, copy, layout=layout, events=day_events)
+    prompt_b = build_generation_prompt(
+        day, copy, layout=LAYOUT_THURSDAY, events=day_events
+    ) + " Variant B palette/right-side graphics — same event cards and info."
+
+    existing = flyer_entry_for_day(day)
+    if existing and not force:
+        if day.isoformat() not in PROTECTED_DAYS and not has_dual_flyer_variants(existing):
+            local_ig = str(existing.get("local_instagram") or "").strip()
+            abs_ig = (
+                local_ig
+                if os.path.isabs(local_ig)
+                else os.path.join(ROOT, local_ig)
+                if local_ig
+                else ""
+            )
+            if abs_ig and os.path.isfile(abs_ig):
+                # Second local already on disk — wait for WP upload, don't re-render.
+                fb = str(existing.get("url") or "")
+                ig = str(existing.get("url_instagram") or "")
+                missing = [
+                    p
+                    for p, u in (("facebook", fb), ("instagram", ig))
+                    if not u
+                ]
+                return {
+                    "day": day.isoformat(),
+                    "action": "exists",
+                    "needs_upload": bool(missing),
+                    "needs_upload_platforms": missing,
+                    "entry": existing,
+                    "local": existing.get("local"),
+                    "local_instagram": existing.get("local_instagram"),
+                    "layout": layout,
+                    "prompt": prompt,
+                    "prompt_instagram": prompt_b,
+                }
+            entry = _ensure_second_variant(day, day_events, existing, copy)
+            fb = str(entry.get("url") or "")
+            ig = str(entry.get("url_instagram") or "")
+            needs = (not fb) or (not ig)
+            return {
+                "day": day.isoformat(),
+                "action": "augmented",
+                "needs_upload": needs,
+                "needs_upload_platforms": [
+                    p
+                    for p, u in (("facebook", fb), ("instagram", ig))
+                    if not u
+                ],
+                "entry": entry,
+                "local": entry.get("local"),
+                "local_instagram": entry.get("local_instagram"),
+                "layout": layout,
+                "prompt": prompt,
+                "prompt_instagram": prompt_b,
+            }
+        fb = str(existing.get("url") or "")
+        ig = str(existing.get("url_instagram") or "")
+        missing = []
+        if not fb:
+            missing.append("facebook")
+        if day.isoformat() not in PROTECTED_DAYS and not ig:
+            missing.append("instagram")
+        return {
+            "day": day.isoformat(),
+            "action": "exists",
+            "needs_upload": bool(missing),
+            "needs_upload_platforms": missing,
+            "entry": existing,
+            "layout": layout,
+            "prompt": prompt,
+            "prompt_instagram": prompt_b,
+        }
+
+    if force and day.isoformat() in PROTECTED_DAYS and existing:
+        # Never overwrite the Aug 6 gold standard.
+        return {
+            "day": day.isoformat(),
+            "action": "exists",
+            "needs_upload": not bool(existing.get("url")),
+            "entry": existing,
+            "layout": layout,
+            "prompt": prompt,
+            "protected": True,
+        }
+
+    out_a = render_local_flyer(day, day_events, variant=VARIANT_A)
+    out_b = render_local_flyer(day, day_events, variant=VARIANT_B)
+    keep_url = str((existing or {}).get("url") or "") if existing else ""
+    keep_ig = str((existing or {}).get("url_instagram") or "") if existing else ""
+    entry = register_flyer(
+        day,
+        local=out_a,
+        url=keep_url,
+        media_id=(existing or {}).get("media_id") if existing else None,
+        local_instagram=out_b,
+        url_instagram=keep_ig,
+        media_id_instagram=(existing or {}).get("media_id_instagram")
+        if existing
+        else None,
+        copy=copy,
+        events=day_events,
+        merge=bool(existing),
+    )
+    fb = str(entry.get("url") or "")
+    ig = str(entry.get("url_instagram") or "")
     return {
         "day": day.isoformat(),
         "action": "created",
-        "needs_upload": True,
+        "needs_upload": (not fb) or (not ig),
+        "needs_upload_platforms": [
+            p for p, u in (("facebook", fb), ("instagram", ig)) if not u
+        ],
         "entry": entry,
-        "local": out,
+        "local": out_a,
+        "local_instagram": out_b,
         "layout": layout,
-        "prompt": build_generation_prompt(day, copy, layout=layout, events=day_events),
+        "prompt": prompt,
+        "prompt_instagram": prompt_b,
     }
 
 
@@ -647,13 +1004,30 @@ def ensure_flyers_for_range(
     }
 
 
-def set_flyer_url(day: date, url: str, media_id: Optional[int] = None) -> Dict[str, Any]:
+def set_flyer_url(
+    day: date,
+    url: str,
+    media_id: Optional[int] = None,
+    *,
+    platform: str = "facebook",
+) -> Dict[str, Any]:
+    """Set public WP URL for facebook (`url`) or instagram (`url_instagram`)."""
     data = load_flyers_config()
     entry = (data.get("flyers") or {}).get(day.isoformat())
     if not isinstance(entry, dict):
         raise KeyError(f"No flyer entry for {day.isoformat()}")
-    entry["url"] = url
-    if media_id is not None:
-        entry["media_id"] = int(media_id)
+    key = (platform or "facebook").lower().strip()
+    if key in ("instagram", "ig"):
+        entry["url_instagram"] = url
+        if media_id is not None:
+            entry["media_id_instagram"] = int(media_id)
+    else:
+        entry["url"] = url
+        if media_id is not None:
+            entry["media_id"] = int(media_id)
+    fb = str(entry.get("url") or "").strip()
+    ig = str(entry.get("url_instagram") or "").strip()
+    if fb and ig and fb != ig:
+        entry["urls"] = [fb, ig]
     save_flyers_config(data)
     return entry

@@ -102,6 +102,12 @@ def main(argv: Optional[List[str]] = None) -> int:
         help="Register a public WP URL for an existing day (YYYY-MM-DD URL)",
     )
     p_flyers.add_argument(
+        "--platform",
+        choices=["facebook", "instagram"],
+        default="facebook",
+        help="Platform for --set-url (facebook→url, instagram→url_instagram)",
+    )
+    p_flyers.add_argument(
         "--media-id",
         type=int,
         default=None,
@@ -232,9 +238,12 @@ def main(argv: Optional[List[str]] = None) -> int:
         if args.set_url:
             day_s, url = args.set_url
             entry = mf.set_flyer_url(
-                date_cls.fromisoformat(day_s), url, media_id=args.media_id
+                date_cls.fromisoformat(day_s),
+                url,
+                media_id=args.media_id,
+                platform=getattr(args, "platform", "facebook") or "facebook",
             )
-            _print({"ok": True, "day": day_s, "entry": entry})
+            _print({"ok": True, "day": day_s, "platform": args.platform, "entry": entry})
             return 0
 
         src = "live" if args.source == "live-strict" else args.source

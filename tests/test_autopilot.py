@@ -1060,8 +1060,8 @@ class AutopilotTests(unittest.TestCase):
         self.assertTrue(ig.url)
         self.assertNotEqual(fb.url, ig.url)
 
-        # Date-keyed morning flyers: FB and IG must share the same primary URL
-        # (full-day info; no per-platform alt that can drop events or show prices).
+        # Date-keyed morning flyers with dual variants: FB ≠ IG, both full-day.
+        # Aug 6 gold standard may still be single-URL (temporary share OK).
         flyer_day = date(2026, 8, 6)
         f_fb = images.plan_image([], "today", day=flyer_day, platform="facebook")
         f_ig = images.plan_image(
@@ -1074,10 +1074,26 @@ class AutopilotTests(unittest.TestCase):
         self.assertEqual(f_fb.rule, "morning_flyer")
         self.assertEqual(f_ig.rule, "morning_flyer")
         self.assertTrue(f_fb.prebranded and f_ig.prebranded)
-        self.assertEqual(f_fb.url, f_ig.url)
-        # Primary only — never the eve-quantum alt.
+        # Primary only — never the eve-quantum priced alt.
         self.assertNotIn("eve-quantum", f_fb.url or "")
         self.assertIn("sg-morning-flyer-2026-08-06-today-collage", f_fb.url or "")
+        # Dual-variant day (when configured): FB and IG must differ.
+        from marketing import morning_flyers as mf
+
+        dual = {
+            "label": "Dual test",
+            "covers": ["Tai Chi Gung with Sherry Gurley", "Tarot with Adie"],
+            "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-dual-a.png",
+            "url_instagram": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-dual-b.png",
+            "prebranded": True,
+        }
+        fb_u, shared_fb = mf.select_flyer_url_for_platform(dual, "facebook")
+        ig_u, shared_ig = mf.select_flyer_url_for_platform(dual, "instagram")
+        self.assertFalse(shared_fb or shared_ig)
+        self.assertNotEqual(fb_u, ig_u)
+        self.assertEqual(fb_u, dual["url"])
+        self.assertEqual(ig_u, dual["url_instagram"])
+        self.assertNotIn("$", " ".join(dual["covers"]))
 
         # Specialty with multi-URL pool (massage) → different cards from same rule
         massage_day = [
@@ -1334,14 +1350,23 @@ class AutopilotTests(unittest.TestCase):
 
         mf.set_flyer_url(
             empty_day,
-            "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-test-visit.png",
+            "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-test-visit-a.png",
             media_id=99999,
+            platform="facebook",
+        )
+        mf.set_flyer_url(
+            empty_day,
+            "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-test-visit-b.png",
+            media_id=99998,
+            platform="instagram",
         )
         images.morning_flyers.cache_clear()
-        plan = images.plan_image([], "today", day=empty_day)
+        plan = images.plan_image([], "today", day=empty_day, platform="facebook")
         self.assertEqual(plan.rule, "morning_flyer")
         self.assertTrue(plan.prebranded)
         self.assertTrue(images.skip_brand_overlays(plan))
+        plan_ig = images.plan_image([], "today", day=empty_day, platform="instagram")
+        self.assertNotEqual(plan.url, plan_ig.url)
 
         # Existing day is not regenerated without --force
         again = mf.ensure_flyer_for_day(empty_day, [], force=False)
@@ -1359,6 +1384,7 @@ class AutopilotTests(unittest.TestCase):
 
             data = json.load(fh)
         self.assertIn("NEVER include", data.get("notes") or "")
+        self.assertIn("DIFFERENT full-day flyer", data.get("notes") or "")
         for day_key, entry in (data.get("flyers") or {}).items():
             bits = [str(entry.get("label") or "")]
             bits.extend(str(c) for c in (entry.get("covers") or []))
@@ -1367,6 +1393,89 @@ class AutopilotTests(unittest.TestCase):
                     mf.text_has_price(b),
                     f"{day_key} has price-like text: {b!r}",
                 )
+            # Dual public variants (when both set) must differ and stay price-free URLs.
+            fb, ig = mf.resolve_flyer_urls(entry)
+            if entry.get("url_instagram") or (
+                isinstance(entry.get("urls"), list) and len(entry.get("urls") or []) >= 2
+            ):
+                self.assertTrue(fb and ig)
+                if day_key != "2026-08-06":
+                    self.assertNotEqual(
+                        fb,
+                        ig,
+                        f"{day_key} FB/IG morning flyer URLs must differ when dual variants exist",
+                    )
+                self.assertNotIn("$", fb)
+                self.assertNotIn("$", ig)
+
+    def test_morning_flyer_dual_variants_same_covers(self) -> None:
+        """generate-morning-flyers produces A/B locals with identical covers; FB≠IG URLs."""
+        from marketing import images, morning_flyers as mf
+        from marketing.models import Event
+
+        images.IMAGE_USAGE_PATH = os.path.join(self._tmpdir, "state", "image_usage.json")
+        images.morning_flyers.cache_clear()
+
+        day = date(2026, 9, 20)
+        events = [
+            Event(
+                id=501,
+                title="Tai Chi Gung with Sherry Gurley",
+                start_date="2026-09-20 12:00:00",
+                end_date="2026-09-20 13:00:00",
+                url="https://shopsacredground.com/event/tai/",
+            ),
+            Event(
+                id=502,
+                title="Tarot with Adie",
+                start_date="2026-09-20 12:00:00",
+                end_date="2026-09-20 17:00:00",
+                url="https://shopsacredground.com/event/adie/",
+                cost="$55",
+            ),
+        ]
+        info = mf.ensure_flyer_for_day(day, events, force=True)
+        self.assertEqual(info["action"], "created")
+        entry = info["entry"]
+        self.assertTrue(entry.get("local"))
+        self.assertTrue(entry.get("local_instagram"))
+        self.assertNotEqual(entry.get("local"), entry.get("local_instagram"))
+        self.assertEqual(
+            list(entry.get("covers") or []),
+            [e.title for e in mf.pick_events_for_flyer(events)],
+        )
+        for part in entry.get("covers") or []:
+            self.assertFalse(mf.text_has_price(part))
+            self.assertNotIn("$", part)
+        self.assertTrue(os.path.isfile(info["local"]))
+        self.assertTrue(os.path.isfile(info["local_instagram"]))
+
+        mf.set_flyer_url(
+            day,
+            "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-dual-a.png",
+            media_id=90001,
+            platform="facebook",
+        )
+        mf.set_flyer_url(
+            day,
+            "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-dual-b.png",
+            media_id=90002,
+            platform="instagram",
+        )
+        images.morning_flyers.cache_clear()
+        plan_fb = images.plan_image(events, "today", day=day, platform="facebook")
+        plan_ig = images.plan_image(
+            events,
+            "today",
+            day=day,
+            platform="instagram",
+            exclude_urls=[plan_fb.url or ""],
+        )
+        self.assertEqual(plan_fb.rule, "morning_flyer")
+        self.assertEqual(plan_ig.rule, "morning_flyer")
+        self.assertNotEqual(plan_fb.url, plan_ig.url)
+        self.assertNotIn("$", plan_fb.url or "")
+        self.assertNotIn("$", plan_ig.url or "")
 
 
 if __name__ == "__main__":
