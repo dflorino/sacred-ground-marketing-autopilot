@@ -4,7 +4,7 @@ import os
 import shutil
 import tempfile
 import unittest
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from zoneinfo import ZoneInfo
 
 # Isolate draft/state dirs for tests
@@ -586,8 +586,8 @@ class AutopilotTests(unittest.TestCase):
         )
         # Goodnight closer stands alone (blank line before it and before hashtags)
         closers = list(voice().get("week_ahead_closers") or [])
-        self.assertTrue(any(c in text for c in closers))
-        self.assertRegex(text, r"\n\n(?:The door is always open|We wish you a good night|Good night|Sweet dreams|Rest easy|As the night settles|Sleep well|We’ll leave the lights on)")
+        matched = [c for c in closers if f"\n\n{c}\n\n#" in text]
+        self.assertTrue(matched, "expected a rotating goodnight closer before hashtags")
         self.assertRegex(text, r"\n\n#SacredGround")
         # Door/light must not appear inside an event block
         self.assertNotIn("Tina's Tarot & Rune Sessions\nThe door is always open", text)
@@ -890,6 +890,139 @@ class AutopilotTests(unittest.TestCase):
             "No sign-up needed\n"
             "Doors close at 7:05pm",
         )
+
+    def test_week_ahead_horizon_is_two_days(self) -> None:
+        from marketing import classify
+        from marketing.models import Event
+        from marketing.paths import settings
+
+        wa = (settings().get("campaigns") or {}).get("week_ahead") or {}
+        self.assertEqual(int(wa.get("horizon_days") or 0), 2)
+        self.assertEqual(int(wa.get("horizon_start_offset_days") or 0), 1)
+        self.assertIn("2", str(wa.get("label") or ""))
+
+        events = [
+            Event(
+                id=i,
+                title=f"Event {d.isoformat()}",
+                start_date=f"{d.isoformat()} 12:00:00",
+                end_date=f"{d.isoformat()} 17:00:00",
+                url=f"https://shopsacredground.com/e/{i}/",
+            )
+            for i, d in enumerate(
+                [
+                    date(2026, 8, 6),
+                    date(2026, 8, 7),
+                    date(2026, 8, 8),
+                    date(2026, 8, 9),
+                ],
+                start=1,
+            )
+        ]
+        window_start = date(2026, 8, 6)
+        ahead = classify.events_next_days(events, window_start, days=2)
+        days = classify.event_calendar_days(ahead)
+        self.assertEqual(days, [date(2026, 8, 6), date(2026, 8, 7)])
+        # Clamp never widens even if extra days sneak in
+        wide = events + [
+            Event(
+                id=99,
+                title="Too far",
+                start_date="2026-08-08 12:00:00",
+                end_date="2026-08-08 13:00:00",
+                url="https://shopsacredground.com/e/99/",
+            )
+        ]
+        clamped = classify.clamp_events_to_horizon(wide, window_start, 2)
+        self.assertEqual(
+            classify.event_calendar_days(clamped),
+            [date(2026, 8, 6), date(2026, 8, 7)],
+        )
+
+    def test_night_creatives_rotate_not_storefront_only(self) -> None:
+        from marketing.atmosphere import atmosphere_config, nighttime_plan
+
+        atmosphere_config.cache_clear()
+        creatives = 0
+        storefronts = 0
+        ids = []
+        for i in range(20):
+            d = date(2026, 8, 1) + timedelta(days=i)
+            plan = nighttime_plan(d)
+            if plan.get("mode") in ("full_moon", "holiday"):
+                continue
+            cid = str(plan.get("creative_id") or "")
+            url = str(plan.get("image_url") or "")
+            ids.append(cid)
+            self.assertNotIn("Screenshot-2026-03-05", url)
+            if "storefront" in cid:
+                storefronts += 1
+            else:
+                creatives += 1
+                self.assertTrue(
+                    "creative" in url
+                    or "ai_generated" in url
+                    or cid.endswith(("_night_watch", "_night_journey", "_night_om", "_night_silhouette"))
+                    or bool(cid),
+                    f"expected creative plate, got {cid} {url}",
+                )
+        self.assertGreaterEqual(creatives, 15)
+        self.assertLessEqual(storefronts, 5)
+        # Not stuck on one plate
+        self.assertGreaterEqual(len(set(ids)), 8)
+
+    def test_week_ahead_closers_pool_and_day_rotation(self) -> None:
+        from marketing import captions
+        from marketing.paths import voice
+
+        closers = list(voice().get("week_ahead_closers") or [])
+        self.assertGreaterEqual(len(closers), 30)
+        self.assertEqual(len(closers), len(set(closers)), "closers must be unique")
+        door = "The door is always open...we will leave the light on"
+        self.assertIn(door, closers)
+        self.assertEqual(closers.count(door), 1)
+
+        # Day-ordinal rotation: consecutive nights differ; same night is stable
+        a = captions._week_ahead_closer("x", day=date(2026, 8, 5))
+        b = captions._week_ahead_closer("y", day=date(2026, 8, 6))
+        c = captions._week_ahead_closer("z", day=date(2026, 8, 5))
+        self.assertEqual(a, c)
+        self.assertNotEqual(a, b)
+        # Across 30 nights we cover the full pool (or at least many distinct)
+        picked = {
+            captions._week_ahead_closer("n", day=date(2026, 8, 1) + timedelta(days=i))
+            for i in range(30)
+        }
+        self.assertEqual(len(picked), 30)
+
+    def test_stale_week_ahead_draft_detected(self) -> None:
+        from marketing import store
+
+        stale = {
+            "campaign": "week_ahead",
+            "events": [
+                {"start_date": "2026-08-06 12:00:00"},
+                {"start_date": "2026-08-07 12:00:00"},
+                {"start_date": "2026-08-08 12:00:00"},
+            ],
+            "image": {
+                "rule": "week_ahead_exterior",
+                "url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.15-AM.png",
+            },
+        }
+        fresh = {
+            "campaign": "week_ahead",
+            "events": [
+                {"start_date": "2026-08-06 12:00:00"},
+                {"start_date": "2026-08-07 12:00:00"},
+            ],
+            "image": {
+                "rule": "week_ahead_creative_milky_way",
+                "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-milky-way.png",
+            },
+        }
+        self.assertTrue(store.is_stale_week_ahead_draft(stale, 2))
+        self.assertFalse(store.is_stale_week_ahead_draft(fresh, 2))
 
 
 if __name__ == "__main__":

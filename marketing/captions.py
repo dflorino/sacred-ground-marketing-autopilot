@@ -224,14 +224,16 @@ def _week_ahead_night_block(seed: str) -> str:
     )
 
 
-def _week_ahead_closer(seed: str) -> str:
+def _week_ahead_closer(seed: str, day: date | None = None) -> str:
+    """Pick a goodnight closer. Day-ordinal rotation so nights never stick on one line."""
     cfg = voice()
-    opts = list(cfg.get("week_ahead_closers") or [])
-    return _pick_rotating(
-        opts,
-        seed,
-        "The door is always open...we will leave the light on",
-    )
+    opts = [o.rstrip() for o in (cfg.get("week_ahead_closers") or []) if o and str(o).strip()]
+    fallback = "The door is always open...we will leave the light on"
+    if not opts:
+        return fallback
+    if day is not None:
+        return opts[day.toordinal() % len(opts)]
+    return _pick_rotating(opts, seed, fallback)
 
 
 def caption_week_ahead(events: List[Event], platform: str, day: date) -> Dict:
@@ -250,8 +252,8 @@ def caption_week_ahead(events: List[Event], platform: str, day: date) -> Dict:
     body += "\n\nCall to book a session or grab your spot online."
     body += "\n847-749-3922"
     body += "\nhttps://shopsacredground.com/events/"
-    # Standalone goodnight — never glued to an event or meditation block.
-    closer = _week_ahead_closer(f"{seed}|closer")
+    # Standalone goodnight — day-based so FB+IG match and consecutive nights differ.
+    closer = _week_ahead_closer(f"{seed}|closer", day=day)
     body += "\n\n" + closer
     tags = _hashtags(platform)
     text = body + "\n\n" + " ".join(tags)

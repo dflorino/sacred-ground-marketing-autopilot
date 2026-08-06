@@ -299,26 +299,24 @@ def plan_image(
 
     if campaign == "week_ahead":
         # Priority: full_moon > holiday > creative_pool rotation.
-        from .atmosphere import night_image_url, nighttime_plan
+        # Never fall back to the old founder Screenshot exterior trio when the
+        # creative night pack is configured — that path caused storefront-only weeks.
+        from .atmosphere import night_image_url, nighttime_plan, season_meta
         from .ingest import today_local
 
         on = day or today_local()
         atm = nighttime_plan(on)
         url = night_image_url(on)
         if not url:
-            wa = (settings().get("campaigns") or {}).get("week_ahead") or {}
-            brand = settings().get("brand_images") or {}
-            urls = [str(u) for u in (wa.get("image_urls") or []) if u]
-            if not urls:
-                urls = [str(u) for u in (brand.get("exterior_urls") or []) if u]
-            if not urls:
-                urls = [store_exterior_url()]
-            url = urls[on.toordinal() % len(urls)]
+            # Last resort: current-season night plate from atmosphere, then brand exterior.
+            season_url = str(season_meta(on).get("url") or "")
+            url = season_url or store_exterior_url()
 
         mode = atm.get("mode") or "creative"
         season = atm.get("season") or "summer"
         holiday = atm.get("holiday")
         creative_id = atm.get("creative_id") or ""
+        kind = "storefront" if "storefront" in str(creative_id).lower() else "creative"
         if mode == "full_moon":
             rule = "week_ahead_full_moon"
             label = "full_moon"
@@ -326,7 +324,11 @@ def plan_image(
             rule = f"week_ahead_holiday_{holiday}"
             label = holiday
         elif mode == "creative":
-            rule = f"week_ahead_creative_{creative_id or 'pool'}"
+            rule = (
+                f"week_ahead_storefront_{creative_id}"
+                if kind == "storefront"
+                else f"week_ahead_creative_{creative_id or 'pool'}"
+            )
             label = creative_id or "creative"
         else:
             rule = f"week_ahead_season_{season}"

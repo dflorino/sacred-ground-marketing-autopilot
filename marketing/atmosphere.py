@@ -2,12 +2,12 @@
 
 Morning (today): specialty library only — no seasons.
 Night (week_ahead): priority full_moon > holiday > creative_pool rotation
-(night-sky creatives + season storefronts mixed in).
+(night-sky creatives first; current-season storefront at most sparsely).
 """
 from __future__ import annotations
 
 import json
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from functools import lru_cache
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
@@ -107,6 +107,97 @@ def daytime_plan(day: date, specialty: Optional[str] = None) -> Dict[str, Any]:
     }
 
 
+def _eligible_creative_pool(day: date) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
+    """Return (creatives, in-season storefronts) for the night pool."""
+    night = atmosphere_config().get("nighttime") or {}
+    season = season_for(day)
+    creatives: List[Dict[str, Any]] = []
+    storefronts: List[Dict[str, Any]] = []
+    for p in night.get("creative_pool") or []:
+        if not p.get("url"):
+            continue
+        if p.get("kind") == "storefront":
+            p_season = str(p.get("season") or "")
+            if p_season and p_season != season:
+                continue
+            storefronts.append(p)
+        else:
+            creatives.append(p)
+
+    # Ensure current-season plate is available even if omitted from creative_pool.
+    s_meta = season_meta(day)
+    season_url = str(s_meta.get("url") or "")
+    if season_url and not any(str(p.get("url")) == season_url for p in storefronts):
+        storefronts.append(
+            {
+                "id": f"season_{season}_storefront",
+                "label": f"{season.title()} storefront",
+                "url": season_url,
+                "kind": "storefront",
+                "season": season,
+            }
+        )
+    return creatives, storefronts
+
+
+def _recent_storefront_streak(day: date, lookback: int = 3) -> int:
+    """How many consecutive prior nights used a storefront plate (0 if unknown)."""
+    try:
+        from .images import load_image_usage
+    except Exception:
+        return 0
+    history = load_image_usage().get("history") or []
+    by_date = {
+        str(h.get("date")): h
+        for h in history
+        if h.get("campaign") == "week_ahead" and h.get("url")
+    }
+    streak = 0
+    for i in range(1, lookback + 1):
+        prev = (day - timedelta(days=i)).isoformat()
+        hit = by_date.get(prev)
+        if not hit:
+            break
+        rule = str(hit.get("rule") or "")
+        url = str(hit.get("url") or "")
+        if "storefront" in rule or (
+            "sg-night-" in url
+            and "creative" not in url
+            and any(s in url for s in ("spring", "summer", "fall", "winter"))
+        ):
+            streak += 1
+        else:
+            break
+    return streak
+
+
+def _pick_night_creative(day: date) -> Dict[str, Any]:
+    """
+    Rotate creative night plates by default.
+
+    In-season storefronts may appear at most every 5th creative-mode night,
+    and never after a recent storefront streak — so creatives cannot get stuck
+    behind founder exterior / season storefront photos.
+    """
+    creatives, storefronts = _eligible_creative_pool(day)
+    if not creatives and storefronts:
+        return storefronts[day.toordinal() % len(storefronts)]
+    if not creatives:
+        return {}
+
+    # Storefront slot: every 5th night only, and only if no recent streak.
+    allow_storefront = (
+        bool(storefronts)
+        and (day.toordinal() % 5 == 0)
+        and _recent_storefront_streak(day, lookback=3) == 0
+    )
+    if allow_storefront:
+        return storefronts[day.toordinal() % len(storefronts)]
+
+    # Stable day rotation across creatives (not storefronts).
+    return creatives[day.toordinal() % len(creatives)]
+
+
 def nighttime_plan(day: date) -> Dict[str, Any]:
     night = atmosphere_config().get("nighttime") or {}
     base = night.get("base_style") or "Sacred Ground exterior storefront"
@@ -157,32 +248,9 @@ def nighttime_plan(day: date) -> Dict[str, Any]:
             ),
         }
 
-    # Priority 3: creative night skies + current-season storefront only
-    pool: List[Dict[str, Any]] = []
-    for p in night.get("creative_pool") or []:
-        if not p.get("url"):
-            continue
-        # Season storefront plates only appear in their own season.
-        if p.get("kind") == "storefront":
-            p_season = str(p.get("season") or "")
-            if p_season and p_season != season:
-                continue
-        pool.append(p)
-
-    season_url = str(s_meta.get("url") or "")
-    if season_url and not any(str(p.get("url")) == season_url for p in pool):
-        pool.append(
-            {
-                "id": f"season_{season}_storefront",
-                "label": f"{season.title()} storefront",
-                "url": season_url,
-                "kind": "storefront",
-                "season": season,
-            }
-        )
-
-    if pool:
-        pick = pool[day.toordinal() % len(pool)]
+    # Priority 3: creative night skies (storefront only sparse / streak-safe)
+    pick = _pick_night_creative(day)
+    if pick:
         kind = str(pick.get("kind") or "creative")
         label = str(pick.get("label") or pick.get("id") or "creative")
         return {

@@ -240,6 +240,6 @@
     ],
     "events_in_image": false,
     "events_in_caption": true,
-    "how_it_combines": "Priority: (1) full moon night → full-moon image only; (2) holiday window → rotate that holiday’s urls (Christmas includes forest tree); (3) else rotate creative night skies + ONLY the current-season storefront. Events stay in caption. Week-ahead horizon is 2 days."
+    "how_it_combines": "Priority: (1) full moon night → full-moon image only; (2) holiday window → rotate that holiday’s urls (Christmas includes forest tree); (3) else rotate creative night skies by day; current-season storefront at most every 5th creative-mode night and never after a storefront streak. Founder Screenshot exteriors are not part of the night pool. Events stay in caption. Week-ahead horizon is 2 days."
   }
 }

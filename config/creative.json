@@ -78,11 +78,11 @@
         "facebook",
         "instagram"
       ],
-      "background": "store_exterior_plus_season",
+      "background": "creative_night_sky_rotation",
       "image_policy": "config/image_atmosphere.json",
       "approved_reference": "assets/sg-example-night-fall-storefront.png",
-      "purpose": "next_3_days_planner",
-      "notes": "Locked: same exterior storefront vein as uploaded brand exteriors; seasons change outdoors only. Mornings use specialty library with no seasons."
+      "purpose": "next_2_days_planner",
+      "notes": "Next 2 days starting tomorrow. Creative night-sky pack by default; in-season storefront only sparsely; holidays + full moon still override. Mornings use specialty library with no seasons."
     }
   }
 }

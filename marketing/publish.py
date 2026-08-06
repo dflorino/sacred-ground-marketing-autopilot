@@ -209,9 +209,17 @@ def publish_campaign_drafts(*, campaign: str) -> Dict[str, Any]:
             "results": [],
         }
     from .ingest import today_local
+    from .paths import settings
 
     day_key = today_local().isoformat()
-    results: List[Dict[str, Any]] = []
+    horizon = 2
+    if campaign == "week_ahead":
+        wa = (settings().get("campaigns") or {}).get("week_ahead") or {}
+        horizon = int(wa.get("horizon_days") or 2)
+
+    # Collect candidates; for week_ahead prefer newest non-stale draft per platform.
+    candidates: List[Dict[str, Any]] = []
+    skipped_stale: List[Dict[str, Any]] = []
     for d in store.list_drafts():
         if d.get("campaign") != campaign:
             continue
@@ -221,13 +229,45 @@ def publish_campaign_drafts(*, campaign: str) -> Dict[str, Any]:
         # Fingerprints look like: week_ahead|2026-08-03|facebook|…
         if f"|{day_key}|" not in f"|{fp}|":
             continue
-        results.append(publish_draft(d["id"]))
-    ok = bool(results) and all(r.get("ok") for r in results)
+        if campaign == "week_ahead" and store.is_stale_week_ahead_draft(d, horizon):
+            store.update_draft(
+                d["id"],
+                status="skipped",
+                approval_status="skipped",
+                publish_blocked_reason="stale_week_ahead_horizon_or_exterior",
+                notes=list(d.get("notes") or [])
+                + ["stale_week_ahead_horizon_or_exterior"],
+            )
+            skipped_stale.append(
+                {
+                    "ok": False,
+                    "draft_id": d["id"],
+                    "error": "stale_week_ahead_horizon_or_exterior",
+                }
+            )
+            continue
+        candidates.append(d)
+
+    if campaign == "week_ahead":
+        # One draft per platform — newest created_at wins.
+        best: Dict[str, Dict[str, Any]] = {}
+        for d in candidates:
+            plat = str(d.get("platform") or "")
+            prev = best.get(plat)
+            if not prev or str(d.get("created_at") or "") > str(prev.get("created_at") or ""):
+                best[plat] = d
+        candidates = list(best.values())
+
+    publish_results: List[Dict[str, Any]] = [
+        publish_draft(d["id"]) for d in candidates
+    ]
+    results = publish_results + skipped_stale
+    ok = bool(candidates) and all(r.get("ok") for r in publish_results)
     return {
         "ok": ok,
         "campaign": campaign,
         "day": day_key,
-        "published_or_scheduled": sum(1 for r in results if r.get("ok")),
+        "published_or_scheduled": sum(1 for r in publish_results if r.get("ok")),
         "failed": sum(1 for r in results if not r.get("ok")),
         "results": results,
     }

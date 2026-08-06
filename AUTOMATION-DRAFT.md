@@ -55,11 +55,11 @@ Hard rules:
 
 # Automation draft — SG Week-Ahead 7pm Social (LIVE)
 
-Daily next-3-days evening planner posts (Facebook + Instagram).
+Daily next-2-days evening planner posts (Facebook + Instagram).
 
 **Status: auto_publish ON.** Every evening at **7:00 PM America/Chicago**.
 
-Image: rotate the 3 founder exterior storefront photos. Schedule list lives in the caption only.
+Image: rotate the creative night-sky pack (plus sparse in-season storefront / holiday / full-moon overrides). Schedule list lives in the caption only — next **2** days starting tomorrow.
 
 ## Daily commands (Cloud Agent)
 

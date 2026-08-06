@@ -246,6 +246,35 @@ def events_in_week(events: List[Event], week_start: date) -> List[Event]:
     return out
 
 
+def event_calendar_days(events: List[Event]) -> List[date]:
+    """Unique event calendar days in start order."""
+    seen: List[date] = []
+    for ev in events:
+        start = parse_tec_datetime(ev.start_date)
+        if not start:
+            continue
+        d = start.date()
+        if d not in seen:
+            seen.append(d)
+    return seen
+
+
+def clamp_events_to_horizon(
+    events: List[Event],
+    window_start: date,
+    days: int,
+) -> List[Event]:
+    """Hard cap: keep only events whose calendar day is in [start, start+days)."""
+    horizon = max(1, int(days))
+    end = window_start + timedelta(days=horizon - 1)
+    out: List[Event] = []
+    for ev in events:
+        start = parse_tec_datetime(ev.start_date)
+        if start and window_start <= start.date() <= end:
+            out.append(ev)
+    return out
+
+
 def events_next_days(
     events: List[Event],
     on: date,
@@ -268,6 +297,8 @@ def events_next_days(
                 continue
         out.append(ev)
     out = ensure_meditation_in_horizon(out, on, days=days)
+    # Re-clamp after meditation inject so a stub can never widen the window.
+    out = clamp_events_to_horizon(out, on, days)
     # Re-apply "after" so a stub that already ended tonight is not re-injected
     if after is not None:
         filtered: List[Event] = []

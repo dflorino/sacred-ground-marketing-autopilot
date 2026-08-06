@@ -270,9 +270,22 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
             ),
             int(cfg.get("max_week_ahead_events_in_caption") or 8),
         )
+        # Hard safety: caption never lists more calendar days than horizon_days.
+        ahead_events = classify.clamp_events_to_horizon(
+            ahead_events, window_start, horizon
+        )
+        # Retire stale unposted week-ahead drafts for tonight that still carry
+        # an old 3-day window or founder Screenshot exterior rotation.
+        skipped_drafts.extend(
+            store.retire_stale_week_ahead_drafts(
+                day=day,
+                horizon_days=horizon,
+            )
+        )
         if ahead_events:
             img = images.plan_image(ahead_events, "week_ahead", day=day)
             sched = schedule.schedule_week_ahead(day)
+            wa_created = 0
             for platform in platforms:
                 cap = captions.caption_week_ahead(ahead_events, platform, day)
                 draft = _make_draft(
@@ -286,6 +299,7 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                     notes=notes_base
                     + [
                         "daily_7pm_upcoming",
+                        f"horizon_days={horizon}",
                         f"horizon_start={window_start.isoformat()}",
                     ],
                 )
@@ -293,6 +307,7 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                     if wa_cfg.get("auto_publish") and not is_paused():
                         draft = _auto_ready_for_publish(draft["id"])
                     created.append(draft)
+                    wa_created += 1
                 else:
                     skipped_drafts.append(
                         {
@@ -301,6 +316,13 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                             "reason": "duplicate_or_override",
                         }
                     )
+            if wa_created and img.url:
+                images.record_image_use(
+                    day=day,
+                    url=img.url,
+                    rule=str(img.rule or img.source),
+                    campaign="week_ahead",
+                )
         else:
             skipped_drafts.append(
                 {"campaign": "week_ahead", "reason": "no_events_in_horizon"}

@@ -174,3 +174,72 @@ def update_draft(draft_id_str: str, **fields: Any) -> Dict[str, Any]:
     # allow_overwrite for intentional status transitions (approve/reject/schedule)
     save_draft(d, allow_overwrite=True)
     return d
+
+
+def _week_ahead_event_day_count(draft: Dict[str, Any]) -> int:
+    days = set()
+    for e in draft.get("events") or []:
+        sd = str((e.get("start_date") or ""))[:10]
+        if sd:
+            days.add(sd)
+    return len(days)
+
+
+def is_stale_week_ahead_draft(draft: Dict[str, Any], horizon_days: int) -> bool:
+    """True if draft still carries a pre-2-day / Screenshot-exterior night post."""
+    if draft.get("campaign") != "week_ahead":
+        return False
+    if _week_ahead_event_day_count(draft) > max(1, int(horizon_days)):
+        return True
+    img = draft.get("image") or {}
+    rule = str(img.get("rule") or "")
+    url = str(img.get("url") or "")
+    source = str(img.get("source") or "")
+    if rule in ("week_ahead_exterior",):
+        return True
+    if "Screenshot-2026-03-05" in url:
+        return True
+    if source in ("branded_store_composite", "store_photo") and "sg-night" not in url:
+        return True
+    return False
+
+
+def retire_stale_week_ahead_drafts(
+    *,
+    day,
+    horizon_days: int,
+) -> List[Dict[str, Any]]:
+    """
+    Mark unposted week-ahead drafts for `day` as skipped when they still use the
+    old 3-day window or founder Screenshot exterior rotation, so publish cannot
+    send them after a correct draft is generated.
+    """
+    day_key = day.isoformat() if hasattr(day, "isoformat") else str(day)
+    retired: List[Dict[str, Any]] = []
+    for d in list_drafts():
+        if d.get("campaign") != "week_ahead":
+            continue
+        if d.get("status") in ("posted", "scheduled", "skipped", "rejected"):
+            continue
+        fp = d.get("fingerprint") or ""
+        if f"|{day_key}|" not in f"|{fp}|":
+            continue
+        if not is_stale_week_ahead_draft(d, horizon_days):
+            continue
+        reason = "stale_week_ahead_horizon_or_exterior"
+        update_draft(
+            d["id"],
+            status="skipped",
+            approval_status="skipped",
+            publish_blocked_reason=reason,
+            notes=list(d.get("notes") or []) + [reason],
+        )
+        retired.append(
+            {
+                "campaign": "week_ahead",
+                "platform": d.get("platform"),
+                "draft_id": d.get("id"),
+                "reason": reason,
+            }
+        )
+    return retired
