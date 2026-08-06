@@ -1,4 +1,155 @@
 {
-  "fingerprints": {},
-  "updated_at": null
+  "fingerprints": {
+    "week_ahead|2026-08-05|facebook|23893,23937,23979,24025,24135,24263,24606,24622": {
+      "draft_id": "sgma-2026-08-05-week_ahead-fb-89fc2168",
+      "posted_at": "2026-08-05T19:01:46.506932-05:00",
+      "external": {
+        "zernio": {
+          "post": {
+            "recycling": {
+              "enabled": false,
+              "gapFreq": "month",
+              "recycleCount": 0,
+              "contentVariations": [],
+              "contentVariationIndex": 0
+            },
+            "_id": "6a73ceddca80a77223bf5807",
+            "userId": "6a49a0ca1f5ee39905d0dc6f",
+            "title": "",
+            "content": "As evening settles over the shop, we’re reminded tomorrow is another day—and there’s plenty coming up.\n\nThursday, August 6\n\n• Tarot with Adie\n  12:00 PM–5:00 PM\n  https://shopsacredground.com/book/adie/\n\n• Tai Chi Gung with Sherry Gurley\n  12:00 PM–1:00 PM\n  https://shopsacredground.com/sherry/\n\n• Quantum Alignment Series- Light Codes, Sound Frequencies & Light Language With Eve\n  7:00 PM–9:00 PM\n  https://shopsacredground.com/book/eve-quantum-class/\n\nFriday, August 7\n\n• The Reflexology Reset: Restorative Wellness w/ Cheryl\n  11:00 AM–3:00 PM\n  https://shopsacredground.com/cheryl-2/\n\n• Keeper of the Cards: Robert\n  1:00 PM–6:30 PM\n  https://shopsacredground.com/book/robert/\n\nSaturday, August 8\n\n• Tarot with Adie\n  11:00 AM–3:00 PM\n  https://shopsacredground.com/book/adie/\n\n• Shaman Medium Melissa\n  11:00 AM–2:00 PM\n  https://shopsacredground.com/book/melissa/\n\n• Keeper of the Cards: Robert\n  3:00 PM–7:30 PM\n  https://shopsacredground.com/book/robert/\n\nIf you’re not done for the night yet…\nPeek at the Observatory — it changes every day.\nhttps://shopsacredground.com/sacred-ground-observatory/\n\nAnd don’t forget the Library: download a meditation or playlist, find something to watch or listen to, or explore sacred chanting and music.\nhttps://shopsacredground.com/library/\n\nCall to book a session or grab your spot online.\n847-749-3922\nhttps://shopsacredground.com/events/\n\nAs the night settles, we wish you peace. See you tomorrow.\n\n#SacredGround #ArlingtonHeights #ShopSacredGround #ChicagoEvents #CrystalShop #EnergyHealing #HolisticCenter #RockShop #Kindness",
+            "mediaItems": [
+              {
+                "type": "image",
+                "url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.15-AM.png",
+                "_id": "6a73ceddca80a77223bf5808"
+              }
+            ],
+            "platforms": [
+              {
+                "platform": "facebook",
+                "accountId": {
+                  "_id": "6a49a1f49d9472faae7c274e",
+                  "platform": "facebook",
+                  "profileId": "6a49a0ca1f5ee39905d0dc87",
+                  "displayName": "Sacred Ground",
+                  "isActive": true,
+                  "profilePicture": "https://scontent-lhr11-1.xx.fbcdn.net/v/t39.30808-1/525520556_778113704730537_8989064612556217432_n.jpg?stp=c412.0.720.720a_cp0_dst-jpg_s50x50_tt6&_nc_cat=106&ccb=1-7&_nc_sid=f907e8&_nc_ohc=YLY7y5oQgQAQ7kNvwFeLBdX&_nc_oc=Ado0tUlhSamkfuM_HywacWmw2sN8llEFIT8ZHJJ5Nf7eIycX_1Gx7FTizQgjLVLcBpo&_nc_zt=24&_nc_ht=scontent-lhr11-1.xx&edm=AJdBtusEAAAA&_nc_gid=cg_R0QQW-IDXOaXZelxZ-g&_nc_tpa=Q5bMBQFwkyBTotW3ChvhSgQf_nhtDLw535B9NJqHZ3apnsJLyeNk6O2hapWcUEaKljHCCD3KesyiHO-F&oh=00_AQHjzLmlJNRwusWho12MClnsFbNmge8y-1BmI8U_kwX0VA&oe=6A78943C",
+                  "username": "shopsacredground"
+                },
+                "profileId": "6a49a0ca1f5ee39905d0dc87",
+                "customMedia": [],
+                "scheduledFor": "2026-08-06T00:01:33.111Z",
+                "platformSpecificData": {
+                  "__platformUserIdSnapshot": "10236438766043851:page:101428372368870",
+                  "__usernameSnapshot": "shopsacredground",
+                  "publishingStarted": "2026-08-06T00:01:34.056Z",
+                  "lastPublishStage": "publishing"
+                },
+                "status": "published",
+                "publishAttempts": 0,
+                "contentHash": "dece5d2371bbede683d1596623ad706f",
+                "_id": "6a73ceddca80a77223bf5809",
+                "platformPostId": "101428372368870_1079396207935617",
+                "platformPostUrl": "https://www.facebook.com/101428372368870_1079396207935617",
+                "publishedAt": "2026-08-06T00:01:45.884Z"
+              }
+            ],
+            "scheduledFor": "2026-08-06T00:01:33.111Z",
+            "timezone": "America/Chicago",
+            "status": "published",
+            "tags": [],
+            "hashtags": [],
+            "mentions": [],
+            "visibility": "public",
+            "crosspostingEnabled": true,
+            "metadata": {
+              "usageCounted": true
+            },
+            "publishAttempts": 0,
+            "createdAt": "2026-08-06T00:01:33.615Z",
+            "updatedAt": "2026-08-06T00:01:46.179Z",
+            "__v": 0,
+            "publishingClaimedAt": "2026-08-06T00:01:33.747Z"
+          },
+          "message": "Post published successfully"
+        }
+      }
+    },
+    "week_ahead|2026-08-05|instagram|23893,23937,23979,24025,24135,24263,24606,24622": {
+      "draft_id": "sgma-2026-08-05-week_ahead-ig-57e1f24d",
+      "posted_at": "2026-08-05T19:01:52.387523-05:00",
+      "external": {
+        "zernio": {
+          "post": {
+            "recycling": {
+              "enabled": false,
+              "gapFreq": "month",
+              "recycleCount": 0,
+              "contentVariations": [],
+              "contentVariationIndex": 0
+            },
+            "_id": "6a73ceeaa8c5e2e1931c2dce",
+            "userId": "6a49a0ca1f5ee39905d0dc6f",
+            "title": "",
+            "content": "As the night comes to a close at Sacred Ground, tomorrow is already quietly waiting with more to explore.\n\nThursday, August 6\n\n• Tarot with Adie\n  12:00 PM–5:00 PM\n  https://shopsacredground.com/book/adie/\n\n• Tai Chi Gung with Sherry Gurley\n  12:00 PM–1:00 PM\n  https://shopsacredground.com/sherry/\n\n• Quantum Alignment Series- Light Codes, Sound Frequencies & Light Language With Eve\n  7:00 PM–9:00 PM\n  https://shopsacredground.com/book/eve-quantum-class/\n\nFriday, August 7\n\n• The Reflexology Reset: Restorative Wellness w/ Cheryl\n  11:00 AM–3:00 PM\n  https://shopsacredground.com/cheryl-2/\n\n• Keeper of the Cards: Robert\n  1:00 PM–6:30 PM\n  https://shopsacredground.com/book/robert/\n\nSaturday, August 8\n\n• Tarot with Adie\n  11:00 AM–3:00 PM\n  https://shopsacredground.com/book/adie/\n\n• Shaman Medium Melissa\n  11:00 AM–2:00 PM\n  https://shopsacredground.com/book/melissa/\n\n• Keeper of the Cards: Robert\n  3:00 PM–7:30 PM\n  https://shopsacredground.com/book/robert/\n\nBefore you turn in — if the evening still has a little room in it…\nVisit the Observatory. It changes every day.\nhttps://shopsacredground.com/sacred-ground-observatory/\n\nOr wander the Library for a meditation, a playlist, or something gentle to watch or hear.\nhttps://shopsacredground.com/library/\n\nCall to book a session or grab your spot online.\n847-749-3922\nhttps://shopsacredground.com/events/\n\nGood night from Sacred Ground. Tomorrow’s another day, and we’ll be here.\n\n#SacredGround #ArlingtonHeights #ShopSacredGround #ChicagoEvents #CrystalShop #EnergyHealing #HolisticCenter #RockShop #Kindness #Chicagoland #HolisticChicago",
+            "mediaItems": [
+              {
+                "type": "image",
+                "url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.15-AM.png",
+                "_id": "6a73ceeaa8c5e2e1931c2dcf"
+              }
+            ],
+            "platforms": [
+              {
+                "platform": "instagram",
+                "accountId": {
+                  "_id": "6a49a12e9d9472faae7c2220",
+                  "profileId": "6a49a0ca1f5ee39905d0dc87",
+                  "platform": "instagram",
+                  "displayName": "Sacred Ground",
+                  "isActive": true,
+                  "profilePicture": "https://scontent-lhr11-1.cdninstagram.com/v/t51.2885-19/313932603_854045628963650_758437280360514790_n.jpg?stp=dst-jpg_s206x206_tt6&_nc_cat=107&ccb=7-5&_nc_sid=bf7eb4&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=pqL0K1cdkOoQ7kNvwHWVrr7&_nc_oc=AdrBiXDxlHFwR5SehiHkwdVqacR10sQRCR6o5cY1cqzF0Pz5DDpturtOobBtMZ2zn0U&_nc_zt=24&_nc_ht=scontent-lhr11-1.cdninstagram.com&edm=AP4hL3IEAAAA&_nc_tpa=Q5bMBQFJbSyTQZOIluDImS1xMCZl70xghaiW96g1l04Rao-zzFJQp5fM5098gzMYot8PKOicMsOZaD4Mew&oh=00_AQFQ5tlHJ7bR4ot4oBl_AEca-LCvjfhEyapHK23NFsCvQw&oe=6A78754A",
+                  "username": "shopsacredground"
+                },
+                "profileId": "6a49a0ca1f5ee39905d0dc87",
+                "customMedia": [],
+                "scheduledFor": "2026-08-06T00:01:46.617Z",
+                "platformSpecificData": {
+                  "__platformUserIdSnapshot": "27979692144969047",
+                  "__usernameSnapshot": "shopsacredground",
+                  "publishingStarted": "2026-08-06T00:01:47.533Z",
+                  "lastPublishStage": "awaiting-finalize",
+                  "containerCreatedAt": "2026-08-06T00:01:52.076Z",
+                  "pendingContainerId": "18079814090677764",
+                  "publishedCaption": "As the night comes to a close at Sacred Ground, tomorrow is already quietly waiting with more to explore.\n\nThursday, August 6\n\n• Tarot with Adie\n  12:00 PM–5:00 PM\n  https://shopsacredground.com/book/adie/\n\n• Tai Chi Gung with Sherry Gurley\n  12:00 PM–1:00 PM\n  https://shopsacredground.com/sherry/\n\n• Quantum Alignment Series- Light Codes, Sound Frequencies & Light Language With Eve\n  7:00 PM–9:00 PM\n  https://shopsacredground.com/book/eve-quantum-class/\n\nFriday, August 7\n\n• The Reflexology Reset: Restorative Wellness w/ Cheryl\n  11:00 AM–3:00 PM\n  https://shopsacredground.com/cheryl-2/\n\n• Keeper of the Cards: Robert\n  1:00 PM–6:30 PM\n  https://shopsacredground.com/book/robert/\n\nSaturday, August 8\n\n• Tarot with Adie\n  11:00 AM–3:00 PM\n  https://shopsacredground.com/book/adie/\n\n• Shaman Medium Melissa\n  11:00 AM–2:00 PM\n  https://shopsacredground.com/book/melissa/\n\n• Keeper of the Cards: Robert\n  3:00 PM–7:30 PM\n  https://shopsacredground.com/book/robert/\n\nBefore you turn in — if the evening still has a little room in it…\nVisit the Observatory. It changes every day.\nhttps://shopsacredground.com/sacred-ground-observatory/\n\nOr wander the Library for a meditation, a playlist, or something gentle to watch or hear.\nhttps://shopsacredground.com/library/\n\nCall to book a session or grab your spot online.\n847-749-3922\nhttps://shopsacredground.com/events/\n\nGood night from Sacred Ground. Tomorrow’s another day, and we’ll be here.\n\n#SacredGround #ArlingtonHeights #ShopSacredGround #ChicagoEvents #CrystalShop #EnergyHealing #HolisticCenter #RockShop #Kindness #Chicagoland #HolisticChicago"
+                },
+                "status": "processing",
+                "publishAttempts": 0,
+                "contentHash": "0a20663fc77758dfbb61e176215a4199",
+                "_id": "6a73ceeaa8c5e2e1931c2dd0"
+              }
+            ],
+            "scheduledFor": "2026-08-06T00:01:46.617Z",
+            "timezone": "America/Chicago",
+            "status": "publishing",
+            "tags": [],
+            "hashtags": [],
+            "mentions": [],
+            "visibility": "public",
+            "crosspostingEnabled": true,
+            "metadata": {
+              "usageCounted": true
+            },
+            "publishAttempts": 0,
+            "createdAt": "2026-08-06T00:01:46.869Z",
+            "updatedAt": "2026-08-06T00:01:52.091Z",
+            "__v": 0,
+            "publishingClaimedAt": "2026-08-06T00:01:47.119Z"
+          },
+          "message": "Post published successfully"
+        }
+      }
+    }
+  },
+  "updated_at": "2026-08-05T19:01:52.387537-05:00"
 }
