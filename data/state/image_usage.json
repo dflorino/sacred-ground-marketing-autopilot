@@ -43,6 +43,20 @@
       "rule": "morning_flyer",
       "campaign": "today",
       "platform": "instagram"
+    },
+    {
+      "date": "2026-08-07",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-07-reflexology-1.png",
+      "rule": "morning_flyer",
+      "campaign": "today",
+      "platform": "facebook"
+    },
+    {
+      "date": "2026-08-07",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-07-the-reflexology-reset-b.png",
+      "rule": "morning_flyer",
+      "campaign": "today",
+      "platform": "instagram"
     }
   ]
 }
