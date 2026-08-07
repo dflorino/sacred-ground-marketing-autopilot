@@ -1,3 +1,46 @@
+# Cursor Automations — expected live schedule (America/Chicago)
+
+Code schedule shipped in `87f5375`. Cursor Cloud Automations **cannot be listed or edited from agent chat** (Automations skill is creation-only; no inventory API). Founder must apply the clicks below in **Cursor → Automations** (or Agents Window → Automations).
+
+| Expected name | Cron / time | Commands | Status |
+|---|---|---|---|
+| **SG Morning Tomorrow 9am Social** | Daily **9:00 AM** America/Chicago (`0 9 * * *` in that TZ) | `generate-morning-flyers --start-offset 1 --days 1 --source live-strict` → `run --source live-strict` → `publish-today` | **Edit existing** “SG Today 7am…” if present; disable any leftover 7am duplicate |
+| **SG Afternoon Spotlight 5pm Social** | Daily **5:00 PM** America/Chicago (`0 17 * * *`) | `run --source live-strict` → `publish-afternoon-spotlight` | **Create if missing** |
+| **SG Week-Ahead 7pm Social** | Daily **7:00 PM** America/Chicago (`0 19 * * *`) | `run --source live-strict` → `publish-week-ahead` | **Leave intact** — only verify Next run shows 7:00 PM CT |
+| **SG Tuesday Meditation 4pm Social** | **Tue 4:00 PM** America/Chicago (`0 16 * * 2`) | `run --source live-strict` → `publish-tuesday-meditation` | **Leave intact** — only verify Tuesday 4:00 PM CT |
+| SG Daily Reels 10:30am | Daily 10:30 AM (scaffold) | none (not wired) | **Inactive** — do not activate |
+
+Secret on all live image jobs: **`ZERNIO_API_KEY`**. Repo: `dflorino/sacred-ground-marketing-autopilot` · branch `main`.
+
+## Founder clicks — morning (rename + 9am)
+
+1. Open **Cursor → Automations**.
+2. Find the morning job (likely **SG Today 7am Social** or similar).
+3. **Rename** → **SG Morning Tomorrow 9am Social**.
+4. **Schedule** → **9:00 AM** · timezone **America/Chicago** (confirm Next run is 9:00 AM CT, not 7:00 AM).
+5. **Instructions / prompt** → paste the morning Agent instructions block below (tomorrow-horizon + flyer ensure + `publish-today` only).
+6. Confirm commands are `publish-today` (not week-ahead / afternoon). Campaign key stays `today`.
+7. Disable any second Active automation still on 7:00 AM.
+8. Save · Status **Active**.
+
+## Founder clicks — afternoon spotlight (create if missing)
+
+1. Automations → **New automation**.
+2. Name: **SG Afternoon Spotlight 5pm Social**.
+3. Trigger: schedule · **Every day · 5:00 PM** · **America/Chicago**.
+4. Repo/branch: `dflorino/sacred-ground-marketing-autopilot` / `main`.
+5. Secret: `ZERNIO_API_KEY`.
+6. Instructions → paste the afternoon Agent instructions block below.
+7. Save · Status **Active**.
+8. Do **not** change week-ahead 7pm or Tuesday 4pm while creating this.
+
+## Founder clicks — verify only (do not retune)
+
+1. **SG Week-Ahead 7pm Social** — Next run **7:00 PM** America/Chicago; commands end with `publish-week-ahead`.
+2. **SG Tuesday Meditation 4pm Social** — **Tuesday · 4:00 PM** America/Chicago; commands end with `publish-tuesday-meditation`.
+
+---
+
 # Automation draft — SG Morning Tomorrow 9am Social (LIVE)
 
 Daily morning posts for Sacred Ground Marketing Autopilot.
@@ -211,7 +254,7 @@ Hard rules:
 3. Repo: `dflorino/sacred-ground-marketing-autopilot` · branch `main`
 4. Secret: `ZERNIO_API_KEY` (same as Today / week-ahead)
 5. Status: **Active**
-6. Keep separate from the 7am Today and 7pm week-ahead automations
+6. Keep separate from the 9am morning, 5pm afternoon, and 7pm week-ahead automations
 
 ---
 
@@ -221,7 +264,7 @@ Daily AI-Deneene short-form video for **Instagram Reels + Facebook Reels**.
 
 **Status: NOT Active.** Scaffold only. `daily_reel.auto_publish=false`. Do **not** turn this automation on until a 9:16 video has been posted successfully via Zernio/ML Social (or Meta Reels) end-to-end.
 
-Suggested time: **10:30 AM America/Chicago** (late morning — clears 7am Today, 4pm Tuesday meditation, 7pm week-ahead image jobs).
+Suggested time: **10:30 AM America/Chicago** (late morning — clears 9am morning, 4pm Tuesday meditation, 5pm afternoon, 7pm week-ahead image jobs).
 
 TikTok / YouTube Shorts = optional later (same asset).
 
@@ -268,4 +311,4 @@ Hard rules:
 3. Repo: `dflorino/sacred-ground-marketing-autopilot` · `main`
 4. Secrets: `ZERNIO_API_KEY` (+ optional `HEYGEN_*`)
 5. Status: **Inactive** until Founder approves first auto run
-6. Keep separate from image automations (7am / 4pm / 7pm)
+6. Keep separate from image automations (9am / 4pm Tue / 5pm / 7pm)
