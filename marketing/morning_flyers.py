@@ -47,10 +47,13 @@ LAYOUT_ARTISTIC = "artistic_hero"
 NOTES = (
     "Sacred Ground daily flyer template (Thursday-style): gold standard "
     "assets/sg-morning-flyer-2026-08-06-today-collage.png. ~75% of new/future "
-    "morning flyers MUST use Thursday-style clear stacked event cards (left "
-    "cards + right graphics + logo footer); up to ~25% may be artistic "
-    "single-event hero layouts IF still readable. Header WEEKDAY AT Sacred "
-    "Ground + Mind • Body • Spirit • Community; LEFT stacked rounded event "
+    "morning flyers MUST use Thursday-style clear stacked EQUAL event cards "
+    "(left cards + right graphics + logo footer) — multi-event days give "
+    "EVERY practitioner the SAME card size / visual weight (gold standard "
+    "Aug 6). FORBIDDEN: one hero photo + tiny ALSO TODAY corner badge "
+    "(Aug 7 FB reflexology/Robert rejected). Up to ~25% may be artistic "
+    "single-event hero layouts ONLY when there is exactly one event. Header "
+    "WEEKDAY AT Sacred Ground + Mind • Body • Spirit • Community; LEFT stacked rounded event "
     "cards; RIGHT evocative graphics in clear zones; FOOTER logo + "
     f"{WEBSITE} + {PHONE} + come-as-you-are. Dark elegant + gold accents "
     "(vary by day). Easy to read — not collage soup. Versions of the system, "
@@ -264,16 +267,16 @@ def build_flyer_copy(day: date, events: Sequence[Event]) -> Dict[str, Any]:
     date_short = f"{weekday} · {day.strftime('%B').upper()} {day.day}"
 
     if not picked:
-        label = "Sacred Ground today — visit us"
+        label = "Sacred Ground — visit us"
         covers: List[str] = []
         lines = [
-            "SACRED GROUND TODAY",
+            "SACRED GROUND",
             "Crystals · readings · quiet wonder",
             "Come browse · Arlington Heights",
             date_short,
         ]
         slug = "visit"
-        primary = "Sacred Ground Today"
+        primary = "Sacred Ground Visit"
         also: List[str] = []
     else:
         primary_ev = picked[0]
@@ -324,10 +327,10 @@ def build_generation_prompt(
     `variant` a = Facebook (cleaner gold-standard card energy OK);
     `variant` b = Instagram — same full-day cards, richer background pop required.
     """
-    also = copy.get("also") or []
-    also_bit = ""
-    if also:
-        also_bit = " Also today (secondary): " + " · ".join(also) + "."
+    covers = list(copy.get("covers") or [])
+    events_bit = ""
+    if covers:
+        events_bit = " Events on equal cards: " + " · ".join(covers[:3]) + "."
     visit = ""
     if copy.get("empty_day"):
         visit = (
@@ -335,13 +338,23 @@ def build_generation_prompt(
             "(crystals, quiet wonder) — not a plain storefront photo."
         )
     style = layout or choose_layout_style(day, events)
+    n_events = len(pick_events_for_flyer(events or []))
+    # Multi-event days never use artistic hero (equal cards only).
+    if n_events >= 2:
+        style = LAYOUT_THURSDAY
     weekday = day.strftime("%A").upper()
     key = (variant or VARIANT_A).lower().strip()
     is_b = key in (VARIANT_B, "b", "ig", "instagram", "alt")
+    equal_rule = (
+        " EQUAL SPACE RULE (hard): when 2+ events appear, every event gets the "
+        "SAME card size and visual weight — stacked equal rounded cards like "
+        "the Aug 6 gold standard. FORBIDDEN: one large hero photo/title with a "
+        "tiny ALSO TODAY / secondary corner badge for another practitioner."
+    )
     shared = (
-        f"Chicago date {day.isoformat()}. Primary: {copy.get('primary')}. "
+        f"Chicago date {day.isoformat()}. "
         f"Date/time text: {copy.get('date_short')}. "
-        f"{also_bit}{visit} "
+        f"{events_bit}{visit} {equal_rule} "
         "Elegant mixed fonts (script + serif), circular Sacred Ground sun-face "
         f"logo, footer with {WEBSITE} and {PHONE}. Prebranded finished flyer. "
         "CRITICAL: do NOT include any prices, dollar signs, ticket costs, or "
@@ -367,24 +380,25 @@ def build_generation_prompt(
             "layout energy is OK — clear readable cards, elegant contrast, "
             "polished without needing maximal background drama."
         )
-    if style == LAYOUT_ARTISTIC:
+    if style == LAYOUT_ARTISTIC and n_events <= 1:
         return (
             "Sacred Ground artistic single-event hero morning flyer, square "
             f"1080x1080. Still highly readable — not collage soup. {shared}"
             f"{bg_energy} "
-            "Centered hero composition OK for one primary event; keep text "
-            "high-contrast; secondary events as a short ALSO TODAY line only."
+            "Centered hero composition OK only when there is exactly ONE event. "
+            "Never use this layout to demote a second practitioner into a tiny corner."
         )
-    # Default / 75% path: Thursday-style clear cards.
+    # Default / multi-event path: Thursday-style equal cards.
     return (
-        "Sacred Ground Thursday-style clear card morning flyer, square 1080x1080. "
+        "Sacred Ground Thursday-style EQUAL card morning flyer, square 1080x1080. "
         "Gold-standard layout system (do not clone colors): HEADER "
         f"'{weekday} AT' + Sacred Ground gold script + "
         "'Mind • Body • Spirit • Community'; LEFT 1–3 stacked rounded event "
-        "cards (icon + title + host + time + short keywords); RIGHT evocative "
-        "graphics in clear zones aligned to those cards; FOOTER logo + website "
-        f"+ phone + come-as-you-are. Dark elegant + gold accents. {shared}"
-        f"{bg_energy}"
+        "cards of IDENTICAL height (icon + title + host + time + short keywords) "
+        "— equal visual weight for every event; RIGHT evocative graphics in "
+        "clear zones aligned to those cards (not a second tiny event badge); "
+        "FOOTER logo + website + phone + come-as-you-are. Dark elegant + gold "
+        f"accents. {shared}{bg_energy}"
     )
 
 
@@ -677,7 +691,7 @@ def render_local_flyer(
             radius=28,
             fill=(*pal["card_fills"][0], 235),
         )
-        draw.text((card_x0 + 28, y0 + 36), "SACRED GROUND TODAY", font=fonts["card_title"], fill=gold)
+        draw.text((card_x0 + 28, y0 + 36), "SACRED GROUND", font=fonts["card_title"], fill=gold)
         draw.text((card_x0 + 28, y0 + 90), "Crystals · readings · quiet wonder", font=fonts["card_body"], fill=pal["card_text"])
         draw.text((card_x0 + 28, y0 + 130), "Come browse · Arlington Heights", font=fonts["card_body"], fill=pal["card_text"])
         draw.text((card_x0 + 28, y0 + 180), str(copy["date_short"]), font=fonts["small"], fill=pal["muted"])

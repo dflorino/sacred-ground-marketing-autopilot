@@ -26,6 +26,34 @@
     "If the night still feels open…\nThe Observatory is waiting — it changes every day.\nhttps://shopsacredground.com/sacred-ground-observatory/\n\nAnd the Library is there when you want something soft to land in: meditations, playlists, video, chanting, and music.\nhttps://shopsacredground.com/library/"
   ],
   "week_ahead_night_block": "If you’re not done for the night yet…\nPeek at the Observatory — it changes every day.\nhttps://shopsacredground.com/sacred-ground-observatory/\n\nAnd don’t forget the Library: download a meditation or playlist, find something to watch or listen to, or explore sacred chanting and music.\nhttps://shopsacredground.com/library/",
+  "tomorrow_openers": [
+    "See what you can do tomorrow at Sacred Ground — {day_label}.",
+    "Look at what you can book tomorrow at Sacred Ground — {day_label}.",
+    "Tomorrow at Sacred Ground — {day_label}.",
+    "Here’s what’s waiting tomorrow at Sacred Ground — {day_label}.",
+    "A peek at tomorrow at Sacred Ground — {day_label}."
+  ],
+  "tomorrow_single_openers": [
+    "See what you can do tomorrow at Sacred Ground — {title}.",
+    "Look at what you can book tomorrow — {title}.",
+    "Tomorrow at Sacred Ground — {title}."
+  ],
+  "tomorrow_meditation_openers": [
+    "Tomorrow at Sacred Ground — Free Community Meditation.",
+    "See what you can do tomorrow — Free Community Meditation at Sacred Ground."
+  ],
+  "afternoon_spotlight_tonight_openers": [
+    "Tonight at Sacred Ground — {title}.",
+    "Still time tonight — {title} at Sacred Ground.",
+    "A beautiful evening invitation: {title}.",
+    "As the afternoon softens — {title} tonight at Sacred Ground."
+  ],
+  "afternoon_spotlight_tomorrow_openers": [
+    "Looking ahead — {title} at Sacred Ground.",
+    "Save a spot for tomorrow — {title}.",
+    "Something beautiful coming up: {title}.",
+    "A gentle afternoon peek at tomorrow — {title}."
+  ],
   "tuesday_meditation_openers": [
     "Tonight at Sacred Ground — Free Community Meditation with {practitioner}.",
     "Settle in with us tonight for Free Community Meditation — {style}.",

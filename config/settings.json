@@ -19,8 +19,12 @@
   "campaigns": {
     "today": {
       "enabled": true,
-      "label": "Today at Sacred Ground",
-      "schedule_local_time": "07:00",
+      "label": "Tomorrow at Sacred Ground",
+      "schedule_local_time": "09:00",
+      "target_offset_days": 1,
+      "campaign_word": "TOMORROW",
+      "same_day_evening_start_hour": 17,
+      "include_same_day_evening": true,
       "platforms": ["facebook", "instagram"],
       "source": "the_events_calendar",
       "auto_publish": true,
@@ -28,7 +32,7 @@
       "default_image_url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.15-AM.png",
       "image_policy": "image_rules_library",
       "image_rules_file": "config/image_rules.json",
-      "notes": "Every morning 7am CT: auto-publish Today FB+IG from live TEC (or visit/brand post if empty). Images from config/image_rules.json."
+      "notes": "Every morning 9:00 AM CT (flip schedule_local_time to 10:00 for 10am): FB+IG promoting NEXT calendar day (~24h to book) PLUS any remaining same-day evening events (start >= same_day_evening_start_hour, default 5pm) so tonight's gatherings (e.g. Lions Gate 8pm) are never dropped on the day-of morning post. Campaign key stays 'today' for publish-today. Flyer prefers publish-day when tonight evening exists, else tomorrow."
     },
     "week": {
       "enabled": true,
@@ -55,7 +59,23 @@
       "cta_site": "shopsacredground.com",
       "image_policy": "creative_sky_rotation",
       "image_atmosphere_file": "config/image_atmosphere.json",
-      "notes": "Every evening 7pm CT: rotating openers (no “this week”), next 2 days starting tomorrow, Observatory + Library night block. Images: creative night-sky pack + seasonal/holiday storefronts; full moon ONLY on full-moon nights. No morning specialty art at night."
+      "include_same_day_evening": true,
+      "same_day_evening_start_hour": 17,
+      "notes": "Every evening 7pm CT: next 2 days starting tomorrow PLUS any remaining same-day evening events (so 8pm gatherings still appear at 7pm). Observatory + Library night block. Night creative pool — no morning specialty art."
+    },
+    "afternoon_spotlight": {
+      "enabled": true,
+      "label": "Afternoon Spotlight",
+      "schedule_local_time": "17:00",
+      "platforms": ["facebook", "instagram"],
+      "source": "the_events_calendar",
+      "auto_publish": true,
+      "same_day_evening_start_hour": 17,
+      "prefer_same_day_evening": true,
+      "skip_tuesday_meditation_duplicate": true,
+      "empty_day_fallback": true,
+      "image_policy": "image_rules_library",
+      "notes": "Daily 5:00 PM CT (Meta Insights: Lions Gate–style ~5pm promo had strong early traction; leaves a clear gap before 7pm week_ahead). Flip schedule_local_time to 16:00 for 4pm. Single-event spotlight — not a full calendar dump. Prefer tonight's best remaining evening event; else tomorrow's standout; else warm brand/visit. Avoids stacking a third full calendar with morning-tomorrow + week_ahead."
     },
     "spotlight": {
       "enabled": true,
@@ -118,7 +138,8 @@
     "open house",
     "anniversary",
     "retreat",
-    "immersion"
+    "immersion",
+    "lions gate"
   ],
   "spotlight_only_special": true,
   "star_marks_featured_not_spotlight": true,

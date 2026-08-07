@@ -56,7 +56,11 @@ def main(argv: Optional[List[str]] = None) -> int:
 
     sub.add_parser(
         "publish-today",
-        help="Schedule/publish approved Today drafts via Zernio (needs ZERNIO_API_KEY)",
+        help="Schedule/publish morning (tomorrow-horizon) drafts via Zernio",
+    )
+    sub.add_parser(
+        "publish-afternoon-spotlight",
+        help="Schedule/publish afternoon spotlight drafts via Zernio (default 5pm CT)",
     )
     sub.add_parser(
         "publish-week-ahead",
@@ -82,7 +86,16 @@ def main(argv: Optional[List[str]] = None) -> int:
         "--days",
         type=int,
         default=7,
-        help="Number of days starting today America/Chicago (default 7)",
+        help="Number of days starting from start day America/Chicago (default 7)",
+    )
+    p_flyers.add_argument(
+        "--start-offset",
+        type=int,
+        default=0,
+        help=(
+            "Days after today to begin (0=today). "
+            "Morning automation uses 1 so the flyer matches tomorrow's events."
+        ),
     )
     p_flyers.add_argument(
         "--source",
@@ -205,6 +218,13 @@ def main(argv: Optional[List[str]] = None) -> int:
         _print(result)
         return 0 if result.get("ok") else 1
 
+    if args.cmd == "publish-afternoon-spotlight":
+        from . import publish
+
+        result = publish.publish_afternoon_spotlight_drafts()
+        _print(result)
+        return 0 if result.get("ok") else 1
+
     if args.cmd == "publish-week-ahead":
         from . import publish
 
@@ -246,9 +266,14 @@ def main(argv: Optional[List[str]] = None) -> int:
             _print({"ok": True, "day": day_s, "platform": args.platform, "entry": entry})
             return 0
 
+        from datetime import timedelta
+
+        from .ingest import today_local
+
         src = "live" if args.source == "live-strict" else args.source
+        start = today_local() + timedelta(days=int(getattr(args, "start_offset", 0) or 0))
         result = mf.ensure_flyers_for_range(
-            days=args.days, source=src, force=args.force
+            days=args.days, start=start, source=src, force=args.force
         )
         _print(result)
         return 0 if result.get("ok") else 1

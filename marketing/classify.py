@@ -363,3 +363,159 @@ def short_blurb(event: Event, max_len: int = 160) -> str:
         return text
     cut = text[: max_len - 1].rsplit(" ", 1)[0]
     return cut + "…"
+
+
+def _evening_hour_from(cfg_key: str, default: int = 17) -> int:
+    cfg = (settings().get("campaigns") or {}).get(cfg_key) or {}
+    return int(cfg.get("same_day_evening_start_hour") or default)
+
+
+def is_free_community_event(event: Event) -> bool:
+    """True for free community gatherings (Lions Gate, etc.) — not Tuesday doors-close."""
+    low = f"{event.title} {event.cost} {event.excerpt}".lower()
+    if "free" not in low:
+        return False
+    return any(k in low for k in ("community", "all welcome", "all are welcome"))
+
+
+def event_still_upcoming(event: Event, after: Optional[datetime] = None) -> bool:
+    if after is None:
+        return True
+    start = parse_tec_datetime(event.start_date)
+    finish = parse_tec_datetime(event.end_date) or start
+    if not finish:
+        return False
+    if finish.tzinfo is None and after.tzinfo is not None:
+        finish = finish.replace(tzinfo=after.tzinfo)
+    return finish > after
+
+
+def same_day_evening_events(
+    events: List[Event],
+    day: date,
+    *,
+    after: Optional[datetime] = None,
+    evening_hour: Optional[int] = None,
+) -> List[Event]:
+    """Events on `day` that start at/after evening_hour and have not ended."""
+    hour = evening_hour if evening_hour is not None else _evening_hour_from("today", 17)
+    out: List[Event] = []
+    for ev in events_on_day(events, day):
+        start = parse_tec_datetime(ev.start_date)
+        if not start or start.hour < hour:
+            continue
+        if not event_still_upcoming(ev, after):
+            continue
+        out.append(ev)
+    out.sort(key=lambda e: e.start_date)
+    return out
+
+
+def merge_events_by_id(*groups: List[Event]) -> List[Event]:
+    seen = set()
+    out: List[Event] = []
+    for group in groups:
+        for ev in group:
+            if ev.id in seen:
+                continue
+            seen.add(ev.id)
+            out.append(ev)
+    out.sort(key=lambda e: e.start_date)
+    return out
+
+
+def morning_lineup_events(
+    events: List[Event],
+    publish_day: date,
+    *,
+    after: Optional[datetime] = None,
+) -> Tuple[List[Event], List[Event], List[Event], date]:
+    """Return (combined, tomorrow, tonight_evening, target_day)."""
+    from .schedule import morning_target_day
+
+    cfg = (settings().get("campaigns") or {}).get("today") or {}
+    target = morning_target_day(publish_day)
+    tomorrow = events_on_day(events, target)
+    tonight: List[Event] = []
+    if cfg.get("include_same_day_evening", True):
+        tonight = same_day_evening_events(
+            events,
+            publish_day,
+            after=after,
+            evening_hour=int(cfg.get("same_day_evening_start_hour") or 17),
+        )
+    combined = merge_events_by_id(tonight, tomorrow)
+    return combined, tomorrow, tonight, target
+
+
+def _spotlight_rank(event: Event) -> tuple:
+    """Higher is better for afternoon single-event spotlight."""
+    start = parse_tec_datetime(event.start_date)
+    hour = start.hour if start else 0
+    free = is_free_community_event(event) or "free" in (event.cost or "").lower()
+    community = is_free_community_event(event) or is_community_meditation(event)
+    special = bool(event.is_special or event.is_one_time)
+    featured = bool(event.featured)
+    lions = "lions gate" in (event.title or "").lower()
+    return (lions, special, community, free, featured, hour)
+
+
+def pick_afternoon_spotlight(
+    events: List[Event],
+    day: date,
+    *,
+    after: Optional[datetime] = None,
+) -> Optional[Event]:
+    """
+    Prefer tonight's best remaining evening event; else tomorrow's standout.
+    On Tuesdays, skip the standing Free Community Meditation (4pm campaign owns it).
+    """
+    cfg = (settings().get("campaigns") or {}).get("afternoon_spotlight") or {}
+    hour = int(cfg.get("same_day_evening_start_hour") or 17)
+    skip_tue_med = bool(cfg.get("skip_tuesday_meditation_duplicate", True))
+
+    def _ok(ev: Event) -> bool:
+        if skip_tue_med and day.weekday() == 1 and is_community_meditation(ev):
+            return False
+        return True
+
+    tonight: List[Event] = []
+    if cfg.get("prefer_same_day_evening", True):
+        tonight = [
+            e
+            for e in same_day_evening_events(
+                events, day, after=after, evening_hour=hour
+            )
+            if _ok(e)
+        ]
+    if tonight:
+        return sorted(tonight, key=_spotlight_rank, reverse=True)[0]
+
+    from .schedule import morning_target_day
+
+    target = morning_target_day(day)
+    tomorrow = [e for e in events_on_day(events, target) if _ok(e)]
+    if not tomorrow:
+        return None
+    return sorted(tomorrow, key=_spotlight_rank, reverse=True)[0]
+
+
+def with_same_day_evening(
+    ahead_events: List[Event],
+    all_events: List[Event],
+    day: date,
+    *,
+    after: Optional[datetime] = None,
+    campaign_key: str = "week_ahead",
+) -> List[Event]:
+    """Prepend remaining same-day evening events into a forward horizon list."""
+    cfg = (settings().get("campaigns") or {}).get(campaign_key) or {}
+    if not cfg.get("include_same_day_evening", True):
+        return ahead_events
+    tonight = same_day_evening_events(
+        all_events,
+        day,
+        after=after,
+        evening_hour=int(cfg.get("same_day_evening_start_hour") or 17),
+    )
+    return merge_events_by_id(tonight, ahead_events)

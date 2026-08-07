@@ -1,17 +1,21 @@
-# Automation draft — SG Today 7am Social (LIVE)
+# Automation draft — SG Morning Tomorrow 9am Social (LIVE)
 
-Daily Today posts for Sacred Ground Marketing Autopilot.
+Daily morning posts for Sacred Ground Marketing Autopilot.
 
-**Status: auto_publish ON.** Every morning at 7:00 AM America/Chicago: generate Today FB+IG and publish via Zernio.
+**Status: auto_publish ON.** Every morning at **9:00 AM America/Chicago**: generate FB+IG promoting **tomorrow’s** TEC events (plus any remaining same-day evening gatherings) and publish via Zernio.
+
+Campaign key stays `today` / CLI `publish-today` for compatibility. Content horizon: `target_offset_days: 1`. On-image word: `TOMORROW`. Flip `schedule_local_time` to `10:00` in `config/settings.json` if Founder prefers 10am.
 
 ## Image rules (locked)
 
 | Situation | Image used |
 |-----------|------------|
-| **Date flyer in `morning_flyers.json`** | Cheryl-style prebranded flyer (preferred every day) |
+| **Date flyer in `morning_flyers.json`** | Thursday-style **equal-card** prebranded flyer (preferred) |
 | Specialty match (tarot, reiki, etc.) | Rule library URL (7-day no-repeat) — only if no date flyer URL |
 | Multi-event / no specialty | Rotation rules — only if no date flyer |
 | **Empty calendar** | Warm visit flyer (generate-if-missing) + visit caption — not storefront-only |
+
+**Equal cards:** multi-event flyers must give every practitioner the same card size (Aug 6 gold standard). Never hero + tiny corner secondary.
 
 **Never put prices on morning flyers** — no `$`, dollar amounts, or ticket costs on the graphic.
 
@@ -20,10 +24,10 @@ Never post without a real media URL.
 ## Daily commands (Cloud Agent)
 
 ```bash
-# Prefer weekly prebuild (or run days=1 at 7am). Generate-if-missing before Today.
+# Prefer weekly prebuild. Morning job ensures tomorrow (+ today when evening events remain).
 python3 -m marketing generate-morning-flyers --days 7 --source live-strict
-# If needs_upload: MCP upload_media each local PNG → set url/media_id:
-#   python3 -m marketing generate-morning-flyers --set-url YYYY-MM-DD https://…/file.png --media-id N
+# Or tomorrow only:
+# python3 -m marketing generate-morning-flyers --start-offset 1 --days 1 --source live-strict
 python3 -m marketing run --source live-strict
 python3 -m marketing publish-today
 ```
@@ -35,35 +39,79 @@ See also: `docs/MORNING-FLYERS.md`, `.cursor/rules/morning-flyers.mdc`.
 ## Agent instructions
 
 ```
-You are running Sacred Ground Marketing Autopilot for the daily Today campaign.
+You are running Sacred Ground Marketing Autopilot for the daily morning (tomorrow-horizon) campaign.
 
 Hard rules:
-1. Timezone context is America/Chicago. Shop-local post time is 7:00 AM America/Chicago.
+1. Timezone context is America/Chicago. Shop-local post time is 9:00 AM America/Chicago.
 2. Checkout this repo and run from the project root.
-3. Ensure Cheryl-style morning flyer(s) before drafts (every day gets a flyer; never prices/$ on graphics):
-   python3 -m marketing generate-morning-flyers --days 1 --source live-strict
-   If the JSON reports needs_upload: upload each local assets/sg-morning-flyer-*.png via WordPress MCP upload_media, then:
-   python3 -m marketing generate-morning-flyers --set-url YYYY-MM-DD <public-url> --media-id <id>
-   Prefer a weekly --days 7 prebuild so 7am is not inventing art cold.
-4. Refresh live WordPress / The Events Calendar only:
+3. Content promotes TOMORROW’s events (and remaining same-day evening events). Captions use warm tomorrow verbiage — not “Today at Sacred Ground”.
+4. Ensure Thursday-style equal-card morning flyer(s) before drafts (never prices/$ on graphics; never hero+tiny secondary):
+   python3 -m marketing generate-morning-flyers --start-offset 1 --days 1 --source live-strict
+   Prefer a weekly --days 7 prebuild so 9am is not inventing art cold.
+5. Refresh live WordPress / The Events Calendar only:
    python3 -m marketing run --source live-strict
-5. If the WordPress/TEC refresh fails: create NO new drafts, do not use stale cache, report wordpress_refresh_failed, and STOP. Do not publish.
-6. Never overwrite or recreate a draft that is edited, approved, rejected, skipped, locked, or otherwise reviewed. Fingerprints that already exist must be left alone.
-7. Today campaign has auto_publish=true. After a successful live-strict run, publish today's posts:
+6. If the WordPress/TEC refresh fails: create NO new drafts, do not use stale cache, report wordpress_refresh_failed, and STOP. Do not publish.
+7. Never overwrite or recreate a draft that is edited, approved, rejected, skipped, locked, or otherwise reviewed.
+8. After a successful live-strict run, publish morning posts:
    python3 -m marketing publish-today
-   This uses ZERNIO_API_KEY from Cloud Agent secrets. Do not skip publish unless step 5 failed or the key is missing.
-8. Only Facebook + Instagram Today posts. Do not publish week / week_ahead / spotlight.
-9. After the run, summarize: events (or empty-day visit), platforms, image URL/rule (expect morning_flyer when configured), publish results (posted/scheduled/errors). Include Zernio post links when available.
+9. Only Facebook + Instagram morning posts. Do not publish afternoon_spotlight / week_ahead / tuesday_meditation / spotlight.
+10. Summarize: tomorrow’s events (+ tonight evening if any), platforms, image URL/rule, publish results.
 ```
 
 ## Editor checklist — morning
 
-1. Name: **SG Today 7am Social**
-2. Schedule: **7:00 AM** · timezone **America/Chicago**
+1. Name: **SG Morning Tomorrow 9am Social** (rename from “SG Today 7am Social”)
+2. Schedule: **9:00 AM** · timezone **America/Chicago**
 3. Repo: `dflorino/sacred-ground-marketing-autopilot` · branch `main`
 4. Secret: `ZERNIO_API_KEY`
-5. Only **one** Active automation at 7am (disable duplicates)
+5. Only **one** Active morning automation (disable 7am duplicates)
 6. Status: **Active**
+
+---
+
+# Automation draft — SG Afternoon Spotlight 5pm Social (LIVE)
+
+Daily single-event afternoon spotlight (Facebook + Instagram).
+
+**Status: auto_publish ON.** Every afternoon at **5:00 PM America/Chicago**.
+
+**Why 5pm:** Meta Insights showed strong early traction on a ~5pm Lions Gate–style promo; leaves a clear gap before 7pm `week_ahead` without stacking too close. Flip `campaigns.afternoon_spotlight.schedule_local_time` to `16:00` for 4pm.
+
+**Content:** one engaging spotlight — prefer tonight’s best remaining evening event; else tomorrow’s standout; else warm brand/visit. Not a full calendar dump (morning + week_ahead already cover the calendar).
+
+## Daily commands (Cloud Agent)
+
+```bash
+python3 -m marketing run --source live-strict
+python3 -m marketing publish-afternoon-spotlight
+```
+
+Do **not** call `publish-today` or `publish-week-ahead` in this automation.
+
+## Agent instructions
+
+```
+You are running Sacred Ground Marketing Autopilot for the daily afternoon_spotlight campaign.
+
+Hard rules:
+1. Timezone America/Chicago. Post time 5:00 PM America/Chicago.
+2. Checkout this repo and run from the project root.
+3. python3 -m marketing run --source live-strict
+4. If TEC refresh fails: create NO drafts, STOP.
+5. Publish only afternoon_spotlight:
+   python3 -m marketing publish-afternoon-spotlight
+6. Do not publish today / week_ahead / tuesday_meditation.
+7. Caption is a single-event spotlight (or brand visit). Summarize event + Zernio links.
+```
+
+## Editor checklist — afternoon
+
+1. Name: **SG Afternoon Spotlight 5pm Social**
+2. Schedule: **5:00 PM** · timezone **America/Chicago**
+3. Repo: `dflorino/sacred-ground-marketing-autopilot` · `main`
+4. Secret: `ZERNIO_API_KEY`
+5. Status: **Active**
+6. Keep separate from morning 9am, Tuesday 4pm meditation, and 7pm week-ahead
 
 ---
 
@@ -73,7 +121,7 @@ Daily next-2-days evening planner posts (Facebook + Instagram).
 
 **Status: auto_publish ON.** Every evening at **7:00 PM America/Chicago**.
 
-Image: rotate the creative night-sky pack (plus sparse in-season storefront / holiday / full-moon overrides). Schedule list lives in the caption only — next **2** days starting tomorrow.
+Image: rotate the creative night-sky pack (plus sparse in-season storefront / holiday / full-moon overrides). Schedule list lives in the caption — next **2** days starting tomorrow **plus** any remaining same-day evening events (so an 8pm gathering still appears at 7pm).
 
 ## Daily commands (Cloud Agent)
 
@@ -111,7 +159,7 @@ Hard rules:
 3. Repo: `dflorino/sacred-ground-marketing-autopilot` · `main`
 4. Secret: `ZERNIO_API_KEY` (same as morning)
 5. Status: **Active**
-6. Keep separate from the 7am Today automation
+6. Keep separate from the 9am morning and 5pm afternoon automations
 
 ---
 

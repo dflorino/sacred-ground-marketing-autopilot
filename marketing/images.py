@@ -438,7 +438,7 @@ def plan_image(
     with_images = [e for e in events if e.image_url]
     excluded = [str(u) for u in (exclude_urls or []) if u]
 
-    if campaign == "today":
+    if campaign in ("today", "afternoon_spotlight"):
         from .ingest import today_local
 
         on = day or today_local()
@@ -455,6 +455,20 @@ def plan_image(
         prebranded = rule_id == "morning_flyer" or skip_brand_overlays(
             {"rule": rule_id, "url": url}
         )
+        if campaign == "afternoon_spotlight" and events:
+            # Prefer specialty / event art over a full-day morning flyer dump.
+            if rule_id == "morning_flyer" and events[0].image_url:
+                url = str(events[0].image_url)
+                rule_id = "event_featured"
+                source = "event_featured"
+                prebranded = False
+                rec = "Afternoon spotlight — event featured image (not full-day flyer)."
+            elif rule_id == "morning_flyer":
+                url = store_exterior_url()
+                rule_id = "store_exterior"
+                source = "store_photo"
+                prebranded = False
+                rec = "Afternoon spotlight — store exterior (single-event focus)."
         return ImagePlan(
             source=source,
             url=url,

@@ -505,13 +505,16 @@ class AutopilotTests(unittest.TestCase):
         self.assertIn("cool and unusual", visit["text"].lower())
         self.assertIn("chicagoland", visit["text"].lower())
 
-        as_of = datetime(2026, 8, 10, 7, 0, tzinfo=ZoneInfo("America/Chicago"))
+        # Morning promotes tomorrow — pick a Wed whose Thursday has no fixture events
+        # (and is not Tuesday, so no meditation stub).
+        as_of = datetime(2026, 9, 2, 9, 0, tzinfo=ZoneInfo("America/Chicago"))
         result = pipeline.generate_batch(source="fixture", as_of=as_of)
         self.assertTrue(result["ok"])
         today = [d for d in result["drafts"] if d["campaign"] == "today"]
         self.assertEqual(len(today), 2)
         draft = store.get_draft(today[0]["id"])
         self.assertIn("empty_day_visit", draft.get("notes") or [])
+        self.assertIn("event_day:2026-09-03", draft.get("notes") or [])
         self.assertTrue(draft["image"]["url"])
 
         control.set_phase(2)

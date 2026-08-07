@@ -274,7 +274,10 @@ def publish_campaign_drafts(*, campaign: str) -> Dict[str, Any]:
 
 
 def publish_today_drafts(*, campaign: str = "today") -> Dict[str, Any]:
-    """Publish/schedule today's Today-campaign drafts (shop-local calendar day)."""
+    """Publish/schedule morning campaign drafts for today's publish day.
+
+    Content promotes the next calendar day (see campaigns.today.target_offset_days).
+    """
     return publish_campaign_drafts(campaign=campaign)
 
 
@@ -286,3 +289,8 @@ def publish_week_ahead_drafts() -> Dict[str, Any]:
 def publish_tuesday_meditation_drafts() -> Dict[str, Any]:
     """Publish/schedule today's Tuesday meditation drafts (4pm CT)."""
     return publish_campaign_drafts(campaign="tuesday_meditation")
+
+
+def publish_afternoon_spotlight_drafts() -> Dict[str, Any]:
+    """Publish/schedule today's afternoon spotlight drafts (default 5pm CT)."""
+    return publish_campaign_drafts(campaign="afternoon_spotlight")

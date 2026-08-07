@@ -24,14 +24,14 @@ Every Sacred Ground social graphic for Autopilot / ML Social / Zernio **must** i
 - Mix fonts (chunky + hand + one script accent) — avoid one rigid template font everywhere
 - **Readability first:** thick/bold type, true black on light images — **no white border/stroke/halo**
 - Soft cream wash behind mid-photo text if needed (not a black box)
-- Not every line arched — one playful curve is enough (e.g. TODAY)
+- Not every line arched — one playful curve is enough (e.g. TOMORROW)
 - Feel original / shop-made, not store-bought Canva template
 
 ## Layout (required)
 
 | Zone | Content |
 |---|---|
-| **Top (on photo)** | Campaign word — e.g. `TODAY` or `NEXT 7 DAYS` |
+| **Top (on photo)** | Campaign word — e.g. `TOMORROW` (morning) or `NEXT 7 DAYS` |
 | **Middle (on photo)** | Who / what + day·time · Arlington Heights |
 | **Below photo** | Footer band with website + phone |
 
@@ -51,6 +51,13 @@ Every Sacred Ground social graphic for Autopilot / ML Social / Zernio **must** i
 
 - Warm experience language + clickable booking/event link
 - Phone/site may also appear in caption; footer on the graphic is still required
+
+## Morning post (9:00 AM America/Chicago)
+
+- Campaign key `today` (CLI `publish-today`) promotes **tomorrow’s** events
+  (`target_offset_days: 1`) plus remaining same-day evening gatherings
+- On-image word: `TOMORROW` (see `campaigns.today.campaign_word`)
+- Schedule: `09:00` (flip to `10:00` in settings if Founder prefers)
 
 ## Daily week-ahead (7:00 PM America/Chicago)
 

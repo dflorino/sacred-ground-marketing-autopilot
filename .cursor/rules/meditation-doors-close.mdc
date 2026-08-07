@@ -12,7 +12,7 @@ alwaysApply: false
 
 - Config: `config/settings.json` → `tuesday_community_meditation.doors_close_display` = `"7:05pm"`
 - Caption line built only via `marketing.meditation.doors_close_line()` / `meditation_event_block()`
-- Used by Morning Today, week-ahead (when meditation is listed), and Tuesday 4pm `tuesday_meditation`
+- Used by morning tomorrow-horizon (when meditation is listed), week-ahead, and Tuesday 4pm `tuesday_meditation` — not Lions Gate / other free community events unless they match title_match_any
 
 ## Do not
 

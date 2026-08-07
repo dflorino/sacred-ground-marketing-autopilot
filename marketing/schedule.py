@@ -14,12 +14,39 @@ def _at_local(day: date, hhmm: str) -> datetime:
     return datetime.combine(day, time(hour, minute), tzinfo=tzinfo())
 
 
+def morning_target_day(day: Optional[date] = None) -> date:
+    """Calendar day whose events the morning (`today`) campaign promotes.
+
+    Defaults to the next Chicago calendar day (target_offset_days=1) so the
+    9am post gives ~24 hours to plan/book. Publish day stays `day`.
+    """
+    from .ingest import today_local
+
+    on = day or today_local()
+    cfg = (settings().get("campaigns") or {}).get("today") or {}
+    offset = int(cfg.get("target_offset_days") or 1)
+    return on + timedelta(days=offset)
+
+
+def morning_campaign_word() -> str:
+    """On-image campaign word for non-prebranded morning posts (default TOMORROW)."""
+    cfg = (settings().get("campaigns") or {}).get("today") or {}
+    word = str(cfg.get("campaign_word") or "TOMORROW").strip()
+    return word or "TOMORROW"
+
+
 def schedule_today(day: date) -> SchedulePlan:
-    hhmm = settings()["campaigns"]["today"]["schedule_local_time"]
+    """Schedule the morning post on `day` (publish day); content is for target day."""
+    cfg = (settings().get("campaigns") or {}).get("today") or {}
+    hhmm = cfg.get("schedule_local_time") or "09:00"
     when = _at_local(day, hhmm)
+    target = morning_target_day(day)
     return SchedulePlan(
         recommended_at=when.isoformat(),
-        rationale="Daily 7:00 AM Central — today's TEC events for same-day planning.",
+        rationale=(
+            f"Daily {hhmm} Central — promote {target.isoformat()} events "
+            "(next calendar day) so people have ~24 hours to plan/book."
+        ),
     )
 
 
@@ -34,6 +61,22 @@ def schedule_week(week_start: date) -> SchedulePlan:
     return SchedulePlan(
         recommended_at=when.isoformat(),
         rationale="Weekly roundup at the start of the week.",
+    )
+
+
+def schedule_afternoon_spotlight(day: date) -> SchedulePlan:
+    """Daily afternoon single-event spotlight (default 5:00 PM Central)."""
+    cfg = (settings().get("campaigns") or {}).get("afternoon_spotlight") or {}
+    hhmm = cfg.get("schedule_local_time") or "17:00"
+    when = _at_local(day, hhmm)
+    return SchedulePlan(
+        recommended_at=when.isoformat(),
+        rationale=(
+            f"Daily {hhmm} Central afternoon spotlight — one engaging event "
+            "(prefer tonight's evening gathering; else tomorrow's standout). "
+            "5pm chosen for Meta Insights traction headroom before 7pm week_ahead; "
+            "set schedule_local_time to 16:00 for 4pm."
+        ),
     )
 
 

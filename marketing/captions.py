@@ -117,29 +117,97 @@ def _join_event_blocks_by_day(events: Sequence[Event], with_link: bool = True) -
     return "\n\n".join(sections)
 
 
-def caption_today(events: List[Event], platform: str, day: date) -> Dict:
-    if not events:
+def _tomorrow_hook(seed: str, *, day_label: str = "", title: str = "", kind: str = "multi") -> str:
+    """Warm next-day opener (morning campaign promotes tomorrow, not today)."""
+    v = voice()
+    if kind == "meditation":
+        opts = list(v.get("tomorrow_meditation_openers") or [])
+        fallback = "Tomorrow at Sacred Ground — Free Community Meditation."
+        raw = _pick_rotating(opts, seed, fallback)
+        return raw
+    if kind == "single":
+        opts = list(v.get("tomorrow_single_openers") or [])
+        fallback = "Tomorrow at Sacred Ground — {title}."
+        raw = _pick_rotating(opts, seed, fallback)
+        return raw.replace("{title}", title or "Sacred Ground")
+    opts = list(v.get("tomorrow_openers") or [])
+    fallback = "See what you can do tomorrow at Sacred Ground — {day_label}."
+    raw = _pick_rotating(opts, seed, fallback)
+    return raw.replace("{day_label}", day_label or "tomorrow")
+
+
+def _free_community_note(ev: Event) -> str:
+    from .classify import is_free_community_event
+
+    if is_free_community_event(ev) or "free" in (ev.cost or "").lower():
+        if "community" in (ev.title or "").lower() or is_free_community_event(ev):
+            return "Free community gathering — all are welcome."
+    return ""
+
+
+def caption_today(
+    events: List[Event],
+    platform: str,
+    day: date,
+    *,
+    tonight_events: List[Event] | None = None,
+) -> Dict:
+    """Morning caption — `day` is tomorrow's calendar day; optional tonight evening add-on."""
+    tonight = list(tonight_events or [])
+    tomorrow = list(events or [])
+    # If caller passed a combined list, split by calendar day when tonight not set.
+    if not tonight and tomorrow:
+        from .ingest import parse_tec_datetime
+
+        split_t, split_m = [], []
+        for ev in tomorrow:
+            start = parse_tec_datetime(ev.start_date)
+            if start and start.date() != day:
+                split_t.append(ev)
+            else:
+                split_m.append(ev)
+        if split_t:
+            tonight, tomorrow = split_t, split_m
+
+    if not tomorrow and not tonight:
         return caption_today_visit(platform, day)
+
     day_label = day.strftime("%A, %B %d").replace(" 0", " ")
-    with_links = platform == "facebook" or True
-    if len(events) == 1:
-        ev = events[0]
+    with_links = True
+    seed = f"today|{day.isoformat()}|{platform}"
+
+    if tomorrow and not tonight and len(tomorrow) == 1:
+        ev = tomorrow[0]
         if is_community_meditation(ev):
-            hook = "Today at Sacred Ground — Free Community Meditation."
+            hook = _tomorrow_hook(f"{seed}|med", kind="meditation")
             body = hook + "\n\n" + meditation_event_block(day=day, event=ev)
         else:
             blurb = short_blurb(ev, 180)
-            hook = f"Today at Sacred Ground — {ev.title}."
+            hook = _tomorrow_hook(f"{seed}|single", title=ev.title, kind="single")
             body_bits = [hook, format_when(ev)]
+            note = _free_community_note(ev)
+            if note:
+                body_bits.append(note)
             if blurb:
                 body_bits.append(blurb)
             body_bits.append(ev.url)
             body = "\n\n".join(body_bits)
-    else:
-        hook = f"Today at Sacred Ground — {day_label}."
-        body = hook + "\n\n" + _join_event_blocks(events, with_links)
+    elif tomorrow:
+        hook = _tomorrow_hook(f"{seed}|multi", day_label=day_label, kind="multi")
+        body = hook + "\n\n" + _join_event_blocks(tomorrow, with_links)
         body += "\n\nDetails & signup on each event page."
-    body += "\n\n" + _signoff(f"today|{day.isoformat()}|{platform}", platform)
+    else:
+        hook = "Tonight at Sacred Ground — something beautiful still ahead."
+        body = hook
+
+    if tonight:
+        body += "\n\nTonight at Sacred Ground\n\n" + _join_event_blocks(tonight, with_links)
+        for ev in tonight:
+            note = _free_community_note(ev)
+            if note and note not in body:
+                body += f"\n\n{note}"
+
+    body += "\n\n" + _signoff(seed, platform)
     tags = _hashtags(platform)
     text = body + "\n\n" + " ".join(tags)
     _assert_not_generic(text)
@@ -147,13 +215,15 @@ def caption_today(events: List[Event], platform: str, day: date) -> Dict:
 
 
 def caption_today_visit(platform: str, day: date) -> Dict:
-    """Empty calendar day — still post a warm visit/brand invite."""
-    hook = "Visit Sacred Ground for cool and unusual things."
+    """Empty next-day calendar — still post a warm visit/brand invite."""
+    day_label = day.strftime("%A, %B %d").replace(" 0", " ")
+    hook = "Tomorrow’s a beautiful day to visit Sacred Ground."
     body = (
         f"{hook}\n\n"
+        f"Nothing fixed on the calendar for {day_label} — come browse anyway.\n\n"
         "Chicagoland’s most famous crystal shop — crystals, books, gifts, "
         "and a floor full of curious finds in Arlington Heights.\n\n"
-        "Come browse when you need a little sparkle in the day.\n"
+        "Come for cool and unusual things whenever you need a little sparkle.\n"
         "847-749-3922\n"
         "https://shopsacredground.com/\n\n"
         + _signoff(f"today-visit|{day.isoformat()}|{platform}", platform)
@@ -266,7 +336,7 @@ def caption_week_ahead(events: List[Event], platform: str, day: date) -> Dict:
 
 
 def caption_tuesday_meditation(platform: str, day: date) -> Dict:
-    """Standalone Tuesday Free Community Meditation post (not the morning Today lineup)."""
+    """Standalone Tuesday Free Community Meditation post (not the morning tomorrow lineup)."""
     seed = f"tuesday_meditation|{day.isoformat()}|{platform}"
     host = host_for_day(day)
     openers = list(voice().get("tuesday_meditation_openers") or [])
@@ -278,6 +348,55 @@ def caption_tuesday_meditation(platform: str, day: date) -> Dict:
     hook = format_tuesday_meditation_opener(raw_hook, host)
     body = hook + "\n\n" + meditation_event_block(day=day)
     body += "\n\n" + _signoff(seed, platform)
+    tags = _hashtags(platform)
+    text = body + "\n\n" + " ".join(tags)
+    _assert_not_generic(text)
+    return {"text": text, "hashtags": tags, "hook": hook}
+
+
+def caption_afternoon_spotlight(event: Event | None, platform: str, day: date) -> Dict:
+    """Single-event afternoon spotlight (or warm brand invite when empty)."""
+    seed = f"afternoon_spotlight|{day.isoformat()}|{platform}"
+    if event is None:
+        hook = "A little afternoon light from Sacred Ground."
+        body = (
+            f"{hook}\n\n"
+            "Crystals, curious finds, and a soft place to land in Arlington Heights.\n"
+            "Come browse when the day needs a spark.\n"
+            "847-749-3922\n"
+            "https://shopsacredground.com/\n\n"
+            + _signoff(seed, platform)
+        )
+        tags = _hashtags(platform)
+        text = body + "\n\n" + " ".join(tags)
+        _assert_not_generic(text)
+        return {"text": text, "hashtags": tags, "hook": hook}
+
+    when = format_when(event)
+    blurb = short_blurb(event, 200)
+    note = _free_community_note(event)
+    from .ingest import parse_tec_datetime
+
+    start = parse_tec_datetime(event.start_date)
+    same_day = bool(start and start.date() == day)
+    if same_day:
+        openers = list(voice().get("afternoon_spotlight_tonight_openers") or [])
+        fallback = "Tonight at Sacred Ground — {title}."
+    else:
+        openers = list(voice().get("afternoon_spotlight_tomorrow_openers") or [])
+        fallback = "Looking ahead — {title} at Sacred Ground."
+    raw = _pick_rotating(openers, f"{seed}|opener", fallback)
+    hook = raw.replace("{title}", event.title)
+
+    parts = [hook, when]
+    if note:
+        parts.append(note)
+    if blurb:
+        parts.append(blurb)
+    parts.append(event.url)
+    parts.append("847-749-3922")
+    parts.append(_signoff(seed, platform))
+    body = "\n\n".join(parts)
     tags = _hashtags(platform)
     text = body + "\n\n" + " ".join(tags)
     _assert_not_generic(text)
