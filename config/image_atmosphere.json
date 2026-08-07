@@ -208,6 +208,50 @@
         "sg_anchor": "Folk-art SG sun rising over starry horizon"
       },
       {
+        "id": "crystal_mountain_v2",
+        "label": "Crystal mountains — SACRED GROUND lit + logo bat-signal under aurora",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-crystal-mountain-v2.png",
+        "sg_identity": "pass",
+        "sg_anchor": "Glowing SACRED GROUND on mountain + sun-face bat-signal in sky",
+        "active": true,
+        "local": "assets/sg-night-creative-crystal-mountain-v2.png",
+        "replaces": "crystal_mountain",
+        "wp_media_id": 25929
+      },
+      {
+        "id": "milky_way_v2",
+        "label": "Milky Way — lit Sacred Ground storefront + logo bat-signal",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-milky-way-v2.png",
+        "sg_identity": "pass",
+        "sg_anchor": "Eggplant-awning SACRED GROUND storefront + sun-face bat-signal",
+        "active": true,
+        "local": "assets/sg-night-creative-milky-way-v2.png",
+        "replaces": "milky_way",
+        "wp_media_id": 25930
+      },
+      {
+        "id": "moonlit_lake_v2",
+        "label": "Moonlit lake — logo sun in moon + SACRED GROUND on mountains",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-moonlit-lake-v2.png",
+        "sg_identity": "pass",
+        "sg_anchor": "SG sun face in moon + glowing SACRED GROUND on mountain ridge",
+        "active": true,
+        "local": "assets/sg-night-creative-moonlit-lake-v2.png",
+        "replaces": "moonlit_lake",
+        "wp_media_id": 25932
+      },
+      {
+        "id": "firefly_meadow_v2",
+        "label": "Firefly meadow — Sacred Ground logo bat-signal in sky",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-firefly-meadow-v2.png",
+        "sg_identity": "pass",
+        "sg_anchor": "Searchlight bat-signal projecting circular SG sun logo + name",
+        "active": true,
+        "local": "assets/sg-night-creative-firefly-meadow-v2.png",
+        "replaces": "firefly_meadow",
+        "wp_media_id": 25931
+      },
+      {
         "id": "season_spring_storefront",
         "label": "Spring storefront (season mix)",
         "url": "https://shopsacredground.com/wp-content/uploads/sg-night-spring-1.png",
@@ -255,38 +299,6 @@
         "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-cloud-beams.png",
         "sg_identity": "fail",
         "fail_reason": "Purple-gold celestial beams — no SG name/logo/storefront.",
-        "regen_priority": 1
-      },
-      {
-        "id": "crystal_mountain",
-        "label": "Crystal mountains under stars",
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-crystal-mountain.png",
-        "sg_identity": "fail",
-        "fail_reason": "Pure aurora/crystal mountains — no SG cue (tonight-style offender). Regen: crystal-mountain-v2 (local; WP upload pending).",
-        "regen_priority": 1
-      },
-      {
-        "id": "firefly_meadow",
-        "label": "Firefly meadow under stars",
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-firefly-meadow.png",
-        "sg_identity": "fail",
-        "fail_reason": "Pure firefly meadow — no SG cue. Regen: firefly-meadow-v2 (local; WP upload pending).",
-        "regen_priority": 1
-      },
-      {
-        "id": "milky_way",
-        "label": "Milky Way over quiet rooftops",
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-milky-way.png",
-        "sg_identity": "fail",
-        "fail_reason": "Pure Milky Way over rooftops — no SG cue. Regen: milky-way-v2 (local; WP upload pending).",
-        "regen_priority": 1
-      },
-      {
-        "id": "moonlit_lake",
-        "label": "Moonlit lake",
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-moonlit-lake.png",
-        "sg_identity": "fail",
-        "fail_reason": "Generic moonlit lake — no SG cue. Regen: moonlit-lake-v2 (local; WP upload pending).",
         "regen_priority": 1
       },
       {
@@ -354,67 +366,19 @@
         "regen_priority": 3
       }
     ],
-    "creative_pool_ready_local": [
-      {
-        "id": "crystal_mountain_v2",
-        "label": "Crystal mountains — SACRED GROUND lit + logo bat-signal under aurora",
-        "local": "assets/sg-night-creative-crystal-mountain-v2.png",
-        "url": "",
-        "sg_identity": "pass",
-        "sg_anchor": "Glowing SACRED GROUND on mountain + sun-face bat-signal in sky",
-        "needs_wp_upload": true,
-        "active": false,
-        "replaces": "crystal_mountain",
-        "regen_note": "Generated 2026-08-06; upload via WP upload_media then set url + active true"
-      },
-      {
-        "id": "milky_way_v2",
-        "label": "Milky Way — lit Sacred Ground storefront + logo bat-signal",
-        "local": "assets/sg-night-creative-milky-way-v2.png",
-        "url": "",
-        "sg_identity": "pass",
-        "sg_anchor": "Eggplant-awning SACRED GROUND storefront + sun-face bat-signal",
-        "needs_wp_upload": true,
-        "active": false,
-        "replaces": "milky_way",
-        "regen_note": "Generated 2026-08-06; upload via WP upload_media then set url + active true"
-      },
-      {
-        "id": "moonlit_lake_v2",
-        "label": "Moonlit lake — logo sun in moon + SACRED GROUND on mountains",
-        "local": "assets/sg-night-creative-moonlit-lake-v2.png",
-        "url": "",
-        "sg_identity": "pass",
-        "sg_anchor": "SG sun face in moon + glowing SACRED GROUND on mountain ridge",
-        "needs_wp_upload": true,
-        "active": false,
-        "replaces": "moonlit_lake",
-        "regen_note": "Generated 2026-08-06; upload via WP upload_media then set url + active true"
-      },
-      {
-        "id": "firefly_meadow_v2",
-        "label": "Firefly meadow — Sacred Ground logo bat-signal in sky",
-        "local": "assets/sg-night-creative-firefly-meadow-v2.png",
-        "url": "",
-        "sg_identity": "pass",
-        "sg_anchor": "Searchlight bat-signal projecting circular SG sun logo + name",
-        "needs_wp_upload": true,
-        "active": false,
-        "replaces": "firefly_meadow",
-        "regen_note": "Generated 2026-08-06; upload via WP upload_media then set url + active true"
-      }
-    ],
+    "creative_pool_ready_local": [],
     "audit_2026_08_06": {
-      "pass_count_active": 15,
-      "fail_count_pending": 13,
-      "regen_local_pass_upload_pending": [
+      "pass_count_active": 19,
+      "fail_count_pending": 9,
+      "regen_local_pass_upload_pending": [],
+      "uploaded_to_pool_2026_08_07": [
         "crystal_mountain_v2",
         "milky_way_v2",
         "moonlit_lake_v2",
         "firefly_meadow_v2"
       ],
       "do_not_republish_tonight": true,
-      "worst_offenders_regenerated_local": [
+      "worst_offenders_replaced": [
         "crystal_mountain",
         "milky_way",
         "moonlit_lake",
