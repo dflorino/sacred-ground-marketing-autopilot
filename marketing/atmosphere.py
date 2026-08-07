@@ -107,6 +107,14 @@ def daytime_plan(day: date, specialty: Optional[str] = None) -> Dict[str, Any]:
     }
 
 
+def _has_sg_identity(plate: Dict[str, Any]) -> bool:
+    """Night creatives must carry Sacred Ground in the photo (not overlays alone)."""
+    if plate.get("active") is False:
+        return False
+    identity = str(plate.get("sg_identity") or "pass").strip().lower()
+    return identity in ("pass", "ok", "yes", "true", "1")
+
+
 def _eligible_creative_pool(day: date) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
     """Return (creatives, in-season storefronts) for the night pool."""
     night = atmosphere_config().get("nighttime") or {}
@@ -115,6 +123,8 @@ def _eligible_creative_pool(day: date) -> Tuple[List[Dict[str, Any]], List[Dict[
     storefronts: List[Dict[str, Any]] = []
     for p in night.get("creative_pool") or []:
         if not p.get("url"):
+            continue
+        if not _has_sg_identity(p):
             continue
         if p.get("kind") == "storefront":
             p_season = str(p.get("season") or "")

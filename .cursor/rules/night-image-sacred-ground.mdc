@@ -1,0 +1,44 @@
+---
+description: Week-ahead night creatives must include Sacred Ground IN the photo
+alwaysApply: true
+---
+
+# Night / week-ahead images — Sacred Ground in the picture
+
+Campaign `week_ahead` (daily ~7:00 PM America/Chicago) night plates live in
+`config/image_atmosphere.json` → `nighttime.creative_pool` (+ holidays / full moon /
+season storefronts).
+
+## Hard rule (Founder — Aug 6, 2026)
+
+**Every night creative must include a clear Sacred Ground visual anchor baked into
+the photograph itself** — not only Autopilot’s logo corner + text overlays.
+
+Acceptable in-photo anchors (any one is enough if obvious at a glance):
+
+- Lit **Sacred Ground storefront** (eggplant awnings / neon / window glow with name)
+- Circular **logo / folk-art sun face** as sky mark, moon inset, horizon sun, or bat-signal
+- **“Sacred Ground” / “SACRED GROUND”** glowing in sky, clouds, mountains, or neon
+- Searchlights / light beams projecting the name or circular logo (“bat signal”)
+
+## Not enough
+
+- Pure generic northern lights, Milky Way, star trails, moonlit lake, meadow, temple,
+  or sacred-geometry sky **with no SG name, logo-sun, or storefront**
+- Relying only on the Autopilot overlay logo + “NEXT …” text + cream footer
+  (those still apply for non-prebranded posts — see `social-image-branding.mdc` —
+  but they do **not** replace an in-photo SG anchor)
+
+## Pool hygiene
+
+- Active `creative_pool` entries should be `sg_identity: "pass"` only
+- Failures / pending regens live under `creative_pool_needs_sg_identity` until replaced
+- Prefer regenerating worst offenders first (pure aurora / sky with zero SG cue)
+- New plates: save under `assets/sg-night-creative-*.png`, upload via WP `upload_media`,
+  wire URL into atmosphere; keep local PNG as source of truth
+
+## Do not
+
+- Do not republish an already-live tonight post just to swap the creative
+- Do not treat overlay branding as satisfying this rule
+- Do not put event lists or prices on the night photo (events stay in caption)

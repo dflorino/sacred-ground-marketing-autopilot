@@ -54,6 +54,11 @@ Every Sacred Ground social graphic for Autopilot / ML Social / Zernio **must** i
 
 ## Daily week-ahead (7:00 PM America/Chicago)
 
-- Campaign `week_ahead`: next 7 days on FB+IG
-- Background: Sacred Ground store photo
+- Campaign `week_ahead`: upcoming days on FB+IG (horizon per settings)
+- Background: night creative from `config/image_atmosphere.json` (sky / storefront /
+  holiday / full moon) — **the photo itself must carry a Sacred Ground visual anchor**
+  (storefront, logo-sun / bat-signal, glowing “Sacred Ground” in the landscape).
+  Pure generic aurora/sky with no SG cue is not enough. See `night-image-sacred-ground.mdc`.
+- Overlay logo + campaign text + cream footer still apply for non-prebranded plates;
+  overlays do **not** replace the in-photo SG identity requirement
 - Same footer rule: website + phone under the image

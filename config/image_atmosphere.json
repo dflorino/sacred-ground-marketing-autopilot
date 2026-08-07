@@ -1,5 +1,5 @@
 {
-  "notes": "Morning = specialty library only (no seasons). Night = creative sky pack by default; holidays + full moon still override. Current-season storefront only mixes into creatives (never wrong-season). Holiday windows may rotate multiple holiday plates. Full moon image ONLY on actual full-moon nights.",
+  "notes": "Morning = specialty library only (no seasons). Night = creative sky pack by default; holidays + full moon still override. Current-season storefront only mixes into creatives (never wrong-season). Holiday windows may rotate multiple holiday plates. Full moon image ONLY on actual full-moon nights. HARD RULE (Founder 2026-08-06): every night creative must include a clear Sacred Ground visual anchor IN THE PHOTO (storefront / logo-sun bat-signal / glowing SACRED GROUND in landscape). Pure generic aurora/sky is not enough. Overlay logo+footer still apply but do not replace in-photo SG identity. Active creative_pool = sg_identity pass only; failures live in creative_pool_needs_sg_identity until regenerated. See docs/NIGHT-CREATIVES.md and .cursor/rules/night-image-sacred-ground.mdc.",
   "daytime": {
     "campaign": "today",
     "mode": "specialty_library_only",
@@ -10,8 +10,12 @@
   "nighttime": {
     "campaign": "week_ahead",
     "mode": "creative_sky_rotation",
-    "priority": ["full_moon", "holiday", "creative"],
-    "base_style": "Sacred Ground night creatives: starry skies, searchlights, aurora, neon, logo-sun motifs — plus eggplant-purple storefront seasonals mixed into the creative pool. When a storefront plate is used: tan stone facade, deep EGGPLANT PURPLE awnings, white SACRED GROUND lettering with NO swoosh between the words.",
+    "priority": [
+      "full_moon",
+      "holiday",
+      "creative"
+    ],
+    "base_style": "Sacred Ground night creatives MUST show Sacred Ground in the picture: storefront, circular logo/folk-art sun as sky or moon mark, bat-signal searchlights, or glowing SACRED GROUND in landscape — plus eggplant-purple storefront seasonals mixed into the creative pool. Pure northern lights / Milky Way / star trails with no SG cue are forbidden. When a storefront plate is used: tan stone facade, deep EGGPLANT PURPLE awnings, white SACRED GROUND lettering with NO swoosh between the words.",
     "awning_color": "eggplant purple (aubergine / deep plum)",
     "awning_swoosh": "none — leave blank eggplant space between SACRED and GROUND",
     "full_moon": {
@@ -24,14 +28,24 @@
     "holidays": {
       "halloween": {
         "label": "Halloween",
-        "windows": [{ "start": "10-15", "end": "10-31" }],
+        "windows": [
+          {
+            "start": "10-15",
+            "end": "10-31"
+          }
+        ],
         "look": "pumpkins, autumn leaves, warm mystical Halloween evening",
         "cart": "pumpkins, gourds, autumn flowers, candles — not crystals",
         "url": "https://shopsacredground.com/wp-content/uploads/sg-night-halloween.png"
       },
       "christmas": {
         "label": "Christmas",
-        "windows": [{ "start": "12-13", "end": "12-26" }],
+        "windows": [
+          {
+            "start": "12-13",
+            "end": "12-26"
+          }
+        ],
         "look": "soft snow, evergreen, warm holiday lights — storefront or forest Christmas tree",
         "cart": "evergreen, ornaments, pinecones, berries — not crystals",
         "url": "https://shopsacredground.com/wp-content/uploads/sg-night-christmas.png",
@@ -43,8 +57,14 @@
       "hanukkah": {
         "label": "Hanukkah",
         "date_ranges": [
-          { "start": "2026-12-04", "end": "2026-12-12" },
-          { "start": "2027-12-24", "end": "2028-01-01" }
+          {
+            "start": "2026-12-04",
+            "end": "2026-12-12"
+          },
+          {
+            "start": "2027-12-24",
+            "end": "2028-01-01"
+          }
         ],
         "look": "Festival of Lights evening, blue and silver accents, candle glow",
         "cart": "menorah/hanukkiah, dreidels, blue-silver accents — not crystals",
@@ -52,7 +72,12 @@
       },
       "valentines": {
         "label": "Valentine's Day",
-        "windows": [{ "start": "02-01", "end": "02-14" }],
+        "windows": [
+          {
+            "start": "02-01",
+            "end": "02-14"
+          }
+        ],
         "look": "soft rose-pink February evening, romantic flowers near entrance",
         "cart": "roses, blush flowers, candles — not crystals",
         "url": "https://shopsacredground.com/wp-content/uploads/sg-night-valentines.png"
@@ -60,28 +85,44 @@
     },
     "seasons": {
       "spring": {
-        "months": [3, 4, 5],
+        "months": [
+          3,
+          4,
+          5
+        ],
         "look": "spring blooms and fresh greenery around the storefront",
         "lighting": "soft spring twilight / blue-hour, gentle lavender-pink sky",
         "cart": "spring flower bouquets, tulips/daffodils, small plants",
         "url": "https://shopsacredground.com/wp-content/uploads/sg-night-spring-1.png"
       },
       "summer": {
-        "months": [6, 7, 8],
+        "months": [
+          6,
+          7,
+          8
+        ],
         "look": "summer flowers and lush green around the storefront",
         "lighting": "warm golden summer sunset / evening glow",
         "cart": "summer flowers, sunflowers/zinnias, herb baskets",
         "url": "https://shopsacredground.com/wp-content/uploads/sg-night-summer-1.png"
       },
       "fall": {
-        "months": [9, 10, 11],
+        "months": [
+          9,
+          10,
+          11
+        ],
         "look": "autumn leaves around the storefront and sidewalk",
         "lighting": "soft sunset / golden-pink evening sky",
         "cart": "chrysanthemums, autumn foliage, small gourds/apples",
         "url": "https://shopsacredground.com/wp-content/uploads/sg-night-fall.png"
       },
       "winter": {
-        "months": [12, 1, 2],
+        "months": [
+          12,
+          1,
+          2
+        ],
         "look": "soft winter snow — inviting, not bleak",
         "lighting": "cool winter evening with warm window glow",
         "cart": "evergreen branches, pinecones, lantern warmth",
@@ -90,156 +131,306 @@
     },
     "creative_pool": [
       {
-        "id": "library_night_watch",
-        "label": "Library — settle in and watch something at night",
-        "url": "https://shopsacredground.com/wp-content/uploads/f3131d37-8b4a-4546-889a-7b561bc4a8fc.png"
-      },
-      {
-        "id": "meditation_night_journey",
-        "label": "Meditation night — metaphysical spiritual journey",
-        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Metaphysical-spiritual-journey_1763939976.png"
-      },
-      {
-        "id": "meditation_night_om",
-        "label": "Meditation night — glowing Om",
-        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Sacred-Om-Aum-symbol-glowing-w_1763937092.png"
-      },
-      {
-        "id": "meditation_night_silhouette",
-        "label": "Meditation night — silhouette under stars",
-        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Silhouette-of-person-meditatin_1763937058.png"
-      },
-      {
         "id": "bat_signal",
         "label": "Searchlights spelling Sacred Ground (bat-signal style)",
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-bat-signal.png"
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-bat-signal.png",
+        "sg_identity": "pass",
+        "sg_anchor": "SACRED GROUND searchlight projection in clouds"
       },
       {
         "id": "aurora_neon",
         "label": "Northern lights village with Sacred Ground neon",
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-aurora-neon.png"
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-aurora-neon.png",
+        "sg_identity": "pass",
+        "sg_anchor": "SACRED GROUND neon storefront sign under aurora"
       },
       {
         "id": "searchlights_hills",
         "label": "Searchlights over misty hills",
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-searchlights-hills.png"
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-searchlights-hills.png",
+        "sg_identity": "pass",
+        "sg_anchor": "Circular SG logo bat-signal over misty hills"
       },
       {
         "id": "aurora_winter_village",
         "label": "Winter aurora village neon",
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-aurora-winter-village.png"
-      },
-      {
-        "id": "milky_way",
-        "label": "Milky Way over quiet rooftops",
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-milky-way.png"
-      },
-      {
-        "id": "sacred_geometry",
-        "label": "Sacred geometry in starry sky",
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-sacred-geometry.png"
-      },
-      {
-        "id": "crystal_mountain",
-        "label": "Crystal mountains under stars",
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-crystal-mountain.png"
-      },
-      {
-        "id": "moonlit_lake",
-        "label": "Moonlit lake",
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-moonlit-lake.png"
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-aurora-winter-village.png",
+        "sg_identity": "pass",
+        "sg_anchor": "SACRED GROUND neon wooden sign + logo under aurora"
       },
       {
         "id": "nebula_beams",
         "label": "Nebula with Sacred Ground light beams",
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-nebula-beams.png"
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-nebula-beams.png",
+        "sg_identity": "pass",
+        "sg_anchor": "SACRED GROUND spelled in glowing sky light beams"
       },
       {
         "id": "aurora_store_silhouette",
         "label": "Store silhouette under aurora",
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-aurora-store-silhouette.png"
-      },
-      {
-        "id": "temple_pillars",
-        "label": "Temple pillars at twilight",
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-temple-pillars.png"
-      },
-      {
-        "id": "star_trails",
-        "label": "Star trails over quiet street",
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-star-trails.png"
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-aurora-store-silhouette.png",
+        "sg_identity": "pass",
+        "sg_anchor": "Lit SACRED GROUND boutique under aurora"
       },
       {
         "id": "neon_fog_alley",
         "label": "Foggy alley neon Sacred Ground",
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-neon-fog-alley.png"
-      },
-      {
-        "id": "firefly_meadow",
-        "label": "Firefly meadow under stars",
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-firefly-meadow.png"
-      },
-      {
-        "id": "constellation_sun",
-        "label": "Constellation sun circle",
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-constellation-sun.png"
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-neon-fog-alley.png",
+        "sg_identity": "pass",
+        "sg_anchor": "SACRED GROUND neon alley storefront"
       },
       {
         "id": "neon_puddles",
         "label": "Rainy street neon reflection",
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-neon-puddles.png"
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-neon-puddles.png",
+        "sg_identity": "pass",
+        "sg_anchor": "SACRED GROUND neon + puddle reflection"
       },
       {
         "id": "logo_sun_sky",
         "label": "Logo sun in starry sky",
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-logo-sun-sky-v2.png"
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-logo-sun-sky-v2.png",
+        "sg_identity": "pass",
+        "sg_anchor": "Folk-art SG sun face dominating starry sky"
       },
       {
         "id": "sun_in_moon",
         "label": "Logo sun within full moon",
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-sun-in-moon-v2.png"
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-sun-in-moon-v2.png",
+        "sg_identity": "pass",
+        "sg_anchor": "Folk-art SG sun face inside full moon"
       },
       {
         "id": "logo_sun_horizon",
         "label": "Logo sun over starry horizon",
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-logo-sun-horizon.png"
-      },
-      {
-        "id": "cloud_beams",
-        "label": "Purple-gold beams through night clouds",
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-cloud-beams.png"
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-logo-sun-horizon.png",
+        "sg_identity": "pass",
+        "sg_anchor": "Folk-art SG sun rising over starry horizon"
       },
       {
         "id": "season_spring_storefront",
         "label": "Spring storefront (season mix)",
         "url": "https://shopsacredground.com/wp-content/uploads/sg-night-spring-1.png",
         "kind": "storefront",
-        "season": "spring"
+        "season": "spring",
+        "sg_identity": "pass",
+        "sg_anchor": "Sacred Ground eggplant-awning storefront"
       },
       {
         "id": "season_summer_storefront",
         "label": "Summer storefront (season mix)",
         "url": "https://shopsacredground.com/wp-content/uploads/sg-night-summer-1.png",
         "kind": "storefront",
-        "season": "summer"
+        "season": "summer",
+        "sg_identity": "pass",
+        "sg_anchor": "Sacred Ground eggplant-awning storefront"
       },
       {
         "id": "season_fall_storefront",
         "label": "Fall storefront (season mix)",
         "url": "https://shopsacredground.com/wp-content/uploads/sg-night-fall.png",
         "kind": "storefront",
-        "season": "fall"
+        "season": "fall",
+        "sg_identity": "pass",
+        "sg_anchor": "Sacred Ground eggplant-awning storefront"
       },
       {
         "id": "season_winter_storefront",
         "label": "Winter storefront (season mix)",
         "url": "https://shopsacredground.com/wp-content/uploads/sg-night-winter-1.png",
         "kind": "storefront",
-        "season": "winter"
+        "season": "winter",
+        "sg_identity": "pass",
+        "sg_anchor": "Sacred Ground eggplant-awning storefront"
       }
     ],
     "events_in_image": false,
     "events_in_caption": true,
-    "how_it_combines": "Priority: (1) full moon night → full-moon image only; (2) holiday window → rotate that holiday’s urls (Christmas includes forest tree); (3) else rotate creative night skies by day; current-season storefront at most every 5th creative-mode night and never after a storefront streak. Founder Screenshot exteriors are not part of the night pool. Events stay in caption. Week-ahead horizon is 2 days."
+    "how_it_combines": "Priority: (1) full moon night → full-moon image only; (2) holiday window → rotate that holiday’s urls (Christmas includes forest tree); (3) else rotate creative night skies by day among sg_identity=pass plates only; current-season storefront at most every 5th creative-mode night and never after a storefront streak. Founder Screenshot exteriors are not part of the night pool. Events stay in caption. Week-ahead horizon is 2 days. Plates in creative_pool_needs_sg_identity are excluded until regenerated. creative_pool_ready_local holds SG-pass regenerations awaiting WP upload.",
+    "sg_identity_rule": "Every week_ahead night plate needs an in-photo Sacred Ground anchor. sg_identity must be pass for creative_pool entries. Overlays alone are not enough.",
+    "creative_pool_needs_sg_identity": [
+      {
+        "id": "cloud_beams",
+        "label": "Purple-gold beams through night clouds",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-cloud-beams.png",
+        "sg_identity": "fail",
+        "fail_reason": "Purple-gold celestial beams — no SG name/logo/storefront.",
+        "regen_priority": 1
+      },
+      {
+        "id": "crystal_mountain",
+        "label": "Crystal mountains under stars",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-crystal-mountain.png",
+        "sg_identity": "fail",
+        "fail_reason": "Pure aurora/crystal mountains — no SG cue (tonight-style offender). Regen: crystal-mountain-v2 (local; WP upload pending).",
+        "regen_priority": 1
+      },
+      {
+        "id": "firefly_meadow",
+        "label": "Firefly meadow under stars",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-firefly-meadow.png",
+        "sg_identity": "fail",
+        "fail_reason": "Pure firefly meadow — no SG cue. Regen: firefly-meadow-v2 (local; WP upload pending).",
+        "regen_priority": 1
+      },
+      {
+        "id": "milky_way",
+        "label": "Milky Way over quiet rooftops",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-milky-way.png",
+        "sg_identity": "fail",
+        "fail_reason": "Pure Milky Way over rooftops — no SG cue. Regen: milky-way-v2 (local; WP upload pending).",
+        "regen_priority": 1
+      },
+      {
+        "id": "moonlit_lake",
+        "label": "Moonlit lake",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-moonlit-lake.png",
+        "sg_identity": "fail",
+        "fail_reason": "Generic moonlit lake — no SG cue. Regen: moonlit-lake-v2 (local; WP upload pending).",
+        "regen_priority": 1
+      },
+      {
+        "id": "constellation_sun",
+        "label": "Constellation sun circle",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-constellation-sun.png",
+        "sg_identity": "fail",
+        "fail_reason": "Abstract gold sun geometry — not folk-art SG sun face / name.",
+        "regen_priority": 2
+      },
+      {
+        "id": "sacred_geometry",
+        "label": "Sacred geometry in starry sky",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-sacred-geometry.png",
+        "sg_identity": "fail",
+        "fail_reason": "Flower of Life sky — not SG logo-sun or name.",
+        "regen_priority": 2
+      },
+      {
+        "id": "star_trails",
+        "label": "Star trails over quiet street",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-star-trails.png",
+        "sg_identity": "fail",
+        "fail_reason": "Residential street star trails — no SG storefront/logo.",
+        "regen_priority": 2
+      },
+      {
+        "id": "temple_pillars",
+        "label": "Temple pillars at twilight",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-temple-pillars.png",
+        "sg_identity": "fail",
+        "fail_reason": "Generic temple twilight — no SG cue.",
+        "regen_priority": 2
+      },
+      {
+        "id": "library_night_watch",
+        "label": "Library — settle in and watch something at night",
+        "url": "https://shopsacredground.com/wp-content/uploads/f3131d37-8b4a-4546-889a-7b561bc4a8fc.png",
+        "sg_identity": "fail",
+        "fail_reason": "Specialty library stock — no SG name/logo/storefront in plate (label audit).",
+        "regen_priority": 3
+      },
+      {
+        "id": "meditation_night_journey",
+        "label": "Meditation night — metaphysical spiritual journey",
+        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Metaphysical-spiritual-journey_1763939976.png",
+        "sg_identity": "fail",
+        "fail_reason": "Metaphysical journey stock — no SG brand cue.",
+        "regen_priority": 3
+      },
+      {
+        "id": "meditation_night_om",
+        "label": "Meditation night — glowing Om",
+        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Sacred-Om-Aum-symbol-glowing-w_1763937092.png",
+        "sg_identity": "fail",
+        "fail_reason": "Glowing Om — not Sacred Ground identity.",
+        "regen_priority": 3
+      },
+      {
+        "id": "meditation_night_silhouette",
+        "label": "Meditation night — silhouette under stars",
+        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Silhouette-of-person-meditatin_1763937058.png",
+        "sg_identity": "fail",
+        "fail_reason": "Silhouette under stars — pure landscape / no SG.",
+        "regen_priority": 3
+      }
+    ],
+    "creative_pool_ready_local": [
+      {
+        "id": "crystal_mountain_v2",
+        "label": "Crystal mountains — SACRED GROUND lit + logo bat-signal under aurora",
+        "local": "assets/sg-night-creative-crystal-mountain-v2.png",
+        "url": "",
+        "sg_identity": "pass",
+        "sg_anchor": "Glowing SACRED GROUND on mountain + sun-face bat-signal in sky",
+        "needs_wp_upload": true,
+        "active": false,
+        "replaces": "crystal_mountain",
+        "regen_note": "Generated 2026-08-06; upload via WP upload_media then set url + active true"
+      },
+      {
+        "id": "milky_way_v2",
+        "label": "Milky Way — lit Sacred Ground storefront + logo bat-signal",
+        "local": "assets/sg-night-creative-milky-way-v2.png",
+        "url": "",
+        "sg_identity": "pass",
+        "sg_anchor": "Eggplant-awning SACRED GROUND storefront + sun-face bat-signal",
+        "needs_wp_upload": true,
+        "active": false,
+        "replaces": "milky_way",
+        "regen_note": "Generated 2026-08-06; upload via WP upload_media then set url + active true"
+      },
+      {
+        "id": "moonlit_lake_v2",
+        "label": "Moonlit lake — logo sun in moon + SACRED GROUND on mountains",
+        "local": "assets/sg-night-creative-moonlit-lake-v2.png",
+        "url": "",
+        "sg_identity": "pass",
+        "sg_anchor": "SG sun face in moon + glowing SACRED GROUND on mountain ridge",
+        "needs_wp_upload": true,
+        "active": false,
+        "replaces": "moonlit_lake",
+        "regen_note": "Generated 2026-08-06; upload via WP upload_media then set url + active true"
+      },
+      {
+        "id": "firefly_meadow_v2",
+        "label": "Firefly meadow — Sacred Ground logo bat-signal in sky",
+        "local": "assets/sg-night-creative-firefly-meadow-v2.png",
+        "url": "",
+        "sg_identity": "pass",
+        "sg_anchor": "Searchlight bat-signal projecting circular SG sun logo + name",
+        "needs_wp_upload": true,
+        "active": false,
+        "replaces": "firefly_meadow",
+        "regen_note": "Generated 2026-08-06; upload via WP upload_media then set url + active true"
+      }
+    ],
+    "audit_2026_08_06": {
+      "pass_count_active": 15,
+      "fail_count_pending": 13,
+      "regen_local_pass_upload_pending": [
+        "crystal_mountain_v2",
+        "milky_way_v2",
+        "moonlit_lake_v2",
+        "firefly_meadow_v2"
+      ],
+      "do_not_republish_tonight": true,
+      "worst_offenders_regenerated_local": [
+        "crystal_mountain",
+        "milky_way",
+        "moonlit_lake",
+        "firefly_meadow"
+      ],
+      "next_regen_priority": [
+        "cloud_beams",
+        "sacred_geometry",
+        "star_trails",
+        "temple_pillars",
+        "constellation_sun",
+        "library_night_watch",
+        "meditation_night_journey",
+        "meditation_night_om",
+        "meditation_night_silhouette"
+      ]
+    }
   }
 }
