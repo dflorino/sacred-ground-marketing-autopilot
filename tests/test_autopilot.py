@@ -1304,6 +1304,14 @@ class AutopilotTests(unittest.TestCase):
         prompt = mf.build_generation_prompt(date(2026, 8, 7), copy)
         self.assertIn("do NOT include any prices", prompt)
         self.assertIn("Thursday-style", prompt)
+        self.assertIn("VARIANT A / Facebook", prompt)
+        prompt_b = mf.build_generation_prompt(
+            date(2026, 8, 7), copy, variant=mf.VARIANT_B
+        )
+        self.assertIn("VARIANT B / Instagram", prompt_b)
+        self.assertIn("MORE visual pop", prompt_b)
+        self.assertIn("flat single-color", prompt_b)
+        self.assertIn("do NOT include any prices", prompt_b)
         # Multi-event → thursday_cards; single-event days may roll artistic.
         self.assertEqual(
             mf.choose_layout_style(date(2026, 8, 7), [priced]),

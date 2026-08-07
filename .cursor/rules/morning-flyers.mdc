@@ -49,6 +49,13 @@ Use **versions of this layout system** — not an exact clone every day (stale),
 - If only one variant exists, temporarily share (with log) until the second is built — `generate-morning-flyers` prefers generating variant B.
 - Aug 6 gold standard may remain single-URL (do not overwrite / do not force a second variant).
 
+### Platform energy (Founder — Aug 7, 2026)
+
+- **Facebook (`url` / variant A)** may be the **cleaner card layout** (gold-standard readability energy). Liked reference: `assets/sg-morning-flyer-2026-08-07-reflexology.png`.
+- **Instagram (`url_instagram` / variant B)** must still be full-day info + readable Thursday-style cards, but **must have more visual pop**: richer multi-tone color, stronger shapes, contrast, mystical energy — **not** flat single-color washes (Aug 7 IG purple wash rejected as bland / little pizzazz).
+- `build_generation_prompt(..., variant="b")` and the PIL compositor B path must demand that richer field energy while keeping cards legible.
+- Do **not** republish today's live posts just to swap an IG plate — archive/future wire is OK.
+
 ## Every day
 
 - Every Chicago calendar day should have Thursday-style flyer variants (1–3 events max, or a warm visit-day flyer when empty).

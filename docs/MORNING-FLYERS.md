@@ -39,13 +39,22 @@ For date-keyed morning flyers, **Facebook and Instagram use different visuals**,
 
 | Field | Platform |
 |---|---|
-| `url` (or `urls[0]`) | Facebook |
-| `url_instagram` (or `urls[1]`) | Instagram |
+| `url` (or `urls[0]`) | Facebook — variant A |
+| `url_instagram` (or `urls[1]`) | Instagram — variant B |
 | `local` / `local_instagram` | Local PNGs for each variant |
 
-`generate-morning-flyers` builds **two layout variants** per day (palette / right-side graphic differ; same event cards). If only one public URL exists, Autopilot temporarily shares it (logged) until the second variant is uploaded.
+`generate-morning-flyers` builds **two layout variants** per day (same event cards; different art energy). If only one public URL exists, Autopilot temporarily shares it (logged) until the second variant is uploaded.
 
 Aug 6 gold standard may remain a single shared URL — do not overwrite or republish solely to split platforms.
+
+### Platform energy (Founder — Aug 7, 2026)
+
+| Platform | Energy |
+|---|---|
+| **Facebook** (`url` / variant A) | Cleaner Thursday-style card layout is OK — gold-standard readability. Liked Aug 7 FB: `assets/sg-morning-flyer-2026-08-07-reflexology.png` → `url` reflexology-1.png |
+| **Instagram** (`url_instagram` / variant B) | Still full-day info + readable cards, but **must have more visual pop**: richer multi-tone color, stronger shapes, contrast, mystical energy. **Not** flat single-color washes (Aug 7 IG purple wash felt bland / little pizzazz). |
+
+`build_generation_prompt(..., variant="b")` explicitly demands that richer background energy. Do not republish live posts just to swap an IG plate — updating the archive asset / `url_instagram` for future reuse is fine.
 
 ## Daily system
 

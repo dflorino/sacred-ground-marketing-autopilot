@@ -57,9 +57,17 @@ NOTES = (
     "not exact clones. Date-keyed flyers are prebranded (skip overlays). "
     "Facebook and Instagram MUST use DIFFERENT full-day flyer visuals "
     "(url + url_instagram, or urls:[fb, ig]) — same events/info on both, "
-    "never an incomplete single-event alt. NEVER include $, dollar amounts, "
-    "ticket costs, or \"$55\"-style prices on flyer graphics. Empty days get "
-    "a warm visit flyer. 1–3 events max. No invented practitioner faces."
+    "never an incomplete single-event alt. PLATFORM ENERGY (Founder Aug 7 "
+    "2026): Facebook `url` / variant A may be the cleaner card layout "
+    "(gold-standard readability energy — e.g. liked Aug 7 FB "
+    "assets/sg-morning-flyer-2026-08-07-reflexology.png). Instagram "
+    "`url_instagram` / variant B must still be full-day readable Thursday-"
+    "style cards, but MUST have more visual pop — richer multi-tone color, "
+    "stronger shapes, contrast, mystical energy; NOT flat single-color "
+    "washes (Aug 7 IG purple wash rejected as bland). NEVER include $, "
+    "dollar amounts, ticket costs, or \"$55\"-style prices on flyer "
+    "graphics. Empty days get a warm visit flyer. 1–3 events max. No "
+    "invented practitioner faces."
 )
 
 # Founder-approved gold standard — do not overwrite or force a second variant.
@@ -309,8 +317,13 @@ def build_generation_prompt(
     *,
     layout: Optional[str] = None,
     events: Optional[Sequence[Event]] = None,
+    variant: str = VARIANT_A,
 ) -> str:
-    """Prompt for mlimg / GenerateImage polish — defaults to Thursday-style cards."""
+    """Prompt for mlimg / GenerateImage polish — defaults to Thursday-style cards.
+
+    `variant` a = Facebook (cleaner gold-standard card energy OK);
+    `variant` b = Instagram — same full-day cards, richer background pop required.
+    """
     also = copy.get("also") or []
     also_bit = ""
     if also:
@@ -323,6 +336,8 @@ def build_generation_prompt(
         )
     style = layout or choose_layout_style(day, events)
     weekday = day.strftime("%A").upper()
+    key = (variant or VARIANT_A).lower().strip()
+    is_b = key in (VARIANT_B, "b", "ig", "instagram", "alt")
     shared = (
         f"Chicago date {day.isoformat()}. Primary: {copy.get('primary')}. "
         f"Date/time text: {copy.get('date_short')}. "
@@ -334,10 +349,29 @@ def build_generation_prompt(
         "unless a real photo reference is provided. Vary gold/jewel accents by "
         "day — versions of the system, not exact clones."
     )
+    if is_b:
+        bg_energy = (
+            " VARIANT B / Instagram: same full-day readable Thursday-style "
+            "event cards and info as Facebook, but the BACKGROUND must have "
+            "MORE visual pop — richer multi-tone color (jewel gradients, "
+            "aurora ribbons, luminous orbs, layered light), stronger shapes "
+            "and sacred geometry with real contrast, mystical energy that "
+            "makes someone want to stop and read. FORBIDDEN: flat single-color "
+            "washes, bland muted purple voids, low-contrast thin line art on "
+            "a dead field. Cards stay legible; energy lives in the field "
+            "around them."
+        )
+    else:
+        bg_energy = (
+            " VARIANT A / Facebook: cleaner gold-standard Thursday-style card "
+            "layout energy is OK — clear readable cards, elegant contrast, "
+            "polished without needing maximal background drama."
+        )
     if style == LAYOUT_ARTISTIC:
         return (
             "Sacred Ground artistic single-event hero morning flyer, square "
-            f"1080x1080. Still highly readable — not collage soup. {shared} "
+            f"1080x1080. Still highly readable — not collage soup. {shared}"
+            f"{bg_energy} "
             "Centered hero composition OK for one primary event; keep text "
             "high-contrast; secondary events as a short ALSO TODAY line only."
         )
@@ -350,6 +384,7 @@ def build_generation_prompt(
         "cards (icon + title + host + time + short keywords); RIGHT evocative "
         "graphics in clear zones aligned to those cards; FOOTER logo + website "
         f"+ phone + come-as-you-are. Dark elegant + gold accents. {shared}"
+        f"{bg_energy}"
     )
 
 
@@ -413,34 +448,52 @@ def _tina_circle_path(events: Sequence[Event]) -> Optional[str]:
 
 
 def _variant_palette(variant: str) -> Dict[str, Any]:
-    """Two Thursday-style palettes — same layout system, different color/right art."""
+    """Two Thursday-style palettes — same layout system, different color/right art.
+
+    Variant A (FB): cleaner readable card energy.
+    Variant B (IG): richer multi-tone pop — not a flat single-color wash.
+    """
     key = (variant or VARIANT_A).lower().strip()
     if key in (VARIANT_B, "b", "ig", "instagram", "alt"):
         return {
             "id": VARIANT_B,
-            "bg_top": (42, 22, 48),
-            "bg_bot": (18, 12, 28),
-            "gold": (220, 170, 120),
-            "gold_soft": (220, 170, 120, 100),
-            "accent": (160, 90, 130),
-            "card_fills": [(72, 38, 68), (48, 32, 72), (36, 44, 70)],
-            "card_text": (250, 244, 236),
-            "muted": (210, 190, 200),
-            "footer": (20, 14, 30),
+            # Crown-chakra purple with teal/magenta/gold energy — not flat wash.
+            "bg_top": (88, 28, 110),
+            "bg_mid": (48, 22, 78),
+            "bg_bot": (12, 28, 58),
+            "orb_colors": [
+                (180, 90, 220, 55),
+                (60, 160, 190, 45),
+                (230, 140, 90, 40),
+                (120, 70, 200, 50),
+            ],
+            "gold": (236, 190, 110),
+            "gold_soft": (236, 190, 110, 140),
+            "accent": (210, 100, 170),
+            "accent2": (70, 190, 200),
+            "card_fills": [(92, 42, 88), (38, 52, 96), (58, 36, 78)],
+            "card_text": (252, 246, 238),
+            "muted": (220, 198, 230),
+            "footer": (18, 12, 32),
             "right_mode": "crescent",
+            "energy": True,
         }
     return {
         "id": VARIANT_A,
         "bg_top": (22, 36, 52),
+        "bg_mid": (16, 28, 44),
         "bg_bot": (12, 22, 38),
+        "orb_colors": [],
         "gold": (212, 175, 95),
         "gold_soft": (212, 175, 95, 100),
         "accent": (70, 110, 120),
+        "accent2": (90, 140, 150),
         "card_fills": [(34, 68, 58), (52, 36, 68), (28, 42, 72)],
         "card_text": (250, 246, 236),
         "muted": (190, 200, 210),
         "footer": (16, 24, 40),
         "right_mode": "seed",
+        "energy": False,
     }
 
 
@@ -513,13 +566,27 @@ def render_local_flyer(
 
     img = Image.new("RGB", (CANVAS, CANVAS), pal["bg_bot"])
     px = img.load()
+    mid = pal.get("bg_mid") or pal["bg_bot"]
     for y in range(CANVAS):
         t = y / (CANVAS - 1)
-        r = int(pal["bg_top"][0] * (1 - t) + pal["bg_bot"][0] * t)
-        g = int(pal["bg_top"][1] * (1 - t) + pal["bg_bot"][1] * t)
-        b = int(pal["bg_top"][2] * (1 - t) + pal["bg_bot"][2] * t)
+        if t < 0.45:
+            u = t / 0.45
+            r = int(pal["bg_top"][0] * (1 - u) + mid[0] * u)
+            g = int(pal["bg_top"][1] * (1 - u) + mid[1] * u)
+            b = int(pal["bg_top"][2] * (1 - u) + mid[2] * u)
+        else:
+            u = (t - 0.45) / 0.55
+            r = int(mid[0] * (1 - u) + pal["bg_bot"][0] * u)
+            g = int(mid[1] * (1 - u) + pal["bg_bot"][1] * u)
+            b = int(mid[2] * (1 - u) + pal["bg_bot"][2] * u)
         for x in range(CANVAS):
-            px[x, y] = (r, g, b)
+            # Slight horizontal warmth so B isn't a dead vertical wash.
+            hx = x / (CANVAS - 1)
+            px[x, y] = (
+                min(255, r + int(10 * hx)),
+                min(255, g + int(4 * hx)),
+                min(255, b + int(14 * (1 - hx) if pal.get("energy") else 6 * hx)),
+            )
 
     draw = ImageDraw.Draw(img, "RGBA")
     gold = pal["gold"]
@@ -530,12 +597,46 @@ def render_local_flyer(
         for x in range(620, CANVAS):
             fade = (x - 620) / 460
             base = px[x, y]
-            bump = int(18 * fade)
+            bump = int((28 if pal.get("energy") else 18) * fade)
             px[x, y] = (
                 min(255, base[0] + bump),
                 min(255, base[1] + bump // 2),
                 min(255, base[2] + bump // 3),
             )
+
+    # Instagram / variant B: luminous orbs + ribbon so the field has shape & energy.
+    if pal.get("energy"):
+        overlay = Image.new("RGBA", (CANVAS, CANVAS), (0, 0, 0, 0))
+        od = ImageDraw.Draw(overlay)
+        orb_specs = [
+            (860, 240, 160),
+            (980, 480, 120),
+            (740, 620, 100),
+            (920, 760, 90),
+        ]
+        for i, (ox, oy, orad) in enumerate(orb_specs):
+            col = pal["orb_colors"][i % len(pal["orb_colors"])]
+            for ring in range(orad, 0, -8):
+                a = max(8, int(col[3] * (ring / orad)))
+                od.ellipse(
+                    (ox - ring, oy - ring, ox + ring, oy + ring),
+                    fill=(col[0], col[1], col[2], a),
+                )
+        # Diagonal energy ribbon
+        for i in range(18):
+            y0 = 180 + i * 28
+            od.polygon(
+                [
+                    (640, y0),
+                    (CANVAS, y0 - 40),
+                    (CANVAS, y0 - 10),
+                    (640, y0 + 30),
+                ],
+                fill=(pal["accent2"][0], pal["accent2"][1], pal["accent2"][2], 18),
+            )
+        img = Image.alpha_composite(img.convert("RGBA"), overlay).convert("RGB")
+        px = img.load()
+        draw = ImageDraw.Draw(img, "RGBA")
 
     weekday = day.strftime("%A").upper()
     draw.text((70, 48), f"{weekday} AT", font=fonts["header"], fill=gold)
@@ -549,9 +650,19 @@ def render_local_flyer(
 
     # Right-side evocative graphics (variant-specific)
     if pal["right_mode"] == "crescent":
-        _draw_crescent(draw, 820, 280, 90, gold_soft, 3)
-        _draw_geometry(draw, 900, 520, 55, (pal["accent"][0], pal["accent"][1], pal["accent"][2], 90), 2)
-        _draw_crescent(draw, 780, 700, 60, gold_soft, 2)
+        _draw_crescent(draw, 820, 280, 100, gold_soft, 4)
+        _draw_geometry(
+            draw,
+            900,
+            500,
+            70,
+            (pal["accent"][0], pal["accent"][1], pal["accent"][2], 130),
+            3,
+        )
+        a2 = pal.get("accent2") or pal["accent"]
+        _draw_geometry(draw, 760, 420, 48, (a2[0], a2[1], a2[2], 110), 2)
+        _draw_crescent(draw, 780, 700, 70, gold_soft, 3)
+        _draw_crescent(draw, 940, 640, 40, (a2[0], a2[1], a2[2], 100), 2)
     else:
         _draw_geometry(draw, 820, 260, 75, gold_soft, 2)
         _draw_geometry(draw, 900, 480, 50, (pal["accent"][0], pal["accent"][1], pal["accent"][2], 80), 2)
@@ -778,7 +889,11 @@ def register_flyer(
         "thursday_cards_share": THURSDAY_CARDS_SHARE,
         "artistic_hero_share": round(1.0 - THURSDAY_CARDS_SHARE, 2),
         "default": LAYOUT_THURSDAY,
-        "platform_variants": "facebook=url / first; instagram=url_instagram / second",
+        "platform_variants": (
+            "facebook=url / variant A (cleaner card energy OK); "
+            "instagram=url_instagram / variant B (same full-day cards, "
+            "richer color/shape/mystical pop — not flat washes)"
+        ),
     }
     save_flyers_config(data)
     return entry
@@ -840,10 +955,16 @@ def ensure_flyer_for_day(
     day_events = _day_events(day, events)
     copy = build_flyer_copy(day, day_events)
     layout = choose_layout_style(day, day_events)
-    prompt = build_generation_prompt(day, copy, layout=layout, events=day_events)
+    prompt = build_generation_prompt(
+        day, copy, layout=layout, events=day_events, variant=VARIANT_A
+    )
     prompt_b = build_generation_prompt(
-        day, copy, layout=LAYOUT_THURSDAY, events=day_events
-    ) + " Variant B palette/right-side graphics — same event cards and info."
+        day,
+        copy,
+        layout=LAYOUT_THURSDAY,
+        events=day_events,
+        variant=VARIANT_B,
+    )
 
     existing = flyer_entry_for_day(day)
     if existing and not force:
