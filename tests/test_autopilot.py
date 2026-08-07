@@ -1477,6 +1477,67 @@ class AutopilotTests(unittest.TestCase):
         self.assertNotIn("$", plan_fb.url or "")
         self.assertNotIn("$", plan_ig.url or "")
 
+    def test_zernio_409_dedupe_syncs_existing_post(self) -> None:
+        """409 with existingPostId should GET the post and mark draft scheduled."""
+        from unittest import mock
+
+        from marketing import control, publish, store
+
+        control.set_phase(2)
+        control.resume()
+        draft_id = "sgma-test-today-fb-409"
+        store.save_draft(
+            {
+                "id": draft_id,
+                "campaign": "today",
+                "platform": "facebook",
+                "status": "approved",
+                "approval_status": "approved",
+                "fingerprint": "today|2026-08-07|facebook|1",
+                "timezone": "America/Chicago",
+                "schedule_recommendation": {
+                    "recommended_at": "2026-08-07T07:00:00-05:00",
+                },
+                "caption": {"text": "Today at Sacred Ground."},
+                "image": {
+                    "url": "https://shopsacredground.com/wp-content/uploads/test.png",
+                    "rule": "morning_flyer",
+                },
+                "events": [],
+                "notes": [],
+            }
+        )
+        err = (
+            'zernio_http_409: {"error":"This exact content is already scheduled, '
+            'publishing, or was posted to this account within the last 24 hours.",'
+            '"details":{"accountId":"acct","platform":"facebook",'
+            '"existingPostId":"existing123"}}'
+        )
+        self.assertEqual(publish._parse_existing_post_id(err), "existing123")
+
+        with mock.patch.dict(os.environ, {"ZERNIO_API_KEY": "test-key"}, clear=False):
+            with mock.patch.object(
+                publish,
+                "create_zernio_post",
+                side_effect=RuntimeError(err),
+            ), mock.patch.object(
+                publish,
+                "get_zernio_post",
+                return_value={
+                    "post": {
+                        "id": "existing123",
+                        "status": "scheduled",
+                        "scheduledFor": "2026-08-07T12:00:00.000Z",
+                    }
+                },
+            ):
+                out = publish.publish_draft(draft_id)
+
+        self.assertTrue(out["ok"])
+        self.assertTrue(out.get("already"))
+        self.assertEqual(out["status"], "scheduled")
+        self.assertEqual(store.get_draft(draft_id)["status"], "scheduled")
+
 
 if __name__ == "__main__":
     unittest.main()
