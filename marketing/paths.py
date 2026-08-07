@@ -13,6 +13,8 @@ STATE_DIR = os.path.join(DATA_DIR, "state")
 FIXTURES_DIR = os.path.join(DATA_DIR, "fixtures")
 CACHE_DIR = os.path.join(DATA_DIR, "cache")
 AUDIT_DIR = os.path.join(DATA_DIR, "audit")
+COMPOSITES_DIR = os.path.join(DATA_DIR, "composites")
+FONTS_DIR = os.path.join(CONFIG_DIR, "fonts")
 LIVE_CACHE_PATH = os.path.join(CACHE_DIR, "live_events.json")
 
 CONTROL_PATH = os.path.join(STATE_DIR, "control.json")
@@ -40,8 +42,13 @@ def accounts() -> Dict[str, Any]:
     return _load_json(os.path.join(CONFIG_DIR, "accounts.json"))
 
 
+@lru_cache(maxsize=1)
+def creative() -> Dict[str, Any]:
+    return _load_json(os.path.join(CONFIG_DIR, "creative.json"))
+
+
 def ensure_dirs() -> None:
-    for path in (DRAFTS_DIR, STATE_DIR, FIXTURES_DIR, CACHE_DIR, AUDIT_DIR):
+    for path in (DRAFTS_DIR, STATE_DIR, FIXTURES_DIR, CACHE_DIR, AUDIT_DIR, COMPOSITES_DIR):
         os.makedirs(path, exist_ok=True)
     if not os.path.exists(CONTROL_PATH):
         write_json(
