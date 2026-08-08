@@ -122,13 +122,12 @@ def _join_event_blocks_by_day(events: Sequence[Event], with_link: bool = True) -
 
 
 def _tomorrow_hook(seed: str, *, day_label: str = "", title: str = "", kind: str = "multi") -> str:
-    """Warm next-day opener (morning campaign promotes tomorrow, not today)."""
+    """Warm next-day opener (tomorrow-only morning posts)."""
     v = voice()
     if kind == "meditation":
         opts = list(v.get("tomorrow_meditation_openers") or [])
         fallback = "Tomorrow at Sacred Ground — Free Community Meditation."
-        raw = _pick_rotating(opts, seed, fallback)
-        return raw
+        return _pick_rotating(opts, seed, fallback)
     if kind == "single":
         opts = list(v.get("tomorrow_single_openers") or [])
         fallback = "Tomorrow at Sacred Ground — {title}."
@@ -138,6 +137,31 @@ def _tomorrow_hook(seed: str, *, day_label: str = "", title: str = "", kind: str
     fallback = "See what you can do tomorrow at Sacred Ground — {day_label}."
     raw = _pick_rotating(opts, seed, fallback)
     return raw.replace("{day_label}", day_label or "tomorrow")
+
+
+def _tonight_hook(seed: str, *, day_label: str = "", title: str = "", kind: str = "multi") -> str:
+    """Warm same-day evening opener (flyer/events are primarily today/tonight)."""
+    v = voice()
+    if kind == "single":
+        opts = list(v.get("tonight_single_openers") or [])
+        fallback = "Tonight at Sacred Ground — {title}."
+        raw = _pick_rotating(opts, seed, fallback)
+        return raw.replace("{title}", title or "Sacred Ground")
+    opts = list(v.get("tonight_openers") or [])
+    fallback = "See what’s happening tonight at Sacred Ground — {day_label}."
+    raw = _pick_rotating(opts, seed, fallback)
+    return raw.replace("{day_label}", day_label or "tonight")
+
+
+def _tonight_and_tomorrow_hook(seed: str, *, tomorrow_label: str = "") -> str:
+    """Mixed horizon — same-day evening + next day, without lying about either."""
+    v = voice()
+    opts = list(v.get("tonight_and_tomorrow_openers") or [])
+    fallback = (
+        "Tonight & tomorrow at Sacred Ground — tonight first, then {tomorrow_label}."
+    )
+    raw = _pick_rotating(opts, seed, fallback)
+    return raw.replace("{tomorrow_label}", tomorrow_label or "tomorrow")
 
 
 def _free_community_note(ev: Event) -> str:
@@ -170,8 +194,15 @@ def caption_today(
     day: date,
     *,
     tonight_events: List[Event] | None = None,
+    flyer_day: date | None = None,
+    publish_day: date | None = None,
 ) -> Dict:
-    """Morning caption — `day` is tomorrow's calendar day; optional tonight evening add-on."""
+    """Morning caption — match wording to flyer/event horizon.
+
+    `day` is the tomorrow/target calendar day. When same-day evening events are
+    merged (or the flyer is publish-day dated), lead with tonight/today language
+    — never open with “tomorrow” while the graphic is about today.
+    """
     tonight = list(tonight_events or [])
     tomorrow = list(events or [])
     # If caller passed a combined list, split by calendar day when tonight not set.
@@ -195,7 +226,76 @@ def caption_today(
     with_links = True
     seed = f"today|{day.isoformat()}|{platform}"
 
-    if tomorrow and not tonight and len(tomorrow) == 1:
+    # When tonight is merged, prefer tonight-first wording if the flyer is
+    # publish-day dated (pipeline default) or caller omitted flyer hints.
+    if not tonight:
+        lead_tonight = False
+    elif flyer_day is not None and publish_day is not None:
+        lead_tonight = flyer_day == publish_day
+    elif flyer_day is not None:
+        lead_tonight = flyer_day != day
+    else:
+        lead_tonight = True
+
+    def _tonight_section() -> str:
+        return "Tonight at Sacred Ground\n\n" + _join_event_blocks(tonight, with_links)
+
+    def _tomorrow_multi_section() -> str:
+        return (
+            _join_event_blocks(tomorrow, with_links)
+            + "\n\nDetails & signup on each event page."
+        )
+
+    # --- tonight only ---
+    if tonight and not tomorrow:
+        if len(tonight) == 1:
+            hook = _tonight_hook(
+                f"{seed}|tonight-single", title=tonight[0].title, kind="single"
+            )
+            body = hook + "\n\n" + _join_event_blocks(tonight, with_links)
+        else:
+            tonight_label = (publish_day or flyer_day or day).strftime(
+                "%A, %B %d"
+            ).replace(" 0", " ")
+            if publish_day is None and flyer_day is None:
+                # Infer label from first tonight event when possible.
+                from .ingest import parse_tec_datetime
+
+                start = parse_tec_datetime(tonight[0].start_date)
+                if start:
+                    tonight_label = start.strftime("%A, %B %d").replace(" 0", " ")
+            hook = _tonight_hook(
+                f"{seed}|tonight-multi", day_label=tonight_label, kind="multi"
+            )
+            body = hook + "\n\n" + _join_event_blocks(tonight, with_links)
+
+    # --- mixed: tonight + tomorrow ---
+    elif tonight and tomorrow:
+        if lead_tonight:
+            hook = _tonight_and_tomorrow_hook(
+                f"{seed}|mixed-tonight", tomorrow_label=day_label
+            )
+            body = (
+                hook
+                + "\n\n"
+                + _tonight_section()
+                + "\n\nTomorrow at Sacred Ground\n\n"
+                + _tomorrow_multi_section()
+            )
+        else:
+            hook = _tonight_and_tomorrow_hook(
+                f"{seed}|mixed-tomorrow", tomorrow_label=day_label
+            )
+            body = (
+                hook
+                + "\n\n"
+                + _tomorrow_multi_section()
+                + "\n\n"
+                + _tonight_section()
+            )
+
+    # --- tomorrow only (unchanged horizon) ---
+    elif len(tomorrow) == 1:
         ev = tomorrow[0]
         if is_community_meditation(ev):
             hook = _tomorrow_hook(f"{seed}|med", kind="meditation")
@@ -211,20 +311,9 @@ def caption_today(
                 body_bits.append(blurb)
             body_bits.append(ev.url)
             body = "\n\n".join(body_bits)
-    elif tomorrow:
-        hook = _tomorrow_hook(f"{seed}|multi", day_label=day_label, kind="multi")
-        body = hook + "\n\n" + _join_event_blocks(tomorrow, with_links)
-        body += "\n\nDetails & signup on each event page."
     else:
-        hook = "Tonight at Sacred Ground — something beautiful still ahead."
-        body = hook
-
-    if tonight:
-        body += "\n\nTonight at Sacred Ground\n\n" + _join_event_blocks(tonight, with_links)
-        for ev in tonight:
-            note = _free_community_note(ev)
-            if note and note not in body:
-                body += f"\n\n{note}"
+        hook = _tomorrow_hook(f"{seed}|multi", day_label=day_label, kind="multi")
+        body = hook + "\n\n" + _tomorrow_multi_section()
 
     body += "\n\n" + _signoff(seed, platform)
     tags = _hashtags(platform)

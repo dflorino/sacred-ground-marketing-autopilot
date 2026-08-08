@@ -23,6 +23,7 @@
       "schedule_local_time": "09:00",
       "target_offset_days": 1,
       "campaign_word": "TOMORROW",
+      "campaign_word_same_day": "TODAY",
       "same_day_evening_start_hour": 17,
       "include_same_day_evening": true,
       "platforms": ["facebook", "instagram"],
@@ -32,7 +33,7 @@
       "default_image_url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.15-AM.png",
       "image_policy": "image_rules_library",
       "image_rules_file": "config/image_rules.json",
-      "notes": "Every morning 9:00 AM CT (flip schedule_local_time to 10:00 for 10am): FB+IG promoting NEXT calendar day (~24h to book) PLUS any remaining same-day evening events (start >= same_day_evening_start_hour, default 5pm) so tonight's gatherings (e.g. Lions Gate 8pm) are never dropped on the day-of morning post. Campaign key stays 'today' for publish-today. Flyer prefers publish-day when tonight evening exists, else tomorrow."
+      "notes": "Every morning 9:00 AM CT (flip schedule_local_time to 10:00 for 10am): FB+IG promoting NEXT calendar day (~24h to book) PLUS any remaining same-day evening events (start >= same_day_evening_start_hour, default 5pm) so tonight's gatherings (e.g. Lions Gate 8pm) are never dropped on the day-of morning post. Campaign key stays 'today' for publish-today. Flyer prefers publish-day when tonight evening exists, else tomorrow. Caption wording follows the flyer/horizon: tonight/today when same-day evening is featured, tomorrow when tomorrow-only, tonight+tomorrow when mixed. Prebranded flyers skip campaign_word overlays."
     },
     "week": {
       "enabled": true,

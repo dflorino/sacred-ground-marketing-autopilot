@@ -47,7 +47,7 @@ Daily morning posts for Sacred Ground Marketing Autopilot.
 
 **Status: auto_publish ON.** Every morning at **9:00 AM America/Chicago**: generate FB+IG promoting **tomorrow’s** TEC events (plus any remaining same-day evening gatherings) and publish via Zernio.
 
-Campaign key stays `today` / CLI `publish-today` for compatibility. Content horizon: `target_offset_days: 1`. On-image word: `TOMORROW`. Flip `schedule_local_time` to `10:00` in `config/settings.json` if Founder prefers 10am.
+Campaign key stays `today` / CLI `publish-today` for compatibility. Content horizon: `target_offset_days: 1` plus same-day evening merge. On-image word: `TOMORROW` when the flyer is tomorrow-dated; `TODAY` when same-day evening prefers the publish-day flyer; skip overlays on prebranded flyers. Caption wording matches the flyer/horizon (tonight / tonight+tomorrow / tomorrow-only). Flip `schedule_local_time` to `10:00` in `config/settings.json` if Founder prefers 10am.
 
 ## Image rules (locked)
 
@@ -87,7 +87,7 @@ You are running Sacred Ground Marketing Autopilot for the daily morning (tomorro
 Hard rules:
 1. Timezone context is America/Chicago. Shop-local post time is 9:00 AM America/Chicago.
 2. Checkout this repo and run from the project root.
-3. Content promotes TOMORROW’s events (and remaining same-day evening events). Captions use warm tomorrow verbiage — not “Today at Sacred Ground”.
+3. Content promotes TOMORROW’s events (and remaining same-day evening events). Captions match the flyer/horizon: tonight/today when the publish-day flyer is used, tomorrow when tomorrow-only, tonight+tomorrow when mixed — never open with “tomorrow” while the graphic is about today.
 4. Ensure Thursday-style equal-card morning flyer(s) before drafts (never prices/$ on graphics; never hero+tiny secondary):
    python3 -m marketing generate-morning-flyers --start-offset 1 --days 1 --source live-strict
    Prefer a weekly --days 7 prebuild so 9am is not inventing art cold.

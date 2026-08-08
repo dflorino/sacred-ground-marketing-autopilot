@@ -202,18 +202,6 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
         empty_ok = bool(today_cfg.get("empty_day_fallback", True))
         if today_events or empty_ok:
             sched = schedule.schedule_today(day)
-            visit_notes = notes_base + [
-                f"event_day:{event_day.isoformat()}",
-                f"flyer_day:{flyer_day.isoformat()}",
-                f"campaign_word:{schedule.morning_campaign_word()}",
-            ]
-            if tonight_evening:
-                visit_notes.append(
-                    "includes_same_day_evening:"
-                    + ",".join(str(e.id) for e in tonight_evening)
-                )
-            if not today_events:
-                visit_notes.append("empty_day_visit")
             claimed_urls: List[str] = []
             for platform in platforms:
                 img = images.plan_image(
@@ -223,6 +211,28 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                     platform=platform,
                     exclude_urls=claimed_urls,
                 )
+                prebranded = bool(getattr(img, "prebranded", False)) or images.skip_brand_overlays(
+                    img
+                )
+                camp_word = schedule.morning_campaign_word(
+                    flyer_day=flyer_day,
+                    publish_day=day,
+                    prebranded=prebranded,
+                )
+                visit_notes = notes_base + [
+                    f"event_day:{event_day.isoformat()}",
+                    f"flyer_day:{flyer_day.isoformat()}",
+                    f"campaign_word:{camp_word or 'skip_prebranded'}",
+                ]
+                if prebranded:
+                    visit_notes.append("skip_brand_overlays:prebranded_flyer")
+                if tonight_evening:
+                    visit_notes.append(
+                        "includes_same_day_evening:"
+                        + ",".join(str(e.id) for e in tonight_evening)
+                    )
+                if not today_events:
+                    visit_notes.append("empty_day_visit")
                 rule_note = (
                     f"image_rule:{img.rule}" if getattr(img, "rule", None) else None
                 )
@@ -232,6 +242,8 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                     platform,
                     event_day,
                     tonight_events=tonight_evening,
+                    flyer_day=flyer_day,
+                    publish_day=day,
                 )
                 draft = _make_draft(
                     campaign="today",
@@ -598,7 +610,12 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
         "ok": True,
         "as_of": day.isoformat(),
         "morning_event_day": event_day.isoformat() if today_cfg.get("enabled", True) else None,
-        "morning_campaign_word": schedule.morning_campaign_word()
+        "morning_flyer_day": flyer_day.isoformat() if today_cfg.get("enabled", True) else None,
+        "morning_campaign_word": schedule.morning_campaign_word(
+            flyer_day=flyer_day,
+            publish_day=day,
+            prebranded=False,
+        )
         if today_cfg.get("enabled", True)
         else None,
         "source": source_used,

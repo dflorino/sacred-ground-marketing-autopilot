@@ -812,6 +812,78 @@ class AutopilotTests(unittest.TestCase):
         )["text"]
         self.assertEqual(sat_morning.count(note), 1)
 
+        # Same-day flyer + tonight merge: lead with tonight, not “tomorrow”
+        sunday = Event(
+            id=25384,
+            title="Divine Insight Sessions with Janel: Akashic Records or Angel Card Readings",
+            start_date="2026-08-09 12:00:00",
+            end_date="2026-08-09 17:00:00",
+            url="https://shopsacredground.com/book/janel/",
+        )
+        mixed = captions.caption_today(
+            [sunday],
+            "facebook",
+            date(2026, 8, 9),
+            tonight_events=[lions],
+            flyer_day=date(2026, 8, 8),
+            publish_day=date(2026, 8, 8),
+        )
+        hook_l = mixed["hook"].lower()
+        self.assertTrue(
+            "tonight" in hook_l,
+            f"mixed same-day flyer should lead with tonight, got: {mixed['hook']}",
+        )
+        self.assertNotIn("peek at tomorrow", hook_l)
+        # Tonight events listed before tomorrow section
+        self.assertLess(
+            mixed["text"].find("Lions Gate"),
+            mixed["text"].find("Divine Insight"),
+        )
+
+        tomorrow_only = captions.caption_today(
+            [sunday], "facebook", date(2026, 8, 9)
+        )
+        self.assertIn("tomorrow", tomorrow_only["hook"].lower())
+        self.assertNotIn("tonight", tomorrow_only["hook"].lower())
+
+        tonight_only = captions.caption_today(
+            [],
+            "facebook",
+            date(2026, 8, 9),
+            tonight_events=[lions],
+            flyer_day=date(2026, 8, 8),
+            publish_day=date(2026, 8, 8),
+        )
+        self.assertIn("tonight", tonight_only["hook"].lower())
+        self.assertNotIn("tomorrow", tonight_only["hook"].lower())
+
+        from marketing import schedule
+
+        self.assertEqual(
+            schedule.morning_campaign_word(
+                flyer_day=date(2026, 8, 8),
+                publish_day=date(2026, 8, 8),
+                prebranded=True,
+            ),
+            "",
+        )
+        self.assertEqual(
+            schedule.morning_campaign_word(
+                flyer_day=date(2026, 8, 8),
+                publish_day=date(2026, 8, 8),
+                prebranded=False,
+            ),
+            "TODAY",
+        )
+        self.assertEqual(
+            schedule.morning_campaign_word(
+                flyer_day=date(2026, 8, 9),
+                publish_day=date(2026, 8, 8),
+                prebranded=False,
+            ),
+            "TOMORROW",
+        )
+
         # Tuesday Free Community Meditation still uses meditation block (doors close)
         tue_med = Event(
             id=99,

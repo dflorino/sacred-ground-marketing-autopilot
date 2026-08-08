@@ -28,9 +28,26 @@ def morning_target_day(day: Optional[date] = None) -> date:
     return on + timedelta(days=offset)
 
 
-def morning_campaign_word() -> str:
-    """On-image campaign word for non-prebranded morning posts (default TOMORROW)."""
+def morning_campaign_word(
+    *,
+    flyer_day: Optional[date] = None,
+    publish_day: Optional[date] = None,
+    prebranded: bool = False,
+) -> str:
+    """On-image campaign word for non-prebranded morning posts.
+
+    Prebranded morning flyers must not get a conflicting TOMORROW stamp.
+    When the flyer is publish-day dated (same-day evening merge), use TODAY.
+    """
+    if prebranded:
+        return ""
     cfg = (settings().get("campaigns") or {}).get("today") or {}
+    if (
+        flyer_day is not None
+        and publish_day is not None
+        and flyer_day == publish_day
+    ):
+        return str(cfg.get("campaign_word_same_day") or "TODAY").strip() or "TODAY"
     word = str(cfg.get("campaign_word") or "TOMORROW").strip()
     return word or "TOMORROW"
 
