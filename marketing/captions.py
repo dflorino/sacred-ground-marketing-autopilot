@@ -68,6 +68,7 @@ def _event_block(ev: Event, with_link: bool, *, under_day: bool = False) -> str:
 
     When under_day=True (week / week-ahead day sections), omit the weekday/date
     from the when line — the day header already carries it.
+    Free community events get an explicit welcome note under the block.
     """
     if is_community_meditation(ev):
         return meditation_event_block(event=ev)
@@ -83,6 +84,9 @@ def _event_block(ev: Event, with_link: bool, *, under_day: bool = False) -> str:
         lines.append(f"  {when_line}")
     if with_link and ev.url:
         lines.append(f"  {ev.url}")
+    note = _free_community_note(ev)
+    if note:
+        lines.append(f"  {note}")
     return "\n".join(lines)
 
 
@@ -139,10 +143,25 @@ def _tomorrow_hook(seed: str, *, day_label: str = "", title: str = "", kind: str
 def _free_community_note(ev: Event) -> str:
     from .classify import is_free_community_event
 
-    if is_free_community_event(ev) or "free" in (ev.cost or "").lower():
-        if "community" in (ev.title or "").lower() or is_free_community_event(ev):
-            return "Free community gathering — all are welcome."
+    if is_free_community_event(ev):
+        return "Free community gathering — all are welcome."
+    # Soft fallback: cost Free + community cue in title (covers odd TEC variants).
+    if "free" in (ev.cost or "").lower() and "community" in (ev.title or "").lower():
+        return "Free community gathering — all are welcome."
     return ""
+
+
+def _week_ahead_booking_cta(events: Sequence[Event]) -> str:
+    """Booking closer — soften when the list includes a free community gathering."""
+    from .classify import is_free_community_event
+
+    has_free = any(is_free_community_event(e) for e in events)
+    if has_free:
+        return (
+            "Book a session when you’re ready — free community gatherings "
+            "are open to all."
+        )
+    return "Call to book a session or grab your spot online."
 
 
 def caption_today(
@@ -319,7 +338,7 @@ def caption_week_ahead(events: List[Event], platform: str, day: date) -> Dict:
     night = _week_ahead_night_block(f"{seed}|night")
     if night:
         body += "\n\n" + night
-    body += "\n\nCall to book a session or grab your spot online."
+    body += "\n\n" + _week_ahead_booking_cta(events)
     body += "\n847-749-3922"
     body += "\nhttps://shopsacredground.com/events/"
     # Standalone goodnight — day-based so FB+IG match and consecutive nights differ.

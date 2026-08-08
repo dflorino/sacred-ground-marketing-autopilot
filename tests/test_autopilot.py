@@ -739,6 +739,93 @@ class AutopilotTests(unittest.TestCase):
         self.assertNotIn(goodnight, stub_text)
         self.assertNotIn("https://shopsacredground.com/event/meditation/", stub_text)
 
+    def test_free_community_note_on_morning_multi_and_week_ahead(self) -> None:
+        """Lions Gate / free community: explicit note on multi + week_ahead; soft CTA."""
+        from marketing import captions
+        from marketing.classify import is_free_community_event
+        from marketing.models import Event
+
+        melissa = Event(
+            id=1,
+            title="Shaman Medium Melissa",
+            start_date="2026-08-08 11:00:00",
+            end_date="2026-08-08 14:00:00",
+            url="https://shopsacredground.com/book/melissa/",
+            cost="$99",
+        )
+        lions = Event(
+            id=25926,
+            title="Lions Gate Meditation with Eve Free Community Event",
+            start_date="2026-08-08 20:00:00",
+            end_date="2026-08-08 21:00:00",
+            url="https://shopsacredground.com/event/lions-gate-meditation-with-eve/",
+            cost="Free",
+        )
+        # Title without "community" still qualifies via Free cost + lions gate cue
+        lions_short = Event(
+            id=25927,
+            title="Lions Gate Meditation with Eve",
+            start_date="2026-08-08 20:00:00",
+            end_date="2026-08-08 21:00:00",
+            url="https://shopsacredground.com/event/lions-gate-meditation-with-eve/",
+            cost="Free",
+        )
+        self.assertTrue(is_free_community_event(lions))
+        self.assertTrue(is_free_community_event(lions_short))
+
+        note = "Free community gathering — all are welcome."
+        day = date(2026, 8, 8)
+        fri = date(2026, 8, 7)
+
+        morning_multi = captions.caption_today([melissa, lions], "facebook", day)["text"]
+        self.assertIn(note, morning_multi)
+        self.assertIn("Lions Gate Meditation with Eve Free Community Event", morning_multi)
+
+        # Friday morning: tomorrow=Sat lineup (multi) — note must appear
+        fri_morning = captions.caption_today([melissa, lions], "facebook", day)["text"]
+        self.assertIn(note, fri_morning)
+
+        week_ahead = captions.caption_week_ahead(
+            [melissa, lions], "facebook", fri
+        )["text"]
+        self.assertIn(note, week_ahead)
+        self.assertIn(
+            "Book a session when you’re ready — free community gatherings are open to all.",
+            week_ahead,
+        )
+        self.assertNotIn("Call to book a session or grab your spot online.", week_ahead)
+
+        # Paid-only week_ahead keeps the book CTA
+        paid_only = captions.caption_week_ahead([melissa], "instagram", fri)["text"]
+        self.assertIn("Call to book a session or grab your spot online.", paid_only)
+        self.assertNotIn(note, paid_only)
+
+        afternoon = captions.caption_afternoon_spotlight(lions, "facebook", fri)["text"]
+        self.assertIn(note, afternoon)
+
+        # Sat morning tonight merge still carries the note (and no duplicate spam)
+        sat_morning = captions.caption_today(
+            [melissa],
+            "facebook",
+            day,
+            tonight_events=[lions],
+        )["text"]
+        self.assertEqual(sat_morning.count(note), 1)
+
+        # Tuesday Free Community Meditation still uses meditation block (doors close)
+        tue_med = Event(
+            id=99,
+            title="Free Community Meditation",
+            start_date="2026-08-04 19:00:00",
+            end_date="2026-08-04 20:00:00",
+            url="https://shopsacredground.com/event/free-community-meditation-2/",
+            cost="Free",
+        )
+        self.assertTrue(is_free_community_event(tue_med))
+        med_today = captions.caption_today([tue_med], "facebook", date(2026, 8, 4))["text"]
+        self.assertIn("Doors close at 7:05pm", med_today)
+        self.assertIn("All are welcome", med_today)
+
     def test_tuesday_meditation_schedule_and_holiday_skips(self) -> None:
         from marketing import schedule
 

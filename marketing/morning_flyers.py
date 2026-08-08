@@ -351,16 +351,33 @@ def build_generation_prompt(
         "the Aug 6 gold standard. FORBIDDEN: one large hero photo/title with a "
         "tiny ALSO TODAY / secondary corner badge for another practitioner."
     )
+    free_bit = ""
+    if events:
+        from .classify import is_free_community_event
+
+        free_titles = [
+            _short_title(e.title)
+            for e in pick_events_for_flyer(events)
+            if is_free_community_event(e)
+        ]
+        if free_titles:
+            free_bit = (
+                " Free community events on equal cards must show FREE or "
+                "Free Community on the card itself (OK — not a dollar price): "
+                + " · ".join(free_titles)
+                + "."
+            )
     shared = (
         f"Chicago date {day.isoformat()}. "
         f"Date/time text: {copy.get('date_short')}. "
-        f"{events_bit}{visit} {equal_rule} "
+        f"{events_bit}{visit}{free_bit} {equal_rule} "
         "Elegant mixed fonts (script + serif), circular Sacred Ground sun-face "
         f"logo, footer with {WEBSITE} and {PHONE}. Prebranded finished flyer. "
         "CRITICAL: do NOT include any prices, dollar signs, ticket costs, or "
-        "dollar amounts anywhere on the graphic. No invented practitioner faces "
-        "unless a real photo reference is provided. Vary gold/jewel accents by "
-        "day — versions of the system, not exact clones."
+        "dollar amounts anywhere on the graphic. FREE / Free Community for "
+        "free community gatherings is allowed and preferred. No invented "
+        "practitioner faces unless a real photo reference is provided. Vary "
+        "gold/jewel accents by day — versions of the system, not exact clones."
     )
     if is_b:
         bg_energy = (
@@ -525,7 +542,16 @@ def _host_from_title(title: str) -> str:
 
 
 def _keywords_for_event(ev: Event) -> str:
+    from .classify import is_free_community_event
+
     low = (ev.title or "").lower()
+    # Free community gatherings: FREE is OK on-image (dollar prices are not).
+    if is_free_community_event(ev):
+        if "lions gate" in low:
+            return "FREE · Portal · Align"
+        if "meditation" in low:
+            return "FREE · Community · Welcome"
+        return "FREE · Community · Welcome"
     if "tai chi" in low:
         return "Move · Breathe · Flow"
     if "tarot" in low or "rune" in low:

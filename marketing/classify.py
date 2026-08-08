@@ -371,11 +371,32 @@ def _evening_hour_from(cfg_key: str, default: int = 17) -> int:
 
 
 def is_free_community_event(event: Event) -> bool:
-    """True for free community gatherings (Lions Gate, etc.) — not Tuesday doors-close."""
-    low = f"{event.title} {event.cost} {event.excerpt}".lower()
-    if "free" not in low:
+    """True for free community gatherings (Lions Gate, etc.) — not Tuesday doors-close.
+
+    Matches when "free" appears with community/welcome language, or when cost is
+    Free and the title carries a known free-gathering cue (Lions Gate, meditation,
+    reiki share, etc.) even if "community" drops from the title.
+    """
+    title = (event.title or "").lower()
+    cost = (event.cost or "").lower()
+    excerpt = (event.excerpt or "").lower()
+    blob = f"{title} {cost} {excerpt}"
+    if "free" not in blob:
         return False
-    return any(k in low for k in ("community", "all welcome", "all are welcome"))
+    if any(k in blob for k in ("community", "all welcome", "all are welcome")):
+        return True
+    # cost Free + signature free-gathering keywords (title may omit "community")
+    if "free" in cost:
+        cues = (
+            "lions gate",
+            "meditation",
+            "reiki share",
+            "educational night",
+            "tarotheads",
+            "tarot heads",
+        )
+        return any(k in title for k in cues)
+    return False
 
 
 def event_still_upcoming(event: Event, after: Optional[datetime] = None) -> bool:
