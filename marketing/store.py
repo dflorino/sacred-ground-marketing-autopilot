@@ -186,10 +186,17 @@ def _week_ahead_event_day_count(draft: Dict[str, Any]) -> int:
 
 
 def is_stale_week_ahead_draft(draft: Dict[str, Any], horizon_days: int) -> bool:
-    """True if draft still carries a pre-2-day / Screenshot-exterior night post."""
+    """True if draft still carries a pre-2-day / Screenshot-exterior night post.
+
+    Forward horizon is ``horizon_days`` (default 2, starting tomorrow). Same-day
+    evening merge may add one extra calendar day (tonight), so unique event days
+    up to ``horizon_days + 1`` are still current — not the old 3-day forward window.
+    """
     if draft.get("campaign") != "week_ahead":
         return False
-    if _week_ahead_event_day_count(draft) > max(1, int(horizon_days)):
+    # tonight evening + next N days ⇒ at most N+1 unique calendar days
+    max_event_days = max(1, int(horizon_days)) + 1
+    if _week_ahead_event_day_count(draft) > max_event_days:
         return True
     img = draft.get("image") or {}
     rule = str(img.get("rule") or "")

@@ -1411,31 +1411,59 @@ class AutopilotTests(unittest.TestCase):
     def test_stale_week_ahead_draft_detected(self) -> None:
         from marketing import store
 
-        stale = {
+        stale_exterior = {
             "campaign": "week_ahead",
             "events": [
                 {"start_date": "2026-08-06 12:00:00"},
                 {"start_date": "2026-08-07 12:00:00"},
-                {"start_date": "2026-08-08 12:00:00"},
             ],
             "image": {
                 "rule": "week_ahead_exterior",
                 "url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.15-AM.png",
             },
         }
-        fresh = {
+        # Current shape: tonight evening + next 2 days (3 calendar days) + night creative
+        fresh_with_tonight = {
             "campaign": "week_ahead",
             "events": [
-                {"start_date": "2026-08-06 12:00:00"},
+                {"start_date": "2026-08-06 19:00:00"},
                 {"start_date": "2026-08-07 12:00:00"},
+                {"start_date": "2026-08-08 12:00:00"},
             ],
             "image": {
                 "rule": "week_ahead_creative_milky_way",
                 "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-milky-way.png",
             },
         }
-        self.assertTrue(store.is_stale_week_ahead_draft(stale, 2))
-        self.assertFalse(store.is_stale_week_ahead_draft(fresh, 2))
+        fresh_two_day = {
+            "campaign": "week_ahead",
+            "events": [
+                {"start_date": "2026-08-07 12:00:00"},
+                {"start_date": "2026-08-08 12:00:00"},
+            ],
+            "image": {
+                "rule": "week_ahead_creative_milky_way",
+                "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-milky-way.png",
+            },
+        }
+        # More than horizon+1 (tonight + 2 forward) is the old oversized window
+        stale_too_many_days = {
+            "campaign": "week_ahead",
+            "events": [
+                {"start_date": "2026-08-06 12:00:00"},
+                {"start_date": "2026-08-07 12:00:00"},
+                {"start_date": "2026-08-08 12:00:00"},
+                {"start_date": "2026-08-09 12:00:00"},
+            ],
+            "image": {
+                "rule": "week_ahead_creative_milky_way",
+                "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-milky-way.png",
+            },
+        }
+        self.assertTrue(store.is_stale_week_ahead_draft(stale_exterior, 2))
+        self.assertTrue(store.is_stale_week_ahead_draft(stale_too_many_days, 2))
+        self.assertFalse(store.is_stale_week_ahead_draft(fresh_with_tonight, 2))
+        self.assertFalse(store.is_stale_week_ahead_draft(fresh_two_day, 2))
 
     def test_morning_flyer_no_price_rule(self) -> None:
         from marketing import morning_flyers as mf
