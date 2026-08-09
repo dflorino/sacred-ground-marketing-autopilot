@@ -43,6 +43,48 @@
       "rule": "morning_flyer",
       "campaign": "today",
       "platform": "instagram"
+    },
+    {
+      "date": "2026-08-09",
+      "url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-08-08-at-2.59.02-PM.png",
+      "rule": "event_featured",
+      "campaign": "afternoon_spotlight",
+      "platform": "facebook"
+    },
+    {
+      "date": "2026-08-09",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-09-chakras-1.png",
+      "rule": "morning_flyer",
+      "campaign": "today",
+      "platform": "facebook"
+    },
+    {
+      "date": "2026-08-09",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-neon-puddles.png",
+      "rule": "week_ahead_creative_neon_puddles",
+      "campaign": "week_ahead",
+      "platform": "facebook"
+    },
+    {
+      "date": "2026-08-09",
+      "url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-08-08-at-2.59.02-PM.png",
+      "rule": "event_featured",
+      "campaign": "afternoon_spotlight",
+      "platform": "instagram"
+    },
+    {
+      "date": "2026-08-09",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-09-quantum-chakras-event-an-imm-b.png",
+      "rule": "morning_flyer",
+      "campaign": "today",
+      "platform": "instagram"
+    },
+    {
+      "date": "2026-08-09",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-sun-in-moon-v2.png",
+      "rule": "week_ahead_creative_sun_in_moon",
+      "campaign": "week_ahead",
+      "platform": "instagram"
     }
   ]
 }
