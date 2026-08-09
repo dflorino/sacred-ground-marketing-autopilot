@@ -1647,6 +1647,27 @@ class AutopilotTests(unittest.TestCase):
         self.assertNotIn("$", plan_fb.url or "")
         self.assertNotIn("$", plan_ig.url or "")
 
+    def test_instagram_feed_aspect_crop_box(self) -> None:
+        """Story-tall event art (e.g. 1232×1646) must crop into IG's 0.75 floor."""
+        from marketing import publish
+
+        self.assertFalse(publish.ig_aspect_ok(1232, 1646))
+        self.assertTrue(publish.ig_aspect_ok(1232, 1642))
+        self.assertTrue(publish.ig_aspect_ok(1080, 1080))
+        self.assertTrue(publish.ig_aspect_ok(1080, 1350))  # 4:5
+
+        left, top, right, bottom = publish.crop_box_for_instagram_feed(1232, 1646)
+        self.assertEqual(left, 0)
+        self.assertEqual(right, 1232)
+        self.assertEqual(bottom - top, 1642)
+        self.assertTrue(publish.ig_aspect_ok(right - left, bottom - top))
+
+        # Too wide → crop width toward 1.91:1
+        l2, t2, r2, b2 = publish.crop_box_for_instagram_feed(2000, 1000)
+        self.assertEqual(t2, 0)
+        self.assertEqual(b2, 1000)
+        self.assertTrue(publish.ig_aspect_ok(r2 - l2, b2 - t2))
+
 
 if __name__ == "__main__":
     unittest.main()

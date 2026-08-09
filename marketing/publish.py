@@ -1,18 +1,24 @@
 """Phase 2+ publish gate + Zernio HTTP schedule/publish."""
 from __future__ import annotations
 
+import io
 import json
 import os
 import urllib.error
 import urllib.request
 from datetime import datetime
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
 from zoneinfo import ZoneInfo
 
 from . import control, store
 from .paths import accounts
 
 ZERNIO_API_BASE = os.environ.get("ZERNIO_API_BASE", "https://zernio.com/api/v1")
+
+# Instagram feed still rejects ratios just outside 0.75–1.91 (Zernio 400).
+IG_MIN_ASPECT = 0.75
+IG_MAX_ASPECT = 1.91
+_HTTP_UA = "SacredGroundMarketingAutopilot/1.0 (+shopsacredground.com)"
 
 
 def can_schedule(draft: Dict[str, Any]) -> tuple[bool, str]:
@@ -43,6 +49,109 @@ def zernio_api_key() -> Optional[str]:
     return key or None
 
 
+def ig_aspect_ok(width: int, height: int) -> bool:
+    """True when width/height is inside Instagram feed's allowed range."""
+    if width <= 0 or height <= 0:
+        return False
+    ratio = width / height
+    # Tiny float slack — Zernio still rejects 1232×1646 (≈0.7485).
+    return (IG_MIN_ASPECT - 1e-9) <= ratio <= (IG_MAX_ASPECT + 1e-9)
+
+
+def crop_box_for_instagram_feed(width: int, height: int) -> Tuple[int, int, int, int]:
+    """Center-crop box (left, top, right, bottom) into a valid IG feed ratio.
+
+    Prefer 3:4 portrait when the source is too tall; 1.91:1 when too wide.
+    """
+    if width <= 0 or height <= 0:
+        raise ValueError("invalid image dimensions")
+    ratio = width / height
+    if ratio < IG_MIN_ASPECT:
+        # Too tall — crop height to width / 0.75 (= 4:3 height for given width).
+        target_h = int(width / IG_MIN_ASPECT)
+        target_h = max(1, min(target_h, height))
+        top = (height - target_h) // 2
+        return (0, top, width, top + target_h)
+    if ratio > IG_MAX_ASPECT:
+        target_w = int(height * IG_MAX_ASPECT)
+        target_w = max(1, min(target_w, width))
+        left = (width - target_w) // 2
+        return (left, 0, left + target_w, height)
+    return (0, 0, width, height)
+
+
+def _download_bytes(url: str) -> bytes:
+    req = urllib.request.Request(url, headers={"User-Agent": _HTTP_UA})
+    with urllib.request.urlopen(req, timeout=60) as resp:
+        return resp.read()
+
+
+def upload_zernio_media(
+    *,
+    filename: str,
+    content_type: str,
+    data: bytes,
+) -> str:
+    """Presign + PUT bytes to Zernio temp media; return publicUrl."""
+    presign = _http_json(
+        "POST",
+        "media/presign",
+        body={
+            "filename": filename,
+            "contentType": content_type,
+            "size": len(data),
+        },
+    )
+    upload_url = presign.get("uploadUrl")
+    public_url = presign.get("publicUrl")
+    if not upload_url or not public_url:
+        raise RuntimeError("zernio_presign_missing_urls")
+    put = urllib.request.Request(
+        str(upload_url),
+        data=data,
+        method="PUT",
+        headers={"Content-Type": content_type},
+    )
+    with urllib.request.urlopen(put, timeout=120):
+        pass
+    return str(public_url)
+
+
+def ensure_instagram_feed_image_url(url: str, *, draft_id: str = "") -> str:
+    """Return a Zernio-hosted URL cropped into IG feed bounds when needed.
+
+    No-op (original url) when already valid, Pillow missing, or download fails.
+    """
+    if not url:
+        return url
+    try:
+        from PIL import Image
+    except ImportError:
+        return url
+    try:
+        raw = _download_bytes(url)
+        im = Image.open(io.BytesIO(raw))
+        im.load()
+        w, h = im.size
+        if ig_aspect_ok(w, h):
+            return url
+        box = crop_box_for_instagram_feed(w, h)
+        cropped = im.crop(box)
+        if cropped.mode not in ("RGB", "RGBA"):
+            cropped = cropped.convert("RGBA")
+        buf = io.BytesIO()
+        cropped.save(buf, format="PNG")
+        payload = buf.getvalue()
+        stem = (draft_id or "ig").replace("/", "-")[:48]
+        return upload_zernio_media(
+            filename=f"{stem}-ig-feed.png",
+            content_type="image/png",
+            data=payload,
+        )
+    except Exception:
+        return url
+
+
 def schedule_payload(draft: Dict[str, Any]) -> Dict[str, Any]:
     """Build Zernio / ML Social create-post body."""
     platform = draft["platform"]
@@ -52,8 +161,13 @@ def schedule_payload(draft: Dict[str, Any]) -> Dict[str, Any]:
         raise ValueError(f"No accountId configured for {platform}")
     media = []
     img = draft.get("image") or {}
-    if img.get("url"):
-        media.append({"url": img["url"], "type": "image"})
+    image_url = img.get("url")
+    if image_url and platform == "instagram":
+        image_url = ensure_instagram_feed_image_url(
+            str(image_url), draft_id=str(draft.get("id") or "")
+        )
+    if image_url:
+        media.append({"url": image_url, "type": "image"})
     sched = (draft.get("schedule_recommendation") or {}).get("recommended_at")
     tz = draft.get("timezone") or accounts().get("timezone") or "America/Chicago"
     publish_now = _should_publish_now(sched, tz)
