@@ -803,16 +803,16 @@ class AutopilotTests(unittest.TestCase):
         afternoon = captions.caption_afternoon_spotlight(lions, "facebook", fri)["text"]
         self.assertIn(note, afternoon)
 
-        # Sat morning tonight merge still carries the note (and no duplicate spam)
+        # Sat morning today+tomorrow merge still carries the note (no duplicate spam)
         sat_morning = captions.caption_today(
             [melissa],
             "facebook",
             day,
-            tonight_events=[lions],
+            today_events=[lions],
         )["text"]
         self.assertEqual(sat_morning.count(note), 1)
 
-        # Same-day flyer + tonight merge: lead with tonight, not “tomorrow”
+        # Same-day flyer + today merge: lead with today, not “tonight” / “tomorrow”
         sunday = Event(
             id=25384,
             title="Divine Insight Sessions with Janel: Akashic Records or Angel Card Readings",
@@ -824,21 +824,23 @@ class AutopilotTests(unittest.TestCase):
             [sunday],
             "facebook",
             date(2026, 8, 9),
-            tonight_events=[lions],
+            today_events=[lions],
             flyer_day=date(2026, 8, 8),
             publish_day=date(2026, 8, 8),
         )
         hook_l = mixed["hook"].lower()
         self.assertTrue(
-            "tonight" in hook_l,
-            f"mixed same-day flyer should lead with tonight, got: {mixed['hook']}",
+            "today" in hook_l,
+            f"mixed same-day flyer should lead with today, got: {mixed['hook']}",
         )
-        self.assertNotIn("peek at tomorrow", hook_l)
-        # Tonight events listed before tomorrow section
+        self.assertNotIn("tonight", hook_l)
+        # Today events listed before tomorrow section
         self.assertLess(
             mixed["text"].find("Lions Gate"),
             mixed["text"].find("Divine Insight"),
         )
+        self.assertIn("Today at Sacred Ground", mixed["text"])
+        self.assertIn("Tomorrow at Sacred Ground", mixed["text"])
 
         tomorrow_only = captions.caption_today(
             [sunday], "facebook", date(2026, 8, 9)
@@ -846,16 +848,17 @@ class AutopilotTests(unittest.TestCase):
         self.assertIn("tomorrow", tomorrow_only["hook"].lower())
         self.assertNotIn("tonight", tomorrow_only["hook"].lower())
 
-        tonight_only = captions.caption_today(
+        today_only = captions.caption_today(
             [],
             "facebook",
             date(2026, 8, 9),
-            tonight_events=[lions],
+            today_events=[lions],
             flyer_day=date(2026, 8, 8),
             publish_day=date(2026, 8, 8),
         )
-        self.assertIn("tonight", tonight_only["hook"].lower())
-        self.assertNotIn("tomorrow", tonight_only["hook"].lower())
+        self.assertIn("today", today_only["hook"].lower())
+        self.assertNotIn("tonight", today_only["hook"].lower())
+        self.assertNotIn("tomorrow", today_only["hook"].lower())
 
         from marketing import schedule
 
@@ -1097,6 +1100,77 @@ class AutopilotTests(unittest.TestCase):
             "No sign-up needed\n"
             "Doors close at 7:05pm",
         )
+
+    def test_morning_lineup_is_full_today_plus_tomorrow(self) -> None:
+        """Sun 9am: Janel + Randa/Richard + Quantum, then Monday — today-first."""
+        from marketing import captions, classify
+        from marketing.models import Event
+        from marketing.paths import settings
+
+        today_cfg = (settings().get("campaigns") or {}).get("today") or {}
+        self.assertTrue(bool(today_cfg.get("include_publish_day", True)))
+        self.assertFalse(bool(today_cfg.get("include_same_day_evening")))
+        self.assertEqual(str(today_cfg.get("schedule_local_time") or ""), "09:00")
+
+        sun = date(2026, 8, 9)
+        as_of = datetime(2026, 8, 9, 9, 0, tzinfo=ZoneInfo("America/Chicago"))
+        events = [
+            Event(
+                id=25384,
+                title="Divine Insight Sessions with Janel",
+                start_date="2026-08-09 12:00:00",
+                end_date="2026-08-09 17:00:00",
+                url="https://shopsacredground.com/book/janel/",
+            ),
+            Event(
+                id=24616,
+                title="Restore Your Solar Plexus with Randa Clark & Richard Popp",
+                start_date="2026-08-09 13:00:00",
+                end_date="2026-08-09 17:00:00",
+                url="https://shopsacredground.com/book/richard/",
+            ),
+            Event(
+                id=24273,
+                title="Quantum Chakras Event",
+                start_date="2026-08-09 18:00:00",
+                end_date="2026-08-09 20:00:00",
+                url="https://shopsacredground.com/eve-chakra/",
+            ),
+            Event(
+                id=23851,
+                title="Lisa Maria Intuitive Tarot",
+                start_date="2026-08-10 12:00:00",
+                end_date="2026-08-10 17:00:00",
+                url="https://shopsacredground.com/book/lisa-maria/",
+            ),
+        ]
+        combined, tomorrow, today_ev, target = classify.morning_lineup_events(
+            events, sun, after=as_of
+        )
+        self.assertEqual(target, date(2026, 8, 10))
+        self.assertEqual([e.id for e in today_ev], [25384, 24616, 24273])
+        self.assertEqual([e.id for e in tomorrow], [23851])
+        self.assertEqual([e.id for e in combined], [25384, 24616, 24273, 23851])
+
+        cap = captions.caption_today(
+            tomorrow,
+            "facebook",
+            target,
+            today_events=today_ev,
+            flyer_day=sun,
+            publish_day=sun,
+        )
+        hook = cap["hook"].lower()
+        self.assertIn("today", hook)
+        self.assertNotIn("tonight", hook)
+        text = cap["text"]
+        self.assertIn("Janel", text)
+        self.assertIn("Randa", text)
+        self.assertIn("Quantum Chakras", text)
+        self.assertIn("Lisa Maria", text)
+        self.assertIn("Today at Sacred Ground", text)
+        self.assertIn("Tomorrow at Sacred Ground", text)
+        self.assertLess(text.find("Janel"), text.find("Lisa Maria"))
 
     def test_week_ahead_horizon_is_two_days(self) -> None:
         from marketing import classify

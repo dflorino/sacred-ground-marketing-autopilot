@@ -19,13 +19,13 @@
   "campaigns": {
     "today": {
       "enabled": true,
-      "label": "Tomorrow at Sacred Ground",
+      "label": "Today at Sacred Ground",
       "schedule_local_time": "09:00",
       "target_offset_days": 1,
+      "include_publish_day": true,
+      "include_same_day_evening": false,
       "campaign_word": "TOMORROW",
       "campaign_word_same_day": "TODAY",
-      "same_day_evening_start_hour": 17,
-      "include_same_day_evening": true,
       "platforms": ["facebook", "instagram"],
       "source": "the_events_calendar",
       "auto_publish": true,
@@ -33,7 +33,7 @@
       "default_image_url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.15-AM.png",
       "image_policy": "image_rules_library",
       "image_rules_file": "config/image_rules.json",
-      "notes": "Every morning 9:00 AM CT (flip schedule_local_time to 10:00 for 10am): FB+IG promoting NEXT calendar day (~24h to book) PLUS any remaining same-day evening events (start >= same_day_evening_start_hour, default 5pm) so tonight's gatherings (e.g. Lions Gate 8pm) are never dropped on the day-of morning post. Campaign key stays 'today' for publish-today. Flyer prefers publish-day when tonight evening exists, else tomorrow. Caption wording follows the flyer/horizon: tonight/today when same-day evening is featured, tomorrow when tomorrow-only, tonight+tomorrow when mixed. Prebranded flyers skip campaign_word overlays."
+      "notes": "Every morning 9:00 AM America/Chicago (settings schedule_local_time=09:00; Cursor Automation must also be 9:00 AM CT — agents cannot edit Automations). Lineup = ALL remaining events on publish day (full day, not evening-only) + ALL events on tomorrow. Caption opener is today-first when today has events; tomorrow-only wording only when today is empty. Flyer prefers today’s date key when today has events, else tomorrow. On-image word TODAY / TOMORROW matches flyer day; prebranded flyers skip overlays. Campaign key stays 'today' for publish-today. Never lead with “tonight” at 9am when daytime sessions exist. Do NOT flip to 10:00 unless Founder explicitly wants 10am."
     },
     "week": {
       "enabled": true,
@@ -165,7 +165,7 @@
     }
   },
   "require_event_url": true,
-  "max_today_events_in_caption": 6,
+  "max_today_events_in_caption": 8,
   "max_week_events_in_caption": 10,
   "max_week_ahead_events_in_caption": 8
 }

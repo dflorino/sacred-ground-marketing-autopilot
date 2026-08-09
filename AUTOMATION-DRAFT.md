@@ -4,7 +4,7 @@ Code schedule shipped in `87f5375`. Cursor Cloud Automations **cannot be listed 
 
 | Expected name | Cron / time | Commands | Status |
 |---|---|---|---|
-| **SG Morning Tomorrow 9am Social** | Daily **9:00 AM** America/Chicago (`0 9 * * *` in that TZ) | `generate-morning-flyers --start-offset 1 --days 1 --source live-strict` → `run --source live-strict` → `publish-today` | **Edit existing** “SG Today 7am…” if present; disable any leftover 7am duplicate |
+| **SG Morning Today 9am Social** | Daily **9:00 AM** America/Chicago (`0 9 * * *` in that TZ — confirm TZ is Chicago, not UTC) | `generate-morning-flyers --start-offset 0 --days 2 --source live-strict` → `run --source live-strict` → `publish-today` | **Edit existing** morning job; disable any leftover 7am/10am duplicate |
 | **SG Afternoon Spotlight 5pm Social** | Daily **5:00 PM** America/Chicago (`0 17 * * *`) | `run --source live-strict` → `publish-afternoon-spotlight` | **Create if missing** |
 | **SG Week-Ahead 7pm Social** | Daily **7:00 PM** America/Chicago (`0 19 * * *`) | `run --source live-strict` → `publish-week-ahead` | **Leave intact** — only verify Next run shows 7:00 PM CT |
 | **SG Tuesday Meditation 4pm Social** | **Tue 4:00 PM** America/Chicago (`0 16 * * 2`) | `run --source live-strict` → `publish-tuesday-meditation` | **Leave intact** — only verify Tuesday 4:00 PM CT |
@@ -15,13 +15,15 @@ Secret on all live image jobs: **`ZERNIO_API_KEY`**. Repo: `dflorino/sacred-grou
 ## Founder clicks — morning (rename + 9am)
 
 1. Open **Cursor → Automations**.
-2. Find the morning job (likely **SG Today 7am Social** or similar).
-3. **Rename** → **SG Morning Tomorrow 9am Social**.
-4. **Schedule** → **9:00 AM** · timezone **America/Chicago** (confirm Next run is 9:00 AM CT, not 7:00 AM).
-5. **Instructions / prompt** → paste the morning Agent instructions block below (tomorrow-horizon + flyer ensure + `publish-today` only).
+2. Find the morning job (likely **SG Morning Tomorrow 9am Social** / old 7am name).
+3. **Rename** → **SG Morning Today 9am Social**.
+4. **Schedule** → **9:00 AM** · timezone **America/Chicago** (confirm Next run is 9:00 AM CT — not 7:00, not 10:00, not UTC).
+5. **Instructions / prompt** → paste the morning Agent instructions block below (today+tomorrow + flyer ensure + `publish-today` only).
 6. Confirm commands are `publish-today` (not week-ahead / afternoon). Campaign key stays `today`.
-7. Disable any second Active automation still on 7:00 AM.
+7. Disable any second Active automation still on 7:00 AM or 10:00 AM.
 8. Save · Status **Active**.
+
+**Timing note (Aug 9, 2026):** Code + Zernio scheduledFor for Sunday morning were **~9:06 AM CT** (cloud agent lag after a 9:00 trigger). If Facebook looked like 10am, verify the Automation schedule is still 9:00 America/Chicago — agents cannot list/edit Automations from chat.
 
 ## Founder clicks — afternoon spotlight (create if missing)
 
@@ -41,13 +43,13 @@ Secret on all live image jobs: **`ZERNIO_API_KEY`**. Repo: `dflorino/sacred-grou
 
 ---
 
-# Automation draft — SG Morning Tomorrow 9am Social (LIVE)
+# Automation draft — SG Morning Today 9am Social (LIVE)
 
 Daily morning posts for Sacred Ground Marketing Autopilot.
 
-**Status: auto_publish ON.** Every morning at **9:00 AM America/Chicago**: generate FB+IG promoting **tomorrow’s** TEC events (plus any remaining same-day evening gatherings) and publish via Zernio.
+**Status: auto_publish ON.** Every morning at **9:00 AM America/Chicago**: generate FB+IG promoting **today’s full TEC slate**, then **tomorrow**, and publish via Zernio.
 
-Campaign key stays `today` / CLI `publish-today` for compatibility. Content horizon: `target_offset_days: 1` plus same-day evening merge. On-image word: `TOMORROW` when the flyer is tomorrow-dated; `TODAY` when same-day evening prefers the publish-day flyer; skip overlays on prebranded flyers. Caption wording matches the flyer/horizon (tonight / tonight+tomorrow / tomorrow-only). Flip `schedule_local_time` to `10:00` in `config/settings.json` if Founder prefers 10am.
+Campaign key stays `today` / CLI `publish-today` for compatibility. Content: `include_publish_day: true` + `target_offset_days: 1` (not evening-only). On-image word: `TODAY` when the flyer is publish-day dated; `TOMORROW` when tomorrow-only; skip overlays on prebranded flyers. Caption opener is today-first when today has events — never lead with “tonight” at 9am when daytime sessions exist. Keep `schedule_local_time` at `09:00` unless Founder explicitly wants 10am.
 
 ## Image rules (locked)
 
@@ -67,10 +69,10 @@ Never post without a real media URL.
 ## Daily commands (Cloud Agent)
 
 ```bash
-# Prefer weekly prebuild. Morning job ensures tomorrow (+ today when evening events remain).
+# Prefer weekly prebuild. Morning job ensures today + tomorrow flyers.
 python3 -m marketing generate-morning-flyers --days 7 --source live-strict
-# Or tomorrow only:
-# python3 -m marketing generate-morning-flyers --start-offset 1 --days 1 --source live-strict
+# Or today+tomorrow only:
+# python3 -m marketing generate-morning-flyers --start-offset 0 --days 2 --source live-strict
 python3 -m marketing run --source live-strict
 python3 -m marketing publish-today
 ```
@@ -82,15 +84,15 @@ See also: `docs/MORNING-FLYERS.md`, `.cursor/rules/morning-flyers.mdc`.
 ## Agent instructions
 
 ```
-You are running Sacred Ground Marketing Autopilot for the daily morning (tomorrow-horizon) campaign.
+You are running Sacred Ground Marketing Autopilot for the daily morning (today + tomorrow) campaign.
 
 Hard rules:
 1. Timezone context is America/Chicago. Shop-local post time is 9:00 AM America/Chicago.
 2. Checkout this repo and run from the project root.
-3. Content promotes TOMORROW’s events (and remaining same-day evening events). Captions match the flyer/horizon: tonight/today when the publish-day flyer is used, tomorrow when tomorrow-only, tonight+tomorrow when mixed — never open with “tomorrow” while the graphic is about today.
+3. Content promotes TODAY’s full day (all remaining events — not evening-only), then TOMORROW. Caption opener is today-first when today has events; tomorrow-only wording only if today is empty. Never open with “tonight” at 9am when daytime sessions exist.
 4. Ensure Thursday-style equal-card morning flyer(s) before drafts (never prices/$ on graphics; never hero+tiny secondary):
-   python3 -m marketing generate-morning-flyers --start-offset 1 --days 1 --source live-strict
-   Prefer a weekly --days 7 prebuild so 9am is not inventing art cold.
+   python3 -m marketing generate-morning-flyers --start-offset 0 --days 2 --source live-strict
+   Prefer a weekly --days 7 prebuild so 9am is not inventing art cold. Prefer today’s date flyer when today has events.
 5. Refresh live WordPress / The Events Calendar only:
    python3 -m marketing run --source live-strict
 6. If the WordPress/TEC refresh fails: create NO new drafts, do not use stale cache, report wordpress_refresh_failed, and STOP. Do not publish.
@@ -98,16 +100,16 @@ Hard rules:
 8. After a successful live-strict run, publish morning posts:
    python3 -m marketing publish-today
 9. Only Facebook + Instagram morning posts. Do not publish afternoon_spotlight / week_ahead / tuesday_meditation / spotlight.
-10. Summarize: tomorrow’s events (+ tonight evening if any), platforms, image URL/rule, publish results.
+10. Summarize: today’s events + tomorrow’s events, platforms, image URL/rule, publish results.
 ```
 
 ## Editor checklist — morning
 
-1. Name: **SG Morning Tomorrow 9am Social** (rename from “SG Today 7am Social”)
-2. Schedule: **9:00 AM** · timezone **America/Chicago**
+1. Name: **SG Morning Today 9am Social**
+2. Schedule: **9:00 AM** · timezone **America/Chicago** (not UTC, not 10:00)
 3. Repo: `dflorino/sacred-ground-marketing-autopilot` · branch `main`
 4. Secret: `ZERNIO_API_KEY`
-5. Only **one** Active morning automation (disable 7am duplicates)
+5. Only **one** Active morning automation (disable 7am/10am duplicates)
 6. Status: **Active**
 
 ---

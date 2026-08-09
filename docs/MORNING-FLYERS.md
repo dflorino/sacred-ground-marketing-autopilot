@@ -1,6 +1,6 @@
 # Morning flyers (Thursday-style equal cards)
 
-Date-keyed finished flyers power the morning Autopilot post (9:00 AM CT → **tomorrow’s** events). Config: `config/morning_flyers.json`.
+Date-keyed finished flyers power the morning Autopilot post (9:00 AM CT → **today’s full day**, then **tomorrow**). Prefer today’s date-key flyer when today has events. Config: `config/morning_flyers.json`.
 
 ## Sacred Ground daily flyer template (Thursday-style)
 
@@ -68,10 +68,10 @@ Do not republish live posts just to swap a plate — updating archive assets for
    python3 -m marketing generate-morning-flyers --days 7 --source live-strict
    ```
 
-2. **Morning job @ 9am** — ensure tomorrow (and today if same-day evening is included):
+2. **Morning job @ 9am** — ensure today + tomorrow flyers:
 
    ```bash
-   python3 -m marketing generate-morning-flyers --start-offset 1 --days 1 --source live-strict
+   python3 -m marketing generate-morning-flyers --start-offset 0 --days 2 --source live-strict
    python3 -m marketing run --source live-strict
    python3 -m marketing publish-today
    ```

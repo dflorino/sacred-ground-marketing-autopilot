@@ -451,22 +451,34 @@ def morning_lineup_events(
     *,
     after: Optional[datetime] = None,
 ) -> Tuple[List[Event], List[Event], List[Event], date]:
-    """Return (combined, tomorrow, tonight_evening, target_day)."""
+    """Return (combined, tomorrow, today_events, target_day).
+
+    Founder product truth (Aug 9, 2026): morning = ALL remaining events on
+    publish_day (full day — not evening-only) + ALL events on tomorrow.
+    Legacy ``include_same_day_evening`` is evening-only and must stay off for
+    the morning campaign; afternoon spotlight still uses that helper.
+    """
     from .schedule import morning_target_day
 
     cfg = (settings().get("campaigns") or {}).get("today") or {}
     target = morning_target_day(publish_day)
     tomorrow = events_on_day(events, target)
-    tonight: List[Event] = []
-    if cfg.get("include_same_day_evening", True):
-        tonight = same_day_evening_events(
+    today_events: List[Event] = []
+    if cfg.get("include_publish_day", True):
+        for ev in events_on_day(events, publish_day):
+            if event_still_upcoming(ev, after):
+                today_events.append(ev)
+        today_events.sort(key=lambda e: e.start_date)
+    elif cfg.get("include_same_day_evening", False):
+        # Legacy path — evening-only. Prefer include_publish_day instead.
+        today_events = same_day_evening_events(
             events,
             publish_day,
             after=after,
             evening_hour=int(cfg.get("same_day_evening_start_hour") or 17),
         )
-    combined = merge_events_by_id(tonight, tomorrow)
-    return combined, tomorrow, tonight, target
+    combined = merge_events_by_id(today_events, tomorrow)
+    return combined, tomorrow, today_events, target
 
 
 def _spotlight_rank(event: Event) -> tuple:
@@ -531,11 +543,12 @@ def with_same_day_evening(
 ) -> List[Event]:
     """Prepend remaining same-day evening events into a forward horizon list.
 
-    Used by morning `today` when include_same_day_evening is on. week_ahead does
-    not call this — Founder wants next-2-days starting tomorrow only.
+    Morning ``today`` uses ``morning_lineup_events`` (full publish-day) instead.
+    week_ahead keeps ``include_same_day_evening: false`` — next-2-days starting
+    tomorrow only. This helper remains for tests / legacy callers.
     """
     cfg = (settings().get("campaigns") or {}).get(campaign_key) or {}
-    if not cfg.get("include_same_day_evening", True):
+    if not cfg.get("include_same_day_evening", False):
         return ahead_events
     tonight = same_day_evening_events(
         all_events,

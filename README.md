@@ -4,7 +4,7 @@ Event-driven social marketing drafts from WordPress / The Events Calendar.
 
 When events exist in WordPress, Autopilot creates reviewable drafts for:
 
-- **Morning (tomorrow horizon)** — daily Facebook + Instagram (9:00 AM CT); promotes next calendar day + remaining same-day evening events
+- **Morning (today + tomorrow)** — daily Facebook + Instagram (9:00 AM CT); today’s full day, then tomorrow
 - **Afternoon Spotlight** — daily single-event spotlight (5:00 PM CT)
 - **Tuesday Free Community Meditation** — every Tuesday 4:00 PM CT (FB + IG); skips only Christmas Eve/Day and New Year’s Eve/Day
 - **This Week at Sacred Ground** — weekly roundup (FB + IG)

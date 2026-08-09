@@ -15,10 +15,11 @@ def _at_local(day: date, hhmm: str) -> datetime:
 
 
 def morning_target_day(day: Optional[date] = None) -> date:
-    """Calendar day whose events the morning (`today`) campaign promotes.
+    """Tomorrow half of the morning lineup (publish_day + tomorrow).
 
-    Defaults to the next Chicago calendar day (target_offset_days=1) so the
-    9am post gives ~24 hours to plan/book. Publish day stays `day`.
+    Defaults to the next Chicago calendar day (target_offset_days=1).
+    Publish day stays `day`; full today is merged separately via
+    ``include_publish_day``.
     """
     from .ingest import today_local
 
@@ -36,8 +37,8 @@ def morning_campaign_word(
 ) -> str:
     """On-image campaign word for non-prebranded morning posts.
 
-    Prebranded morning flyers must not get a conflicting TOMORROW stamp.
-    When the flyer is publish-day dated (same-day evening merge), use TODAY.
+    Prebranded morning flyers must not get a conflicting TODAY/TOMORROW stamp.
+    When the flyer is publish-day dated (today has events), use TODAY.
     """
     if prebranded:
         return ""
@@ -53,7 +54,7 @@ def morning_campaign_word(
 
 
 def schedule_today(day: date) -> SchedulePlan:
-    """Schedule the morning post on `day` (publish day); content is for target day."""
+    """Schedule the morning post on `day` (publish day) at 9:00 AM CT."""
     cfg = (settings().get("campaigns") or {}).get("today") or {}
     hhmm = cfg.get("schedule_local_time") or "09:00"
     when = _at_local(day, hhmm)
@@ -61,8 +62,8 @@ def schedule_today(day: date) -> SchedulePlan:
     return SchedulePlan(
         recommended_at=when.isoformat(),
         rationale=(
-            f"Daily {hhmm} Central — promote {target.isoformat()} events "
-            "(next calendar day) so people have ~24 hours to plan/book."
+            f"Daily {hhmm} America/Chicago — today’s full slate "
+            f"({day.isoformat()}) then tomorrow ({target.isoformat()})."
         ),
     )
 

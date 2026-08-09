@@ -159,7 +159,7 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
     if is_paused():
         notes_base.append("Autopilot paused — drafts only; no schedule/publish.")
 
-    # Morning campaign: tomorrow (+ remaining same-day evening).
+    # Morning campaign: full publish-day slate + tomorrow.
     # date_key / schedule stay on publish day so publish-today finds drafts.
     today_cfg = (cfg.get("campaigns") or {}).get("today") or {}
     as_of_dt = as_of
@@ -168,14 +168,13 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
     elif as_of_dt.tzinfo is None:
         as_of_dt = as_of_dt.replace(tzinfo=tzinfo())
 
-    combined_morning, tomorrow_events, tonight_evening, event_day = (
+    combined_morning, tomorrow_events, publish_day_events, event_day = (
         classify.morning_lineup_events(events, day, after=as_of_dt)
         if today_cfg.get("enabled", True)
         else ([], [], [], schedule.morning_target_day(day))
     )
-    # Flyer day: prefer publish day when tonight evening is listed (covers Lions Gate
-    # on Saturday morning); else tomorrow's flyer.
-    flyer_day = day if tonight_evening else event_day
+    # Flyer day: prefer today’s flyer when publish-day has events; else tomorrow.
+    flyer_day = day if publish_day_events else event_day
 
     flyer_ensure: Dict[str, Any] = {}
     try:
@@ -195,17 +194,21 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
 
     # --- Morning / "today" campaign ---
     if today_cfg.get("enabled", True):
-        today_events = classify.cap_events(
+        morning_events = classify.cap_events(
             combined_morning,
-            int(cfg.get("max_today_events_in_caption") or 6),
+            int(cfg.get("max_today_events_in_caption") or 8),
         )
+        # Keep today/tomorrow slices aligned with the capped combined list.
+        morning_ids = {e.id for e in morning_events}
+        today_slice = [e for e in publish_day_events if e.id in morning_ids]
+        tomorrow_slice = [e for e in tomorrow_events if e.id in morning_ids]
         empty_ok = bool(today_cfg.get("empty_day_fallback", True))
-        if today_events or empty_ok:
+        if morning_events or empty_ok:
             sched = schedule.schedule_today(day)
             claimed_urls: List[str] = []
             for platform in platforms:
                 img = images.plan_image(
-                    today_events,
+                    morning_events,
                     "today",
                     day=flyer_day,
                     platform=platform,
@@ -226,22 +229,22 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                 ]
                 if prebranded:
                     visit_notes.append("skip_brand_overlays:prebranded_flyer")
-                if tonight_evening:
+                if today_slice:
                     visit_notes.append(
-                        "includes_same_day_evening:"
-                        + ",".join(str(e.id) for e in tonight_evening)
+                        "includes_publish_day:"
+                        + ",".join(str(e.id) for e in today_slice)
                     )
-                if not today_events:
+                if not morning_events:
                     visit_notes.append("empty_day_visit")
                 rule_note = (
                     f"image_rule:{img.rule}" if getattr(img, "rule", None) else None
                 )
                 day_notes = visit_notes + ([rule_note] if rule_note else [])
                 cap = captions.caption_today(
-                    tomorrow_events,
+                    tomorrow_slice,
                     platform,
                     event_day,
-                    tonight_events=tonight_evening,
+                    today_events=today_slice,
                     flyer_day=flyer_day,
                     publish_day=day,
                 )
@@ -249,11 +252,11 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                     campaign="today",
                     platform=platform,
                     date_key=day.isoformat(),
-                    events=today_events,
+                    events=morning_events,
                     caption=cap,
                     image=img,
                     sched=sched,
-                    extra_fp="empty_visit" if not today_events else "",
+                    extra_fp="empty_visit" if not morning_events else "",
                     notes=day_notes,
                 )
                 if draft:

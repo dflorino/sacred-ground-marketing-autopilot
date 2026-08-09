@@ -276,7 +276,7 @@ def publish_campaign_drafts(*, campaign: str) -> Dict[str, Any]:
 def publish_today_drafts(*, campaign: str = "today") -> Dict[str, Any]:
     """Publish/schedule morning campaign drafts for today's publish day.
 
-    Content promotes the next calendar day (see campaigns.today.target_offset_days).
+    Content = full publish-day slate + tomorrow (see morning_lineup_events).
     """
     return publish_campaign_drafts(campaign=campaign)
 

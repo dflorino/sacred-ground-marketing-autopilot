@@ -56,7 +56,7 @@ def main(argv: Optional[List[str]] = None) -> int:
 
     sub.add_parser(
         "publish-today",
-        help="Schedule/publish morning (tomorrow-horizon) drafts via Zernio",
+        help="Schedule/publish morning (today + tomorrow) drafts via Zernio",
     )
     sub.add_parser(
         "publish-afternoon-spotlight",

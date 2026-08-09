@@ -54,10 +54,12 @@ Every Sacred Ground social graphic for Autopilot / ML Social / Zernio **must** i
 
 ## Morning post (9:00 AM America/Chicago)
 
-- Campaign key `today` (CLI `publish-today`) promotes **tomorrow’s** events
-  (`target_offset_days: 1`) plus remaining same-day evening gatherings
-- On-image word: `TOMORROW` (see `campaigns.today.campaign_word`)
-- Schedule: `09:00` (flip to `10:00` in settings if Founder prefers)
+- Campaign key `today` (CLI `publish-today`) promotes **today’s full day**
+  (`include_publish_day: true`) **then tomorrow** (`target_offset_days: 1`)
+- Never evening-only / “tonight” filtering at 9am — daytime sessions must appear
+- Caption opener: today-first when today has events; tomorrow-only if today empty
+- On-image word: `TODAY` when flyer is publish-day; `TOMORROW` when tomorrow-only
+- Schedule: `09:00` America/Chicago (do not flip to 10:00 unless Founder asks)
 
 ## Daily week-ahead (7:00 PM America/Chicago)
 

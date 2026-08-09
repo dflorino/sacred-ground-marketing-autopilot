@@ -42,6 +42,23 @@
     "Tomorrow at Sacred Ground — Free Community Meditation.",
     "See what you can do tomorrow — Free Community Meditation at Sacred Ground."
   ],
+  "today_openers": [
+    "Here’s today at Sacred Ground — {day_label}.",
+    "See what’s happening today at Sacred Ground — {day_label}.",
+    "Today at Sacred Ground — {day_label}.",
+    "Here’s what’s waiting today at Sacred Ground — {day_label}."
+  ],
+  "today_single_openers": [
+    "Here’s today at Sacred Ground — {title}.",
+    "See what’s happening today — {title} at Sacred Ground.",
+    "Today at Sacred Ground — {title}."
+  ],
+  "today_and_tomorrow_openers": [
+    "Here’s today at Sacred Ground, then what’s coming tomorrow.",
+    "Here’s today at Sacred Ground — then a peek at tomorrow.",
+    "See what’s happening today at Sacred Ground, then what’s coming tomorrow.",
+    "Today at Sacred Ground first — then a look at {tomorrow_label}."
+  ],
   "tonight_openers": [
     "See what’s happening tonight at Sacred Ground — {day_label}.",
     "Tonight at Sacred Ground — {day_label}.",
