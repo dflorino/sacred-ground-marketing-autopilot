@@ -1106,6 +1106,7 @@ class AutopilotTests(unittest.TestCase):
         wa = (settings().get("campaigns") or {}).get("week_ahead") or {}
         self.assertEqual(int(wa.get("horizon_days") or 0), 2)
         self.assertEqual(int(wa.get("horizon_start_offset_days") or 0), 1)
+        self.assertFalse(bool(wa.get("include_same_day_evening")))
         self.assertIn("2", str(wa.get("label") or ""))
 
         events = [
@@ -1145,6 +1146,102 @@ class AutopilotTests(unittest.TestCase):
             classify.event_calendar_days(clamped),
             [date(2026, 8, 6), date(2026, 8, 7)],
         )
+
+    def test_week_ahead_sat_7pm_is_sun_mon_only(self) -> None:
+        """Sat 7pm week_ahead → Sunday + Monday only (no Saturday slate)."""
+        from marketing import captions, classify
+        from marketing.models import Event
+
+        sat = date(2026, 8, 8)
+        sun = date(2026, 8, 9)
+        mon = date(2026, 8, 10)
+        tue = date(2026, 8, 11)
+        as_of = datetime(2026, 8, 8, 19, 0, tzinfo=ZoneInfo("America/Chicago"))
+
+        events = [
+            Event(
+                id=1,
+                title="Saturday Morning Session",
+                start_date="2026-08-08 10:00:00",
+                end_date="2026-08-08 12:00:00",
+                url="https://shopsacredground.com/e/1/",
+            ),
+            Event(
+                id=2,
+                title="Tarot With Andre",
+                start_date="2026-08-08 18:00:00",
+                end_date="2026-08-08 21:00:00",
+                url="https://shopsacredground.com/e/2/",
+            ),
+            Event(
+                id=3,
+                title="Lions Gate Meditation Free Community",
+                start_date="2026-08-08 20:00:00",
+                end_date="2026-08-08 21:30:00",
+                cost="Free",
+                url="https://shopsacredground.com/e/3/",
+            ),
+            Event(
+                id=4,
+                title="Sunday Janel",
+                start_date="2026-08-09 12:00:00",
+                end_date="2026-08-09 17:00:00",
+                url="https://shopsacredground.com/e/4/",
+            ),
+            Event(
+                id=5,
+                title="Monday Lisa Maria",
+                start_date="2026-08-10 12:00:00",
+                end_date="2026-08-10 17:00:00",
+                url="https://shopsacredground.com/e/5/",
+            ),
+            Event(
+                id=6,
+                title="Tuesday Too Far",
+                start_date="2026-08-11 12:00:00",
+                end_date="2026-08-11 17:00:00",
+                url="https://shopsacredground.com/e/6/",
+            ),
+        ]
+
+        ahead, window_start, horizon = classify.week_ahead_lineup_events(
+            events, sat, after=as_of
+        )
+        self.assertEqual(horizon, 2)
+        self.assertEqual(window_start, sun)
+        self.assertEqual(classify.event_calendar_days(ahead), [sun, mon])
+        titles = {e.title for e in ahead}
+        self.assertIn("Sunday Janel", titles)
+        self.assertIn("Monday Lisa Maria", titles)
+        self.assertNotIn("Saturday Morning Session", titles)
+        self.assertNotIn("Tarot With Andre", titles)
+        self.assertNotIn("Lions Gate Meditation Free Community", titles)
+        self.assertNotIn("Tuesday Too Far", titles)
+
+        # Same-day evening helper must not reintroduce Saturday when flag is off
+        merged = classify.with_same_day_evening(
+            ahead, events, sat, after=as_of, campaign_key="week_ahead"
+        )
+        self.assertEqual(classify.event_calendar_days(merged), [sun, mon])
+
+        text = captions.caption_week_ahead(ahead, "facebook", sat)["text"]
+        self.assertIn("Sunday, August 9", text)
+        self.assertIn("Monday, August 10", text)
+        self.assertNotIn("Saturday, August 8", text)
+        self.assertNotIn("Tuesday, August 11", text)
+
+        # Sunday 7pm → Mon + Tue
+        sun_as_of = datetime(2026, 8, 9, 19, 0, tzinfo=ZoneInfo("America/Chicago"))
+        ahead_sun, start_sun, _ = classify.week_ahead_lineup_events(
+            events, sun, after=sun_as_of
+        )
+        self.assertEqual(start_sun, mon)
+        self.assertEqual(classify.event_calendar_days(ahead_sun), [mon, tue])
+        sun_text = captions.caption_week_ahead(ahead_sun, "instagram", sun)["text"]
+        self.assertIn("Monday, August 10", sun_text)
+        self.assertIn("Tuesday, August 11", sun_text)
+        self.assertNotIn("Sunday, August 9", sun_text)
+        self.assertNotIn("Saturday, August 8", sun_text)
 
     def test_night_creatives_rotate_not_storefront_only(self) -> None:
         from marketing.atmosphere import atmosphere_config, nighttime_plan

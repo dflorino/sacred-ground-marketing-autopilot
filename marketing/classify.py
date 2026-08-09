@@ -527,9 +527,13 @@ def with_same_day_evening(
     day: date,
     *,
     after: Optional[datetime] = None,
-    campaign_key: str = "week_ahead",
+    campaign_key: str = "today",
 ) -> List[Event]:
-    """Prepend remaining same-day evening events into a forward horizon list."""
+    """Prepend remaining same-day evening events into a forward horizon list.
+
+    Used by morning `today` when include_same_day_evening is on. week_ahead does
+    not call this — Founder wants next-2-days starting tomorrow only.
+    """
     cfg = (settings().get("campaigns") or {}).get(campaign_key) or {}
     if not cfg.get("include_same_day_evening", True):
         return ahead_events
@@ -540,3 +544,38 @@ def with_same_day_evening(
         evening_hour=int(cfg.get("same_day_evening_start_hour") or 17),
     )
     return merge_events_by_id(tonight, ahead_events)
+
+
+def week_ahead_lineup_events(
+    events: List[Event],
+    publish_day: date,
+    *,
+    after: Optional[datetime] = None,
+    max_events: Optional[int] = None,
+) -> Tuple[List[Event], date, int]:
+    """Next N calendar days starting tomorrow — never the publish day.
+
+    Returns (events, window_start, horizon_days).
+    Sat 7pm → Sun+Mon; Sun 7pm → Mon+Tue. Same-day evening is not merged.
+    """
+    cfg = (settings().get("campaigns") or {}).get("week_ahead") or {}
+    horizon = int(cfg.get("horizon_days") or 2)
+    start_offset = int(cfg.get("horizon_start_offset_days") or 1)
+    window_start = publish_day + timedelta(days=start_offset)
+    if max_events is None:
+        max_events = int(settings().get("max_week_ahead_events_in_caption") or 8)
+    ahead = cap_events(
+        events_next_days(events, window_start, days=horizon, after=after),
+        int(max_events),
+    )
+    ahead = clamp_events_to_horizon(ahead, window_start, horizon)
+    # Hard rule: publish-day events never appear on week_ahead (even if an old
+    # include_same_day_evening flag is left on in settings).
+    ahead = [e for e in ahead if _event_day(e) != publish_day]
+    ahead = cap_events(ahead, int(max_events))
+    return ahead, window_start, horizon
+
+
+def _event_day(event: Event) -> Optional[date]:
+    start = parse_tec_datetime(event.start_date)
+    return start.date() if start else None

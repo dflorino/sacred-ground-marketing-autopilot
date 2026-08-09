@@ -60,9 +60,8 @@
       "cta_site": "shopsacredground.com",
       "image_policy": "creative_sky_rotation",
       "image_atmosphere_file": "config/image_atmosphere.json",
-      "include_same_day_evening": true,
-      "same_day_evening_start_hour": 17,
-      "notes": "Every evening 7pm CT: next 2 days starting tomorrow PLUS any remaining same-day evening events (so 8pm gatherings still appear at 7pm). Observatory + Library night block. Night creative pool — no morning specialty art."
+      "include_same_day_evening": false,
+      "notes": "Every evening 7pm CT: next 2 days starting tomorrow only (Sat 7pm → Sun+Mon). Do NOT include the publish day's events (morning through night / same-day evening). Morning + afternoon own tonight. Observatory + Library night block. Night creative pool — no morning specialty art."
     },
     "afternoon_spotlight": {
       "enabled": true,

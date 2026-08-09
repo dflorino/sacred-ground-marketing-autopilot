@@ -415,7 +415,11 @@ def _week_ahead_closer(seed: str, day: date | None = None) -> str:
 
 
 def caption_week_ahead(events: List[Event], platform: str, day: date) -> Dict:
-    """Daily evening planner — upcoming days in caption; night creative photo."""
+    """Daily evening planner — next 2 days starting tomorrow; night creative photo.
+
+    `day` is the publish calendar day (e.g. Saturday). Event blocks should already
+    be tomorrow + day-after only — never the publish day's full slate.
+    """
     if not events:
         raise ValueError("week_ahead caption requires events")
 

@@ -8,7 +8,7 @@ When events exist in WordPress, Autopilot creates reviewable drafts for:
 - **Afternoon Spotlight** — daily single-event spotlight (5:00 PM CT)
 - **Tuesday Free Community Meditation** — every Tuesday 4:00 PM CT (FB + IG); skips only Christmas Eve/Day and New Year’s Eve/Day
 - **This Week at Sacred Ground** — weekly roundup (FB + IG)
-- **Week Ahead** — daily evening planner (7:00 PM CT); next 2 days + remaining tonight evening
+- **Week Ahead** — daily evening planner (7:00 PM CT); next 2 days starting tomorrow (no publish-day / tonight events)
 - **Special Event Spotlight** — Holistic Fair / special one-time events (stronger caption + reminder schedule)
 
 **Phase 1 (default): drafts only.** Nothing publishes live until you approve a test batch.

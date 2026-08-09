@@ -382,33 +382,16 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                 {"campaign": "afternoon_spotlight", "reason": "no_spotlight_event"}
             )
 
-    # --- Week ahead (daily 7pm planner: upcoming days + tonight evening) ---
+    # --- Week ahead (daily 7pm planner: next 2 days starting tomorrow) ---
     wa_cfg = (cfg.get("campaigns") or {}).get("week_ahead") or {}
     if wa_cfg.get("enabled", True):
-        horizon = int(wa_cfg.get("horizon_days") or 2)
-        # Evening posts look forward — default start tomorrow so finished
-        # same-day daytime sessions never appear at 7pm; remaining evening
-        # gatherings (e.g. 8pm Lions Gate) are merged back in.
-        start_offset = int(wa_cfg.get("horizon_start_offset_days") or 1)
-        window_start = day + timedelta(days=start_offset)
-        ahead_events = classify.cap_events(
-            classify.events_next_days(
-                events,
-                window_start,
-                days=horizon,
-                after=as_of_dt,
-            ),
-            int(cfg.get("max_week_ahead_events_in_caption") or 8),
-        )
-        ahead_events = classify.clamp_events_to_horizon(
-            ahead_events, window_start, horizon
-        )
-        ahead_events = classify.with_same_day_evening(
-            ahead_events, events, day, after=as_of_dt, campaign_key="week_ahead"
-        )
-        ahead_events = classify.cap_events(
-            ahead_events,
-            int(cfg.get("max_week_ahead_events_in_caption") or 8),
+        # Sat 7pm → Sun+Mon only. Never include the publish day's calendar
+        # (morning through night / same-day evening). Morning campaign owns tonight.
+        ahead_events, window_start, horizon = classify.week_ahead_lineup_events(
+            events,
+            day,
+            after=as_of_dt,
+            max_events=int(cfg.get("max_week_ahead_events_in_caption") or 8),
         )
         # Retire stale unposted week-ahead drafts for tonight that still carry
         # an old 3-day window or founder Screenshot exterior rotation.

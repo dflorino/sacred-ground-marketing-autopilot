@@ -61,7 +61,9 @@ Every Sacred Ground social graphic for Autopilot / ML Social / Zernio **must** i
 
 ## Daily week-ahead (7:00 PM America/Chicago)
 
-- Campaign `week_ahead`: upcoming days on FB+IG (horizon per settings)
+- Campaign `week_ahead`: next **2** calendar days starting tomorrow
+  (`horizon_start_offset_days: 1`, `horizon_days: 2`, `include_same_day_evening: false`)
+  — Sat 7pm → Sun+Mon; never the publish day’s full slate or tonight’s leftovers
 - Background: night creative from `config/image_atmosphere.json` (sky / storefront /
   holiday / full moon) — **the photo itself must carry a Sacred Ground visual anchor**
   (storefront, logo-sun / bat-signal, glowing “Sacred Ground” in the landscape).

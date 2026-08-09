@@ -164,7 +164,7 @@ Daily next-2-days evening planner posts (Facebook + Instagram).
 
 **Status: auto_publish ON.** Every evening at **7:00 PM America/Chicago**.
 
-Image: rotate the creative night-sky pack (plus sparse in-season storefront / holiday / full-moon overrides). Schedule list lives in the caption — next **2** days starting tomorrow **plus** any remaining same-day evening events (so an 8pm gathering still appears at 7pm).
+Image: rotate the creative night-sky pack (plus sparse in-season storefront / holiday / full-moon overrides). Schedule list lives in the caption — next **2** days starting tomorrow only (Sat 7pm → Sun+Mon). Do **not** include the publish day’s events; morning/afternoon own tonight.
 
 ## Daily commands (Cloud Agent)
 
@@ -190,7 +190,7 @@ Hard rules:
 6. week_ahead has auto_publish=true. After a successful live-strict run, publish tonight's week-ahead posts only:
    python3 -m marketing publish-week-ahead
    Uses ZERNIO_API_KEY from Cloud Agent secrets. Do not call publish-today.
-7. Caption lists the next 2 days only. Image from night atmosphere pool (creative night skies + seasonal/holiday storefronts) — never morning specialty art.
+7. Caption lists the next 2 days starting tomorrow only (Sat → Sun+Mon). Never include the publish day’s events. Image from night atmosphere pool (creative night skies + seasonal/holiday storefronts) — never morning specialty art.
 8. If there are no events in the next 2 days, report skip and do not invent events.
 9. Summarize: event count, platforms, image URL, publish results.
 ```

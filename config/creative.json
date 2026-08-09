@@ -88,7 +88,7 @@
       "image_policy": "config/image_atmosphere.json",
       "approved_reference": "assets/sg-example-night-fall-storefront.png",
       "purpose": "next_2_days_planner",
-      "notes": "Next 2 days starting tomorrow. Creative night-sky pack by default; in-season storefront only sparsely; holidays + full moon still override. Mornings use specialty library with no seasons."
+      "notes": "Next 2 days starting tomorrow only (no publish-day / same-day evening). Creative night-sky pack by default; in-season storefront only sparsely; holidays + full moon still override. Mornings use specialty library with no seasons."
     }
   }
 }
