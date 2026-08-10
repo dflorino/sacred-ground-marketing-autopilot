@@ -1,8 +1,8 @@
 """Day/night atmosphere plan for Sacred Ground social images.
 
 Morning (today): specialty library only — no seasons.
-Night (week_ahead): priority full_moon > holiday > creative_pool rotation
-(night-sky creatives first; current-season storefront at most sparsely).
+Night (week_ahead): priority celestial > full_moon > holiday > creative_pool
+rotation (night-sky creatives first; current-season storefront at most sparsely).
 """
 from __future__ import annotations
 
@@ -90,6 +90,41 @@ def holiday_for(day: date) -> Optional[Tuple[str, Dict[str, Any]]]:
         for win in meta.get("windows") or []:
             if _in_md_window(day, str(win["start"]), str(win["end"])):
                 return str(hid), meta
+    return None
+
+
+def celestial_for(day: date) -> Optional[Tuple[str, Dict[str, Any]]]:
+    """Return (celestial_id, meta) if publish night is a celestial night-before.
+
+    Source of truth: ``config/celestial_events.json`` via ``marketing.celestial``.
+    Optional mirror under ``nighttime.celestial_events`` is ignored when the
+    dedicated config file has the event.
+    """
+    from . import celestial as cel_mod
+
+    hit = cel_mod.celestial_night_for(day)
+    if hit:
+        return hit
+    # Legacy / optional mirror in image_atmosphere.json
+    events = ((atmosphere_config().get("nighttime") or {}).get("celestial_events") or {})
+    for cid, meta in sorted(events.items(), key=lambda kv: str(kv[0])):
+        if not isinstance(meta, dict) or meta.get("active") is False:
+            continue
+        post_raw = meta.get("post_date") or meta.get("post_night_before")
+        if post_raw:
+            try:
+                if datetime.strptime(str(post_raw), "%Y-%m-%d").date() == day:
+                    return str(cid), meta
+            except ValueError:
+                pass
+        raw = meta.get("event_date")
+        if raw:
+            try:
+                event_day = datetime.strptime(str(raw), "%Y-%m-%d").date()
+            except ValueError:
+                event_day = None
+            if event_day is not None and day == event_day - timedelta(days=1):
+                return str(cid), meta
     return None
 
 
@@ -382,7 +417,62 @@ def nighttime_plan(
     excluded = {str(u) for u in (exclude_urls or []) if u}
     from .images import platform_salt
 
-    # Priority 1: full moon only (single plate — if other platform took it, diversify)
+    # Priority 1: celestial night-before (config/celestial_events.json)
+    from . import celestial as cel_mod
+
+    cel_plan = cel_mod.night_plan(day, platform=platform, exclude_urls=list(excluded))
+    if cel_plan:
+        return {
+            "campaign": "week_ahead",
+            "mode": "celestial",
+            "season": season,
+            "holiday": None,
+            "celestial": cel_plan["id"],
+            "full_moon": False,
+            "image_url": cel_plan["image_url"],
+            "season_look": cel_plan.get("look") or cel_plan.get("label"),
+            "cart": "",
+            "caption_opener": cel_plan.get("caption_opener") or "",
+            "prompt_hint": (
+                f"Sacred Ground nighttime CELESTIAL={cel_plan['id']}. Base: {base} "
+                f"Look: {cel_plan.get('look')}. Events stay in caption."
+            ),
+        }
+    # Legacy atmosphere mirror (urls on celestial_events block)
+    cel = celestial_for(day)
+    if cel:
+        cid, c_meta = cel
+        night_block = c_meta.get("night") if isinstance(c_meta.get("night"), dict) else {}
+        urls = [str(u) for u in (night_block.get("urls") or c_meta.get("urls") or []) if u]
+        primary = str(night_block.get("url") or c_meta.get("url") or "")
+        if primary and primary not in urls:
+            urls.insert(0, primary)
+        available = [u for u in urls if u not in excluded]
+        if available:
+            url = available[
+                (day.toordinal() + platform_salt(platform)) % len(available)
+            ]
+            label = str(c_meta.get("label") or cid)
+            return {
+                "campaign": "week_ahead",
+                "mode": "celestial",
+                "season": season,
+                "holiday": None,
+                "celestial": cid,
+                "full_moon": False,
+                "image_url": url,
+                "season_look": str(
+                    night_block.get("look") or c_meta.get("look") or label
+                ),
+                "cart": "",
+                "caption_opener": str(c_meta.get("caption_tomorrow") or ""),
+                "prompt_hint": (
+                    f"Sacred Ground nighttime CELESTIAL={cid}. Base: {base} "
+                    f"Look: {night_block.get('look') or label}. Events stay in caption."
+                ),
+            }
+
+    # Priority 2: full moon only (single plate — if other platform took it, diversify)
     full_cfg = night.get("full_moon") or {}
     if full_cfg.get("enabled", True) and is_full_moon(day):
         url = str(full_cfg.get("url") or "")
@@ -403,7 +493,7 @@ def nighttime_plan(
             }
         # Fall through to holiday/creative so FB ≠ IG when possible.
 
-    # Priority 2: holiday (may rotate multiple holiday plates)
+    # Priority 3: holiday (may rotate multiple holiday plates)
     hit = holiday_for(day)
     if hit:
         hid, h_meta = hit
@@ -433,7 +523,7 @@ def nighttime_plan(
             }
         # Single holiday plate already used by the other platform — diversify via creatives.
 
-    # Priority 3: creative night skies (storefront only sparse / streak-safe)
+    # Priority 4: creative night skies (storefront only sparse / streak-safe)
     pick = _pick_night_creative(day, platform=platform, exclude_urls=list(excluded))
     if pick:
         kind = str(pick.get("kind") or "creative")

@@ -1344,7 +1344,7 @@ class AutopilotTests(unittest.TestCase):
         for i in range(20):
             d = date(2026, 8, 1) + timedelta(days=i)
             plan = nighttime_plan(d)
-            if plan.get("mode") in ("full_moon", "holiday"):
+            if plan.get("mode") in ("full_moon", "holiday", "celestial"):
                 continue
             cid = str(plan.get("creative_id") or "")
             url = str(plan.get("image_url") or "")
@@ -1405,7 +1405,7 @@ class AutopilotTests(unittest.TestCase):
             d = date(2026, 8, 1) + timedelta(days=i)
             for platform in ("facebook", "instagram"):
                 plan = nighttime_plan(d, platform=platform)
-                if plan.get("mode") in ("full_moon", "holiday"):
+                if plan.get("mode") in ("full_moon", "holiday", "celestial"):
                     continue
                 self.assertNotIn(str(plan.get("image_url") or ""), banned)
 

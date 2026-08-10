@@ -174,7 +174,11 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
         else ([], [], [], schedule.morning_target_day(day))
     )
     # Flyer day: prefer today’s flyer when publish-day has events; else tomorrow.
-    flyer_day = day if publish_day_events else event_day
+    # Celestial morning-of always uses publish day so the celestial plate wins.
+    from . import celestial as cel_mod
+
+    cel_morning_hit = cel_mod.celestial_morning_for(day)
+    flyer_day = day if (publish_day_events or cel_morning_hit) else event_day
 
     flyer_ensure: Dict[str, Any] = {}
     try:
@@ -203,7 +207,7 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
         today_slice = [e for e in publish_day_events if e.id in morning_ids]
         tomorrow_slice = [e for e in tomorrow_events if e.id in morning_ids]
         empty_ok = bool(today_cfg.get("empty_day_fallback", True))
-        if morning_events or empty_ok:
+        if morning_events or empty_ok or cel_morning_hit:
             sched = schedule.schedule_today(day)
             claimed_urls: List[str] = []
             for platform in platforms:
@@ -227,6 +231,8 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                     f"flyer_day:{flyer_day.isoformat()}",
                     f"campaign_word:{camp_word or 'skip_prebranded'}",
                 ]
+                if cel_morning_hit:
+                    visit_notes.append(f"celestial_morning:{cel_morning_hit[0]}")
                 if prebranded:
                     visit_notes.append("skip_brand_overlays:prebranded_flyer")
                 if today_slice:
@@ -404,7 +410,8 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                 horizon_days=horizon,
             )
         )
-        if ahead_events:
+        cel_night_hit = cel_mod.celestial_night_for(day)
+        if ahead_events or cel_night_hit:
             sched = schedule.schedule_week_ahead(day)
             wa_created = 0
             claimed_urls: List[str] = []
@@ -422,6 +429,8 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                     f"horizon_days={horizon}",
                     f"horizon_start={window_start.isoformat()}",
                 ]
+                if cel_night_hit:
+                    wa_notes.append(f"celestial_night:{cel_night_hit[0]}")
                 if img.rule:
                     wa_notes.append(f"image_rule:{img.rule}")
                 draft = _make_draft(

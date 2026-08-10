@@ -1,0 +1,132 @@
+{
+  "notes": "Sacred Ground celestial dual cadence — America/Chicago. Night-before @ 7pm week_ahead + morning-of @ 9am today. Each event has distinct night + morning plates. Wired via config/celestial_events.json. See docs/CELESTIAL-NIGHT-CREATIVES.md.",
+  "timezone": "America/Chicago",
+  "cadence": {
+    "night_before": "week_ahead 19:00 America/Chicago — caption_tomorrow",
+    "morning_of": "today 09:00 America/Chicago — caption_today"
+  },
+  "events": [
+    {
+      "id": "solar_eclipse_leo_2026",
+      "title": "Total Solar Eclipse in Leo",
+      "date": "2026-08-12",
+      "window": { "start": "2026-08-11", "end": "2026-08-12" },
+      "medium": "graphic mystical poster",
+      "palette": "void black, molten gold, ember corona, deep eggplant",
+      "composition": "Diamond-ring total eclipse as hero; Leo mane formed from fire-corona rays swirling around the eclipsed sun; tight poster crop, not landscape vista",
+      "sg_anchor": "tiny circular folk-art SG sun as a jewel in the outer corona / bat-signal fleck",
+      "avoid": "milky way, aurora, soft landscape, daytime sun face dominating sky",
+      "one_liner": "Black-gold diamond-ring poster with Leo fire-mane corona — not another space vista.",
+      "variants": ["a_poster", "b_storefront_silhouette"]
+    },
+    {
+      "id": "perseids_peak_2026",
+      "title": "Perseids Peak",
+      "date": "2026-08-13",
+      "window": { "start": "2026-08-12", "end": "2026-08-13" },
+      "medium": "long-exposure photographic",
+      "palette": "warm amber meteor streaks, indigo night, neon magenta accent",
+      "composition": "Diagonal calligraphy of meteor streaks cutting the frame; rooftop / street silhouette low; motion energy, not static stars",
+      "sg_anchor": "glowing SACRED GROUND neon on rooftop edge",
+      "avoid": "cool blue aurora clones, generic starfield with random streaks",
+      "one_liner": "Warm amber meteor calligraphy over neon rooftop — kinetic, not aurora soup.",
+      "variants": ["a_photo", "b_collage"]
+    },
+    {
+      "id": "lunar_eclipse_pisces_2026",
+      "title": "Partial Lunar Eclipse in Pisces",
+      "date": "2026-08-27",
+      "window": { "start": "2026-08-26", "end": "2026-08-27" },
+      "medium": "soft watercolor / dreamscape",
+      "palette": "blood-amber eclipsed moon, deep teal ocean, pearl mist",
+      "composition": "Half-shadowed moon over rolling night sea; faint fish constellation in mist; wet reflective foreground",
+      "sg_anchor": "SACRED GROUND glowing in wet-sand / water reflection",
+      "avoid": "sharp NASA-style moon photo, firefly meadow, milky way arch",
+      "one_liner": "Watercolor blood-amber moon over teal Pisces sea with name in the tide."
+    },
+    {
+      "id": "new_moon_virgo_2026",
+      "title": "New Moon in Virgo",
+      "date": "2026-09-10",
+      "window": { "start": "2026-09-09", "end": "2026-09-10" },
+      "medium": "minimal Japanese ink + gold leaf editorial",
+      "palette": "near-black void, thin gold crescent, sage botanical line",
+      "composition": "Vast negative space; hairline gold new-moon crescent; Virgo wheat/herb botanical linework; quiet and precise",
+      "sg_anchor": "circular SG logo as a small gold seal/stamp in a corner",
+      "avoid": "busy nebula, storefront photo, crowded collage",
+      "one_liner": "Sparse ink-and-gold Virgo crescent — editorial quiet, not cosmic clutter."
+    },
+    {
+      "id": "autumn_equinox_2026",
+      "title": "Autumn Equinox",
+      "date": "2026-09-22",
+      "window": { "start": "2026-09-21", "end": "2026-09-22" },
+      "medium": "split-panel painterly collage",
+      "palette": "harvest gold dusk LEFT / indigo night RIGHT, equal weight",
+      "composition": "Exact vertical balance line; day-night duality; storefront straddles the seam",
+      "sg_anchor": "lit Sacred Ground eggplant-awning storefront on the divide",
+      "avoid": "single-sky gradients, generic autumn leaf piles without duality",
+      "one_liner": "Split harvest-gold / indigo night with storefront on the equinox seam."
+    },
+    {
+      "id": "full_moon_aries_2026",
+      "title": "Full Moon in Aries",
+      "date": "2026-09-26",
+      "window": { "start": "2026-09-25", "end": "2026-09-26" },
+      "medium": "bold graphic poster",
+      "palette": "copper-red moon, volcanic ember, charcoal, gold sparks",
+      "composition": "Massive full moon with ram-horn silhouette carved into the limb; aggressive warm fire energy",
+      "sg_anchor": "SACRED GROUND in searchlight beams under the moon",
+      "avoid": "soft pastel moon lakes, gentle romantic moonlight",
+      "one_liner": "Copper Aries ram-horn moon poster — fiery, not soft moonlit lake."
+    },
+    {
+      "id": "new_moon_libra_2026",
+      "title": "New Moon in Libra",
+      "date": "2026-10-10",
+      "window": { "start": "2026-10-09", "end": "2026-10-10" },
+      "medium": "art deco mirrored geometry",
+      "palette": "rose-gold, silver, deep plum, black lacquer",
+      "composition": "Perfect bilateral symmetry; twin crescent scales of night; architectural framing",
+      "sg_anchor": "circular SG logo as the fulcrum of the scales",
+      "avoid": "asymmetric landscapes, organic aurora curves",
+      "one_liner": "Art-deco Libra scales with SG logo as fulcrum — geometry, not sky photo."
+    },
+    {
+      "id": "orionids_peak_2026",
+      "title": "Orionids Peak",
+      "date": "2026-10-21",
+      "window": { "start": "2026-10-20", "end": "2026-10-21" },
+      "medium": "cool architectural night photography",
+      "palette": "cyan-silver, ice blue, charcoal mist",
+      "composition": "Orion constellation drawn sharp as architecture; meteor radiant from Orion; colder than Perseids",
+      "sg_anchor": "circular SG sun bat-signal over misty hills",
+      "avoid": "warm amber Perseids twin, soft firefly glow",
+      "one_liner": "Icy cyan Orion architecture + meteor radiant — cold twin to Perseids."
+    },
+    {
+      "id": "full_moon_taurus_2026",
+      "title": "Full Moon in Taurus",
+      "date": "2026-10-25",
+      "window": { "start": "2026-10-24", "end": "2026-10-25" },
+      "medium": "earthy painterly landscape",
+      "palette": "cream-gold harvest moon, ochre orchard, warm brown earth",
+      "composition": "Low huge moon over autumn orchard; grounded terrestrial calm; opposite of Aries fire",
+      "sg_anchor": "lit eggplant-awning Sacred Ground storefront under the moon",
+      "avoid": "fiery red moon, abstract graphic posters",
+      "one_liner": "Cream harvest Taurus moon over orchard storefront — earthy, not Aries fire."
+    },
+    {
+      "id": "samhain_2026",
+      "title": "Samhain",
+      "date": "2026-10-31",
+      "window": { "start": "2026-10-30", "end": "2026-10-31" },
+      "medium": "folk-sacred night painting",
+      "palette": "indigo-black veil, marigold orange, candle amber",
+      "composition": "Veil-thin doorway of ancestral light; candle paths; mystical not cartoon Halloween",
+      "sg_anchor": "Sacred Ground windows glowing like lanterns through autumn fog",
+      "avoid": "cartoon jack-o-lantern clutter (generic Halloween plate already covers that)",
+      "one_liner": "Marigold veil + lantern storefront — sacred Samhain, not cartoon Halloween."
+    }
+  ]
+}

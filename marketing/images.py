@@ -292,6 +292,21 @@ def select_today_image(
     # that cannot diversify and fall through to the next eligible rule/pool.
     prefer_unique = bool(excluded)
 
+    # Celestial morning-of plate beats generic morning flyers (Founder 2026-08-10).
+    from . import celestial as cel_mod
+
+    cel_m = cel_mod.morning_plan(day, platform=platform, exclude_urls=excluded)
+    if cel_m and cel_m.get("image_url"):
+        label = cel_m.get("label") or cel_m.get("id") or day.isoformat()
+        return (
+            str(cel_m["image_url"]),
+            "celestial_morning",
+            (
+                f"Celestial morning plate for {day.isoformat()} ({label}) — "
+                "today’s celestial moment; shop events stay in caption."
+            ),
+        )
+
     # Date-keyed finished flyers beat specialty / atmospheric plates.
     # FB → url / urls[0]; IG → url_instagram / urls[1]. Both must be full-day
     # complete flyers (same covers). Temporarily share when only one exists.
@@ -451,10 +466,14 @@ def plan_image(
             "multi_event_rotation": "rotation",
             "morning_creative": "rotation",
             "morning_flyer": "morning_flyer",
+            "celestial_morning": "celestial_morning",
         }.get(rule_id, "rule_library")
         prebranded = rule_id == "morning_flyer" or skip_brand_overlays(
             {"rule": rule_id, "url": url}
         )
+        if rule_id == "celestial_morning":
+            # Artistic celestial plates — allow brand overlays (logo/footer/TODAY).
+            prebranded = False
         if campaign == "afternoon_spotlight" and events:
             # Prefer specialty / event art over a full-day morning flyer dump.
             if rule_id == "morning_flyer" and events[0].image_url:
@@ -496,7 +515,7 @@ def plan_image(
         )
 
     if campaign == "week_ahead":
-        # Priority: full_moon > holiday > creative_pool rotation.
+        # Priority: celestial > full_moon > holiday > creative_pool rotation.
         # Never fall back to the old founder Screenshot exterior trio when the
         # creative night pack is configured — that path caused storefront-only weeks.
         from .atmosphere import nighttime_plan, season_meta
@@ -522,8 +541,12 @@ def plan_image(
         season = atm.get("season") or "summer"
         holiday = atm.get("holiday")
         creative_id = atm.get("creative_id") or ""
+        celestial_id = atm.get("celestial") or ""
         kind = "storefront" if "storefront" in str(creative_id).lower() else "creative"
-        if mode == "full_moon":
+        if mode == "celestial":
+            rule = f"week_ahead_celestial_{celestial_id or 'event'}"
+            label = celestial_id or "celestial"
+        elif mode == "full_moon":
             rule = "week_ahead_full_moon"
             label = "full_moon"
         elif mode == "holiday":

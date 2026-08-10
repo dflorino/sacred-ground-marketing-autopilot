@@ -1,0 +1,366 @@
+{
+  "notes": "Sacred Ground celestial dual cadence (America/Chicago). For each event: (1) night-before @ 7pm week_ahead \u2014 night plate + \u201ctomorrow \u2026\u201d opener; (2) morning-of @ 9am today campaign \u2014 morning plate + \u201ctoday\u2019s \u2026\u201d opener. Celestial image wins over generic night pool / morning flyer; shop event listings stay in the caption when present. Briefs: assets/celestial-2026/briefs.json. Docs: docs/CELESTIAL-NIGHT-CREATIVES.md.",
+  "timezone": "America/Chicago",
+  "events": {
+    "solar_eclipse_leo_2026": {
+      "label": "Total Solar Eclipse in Leo",
+      "event_date": "2026-08-12",
+      "post_night_before": "2026-08-11",
+      "caption_tomorrow": "Tomorrow\u2019s total solar eclipse in Leo\u2026",
+      "caption_today": "Today\u2019s total solar eclipse in Leo\u2026",
+      "one_liner_night": "Black-gold diamond-ring poster with Leo fire-mane corona.",
+      "one_liner_morning": "Dawn-gold Leo eclipse poster \u2014 lighter morning energy, same event.",
+      "night": {
+        "look": "graphic diamond-ring eclipse, Leo fire-mane corona, night void",
+        "sg_anchor": "tiny circular SG sun jewel in outer corona",
+        "urls": [
+          "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-08-12-solar-eclipse.png"
+        ],
+        "local": [
+          "assets/celestial-2026/sg-night-celestial-2026-08-12-solar-eclipse.png"
+        ],
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-08-12-solar-eclipse.png",
+        "wp_media_id": 25969,
+        "sg_identity": "pass"
+      },
+      "morning": {
+        "look": "morning graphic Leo eclipse \u2014 warmer dawn gold, bold poster",
+        "sg_anchor": "SG circular seal + cream-ready composition",
+        "urls": [
+          "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-08-12-solar-eclipse.png"
+        ],
+        "local": [
+          "assets/celestial-2026/sg-morning-celestial-2026-08-12-solar-eclipse.png"
+        ],
+        "prebranded": false,
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-08-12-solar-eclipse.png",
+        "wp_media_id": 25968,
+        "sg_identity": "pass"
+      }
+    },
+    "perseids_peak_2026": {
+      "label": "Perseids Peak",
+      "event_date": "2026-08-13",
+      "post_night_before": "2026-08-12",
+      "caption_tomorrow": "Tomorrow Perseids peak\u2026",
+      "caption_today": "Today\u2019s Perseids peak\u2026",
+      "one_liner_night": "Warm amber meteor calligraphy over neon rooftop.",
+      "one_liner_morning": "Soft dawn sky with residual Perseids streaks \u2014 morning variant.",
+      "night": {
+        "look": "long-exposure amber meteors, indigo night, neon rooftop",
+        "sg_anchor": "SACRED GROUND neon on rooftop",
+        "urls": [
+          "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-08-13-perseids.png"
+        ],
+        "local": [
+          "assets/celestial-2026/sg-night-celestial-2026-08-13-perseids.png"
+        ],
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-08-13-perseids.png",
+        "wp_media_id": 25967,
+        "sg_identity": "pass"
+      },
+      "morning": {
+        "look": "early-morning sky with warm meteor afterglow streaks",
+        "sg_anchor": "SACRED GROUND subtle dawn neon / sky mark",
+        "urls": [
+          "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-08-13-perseids.png"
+        ],
+        "local": [
+          "assets/celestial-2026/sg-morning-celestial-2026-08-13-perseids.png"
+        ],
+        "prebranded": false,
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-08-13-perseids.png",
+        "wp_media_id": 25966,
+        "sg_identity": "pass"
+      }
+    },
+    "lunar_eclipse_pisces_2026": {
+      "label": "Partial Lunar Eclipse in Pisces",
+      "event_date": "2026-08-27",
+      "post_night_before": "2026-08-26",
+      "caption_tomorrow": "Tomorrow\u2019s partial lunar eclipse in Pisces\u2026",
+      "caption_today": "Today\u2019s partial lunar eclipse in Pisces\u2026",
+      "one_liner_night": "Watercolor blood-amber moon over teal Pisces sea.",
+      "one_liner_morning": "Soft mist morning moon eclipse \u2014 pearly teal wash.",
+      "night": {
+        "look": "watercolor blood-amber eclipsed moon over teal sea",
+        "sg_anchor": "SACRED GROUND in tide reflection",
+        "urls": [
+          "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-08-27-lunar-eclipse.png"
+        ],
+        "local": [
+          "assets/celestial-2026/sg-night-celestial-2026-08-27-lunar-eclipse.png"
+        ],
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-08-27-lunar-eclipse.png",
+        "wp_media_id": 25975,
+        "sg_identity": "pass"
+      },
+      "morning": {
+        "look": "misty morning watercolor lunar eclipse, soft pearl light",
+        "sg_anchor": "SACRED GROUND in wet sand at dawn",
+        "urls": [
+          "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-08-27-lunar-eclipse.png"
+        ],
+        "local": [
+          "assets/celestial-2026/sg-morning-celestial-2026-08-27-lunar-eclipse.png"
+        ],
+        "prebranded": false,
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-08-27-lunar-eclipse.png",
+        "wp_media_id": 25974,
+        "sg_identity": "pass"
+      }
+    },
+    "new_moon_virgo_2026": {
+      "label": "New Moon in Virgo",
+      "event_date": "2026-09-10",
+      "post_night_before": "2026-09-09",
+      "caption_tomorrow": "Tomorrow new moon in Virgo\u2026",
+      "caption_today": "Today\u2019s new moon in Virgo\u2026",
+      "one_liner_night": "Sparse ink-and-gold Virgo crescent \u2014 editorial quiet.",
+      "one_liner_morning": "Cream paper + sage botanical new-moon Virgo \u2014 morning editorial.",
+      "night": {
+        "look": "minimal Japanese ink gold crescent on near-black",
+        "sg_anchor": "circular SG gold seal stamp",
+        "urls": [
+          "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-09-10-new-moon-virgo.png"
+        ],
+        "local": [
+          "assets/celestial-2026/sg-night-celestial-2026-09-10-new-moon-virgo.png"
+        ],
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-09-10-new-moon-virgo.png",
+        "wp_media_id": 25970,
+        "sg_identity": "pass"
+      },
+      "morning": {
+        "look": "cream/parchment botanical Virgo new moon \u2014 lighter morning page",
+        "sg_anchor": "SG seal stamp",
+        "urls": [
+          "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-09-10-new-moon-virgo.png"
+        ],
+        "local": [
+          "assets/celestial-2026/sg-morning-celestial-2026-09-10-new-moon-virgo.png"
+        ],
+        "prebranded": false,
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-09-10-new-moon-virgo.png",
+        "wp_media_id": 25973,
+        "sg_identity": "pass"
+      }
+    },
+    "autumn_equinox_2026": {
+      "label": "Autumn Equinox",
+      "event_date": "2026-09-22",
+      "post_night_before": "2026-09-21",
+      "caption_tomorrow": "Tomorrow\u2019s autumn equinox\u2026",
+      "caption_today": "Today\u2019s autumn equinox\u2026",
+      "one_liner_night": "Split harvest-gold / indigo night with storefront on the seam.",
+      "one_liner_morning": "Split dawn gold / soft blue morning equinox balance.",
+      "night": {
+        "look": "split-panel harvest gold vs indigo night, storefront on divide",
+        "sg_anchor": "lit eggplant-awning Sacred Ground storefront",
+        "urls": [
+          "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-09-22-autumn-equinox.png"
+        ],
+        "local": [
+          "assets/celestial-2026/sg-night-celestial-2026-09-22-autumn-equinox.png"
+        ],
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-09-22-autumn-equinox.png",
+        "wp_media_id": 25972,
+        "sg_identity": "pass"
+      },
+      "morning": {
+        "look": "split dawn harvest / soft morning blue equinox balance",
+        "sg_anchor": "Sacred Ground storefront on the seam in morning light",
+        "urls": [
+          "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-09-22-autumn-equinox.png"
+        ],
+        "local": [
+          "assets/celestial-2026/sg-morning-celestial-2026-09-22-autumn-equinox.png"
+        ],
+        "prebranded": false,
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-09-22-autumn-equinox.png",
+        "wp_media_id": 25979,
+        "sg_identity": "pass"
+      }
+    },
+    "full_moon_aries_2026": {
+      "label": "Full Moon in Aries",
+      "event_date": "2026-09-26",
+      "post_night_before": "2026-09-25",
+      "caption_tomorrow": "Tomorrow\u2019s full moon in Aries\u2026",
+      "caption_today": "Today\u2019s full moon in Aries\u2026",
+      "one_liner_night": "Copper Aries ram-horn moon poster \u2014 fiery.",
+      "one_liner_morning": "Copper Aries moon at pale dawn \u2014 still bold, morning light.",
+      "night": {
+        "look": "copper-red ram-horn full moon graphic poster, ember sky",
+        "sg_anchor": "SACRED GROUND searchlight beams",
+        "urls": [
+          "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-09-26-full-moon-aries.png"
+        ],
+        "local": [
+          "assets/celestial-2026/sg-night-celestial-2026-09-26-full-moon-aries.png"
+        ],
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-09-26-full-moon-aries.png",
+        "wp_media_id": 25978,
+        "sg_identity": "pass"
+      },
+      "morning": {
+        "look": "Aries full moon graphic with cooler dawn rim light",
+        "sg_anchor": "SACRED GROUND in soft morning beams",
+        "urls": [
+          "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-09-26-full-moon-aries.png"
+        ],
+        "local": [
+          "assets/celestial-2026/sg-morning-celestial-2026-09-26-full-moon-aries.png"
+        ],
+        "prebranded": false,
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-09-26-full-moon-aries.png",
+        "wp_media_id": 25977,
+        "sg_identity": "pass"
+      }
+    },
+    "new_moon_libra_2026": {
+      "label": "New Moon in Libra",
+      "event_date": "2026-10-10",
+      "post_night_before": "2026-10-09",
+      "caption_tomorrow": "Tomorrow new moon in Libra\u2026",
+      "caption_today": "Today\u2019s new moon in Libra\u2026",
+      "one_liner_night": "Art-deco Libra scales with SG logo as fulcrum.",
+      "one_liner_morning": "Rose-gold Libra scales on soft morning lacquer \u2014 deco geometry.",
+      "night": {
+        "look": "art deco mirrored Libra scales, rose-gold silver plum",
+        "sg_anchor": "circular SG logo as scale fulcrum",
+        "urls": [
+          "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-10-10-new-moon-libra.png"
+        ],
+        "local": [
+          "assets/celestial-2026/sg-night-celestial-2026-10-10-new-moon-libra.png"
+        ],
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-10-10-new-moon-libra.png",
+        "wp_media_id": 25976,
+        "sg_identity": "pass"
+      },
+      "morning": {
+        "look": "lighter art-deco Libra new moon \u2014 rose morning lacquer",
+        "sg_anchor": "SG logo fulcrum",
+        "urls": [
+          "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-10-10-new-moon-libra.png"
+        ],
+        "local": [
+          "assets/celestial-2026/sg-morning-celestial-2026-10-10-new-moon-libra.png"
+        ],
+        "prebranded": false,
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-10-10-new-moon-libra.png",
+        "wp_media_id": 25983,
+        "sg_identity": "pass"
+      }
+    },
+    "orionids_peak_2026": {
+      "label": "Orionids Peak",
+      "event_date": "2026-10-21",
+      "post_night_before": "2026-10-20",
+      "caption_tomorrow": "Tomorrow Orionids peak\u2026",
+      "caption_today": "Today\u2019s Orionids peak\u2026",
+      "one_liner_night": "Icy cyan Orion architecture + meteor radiant.",
+      "one_liner_morning": "Pale frost-blue Orionids morning sky \u2014 architectural stars.",
+      "night": {
+        "look": "cool cyan-silver Orion constellation architecture + meteors",
+        "sg_anchor": "circular SG sun bat-signal over misty hills",
+        "urls": [
+          "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-10-21-orionids.png"
+        ],
+        "local": [
+          "assets/celestial-2026/sg-night-celestial-2026-10-21-orionids.png"
+        ],
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-10-21-orionids.png",
+        "wp_media_id": 25982,
+        "sg_identity": "pass"
+      },
+      "morning": {
+        "look": "frost-blue early morning Orionids with sharp constellation lines",
+        "sg_anchor": "SG bat-signal faint in morning mist",
+        "urls": [
+          "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-10-21-orionids.png"
+        ],
+        "local": [
+          "assets/celestial-2026/sg-morning-celestial-2026-10-21-orionids.png"
+        ],
+        "prebranded": false,
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-10-21-orionids.png",
+        "wp_media_id": 25980,
+        "sg_identity": "pass"
+      }
+    },
+    "full_moon_taurus_2026": {
+      "label": "Full Moon in Taurus",
+      "event_date": "2026-10-25",
+      "post_night_before": "2026-10-24",
+      "caption_tomorrow": "Tomorrow\u2019s full moon in Taurus\u2026",
+      "caption_today": "Today\u2019s full moon in Taurus\u2026",
+      "one_liner_night": "Cream harvest Taurus moon over orchard storefront.",
+      "one_liner_morning": "Golden morning orchard under lingering Taurus moon.",
+      "night": {
+        "look": "earthy painterly cream-gold moon over autumn orchard",
+        "sg_anchor": "lit eggplant-awning Sacred Ground storefront",
+        "urls": [
+          "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-10-25-full-moon-taurus.png"
+        ],
+        "local": [
+          "assets/celestial-2026/sg-night-celestial-2026-10-25-full-moon-taurus.png"
+        ],
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-10-25-full-moon-taurus.png",
+        "wp_media_id": 25981,
+        "sg_identity": "pass"
+      },
+      "morning": {
+        "look": "morning orchard gold with pale Taurus moon still high",
+        "sg_anchor": "Sacred Ground storefront in soft morning light",
+        "urls": [
+          "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-10-25-full-moon-taurus.png"
+        ],
+        "local": [
+          "assets/celestial-2026/sg-morning-celestial-2026-10-25-full-moon-taurus.png"
+        ],
+        "prebranded": false,
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-10-25-full-moon-taurus.png",
+        "wp_media_id": 25986,
+        "sg_identity": "pass"
+      }
+    },
+    "samhain_2026": {
+      "label": "Samhain",
+      "event_date": "2026-10-31",
+      "post_night_before": "2026-10-30",
+      "caption_tomorrow": "Tomorrow is Samhain\u2026",
+      "caption_today": "Today is Samhain\u2026",
+      "one_liner_night": "Marigold veil + lantern storefront \u2014 sacred, not cartoon Halloween.",
+      "one_liner_morning": "Soft morning marigold mist \u2014 Samhain day light, still sacred.",
+      "night": {
+        "look": "folk-sacred indigo veil, marigold, candle paths, night fog",
+        "sg_anchor": "Sacred Ground windows as lanterns in fog",
+        "urls": [
+          "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-10-31-samhain.png"
+        ],
+        "local": [
+          "assets/celestial-2026/sg-night-celestial-2026-10-31-samhain.png"
+        ],
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-10-31-samhain.png",
+        "wp_media_id": 25985,
+        "sg_identity": "pass"
+      },
+      "morning": {
+        "look": "morning marigold mist, soft sacred doorway light \u2014 not cartoon pumpkins",
+        "sg_anchor": "Sacred Ground windows glowing in morning fog",
+        "urls": [
+          "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-10-31-samhain.png"
+        ],
+        "local": [
+          "assets/celestial-2026/sg-morning-celestial-2026-10-31-samhain.png"
+        ],
+        "prebranded": false,
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-10-31-samhain.png",
+        "wp_media_id": 25984,
+        "sg_identity": "pass"
+      }
+    }
+  }
+}

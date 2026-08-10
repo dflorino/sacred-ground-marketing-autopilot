@@ -232,7 +232,30 @@ def caption_today(
         if split_today:
             today, tomorrow = split_today, split_m
 
+    from . import celestial as cel_mod
+
+    pub = publish_day or flyer_day
+    cel_morning = cel_mod.celestial_morning_for(pub) if pub else None
+    cel_today_opener = ""
+    if cel_morning:
+        cel_today_opener = str(cel_morning[1].get("caption_today") or "").strip()
+
     if not tomorrow and not today:
+        if cel_today_opener:
+            # Celestial morning with empty shop calendar — still post.
+            seed = f"today|celestial|{pub.isoformat()}|{platform}"
+            hook = cel_today_opener
+            body = (
+                hook
+                + "\n\n"
+                + "Come as you are — Sacred Ground is open for the sky and for you.\n"
+                + "https://shopsacredground.com/events/\n"
+                + "847-749-3922"
+            )
+            tags = _hashtags(platform)
+            text = body + "\n\n" + " ".join(tags) + "\n\n" + _signoff(seed, platform)
+            _assert_not_generic(text)
+            return {"text": text, "hashtags": tags, "hook": hook}
         return caption_today_visit(platform, day)
 
     day_label = day.strftime("%A, %B %d").replace(" 0", " ")
@@ -260,7 +283,10 @@ def caption_today(
 
     # --- today only ---
     if today and not tomorrow:
-        if len(today) == 1:
+        if cel_today_opener:
+            hook = cel_today_opener
+            body = hook + "\n\n" + _join_event_blocks(today, with_links)
+        elif len(today) == 1:
             hook = _today_hook(
                 f"{seed}|today-single", title=today[0].title, kind="single"
             )
@@ -273,13 +299,22 @@ def caption_today(
 
     # --- mixed: today + tomorrow (always today-first) ---
     elif today and tomorrow:
-        hook = _today_and_tomorrow_hook(
+        hook = cel_today_opener or _today_and_tomorrow_hook(
             f"{seed}|mixed-today", tomorrow_label=day_label
         )
         body = (
             hook
             + "\n\n"
             + _today_section()
+            + "\n\nTomorrow at Sacred Ground\n\n"
+            + _tomorrow_multi_section()
+        )
+
+    # --- tomorrow only (today empty) — celestial morning still leads with today ---
+    elif cel_today_opener and tomorrow:
+        hook = cel_today_opener
+        body = (
+            hook
             + "\n\nTomorrow at Sacred Ground\n\n"
             + _tomorrow_multi_section()
         )
@@ -409,19 +444,39 @@ def caption_week_ahead(events: List[Event], platform: str, day: date) -> Dict:
 
     `day` is the publish calendar day (e.g. Saturday). Event blocks should already
     be tomorrow + day-after only — never the publish day's full slate.
+
+    Celestial night-before: lead with “tomorrow’s [event]…” when configured;
+    shop listings still follow when present.
     """
-    if not events:
+    from . import celestial as cel_mod
+
+    cel = cel_mod.celestial_night_for(day)
+    cel_opener = ""
+    if cel:
+        cel_opener = str(cel[1].get("caption_tomorrow") or "").strip()
+
+    if not events and not cel_opener:
         raise ValueError("week_ahead caption requires events")
 
     cfg = voice()
     seed = f"week_ahead|{day.isoformat()}|{platform}"
     # Separate seeds so opener / night block / closer don't lock to the same index.
-    hook = _week_ahead_opener(f"{seed}|opener")
-    body = hook + "\n\n" + _join_event_blocks_by_day(events, True)
+    hook = cel_opener or _week_ahead_opener(f"{seed}|opener")
+    if events:
+        body = hook + "\n\n" + _join_event_blocks_by_day(events, True)
+    else:
+        body = (
+            hook
+            + "\n\n"
+            + "Come as you are — Sacred Ground is here for the sky and for you."
+        )
     night = _week_ahead_night_block(f"{seed}|night")
     if night:
         body += "\n\n" + night
-    body += "\n\n" + _week_ahead_booking_cta(events)
+    if events:
+        body += "\n\n" + _week_ahead_booking_cta(events)
+    else:
+        body += "\n\nSee what’s happening → https://shopsacredground.com/events/"
     body += "\n847-749-3922"
     body += "\nhttps://shopsacredground.com/events/"
     # Standalone goodnight — day-based so FB+IG match and consecutive nights differ.
