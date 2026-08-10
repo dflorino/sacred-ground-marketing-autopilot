@@ -115,6 +115,73 @@ def _has_sg_identity(plate: Dict[str, Any]) -> bool:
     return identity in ("pass", "ok", "yes", "true", "1")
 
 
+def _is_daytime_sun_plate(plate: Dict[str, Any]) -> bool:
+    """Founder 2026-08-09: sun-dominant / daytime-sun plates are not night creatives."""
+    if plate.get("daytime_sun") is True:
+        return True
+    mood = str(plate.get("night_mood") or "").strip().lower()
+    if mood in ("daytime_sun", "sun", "daytime"):
+        return True
+    family = str(plate.get("family") or "").strip().lower()
+    return family in ("daytime_sun", "sun_sky")
+
+
+def _is_night_pool_eligible(plate: Dict[str, Any]) -> bool:
+    """Active + SG identity pass + not a retired daytime-sun plate."""
+    return (
+        bool(plate.get("url"))
+        and _has_sg_identity(plate)
+        and not _is_daytime_sun_plate(plate)
+    )
+
+
+def _night_no_repeat_days() -> int:
+    night = atmosphere_config().get("nighttime") or {}
+    try:
+        return max(1, int(night.get("no_repeat_days") or 7))
+    except (TypeError, ValueError):
+        return 7
+
+
+def _recent_week_ahead_usage(day: date, within_days: int) -> Tuple[set[str], set[str]]:
+    """Return (urls, families) used by week_ahead in [day-(within_days-1), day)."""
+    try:
+        from .images import load_image_usage
+    except Exception:
+        return set(), set()
+    cutoff = day - timedelta(days=within_days - 1)
+    urls: set[str] = set()
+    families: set[str] = set()
+    history = load_image_usage().get("history") or []
+    # Map URL → family from config so history rows (url-only) still block families.
+    url_family: Dict[str, str] = {}
+    night = atmosphere_config().get("nighttime") or {}
+    for bucket in (
+        night.get("creative_pool") or [],
+        night.get("creative_pool_retired_daytime_sun") or [],
+        night.get("creative_pool_needs_sg_identity") or [],
+    ):
+        for p in bucket:
+            u = str(p.get("url") or "")
+            fam = str(p.get("family") or "").strip().lower()
+            if u and fam:
+                url_family[u] = fam
+    for h in history:
+        if h.get("campaign") != "week_ahead" or not h.get("url"):
+            continue
+        try:
+            d = date.fromisoformat(str(h.get("date")))
+        except ValueError:
+            continue
+        if cutoff <= d < day:
+            url = str(h["url"])
+            urls.add(url)
+            fam = url_family.get(url) or str(h.get("family") or "").strip().lower()
+            if fam:
+                families.add(fam)
+    return urls, families
+
+
 def _eligible_creative_pool(day: date) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
     """Return (creatives, in-season storefronts) for the night pool."""
     night = atmosphere_config().get("nighttime") or {}
@@ -122,9 +189,7 @@ def _eligible_creative_pool(day: date) -> Tuple[List[Dict[str, Any]], List[Dict[
     creatives: List[Dict[str, Any]] = []
     storefronts: List[Dict[str, Any]] = []
     for p in night.get("creative_pool") or []:
-        if not p.get("url"):
-            continue
-        if not _has_sg_identity(p):
+        if not _is_night_pool_eligible(p):
             continue
         if p.get("kind") == "storefront":
             p_season = str(p.get("season") or "")
@@ -198,6 +263,29 @@ def _rotate_pool(
     return items[idx]
 
 
+def _filter_cooldown(
+    plates: Sequence[Dict[str, Any]],
+    *,
+    excluded: set[str],
+    recent_urls: set[str],
+    recent_families: set[str],
+    hard_block_urls: set[str],
+) -> List[Dict[str, Any]]:
+    """Prefer plates not used recently; never reuse yesterday / same-night exclude."""
+    out: List[Dict[str, Any]] = []
+    for p in plates:
+        url = str(p.get("url") or "")
+        if not url or url in excluded or url in hard_block_urls:
+            continue
+        fam = str(p.get("family") or "").strip().lower()
+        if url in recent_urls:
+            continue
+        if fam and fam in recent_families:
+            continue
+        out.append(p)
+    return out
+
+
 def _pick_night_creative(
     day: date,
     platform: Optional[str] = None,
@@ -211,12 +299,42 @@ def _pick_night_creative(
     behind founder exterior / season storefront photos.
 
     exclude_urls: URLs already claimed by the other platform tonight.
+    Also enforces no-repeat cooldown (default 7 days) and never reuses the
+    same URL from the prior night (Founder 2026-08-09).
     """
     excluded = {str(u) for u in (exclude_urls or []) if u}
     creatives, storefronts = _eligible_creative_pool(day)
-    creatives_avail = [p for p in creatives if str(p.get("url") or "") not in excluded]
-    storefronts_avail = [
-        p for p in storefronts if str(p.get("url") or "") not in excluded
+    no_repeat = _night_no_repeat_days()
+    recent_urls, recent_families = _recent_week_ahead_usage(day, no_repeat)
+    # Hard block: exact URLs used yesterday (within_days=2 → [day-1, day)).
+    yesterday_urls, _ = _recent_week_ahead_usage(day, within_days=2)
+    hard_block = set(yesterday_urls) | set(excluded)
+
+    creatives_fresh = _filter_cooldown(
+        creatives,
+        excluded=excluded,
+        recent_urls=recent_urls,
+        recent_families=recent_families,
+        hard_block_urls=hard_block,
+    )
+    storefronts_fresh = _filter_cooldown(
+        storefronts,
+        excluded=excluded,
+        recent_urls=recent_urls,
+        recent_families=recent_families,
+        hard_block_urls=hard_block,
+    )
+    # Soft fallback: ignore longer family/url cooldown, still hard-block yesterday
+    # and same-night exclude.
+    creatives_avail = creatives_fresh or [
+        p
+        for p in creatives
+        if str(p.get("url") or "") not in hard_block
+    ]
+    storefronts_avail = storefronts_fresh or [
+        p
+        for p in storefronts
+        if str(p.get("url") or "") not in hard_block
     ]
 
     if not creatives_avail and storefronts_avail:
@@ -224,11 +342,20 @@ def _pick_night_creative(
     if not creatives_avail and not storefronts_avail:
         # Nothing unique left — fall back to full pools (may duplicate).
         if not creatives and storefronts:
-            return _rotate_pool(storefronts, day, platform)
+            return _rotate_pool(
+                [p for p in storefronts if str(p.get("url") or "") not in excluded]
+                or list(storefronts),
+                day,
+                platform,
+            )
         if not creatives:
             return {}
-        creatives_avail = list(creatives)
-        storefronts_avail = list(storefronts)
+        creatives_avail = [
+            p for p in creatives if str(p.get("url") or "") not in excluded
+        ] or list(creatives)
+        storefronts_avail = [
+            p for p in storefronts if str(p.get("url") or "") not in excluded
+        ] or list(storefronts)
 
     # Storefront slot: every 5th night only, and only if no recent streak.
     allow_storefront = (

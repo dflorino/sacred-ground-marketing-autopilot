@@ -147,7 +147,10 @@ def list_drafts(status: Optional[str] = None) -> List[Dict[str, Any]]:
 
     out: List[Dict[str, Any]] = []
     for name in sorted(os.listdir(drafts_dir)):
-        if not name.endswith(".json"):
+        # Only active draft files (sgma-….json). Ignore archives / nested dirs.
+        if not name.startswith("sgma-") or not name.endswith(".json"):
+            continue
+        if name.count(".") != 1:
             continue
         d = read_json(f"{drafts_dir}/{name}")
         if not d:

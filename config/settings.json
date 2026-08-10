@@ -148,8 +148,9 @@
   ],
   "tuesday_community_meditation": {
     "enabled": true,
-    "notes": "Standing Tuesday 7–8pm Free Community Meditation — always include in Today + week-ahead when that Tuesday is in scope. Inject stub only if TEC feed omitted it. Weekly host/style for captions: config/meditation_hosts.json (ISO-week rotation; TEC parse wins when present). Caption doors-close line: doors_close_display (single source of truth).",
+    "notes": "Standing Tuesday 7–8pm Free Community Meditation — always include in Today + week-ahead when that Tuesday is in scope. Inject stub only if TEC feed omitted it. HARD RULE (Founder 2026-08-09): never name who leads meditation in public captions — anonymous block only (session_display + doors_close_display). config/meditation_hosts.json is ops/internal only. Strip facilitator names from TEC titles in captions.",
     "doors_close_display": "7:05pm",
+    "session_display": "Tuesday night 7:00–8:00 PM",
     "title_match_any": [
       "community meditation",
       "meditation free community"

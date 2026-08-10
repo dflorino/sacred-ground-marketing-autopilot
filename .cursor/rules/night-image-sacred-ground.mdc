@@ -17,9 +17,19 @@ the photograph itself** — not only Autopilot’s logo corner + text overlays.
 Acceptable in-photo anchors (any one is enough if obvious at a glance):
 
 - Lit **Sacred Ground storefront** (eggplant awnings / neon / window glow with name)
-- Circular **logo / folk-art sun face** as sky mark, moon inset, horizon sun, or bat-signal
+- Circular **logo / folk-art sun face** as a **small** sky mark, moon inset, or bat-signal
+  (not a daytime sun dominating the frame)
 - **“Sacred Ground” / “SACRED GROUND”** glowing in sky, clouds, mountains, or neon
 - Searchlights / light beams projecting the name or circular logo (“bat signal”)
+
+## Hard rule (Founder — Aug 9, 2026) — night mood + no-repeat
+
+- Night posts must look like **night** (night sky / lit storefront / neon / aurora) —
+  **not daytime sun**.
+- Retire sun-dominating plates (`daytime_sun: true`, family `daytime_sun`) under
+  `creative_pool_retired_daytime_sun` — never pick them for `week_ahead`.
+- Do **not** reuse the same night URL two nights in a row; prefer
+  `nighttime.no_repeat_days` cooldown (default 7).
 
 ## Not enough
 
@@ -28,11 +38,14 @@ Acceptable in-photo anchors (any one is enough if obvious at a glance):
 - Relying only on the Autopilot overlay logo + “NEXT …” text + cream footer
   (those still apply for non-prebranded posts — see `social-image-branding.mdc` —
   but they do **not** replace an in-photo SG anchor)
+- Large daytime sun / sunrise / sun-in-sky plates (even with the SG folk-art face)
 
 ## Pool hygiene
 
-- Active `creative_pool` entries should be `sg_identity: "pass"` only
+- Active `creative_pool` entries should be `sg_identity: "pass"` only and **not**
+  `daytime_sun`
 - Failures / pending regens live under `creative_pool_needs_sg_identity` until replaced
+- Sun-dominant retires live under `creative_pool_retired_daytime_sun`
 - Prefer regenerating worst offenders first (pure aurora / sky with zero SG cue)
 - New plates: save under `assets/sg-night-creative-*.png`, upload via WP `upload_media`,
   wire URL into atmosphere; keep local PNG as source of truth

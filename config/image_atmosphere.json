@@ -1,5 +1,5 @@
 {
-  "notes": "Morning = specialty library only (no seasons). Night = creative sky pack by default; holidays + full moon still override. Current-season storefront only mixes into creatives (never wrong-season). Holiday windows may rotate multiple holiday plates. Full moon image ONLY on actual full-moon nights. HARD RULE (Founder 2026-08-06): every night creative must include a clear Sacred Ground visual anchor IN THE PHOTO (storefront / logo-sun bat-signal / glowing SACRED GROUND in landscape). Pure generic aurora/sky is not enough. Overlay logo+footer still apply but do not replace in-photo SG identity. Active creative_pool = sg_identity pass only; failures live in creative_pool_needs_sg_identity until regenerated. See docs/NIGHT-CREATIVES.md and .cursor/rules/night-image-sacred-ground.mdc.",
+  "notes": "Morning = specialty library only (no seasons). Night = creative sky pack by default; holidays + full moon still override. Current-season storefront only mixes into creatives (never wrong-season). Holiday windows may rotate multiple holiday plates. Full moon image ONLY on actual full-moon nights. HARD RULE (Founder 2026-08-06): every night creative must include a clear Sacred Ground visual anchor IN THE PHOTO (storefront / logo-sun bat-signal / glowing SACRED GROUND in landscape). Pure generic aurora/sky is not enough. Overlay logo+footer still apply but do not replace in-photo SG identity. HARD RULE (Founder 2026-08-09): never pick daytime-sun / sun-in-sky plates for week_ahead — retire under creative_pool_retired_daytime_sun (daytime_sun=true). Night pool also enforces no_repeat_days cooldown + never same URL two nights in a row. Active creative_pool = sg_identity pass only + not daytime_sun; failures live in creative_pool_needs_sg_identity until regenerated. See docs/NIGHT-CREATIVES.md and .cursor/rules/night-image-sacred-ground.mdc.",
   "daytime": {
     "campaign": "today",
     "mode": "specialty_library_only",
@@ -15,7 +15,8 @@
       "holiday",
       "creative"
     ],
-    "base_style": "Sacred Ground night creatives MUST show Sacred Ground in the picture: storefront, circular logo/folk-art sun as sky or moon mark, bat-signal searchlights, or glowing SACRED GROUND in landscape — plus eggplant-purple storefront seasonals mixed into the creative pool. Pure northern lights / Milky Way / star trails with no SG cue are forbidden. When a storefront plate is used: tan stone facade, deep EGGPLANT PURPLE awnings, white SACRED GROUND lettering with NO swoosh between the words.",
+    "base_style": "Sacred Ground night creatives MUST show Sacred Ground in the picture: storefront, circular logo/folk-art sun as sky or moon mark, bat-signal searchlights, or glowing SACRED GROUND in landscape — plus eggplant-purple storefront seasonals mixed into the creative pool. Pure northern lights / Milky Way / star trails with no SG cue are forbidden. Do NOT use daytime sun / sun-dominating-sky plates for week_ahead. When a storefront plate is used: tan stone facade, deep EGGPLANT PURPLE awnings, white SACRED GROUND lettering with NO swoosh between the words.",
+    "no_repeat_days": 7,
     "awning_color": "eggplant purple (aubergine / deep plum)",
     "awning_swoosh": "none — leave blank eggplant space between SACRED and GROUND",
     "full_moon": {
@@ -187,27 +188,6 @@
         "sg_anchor": "SACRED GROUND neon + puddle reflection"
       },
       {
-        "id": "logo_sun_sky",
-        "label": "Logo sun in starry sky",
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-logo-sun-sky-v2.png",
-        "sg_identity": "pass",
-        "sg_anchor": "Folk-art SG sun face dominating starry sky"
-      },
-      {
-        "id": "sun_in_moon",
-        "label": "Logo sun within full moon",
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-sun-in-moon-v2.png",
-        "sg_identity": "pass",
-        "sg_anchor": "Folk-art SG sun face inside full moon"
-      },
-      {
-        "id": "logo_sun_horizon",
-        "label": "Logo sun over starry horizon",
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-logo-sun-horizon.png",
-        "sg_identity": "pass",
-        "sg_anchor": "Folk-art SG sun rising over starry horizon"
-      },
-      {
         "id": "crystal_mountain_v2",
         "label": "Crystal mountains — SACRED GROUND lit + logo bat-signal under aurora",
         "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-crystal-mountain-v2.png",
@@ -290,8 +270,47 @@
     ],
     "events_in_image": false,
     "events_in_caption": true,
-    "how_it_combines": "Priority: (1) full moon night → full-moon image only; (2) holiday window → rotate that holiday’s urls (Christmas includes forest tree); (3) else rotate creative night skies by day among sg_identity=pass plates only; current-season storefront at most every 5th creative-mode night and never after a storefront streak. Founder Screenshot exteriors are not part of the night pool. Events stay in caption. Week-ahead horizon is 2 days. Plates in creative_pool_needs_sg_identity are excluded until regenerated. creative_pool_ready_local holds SG-pass regenerations awaiting WP upload.",
+    "how_it_combines": "Priority: (1) full moon night → full-moon image only; (2) holiday window → rotate that holiday’s urls (Christmas includes forest tree); (3) else rotate creative night skies by day among sg_identity=pass + not daytime_sun plates only, skipping URLs/families used in the last no_repeat_days (default 7) and never reusing the same URL from the prior night; current-season storefront at most every 5th creative-mode night and never after a storefront streak. Founder Screenshot exteriors are not part of the night pool. Events stay in caption. Week-ahead horizon is 2 days. Plates in creative_pool_needs_sg_identity / creative_pool_retired_daytime_sun are excluded. creative_pool_ready_local holds SG-pass regenerations awaiting WP upload.",
     "sg_identity_rule": "Every week_ahead night plate needs an in-photo Sacred Ground anchor. sg_identity must be pass for creative_pool entries. Overlays alone are not enough.",
+    "daytime_sun_rule": "Founder 2026-08-09: sun-in-sky / sun-dominating plates read as daytime and must never be selected for week_ahead. Tag daytime_sun=true (or night_mood=daytime_sun / family=daytime_sun) and keep them out of the active pool.",
+    "creative_pool_retired_daytime_sun": [
+      {
+        "id": "logo_sun_sky",
+        "label": "Logo sun in starry sky",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-logo-sun-sky-v2.png",
+        "sg_identity": "pass",
+        "sg_anchor": "Folk-art SG sun face dominating starry sky",
+        "active": false,
+        "daytime_sun": true,
+        "family": "daytime_sun",
+        "night_mood": "daytime_sun",
+        "retire_reason": "Founder 2026-08-09: sun-in-sky reads as daytime — not for week_ahead night posts (IG Sat 8/8)."
+      },
+      {
+        "id": "sun_in_moon",
+        "label": "Logo sun within full moon",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-sun-in-moon-v2.png",
+        "sg_identity": "pass",
+        "sg_anchor": "Folk-art SG sun face inside full moon",
+        "active": false,
+        "daytime_sun": true,
+        "family": "daytime_sun",
+        "night_mood": "daytime_sun",
+        "retire_reason": "Founder 2026-08-09: sun-in-moon reads as daytime sun — not for week_ahead night posts (IG Sun 8/9)."
+      },
+      {
+        "id": "logo_sun_horizon",
+        "label": "Logo sun over starry horizon",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-logo-sun-horizon.png",
+        "sg_identity": "pass",
+        "sg_anchor": "Folk-art SG sun rising over starry horizon",
+        "active": false,
+        "daytime_sun": true,
+        "family": "daytime_sun",
+        "night_mood": "daytime_sun",
+        "retire_reason": "Founder 2026-08-09: sun-on-horizon reads as daytime sunrise — not for week_ahead night posts."
+      }
+    ],
     "creative_pool_needs_sg_identity": [
       {
         "id": "cloud_beams",
@@ -368,8 +387,13 @@
     ],
     "creative_pool_ready_local": [],
     "audit_2026_08_06": {
-      "pass_count_active": 19,
+      "pass_count_active": 16,
       "fail_count_pending": 9,
+      "retired_daytime_sun_2026_08_09": [
+        "logo_sun_sky",
+        "sun_in_moon",
+        "logo_sun_horizon"
+      ],
       "regen_local_pass_upload_pending": [],
       "uploaded_to_pool_2026_08_07": [
         "crystal_mountain_v2",

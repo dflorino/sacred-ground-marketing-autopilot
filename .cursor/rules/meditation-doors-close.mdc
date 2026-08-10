@@ -1,21 +1,48 @@
 ---
-description: Free Community Meditation doors-close time (7:05pm) — single source of truth
+description: Free Community Meditation — anonymous captions + doors close 7:05pm
 globs: marketing/**/*.py,config/settings.json,config/voice.json,AUTOMATION-DRAFT.md,tests/**/*.py
 alwaysApply: false
 ---
 
-# Free Community Meditation — doors close
+# Free Community Meditation — public caption rules
+
+## Hard rule (Founder — Aug 9, 2026) — never name who leads
+
+Public captions (Today / week_ahead / tuesday_meditation / afternoon if meditation)
+must **never** name the facilitator. No Amber, Eve, Andre, etc.
+
+Only say that there **is** meditation:
+
+- Title: `Free Community Meditation`
+- When: `Tuesday night 7:00–8:00 PM` (`session_display` in settings)
+- `All are welcome`
+- `No sign-up needed`
+- `Doors close at 7:05pm` (`doors_close_display`)
+
+`config/meditation_hosts.json` is **ops/internal only** — not for captions.
+If TEC title/description includes a facilitator name, strip it via
+`marketing.meditation.public_meditation_title` / `strip_facilitator_names`.
+
+Paid / named workshops (massage, tarot, special events like Lions Gate) are different —
+this rule is for community / Free Community Meditation.
+
+## Doors close
 
 **Doors close at 7:05pm** (no o'clock). Not 8:05pm.
 
 ## Single source of truth
 
-- Config: `config/settings.json` → `tuesday_community_meditation.doors_close_display` = `"7:05pm"`
-- Caption line built only via `marketing.meditation.doors_close_line()` / `meditation_event_block()`
-- Used by morning tomorrow-horizon (when meditation is listed), week-ahead, and Tuesday 4pm `tuesday_meditation` — not Lions Gate / other free community events unless they match title_match_any
+- Config: `config/settings.json` → `tuesday_community_meditation`
+  - `doors_close_display` = `"7:05pm"`
+  - `session_display` = `"Tuesday night 7:00–8:00 PM"`
+- Caption block built only via `marketing.meditation.meditation_event_block()`
+- Used by morning tomorrow-horizon (when meditation is listed), week-ahead, and Tuesday 4pm
+  `tuesday_meditation` — not Lions Gate / other free community events unless they match
+  `title_match_any`
 
 ## Do not
 
 - Hardcode `8:05` / `8:05pm` / `Doors close at …` in captions, tests, or agent instructions
 - Drift between campaign paths — always go through `meditation_event_block`
 - Use "o'clock" on the doors-close line
+- Put `With [Name]` / facilitator names in meditation captions or tuesday openers

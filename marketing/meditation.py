@@ -5,7 +5,7 @@ from __future__ import annotations
 import os
 import re
 from dataclasses import dataclass
-from datetime import date
+from datetime import date, datetime
 from functools import lru_cache
 from typing import Any, Dict, List, Optional, Sequence
 
@@ -17,6 +17,17 @@ MEDITATION_HOSTS_PATH = os.path.join(CONFIG_DIR, "meditation_hosts.json")
 
 # Fallback only if config/settings.json omits doors_close_display.
 _DEFAULT_DOORS_CLOSE_DISPLAY = "7:05pm"
+_DEFAULT_SESSION_DISPLAY = "Tuesday night 7:00–8:00 PM"
+
+# Facilitator first names / known hosts — never appear in public meditation captions.
+_FACILITATOR_NAME_RE = re.compile(
+    r"\b("
+    r"Amber|Eve|Andre(?:\s+Peraza)?|Rose|Cheryl|Mother\s+Lotus|"
+    r"Randa(?:\s+Clark)?|Richard(?:\s+Popp)?|Janel|Lisa(?:\s+Maria)?|"
+    r"Tina|Adie|Sherry(?:\s+Gurley)?|Renee|Melissa|Pat(?:\s+Sample)?"
+    r")\b",
+    re.IGNORECASE,
+)
 
 
 def doors_close_display() -> str:
@@ -29,6 +40,28 @@ def doors_close_display() -> str:
 def doors_close_line() -> str:
     """Caption line — no o'clock; e.g. 'Doors close at 7:05pm'."""
     return f"Doors close at {doors_close_display()}"
+
+
+def _format_clock(hhmm: str) -> str:
+    t = datetime.strptime(hhmm, "%H:%M").time()
+    hour = t.hour % 12 or 12
+    ampm = "AM" if t.hour < 12 else "PM"
+    return f"{hour}:{t.minute:02d} {ampm}"
+
+
+def session_display() -> str:
+    """Public session when line — never names a facilitator (Founder 2026-08-09)."""
+    cfg = settings().get("tuesday_community_meditation") or {}
+    raw = str(cfg.get("session_display") or "").strip()
+    if raw:
+        return raw
+    stub = cfg.get("stub") or {}
+    start_s = str(stub.get("start_time") or "19:00").strip()
+    end_s = str(stub.get("end_time") or "20:00").strip()
+    try:
+        return f"Tuesday night {_format_clock(start_s)}–{_format_clock(end_s)}"
+    except ValueError:
+        return _DEFAULT_SESSION_DISPLAY
 
 
 @dataclass(frozen=True)
@@ -47,6 +80,7 @@ def clear_meditation_hosts_cache() -> None:
 
 
 def load_host_roster() -> List[MeditationHost]:
+    """Internal ops roster only — never used in public captions (Founder 2026-08-09)."""
     cfg = meditation_hosts_config()
     out: List[MeditationHost] = []
     for raw in cfg.get("hosts") or []:
@@ -68,7 +102,7 @@ def iso_week_rotation_index(day: date, size: int) -> int:
 
 
 def parse_host_from_event(event: Optional[Event]) -> Optional[MeditationHost]:
-    """Prefer host/style embedded in TEC title/description when present."""
+    """Parse host/style from TEC text for ops use only — never for public captions."""
     if event is None:
         return None
     blob = "\n".join(
@@ -80,9 +114,10 @@ def parse_host_from_event(event: Optional[Event]) -> Optional[MeditationHost]:
         return None
 
     # With Name · Style  /  With Name - Style  /  With Name — Style
+    # Horizontal whitespace only so title+description join cannot span lines.
     m = re.search(
-        r"[Ww]ith\s+([A-Z][\w'’.\-]+(?:\s+[A-Z][\w'’.\-]+){0,3})"
-        r"\s*[·\-–—]\s*([^\n.!?]{2,60})",
+        r"[Ww]ith[^\S\n]+([A-Z][\w'’.\-]+(?:[^\S\n]+[A-Z][\w'’.\-]+){0,3})"
+        r"[^\S\n]*[·\-–—][^\S\n]*([^\n.!?]{2,60})",
         blob,
     )
     if m:
@@ -111,7 +146,7 @@ def host_for_day(
     *,
     roster: Optional[Sequence[MeditationHost]] = None,
 ) -> Optional[MeditationHost]:
-    """Resolve this Tuesday's practitioner/style — TEC parse first, else weekly roster."""
+    """Resolve this Tuesday's practitioner/style for ops — not for public captions."""
     parsed = parse_host_from_event(event)
     if parsed is not None:
         return parsed
@@ -130,38 +165,75 @@ def day_from_event(event: Optional[Event]) -> Optional[date]:
     return start.date() if start else None
 
 
+def strip_facilitator_names(text: str) -> str:
+    """Remove known facilitator names from meditation-related public copy."""
+    if not text:
+        return text
+    cleaned = _FACILITATOR_NAME_RE.sub("", text)
+    cleaned = re.sub(
+        r"\s*[|·\-–—]\s*(?=\s|$)",
+        "",
+        cleaned,
+    )
+    cleaned = re.sub(
+        r"\b(?:with|led by|hosted by|facilitated by)\s*$",
+        "",
+        cleaned,
+        flags=re.IGNORECASE,
+    )
+    cleaned = re.sub(r"\s{2,}", " ", cleaned)
+    cleaned = re.sub(r"\s+([,.;:])", r"\1", cleaned)
+    return cleaned.strip(" -—·|,")
+
+
+def public_meditation_title(event: Optional[Event] = None) -> str:
+    """Always the anonymous community title — never facilitator-named TEC titles."""
+    title = str((event.title if event else "") or "").strip()
+    if title:
+        stripped = strip_facilitator_names(title)
+        low = stripped.lower()
+        if "community meditation" in low or (
+            "meditation" in low and "community" in low
+        ):
+            return "Free Community Meditation"
+        if stripped and not _FACILITATOR_NAME_RE.search(stripped):
+            # Keep specialty meditation titles only when no facilitator remains.
+            if "meditation" in low and "lions gate" not in low:
+                return stripped
+    return "Free Community Meditation"
+
+
 def meditation_event_block(
     day: Optional[date] = None,
     event: Optional[Event] = None,
     *,
     roster: Optional[Sequence[MeditationHost]] = None,
 ) -> str:
-    """Daytime Free Community Meditation block — no time line, booking URL, or goodnight."""
-    resolved_day = day or day_from_event(event)
-    host = host_for_day(resolved_day, event, roster=roster)
-    lines = ["• Free Community Meditation"]
-    if host:
-        lines.append(f"With {host.practitioner} · {host.style}")
-    lines.extend(
+    """Anonymous Free Community Meditation block — never names who leads (Founder).
+
+    day/roster are accepted for call-site compatibility but ignored for public copy.
+    """
+    _ = (day, roster)
+    return "\n".join(
         [
+            f"• {public_meditation_title(event)}",
+            session_display(),
             "All are welcome",
             "No sign-up needed",
             doors_close_line(),
         ]
     )
-    return "\n".join(lines)
 
 
 def format_tuesday_meditation_opener(
     template: str,
-    host: Optional[MeditationHost],
+    host: Optional[MeditationHost] = None,
 ) -> str:
-    """Fill opener placeholders or append With Practitioner · Style when present."""
+    """Fill opener without naming facilitators (host arg ignored for public copy)."""
+    del host
     tmpl = (template or "").strip() or (
         "Tonight at Sacred Ground — Free Community Meditation."
     )
-    if host and ("{practitioner}" in tmpl or "{style}" in tmpl):
-        return tmpl.format(practitioner=host.practitioner, style=host.style)
     cleaned = (
         tmpl.replace(" with {practitioner}", "")
         .replace(" — {style}", "")
@@ -170,10 +242,5 @@ def format_tuesday_meditation_opener(
         .replace("{style}", "")
     )
     cleaned = re.sub(r"\s{2,}", " ", cleaned).strip(" -—·")
-    if not host:
-        return cleaned or "Tonight at Sacred Ground — Free Community Meditation."
-    low = cleaned.lower()
-    if host.practitioner.lower() in low:
-        return cleaned
-    base = cleaned.rstrip(".")
-    return f"{base} — with {host.practitioner} · {host.style}."
+    cleaned = strip_facilitator_names(cleaned)
+    return cleaned or "Tonight at Sacred Ground — Free Community Meditation."

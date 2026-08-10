@@ -666,7 +666,16 @@ class AutopilotTests(unittest.TestCase):
         )
         day = date(2026, 8, 4)
         daytime_block = meditation_event_block(day=day, event=meditation)
-        self.assertIn("With ", daytime_block)
+        self.assertEqual(
+            daytime_block,
+            "• Free Community Meditation\n"
+            "Tuesday night 7:00–8:00 PM\n"
+            "All are welcome\n"
+            "No sign-up needed\n"
+            "Doors close at 7:05pm",
+        )
+        self.assertNotIn("With ", daytime_block)
+        self.assertNotIn("Amber", daytime_block)
         self.assertIn("All are welcome", daytime_block)
         goodnight = "The door is always open...we will leave the light on"
 
@@ -715,13 +724,14 @@ class AutopilotTests(unittest.TestCase):
         self.assertIsNotNone(hit)
         self.assertEqual(captions._week_ahead_closer(hit), goodnight)
 
-        # Blank line between Janel block and meditation block
+        # Blank line between Janel block and meditation block (anonymous — no host)
         self.assertIn(
             "https://shopsacredground.com/book/janel/\n\n• Free Community Meditation\n"
-            "With ",
+            "Tuesday night 7:00–8:00 PM\n",
             today,
         )
         self.assertIn("All are welcome", today)
+        self.assertNotIn("With ", today)
         # Janel still gets normal when + URL
         self.assertIn("  Tuesday, August 4 · 1:00 PM–5:00 PM\n", today)
         self.assertIn("  https://shopsacredground.com/book/janel/\n", today)
@@ -943,21 +953,18 @@ class AutopilotTests(unittest.TestCase):
             text = captions.caption_tuesday_meditation(platform, day)["text"]
             self.assertIn(daytime_block, text)
             self.assertIn("Doors close at 7:05pm", text)
+            self.assertIn("Tuesday night 7:00–8:00 PM", text)
             self.assertNotIn("8:05", text)
-            self.assertIn(f"With {host.practitioner} · {host.style}", text)
+            self.assertNotIn("With ", text)
+            self.assertNotIn(host.practitioner, text)
+            self.assertNotIn(host.style, text)
             self.assertIn("#SacredGround", text)
             self.assertNotIn(goodnight, text)
             self.assertNotIn("o'clock", text.lower())
             self.assertNotIn("leave the light", text.lower())
-            self.assertNotIn("7:00 PM", text)
             self.assertNotIn(
                 "https://shopsacredground.com/event/free-community-meditation",
                 text,
-            )
-            # Opener mentions practitioner or style when host is known
-            self.assertTrue(
-                host.practitioner in text or host.style in text,
-                "standalone opener/block should surface host info",
             )
 
     def test_tuesday_meditation_pipeline_publishes_tuesdays_skips_holidays(self) -> None:
@@ -991,8 +998,10 @@ class AutopilotTests(unittest.TestCase):
         sched = tm_fb["schedule_recommendation"]["recommended_at"]
         self.assertTrue(sched.startswith("2026-08-04T16:00:00"))
         cap = tm_fb["caption"]["text"]
-        self.assertIn("• Free Community Meditation\nWith ", cap)
+        self.assertIn("• Free Community Meditation\nTuesday night 7:00–8:00 PM\n", cap)
         self.assertIn("All are welcome", cap)
+        self.assertIn("Doors close at 7:05pm", cap)
+        self.assertNotIn("With ", cap)
         self.assertNotIn("The door is always open", cap)
         self.assertNotIn("o'clock", cap.lower())
         self.assertIn(tm_fb["image"]["url"], pool)
@@ -1024,7 +1033,7 @@ class AutopilotTests(unittest.TestCase):
         self.assertIn("not_tuesday", skip_w)
 
     def test_meditation_host_iso_week_rotation_and_shared_block(self) -> None:
-        """Roster rotates by ISO week; Today + tuesday_meditation share one block helper."""
+        """Roster still rotates for ops; public captions stay anonymous + shared."""
         from marketing import captions
         from marketing.meditation import (
             MeditationHost,
@@ -1053,11 +1062,19 @@ class AutopilotTests(unittest.TestCase):
         self.assertIsNotNone(host_b)
         self.assertNotEqual(host_a, host_b)
 
+        anonymous = (
+            "• Free Community Meditation\n"
+            "Tuesday night 7:00–8:00 PM\n"
+            "All are welcome\n"
+            "No sign-up needed\n"
+            "Doors close at 7:05pm"
+        )
         block_a = meditation_event_block(day=tue_a)
         block_b = meditation_event_block(day=tue_b)
-        self.assertIn(f"With {host_a.practitioner} · {host_a.style}", block_a)
-        self.assertIn(f"With {host_b.practitioner} · {host_b.style}", block_b)
-        self.assertNotEqual(block_a, block_b)
+        self.assertEqual(block_a, anonymous)
+        self.assertEqual(block_b, anonymous)
+        self.assertNotIn(host_a.practitioner, block_a)
+        self.assertNotIn(host_b.practitioner, block_b)
 
         # Shared helper: Today meditation block == tuesday_meditation block for same day
         med = Event(
@@ -1072,34 +1089,34 @@ class AutopilotTests(unittest.TestCase):
         self.assertIn(block_a, today_text)
         self.assertIn(block_a, solo_text)
 
-        # TEC-embedded host wins over roster
+        # TEC-embedded host parses for ops, but public block stays anonymous
         tec = Event(
             id=1,
-            title="Free Community Meditation",
+            title="Free Community Meditation with Amber",
             start_date=f"{tue_a.isoformat()} 19:00:00",
             end_date=f"{tue_a.isoformat()} 20:00:00",
             url="https://shopsacredground.com/event/free-community-meditation/",
             description="With Pat Sample · Crystal bowl stillness. All are welcome.",
         )
         parsed = parse_host_from_event(tec)
+        # Description "With Pat Sample · …" wins; title "with Amber" has no style.
         self.assertEqual(
             parsed,
             MeditationHost(practitioner="Pat Sample", style="Crystal bowl stillness"),
         )
-        self.assertIn(
-            "With Pat Sample · Crystal bowl stillness",
-            meditation_event_block(day=tue_a, event=tec),
-        )
+        tec_block = meditation_event_block(day=tue_a, event=tec)
+        self.assertEqual(tec_block, anonymous)
+        self.assertNotIn("Amber", tec_block)
+        self.assertNotIn("Pat Sample", tec_block)
 
-        # Empty roster → block without With line (still usable)
         bare = meditation_event_block(day=tue_a, roster=[])
-        self.assertEqual(
-            bare,
-            "• Free Community Meditation\n"
-            "All are welcome\n"
-            "No sign-up needed\n"
-            "Doors close at 7:05pm",
-        )
+        self.assertEqual(bare, anonymous)
+
+        # week_ahead listing must stay anonymous even when roster names Amber that week
+        week_text = captions.caption_week_ahead([tec], "facebook", tue_a)["text"]
+        self.assertIn(anonymous, week_text)
+        self.assertNotIn("Amber", week_text)
+        self.assertNotIn("With ", week_text)
 
     def test_morning_lineup_is_full_today_plus_tomorrow(self) -> None:
         """Sun 9am: Janel + Randa/Richard + Quantum, then Monday — today-first."""
@@ -1333,6 +1350,9 @@ class AutopilotTests(unittest.TestCase):
             url = str(plan.get("image_url") or "")
             ids.append(cid)
             self.assertNotIn("Screenshot-2026-03-05", url)
+            self.assertNotIn("logo-sun-sky", url)
+            self.assertNotIn("sun-in-moon", url)
+            self.assertNotIn("logo-sun-horizon", url)
             if "storefront" in cid:
                 storefronts += 1
             else:
@@ -1348,6 +1368,71 @@ class AutopilotTests(unittest.TestCase):
         self.assertLessEqual(storefronts, 5)
         # Not stuck on one plate
         self.assertGreaterEqual(len(set(ids)), 8)
+
+    def test_night_pool_excludes_daytime_sun_and_repeats(self) -> None:
+        """Founder 2026-08-09: no sun-in-sky plates; no same URL two nights in a row."""
+        import json
+
+        from marketing import images
+        from marketing.atmosphere import (
+            _eligible_creative_pool,
+            atmosphere_config,
+            nighttime_plan,
+        )
+
+        atmosphere_config.cache_clear()
+        images.IMAGE_USAGE_PATH = os.path.join(self._tmpdir, "state", "image_usage.json")
+        os.makedirs(os.path.dirname(images.IMAGE_USAGE_PATH), exist_ok=True)
+
+        creatives, _storefronts = _eligible_creative_pool(date(2026, 8, 9))
+        ids = {str(p.get("id") or "") for p in creatives}
+        urls = {str(p.get("url") or "") for p in creatives}
+        self.assertNotIn("logo_sun_sky", ids)
+        self.assertNotIn("sun_in_moon", ids)
+        self.assertNotIn("logo_sun_horizon", ids)
+        for u in urls:
+            self.assertNotIn("logo-sun-sky", u)
+            self.assertNotIn("sun-in-moon", u)
+            self.assertNotIn("logo-sun-horizon", u)
+
+        # Retired daytime-sun URLs must never be selected even across many days.
+        banned = {
+            "https://shopsacredground.com/wp-content/uploads/sg-night-creative-logo-sun-sky-v2.png",
+            "https://shopsacredground.com/wp-content/uploads/sg-night-creative-sun-in-moon-v2.png",
+            "https://shopsacredground.com/wp-content/uploads/sg-night-creative-logo-sun-horizon.png",
+        }
+        for i in range(40):
+            d = date(2026, 8, 1) + timedelta(days=i)
+            for platform in ("facebook", "instagram"):
+                plan = nighttime_plan(d, platform=platform)
+                if plan.get("mode") in ("full_moon", "holiday"):
+                    continue
+                self.assertNotIn(str(plan.get("image_url") or ""), banned)
+
+        # Yesterday's IG URL must not be reused tonight (either platform).
+        sun = date(2026, 8, 9)
+        y_url = (
+            "https://shopsacredground.com/wp-content/uploads/"
+            "sg-night-creative-neon-fog-alley.png"
+        )
+        with open(images.IMAGE_USAGE_PATH, "w", encoding="utf-8") as fh:
+            json.dump(
+                {
+                    "history": [
+                        {
+                            "date": "2026-08-08",
+                            "url": y_url,
+                            "rule": "week_ahead_creative_neon_fog_alley",
+                            "campaign": "week_ahead",
+                            "platform": "instagram",
+                        }
+                    ]
+                },
+                fh,
+            )
+        for platform in ("facebook", "instagram"):
+            plan = nighttime_plan(sun, platform=platform)
+            self.assertNotEqual(str(plan.get("image_url") or ""), y_url)
 
     def test_fb_ig_distinct_images_today_and_week_ahead(self) -> None:
         """Today + week_ahead: FB ≠ IG when the pool has 2+ options; meditation stays shared."""

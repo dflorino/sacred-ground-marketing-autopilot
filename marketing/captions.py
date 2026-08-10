@@ -7,7 +7,6 @@ from typing import Dict, List, Sequence
 from .classify import format_when, is_community_meditation, short_blurb
 from .meditation import (
     format_tuesday_meditation_opener,
-    host_for_day,
     meditation_event_block,
 )
 from .models import Event
@@ -441,14 +440,14 @@ def caption_week_ahead(events: List[Event], platform: str, day: date) -> Dict:
 def caption_tuesday_meditation(platform: str, day: date) -> Dict:
     """Standalone Tuesday Free Community Meditation post (not the morning tomorrow lineup)."""
     seed = f"tuesday_meditation|{day.isoformat()}|{platform}"
-    host = host_for_day(day)
     openers = list(voice().get("tuesday_meditation_openers") or [])
     raw_hook = _pick_rotating(
         openers,
         f"{seed}|opener",
         "Tonight at Sacred Ground — Free Community Meditation.",
     )
-    hook = format_tuesday_meditation_opener(raw_hook, host)
+    # Never name who leads — host roster is ops-only (Founder 2026-08-09).
+    hook = format_tuesday_meditation_opener(raw_hook)
     body = hook + "\n\n" + meditation_event_block(day=day)
     body += "\n\n" + _signoff(seed, platform)
     tags = _hashtags(platform)
