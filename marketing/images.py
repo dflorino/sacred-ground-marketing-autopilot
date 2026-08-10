@@ -308,44 +308,24 @@ def select_today_image(
         )
 
     # Date-keyed finished flyers beat specialty / atmospheric plates.
-    # FB → url / urls[0]; IG → url_instagram / urls[1]. Both must be full-day
-    # complete flyers (same covers). Temporarily share when only one exists.
+    # Single-image mode (Founder Aug 10 2026): primary `url` for FB+IG.
     flyer = _flyer_for_day(day)
     if flyer:
         from . import morning_flyers as mf
 
-        chosen, temporarily_shared = mf.select_flyer_url_for_platform(flyer, platform)
+        chosen, shared = mf.select_flyer_url_for_platform(flyer, platform)
         if chosen:
             label = flyer.get("label") or day.isoformat()
-            if temporarily_shared:
-                import sys
-
-                protected = day.isoformat() in mf.PROTECTED_DAYS
-                if protected:
-                    print(
-                        f"[morning_flyer] {day.isoformat()}: protected single full-day "
-                        f"flyer — FB+IG share by design (do not split/republish)",
-                        file=sys.stderr,
-                    )
-                    rec = (
-                        f"Prebranded morning flyer for {day.isoformat()} ({label}) — "
-                        "protected single variant shared on FB+IG. Skip overlays."
-                    )
-                else:
-                    print(
-                        f"[morning_flyer] {day.isoformat()}: only one full-day variant — "
-                        f"temporarily sharing on FB+IG until second is built",
-                        file=sys.stderr,
-                    )
-                    rec = (
-                        f"Prebranded morning flyer for {day.isoformat()} ({label}) — "
-                        "temporarily shared (second full-day variant missing). Skip overlays."
-                    )
+            if shared:
+                rec = (
+                    f"Prebranded morning flyer for {day.isoformat()} ({label}) — "
+                    "single-image mode (same plate on FB+IG). Skip overlays."
+                )
             else:
                 plat = (platform or "facebook").lower()
                 rec = (
                     f"Prebranded morning flyer for {day.isoformat()} ({label}) — "
-                    f"{plat} variant. Skip overlays."
+                    f"{plat} variant (allow_ig_variant). Skip overlays."
                 )
             return (chosen, "morning_flyer", rec)
 
@@ -447,8 +427,9 @@ def plan_image(
     today: specialty rules + multi-event rotation + 7-day no-repeat,
     then single event featured, then store exterior.
 
-    platform / exclude_urls: used by today + week_ahead so FB and IG can take
-    different URLs from the same day's eligible pool.
+    platform / exclude_urls: legacy diversification hooks. Pipeline now plans
+    once and reuses the same media URL on Facebook and Instagram (Founder
+    Aug 10 2026 single-image mode).
     """
     with_images = [e for e in events if e.image_url]
     excluded = [str(u) for u in (exclude_urls or []) if u]

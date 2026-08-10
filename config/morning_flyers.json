@@ -1,11 +1,11 @@
 {
-  "notes": "Sacred Ground daily flyer template (Thursday-style EQUAL cards): gold standard assets/sg-morning-flyer-2026-08-06-today-collage.png. Multi-event days MUST give every practitioner the SAME card size/visual weight — FORBIDDEN one hero + tiny ALSO TODAY corner (Aug 7 FB reflexology/Robert rejected; equal-card archive at assets/sg-morning-flyer-2026-08-07-equal-cards.png). ~75% Thursday equal cards; ~25% artistic hero ONLY for single-event days. Header WEEKDAY AT Sacred Ground + Mind • Body • Spirit • Community; LEFT equal stacked cards; RIGHT graphics; FOOTER logo + shopsacredground.com + 847-749-3922. Facebook and Instagram MUST use DIFFERENT full-day flyer visuals — same events/info on both. IG needs richer pop. NEVER include $, dollar amounts, ticket costs, or \"$55\"-style prices on flyer graphics. Empty days get a warm visit flyer. Morning Autopilot 9am: prefer today’s date-key flyer when today has events, else tomorrow’s.",
+  "notes": "Sacred Ground daily flyer template (Thursday-style): gold standard assets/sg-morning-flyer-2026-08-06-today-collage.png. ~75% of new/future morning flyers MUST use Thursday-style clear stacked EQUAL event cards (left cards + right graphics + logo footer) — multi-event days give EVERY practitioner the SAME card size / visual weight (gold standard Aug 6). FORBIDDEN: one hero photo + tiny ALSO TODAY corner badge (Aug 7 FB reflexology/Robert rejected). Up to ~25% may be artistic single-event hero layouts ONLY when there is exactly one event. Header WEEKDAY AT Sacred Ground + Mind • Body • Spirit • Community; LEFT stacked rounded event cards; RIGHT evocative graphics in clear zones; FOOTER logo + shopsacredground.com + 847-749-3922 + come-as-you-are. COLOR ENERGY (Founder Aug 10 2026): FB and IG plates MUST be colorful, bright, interesting, and engaging — jewel tones, strong contrast, rich accents (gold / emerald / amethyst / teal / amber). FORBIDDEN: drab, muddy, beige, grey, desaturated purple AI sludge, empty near-black voids, low-saturation washes, thin faint line-art on a dead field (Aug 10 IG Lisa Maria muddy-purple empty-card plate rejected). Dark elegant backgrounds OK ONLY when lit with bright jewel accents like the Aug 6 gold standard. Versions of the system, not exact clones. Date-keyed flyers are prebranded (skip overlays). SINGLE-IMAGE MODE (Founder Aug 10 2026): one excellent primary plate (`url` / `local`) posts to BOTH Facebook and Instagram. Do not generate or require a separate weaker `url_instagram` variant — Aug 10 Lisa Maria IG muddy-purple plate proved dual variants hurt quality. Legacy `url_instagram` is ignored unless entry sets allow_ig_variant:true. Primary plate must pass flyer_passes_visual_energy. NEVER include $, dollar amounts, ticket costs, or \"$55\"-style prices on flyer graphics. Empty days get a warm visit flyer. 1–3 events max. No invented practitioner faces.",
   "prebranded_default": true,
   "layout_mix": {
     "thursday_cards_share": 0.75,
     "artistic_hero_share": 0.25,
     "default": "thursday_cards",
-    "platform_variants": "facebook=url / variant A (cleaner card energy OK); instagram=url_instagram / variant B (same full-day cards, richer color/shape/mystical pop — not flat washes)"
+    "platform_variants": "single-image mode (Founder Aug 10 2026): primary url/local posts to FB+IG; url_instagram ignored unless allow_ig_variant:true"
   },
   "flyers": {
     "2026-08-05": {
@@ -106,13 +106,7 @@
       "prebranded": true,
       "template": "thursday-style",
       "media_id": 25891,
-      "local_instagram": "assets/sg-morning-flyer-2026-08-10-lisa-maria-intuitive-tarot-b.png",
-      "url_instagram": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-10-lisa-maria-intuitive-tarot-b.png",
-      "media_id_instagram": 25915,
-      "urls": [
-        "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-10-lisa-tarot.png",
-        "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-10-lisa-maria-intuitive-tarot-b.png"
-      ]
+      "note": "Single-image mode Aug 10 2026 — amazing FB plate shared to IG; muddy url_instagram retired"
     },
     "2026-08-11": {
       "label": "Astrology & Tarot + Free Community Meditation +",

@@ -39,24 +39,20 @@ Artistic single-event hero is allowed **only** when the day has exactly one even
 
 Never put `$`, dollar amounts, ticket costs, or “$55”-style fees on morning flyer graphics. Do not use TEC `cost` on the image. Captions may still link to booking.
 
-## Hard rule — Facebook ≠ Instagram images (same full-day info)
+## Hard rule — single-image mode (Founder Aug 10, 2026)
 
-For date-keyed morning flyers, **Facebook and Instagram use different visuals**, but **both carry the same full-day information** on **equal** Thursday-style cards.
+One excellent primary plate posts to **both Facebook and Instagram**.
 
-| Field | Platform |
+| Field | Role |
 |---|---|
-| `url` (or `urls[0]`) | Facebook — variant A |
-| `url_instagram` (or `urls[1]`) | Instagram — variant B |
-| `local` / `local_instagram` | Local PNGs for each variant |
+| `url` / `local` | Primary plate — used on FB **and** IG |
+| `url_instagram` / `local_instagram` | Legacy / optional — ignored unless `allow_ig_variant: true` |
 
-Aug 6 gold standard may remain a single shared URL — do not overwrite or republish solely to split platforms.
+Do not generate a separate weaker Instagram variant. Pipeline reuses the same media URL on both platforms (all campaigns).
 
-### Platform energy (Founder — Aug 7, 2026)
+### Color energy (hard — Founder Aug 10, 2026)
 
-| Platform | Energy |
-|---|---|
-| **Facebook** (`url` / variant A) | Cleaner equal-card layout OK — gold-standard readability |
-| **Instagram** (`url_instagram` / variant B) | Same equal cards + richer multi-tone mystical pop (not flat washes) |
+The shared plate must look **colorful, bright, interesting, engaging** (jewel tones + strong contrast). Reject drab / muddy / beige / grey / desaturated purple sludge and empty near-black voids. Gate: `marketing.morning_flyers.flyer_passes_visual_energy`. Aug 10 IG Lisa Maria muddy-purple empty-card plate is the reject example.
 
 Do not republish live posts just to swap a plate — updating archive assets for future reuse is fine.
 

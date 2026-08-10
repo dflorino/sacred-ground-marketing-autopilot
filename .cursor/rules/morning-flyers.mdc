@@ -46,24 +46,27 @@ Use **versions of this layout system** — not an exact clone every day (stale),
 - Captions may mention booking links; the **graphic** stays price-free.
 - “FREE” for Free Community Meditation / free community events is OK (not a dollar amount).
 
-## Facebook ≠ Instagram (date-keyed flyers)
+## Single-image mode (hard — Founder Aug 10, 2026)
 
-- FB and IG must use **different full-day flyer visuals** (people who follow both should see variety).
-- **Both platforms carry the same full-day information** on **equal** Thursday-style cards.
-- Date keys support `url` (FB) + `url_instagram` (IG), or `urls: [fb, ig]` where **both** are complete full-day flyers.
-- Selection: facebook → `url` / first; instagram → `url_instagram` / second; URLs must differ when both exist.
-- If only one variant exists, temporarily share (with log) until the second is built — `generate-morning-flyers` prefers generating variant B.
-- Aug 6 gold standard may remain single-URL (do not overwrite / do not force a second variant).
+- **One excellent primary plate** (`url` / `local`) posts to **both Facebook and Instagram**
+- Do **not** generate or require a separate `url_instagram` — dual IG variants are retired (Aug 10 Lisa Maria muddy IG proved weaker variants hurt quality)
+- Legacy `url_instagram` is ignored unless an entry explicitly sets `allow_ig_variant: true`
+- Pipeline plans the image once and reuses the same media URL on both platforms
+- Aug 6 gold standard stays single-URL (do not overwrite)
 
-### Platform energy (Founder — Aug 7, 2026)
+### Color energy (hard — Founder Aug 10, 2026)
 
-- **Facebook (`url` / variant A)** may be the **cleaner equal-card layout** (gold-standard readability).
-- **Instagram (`url_instagram` / variant B)** must still be full-day equal cards, but **must have more visual pop**: richer multi-tone color, stronger shapes, contrast, mystical energy — **not** flat single-color washes.
-- Do **not** republish today's live posts just to swap a plate — archive/future wire is OK.
+The shared plate must be **colorful, bright, interesting, engaging**:
+- Jewel tones + strong contrast (emerald / amethyst / teal / sapphire / amber + gold)
+- Lit details like the Aug 6 gold standard (cards, crystals, candles, sacred geometry that glow)
+- Generators + selection must **reject** drab / muddy / beige / grey / desaturated purple sludge, empty near-black voids, giant blank cards, thin faint line-art on a dead field
+- Aug 10 IG Lisa Maria muddy-purple empty-card plate is the reject example
+- Dark elegant backgrounds OK only when bright jewel accents carry the energy
+- Code gate: `flyer_passes_visual_energy` (min colorfulness + accent ratio)
 
 ## Every day
 
-- Every Chicago calendar day should have Thursday-style flyer variants (1–3 events max, or a warm visit-day flyer when empty).
+- Every Chicago calendar day should have a Thursday-style primary flyer (1–3 events max, or a warm visit-day flyer when empty) shared on FB+IG.
 - Prebuild: `python3 -m marketing generate-morning-flyers --days 7`
 - Morning automation @ 9am: ensure flyer for **today + tomorrow** before publish (see AUTOMATION-DRAFT.md / docs/MORNING-FLYERS.md).
 - CLI tip: `generate-morning-flyers --start-offset 0 --days 2` for today+tomorrow.

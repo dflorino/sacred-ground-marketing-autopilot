@@ -55,23 +55,35 @@ NOTES = (
     "single-event hero layouts ONLY when there is exactly one event. Header "
     "WEEKDAY AT Sacred Ground + Mind • Body • Spirit • Community; LEFT stacked rounded event "
     "cards; RIGHT evocative graphics in clear zones; FOOTER logo + "
-    f"{WEBSITE} + {PHONE} + come-as-you-are. Dark elegant + gold accents "
-    "(vary by day). Easy to read — not collage soup. Versions of the system, "
-    "not exact clones. Date-keyed flyers are prebranded (skip overlays). "
-    "Facebook and Instagram MUST use DIFFERENT full-day flyer visuals "
-    "(url + url_instagram, or urls:[fb, ig]) — same events/info on both, "
-    "never an incomplete single-event alt. PLATFORM ENERGY (Founder Aug 7 "
-    "2026): Facebook `url` / variant A may be the cleaner card layout "
-    "(gold-standard readability energy — e.g. liked Aug 7 FB "
-    "assets/sg-morning-flyer-2026-08-07-reflexology.png). Instagram "
-    "`url_instagram` / variant B must still be full-day readable Thursday-"
-    "style cards, but MUST have more visual pop — richer multi-tone color, "
-    "stronger shapes, contrast, mystical energy; NOT flat single-color "
-    "washes (Aug 7 IG purple wash rejected as bland). NEVER include $, "
-    "dollar amounts, ticket costs, or \"$55\"-style prices on flyer "
-    "graphics. Empty days get a warm visit flyer. 1–3 events max. No "
-    "invented practitioner faces."
+    f"{WEBSITE} + {PHONE} + come-as-you-are. COLOR ENERGY (Founder Aug 10 "
+    "2026): FB and IG plates MUST be colorful, bright, interesting, and "
+    "engaging — jewel tones, strong contrast, rich accents (gold / emerald / "
+    "amethyst / teal / amber). FORBIDDEN: drab, muddy, beige, grey, "
+    "desaturated purple AI sludge, empty near-black voids, low-saturation "
+    "washes, thin faint line-art on a dead field (Aug 10 IG Lisa Maria "
+    "muddy-purple empty-card plate rejected). Dark elegant backgrounds OK "
+    "ONLY when lit with bright jewel accents like the Aug 6 gold standard. "
+    "Versions of the system, not exact clones. Date-keyed flyers are "
+    "prebranded (skip overlays). SINGLE-IMAGE MODE (Founder Aug 10 2026): "
+    "one excellent primary plate (`url` / `local`) posts to BOTH Facebook "
+    "and Instagram. Do not generate or require a separate weaker "
+    "`url_instagram` variant — Aug 10 Lisa Maria IG muddy-purple plate "
+    "proved dual variants hurt quality. Legacy `url_instagram` is ignored "
+    "unless entry sets allow_ig_variant:true. Primary plate must pass "
+    "flyer_passes_visual_energy. NEVER include $, dollar amounts, ticket "
+    "costs, or \"$55\"-style prices on flyer graphics. Empty days get a "
+    "warm visit flyer. 1–3 events max. No invented practitioner faces."
 )
+
+# Founder Aug 10 2026 — share one excellent primary plate on FB+IG.
+# Opt-in only: entry["allow_ig_variant"] = true to use url_instagram again.
+ALLOW_IG_VARIANT_KEY = "allow_ig_variant"
+
+# Visual-energy gate (Founder Aug 10, 2026) — reject drab/muddy plates.
+# Gold standard ~cf 50 / accents ~0.22; Aug 10 bad IG ~cf 18 / accents ~0.001.
+MIN_FLYER_COLORFULNESS = 28.0
+MIN_FLYER_ACCENT_RATIO = 0.05
+MAX_SINGLE_CARD_HEIGHT = 300
 
 # Founder-approved gold standard — do not overwrite or force a second variant.
 PROTECTED_DAYS = frozenset({"2026-08-06"})
@@ -91,6 +103,93 @@ def assert_price_free(*parts: str) -> None:
     bad = [p for p in parts if p and text_has_price(p)]
     if bad:
         raise ValueError(f"Morning flyer must not include prices: {bad!r}")
+
+
+def flyer_visual_energy(path: str) -> Dict[str, float]:
+    """Score colorfulness / accent density for a local flyer PNG.
+
+    Rejects drab muddy low-saturation plates (Founder Aug 10, 2026).
+    """
+    import colorsys
+
+    from PIL import Image
+
+    if not path or not os.path.isfile(path):
+        return {
+            "colorfulness": 0.0,
+            "sat_mean": 0.0,
+            "accent_ratio": 0.0,
+            "near_black": 1.0,
+        }
+    im = Image.open(path).convert("RGB").resize((120, 120))
+    sats: List[float] = []
+    lums: List[float] = []
+    rg: List[float] = []
+    yb: List[float] = []
+    for r, g, b in im.getdata():
+        _h, l, s = colorsys.rgb_to_hls(r / 255.0, g / 255.0, b / 255.0)
+        sats.append(s)
+        lums.append(l)
+        rg.append(float(r - g))
+        yb.append(0.5 * (r + g) - float(b))
+
+    def _mstd(vals: List[float]) -> Tuple[float, float]:
+        m = sum(vals) / len(vals)
+        var = sum((x - m) ** 2 for x in vals) / len(vals)
+        return m, var**0.5
+
+    rg_m, rg_s = _mstd(rg)
+    yb_m, yb_s = _mstd(yb)
+    colorfulness = (rg_s**2 + yb_s**2) ** 0.5 + 0.3 * (rg_m**2 + yb_m**2) ** 0.5
+    accent_ratio = sum(
+        1 for s, l in zip(sats, lums) if s > 0.35 and 0.2 < l < 0.85
+    ) / len(sats)
+    near_black = sum(1 for l in lums if l < 0.12) / len(lums)
+    return {
+        "colorfulness": round(colorfulness, 2),
+        "sat_mean": round(sum(sats) / len(sats), 3),
+        "accent_ratio": round(accent_ratio, 3),
+        "near_black": round(near_black, 3),
+    }
+
+
+def flyer_passes_visual_energy(path: str) -> bool:
+    """True when a plate is colorful/bright enough for FB or IG."""
+    m = flyer_visual_energy(path)
+    return (
+        m["colorfulness"] >= MIN_FLYER_COLORFULNESS
+        and m["accent_ratio"] >= MIN_FLYER_ACCENT_RATIO
+    )
+
+
+def _abs_asset(path: str) -> str:
+    if not path:
+        return ""
+    if os.path.isabs(path):
+        return path
+    return os.path.join(ROOT, path)
+
+
+def entry_fails_visual_energy(entry: Optional[Dict[str, Any]]) -> List[str]:
+    """Platforms whose local flyer PNGs fail the color-energy gate.
+
+    Single-image mode: only the primary `local` plate is gated unless
+    `allow_ig_variant` is explicitly enabled.
+    """
+    if not isinstance(entry, dict):
+        return []
+    failed: List[str] = []
+    keys = [("facebook", "local")]
+    if entry.get(ALLOW_IG_VARIANT_KEY):
+        keys.append(("instagram", "local_instagram"))
+    for platform, key in keys:
+        local = str(entry.get(key) or "").strip()
+        abs_path = _abs_asset(local)
+        if abs_path and os.path.isfile(abs_path) and not flyer_passes_visual_energy(
+            abs_path
+        ):
+            failed.append(platform)
+    return failed
 
 
 def load_flyers_config() -> Dict[str, Any]:
@@ -139,14 +238,16 @@ def resolve_flyer_urls(entry: Dict[str, Any]) -> Tuple[str, str]:
     """
     Return (facebook_url, instagram_url) for a morning_flyers date entry.
 
-    Prefer explicit `url` + `url_instagram`. Fallback: `urls[0]` / `urls[1]`.
-    Missing IG falls back to FB (caller may log temporary share).
+    Single-image mode (default): both return primary `url` / `urls[0]`.
+    Only when `allow_ig_variant` is true: IG may use `url_instagram` / `urls[1]`.
     """
     fb = str(entry.get("url") or "").strip()
-    ig = str(entry.get("url_instagram") or "").strip()
     urls = [str(u).strip() for u in (entry.get("urls") or []) if str(u).strip()]
     if not fb and urls:
         fb = urls[0]
+    if not entry.get(ALLOW_IG_VARIANT_KEY):
+        return fb, fb
+    ig = str(entry.get("url_instagram") or "").strip()
     if not ig and len(urls) >= 2:
         ig = urls[1]
     if not ig:
@@ -161,24 +262,28 @@ def select_flyer_url_for_platform(
     """
     Pick the flyer URL for a platform.
 
-    Returns (url, temporarily_shared). temporarily_shared is True when only one
-    full-day variant exists so FB and IG must share until the second is built.
+    Default (Founder Aug 10 2026): primary `url` for BOTH Facebook and Instagram.
+    Returns (url, shared). `shared` is True in single-image mode (by design).
+    Dual IG variants only when entry.allow_ig_variant is true.
     """
     fb, ig = resolve_flyer_urls(entry)
     if not fb and not ig:
         return "", False
     key = (platform or "").lower().strip()
-    if key in ("instagram", "ig"):
+    allow_ig = bool(entry.get(ALLOW_IG_VARIANT_KEY))
+    if allow_ig and key in ("instagram", "ig"):
         chosen = ig or fb
     else:
+        # Single-image mode: always prefer the stronger/primary Facebook plate.
         chosen = fb or ig
-    # Temporarily shared when the resolved pair collapses to one unique URL.
-    temporarily_shared = len({u for u in (fb, ig) if u}) < 2
-    return chosen, temporarily_shared
+    shared = (not allow_ig) or (len({u for u in (fb, ig) if u}) < 2)
+    return chosen, shared
 
 
 def has_dual_flyer_variants(entry: Dict[str, Any]) -> bool:
-    """True when two distinct public full-day flyer URLs are configured."""
+    """True when allow_ig_variant and two distinct public flyer URLs are set."""
+    if not entry.get(ALLOW_IG_VARIANT_KEY):
+        return False
     fb, ig = resolve_flyer_urls(entry)
     return bool(fb and ig and fb != ig)
 
@@ -376,26 +481,34 @@ def build_generation_prompt(
         "CRITICAL: do NOT include any prices, dollar signs, ticket costs, or "
         "dollar amounts anywhere on the graphic. FREE / Free Community for "
         "free community gatherings is allowed and preferred. No invented "
-        "practitioner faces unless a real photo reference is provided. Vary "
+        "practitioner faces unless a real photo reference is provided. "
+        "COLOR ENERGY (hard — Founder Aug 10 2026): colorful, bright, "
+        "interesting, engaging — jewel tones (emerald, amethyst, teal, "
+        "sapphire, amber) with strong gold contrast and luminous accents. "
+        "Match the Aug 6 gold-standard energy: rich lit details, tarot cards / "
+        "crystals / candles / sacred geometry that actually glow. FORBIDDEN: "
+        "drab, muddy, beige, grey, desaturated purple sludge, empty near-black "
+        "voids, giant blank cards, thin faint line-art on a dead field. Vary "
         "gold/jewel accents by day — versions of the system, not exact clones."
     )
     if is_b:
         bg_energy = (
             " VARIANT B / Instagram: same full-day readable Thursday-style "
             "event cards and info as Facebook, but the BACKGROUND must have "
-            "MORE visual pop — richer multi-tone color (jewel gradients, "
+            "MORE visual pop — richer multi-tone jewel color (jewel gradients, "
             "aurora ribbons, luminous orbs, layered light), stronger shapes "
             "and sacred geometry with real contrast, mystical energy that "
             "makes someone want to stop and read. FORBIDDEN: flat single-color "
             "washes, bland muted purple voids, low-contrast thin line art on "
-            "a dead field. Cards stay legible; energy lives in the field "
-            "around them."
+            "a dead field, empty stretched cards. Cards stay legible; energy "
+            "lives in the field around them."
         )
     else:
         bg_energy = (
             " VARIANT A / Facebook: cleaner gold-standard Thursday-style card "
             "layout energy is OK — clear readable cards, elegant contrast, "
-            "polished without needing maximal background drama."
+            "polished and still colorful/bright (not beige or muddy). Jewel "
+            "accents required even when the field is calmer than Instagram."
         )
     if style == LAYOUT_ARTISTIC and n_events <= 1:
         return (
@@ -414,8 +527,9 @@ def build_generation_prompt(
         "cards of IDENTICAL height (icon + title + host + time + short keywords) "
         "— equal visual weight for every event; RIGHT evocative graphics in "
         "clear zones aligned to those cards (not a second tiny event badge); "
-        "FOOTER logo + website + phone + come-as-you-are. Dark elegant + gold "
-        f"accents. {shared}{bg_energy}"
+        "FOOTER logo + website + phone + come-as-you-are. Dark elegant ONLY "
+        "when lit with bright jewel + gold accents (never a muddy void). "
+        f"{shared}{bg_energy}"
     )
 
 
@@ -481,50 +595,56 @@ def _tina_circle_path(events: Sequence[Event]) -> Optional[str]:
 def _variant_palette(variant: str) -> Dict[str, Any]:
     """Two Thursday-style palettes — same layout system, different color/right art.
 
-    Variant A (FB): cleaner readable card energy.
+    Variant A (FB): cleaner readable card energy — still jewel-bright.
     Variant B (IG): richer multi-tone pop — not a flat single-color wash.
     """
     key = (variant or VARIANT_A).lower().strip()
     if key in (VARIANT_B, "b", "ig", "instagram", "alt"):
         return {
             "id": VARIANT_B,
-            # Crown-chakra purple with teal/magenta/gold energy — not flat wash.
-            "bg_top": (88, 28, 110),
-            "bg_mid": (48, 22, 78),
-            "bg_bot": (12, 28, 58),
+            # Jewel amethyst + teal + amber — never muddy purple sludge.
+            "bg_top": (118, 42, 148),
+            "bg_mid": (62, 28, 98),
+            "bg_bot": (18, 36, 72),
             "orb_colors": [
-                (180, 90, 220, 55),
-                (60, 160, 190, 45),
-                (230, 140, 90, 40),
-                (120, 70, 200, 50),
+                (220, 120, 255, 90),
+                (40, 210, 220, 75),
+                (255, 170, 70, 70),
+                (160, 90, 255, 80),
+                (80, 255, 180, 55),
             ],
-            "gold": (236, 190, 110),
-            "gold_soft": (236, 190, 110, 140),
-            "accent": (210, 100, 170),
-            "accent2": (70, 190, 200),
-            "card_fills": [(92, 42, 88), (38, 52, 96), (58, 36, 78)],
-            "card_text": (252, 246, 238),
-            "muted": (220, 198, 230),
-            "footer": (18, 12, 32),
+            "gold": (255, 210, 110),
+            "gold_soft": (255, 210, 110, 180),
+            "accent": (255, 90, 190),
+            "accent2": (40, 220, 210),
+            "card_fills": [(110, 48, 120), (36, 78, 120), (78, 42, 98)],
+            "card_text": (255, 250, 240),
+            "muted": (235, 210, 245),
+            "footer": (22, 14, 40),
             "right_mode": "crescent",
             "energy": True,
         }
     return {
         "id": VARIANT_A,
-        "bg_top": (22, 36, 52),
-        "bg_mid": (16, 28, 44),
-        "bg_bot": (12, 22, 38),
-        "orb_colors": [],
-        "gold": (212, 175, 95),
-        "gold_soft": (212, 175, 95, 100),
-        "accent": (70, 110, 120),
-        "accent2": (90, 140, 150),
-        "card_fills": [(34, 68, 58), (52, 36, 68), (28, 42, 72)],
-        "card_text": (250, 246, 236),
-        "muted": (190, 200, 210),
-        "footer": (16, 24, 40),
+        # Emerald / sapphire / gold — readable but still colorful.
+        "bg_top": (28, 58, 72),
+        "bg_mid": (22, 42, 58),
+        "bg_bot": (16, 30, 48),
+        "orb_colors": [
+            (255, 190, 80, 45),
+            (60, 180, 150, 40),
+            (120, 90, 200, 35),
+        ],
+        "gold": (235, 195, 95),
+        "gold_soft": (235, 195, 95, 150),
+        "accent": (50, 160, 140),
+        "accent2": (90, 140, 210),
+        "card_fills": [(28, 92, 72), (72, 42, 98), (28, 52, 96)],
+        "card_text": (255, 250, 240),
+        "muted": (200, 220, 230),
+        "footer": (14, 24, 40),
         "right_mode": "seed",
-        "energy": False,
+        "energy": True,
     }
 
 
@@ -644,20 +764,21 @@ def render_local_flyer(
                 min(255, base[2] + bump // 3),
             )
 
-    # Instagram / variant B: luminous orbs + ribbon so the field has shape & energy.
-    if pal.get("energy"):
+    # Luminous orbs + ribbon so the field has shape & jewel energy (both variants).
+    if pal.get("energy") and pal.get("orb_colors"):
         overlay = Image.new("RGBA", (CANVAS, CANVAS), (0, 0, 0, 0))
         od = ImageDraw.Draw(overlay)
         orb_specs = [
-            (860, 240, 160),
-            (980, 480, 120),
-            (740, 620, 100),
-            (920, 760, 90),
+            (860, 240, 170),
+            (980, 480, 130),
+            (740, 620, 110),
+            (920, 760, 100),
+            (700, 360, 80),
         ]
         for i, (ox, oy, orad) in enumerate(orb_specs):
             col = pal["orb_colors"][i % len(pal["orb_colors"])]
-            for ring in range(orad, 0, -8):
-                a = max(8, int(col[3] * (ring / orad)))
+            for ring in range(orad, 0, -6):
+                a = max(10, int(col[3] * (ring / orad)))
                 od.ellipse(
                     (ox - ring, oy - ring, ox + ring, oy + ring),
                     fill=(col[0], col[1], col[2], a),
@@ -672,7 +793,7 @@ def render_local_flyer(
                     (CANVAS, y0 - 10),
                     (640, y0 + 30),
                 ],
-                fill=(pal["accent2"][0], pal["accent2"][1], pal["accent2"][2], 18),
+                fill=(pal["accent2"][0], pal["accent2"][1], pal["accent2"][2], 28),
             )
         img = Image.alpha_composite(img.convert("RGBA"), overlay).convert("RGB")
         px = img.load()
@@ -726,7 +847,11 @@ def render_local_flyer(
         top = 200
         bottom = 860
         gap = 14
-        card_h = (bottom - top - gap * (n - 1)) // n
+        # Single-event: do NOT stretch one empty skyscraper card (Aug 10 IG reject).
+        if n == 1:
+            card_h = min(MAX_SINGLE_CARD_HEIGHT, bottom - top)
+        else:
+            card_h = (bottom - top - gap * (n - 1)) // n
         for i, ev in enumerate(picked):
             y0 = top + i * (card_h + gap)
             fill = pal["card_fills"][i % len(pal["card_fills"])]
@@ -850,6 +975,7 @@ def register_flyer(
     copy: Optional[Dict[str, Any]] = None,
     events: Optional[Sequence[Event]] = None,
     merge: bool = True,
+    reset_public_urls: bool = False,
 ) -> Dict[str, Any]:
     """Append/update a day entry in morning_flyers.json (FB url + optional IG variant)."""
     copy = copy or build_flyer_copy(day, events or [])
@@ -883,8 +1009,9 @@ def register_flyer(
     flyers = data.setdefault("flyers", {})
     prev = flyers.get(day.isoformat()) if merge else None
     if isinstance(prev, dict):
-        # Preserve Founder-set fields; never wipe the other platform's URL/local.
-        for key in (
+        # Preserve Founder-set fields; never wipe the other platform's URL/local
+        # unless reset_public_urls (regenerate after visual-energy reject).
+        preserve_keys = [
             "url",
             "media_id",
             "local",
@@ -897,7 +1024,21 @@ def register_flyer(
             "alt_template",
             "note",
             "template",
-        ):
+        ]
+        if reset_public_urls:
+            preserve_keys = [
+                k
+                for k in preserve_keys
+                if k
+                not in (
+                    "url",
+                    "media_id",
+                    "url_instagram",
+                    "media_id_instagram",
+                    "urls",
+                )
+            ]
+        for key in preserve_keys:
             if key in prev and not entry.get(key):
                 entry[key] = prev[key]
         # Explicit new locals/urls win when provided.
@@ -913,6 +1054,16 @@ def register_flyer(
             entry["media_id"] = int(media_id)
         if media_id_instagram is not None:
             entry["media_id_instagram"] = int(media_id_instagram)
+        if reset_public_urls:
+            entry["url"] = url or ""
+            entry["url_instagram"] = url_instagram or ""
+            entry.pop("media_id", None)
+            entry.pop("media_id_instagram", None)
+            entry.pop("urls", None)
+            if media_id is not None:
+                entry["media_id"] = int(media_id)
+            if media_id_instagram is not None:
+                entry["media_id_instagram"] = int(media_id_instagram)
         if prev.get("template") and not events:
             entry["template"] = prev["template"]
 
@@ -930,9 +1081,8 @@ def register_flyer(
         "artistic_hero_share": round(1.0 - THURSDAY_CARDS_SHARE, 2),
         "default": LAYOUT_THURSDAY,
         "platform_variants": (
-            "facebook=url / variant A (cleaner card energy OK); "
-            "instagram=url_instagram / variant B (same full-day cards, "
-            "richer color/shape/mystical pop — not flat washes)"
+            "single-image mode (Founder Aug 10 2026): primary url/local "
+            "posts to FB+IG; url_instagram ignored unless allow_ig_variant:true"
         ),
     }
     save_flyers_config(data)
@@ -986,11 +1136,11 @@ def ensure_flyer_for_day(
     force: bool = False,
 ) -> Dict[str, Any]:
     """
-    Ensure dual full-day flyer variants exist for Chicago `day`.
+    Ensure a primary full-day flyer exists for Chicago `day`.
 
-    Variant A → Facebook (`url` / `local`); variant B → Instagram
-    (`url_instagram` / `local_instagram`). Same covers/events; different art.
-    Returns status dict: action=exists|created|augmented, needs_upload, entry, …
+    Single-image mode (Founder Aug 10 2026): one excellent `url`/`local` plate
+    is shared on Facebook and Instagram. Separate IG variants are not required
+    (opt-in via allow_ig_variant + url_instagram only).
     """
     day_events = _day_events(day, events)
     copy = build_flyer_copy(day, day_events)
@@ -998,82 +1148,29 @@ def ensure_flyer_for_day(
     prompt = build_generation_prompt(
         day, copy, layout=layout, events=day_events, variant=VARIANT_A
     )
-    prompt_b = build_generation_prompt(
-        day,
-        copy,
-        layout=LAYOUT_THURSDAY,
-        events=day_events,
-        variant=VARIANT_B,
-    )
 
     existing = flyer_entry_for_day(day)
+    # Founder Aug 10: drab/muddy locals must be rebuilt (except protected gold standard).
+    energy_failed = (
+        entry_fails_visual_energy(existing)
+        if existing and day.isoformat() not in PROTECTED_DAYS
+        else []
+    )
+    if energy_failed and not force:
+        force = True
     if existing and not force:
-        if day.isoformat() not in PROTECTED_DAYS and not has_dual_flyer_variants(existing):
-            local_ig = str(existing.get("local_instagram") or "").strip()
-            abs_ig = (
-                local_ig
-                if os.path.isabs(local_ig)
-                else os.path.join(ROOT, local_ig)
-                if local_ig
-                else ""
-            )
-            if abs_ig and os.path.isfile(abs_ig):
-                # Second local already on disk — wait for WP upload, don't re-render.
-                fb = str(existing.get("url") or "")
-                ig = str(existing.get("url_instagram") or "")
-                missing = [
-                    p
-                    for p, u in (("facebook", fb), ("instagram", ig))
-                    if not u
-                ]
-                return {
-                    "day": day.isoformat(),
-                    "action": "exists",
-                    "needs_upload": bool(missing),
-                    "needs_upload_platforms": missing,
-                    "entry": existing,
-                    "local": existing.get("local"),
-                    "local_instagram": existing.get("local_instagram"),
-                    "layout": layout,
-                    "prompt": prompt,
-                    "prompt_instagram": prompt_b,
-                }
-            entry = _ensure_second_variant(day, day_events, existing, copy)
-            fb = str(entry.get("url") or "")
-            ig = str(entry.get("url_instagram") or "")
-            needs = (not fb) or (not ig)
-            return {
-                "day": day.isoformat(),
-                "action": "augmented",
-                "needs_upload": needs,
-                "needs_upload_platforms": [
-                    p
-                    for p, u in (("facebook", fb), ("instagram", ig))
-                    if not u
-                ],
-                "entry": entry,
-                "local": entry.get("local"),
-                "local_instagram": entry.get("local_instagram"),
-                "layout": layout,
-                "prompt": prompt,
-                "prompt_instagram": prompt_b,
-            }
-        fb = str(existing.get("url") or "")
-        ig = str(existing.get("url_instagram") or "")
-        missing = []
-        if not fb:
-            missing.append("facebook")
-        if day.isoformat() not in PROTECTED_DAYS and not ig:
-            missing.append("instagram")
+        fb = str(existing.get("url") or "").strip()
+        missing = [] if fb else ["facebook"]
         return {
             "day": day.isoformat(),
             "action": "exists",
             "needs_upload": bool(missing),
             "needs_upload_platforms": missing,
             "entry": existing,
+            "local": existing.get("local"),
             "layout": layout,
             "prompt": prompt,
-            "prompt_instagram": prompt_b,
+            "single_image_mode": True,
         }
 
     if force and day.isoformat() in PROTECTED_DAYS and existing:
@@ -1086,41 +1183,36 @@ def ensure_flyer_for_day(
             "layout": layout,
             "prompt": prompt,
             "protected": True,
+            "single_image_mode": True,
         }
 
     out_a = render_local_flyer(day, day_events, variant=VARIANT_A)
-    out_b = render_local_flyer(day, day_events, variant=VARIANT_B)
-    keep_url = str((existing or {}).get("url") or "") if existing else ""
-    keep_ig = str((existing or {}).get("url_instagram") or "") if existing else ""
+    clear_urls = bool(energy_failed) or (
+        force and existing and day.isoformat() not in PROTECTED_DAYS
+    )
+    keep_url = "" if clear_urls else (str((existing or {}).get("url") or "") if existing else "")
     entry = register_flyer(
         day,
         local=out_a,
         url=keep_url,
-        media_id=(existing or {}).get("media_id") if existing else None,
-        local_instagram=out_b,
-        url_instagram=keep_ig,
-        media_id_instagram=(existing or {}).get("media_id_instagram")
-        if existing
-        else None,
+        media_id=None if clear_urls else ((existing or {}).get("media_id") if existing else None),
         copy=copy,
         events=day_events,
         merge=bool(existing),
+        reset_public_urls=clear_urls,
     )
     fb = str(entry.get("url") or "")
-    ig = str(entry.get("url_instagram") or "")
     return {
         "day": day.isoformat(),
         "action": "created",
-        "needs_upload": (not fb) or (not ig),
-        "needs_upload_platforms": [
-            p for p, u in (("facebook", fb), ("instagram", ig)) if not u
-        ],
+        "needs_upload": not bool(fb),
+        "needs_upload_platforms": [] if fb else ["facebook"],
         "entry": entry,
         "local": out_a,
-        "local_instagram": out_b,
         "layout": layout,
         "prompt": prompt,
-        "prompt_instagram": prompt_b,
+        "single_image_mode": True,
+        "regenerated_for_visual_energy": energy_failed or None,
     }
 
 

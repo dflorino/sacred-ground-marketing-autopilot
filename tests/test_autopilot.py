@@ -1434,8 +1434,8 @@ class AutopilotTests(unittest.TestCase):
             plan = nighttime_plan(sun, platform=platform)
             self.assertNotEqual(str(plan.get("image_url") or ""), y_url)
 
-    def test_fb_ig_distinct_images_today_and_week_ahead(self) -> None:
-        """Today + week_ahead: FB ≠ IG when the pool has 2+ options; meditation stays shared."""
+    def test_fb_ig_shared_images_single_image_mode(self) -> None:
+        """Single-image mode: FB+IG share one media URL (pipeline plans once)."""
         from marketing import images, pipeline, store
         from marketing.atmosphere import atmosphere_config, nighttime_plan
         from marketing.models import Event
@@ -1462,24 +1462,20 @@ class AutopilotTests(unittest.TestCase):
                 url="https://shopsacredground.com/event/b/",
             ),
         ]
-        fb = images.plan_image(
+        # Pipeline-style: plan once (facebook salt), reuse for both platforms.
+        shared = images.plan_image(
             generic_multi, "today", day=day, platform="facebook"
         )
-        ig = images.plan_image(
-            generic_multi,
-            "today",
-            day=day,
-            platform="instagram",
-            exclude_urls=[fb.url or ""],
+        self.assertEqual(shared.rule, "multi_event_rotation")
+        self.assertTrue(shared.url)
+        self.assertEqual(
+            images.plan_image(
+                generic_multi, "today", day=day, platform="facebook"
+            ).url,
+            shared.url,
         )
-        self.assertEqual(fb.rule, "multi_event_rotation")
-        self.assertEqual(ig.rule, "multi_event_rotation")
-        self.assertTrue(fb.url)
-        self.assertTrue(ig.url)
-        self.assertNotEqual(fb.url, ig.url)
 
-        # Date-keyed morning flyers with dual variants: FB ≠ IG, both full-day.
-        # Aug 6 gold standard may still be single-URL (temporary share OK).
+        # Date-keyed morning flyers: single-image mode — same URL on FB+IG.
         flyer_day = date(2026, 8, 6)
         f_fb = images.plan_image([], "today", day=flyer_day, platform="facebook")
         f_ig = images.plan_image(
@@ -1495,9 +1491,10 @@ class AutopilotTests(unittest.TestCase):
         # Primary only — never the eve-quantum priced alt.
         self.assertNotIn("eve-quantum", f_fb.url or "")
         self.assertIn("sg-morning-flyer-2026-08-06-today-collage", f_fb.url or "")
-        # Dual-variant day (when configured): FB and IG must differ.
+        self.assertEqual(f_fb.url, f_ig.url)
         from marketing import morning_flyers as mf
 
+        # Default: ignore url_instagram; share primary url.
         dual = {
             "label": "Dual test",
             "covers": ["Tai Chi Gung with Sherry Gurley", "Tarot with Adie"],
@@ -1507,13 +1504,20 @@ class AutopilotTests(unittest.TestCase):
         }
         fb_u, shared_fb = mf.select_flyer_url_for_platform(dual, "facebook")
         ig_u, shared_ig = mf.select_flyer_url_for_platform(dual, "instagram")
-        self.assertFalse(shared_fb or shared_ig)
-        self.assertNotEqual(fb_u, ig_u)
+        self.assertTrue(shared_fb and shared_ig)
+        self.assertEqual(fb_u, ig_u)
         self.assertEqual(fb_u, dual["url"])
-        self.assertEqual(ig_u, dual["url_instagram"])
+        # Opt-in only: allow_ig_variant restores distinct IG URL.
+        dual_opt = dict(dual)
+        dual_opt["allow_ig_variant"] = True
+        fb2, _ = mf.select_flyer_url_for_platform(dual_opt, "facebook")
+        ig2, shared2 = mf.select_flyer_url_for_platform(dual_opt, "instagram")
+        self.assertEqual(fb2, dual["url"])
+        self.assertEqual(ig2, dual["url_instagram"])
+        self.assertFalse(shared2)
         self.assertNotIn("$", " ".join(dual["covers"]))
 
-        # Specialty with multi-URL pool (massage) → different cards from same rule
+        # Specialty pools: pipeline-style single plan is stable for FB+IG reuse.
         massage_day = [
             Event(
                 id=403,
@@ -1531,20 +1535,17 @@ class AutopilotTests(unittest.TestCase):
             ),
         ]
         m_day = date(2026, 8, 3)
-        m_fb = images.plan_image(
+        m_shared = images.plan_image(
             massage_day, "today", day=m_day, platform="facebook"
         )
-        m_ig = images.plan_image(
-            massage_day,
-            "today",
-            day=m_day,
-            platform="instagram",
-            exclude_urls=[m_fb.url or ""],
+        self.assertEqual(m_shared.rule, "massage")
+        self.assertEqual(
+            images.plan_image(
+                massage_day, "today", day=m_day, platform="facebook"
+            ).url,
+            m_shared.url,
         )
-        self.assertEqual(m_fb.rule, "massage")
-        self.assertNotEqual(m_fb.url, m_ig.url)
 
-        # Sound specialty pool → second platform takes another plate (no date flyer)
         sound = [
             Event(
                 id=405,
@@ -1562,43 +1563,27 @@ class AutopilotTests(unittest.TestCase):
             ),
         ]
         s_day = date(2026, 9, 7)
-        s_fb = images.plan_image(sound, "today", day=s_day, platform="facebook")
-        s_ig = images.plan_image(
-            sound,
-            "today",
-            day=s_day,
-            platform="instagram",
-            exclude_urls=[s_fb.url or ""],
+        s_shared = images.plan_image(sound, "today", day=s_day, platform="facebook")
+        self.assertEqual(s_shared.rule, "sound_healing")
+        self.assertEqual(
+            images.plan_image(sound, "today", day=s_day, platform="facebook").url,
+            s_shared.url,
         )
-        self.assertEqual(s_fb.rule, "sound_healing")
-        self.assertNotEqual(s_fb.url, s_ig.url)
 
-        # Night week_ahead: FB ≠ IG on a normal creative night
+        # Night week_ahead: pipeline plans once — same plate reused on FB+IG.
         night = date(2026, 8, 5)
-        n_fb = nighttime_plan(night, platform="facebook")
-        n_ig = nighttime_plan(
-            night,
-            platform="instagram",
-            exclude_urls=[str(n_fb.get("image_url") or "")],
-        )
-        self.assertTrue(n_fb.get("image_url"))
-        self.assertTrue(n_ig.get("image_url"))
-        self.assertNotEqual(n_fb.get("image_url"), n_ig.get("image_url"))
-        # Same day without exclude is stable
-        n_fb2 = nighttime_plan(night, platform="facebook")
-        self.assertEqual(n_fb.get("image_url"), n_fb2.get("image_url"))
+        n_shared = nighttime_plan(night, platform="facebook")
+        self.assertTrue(n_shared.get("image_url"))
+        n_again = nighttime_plan(night, platform="facebook")
+        self.assertEqual(n_shared.get("image_url"), n_again.get("image_url"))
 
-        wa_fb = images.plan_image([], "week_ahead", day=night, platform="facebook")
-        wa_ig = images.plan_image(
-            [],
-            "week_ahead",
-            day=night,
-            platform="instagram",
-            exclude_urls=[wa_fb.url or ""],
+        wa_shared = images.plan_image([], "week_ahead", day=night, platform="facebook")
+        self.assertEqual(
+            images.plan_image([], "week_ahead", day=night, platform="facebook").url,
+            wa_shared.url,
         )
-        self.assertNotEqual(wa_fb.url, wa_ig.url)
 
-        # Pipeline wiring: Today drafts get distinct images; meditation stays shared
+        # Pipeline wiring: Today + meditation drafts share one image across platforms
         as_of = datetime(2026, 8, 4, 10, 0, tzinfo=ZoneInfo("America/Chicago"))
         result = pipeline.generate_batch(source="fixture", as_of=as_of)
         self.assertTrue(result["ok"])
@@ -1613,9 +1598,8 @@ class AutopilotTests(unittest.TestCase):
             for d in drafts
             if d["campaign"] == "today" and d["platform"] == "instagram"
         )
-        # Tuesday morning uses tuesday_daily (single URL) — IG may fall through
         self.assertTrue(today_fb["image"]["url"])
-        self.assertTrue(today_ig["image"]["url"])
+        self.assertEqual(today_fb["image"]["url"], today_ig["image"]["url"])
 
         tm_fb = next(
             d
@@ -1629,16 +1613,15 @@ class AutopilotTests(unittest.TestCase):
         )
         self.assertEqual(tm_fb["image"]["url"], tm_ig["image"]["url"])
 
-        # Usage ledger keeps both platform rows for today
+        # Usage ledger records one shared today row (no per-platform split)
         usage = images.load_image_usage()
         today_rows = [
             h
             for h in usage.get("history") or []
             if h.get("campaign") == "today" and h.get("date") == "2026-08-04"
         ]
-        plats = {str(h.get("platform") or "") for h in today_rows}
-        self.assertIn("facebook", plats)
-        self.assertIn("instagram", plats)
+        self.assertGreaterEqual(len(today_rows), 1)
+        self.assertEqual(today_rows[0].get("url"), today_fb["image"]["url"])
 
     def test_week_ahead_closers_pool_and_day_rotation(self) -> None:
         from marketing import captions
@@ -1729,7 +1712,21 @@ class AutopilotTests(unittest.TestCase):
         self.assertIn("VARIANT B / Instagram", prompt_b)
         self.assertIn("MORE visual pop", prompt_b)
         self.assertIn("flat single-color", prompt_b)
+        self.assertIn("COLOR ENERGY", prompt_b)
+        self.assertIn("jewel tones", prompt_b)
         self.assertIn("do NOT include any prices", prompt_b)
+        self.assertIn("COLOR ENERGY", prompt)
+        # Visual-energy gate rejects drab muddy plates; gold standard passes.
+        from PIL import Image
+
+        drab_path = os.path.join(self._tmpdir, "drab-muddy.png")
+        Image.new("RGB", (1080, 1080), (40, 28, 48)).save(drab_path)
+        self.assertFalse(mf.flyer_passes_visual_energy(drab_path))
+        gold = os.path.join(
+            ROOT, "assets", "sg-morning-flyer-2026-08-06-today-collage.png"
+        )
+        if os.path.isfile(gold):
+            self.assertTrue(mf.flyer_passes_visual_energy(gold))
         # Multi-event → thursday_cards; single-event days may roll artistic.
         self.assertEqual(
             mf.choose_layout_style(date(2026, 8, 7), [priced]),
@@ -1780,6 +1777,7 @@ class AutopilotTests(unittest.TestCase):
             media_id=99999,
             platform="facebook",
         )
+        # Legacy IG URL is ignored in single-image mode.
         mf.set_flyer_url(
             empty_day,
             "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-test-visit-b.png",
@@ -1792,7 +1790,8 @@ class AutopilotTests(unittest.TestCase):
         self.assertTrue(plan.prebranded)
         self.assertTrue(images.skip_brand_overlays(plan))
         plan_ig = images.plan_image([], "today", day=empty_day, platform="instagram")
-        self.assertNotEqual(plan.url, plan_ig.url)
+        self.assertEqual(plan.url, plan_ig.url)
+        self.assertIn("visit-a", plan.url or "")
 
         # Existing day is not regenerated without --force
         again = mf.ensure_flyer_for_day(empty_day, [], force=False)
@@ -1810,7 +1809,7 @@ class AutopilotTests(unittest.TestCase):
 
             data = json.load(fh)
         self.assertIn("NEVER include", data.get("notes") or "")
-        self.assertIn("DIFFERENT full-day flyer", data.get("notes") or "")
+        self.assertIn("SINGLE-IMAGE MODE", data.get("notes") or "")
         for day_key, entry in (data.get("flyers") or {}).items():
             bits = [str(entry.get("label") or "")]
             bits.extend(str(c) for c in (entry.get("covers") or []))
@@ -1819,23 +1818,14 @@ class AutopilotTests(unittest.TestCase):
                     mf.text_has_price(b),
                     f"{day_key} has price-like text: {b!r}",
                 )
-            # Dual public variants (when both set) must differ and stay price-free URLs.
+            # Single-image mode: resolve collapses to primary url unless opted in.
             fb, ig = mf.resolve_flyer_urls(entry)
-            if entry.get("url_instagram") or (
-                isinstance(entry.get("urls"), list) and len(entry.get("urls") or []) >= 2
-            ):
-                self.assertTrue(fb and ig)
-                if day_key != "2026-08-06":
-                    self.assertNotEqual(
-                        fb,
-                        ig,
-                        f"{day_key} FB/IG morning flyer URLs must differ when dual variants exist",
-                    )
+            if fb:
+                self.assertEqual(fb, ig)
                 self.assertNotIn("$", fb)
-                self.assertNotIn("$", ig)
 
-    def test_morning_flyer_dual_variants_same_covers(self) -> None:
-        """generate-morning-flyers produces A/B locals with identical covers; FB≠IG URLs."""
+    def test_morning_flyer_single_image_mode_shared_url(self) -> None:
+        """generate-morning-flyers produces primary local; FB+IG share url."""
         from marketing import images, morning_flyers as mf
         from marketing.models import Event
 
@@ -1864,8 +1854,7 @@ class AutopilotTests(unittest.TestCase):
         self.assertEqual(info["action"], "created")
         entry = info["entry"]
         self.assertTrue(entry.get("local"))
-        self.assertTrue(entry.get("local_instagram"))
-        self.assertNotEqual(entry.get("local"), entry.get("local_instagram"))
+        self.assertTrue(info.get("single_image_mode"))
         self.assertEqual(
             list(entry.get("covers") or []),
             [e.title for e in mf.pick_events_for_flyer(events)],
@@ -1874,19 +1863,12 @@ class AutopilotTests(unittest.TestCase):
             self.assertFalse(mf.text_has_price(part))
             self.assertNotIn("$", part)
         self.assertTrue(os.path.isfile(info["local"]))
-        self.assertTrue(os.path.isfile(info["local_instagram"]))
 
         mf.set_flyer_url(
             day,
             "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-dual-a.png",
             media_id=90001,
             platform="facebook",
-        )
-        mf.set_flyer_url(
-            day,
-            "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-dual-b.png",
-            media_id=90002,
-            platform="instagram",
         )
         images.morning_flyers.cache_clear()
         plan_fb = images.plan_image(events, "today", day=day, platform="facebook")
@@ -1899,7 +1881,7 @@ class AutopilotTests(unittest.TestCase):
         )
         self.assertEqual(plan_fb.rule, "morning_flyer")
         self.assertEqual(plan_ig.rule, "morning_flyer")
-        self.assertNotEqual(plan_fb.url, plan_ig.url)
+        self.assertEqual(plan_fb.url, plan_ig.url)
         self.assertNotIn("$", plan_fb.url or "")
         self.assertNotIn("$", plan_ig.url or "")
 

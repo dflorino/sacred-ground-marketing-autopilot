@@ -209,15 +209,15 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
         empty_ok = bool(today_cfg.get("empty_day_fallback", True))
         if morning_events or empty_ok or cel_morning_hit:
             sched = schedule.schedule_today(day)
-            claimed_urls: List[str] = []
+            # Single-image mode (Founder Aug 10 2026): one plate for FB+IG.
+            shared_img = images.plan_image(
+                morning_events,
+                "today",
+                day=flyer_day,
+                platform="facebook",
+            )
             for platform in platforms:
-                img = images.plan_image(
-                    morning_events,
-                    "today",
-                    day=flyer_day,
-                    platform=platform,
-                    exclude_urls=claimed_urls,
-                )
+                img = shared_img
                 prebranded = bool(getattr(img, "prebranded", False)) or images.skip_brand_overlays(
                     img
                 )
@@ -269,15 +269,6 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                     if today_cfg.get("auto_publish") and not is_paused():
                         draft = _auto_ready_for_publish(draft["id"])
                     created.append(draft)
-                    if img.url:
-                        claimed_urls.append(str(img.url))
-                        images.record_image_use(
-                            day=flyer_day,
-                            url=img.url,
-                            rule=str(img.rule or img.source),
-                            campaign="today",
-                            platform=platform,
-                        )
                 else:
                     skipped_drafts.append(
                         {
@@ -286,6 +277,13 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                             "reason": "duplicate_or_override",
                         }
                     )
+            if shared_img.url:
+                images.record_image_use(
+                    day=flyer_day,
+                    url=shared_img.url,
+                    rule=str(shared_img.rule or shared_img.source),
+                    campaign="today",
+                )
         else:
             skipped_drafts.append(
                 {"campaign": "today", "reason": "no_events_for_target_day"}
@@ -335,15 +333,15 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
         if spotlight_ev or empty_af:
             sched_af = schedule.schedule_afternoon_spotlight(day)
             af_events = [spotlight_ev] if spotlight_ev else []
-            claimed_af: List[str] = []
+            # Single-image mode: same media URL on Facebook and Instagram.
+            shared_af = images.plan_image(
+                af_events,
+                "afternoon_spotlight",
+                day=day,
+                platform="facebook",
+            )
             for platform in platforms:
-                img = images.plan_image(
-                    af_events,
-                    "afternoon_spotlight",
-                    day=day,
-                    platform=platform,
-                    exclude_urls=claimed_af,
-                )
+                img = shared_af
                 cap = captions.caption_afternoon_spotlight(
                     spotlight_ev, platform, day
                 )
@@ -369,15 +367,6 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                     if af_cfg.get("auto_publish") and not is_paused():
                         draft = _auto_ready_for_publish(draft["id"])
                     created.append(draft)
-                    if img.url:
-                        claimed_af.append(str(img.url))
-                        images.record_image_use(
-                            day=day,
-                            url=img.url,
-                            rule=str(img.rule or img.source),
-                            campaign="afternoon_spotlight",
-                            platform=platform,
-                        )
                 else:
                     skipped_drafts.append(
                         {
@@ -386,6 +375,13 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                             "reason": "duplicate_or_override",
                         }
                     )
+            if shared_af.url:
+                images.record_image_use(
+                    day=day,
+                    url=shared_af.url,
+                    rule=str(shared_af.rule or shared_af.source),
+                    campaign="afternoon_spotlight",
+                )
         else:
             skipped_drafts.append(
                 {"campaign": "afternoon_spotlight", "reason": "no_spotlight_event"}
@@ -414,15 +410,15 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
         if ahead_events or cel_night_hit:
             sched = schedule.schedule_week_ahead(day)
             wa_created = 0
-            claimed_urls: List[str] = []
+            # Single-image mode: same night plate on Facebook and Instagram.
+            shared_wa = images.plan_image(
+                ahead_events,
+                "week_ahead",
+                day=day,
+                platform="facebook",
+            )
             for platform in platforms:
-                img = images.plan_image(
-                    ahead_events,
-                    "week_ahead",
-                    day=day,
-                    platform=platform,
-                    exclude_urls=claimed_urls,
-                )
+                img = shared_wa
                 cap = captions.caption_week_ahead(ahead_events, platform, day)
                 wa_notes = notes_base + [
                     "daily_7pm_upcoming",
@@ -448,15 +444,6 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                         draft = _auto_ready_for_publish(draft["id"])
                     created.append(draft)
                     wa_created += 1
-                    if img.url:
-                        claimed_urls.append(str(img.url))
-                        images.record_image_use(
-                            day=day,
-                            url=img.url,
-                            rule=str(img.rule or img.source),
-                            campaign="week_ahead",
-                            platform=platform,
-                        )
                 else:
                     skipped_drafts.append(
                         {
@@ -465,6 +452,13 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                             "reason": "duplicate_or_override",
                         }
                     )
+            if wa_created and shared_wa.url:
+                images.record_image_use(
+                    day=day,
+                    url=shared_wa.url,
+                    rule=str(shared_wa.rule or shared_wa.source),
+                    campaign="week_ahead",
+                )
         else:
             skipped_drafts.append(
                 {"campaign": "week_ahead", "reason": "no_events_in_horizon"}

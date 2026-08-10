@@ -790,7 +790,82 @@
           "message": "Post published successfully"
         }
       }
+    },
+    "today|2026-08-10|instagram|21514,23851,24177,24592": {
+      "draft_id": "sgma-2026-08-10-today-ig-48623eba",
+      "posted_at": "2026-08-10T13:19:06.732456-05:00",
+      "external": {
+        "zernio": {
+          "post": {
+            "recycling": {
+              "enabled": false,
+              "gapFreq": "month",
+              "recycleCount": 0,
+              "contentVariations": [],
+              "contentVariationIndex": 0
+            },
+            "_id": "6a7a1612fad43461563d3618",
+            "userId": "6a49a0ca1f5ee39905d0dc6f",
+            "title": "",
+            "content": "Here’s today at Sacred Ground — then a peek at tomorrow.\n\nToday at Sacred Ground\n\n• Lisa Maria Intuitive Tarot\n  Monday, August 10 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/book/lisa-maria/\n\nTomorrow at Sacred Ground\n\n• Astrology & Tarot With Lisa\n  Tuesday, August 11 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/book/lisa/\n\n• Amber | Customized Therapeutic Massage Sessions\n  Tuesday, August 11 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/book/amber/\n\n• Free Community Meditation\nTuesday night 7:00–8:00 PM\nAll are welcome\nNo sign-up needed\nDoors close at 7:05pm\n\nDetails & signup on each event page.\n\nCome as you are.\n\n#SacredGround #ArlingtonHeights #ShopSacredGround #ChicagoEvents #CrystalShop #EnergyHealing #HolisticCenter #RockShop #Kindness #Chicagoland #HolisticChicago",
+            "mediaItems": [
+              {
+                "type": "image",
+                "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-10-lisa-tarot.png",
+                "_id": "6a7a1612fad43461563d3619"
+              }
+            ],
+            "platforms": [
+              {
+                "platform": "instagram",
+                "accountId": {
+                  "_id": "6a49a12e9d9472faae7c2220",
+                  "profileId": "6a49a0ca1f5ee39905d0dc87",
+                  "platform": "instagram",
+                  "displayName": "Sacred Ground",
+                  "isActive": true,
+                  "profilePicture": "https://scontent-lhr11-1.cdninstagram.com/v/t51.2885-19/313932603_854045628963650_758437280360514790_n.jpg?stp=dst-jpg_s206x206_tt6&_nc_cat=107&ccb=7-5&_nc_sid=bf7eb4&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=jb_SBskBoKYQ7kNvwEXEYqV&_nc_oc=Adr1ERZxVh0s6z6AIHvXKnAfnLvPPYt2mBbLdeIB3aL4tZVdGmcs5GWeVCIssOOZsgM&_nc_zt=24&_nc_ht=scontent-lhr11-1.cdninstagram.com&edm=AP4hL3IEAAAA&_nc_tpa=Q5bMBQJCyZXdWTiwvYsVK8nMVoY_9eqbSHS-q3Huew9lW2tqrPsBfurVuT4th8lexSoxOqJZ_E1UUBvFog&oh=00_AQEj5_YH2m3hymt8cj7AaNWdlXS2mRlgJgw8BiXcI67z0g&oe=6A7F0CCA",
+                  "username": "shopsacredground"
+                },
+                "profileId": "6a49a0ca1f5ee39905d0dc87",
+                "customMedia": [],
+                "scheduledFor": "2026-08-10T18:18:58.130Z",
+                "platformSpecificData": {
+                  "__platformUserIdSnapshot": "27979692144969047",
+                  "__usernameSnapshot": "shopsacredground",
+                  "publishingStarted": "2026-08-10T18:18:59.359Z",
+                  "lastPublishStage": "awaiting-finalize",
+                  "containerCreatedAt": "2026-08-10T18:19:05.506Z",
+                  "pendingContainerId": "18080525825677764",
+                  "publishedCaption": "Here’s today at Sacred Ground — then a peek at tomorrow.\n\nToday at Sacred Ground\n\n• Lisa Maria Intuitive Tarot\n  Monday, August 10 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/book/lisa-maria/\n\nTomorrow at Sacred Ground\n\n• Astrology & Tarot With Lisa\n  Tuesday, August 11 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/book/lisa/\n\n• Amber | Customized Therapeutic Massage Sessions\n  Tuesday, August 11 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/book/amber/\n\n• Free Community Meditation\nTuesday night 7:00–8:00 PM\nAll are welcome\nNo sign-up needed\nDoors close at 7:05pm\n\nDetails & signup on each event page.\n\nCome as you are.\n\n#SacredGround #ArlingtonHeights #ShopSacredGround #ChicagoEvents #CrystalShop #EnergyHealing #HolisticCenter #RockShop #Kindness #Chicagoland #HolisticChicago"
+                },
+                "status": "processing",
+                "publishAttempts": 0,
+                "contentHash": "1e57bd449dccd666bbe7acc807f4784c",
+                "_id": "6a7a1612fad43461563d361a"
+              }
+            ],
+            "scheduledFor": "2026-08-10T18:18:58.130Z",
+            "timezone": "America/Chicago",
+            "status": "publishing",
+            "tags": [],
+            "hashtags": [],
+            "mentions": [],
+            "visibility": "public",
+            "crosspostingEnabled": true,
+            "metadata": {
+              "usageCounted": true
+            },
+            "publishAttempts": 0,
+            "createdAt": "2026-08-10T18:18:58.671Z",
+            "updatedAt": "2026-08-10T18:19:05.541Z",
+            "__v": 0,
+            "publishingClaimedAt": "2026-08-10T18:18:58.781Z"
+          },
+          "message": "Post published successfully"
+        }
+      }
     }
   },
-  "updated_at": "2026-08-09T21:40:25.973815-05:00"
+  "updated_at": "2026-08-10T13:19:06.732470-05:00"
 }
