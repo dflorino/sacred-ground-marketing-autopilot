@@ -453,8 +453,9 @@ def plan_image(
             {"rule": rule_id, "url": url}
         )
         if rule_id == "celestial_morning":
-            # Artistic celestial plates — allow brand overlays (logo/footer/TODAY).
-            prebranded = False
+            # Celestial plates bake circular logo bottom-left (Founder Aug 10 2026).
+            # Overlays never ran for these URLs — treat as prebranded to avoid a gap.
+            prebranded = True
         if campaign == "afternoon_spotlight" and events:
             # Prefer specialty / event art over a full-day morning flyer dump.
             if rule_id == "morning_flyer" and events[0].image_url:

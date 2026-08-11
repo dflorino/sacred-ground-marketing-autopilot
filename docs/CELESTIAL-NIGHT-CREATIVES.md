@@ -29,3 +29,11 @@ Shop TEC listings stay in the caption when present. Celestial still posts if the
 ## Hard rules
 
 Same SG-in-photo night identity as `docs/NIGHT-CREATIVES.md`. Distinct mediums/palettes — not ten milky-way clones. No prices on creatives.
+
+### Real storefront + logo (Founder Aug 10, 2026)
+
+- Creative surroundings OK; **when a shop appears**, use real Sacred Ground storefront
+  resemblance (eggplant awning / tan stone) — invented facades banned.
+- Circular sun logo bottom-left on social plates (`logo_baked` / `prebranded` on morning).
+- **KEEP unchanged:** Total Solar Eclipse in Leo (night+morning); Partial Lunar Eclipse
+  in Pisces (night+morning).

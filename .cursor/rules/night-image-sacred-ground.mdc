@@ -22,6 +22,26 @@ Acceptable in-photo anchors (any one is enough if obvious at a glance):
 - **“Sacred Ground” / “SACRED GROUND”** glowing in sky, clouds, mountains, or neon
 - Searchlights / light beams projecting the name or circular logo (“bat signal”)
 
+## Hard rule (Founder — Aug 10, 2026) — real storefront resemblance
+
+Creative surroundings are OK (mountains, side streets, water, celestial skies).
+
+**When a shop / building facade appears in frame**, it must resemble the **real
+Sacred Ground storefront** customers would recognize:
+
+- Front of shop, **eggplant-purple awning**, tan stone architecture
+- White **SACRED GROUND** lettering on the awning (blank space between words — no swoosh)
+- Reference look: `assets/sg-night-fall.png`, `assets/sg-night-summer.png`,
+  `assets/sg-example-night-fall-storefront.png`, `assets/refs/exterior-*.png`
+
+**Banned:** invented / fantasy shop facades (Victorian fairy-tale fronts, corrugated
+metal rooftops, generic neon-only silhouettes, random apothecary buildings that are
+not Sacred Ground’s awning + architecture).
+
+Also restore the **circular sun logo** bottom-left of the photo area
+(`config/brand/sacred-ground-logo-circle-transparent.png`, ~10–13% width, 80–90%
+opacity) on social plates — bake into prebranded plates when overlays do not run.
+
 ## Hard rule (Founder — Aug 9, 2026) — night mood + no-repeat
 
 - Night posts must look like **night** (night sky / lit storefront / neon / aurora) —

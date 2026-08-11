@@ -6,7 +6,9 @@ Campaign: `week_ahead` (~7:00 PM America/Chicago). Pool: `config/image_atmospher
 
 Every night plate must include a **clear Sacred Ground visual anchor inside the photograph** — storefront with name, circular logo / folk-art sun as a small sky or moon mark, bat-signal searchlights, or glowing “Sacred Ground” in the landscape.
 
-Autopilot overlay logo + cream footer (see `.cursor/rules/social-image-branding.mdc`) still apply for non-prebranded posts, but **do not replace** in-photo SG identity.
+**When a shop appears:** use real Sacred Ground storefront resemblance (eggplant awning, tan stone architecture). Invented fantasy facades are banned. Creative surroundings (sky, mountains, water) are fine without a shop.
+
+Autopilot overlay logo + cream footer (see `.cursor/rules/social-image-branding.mdc`) still apply for non-prebranded posts, but **do not replace** in-photo SG identity. Bake the circular sun logo bottom-left when overlays do not run.
 
 ## Hard rule (Founder — Aug 9, 2026) — night mood + rotation
 
