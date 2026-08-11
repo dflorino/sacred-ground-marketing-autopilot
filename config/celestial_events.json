@@ -1,15 +1,15 @@
 {
-  "notes": "Sacred Ground celestial dual cadence (America/Chicago). For each event: (1) night-before @ 7pm week_ahead — night plate + “tomorrow …” opener; (2) morning-of @ 9am today campaign — morning plate + “today’s …” opener. Celestial image wins over generic night pool / morning flyer; shop event listings stay in the caption when present. Briefs: assets/celestial-2026/briefs.json. Docs: docs/CELESTIAL-NIGHT-CREATIVES.md. HARD RULE (Founder 2026-08-10): when a shop appears use real Sacred Ground storefront resemblance (eggplant awning / tan stone); invented facades banned. Circular logo bottom-left baked into plates (logo_baked). KEEP Leo eclipse + Pisces lunar eclipse unchanged.",
+  "notes": "Sacred Ground celestial dual cadence (America/Chicago). For each event: (1) night-before @ 7pm week_ahead \u2014 night plate + \u201ctomorrow \u2026\u201d opener; (2) morning-of @ 9am today campaign \u2014 morning plate + \u201ctoday\u2019s \u2026\u201d opener. Celestial image wins over generic night pool / morning flyer; shop event listings stay in the caption when present. Briefs: assets/celestial-2026/briefs.json. Docs: docs/CELESTIAL-NIGHT-CREATIVES.md. HARD RULE (Founder 2026-08-10): when a shop appears use real Sacred Ground storefront resemblance (eggplant awning / tan stone); invented facades banned. Circular logo bottom-left baked into plates (logo_baked). KEEP Leo eclipse + Pisces lunar eclipse unchanged.",
   "timezone": "America/Chicago",
   "events": {
     "solar_eclipse_leo_2026": {
       "label": "Total Solar Eclipse in Leo",
       "event_date": "2026-08-12",
       "post_night_before": "2026-08-11",
-      "caption_tomorrow": "Tomorrow’s total solar eclipse in Leo…",
-      "caption_today": "Today’s total solar eclipse in Leo…",
+      "caption_tomorrow": "Tomorrow\u2019s total solar eclipse in Leo\u2026",
+      "caption_today": "Today\u2019s total solar eclipse in Leo\u2026",
       "one_liner_night": "Black-gold diamond-ring poster with Leo fire-mane corona.",
-      "one_liner_morning": "Dawn-gold Leo eclipse poster — lighter morning energy, same event.",
+      "one_liner_morning": "Dawn-gold Leo eclipse poster \u2014 lighter morning energy, same event.",
       "night": {
         "look": "graphic diamond-ring eclipse, Leo fire-mane corona, night void",
         "sg_anchor": "tiny circular SG sun jewel in outer corona",
@@ -24,7 +24,7 @@
         "sg_identity": "pass"
       },
       "morning": {
-        "look": "morning graphic Leo eclipse — warmer dawn gold, bold poster",
+        "look": "morning graphic Leo eclipse \u2014 warmer dawn gold, bold poster",
         "sg_anchor": "SG circular seal + cream-ready composition",
         "urls": [
           "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-08-12-solar-eclipse.png"
@@ -42,8 +42,8 @@
       "label": "Perseids Peak",
       "event_date": "2026-08-13",
       "post_night_before": "2026-08-12",
-      "caption_tomorrow": "Tomorrow Perseids peak…",
-      "caption_today": "Today’s Perseids peak…",
+      "caption_tomorrow": "Tomorrow Perseids peak\u2026",
+      "caption_today": "Today\u2019s Perseids peak\u2026",
       "one_liner_night": "Warm amber-magenta Perseids over real eggplant-awning Sacred Ground storefront.",
       "one_liner_morning": "Dawn Perseids streaks over real Sacred Ground storefront.",
       "night": {
@@ -80,10 +80,10 @@
       "label": "Partial Lunar Eclipse in Pisces",
       "event_date": "2026-08-27",
       "post_night_before": "2026-08-26",
-      "caption_tomorrow": "Tomorrow’s partial lunar eclipse in Pisces…",
-      "caption_today": "Today’s partial lunar eclipse in Pisces…",
+      "caption_tomorrow": "Tomorrow\u2019s partial lunar eclipse in Pisces\u2026",
+      "caption_today": "Today\u2019s partial lunar eclipse in Pisces\u2026",
       "one_liner_night": "Watercolor blood-amber moon over teal Pisces sea.",
-      "one_liner_morning": "Soft mist morning moon eclipse — pearly teal wash.",
+      "one_liner_morning": "Soft mist morning moon eclipse \u2014 pearly teal wash.",
       "night": {
         "look": "watercolor blood-amber eclipsed moon over teal sea",
         "sg_anchor": "SACRED GROUND in tide reflection",
@@ -116,10 +116,10 @@
       "label": "New Moon in Virgo",
       "event_date": "2026-09-10",
       "post_night_before": "2026-09-09",
-      "caption_tomorrow": "Tomorrow new moon in Virgo…",
-      "caption_today": "Today’s new moon in Virgo…",
-      "one_liner_night": "Deep cosmic Virgo new moon — gold wheat, sacred geometry, emerald-amethyst night.",
-      "one_liner_morning": "Deep cosmic Virgo new moon morning — Founder Birthday Month honor on jewel-tone sky.",
+      "caption_tomorrow": "Tomorrow new moon in Virgo\u2026",
+      "caption_today": "Today\u2019s new moon in Virgo\u2026",
+      "one_liner_night": "Deep cosmic Virgo new moon \u2014 gold wheat, sacred geometry, emerald-amethyst night.",
+      "one_liner_morning": "Deep cosmic Virgo new moon morning \u2014 Founder Birthday Month honor on jewel-tone sky.",
       "night": {
         "look": "deep cosmic indigo-emerald night; gold crescent, wheat wreath, sacred geometry",
         "sg_anchor": "circular SG logo bottom-left",
@@ -154,8 +154,8 @@
       "label": "Autumn Equinox",
       "event_date": "2026-09-22",
       "post_night_before": "2026-09-21",
-      "caption_tomorrow": "Tomorrow’s autumn equinox…",
-      "caption_today": "Today’s autumn equinox…",
+      "caption_tomorrow": "Tomorrow\u2019s autumn equinox\u2026",
+      "caption_today": "Today\u2019s autumn equinox\u2026",
       "one_liner_night": "Split harvest-gold / indigo night with storefront on the seam.",
       "one_liner_morning": "Split dawn gold / soft blue morning equinox balance.",
       "night": {
@@ -192,10 +192,10 @@
       "label": "Full Moon in Aries",
       "event_date": "2026-09-26",
       "post_night_before": "2026-09-25",
-      "caption_tomorrow": "Tomorrow’s full moon in Aries…",
-      "caption_today": "Today’s full moon in Aries…",
-      "one_liner_night": "Copper Aries ram-horn moon poster — fiery.",
-      "one_liner_morning": "Copper Aries moon at pale dawn — still bold, morning light.",
+      "caption_tomorrow": "Tomorrow\u2019s full moon in Aries\u2026",
+      "caption_today": "Today\u2019s full moon in Aries\u2026",
+      "one_liner_night": "Copper Aries ram-horn moon poster \u2014 fiery.",
+      "one_liner_morning": "Copper Aries moon at pale dawn \u2014 still bold, morning light.",
       "night": {
         "look": "copper-red ram-horn full moon graphic poster, ember sky",
         "sg_anchor": "SACRED GROUND searchlight beams",
@@ -230,10 +230,10 @@
       "label": "New Moon in Libra",
       "event_date": "2026-10-10",
       "post_night_before": "2026-10-09",
-      "caption_tomorrow": "Tomorrow new moon in Libra…",
-      "caption_today": "Today’s new moon in Libra…",
+      "caption_tomorrow": "Tomorrow new moon in Libra\u2026",
+      "caption_today": "Today\u2019s new moon in Libra\u2026",
       "one_liner_night": "Art-deco Libra scales with SG logo as fulcrum.",
-      "one_liner_morning": "Rose-gold Libra scales on soft morning lacquer — deco geometry.",
+      "one_liner_morning": "Rose-gold Libra scales on soft morning lacquer \u2014 deco geometry.",
       "night": {
         "look": "art deco mirrored Libra scales, rose-gold silver plum",
         "sg_anchor": "circular SG logo as scale fulcrum",
@@ -249,7 +249,7 @@
         "logo_baked": true
       },
       "morning": {
-        "look": "lighter art-deco Libra new moon — rose morning lacquer",
+        "look": "lighter art-deco Libra new moon \u2014 rose morning lacquer",
         "sg_anchor": "SG logo fulcrum",
         "urls": [
           "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-10-10-new-moon-libra-2.png"
@@ -268,10 +268,10 @@
       "label": "Orionids Peak",
       "event_date": "2026-10-21",
       "post_night_before": "2026-10-20",
-      "caption_tomorrow": "Tomorrow Orionids peak…",
-      "caption_today": "Today’s Orionids peak…",
+      "caption_tomorrow": "Tomorrow Orionids peak\u2026",
+      "caption_today": "Today\u2019s Orionids peak\u2026",
       "one_liner_night": "Icy cyan Orion architecture + meteor radiant.",
-      "one_liner_morning": "Pale frost-blue Orionids morning sky — architectural stars.",
+      "one_liner_morning": "Pale frost-blue Orionids morning sky \u2014 architectural stars.",
       "night": {
         "look": "cool cyan-silver Orion constellation architecture + meteors",
         "sg_anchor": "circular SG sun bat-signal over misty hills",
@@ -306,8 +306,8 @@
       "label": "Full Moon in Taurus",
       "event_date": "2026-10-25",
       "post_night_before": "2026-10-24",
-      "caption_tomorrow": "Tomorrow’s full moon in Taurus…",
-      "caption_today": "Today’s full moon in Taurus…",
+      "caption_tomorrow": "Tomorrow\u2019s full moon in Taurus\u2026",
+      "caption_today": "Today\u2019s full moon in Taurus\u2026",
       "one_liner_night": "Cream harvest Taurus moon over orchard storefront.",
       "one_liner_morning": "Golden morning orchard under lingering Taurus moon.",
       "night": {
@@ -325,29 +325,30 @@
         "logo_baked": true
       },
       "morning": {
-        "look": "fresh harvest orchard dawn under large round Taurus full moon — shop nestled down the road, sun logo in the moon",
-        "sg_anchor": "Sacred Ground storefront down the orchard road + circular sun logo in the moon (baked)",
+        "look": "misty prairie harvest dawn under natural Taurus full moon \u2014 Sacred Ground shop along the path (single cohesive scene)",
+        "sg_anchor": "Sacred Ground eggplant-awning storefront in misty prairie path (no logo-in-moon)",
         "urls": [
-          "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-10-25-full-moon-taurus-5.png"
+          "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-10-25-full-moon-taurus-6.png"
         ],
         "local": [
-          "assets/celestial-2026/sg-morning-celestial-2026-10-25-full-moon-taurus-5.png"
+          "assets/celestial-2026/sg-morning-celestial-2026-10-25-full-moon-taurus-6.png"
         ],
         "prebranded": true,
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-10-25-full-moon-taurus-5.png",
-        "wp_media_id": 26059,
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-10-25-full-moon-taurus-6.png",
+        "wp_media_id": 26063,
         "sg_identity": "pass",
-        "logo_baked": true
+        "logo_baked": false,
+        "notes": "2026-08-11: Founder rejected -5 (shop cutout + logo jammed in moon). Trashed to assets/celestial-2026/_trash/. Regenerated -6 prairie mist single-generation plate; identity via storefront awning; natural moon."
       }
     },
     "samhain_2026": {
       "label": "Samhain",
       "event_date": "2026-10-31",
       "post_night_before": "2026-10-30",
-      "caption_tomorrow": "Tomorrow is Samhain…",
-      "caption_today": "Today is Samhain…",
-      "one_liner_night": "Marigold veil + lantern storefront — sacred, not cartoon Halloween.",
-      "one_liner_morning": "Soft morning marigold mist — Samhain day light, still sacred.",
+      "caption_tomorrow": "Tomorrow is Samhain\u2026",
+      "caption_today": "Today is Samhain\u2026",
+      "one_liner_night": "Marigold veil + lantern storefront \u2014 sacred, not cartoon Halloween.",
+      "one_liner_morning": "Soft morning marigold mist \u2014 Samhain day light, still sacred.",
       "night": {
         "look": "folk-sacred indigo veil, marigold, candle paths, night fog",
         "sg_anchor": "Sacred Ground windows as lanterns in fog",
@@ -363,7 +364,7 @@
         "logo_baked": true
       },
       "morning": {
-        "look": "morning marigold mist, soft sacred doorway light — not cartoon pumpkins",
+        "look": "morning marigold mist, soft sacred doorway light \u2014 not cartoon pumpkins",
         "sg_anchor": "Sacred Ground windows glowing in morning fog",
         "urls": [
           "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-10-31-samhain-2.png"
