@@ -325,17 +325,17 @@
         "logo_baked": true
       },
       "morning": {
-        "look": "fresh harvest orchard dawn under large round Taurus full moon — cream/gold earth, no composite boxes",
-        "sg_anchor": "Sacred Ground circular logo bottom-left (baked)",
+        "look": "fresh harvest orchard dawn under large round Taurus full moon — shop nestled down the road, sun logo in the moon",
+        "sg_anchor": "Sacred Ground storefront down the orchard road + circular sun logo in the moon (baked)",
         "urls": [
-          "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-10-25-full-moon-taurus-4.png"
+          "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-10-25-full-moon-taurus-5.png"
         ],
         "local": [
-          "assets/celestial-2026/sg-morning-celestial-2026-10-25-full-moon-taurus-4.png"
+          "assets/celestial-2026/sg-morning-celestial-2026-10-25-full-moon-taurus-5.png"
         ],
         "prebranded": true,
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-10-25-full-moon-taurus-4.png",
-        "wp_media_id": 26057,
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-10-25-full-moon-taurus-5.png",
+        "wp_media_id": 26059,
         "sg_identity": "pass",
         "logo_baked": true
       }
