@@ -242,6 +242,7 @@ def _badge_font(size: int):
     candidates = [
         "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
         "/System/Library/Fonts/Supplemental/Georgia Bold.ttf",
+        "/System/Library/Fonts/Avenir Next.ttc",
         "/Library/Fonts/Arial Unicode.ttf",
         "/System/Library/Fonts/Helvetica.ttc",
     ]
@@ -263,6 +264,42 @@ def _wrap_lines(text: str) -> List[str]:
     return lines or ["Chicagoland favorite"]
 
 
+def _one_line(lines: Sequence[str], *, max_chars: int = 36) -> str:
+    """Join badge lines for thin bands — never leave dangling '&' wraps."""
+    one = " · ".join(str(ln).strip() for ln in lines if str(ln).strip())
+    one = " ".join(one.split())
+    if len(one) > max_chars:
+        one = one[: max_chars - 1].rstrip(" ·-–—") + "…"
+    return one or "Chicagoland favorite"
+
+
+def _fit_lines(lines: Sequence[str], *, max_lines: int = 2) -> List[str]:
+    cleaned = [str(ln).strip() for ln in lines if str(ln).strip()]
+    if not cleaned:
+        return ["Chicagoland favorite"]
+    if len(cleaned) <= max_lines:
+        return cleaned
+    # Prefer keeping first lines; collapse remainder onto last slot.
+    head = list(cleaned[: max_lines - 1])
+    tail = " ".join(cleaned[max_lines - 1 :])
+    head.append(tail)
+    return head
+
+
+def _draw_centered_lines(draw, lines: Sequence[str], *, cx: int, cy: int, font, fill, gap: int = 3) -> None:
+    widths: List[int] = []
+    heights: List[int] = []
+    for ln in lines:
+        bbox = draw.textbbox((0, 0), ln, font=font)
+        widths.append(bbox[2] - bbox[0])
+        heights.append(bbox[3] - bbox[1])
+    total_h = sum(heights) + gap * (len(lines) - 1)
+    y = cy - total_h // 2
+    for ln, tw, th in zip(lines, widths, heights):
+        draw.text((cx - tw // 2, y), ln, font=font, fill=fill)
+        y += th + gap
+
+
 def draw_badge(
     img,
     *,
@@ -270,10 +307,15 @@ def draw_badge(
     text: str,
     photo_bottom: Optional[int] = None,
 ):
-    """Draw a tasteful social-proof badge; returns (new_image, style_drawn).
+    """Draw a designed-in social-proof mark; returns (new_image, style_drawn).
 
-    photo_bottom = Y above cream footer (default: full height). Keeps badges
-    in the photo area, not on the contact footer.
+    Placement rules (Founder Aug 11 2026 remake):
+    - Never cover Sacred Ground wordmark, event cards, circular logo, or phone footer
+    - Prefer flush top thin cream/gold band, bottom strip above footer, or small seal
+      in empty sky/margin
+    - Soft cream wash OK — no giant opaque white sticker disks
+
+    photo_bottom = Y above cream/contact footer (default: full height).
     """
     from PIL import Image, ImageDraw
 
@@ -287,104 +329,131 @@ def draw_badge(
     base = img.convert("RGBA")
     w, h = base.size
     pb = photo_bottom if photo_bottom is not None else h
+    # Keep marks inside the photo area with a tiny inset from the footer seam.
+    safe_bottom = max(1, pb - max(4, int(w * 0.006)))
     overlay = Image.new("RGBA", (w, h), (0, 0, 0, 0))
     draw = ImageDraw.Draw(overlay)
 
-    font = _badge_font(max(16, int(w * 0.028)))
-    font_sm = _badge_font(max(14, int(w * 0.022)))
+    font = _badge_font(max(15, int(w * 0.024)))
+    font_sm = _badge_font(max(13, int(w * 0.019)))
+    font_xs = _badge_font(max(12, int(w * 0.016)))
+    pad = max(10, int(w * 0.018))
 
-    def _text_block(cx: int, cy: int, fill, use_sm: bool = False) -> None:
-        fnt = font_sm if use_sm else font
-        heights = []
-        widths = []
-        for ln in lines:
-            bbox = draw.textbbox((0, 0), ln, font=fnt)
-            widths.append(bbox[2] - bbox[0])
-            heights.append(bbox[3] - bbox[1])
-        total_h = sum(heights) + 4 * (len(lines) - 1)
-        y = cy - total_h // 2
-        for ln, tw, th in zip(lines, widths, heights):
-            draw.text((cx - tw // 2, y), ln, font=fnt, fill=fill)
-            y += th + 4
-
-    pad = int(w * 0.02)
     if style == "banner":
-        bh = max(48, int(h * 0.07))
-        y0 = max(pad, int(pb * 0.08))
-        draw.rounded_rectangle(
-            (int(w * 0.08), y0, int(w * 0.92), y0 + bh),
-            radius=18,
-            fill=(*eggplant, 210),
-            outline=(*gold, 255),
-            width=2,
-        )
-        _text_block(w // 2, y0 + bh // 2, (*cream, 255), use_sm=True)
-
-    elif style == "circle":
-        r = int(min(w, pb) * 0.13)
-        cx, cy = w - r - pad, r + pad + int(pb * 0.02)
-        draw.ellipse(
-            (cx - r, cy - r, cx + r, cy + r),
-            fill=(*cream, 230),
-            outline=(*gold, 255),
-            width=3,
-        )
-        inner = r - 8
-        draw.ellipse(
-            (cx - inner, cy - inner, cx + inner, cy + inner),
-            outline=(*eggplant, 180),
-            width=1,
-        )
-        _text_block(cx, cy, (*ink, 255), use_sm=True)
-
-    elif style == "ribbon":
-        rw, rh = int(w * 0.42), max(44, int(h * 0.055))
-        x0, y0 = pad, int(pb * 0.12)
-        pts = [
-            (x0, y0),
-            (x0 + rw, y0),
-            (x0 + rw - 18, y0 + rh // 2),
-            (x0 + rw, y0 + rh),
-            (x0, y0 + rh),
-        ]
-        draw.polygon(pts, fill=(*gold, 230), outline=(*ink, 200))
-        _text_block(x0 + rw // 2 - 6, y0 + rh // 2, (*ink, 255), use_sm=True)
-
-    elif style == "corner":
-        cw, ch = int(w * 0.36), max(56, int(h * 0.08))
-        x0, y0 = w - cw - pad, pad + int(pb * 0.04)
-        draw.rounded_rectangle(
-            (x0, y0, x0 + cw, y0 + ch),
-            radius=14,
-            fill=(*cream, 220),
-            outline=(*gold, 255),
-            width=2,
-        )
-        _text_block(x0 + cw // 2, y0 + ch // 2, (*ink, 255), use_sm=True)
-
-    else:  # pill
-        pw, ph = int(w * 0.55), max(40, int(h * 0.05))
-        x0 = (w - pw) // 2
-        y0 = pb - ph - pad - int(pb * 0.02)
-        y0 = min(y0, pb - ph - pad)
-        y0 = max(pad, y0)
-        draw.rounded_rectangle(
-            (x0, y0, x0 + pw, y0 + ph),
-            radius=ph // 2,
-            fill=(*gold, 225),
-            outline=(*ink, 160),
-            width=1,
-        )
-        one = " · ".join(lines) if len(lines) > 1 else lines[0]
-        if len(one) > 42:
-            one = one[:40] + "…"
+        # Flush top-edge thin cream/gold band — sits above the wordmark.
+        bh = max(26, int(w * 0.030))
+        draw.rectangle((0, 0, w, bh), fill=(*cream, 238))
+        draw.line((0, 0, w, 0), fill=(*gold, 220), width=1)
+        draw.line((0, bh - 2, w, bh - 2), fill=(*gold, 255), width=2)
+        one = _one_line(lines, max_chars=40)
         bbox = draw.textbbox((0, 0), one, font=font_sm)
         tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
         draw.text(
-            (x0 + (pw - tw) // 2, y0 + (ph - th) // 2 - 1),
+            ((w - tw) // 2, (bh - th) // 2 - 1),
             one,
             font=font_sm,
+            fill=(*eggplant, 255),
+        )
+
+    elif style == "pill":
+        # Full-width thin strip just above the contact footer (not a floating chip).
+        ph = max(26, int(w * 0.030))
+        y0 = max(pad, safe_bottom - ph)
+        draw.rectangle((0, y0, w, y0 + ph), fill=(*cream, 232))
+        draw.line((0, y0, w, y0), fill=(*gold, 255), width=2)
+        draw.line((0, y0 + ph - 1, w, y0 + ph - 1), fill=(*gold, 200), width=1)
+        one = _one_line(lines, max_chars=40)
+        bbox = draw.textbbox((0, 0), one, font=font_sm)
+        tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
+        draw.text(
+            ((w - tw) // 2, y0 + (ph - th) // 2 - 1),
+            one,
+            font=font_sm,
+            fill=(*eggplant, 255),
+        )
+
+    elif style == "circle":
+        # Small sky seal — soft cream wash + gold ring (not a giant opaque white disk).
+        r = max(30, int(min(w, safe_bottom) * 0.055))
+        cx = w - r - pad
+        cy = r + max(6, int(w * 0.010))
+        # Keep seal in the upper photo margin (empty sky), never mid-wordmark.
+        cy = min(cy, max(r + 4, int(safe_bottom * 0.10)))
+        draw.ellipse(
+            (cx - r, cy - r, cx + r, cy + r),
+            fill=(*cream, 150),
+            outline=(*gold, 255),
+            width=3,
+        )
+        inner = max(8, r - 6)
+        draw.ellipse(
+            (cx - inner, cy - inner, cx + inner, cy + inner),
+            outline=(*gold, 170),
+            width=1,
+        )
+        seal_lines = _fit_lines(lines, max_lines=2)
+        _draw_centered_lines(
+            draw, seal_lines, cx=cx, cy=cy, font=font_xs, fill=(*eggplant, 255), gap=2
+        )
+
+    elif style == "ribbon":
+        # Slim top-left boutique ribbon hanging from the top edge (not over title).
+        rw = int(w * 0.30)
+        rh = max(26, int(w * 0.034))
+        y0 = 0
+        notch = max(10, int(rh * 0.42))
+        pts = [
+            (0, y0),
+            (rw, y0),
+            (rw - notch, y0 + rh // 2),
+            (rw, y0 + rh),
+            (0, y0 + rh),
+        ]
+        draw.polygon(pts, fill=(*gold, 220), outline=(*eggplant, 160))
+        # Soft cream inset for shop-made (not Canva sticker) feel.
+        inset = 3
+        pts_in = [
+            (inset, y0 + inset),
+            (rw - notch - 2, y0 + inset),
+            (rw - notch * 2 + 2, y0 + rh // 2),
+            (rw - notch - 2, y0 + rh - inset),
+            (inset, y0 + rh - inset),
+        ]
+        draw.polygon(pts_in, fill=(*cream, 90))
+        one = _one_line(lines, max_chars=22)
+        bbox = draw.textbbox((0, 0), one, font=font_xs)
+        tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
+        tx = max(6, (rw - notch - tw) // 2)
+        draw.text((tx, y0 + (rh - th) // 2 - 1), one, font=font_xs, fill=(*ink, 255))
+
+    else:  # corner
+        # Compact top-right corner chip in empty margin — soft wash, short type.
+        cw = int(w * 0.22)
+        ch = max(34, int(w * 0.048))
+        x0 = w - cw - pad
+        y0 = max(6, int(w * 0.01))
+        draw.rounded_rectangle(
+            (x0, y0, x0 + cw, y0 + ch),
+            radius=10,
+            fill=(*cream, 170),
+            outline=(*gold, 245),
+            width=2,
+        )
+        # Tiny gold tick on the outer corner so it feels designed-in.
+        draw.line(
+            (x0 + cw - 14, y0 + 3, x0 + cw - 3, y0 + 3),
+            fill=(*eggplant, 160),
+            width=1,
+        )
+        corner_lines = _fit_lines(lines, max_lines=2)
+        _draw_centered_lines(
+            draw,
+            corner_lines,
+            cx=x0 + cw // 2,
+            cy=y0 + ch // 2,
+            font=font_xs,
             fill=(*ink, 255),
+            gap=1,
         )
 
     out = Image.alpha_composite(base, overlay)
@@ -400,6 +469,7 @@ def apply_badge_to_path(
     out_path: Optional[str] = None,
     photo_bottom: Optional[int] = None,
     force_style: Optional[str] = None,
+    force_text: Optional[str] = None,
 ) -> Optional[Dict[str, Any]]:
     """Load image, draw rotating badge, save. Returns meta or None if skipped."""
     if not enabled() or not path or not os.path.isfile(path):
@@ -407,7 +477,7 @@ def apply_badge_to_path(
     from PIL import Image
 
     style = force_style or pick_badge_style(seed)
-    text = pick_badge_claim(seed)
+    text = force_text if force_text is not None else pick_badge_claim(seed)
     with Image.open(path) as im:
         img = im.convert("RGB")
         img, drawn = draw_badge(

@@ -19,12 +19,13 @@ Repo search found **no** confirmed Chicago Reader / Best Of award source. Keep c
 1. **Captions** — short line woven before hashtags on morning / afternoon / week_ahead / specialty (placement mode rotates).
 2. **First comment** — Zernio `platformSpecificData.firstComment` on Facebook + Instagram when the placement mode is `first_comment` or `both` (live on publish).
 3. **On-image badges** — rotating styles: `banner` · `circle` · `pill` · `ribbon` · `corner`
+   - **Remake (Founder Aug 11 2026):** thin top cream/gold band, bottom strip above footer, or small soft seal in empty sky/margin — never giant white sticker disks over the Sacred Ground wordmark / event cards / logo / phone footer
    - Morning flyers: baked in `render_local_flyer` (photo area above cream footer)
    - Night creatives: `marketing.social_proof.apply_night_badge_if_eligible` when branding **local** shop/generic plates (skips pure celestial by default). Remote pool URLs are not rewritten at publish.
 
 ## Config
 
-- Claims: `claims` (caption / first comment) + `badge_claims` (multi-line on image)
+- Claims: `claims` (caption / first comment) + short `badge_claims` (1–2 lines; bands join with `·`)
 - Styles: `badge_styles`
 - Placement mix: `placement_modes` (`caption` / `first_comment` / `both`)
 
