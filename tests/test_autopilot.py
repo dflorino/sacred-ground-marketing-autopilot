@@ -1623,6 +1623,33 @@ class AutopilotTests(unittest.TestCase):
         self.assertGreaterEqual(len(today_rows), 1)
         self.assertEqual(today_rows[0].get("url"), today_fb["image"]["url"])
 
+    def test_week_ahead_night_opener_is_singular(self) -> None:
+        """Founder Aug 10 2026: one night tagline (not a rotating opener pool)."""
+        from marketing import captions
+        from marketing.models import Event
+        from marketing.paths import voice
+
+        tagline = (
+            "As evening settles over the shop, we’re reminded tomorrow is another day—"
+            "and there’s much more to come."
+        )
+        openers = list(voice().get("week_ahead_openers") or [])
+        self.assertEqual(openers, [tagline])
+        self.assertEqual(captions._week_ahead_opener("any-seed"), tagline)
+        self.assertEqual(captions._week_ahead_opener("other-seed"), tagline)
+
+        event = Event(
+            id=1,
+            title="Tarot with Adie",
+            start_date="2026-08-11 12:00:00",
+            end_date="2026-08-11 17:00:00",
+            url="https://shopsacredground.com/book/adie/",
+        )
+        text = captions.caption_week_ahead([event], "facebook", date(2026, 8, 10))["text"]
+        self.assertTrue(text.startswith(tagline + "\n\n"))
+        self.assertNotIn("plenty coming up", text)
+        self.assertNotIn("plenty to look forward to", text)
+
     def test_week_ahead_closers_pool_and_day_rotation(self) -> None:
         from marketing import captions
         from marketing.paths import voice

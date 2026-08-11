@@ -406,7 +406,7 @@ def _week_ahead_opener(seed: str) -> str:
     return _pick_rotating(
         opts,
         seed,
-        "As the shop settles in for the night, we’re reminded that tomorrow’s another day—and there’s plenty to look forward to.",
+        "As evening settles over the shop, we’re reminded tomorrow is another day—and there’s much more to come.",
     )
 
 
