@@ -503,7 +503,15 @@ class AutopilotTests(unittest.TestCase):
 
         visit = captions.caption_today_visit("facebook", date(2026, 8, 4))
         self.assertIn("cool and unusual", visit["text"].lower())
-        self.assertIn("chicagoland", visit["text"].lower())
+        sp = visit.get("social_proof") or {}
+        pride = (
+            (visit["text"] + " " + str(sp.get("claim") or "") + " " + str(sp.get("first_comment") or ""))
+            .lower()
+        )
+        self.assertTrue(
+            "chicagoland" in pride or "chicago" in pride,
+            "visit caption should carry rotating shop-pride claim (caption and/or first comment)",
+        )
 
         # Morning promotes tomorrow — pick a Wed whose Thursday has no fixture events
         # (and is not Tuesday, so no meditation stub).
@@ -632,11 +640,20 @@ class AutopilotTests(unittest.TestCase):
             "https://shopsacredground.com/tina/\n\n• Soul Alignment w/ Karen",
             text,
         )
-        # Goodnight closer stands alone (blank line before it and before hashtags)
+        # Goodnight closer stands alone (blank line before it; optional shop-pride
+        # claim may sit between closer and hashtags).
         closers = list(voice().get("week_ahead_closers") or [])
-        matched = [c for c in closers if f"\n\n{c}\n\n#" in text]
+        matched = [
+            c
+            for c in closers
+            if f"\n\n{c}\n\n#" in text or f"\n\n{c}\n\n" in text
+        ]
         self.assertTrue(matched, "expected a rotating goodnight closer before hashtags")
         self.assertRegex(text, r"\n\n#SacredGround")
+        # Closer must appear before hashtags
+        tag_at = text.find("\n#SacredGround")
+        self.assertGreater(tag_at, 0)
+        self.assertTrue(any(c in text[:tag_at] for c in matched))
         # Door/light must not appear inside an event block
         self.assertNotIn("Tina's Tarot & Rune Sessions\nThe door is always open", text)
         self.assertNotIn("Doors close at 7:05pm\nThe door is always open", text)
@@ -1911,6 +1928,107 @@ class AutopilotTests(unittest.TestCase):
         self.assertEqual(plan_fb.url, plan_ig.url)
         self.assertNotIn("$", plan_fb.url or "")
         self.assertNotIn("$", plan_ig.url or "")
+
+
+    def test_social_proof_claims_and_badge_styles_rotate(self) -> None:
+        """Playful shop-pride config: non-empty claims + known badge styles."""
+        from marketing import social_proof as sp
+
+        sp.clear_social_proof_cache()
+        self.assertTrue(sp.enabled())
+        claims = sp.claims()
+        self.assertGreaterEqual(len(claims), 4)
+        for c in claims:
+            self.assertTrue(c.strip())
+            low = c.lower()
+            # Soften formal fake-award vibe
+            self.assertNotIn("chicago reader", low)
+            self.assertNotIn("best of 20", low)
+
+        styles = sp.badge_styles()
+        self.assertTrue(styles)
+        for s in styles:
+            self.assertIn(s, sp.BADGE_STYLES)
+
+        # Rotation is stable for a seed and varies across seeds
+        a = sp.pick_claim("seed-a")
+        b = sp.pick_claim("seed-a")
+        self.assertEqual(a, b)
+        seen = {sp.pick_claim(f"rot-{i}") for i in range(40)}
+        self.assertGreaterEqual(len(seen), 2)
+
+        style_seen = {sp.pick_badge_style(f"sty-{i}") for i in range(40)}
+        self.assertGreaterEqual(len(style_seen), 2)
+
+        plan = sp.plan_for_post(
+            campaign="today", platform="facebook", day_key="2026-08-11"
+        )
+        self.assertTrue(plan.get("claim"))
+        self.assertIn(plan.get("mode"), ("caption", "first_comment", "both"))
+
+    def test_social_proof_weaves_caption_and_first_comment_payload(self) -> None:
+        from marketing import captions, publish, social_proof as sp
+        from marketing.models import Event
+
+        sp.clear_social_proof_cache()
+        day = date(2026, 8, 11)
+        ev = Event(
+            id=42,
+            title="Amber | Customized Therapeutic Massage Sessions",
+            start_date="2026-08-11 12:00:00",
+            end_date="2026-08-11 17:00:00",
+            url="https://shopsacredground.com/book/amber/",
+        )
+        cap = captions.caption_afternoon_spotlight(ev, "instagram", day)
+        self.assertIn("social_proof", cap)
+        meta = cap["social_proof"]
+        self.assertTrue(meta.get("claim"))
+        if meta.get("in_caption"):
+            self.assertIn(meta["claim"].rstrip("."), cap["text"])
+        if meta.get("in_first_comment"):
+            draft = {
+                "id": "test-sp",
+                "fingerprint": "afternoon_spotlight|2026-08-11|instagram|42",
+                "platform": "instagram",
+                "timezone": "America/Chicago",
+                "caption": cap,
+                "image": {"url": "https://example.com/x.png"},
+                "schedule_recommendation": {
+                    "recommended_at": "2026-08-11T17:00:00-05:00"
+                },
+            }
+            # Force a first-comment plan for payload check
+            cap2 = dict(cap)
+            cap2["social_proof"] = {
+                **meta,
+                "in_first_comment": True,
+                "first_comment": meta["claim"],
+            }
+            draft["caption"] = cap2
+            payload = publish.schedule_payload(draft)
+            plat = payload["platforms"][0]
+            self.assertEqual(
+                (plat.get("platformSpecificData") or {}).get("firstComment"),
+                meta["claim"],
+            )
+
+    def test_social_proof_badge_draw_styles(self) -> None:
+        from marketing import social_proof as sp
+        from PIL import Image
+
+        sp.clear_social_proof_cache()
+        img = Image.new("RGB", (1080, 1080), (40, 30, 60))
+        for style in sp.badge_styles():
+            out, drawn = sp.draw_badge(
+                img,
+                style=style,
+                text="Chicago’s #1\ntalked-about\ncrystal shop",
+                photo_bottom=930,
+            )
+            self.assertEqual(drawn, style)
+            self.assertEqual(out.size, (1080, 1080))
+            # Badge must change some pixels (placement varies by style)
+            self.assertNotEqual(out.tobytes(), img.tobytes())
 
 
 if __name__ == "__main__":

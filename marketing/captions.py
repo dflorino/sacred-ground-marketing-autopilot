@@ -4,6 +4,7 @@ import hashlib
 from datetime import date
 from typing import Dict, List, Sequence
 
+from . import social_proof
 from .classify import format_when, is_community_meditation, short_blurb
 from .meditation import (
     format_tuesday_meditation_opener,
@@ -11,6 +12,19 @@ from .meditation import (
 )
 from .models import Event
 from .paths import voice
+
+
+def _with_social_proof(
+    cap: Dict,
+    *,
+    campaign: str,
+    platform: str,
+    day_key: str,
+) -> Dict:
+    """Rotate playful shop-pride line into caption / first-comment metadata."""
+    return social_proof.enrich_caption_dict(
+        cap, campaign=campaign, platform=platform, day_key=day_key
+    )
 
 
 def _hashtags(platform: str, extra: Sequence[str] | None = None) -> List[str]:
@@ -255,7 +269,12 @@ def caption_today(
             tags = _hashtags(platform)
             text = body + "\n\n" + " ".join(tags) + "\n\n" + _signoff(seed, platform)
             _assert_not_generic(text)
-            return {"text": text, "hashtags": tags, "hook": hook}
+            return _with_social_proof(
+                {"text": text, "hashtags": tags, "hook": hook},
+                campaign="today",
+                platform=platform,
+                day_key=(pub or day).isoformat(),
+            )
         return caption_today_visit(platform, day)
 
     day_label = day.strftime("%A, %B %d").replace(" 0", " ")
@@ -344,7 +363,12 @@ def caption_today(
     tags = _hashtags(platform)
     text = body + "\n\n" + " ".join(tags)
     _assert_not_generic(text)
-    return {"text": text, "hashtags": tags, "hook": hook}
+    return _with_social_proof(
+        {"text": text, "hashtags": tags, "hook": hook},
+        campaign="today",
+        platform=platform,
+        day_key=(publish_day or flyer_day or day).isoformat(),
+    )
 
 
 def caption_today_visit(platform: str, day: date) -> Dict:
@@ -354,8 +378,8 @@ def caption_today_visit(platform: str, day: date) -> Dict:
     body = (
         f"{hook}\n\n"
         f"Nothing fixed on the calendar for {day_label} — come browse anyway.\n\n"
-        "Chicagoland’s most famous crystal shop — crystals, books, gifts, "
-        "and a floor full of curious finds in Arlington Heights.\n\n"
+        "Crystals, books, gifts, and a floor full of curious finds in "
+        "Arlington Heights.\n\n"
         "Come for cool and unusual things whenever you need a little sparkle.\n"
         "847-749-3922\n"
         "https://shopsacredground.com/\n\n"
@@ -364,7 +388,12 @@ def caption_today_visit(platform: str, day: date) -> Dict:
     tags = _hashtags(platform)
     text = body + "\n\n" + " ".join(tags)
     _assert_not_generic(text)
-    return {"text": text, "hashtags": tags, "hook": hook}
+    return _with_social_proof(
+        {"text": text, "hashtags": tags, "hook": hook},
+        campaign="visit",
+        platform=platform,
+        day_key=day.isoformat(),
+    )
 
 
 def caption_week(events: List[Event], platform: str, week_start: date) -> Dict:
@@ -385,7 +414,12 @@ def caption_week(events: List[Event], platform: str, week_start: date) -> Dict:
         if len(text) > max_chars:
             text = text[: max_chars - 1].rsplit(" ", 1)[0] + "…"
     _assert_not_generic(text)
-    return {"text": text, "hashtags": tags, "hook": hook}
+    return _with_social_proof(
+        {"text": text, "hashtags": tags, "hook": hook},
+        campaign="week",
+        platform=platform,
+        day_key=week_start.isoformat(),
+    )
 
 
 def _pick_rotating(opts: List[str], seed: str, fallback: str) -> str:
@@ -489,7 +523,12 @@ def caption_week_ahead(events: List[Event], platform: str, day: date) -> Dict:
         if len(text) > max_chars:
             text = text[: max_chars - 1].rsplit(" ", 1)[0] + "…"
     _assert_not_generic(text)
-    return {"text": text, "hashtags": tags, "hook": hook}
+    return _with_social_proof(
+        {"text": text, "hashtags": tags, "hook": hook},
+        campaign="week_ahead",
+        platform=platform,
+        day_key=day.isoformat(),
+    )
 
 
 def caption_tuesday_meditation(platform: str, day: date) -> Dict:
@@ -508,7 +547,12 @@ def caption_tuesday_meditation(platform: str, day: date) -> Dict:
     tags = _hashtags(platform)
     text = body + "\n\n" + " ".join(tags)
     _assert_not_generic(text)
-    return {"text": text, "hashtags": tags, "hook": hook}
+    return _with_social_proof(
+        {"text": text, "hashtags": tags, "hook": hook},
+        campaign="tuesday_meditation",
+        platform=platform,
+        day_key=day.isoformat(),
+    )
 
 
 def caption_afternoon_spotlight(event: Event | None, platform: str, day: date) -> Dict:
@@ -527,7 +571,12 @@ def caption_afternoon_spotlight(event: Event | None, platform: str, day: date) -
         tags = _hashtags(platform)
         text = body + "\n\n" + " ".join(tags)
         _assert_not_generic(text)
-        return {"text": text, "hashtags": tags, "hook": hook}
+        return _with_social_proof(
+            {"text": text, "hashtags": tags, "hook": hook},
+            campaign="afternoon_spotlight",
+            platform=platform,
+            day_key=day.isoformat(),
+        )
 
     when = format_when(event)
     blurb = short_blurb(event, 200)
@@ -557,7 +606,12 @@ def caption_afternoon_spotlight(event: Event | None, platform: str, day: date) -
     tags = _hashtags(platform)
     text = body + "\n\n" + " ".join(tags)
     _assert_not_generic(text)
-    return {"text": text, "hashtags": tags, "hook": hook}
+    return _with_social_proof(
+        {"text": text, "hashtags": tags, "hook": hook},
+        campaign="afternoon_spotlight",
+        platform=platform,
+        day_key=day.isoformat(),
+    )
 
 
 def caption_spotlight(event: Event, platform: str, reminder_day: int | None = None) -> Dict:
@@ -583,4 +637,10 @@ def caption_spotlight(event: Event, platform: str, reminder_day: int | None = No
     tags = _hashtags(platform, ["#SpecialEvent"] if event.is_special else None)
     text = body + "\n\n" + " ".join(tags)
     _assert_not_generic(text)
-    return {"text": text, "hashtags": tags, "hook": hook}
+    day_key = (event.start_date or "")[:10] or "spotlight"
+    return _with_social_proof(
+        {"text": text, "hashtags": tags, "hook": hook},
+        campaign="spotlight",
+        platform=platform,
+        day_key=day_key,
+    )

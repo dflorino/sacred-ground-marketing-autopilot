@@ -57,9 +57,22 @@ def schedule_payload(draft: Dict[str, Any]) -> Dict[str, Any]:
     sched = (draft.get("schedule_recommendation") or {}).get("recommended_at")
     tz = draft.get("timezone") or accounts().get("timezone") or "America/Chicago"
     publish_now = _should_publish_now(sched, tz)
+    platform_entry: Dict[str, Any] = {
+        "platform": platform,
+        "accountId": account_id,
+    }
+    # Zernio firstComment (FB + IG feed) — playful shop-pride line when planned.
+    # Docs: platformSpecificData.firstComment auto-posts after publish.
+    cap = draft.get("caption") or {}
+    sp = cap.get("social_proof") or {}
+    first_comment = (sp.get("first_comment") or "").strip()
+    if not first_comment and sp.get("in_first_comment") and sp.get("claim"):
+        first_comment = str(sp.get("claim") or "").strip()
+    if first_comment and platform in ("facebook", "instagram"):
+        platform_entry["platformSpecificData"] = {"firstComment": first_comment}
     body: Dict[str, Any] = {
-        "content": (draft.get("caption") or {}).get("text") or "",
-        "platforms": [{"platform": platform, "accountId": account_id}],
+        "content": cap.get("text") or "",
+        "platforms": [platform_entry],
         "timezone": tz,
         "publishNow": publish_now,
     }

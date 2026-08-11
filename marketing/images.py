@@ -544,6 +544,20 @@ def plan_image(
         else:
             rule = f"week_ahead_season_{season}"
             label = season
+        from . import social_proof as sp
+
+        night_seed = f"night|{on.isoformat()}|{mode}|{creative_id or celestial_id}"
+        badge_note = ""
+        if sp.should_badge_night(
+            mode=str(mode),
+            creative_id=str(creative_id or celestial_id or ""),
+            seed=night_seed,
+        ):
+            badge_note = (
+                f" Social-proof badge candidate ({sp.pick_badge_style(night_seed)}) "
+                "via social_proof.apply_night_badge_if_eligible on local plate "
+                "(skip pure celestial)."
+            )
         return ImagePlan(
             source="brand_week_ahead",
             url=url,
@@ -551,6 +565,7 @@ def plan_image(
             recommendation=(
                 f"Night image ({mode}/{label}): {atm.get('season_look')}. "
                 f"Cart: {atm.get('cart') or 'n/a'}. Events stay in caption only."
+                f"{badge_note}"
             ),
             rule=rule,
         )

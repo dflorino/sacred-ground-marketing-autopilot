@@ -1,0 +1,59 @@
+{
+  "enabled": true,
+  "honesty_note": "Playful shop pride / local vibe — NOT a formal third-party award citation. Founder tone (Aug 11 2026): 'i vote it the best! lol'. Prefer warm bold local pride (#1 talked-about, favorite, Chicago keeps talking about). Soften or avoid fake verified 'officially voted by [publication]' + trophy award year language. No inventing Chicago Reader / Best Of winners unless Founder confirms a real source.",
+  "caption_campaigns": [
+    "today",
+    "afternoon_spotlight",
+    "week_ahead",
+    "tuesday_meditation",
+    "visit",
+    "spotlight"
+  ],
+  "placement_modes": [
+    "caption",
+    "first_comment",
+    "both",
+    "caption",
+    "both"
+  ],
+  "claims": [
+    "Chicago’s #1 talked-about crystal shop.",
+    "Chicagoland’s favorite crystal & holistic center.",
+    "Come stop by the crystal shop Chicago keeps talking about.",
+    "#1 vibe in Chicagoland for crystals & healing.",
+    "Chicago’s best-loved crystals in the Chicagoland area.",
+    "Come stop by the #1-vibe crystal & holistic center in Chicagoland.",
+    "Arlington Heights pride: the crystal shop Chicago can’t stop talking about.",
+    "Chicagoland keeps voting us their favorite crystal hangout — we’ll take it!",
+    "Warm, weird, wonderful — Chicago’s favorite crystal shop energy.",
+    "Crystals, healing, and that #1 Chicagoland shop feeling."
+  ],
+  "badge_claims": [
+    "Chicago’s #1\ntalked-about\ncrystal shop",
+    "Chicagoland’s\nfavorite crystal\n& holistic center",
+    "#1 vibe\nChicagoland\ncrystals & healing",
+    "Chicago keeps\ntalking about\nthis crystal shop",
+    "Favorite crystal\nshop energy\nChicagoland",
+    "#1 local vibe\ncrystals &\nhealing"
+  ],
+  "badge_styles": [
+    "banner",
+    "circle",
+    "pill",
+    "ribbon",
+    "corner"
+  ],
+  "badge_on_morning_flyers": true,
+  "badge_on_night": true,
+  "badge_skip_celestial": true,
+  "first_comment_platforms": [
+    "facebook",
+    "instagram"
+  ],
+  "colors": {
+    "gold": [212, 175, 85],
+    "ink": [28, 22, 40],
+    "cream": [250, 245, 232],
+    "eggplant": [72, 42, 90]
+  }
+}

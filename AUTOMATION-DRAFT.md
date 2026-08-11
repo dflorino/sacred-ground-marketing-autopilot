@@ -314,3 +314,14 @@ Hard rules:
 4. Secrets: `ZERNIO_API_KEY` (+ optional `HEYGEN_*`)
 5. Status: **Inactive** until Founder approves first auto run
 6. Keep separate from image automations (9am / 4pm Tue / 5pm / 7pm)
+
+---
+
+## Social proof (playful shop pride — Aug 11 2026)
+
+Rotating local-pride lines (not formal award citations) live in `config/social_proof.json`
+(`enabled: true`). See **docs/SOCIAL-PROOF.md**.
+
+- Captions + Zernio **firstComment** (FB/IG) rotate via `marketing/social_proof.py`
+- Morning flyer badges rotate styles (banner / circle / pill / ribbon / corner)
+- Do **not** republish already-live posts just to add a claim line

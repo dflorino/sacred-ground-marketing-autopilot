@@ -928,6 +928,25 @@ def render_local_flyer(
         fill=gold,
     )
 
+    # Rotating playful shop-pride badge (banner / circle / pill / ribbon / corner).
+    # Stays in the photo area above the cream footer — not a fake award seal.
+    try:
+        from . import social_proof as sp
+
+        seed = f"morning_flyer|{day.isoformat()}|{variant}"
+        if sp.should_badge_morning(seed):
+            badge_text = sp.pick_badge_claim(seed)
+            badge_style = sp.pick_badge_style(seed)
+            img, _drawn = sp.draw_badge(
+                img,
+                style=badge_style,
+                text=badge_text,
+                photo_bottom=CANVAS - footer_h,
+            )
+            draw = ImageDraw.Draw(img, "RGBA")
+    except Exception:
+        pass
+
     img = img.filter(ImageFilter.SMOOTH_MORE)
     assert_price_free(copy["label"], *copy.get("covers") or [], *copy.get("lines") or [])
 
