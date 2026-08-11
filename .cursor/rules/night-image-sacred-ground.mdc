@@ -70,8 +70,15 @@ opacity) on social plates — bake into prebranded plates when overlays do not r
 - New plates: save under `assets/sg-night-creative-*.png`, upload via WP `upload_media`,
   wire URL into atmosphere; keep local PNG as source of truth
 
+## Shop pride overlays
+
+- **Never** stamp social-proof badges onto existing night / celestial pool plates
+- Captions + first-comment claims stay ON; on-image pride is designed-in only for
+  **NEW** generations (`docs/SOCIAL-PROOF.md`, `.cursor/rules/social-proof-on-image.mdc`)
+
 ## Do not
 
 - Do not republish an already-live tonight post just to swap the creative
 - Do not treat overlay branding as satisfying this rule
 - Do not put event lists or prices on the night photo (events stay in caption)
+- Do not remake the celestial pack or active pool just to add Chicago #1 stickers

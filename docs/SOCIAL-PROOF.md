@@ -14,37 +14,42 @@ These lines are **general / playful shop pride** — “i vote it the best! lol�
 
 Repo search found **no** confirmed Chicago Reader / Best Of award source. Keep claims warm and local; do not invent a citation. Toggle `"enabled": false` to silence everywhere.
 
-## Where it appears (rotates)
+## Where it appears
 
-1. **Captions** — short line woven before hashtags on morning / afternoon / week_ahead / specialty (placement mode rotates). **ON.**
-2. **First comment** — Zernio `platformSpecificData.firstComment` on Facebook + Instagram when the placement mode is `first_comment` or `both` (live on publish). **ON.**
-3. **On-image badges** — **OFF by default** until Founder greenlights a style
-   (Aug 11 ~2:52pm CT: “no rebuild these look bad” — v1 sticker spam + v2 tiny/unreadable both rejected).
+1. **Captions** — short line woven before hashtags (placement mode rotates). **ON.**
+2. **First comment** — Zernio `platformSpecificData.firstComment` on Facebook + Instagram. **ON.**
+3. **On-image** — **not via overlays on existing art.**
 
-### On-image rebuild (preview only)
+## On-image cutover (Founder Aug 11 ~3:05pm CT) — hard
 
-Two strong styles only (`badge_styles`: `seal` · `footer_band`):
+> “NO REMAKE NEW IMAGES THAT WILL START AFTER THE ONES MADE WITHOUT THE BADGES END”
 
-| Style | Look |
+Meaning:
+
+| Do | Do not |
 |---|---|
-| `seal` | Substantial gold/cream circular wax seal (~14–18% image width), readable 2–3 line claim, empty margin only (not over title/cards/logo) |
-| `footer_band` | Dedicated cream band **extending the canvas** below photo/flyer content — brand-footer energy, not a floating pill over art |
+| Keep posting current no-badge morning / night / celestial inventory | Stamp badges onto already-made flyers or pool plates |
+| Keep rotating caption + first-comment claims | Remake Aug 6 / v3 / v4 overlay preview spam on finished art |
+| When generating **NEW** art later, bake pride into the generation prompt | Post-hoc sticker / seal / footer_band overlay on old creatives |
 
-Gates (both `false` until approved):
+Config flags:
 
-- `badge_on_morning_flyers`
-- `badge_on_night`
+- `badge_on_morning_flyers`: **false** — no live morning overlay
+- `badge_on_night`: **false** — no live night overlay
+- `only_on_newly_generated` / `never_overlay_existing`: **true**
+- `designed_in_on_new_generation`: **true** — future generators get a designed-in pride brief
+- `badge_from_date`: optional `YYYY-MM-DD` (America/Chicago); `null` = brief applies whenever a **new** image is generated
 
-When re-enabled: morning flyers bake via `render_local_flyer`; night locals via `apply_night_badge_if_eligible` (skips pure celestial by default). Remote pool URLs are not rewritten at publish.
+Code:
 
-## Config
+- `social_proof.designed_in_generation_brief(seed, day=…, surface="morning"|"night")` → prompt fragment for **new** gens only
+- Wired into `morning_flyers.build_generation_prompt` for future AI flyer generations
+- Night / celestial **regen** prompts should call the same helper — do **not** regenerate the whole pack now
+- `should_badge_morning` / `should_badge_night` / `apply_badge_to_path` refuse overlays while `never_overlay_existing` is true
 
-- Claims: `claims` (caption / first comment) + short `badge_claims` (2–3 lines for seal; footer_band joins with `·`)
-- Styles: `badge_styles` (`seal`, `footer_band`)
-- Placement mix: `placement_modes` (`caption` / `first_comment` / `both`)
-- Status note: `on_image_status`
+Cursor rule: `.cursor/rules/social-proof-on-image.mdc`.
 
-## Sample lines
+## Sample caption lines
 
 - Chicago’s #1 talked-about crystal shop.
 - Chicagoland’s favorite crystal & holistic center.

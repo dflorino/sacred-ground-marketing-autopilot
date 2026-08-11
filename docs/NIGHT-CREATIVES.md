@@ -35,6 +35,15 @@ Cursor rule: `.cursor/rules/night-image-sacred-ground.mdc`.
 3. Set `url` on the pool entry; `sg_identity: "pass"`; remove from `creative_pool_needs_sg_identity`.
 4. Atmosphere code skips any plate with `sg_identity` fail, `active: false`, or `daytime_sun: true`.
 
+## Shop pride (Founder Aug 11 ~3:05pm CT)
+
+- **Do not** overlay Chicago #1 / favorite badges onto existing night or celestial pool plates.
+- Keep posting the current no-badge inventory until it naturally rotates out.
+- When generating a **NEW** night creative later, optionally append
+  `social_proof.designed_in_generation_brief(seed, day=…, surface="night")` to the
+  generation prompt so pride is designed into the plate (not a sticker after the fact).
+- Live gates `badge_on_night` stay **false**.
+
 ## Audit
 
 See `notes` + `creative_pool` / `creative_pool_retired_daytime_sun` /

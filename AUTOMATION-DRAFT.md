@@ -323,5 +323,9 @@ Rotating local-pride lines (not formal award citations) live in `config/social_p
 (`enabled: true`). See **docs/SOCIAL-PROOF.md**.
 
 - Captions + Zernio **firstComment** (FB/IG) rotate via `marketing/social_proof.py` (**ON**)
-- On-image badges **OFF** (`badge_on_morning_flyers` / `badge_on_night` = false) until Founder greenlights; preview rebuild styles: `seal` · `footer_band`
-- Do **not** republish already-live posts just to add a claim line
+- On-image overlays **OFF** forever for existing inventory (`badge_on_morning_flyers` /
+  `badge_on_night` = false; `never_overlay_existing` = true). Do **not** stamp badges onto
+  already-made morning flyers, celestial plates, or night pool creatives.
+- Future **NEW** image generations may bake pride into the art brief via
+  `designed_in_generation_brief()` (`designed_in_on_new_generation`: true) — not a post-hoc sticker.
+- Do **not** republish already-live posts just to add a claim line or badge overlay

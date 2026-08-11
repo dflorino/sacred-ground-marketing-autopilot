@@ -1,7 +1,12 @@
 {
   "enabled": true,
   "honesty_note": "Playful shop pride / local vibe — NOT a formal third-party award citation. Founder tone (Aug 11 2026): 'i vote it the best! lol'. Prefer warm bold local pride (#1 talked-about, favorite, Chicago keeps talking about). Soften or avoid fake verified 'officially voted by [publication]' + trophy award year language. No inventing Chicago Reader / Best Of winners unless Founder confirms a real source.",
-  "on_image_status": "OFF until Founder greenlights a style (Aug 11 ~2:52pm CT). v1 sticker spam + v2 tiny marks both rejected. Preview-only rebuild: seal + footer_band. Captions + first_comment stay ON.",
+  "on_image_status": "NO overlays on existing inventory (Founder Aug 11 ~3:05pm CT). Do not stamp badges onto already-made morning flyers, celestial plates, or night creatives. Captions + first_comment stay ON. On-image pride is designed-in only when generating NEW art after the current no-badge inventory is used up — never a post-hoc sticker remake of old plates.",
+  "only_on_newly_generated": true,
+  "never_overlay_existing": true,
+  "designed_in_on_new_generation": true,
+  "badge_from_date": null,
+  "badge_from_date_note": "Optional America/Chicago cutover YYYY-MM-DD. When set, generation prompts may include designed-in pride for NEW art on/after that date. null = include designed-in brief whenever a NEW image is generated (still never overlay old inventory).",
   "caption_campaigns": [
     "today",
     "afternoon_spotlight",
@@ -30,16 +35,49 @@
     "Crystals, healing, and that #1 Chicagoland shop feeling."
   ],
   "badge_claims": [
-    "Chicago’s #1\ncrystal shop",
-    "Chicagoland’s\nfavorite",
-    "#1 local\nvibe",
-    "Chicago keeps\ntalking",
-    "Favorite\ncrystal shop",
-    "#1 vibe\nChicagoland"
+    "Chicago’s #1\nCrystal Shop",
+    "Chicagoland’s\nFavorite",
+    "#1 Local\nCrystal Shop",
+    "Chicago’s\nFavorite"
+  ],
+  "badge_claims_by_style": {
+    "seal": [
+      "Chicago’s #1\nCrystal Shop",
+      "Chicagoland’s\nFavorite",
+      "#1 Local\nCrystal Shop"
+    ],
+    "footer_band": [
+      "Chicagoland’s favorite crystal & holistic center",
+      "Chicago’s #1 talked-about crystal shop",
+      "The crystal shop Chicago keeps talking about"
+    ],
+    "top_banner": [
+      "Chicago’s #1 crystal shop",
+      "Chicagoland’s favorite crystal center",
+      "#1 vibe · crystals & healing · Chicagoland"
+    ],
+    "ribbon": [
+      "#1 CHICAGO",
+      "CHICAGO #1",
+      "#1 LOCAL"
+    ],
+    "medallion": [
+      "Chicago’s #1",
+      "#1 Local",
+      "Favorite"
+    ]
+  },
+  "designed_in_prompt_styles": [
+    "seal",
+    "top_banner",
+    "footer_band"
   ],
   "badge_styles": [
     "seal",
-    "footer_band"
+    "footer_band",
+    "top_banner",
+    "ribbon",
+    "medallion"
   ],
   "badge_on_morning_flyers": false,
   "badge_on_night": false,
@@ -50,8 +88,10 @@
   ],
   "colors": {
     "gold": [212, 175, 85],
+    "gold_bright": [232, 198, 110],
     "ink": [28, 22, 40],
     "cream": [250, 245, 232],
-    "eggplant": [72, 42, 90]
+    "eggplant": [42, 24, 58],
+    "navy": [22, 32, 58]
   }
 }

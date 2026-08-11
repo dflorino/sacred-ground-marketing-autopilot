@@ -472,6 +472,13 @@ def build_generation_prompt(
                 + " · ".join(free_titles)
                 + "."
             )
+    from . import social_proof as sp
+
+    pride_bit = sp.designed_in_generation_brief(
+        f"morning|{day.isoformat()}|{variant}",
+        day=day,
+        surface="morning",
+    )
     shared = (
         f"Chicago date {day.isoformat()}. "
         f"Date/time text: {copy.get('date_short')}. "
@@ -490,6 +497,7 @@ def build_generation_prompt(
         "drab, muddy, beige, grey, desaturated purple sludge, empty near-black "
         "voids, giant blank cards, thin faint line-art on a dead field. Vary "
         "gold/jewel accents by day — versions of the system, not exact clones."
+        f"{pride_bit}"
     )
     if is_b:
         bg_energy = (
@@ -928,24 +936,10 @@ def render_local_flyer(
         fill=gold,
     )
 
-    # Optional shop-pride mark (seal / footer_band). Gated OFF until Founder
-    # greenlights — never over wordmark, cards, logo, or phone footer.
-    try:
-        from . import social_proof as sp
-
-        seed = f"morning_flyer|{day.isoformat()}|{variant}"
-        if sp.should_badge_morning(seed):
-            badge_text = sp.pick_badge_claim(seed)
-            badge_style = sp.pick_badge_style(seed)
-            img, _drawn = sp.draw_badge(
-                img,
-                style=badge_style,
-                text=badge_text,
-                photo_bottom=CANVAS - footer_h,
-            )
-            draw = ImageDraw.Draw(img, "RGBA")
-    except Exception:
-        pass
+    # No post-hoc shop-pride overlays on flyers (Founder Aug 11 ~3:05pm CT).
+    # Existing inventory stays badge-free. FUTURE AI generations may bake pride
+    # into the art via social_proof.designed_in_generation_brief() in
+    # build_generation_prompt — never stamp finished plates here.
 
     img = img.filter(ImageFilter.SMOOTH_MORE)
     assert_price_free(copy["label"], *copy.get("covers") or [], *copy.get("lines") or [])

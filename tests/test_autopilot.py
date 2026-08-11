@@ -2012,38 +2012,41 @@ class AutopilotTests(unittest.TestCase):
                 meta["claim"],
             )
 
-    def test_social_proof_badge_draw_styles(self) -> None:
+    def test_social_proof_no_overlay_on_existing_inventory(self) -> None:
+        """Founder cutover: never stamp badges onto finished plates; captions OK."""
+        from marketing import morning_flyers as mf
         from marketing import social_proof as sp
-        from PIL import Image
 
         sp.clear_social_proof_cache()
-        img = Image.new("RGB", (1080, 1080), (40, 30, 60))
-        self.assertEqual(set(sp.badge_styles()), {"seal", "footer_band"})
-        # Live on-image gates stay OFF until Founder approves a style.
+        self.assertTrue(sp.never_overlay_existing())
+        self.assertTrue(sp.only_on_newly_generated())
         self.assertFalse(sp.should_badge_morning("any-seed"))
-        self.assertFalse(sp.should_badge_night(seed="any-seed"))
-
-        out_seal, drawn = sp.draw_badge(
-            img,
-            style="seal",
-            text="Chicago’s #1\ncrystal shop",
-            photo_bottom=930,
+        self.assertFalse(sp.should_badge_night(seed="any-seed", mode="creative"))
+        self.assertFalse(sp.should_badge_night(seed="cel", mode="celestial"))
+        self.assertIsNone(
+            sp.apply_badge_to_path(
+                "assets/sg-morning-flyer-2026-08-06-today-collage.png",
+                seed="must-refuse",
+            )
         )
-        self.assertEqual(drawn, "seal")
-        self.assertEqual(out_seal.size, (1080, 1080))
-        self.assertNotEqual(out_seal.tobytes(), img.tobytes())
 
-        out_band, drawn = sp.draw_badge(
-            img,
-            style="footer_band",
-            text="Chicago’s #1\ncrystal shop",
-            photo_bottom=930,
+        # Future NEW generation prompts may include designed-in pride brief.
+        self.assertTrue(sp.designed_in_on_new_generation())
+        brief = sp.designed_in_generation_brief(
+            "new-flyer", day=date(2026, 8, 20), surface="morning"
         )
-        self.assertEqual(drawn, "footer_band")
-        # footer_band extends the canvas below the photo/flyer content
-        self.assertEqual(out_band.size[0], 1080)
-        self.assertGreater(out_band.size[1], 1080)
-        self.assertNotEqual(out_band.tobytes()[: 1080 * 1080 * 3], img.tobytes())
+        self.assertIn("DESIGNED-IN SHOP PRIDE", brief)
+        self.assertIn("not a post-hoc", brief.lower())
+
+        prompt = mf.build_generation_prompt(
+            date(2026, 8, 20),
+            {
+                "date_short": "Thu Aug 20",
+                "covers": ["Tarot with Adie"],
+                "empty_day": False,
+            },
+        )
+        self.assertIn("DESIGNED-IN SHOP PRIDE", prompt)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,32 @@
+# Social proof on-image — designed-in only (Founder Aug 11, 2026)
+
+## Hard rule
+
+**Do NOT stamp / overlay shop-pride badges onto already-made images.**
+
+Forbidden targets for post-hoc badges:
+
+- Existing morning flyers (`config/morning_flyers.json`, `assets/sg-morning-flyer-*`)
+- Existing celestial plates (`assets/celestial-*`, dated celestial pack)
+- Existing night creatives already in `config/image_atmosphere.json` pools
+- Any plate that was finished **without** a pride mark — leave it alone
+
+Founder (Aug 11 ~3:05pm CT): *“NO REMAKE NEW IMAGES THAT WILL START AFTER THE ONES MADE WITHOUT THE BADGES END”* — meaning: keep posting the current no-badge inventory; only **new** art made after that inventory ends may carry on-image pride, and it must be **designed into the generation**, not glued on later.
+
+## What stays ON
+
+- Caption shop-pride lines (`config/social_proof.json` → `claims`)
+- Zernio first-comment pride lines
+- Gates: `badge_on_morning_flyers` / `badge_on_night` stay **false** (no overlay pipeline)
+
+## What happens for FUTURE new images only
+
+When generating a **new** morning flyer or night creative (not remaking inventory):
+
+1. Check `designed_in_on_new_generation` (+ optional `badge_from_date` America/Chicago)
+2. Include a designed-in pride brief in the **generation prompt** (seal / cream banner / elegant footer claim as part of the art)
+3. Never run overlay remakes / v3–v4 preview spam on Aug 6 or other finished plates
+
+Config flags: `only_on_newly_generated`, `never_overlay_existing`, `designed_in_on_new_generation`.
+
+See `docs/SOCIAL-PROOF.md`.

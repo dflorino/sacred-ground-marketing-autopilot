@@ -5,16 +5,21 @@ the best! lol” energy — NOT formal third-party award citations. Do not inven
 Chicago Reader / Best Of winners unless Founder confirms a real source.
 See config/social_proof.json → honesty_note + enabled flag.
 
-On-image badges (Aug 11 ~2:52pm CT): OFF by default until Founder greenlights
-a style. Preview rebuild uses only seal + footer_band (v1 sticker / v2 tiny
-marks both rejected). Captions + first_comment stay enabled.
+On-image (Founder Aug 11 ~3:05pm CT cutover):
+- Captions + first_comment stay ON.
+- NEVER overlay / stamp badges onto already-made morning flyers, celestial
+  plates, or night creatives in the pool.
+- On-image pride is designed-in only when generating NEW art after the current
+  no-badge inventory ends — bake into the generation prompt, not a sticker.
+- badge_on_morning_flyers / badge_on_night stay false (no live overlay path).
 """
 from __future__ import annotations
 
 import hashlib
 import os
+from datetime import date, datetime
 from functools import lru_cache
-from typing import Any, Dict, List, Optional, Sequence, Tuple
+from typing import Any, Dict, List, Optional, Sequence, Tuple, Union
 
 from .paths import CONFIG_DIR, _load_json
 
@@ -26,8 +31,8 @@ MODE_FIRST_COMMENT = "first_comment"
 MODE_BOTH = "both"
 MODE_SKIP = "skip"
 
-# Two strong styles only (Founder Aug 11 ~2:52pm CT rebuild).
-BADGE_STYLES = ("seal", "footer_band")
+# Style names kept for designed-in generation briefs (not live overlays).
+BADGE_STYLES = ("seal", "footer_band", "top_banner", "ribbon", "medallion")
 
 
 @lru_cache(maxsize=1)
@@ -68,6 +73,13 @@ def badge_claims() -> List[str]:
     return [str(c).strip() for c in raw if str(c).strip()]
 
 
+def badge_claims_for_style(style: str) -> List[str]:
+    """Tight per-format claims (2-line seal, 1-line banner, short ribbon, etc.)."""
+    by_style = social_proof_config().get("badge_claims_by_style") or {}
+    raw = by_style.get(str(style or "").lower()) or badge_claims()
+    return [str(c).strip() for c in raw if str(c).strip()] or badge_claims()
+
+
 def badge_styles() -> List[str]:
     styles = [
         str(s).strip().lower()
@@ -82,9 +94,19 @@ def pick_claim(seed: str) -> str:
     return _pick(claims(), f"sp-claim|{seed}", "Chicagoland’s favorite crystal & holistic center.")
 
 
-def pick_badge_claim(seed: str) -> str:
-    """Shorter multi-line claim for on-image badges."""
-    return _pick(badge_claims(), f"sp-badge-claim|{seed}", "Chicago’s #1\ncrystal shop")
+def pick_badge_claim(seed: str, *, style: Optional[str] = None) -> str:
+    """Shorter multi-line claim for on-image badges (style-aware when provided)."""
+    if style:
+        opts = badge_claims_for_style(style)
+        fallback = {
+            "seal": "Chicago’s #1\nCrystal Shop",
+            "footer_band": "Chicagoland’s favorite crystal & holistic center",
+            "top_banner": "Chicago’s #1 crystal shop",
+            "ribbon": "#1 CHICAGO",
+            "medallion": "Chicago’s #1",
+        }.get(style.lower(), "Chicago’s #1\nCrystal Shop")
+        return _pick(opts, f"sp-badge-claim|{style}|{seed}", fallback)
+    return _pick(badge_claims(), f"sp-badge-claim|{seed}", "Chicago’s #1\nCrystal Shop")
 
 
 def pick_badge_style(seed: str) -> str:
@@ -110,17 +132,114 @@ def pick_placement_mode(seed: str, *, campaign: str = "") -> str:
     return modes[_pick_index(len(modes), f"sp-place|{seed}|{campaign}")]
 
 
+def never_overlay_existing() -> bool:
+    """Hard policy: do not stamp badges onto finished inventory plates."""
+    cfg = social_proof_config()
+    # Default true — Founder Aug 11 ~3:05pm CT cutover.
+    if "never_overlay_existing" in cfg:
+        return bool(cfg.get("never_overlay_existing"))
+    return bool(cfg.get("only_on_newly_generated", True))
+
+
+def only_on_newly_generated() -> bool:
+    return bool(social_proof_config().get("only_on_newly_generated", True))
+
+
+def designed_in_on_new_generation() -> bool:
+    """When True, NEW image generation prompts may include a designed-in pride mark."""
+    return bool(social_proof_config().get("designed_in_on_new_generation", False))
+
+
+def badge_from_date() -> Optional[date]:
+    """Optional America/Chicago cutover day for designed-in generation briefs."""
+    raw = social_proof_config().get("badge_from_date")
+    if not raw:
+        return None
+    try:
+        return date.fromisoformat(str(raw)[:10])
+    except ValueError:
+        return None
+
+
+def should_designed_in_for_day(day: Union[date, datetime, str, None] = None) -> bool:
+    """True when a FUTURE new-image generation may bake pride into the art brief.
+
+    Never authorizes overlaying existing inventory. Overlay gates stay separate
+    and remain false (`badge_on_morning_flyers` / `badge_on_night`).
+    """
+    if not enabled() or not designed_in_on_new_generation():
+        return False
+    cut = badge_from_date()
+    if cut is None:
+        return True
+    if day is None:
+        return False
+    if isinstance(day, datetime):
+        d = day.date()
+    elif isinstance(day, date):
+        d = day
+    else:
+        try:
+            d = date.fromisoformat(str(day)[:10])
+        except ValueError:
+            return False
+    return d >= cut
+
+
+def designed_in_generation_brief(
+    seed: str = "",
+    *,
+    day: Union[date, datetime, str, None] = None,
+    surface: str = "morning",
+) -> str:
+    """Prompt fragment for NEW art only — boutique pride designed into the plate.
+
+    Returns "" when designed-in is off / before badge_from_date. Never use this
+    to justify overlaying finished flyers or pool creatives.
+    """
+    if not should_designed_in_for_day(day):
+        return ""
+    styles = [
+        str(s).strip().lower()
+        for s in (social_proof_config().get("designed_in_prompt_styles") or ["seal", "top_banner"])
+        if str(s).strip()
+    ]
+    styles = [s for s in styles if s in BADGE_STYLES] or ["seal", "top_banner"]
+    style = styles[_pick_index(len(styles), f"sp-designed-in|{surface}|{seed}")]
+    claim = pick_badge_claim(seed or str(day or "new"), style=style).replace("\n", " / ")
+    surface_bit = (
+        "morning flyer"
+        if surface == "morning"
+        else "night / week-ahead creative"
+    )
+    return (
+        f" DESIGNED-IN SHOP PRIDE (new {surface_bit} only — not a post-hoc "
+        f"sticker on old art): elegantly bake a boutique '{style}' pride mark "
+        f"into the composition with claim '{claim}' (Chicago’s #1 / favorite "
+        "crystal shop energy). Deep eggplant or navy + gold for seals; cream "
+        "band with dark ink for footer/banner. Keep clear of event cards, "
+        "Sacred Ground script wordmark, and the circular sun logo. Playful "
+        "local pride — not a fake award citation."
+    )
+
+
 def should_badge_morning(seed: str) -> bool:
-    # Default OFF — Founder rejected v1/v2 on-image marks (Aug 11 ~2:52pm CT).
+    """Live overlay on morning flyers — permanently gated OFF for inventory.
+
+    Founder cutover: never stamp existing plates. Designed-in pride for NEW
+    generations uses designed_in_generation_brief() instead.
+    """
+    if never_overlay_existing():
+        return False
     if not enabled() or not social_proof_config().get("badge_on_morning_flyers", False):
         return False
-    # ~4/5 mornings get a badge so layout still breathes.
     return _pick_index(5, f"sp-mf-badge|{seed}") != 0
 
 
 def should_badge_night(*, mode: str = "", creative_id: str = "", seed: str = "") -> bool:
-    """Night plates: prefer shop/generic; skip pure celestial when configured."""
-    # Default OFF — Founder rejected v1/v2 on-image marks (Aug 11 ~2:52pm CT).
+    """Live overlay on night plates — gated OFF; never touch celestial/pool inventory."""
+    if never_overlay_existing():
+        return False
     if not enabled() or not social_proof_config().get("badge_on_night", False):
         return False
     if social_proof_config().get("badge_skip_celestial", True):
@@ -128,7 +247,6 @@ def should_badge_night(*, mode: str = "", creative_id: str = "", seed: str = "")
         cid = (creative_id or "").lower()
         if m == "celestial" or "celestial" in cid:
             return False
-    # Subtle: ~3/5 nights
     return _pick_index(5, f"sp-night-badge|{seed}") in (0, 1, 2)
 
 
@@ -151,7 +269,7 @@ def plan_for_post(
     mode = pick_placement_mode(seed, campaign=campaign)
     claim = pick_claim(seed) if mode != MODE_SKIP else ""
     badge_style = pick_badge_style(seed)
-    badge_text = pick_badge_claim(seed)
+    badge_text = pick_badge_claim(seed, style=badge_style)
     in_caption = mode in (MODE_CAPTION, MODE_BOTH) and bool(claim)
     in_comment = (
         mode in (MODE_FIRST_COMMENT, MODE_BOTH)
@@ -232,27 +350,51 @@ def enrich_caption_dict(
 
 def _colors() -> Dict[str, Tuple[int, int, int]]:
     raw = social_proof_config().get("colors") or {}
+
     def _rgb(key: str, default: Tuple[int, int, int]) -> Tuple[int, int, int]:
         v = raw.get(key) or list(default)
         return (int(v[0]), int(v[1]), int(v[2]))
+
     return {
         "gold": _rgb("gold", (212, 175, 85)),
+        "gold_bright": _rgb("gold_bright", (232, 198, 110)),
         "ink": _rgb("ink", (28, 22, 40)),
         "cream": _rgb("cream", (250, 245, 232)),
-        "eggplant": _rgb("eggplant", (72, 42, 90)),
+        "eggplant": _rgb("eggplant", (42, 24, 58)),
+        "navy": _rgb("navy", (22, 32, 58)),
     }
 
 
-def _badge_font(size: int):
+def _font(size: int, *, bold: bool = True, serif: bool = True):
     from PIL import ImageFont
 
-    candidates = [
-        "/System/Library/Fonts/Supplemental/Georgia Bold.ttf",
-        "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
-        "/System/Library/Fonts/Avenir Next.ttc",
-        "/Library/Fonts/Arial Unicode.ttf",
-        "/System/Library/Fonts/Helvetica.ttc",
-    ]
+    if serif and bold:
+        candidates = [
+            "/System/Library/Fonts/Supplemental/Georgia Bold.ttf",
+            "/System/Library/Fonts/Supplemental/Times New Roman Bold.ttf",
+            "/Library/Fonts/Merriweather_Bold.ttf",
+            "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
+        ]
+    elif serif:
+        candidates = [
+            "/System/Library/Fonts/Supplemental/Georgia.ttf",
+            "/System/Library/Fonts/Supplemental/Times New Roman.ttf",
+            "/Library/Fonts/Merriweather_Regular.ttf",
+            "/System/Library/Fonts/Supplemental/Arial.ttf",
+        ]
+    elif bold:
+        candidates = [
+            "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
+            "/System/Library/Fonts/Supplemental/Arial Black.ttf",
+            "/System/Library/Fonts/Supplemental/Georgia Bold.ttf",
+            "/System/Library/Fonts/Helvetica.ttc",
+        ]
+    else:
+        candidates = [
+            "/System/Library/Fonts/Supplemental/Arial.ttf",
+            "/System/Library/Fonts/Supplemental/Georgia.ttf",
+            "/System/Library/Fonts/Helvetica.ttc",
+        ]
     for path in candidates:
         if os.path.isfile(path):
             try:
@@ -260,6 +402,11 @@ def _badge_font(size: int):
             except OSError:
                 continue
     return ImageFont.load_default()
+
+
+def _badge_font(size: int):
+    """Default bold serif for badges."""
+    return _font(size, bold=True, serif=True)
 
 
 def _wrap_lines(text: str) -> List[str]:
@@ -271,8 +418,8 @@ def _wrap_lines(text: str) -> List[str]:
     return lines or ["Chicagoland favorite"]
 
 
-def _one_line(lines: Sequence[str], *, max_chars: int = 42) -> str:
-    """Join badge lines for footer band — confident single claim."""
+def _one_line(lines: Sequence[str], *, max_chars: int = 52) -> str:
+    """Join badge lines for single-line formats."""
     one = " · ".join(str(ln).strip() for ln in lines if str(ln).strip())
     one = " ".join(one.split())
     if len(one) > max_chars:
@@ -280,10 +427,10 @@ def _one_line(lines: Sequence[str], *, max_chars: int = 42) -> str:
     return one or "Chicagoland favorite"
 
 
-def _fit_lines(lines: Sequence[str], *, max_lines: int = 3) -> List[str]:
+def _fit_lines(lines: Sequence[str], *, max_lines: int = 2) -> List[str]:
     cleaned = [str(ln).strip() for ln in lines if str(ln).strip()]
     if not cleaned:
-        return ["Chicagoland favorite"]
+        return ["Chicago’s #1", "Crystal Shop"]
     if len(cleaned) <= max_lines:
         return cleaned
     head = list(cleaned[: max_lines - 1])
@@ -292,7 +439,9 @@ def _fit_lines(lines: Sequence[str], *, max_lines: int = 3) -> List[str]:
     return head
 
 
-def _draw_centered_lines(draw, lines: Sequence[str], *, cx: int, cy: int, font, fill, gap: int = 3) -> None:
+def _draw_centered_lines(
+    draw, lines: Sequence[str], *, cx: int, cy: int, font, fill, gap: int = 3
+) -> None:
     widths: List[int] = []
     heights: List[int] = []
     for ln in lines:
@@ -325,6 +474,351 @@ def _seal_font_for(draw, lines: Sequence[str], *, max_w: int, max_h: int, start:
     return _badge_font(11), 2
 
 
+def _draw_seal(base, *, lines: Sequence[str], cols: Dict, w: int, h: int, pb: int, pad: int):
+    """Boutique wax seal: deep eggplant disc + gold ring + gold text."""
+    from PIL import Image, ImageDraw, ImageFilter
+
+    gold = cols["gold"]
+    gold_bright = cols["gold_bright"]
+    eggplant = cols["eggplant"]
+    navy = cols["navy"]
+
+    # 16–20% of image width — substantial, not a chip sticker.
+    diam = max(130, int(w * 0.175))
+    diam = min(diam, int(w * 0.195))
+    rx = ry = diam // 2
+
+    # True empty margin: snug top-right corner of photo area — clear of
+    # header script / event cards (left) / sun logo (bottom-left).
+    cx = w - rx - max(8, int(pad * 0.55))
+    cy = ry + max(8, int(pad * 0.55))
+    cy = min(cy, pb - ry - 4)
+    cy = max(cy, ry + 6)
+
+    overlay = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+
+    # Soft drop shadow
+    sh = max(5, int(w * 0.009))
+    shadow = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    sd = ImageDraw.Draw(shadow)
+    sd.ellipse(
+        (cx - rx + sh, cy - ry + sh, cx + rx + sh, cy + ry + sh),
+        fill=(8, 4, 16, 130),
+    )
+    shadow = shadow.filter(ImageFilter.GaussianBlur(radius=max(3, sh // 2)))
+    overlay = Image.alpha_composite(overlay, shadow)
+    draw = ImageDraw.Draw(overlay)
+
+    # Outer gold glow (thin — does not wash out the disc)
+    glow = max(2, int(w * 0.0035))
+    draw.ellipse(
+        (cx - rx - glow, cy - ry - glow, cx + rx + glow, cy + ry + glow),
+        fill=(*gold, 70),
+    )
+    # Fully opaque deep eggplant disc (never translucent charcoal)
+    rim = max(7, int(w * 0.009))
+    draw.ellipse(
+        (cx - rx, cy - ry, cx + rx, cy + ry),
+        fill=(*eggplant, 255),
+        outline=(*gold, 255),
+        width=rim,
+    )
+    # Subtle navy depth ring (opaque, not a wash over art)
+    inner = max(10, rx - rim - 3)
+    draw.ellipse(
+        (cx - inner, cy - inner, cx + inner, cy + inner),
+        fill=(*navy, 255),
+    )
+    # Soft eggplant center so text field stays rich, not flat black
+    core = max(8, int(inner * 0.92))
+    draw.ellipse(
+        (cx - core, cy - core, cx + core, cy + core),
+        fill=(*eggplant, 255),
+    )
+    # Inner gold decorative ring
+    ring_r = max(14, rx - max(16, int(rx * 0.20)))
+    draw.ellipse(
+        (cx - ring_r, cy - ring_r, cx + ring_r, cy + ring_r),
+        outline=(*gold_bright, 240),
+        width=max(2, int(w * 0.004)),
+    )
+
+    seal_lines = _fit_lines(lines, max_lines=2)
+    text_box_w = int(ring_r * 1.68)
+    text_box_h = int(ring_r * 1.40)
+    font, gap = _seal_font_for(
+        draw,
+        seal_lines,
+        max_w=text_box_w,
+        max_h=text_box_h,
+        start=max(22, int(diam * 0.165)),
+    )
+    # Bright gold text on opaque dark disc — high contrast
+    _draw_centered_lines(
+        draw, seal_lines, cx=cx, cy=cy, font=font, fill=(*gold_bright, 255), gap=gap
+    )
+
+    return Image.alpha_composite(base, overlay)
+
+
+def _draw_footer_band(base, *, lines: Sequence[str], cols: Dict, w: int, h: int, pad: int):
+    """Extend canvas with a proper cream brand band — poster footer, not a sticker."""
+    from PIL import Image, ImageDraw
+
+    gold = cols["gold"]
+    gold_bright = cols["gold_bright"]
+    ink = cols["ink"]
+    cream = cols["cream"]
+
+    band_h = max(72, int(w * 0.078))
+    new_h = h + band_h
+    out = Image.new("RGBA", (w, new_h), (*cream, 255))
+    out.paste(base, (0, 0))
+    draw = ImageDraw.Draw(out)
+    y0 = h
+
+    # Cream field
+    draw.rectangle((0, y0, w, new_h), fill=(*cream, 255))
+    # Gold double rules (ticket / boutique poster energy)
+    draw.line((pad, y0 + 8, w - pad, y0 + 8), fill=(*gold, 255), width=2)
+    draw.line((pad, y0 + 12, w - pad, y0 + 12), fill=(*gold, 140), width=1)
+    draw.line((pad, new_h - 10, w - pad, new_h - 10), fill=(*gold, 200), width=2)
+    draw.line((pad, new_h - 6, w - pad, new_h - 6), fill=(*gold_bright, 120), width=1)
+
+    # Small gold diamond accents
+    mid_y = y0 + band_h // 2
+    for ax in (pad + 10, w - pad - 10):
+        d = 5
+        draw.polygon(
+            [(ax, mid_y - d), (ax + d, mid_y), (ax, mid_y + d), (ax - d, mid_y)],
+            fill=(*gold, 220),
+        )
+
+    one = _one_line(lines, max_chars=48)
+    # Elegant serif primary
+    font = _font(max(22, int(w * 0.030)), bold=True, serif=True)
+    bbox = draw.textbbox((0, 0), one, font=font)
+    tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
+    if tw > w - 2 * pad - 40:
+        font = _font(max(16, int(w * 0.024)), bold=True, serif=True)
+        bbox = draw.textbbox((0, 0), one, font=font)
+        tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
+    # Dark ink on cream — high contrast (never lavender strip / purple ink wash)
+    draw.text(
+        ((w - tw) // 2, y0 + (band_h - th) // 2 - 1),
+        one,
+        font=font,
+        fill=(*ink, 255),
+    )
+    return out
+
+
+def _draw_top_banner(base, *, lines: Sequence[str], cols: Dict, w: int, h: int, pad: int):
+    """Full-width cream hairline bar at the very top — premium ticket stub."""
+    from PIL import Image, ImageDraw
+
+    gold = cols["gold"]
+    gold_bright = cols["gold_bright"]
+    cream = cols["cream"]
+
+    band_h = max(28, int(h * 0.03))
+    band_h = min(band_h, int(h * 0.038))
+    overlay = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(overlay)
+
+    draw.rectangle((0, 0, w, band_h), fill=(*cream, 248))
+    draw.line((0, band_h - 1, w, band_h - 1), fill=(*gold, 255), width=2)
+    draw.line((0, 0, w, 0), fill=(*gold, 180), width=1)
+
+    one = _one_line(lines, max_chars=46).upper()
+    font = _font(max(14, int(band_h * 0.50)), bold=True, serif=False)
+    bbox = draw.textbbox((0, 0), one, font=font)
+    tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
+    if tw > w - 2 * pad:
+        font = _font(max(12, int(band_h * 0.42)), bold=True, serif=False)
+        bbox = draw.textbbox((0, 0), one, font=font)
+        tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
+    # Gold endcaps + gold text on cream (ticket stub)
+    draw.line((pad // 2, band_h // 2, pad, band_h // 2), fill=(*gold_bright, 255), width=2)
+    draw.line(
+        (w - pad, band_h // 2, w - pad // 2, band_h // 2),
+        fill=(*gold_bright, 255),
+        width=2,
+    )
+    # Deep gold / ink-darkened gold for readability on cream
+    fill = (120, 88, 28, 255)  # dark antique gold — high contrast on cream
+    draw.text(((w - tw) // 2, (band_h - th) // 2 - 1), one, font=font, fill=fill)
+    return Image.alpha_composite(base, overlay)
+
+
+def _draw_ribbon(base, *, lines: Sequence[str], cols: Dict, w: int, h: int, pb: int, pad: int):
+    """Folded gold corner ribbon — short elegant claim, corner only (not a sash)."""
+    from PIL import Image, ImageDraw, ImageFilter
+
+    gold = cols["gold"]
+    gold_bright = cols["gold_bright"]
+    eggplant = cols["eggplant"]
+    ink = cols["ink"]
+
+    one = _one_line(lines, max_chars=12).upper()
+    # Corner arm large enough that full claim sits on the diagonal
+    arm = max(140, int(w * 0.28))
+    band = max(30, int(w * 0.040))
+
+    # Strip length ~ diagonal of the corner triangle
+    strip_w = max(int(arm * 1.25), int(arm * 1.414) - band)
+    strip_h = band
+    ribbon = Image.new("RGBA", (strip_w, strip_h + 8), (0, 0, 0, 0))
+    rd = ImageDraw.Draw(ribbon)
+    rd.rectangle((0, 4, strip_w, strip_h + 4), fill=(*gold, 255))
+    rd.rectangle((0, 4, strip_w, 7), fill=(*gold_bright, 255))
+    rd.rectangle((0, strip_h + 1, strip_w, strip_h + 4), fill=(*eggplant, 80))
+    # Soft end fades (fold suggestion)
+    for i in range(10):
+        a = int(90 * (1 - i / 10))
+        rd.line((i, 4, i, strip_h + 4), fill=(20, 12, 30, a))
+        rd.line((strip_w - 1 - i, 4, strip_w - 1 - i, strip_h + 4), fill=(20, 12, 30, a))
+
+    font = _font(max(14, int(strip_h * 0.52)), bold=True, serif=False)
+    bbox = rd.textbbox((0, 0), one, font=font)
+    tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
+    while tw > strip_w - 16 and font.size > 11:  # type: ignore[attr-defined]
+        font = _font(font.size - 1, bold=True, serif=False)  # type: ignore[attr-defined]
+        bbox = rd.textbbox((0, 0), one, font=font)
+        tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
+    rd.text(
+        ((strip_w - tw) // 2, 4 + (strip_h - th) // 2 - 1),
+        one,
+        font=font,
+        fill=(*ink, 255),
+    )
+
+    angled = ribbon.rotate(45, expand=True, resample=Image.BICUBIC)
+    aw, ah = angled.size
+    # Center strip on the corner diagonal midpoint so full text is visible
+    mid_x = w - arm / 2.0
+    mid_y = arm / 2.0
+    ox = int(mid_x - aw / 2)
+    oy = int(mid_y - ah / 2)
+
+    # Corner mask — slightly larger than the tip triangle so the claim fits
+    mask = Image.new("L", (w, h), 0)
+    md = ImageDraw.Draw(mask)
+    inset = max(6, band // 3)
+    md.polygon(
+        [
+            (w - arm - inset, 0),
+            (w, 0),
+            (w, arm + inset),
+        ],
+        fill=255,
+    )
+    mask = mask.filter(ImageFilter.GaussianBlur(radius=1))
+
+    alpha = angled.split()[-1]
+    dark = Image.new("RGBA", (aw, ah), (12, 6, 20, 0))
+    dark.putalpha(alpha.point(lambda a: int(a * 0.40)))
+
+    overlay = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    sh_layer = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    sh_layer.paste(dark, (ox + 2, oy + 3), dark)
+    sh_layer = sh_layer.filter(ImageFilter.GaussianBlur(radius=2))
+    rib_layer = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    rib_layer.paste(angled, (ox, oy), angled)
+
+    for layer in (sh_layer, rib_layer):
+        r, g, b, a = layer.split()
+        a = Image.composite(a, Image.new("L", (w, h), 0), mask)
+        overlay = Image.alpha_composite(overlay, Image.merge("RGBA", (r, g, b, a)))
+
+    return Image.alpha_composite(base, overlay)
+
+
+def _draw_medallion(base, *, lines: Sequence[str], cols: Dict, w: int, h: int, pb: int, pad: int):
+    """Small oval gold medallion near bottom — clear of circular sun logo."""
+    from PIL import Image, ImageDraw, ImageFilter
+
+    gold = cols["gold"]
+    gold_bright = cols["gold_bright"]
+    eggplant = cols["eggplant"]
+    cream = cols["cream"]
+    ink = cols["ink"]
+
+    # Small — ~9–11% width so it never fights the logo (~10–13% BL)
+    ow = max(92, int(w * 0.105))
+    oh = max(58, int(ow * 0.64))
+    rx, ry = ow // 2, oh // 2
+
+    # Bottom-right of photo area — near logo zone but NOT covering BL sun logo
+    logo_clear = max(pad, int(w * 0.20))
+    cx = w - rx - pad - max(4, int(w * 0.01))
+    cy = pb - ry - max(pad, int(w * 0.016))
+    cx = max(cx, logo_clear + rx)
+    cy = min(cy, pb - ry - 4)
+    cy = max(cy, int(h * 0.55))
+
+    overlay = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    shadow = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    sd = ImageDraw.Draw(shadow)
+    sh = max(3, int(w * 0.005))
+    sd.ellipse(
+        (cx - rx + sh, cy - ry + sh, cx + rx + sh, cy + ry + sh),
+        fill=(12, 8, 20, 110),
+    )
+    shadow = shadow.filter(ImageFilter.GaussianBlur(radius=max(2, sh // 2)))
+    overlay = Image.alpha_composite(overlay, shadow)
+    draw = ImageDraw.Draw(overlay)
+
+    # Thick gold bezel (reads as a real medallion, not a white sticker)
+    draw.ellipse(
+        (cx - rx, cy - ry, cx + rx, cy + ry),
+        fill=(*gold, 255),
+        outline=(*gold_bright, 255),
+        width=max(2, int(w * 0.003)),
+    )
+    # Warm antique-gold mid ring
+    mid_x = max(3, int(rx * 0.10))
+    mid_y = max(2, int(ry * 0.12))
+    draw.ellipse(
+        (cx - rx + mid_x, cy - ry + mid_y, cx + rx - mid_x, cy + ry - mid_y),
+        fill=(196, 158, 72, 255),
+    )
+    # Cream cartouche for dark ink (high contrast)
+    inset_x = max(6, int(rx * 0.22))
+    inset_y = max(5, int(ry * 0.24))
+    draw.ellipse(
+        (cx - rx + inset_x, cy - ry + inset_y, cx + rx - inset_x, cy + ry - inset_y),
+        fill=(*cream, 255),
+        outline=(*eggplant, 70),
+        width=1,
+    )
+    draw.ellipse(
+        (
+            cx - rx + inset_x + 2,
+            cy - ry + inset_y + 2,
+            cx + rx - inset_x - 2,
+            cy + ry - inset_y - 2,
+        ),
+        outline=(*gold, 180),
+        width=1,
+    )
+
+    med_lines = _fit_lines(lines, max_lines=2)
+    if len(med_lines) == 1 and len(med_lines[0]) > 12:
+        med_lines = [med_lines[0][:14]]
+    font, gap = _seal_font_for(
+        draw,
+        med_lines,
+        max_w=int((rx - inset_x) * 1.65),
+        max_h=int((ry - inset_y) * 1.45),
+        start=max(13, int(ow * 0.17)),
+    )
+    _draw_centered_lines(
+        draw, med_lines, cx=cx, cy=cy, font=font, fill=(*ink, 255), gap=gap
+    )
+    return Image.alpha_composite(base, overlay)
+
+
 def draw_badge(
     img,
     *,
@@ -334,141 +828,37 @@ def draw_badge(
 ):
     """Draw a designed-in social-proof mark; returns (new_image, style_drawn).
 
-    Styles (Founder Aug 11 ~2:52pm CT rebuild — preview only until approved):
-    - seal: substantial gold/cream wax-seal (~14–18% width), 2–3 line claim,
-      empty margin only (not over title/cards/logo)
-    - footer_band: dedicated cream band extending the canvas below content —
-      brand-footer energy, not a floating pill over art
+    Styles (Founder Aug 11 ~3pm CT v4 remake — preview only until approved):
+    - seal: deep eggplant disc + gold ring + gold text (~16–20% width)
+    - footer_band: cream brand band extending the canvas (poster footer)
+    - top_banner: full-width cream hairline bar at top (~3% height)
+    - ribbon: diagonal gold corner sash, short claim
+    - medallion: small oval gold mark near bottom, clear of sun logo
 
     photo_bottom = Y above cream/contact footer (default: full height).
     """
-    from PIL import Image, ImageDraw
-
     style = (style or "seal").lower()
     if style not in BADGE_STYLES:
         style = "seal"
     lines = _wrap_lines(text)
     cols = _colors()
-    gold, ink, cream, eggplant = cols["gold"], cols["ink"], cols["cream"], cols["eggplant"]
 
     base = img.convert("RGBA")
     w, h = base.size
     pb = photo_bottom if photo_bottom is not None else h
-    safe_bottom = max(1, pb - max(4, int(w * 0.006)))
     pad = max(12, int(w * 0.02))
 
     if style == "footer_band":
-        # Dedicated cream claim band extending the canvas — never floats over art.
-        band_h = max(56, int(w * 0.062))
-        new_h = h + band_h
-        out = Image.new("RGBA", (w, new_h), (*cream, 255))
-        out.paste(base, (0, 0))
-        draw = ImageDraw.Draw(out)
-        y0 = h
-        # Gold top rule + soft double line for boutique footer energy
-        draw.rectangle((0, y0, w, new_h), fill=(*cream, 255))
-        draw.line((0, y0, w, y0), fill=(*gold, 255), width=3)
-        draw.line((0, y0 + 4, w, y0 + 4), fill=(*gold, 140), width=1)
-        draw.line((0, new_h - 2, w, new_h - 2), fill=(*gold, 180), width=2)
-        one = _one_line(lines, max_chars=44)
-        font = _badge_font(max(22, int(w * 0.032)))
-        bbox = draw.textbbox((0, 0), one, font=font)
-        tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
-        # Shrink once if claim is wide
-        if tw > w - 2 * pad:
-            font = _badge_font(max(16, int(w * 0.026)))
-            bbox = draw.textbbox((0, 0), one, font=font)
-            tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
-        draw.text(
-            ((w - tw) // 2, y0 + (band_h - th) // 2 - 1),
-            one,
-            font=font,
-            fill=(*eggplant, 255),
-        )
-        if img.mode == "RGB":
-            return out.convert("RGB"), style
-        return out, style
+        out = _draw_footer_band(base, lines=lines, cols=cols, w=w, h=h, pad=pad)
+    elif style == "top_banner":
+        out = _draw_top_banner(base, lines=lines, cols=cols, w=w, h=h, pad=pad)
+    elif style == "ribbon":
+        out = _draw_ribbon(base, lines=lines, cols=cols, w=w, h=h, pb=pb, pad=pad)
+    elif style == "medallion":
+        out = _draw_medallion(base, lines=lines, cols=cols, w=w, h=h, pb=pb, pad=pad)
+    else:
+        out = _draw_seal(base, lines=lines, cols=cols, w=w, h=h, pb=pb, pad=pad)
 
-    # --- seal ---
-    # Substantial boutique wax seal — 14–18% of image width (not a tiny sticker).
-    # Slight oval (wider than tall) reads more like a pressed wax seal than a chip.
-    diam_x = max(120, int(w * 0.165))
-    diam_x = min(diam_x, int(w * 0.18))
-    diam_y = max(110, int(diam_x * 0.92))
-    rx, ry = diam_x // 2, diam_y // 2
-    # Prefer true empty margin: upper-right sky / margin, clear of title cards
-    # (left) and circular logo (bottom-left). Avoid lower-right graphic zones
-    # on Thursday-style flyers (tarot / horse art).
-    cx = w - rx - pad
-    header_clear = max(pad, int(w * 0.105))
-    cy = header_clear + ry + max(4, int(w * 0.008))
-    # Keep fully inside the photo area when a cream footer is present.
-    cy = min(cy, safe_bottom - ry - 4)
-    cy = max(cy, ry + pad)
-
-    overlay = Image.new("RGBA", (w, h), (0, 0, 0, 0))
-    draw = ImageDraw.Draw(overlay)
-
-    # Soft drop shadow so it sits *in* the plate (not a flat cutout sticker)
-    sh = max(3, int(w * 0.006))
-    draw.ellipse(
-        (cx - rx + sh, cy - ry + sh, cx + rx + sh, cy + ry + sh),
-        fill=(20, 12, 28, 70),
-    )
-    # Outer gold wash (wax rim)
-    glow = max(3, int(w * 0.005))
-    draw.ellipse(
-        (cx - rx - glow, cy - ry - glow, cx + rx + glow, cy + ry + glow),
-        fill=(*gold, 95),
-    )
-    # Cream fill + thick gold rim
-    rim = max(5, int(w * 0.007))
-    draw.ellipse(
-        (cx - rx, cy - ry, cx + rx, cy + ry),
-        fill=(*cream, 242),
-        outline=(*gold, 255),
-        width=rim,
-    )
-    # Warm gold inner wash (wax depth — not flat white Canva)
-    wash_rx = max(10, rx - rim - 2)
-    wash_ry = max(10, ry - rim - 2)
-    draw.ellipse(
-        (cx - wash_rx, cy - wash_ry, cx + wash_rx, cy + wash_ry),
-        fill=(245, 230, 190, 55),
-    )
-    # Inner decorative ring
-    inner_rx = max(12, rx - max(12, int(rx * 0.16)))
-    inner_ry = max(12, ry - max(12, int(ry * 0.16)))
-    draw.ellipse(
-        (cx - inner_rx, cy - inner_ry, cx + inner_rx, cy + inner_ry),
-        outline=(*gold, 210),
-        width=max(2, int(w * 0.003)),
-    )
-    # Tiny ticks at N/E/S/W — boutique seal energy
-    tick = max(4, int(min(rx, ry) * 0.09))
-    for angle_pts in (
-        (cx, cy - ry + rim, cx, cy - ry + rim + tick),
-        (cx, cy + ry - rim - tick, cx, cy + ry - rim),
-        (cx - rx + rim, cy, cx - rx + rim + tick, cy),
-        (cx + rx - rim - tick, cy, cx + rx - rim, cy),
-    ):
-        draw.line(angle_pts, fill=(*eggplant, 170), width=2)
-
-    seal_lines = _fit_lines(lines, max_lines=3)
-    text_box_w = int(inner_rx * 1.65)
-    text_box_h = int(inner_ry * 1.55)
-    font, gap = _seal_font_for(
-        draw,
-        seal_lines,
-        max_w=text_box_w,
-        max_h=text_box_h,
-        start=max(18, int(diam_x * 0.15)),
-    )
-    _draw_centered_lines(
-        draw, seal_lines, cx=cx, cy=cy, font=font, fill=(*eggplant, 255), gap=gap
-    )
-
-    out = Image.alpha_composite(base, overlay)
     if img.mode == "RGB":
         return out.convert("RGB"), style
     return out, style
@@ -483,17 +873,23 @@ def apply_badge_to_path(
     force_style: Optional[str] = None,
     force_text: Optional[str] = None,
 ) -> Optional[Dict[str, Any]]:
-    """Load image, draw rotating badge, save. Returns meta or None if skipped.
+    """Legacy overlay helper — refused while never_overlay_existing is true.
 
-    Note: live morning/night pipelines gate via should_badge_*; this helper still
-    draws when enabled so Founder previews can force styles while badges are OFF.
+    Do not use on finished inventory. Designed-in pride for NEW art goes through
+    designed_in_generation_brief() in generation prompts.
     """
+    if never_overlay_existing():
+        return None
     if not enabled() or not path or not os.path.isfile(path):
         return None
     from PIL import Image
 
     style = force_style or pick_badge_style(seed)
-    text = force_text if force_text is not None else pick_badge_claim(seed)
+    text = (
+        force_text
+        if force_text is not None
+        else pick_badge_claim(seed, style=style)
+    )
     with Image.open(path) as im:
         img = im.convert("RGB")
         img, drawn = draw_badge(
