@@ -4,6 +4,10 @@ Honesty (Founder Aug 11 2026): these are warm local-pride lines — “i vote it
 the best! lol” energy — NOT formal third-party award citations. Do not invent
 Chicago Reader / Best Of winners unless Founder confirms a real source.
 See config/social_proof.json → honesty_note + enabled flag.
+
+On-image badges (Aug 11 ~2:52pm CT): OFF by default until Founder greenlights
+a style. Preview rebuild uses only seal + footer_band (v1 sticker / v2 tiny
+marks both rejected). Captions + first_comment stay enabled.
 """
 from __future__ import annotations
 
@@ -22,7 +26,8 @@ MODE_FIRST_COMMENT = "first_comment"
 MODE_BOTH = "both"
 MODE_SKIP = "skip"
 
-BADGE_STYLES = ("banner", "circle", "pill", "ribbon", "corner")
+# Two strong styles only (Founder Aug 11 ~2:52pm CT rebuild).
+BADGE_STYLES = ("seal", "footer_band")
 
 
 @lru_cache(maxsize=1)
@@ -79,7 +84,7 @@ def pick_claim(seed: str) -> str:
 
 def pick_badge_claim(seed: str) -> str:
     """Shorter multi-line claim for on-image badges."""
-    return _pick(badge_claims(), f"sp-badge-claim|{seed}", "Chicago’s #1\ntalked-about\ncrystal shop")
+    return _pick(badge_claims(), f"sp-badge-claim|{seed}", "Chicago’s #1\ncrystal shop")
 
 
 def pick_badge_style(seed: str) -> str:
@@ -106,7 +111,8 @@ def pick_placement_mode(seed: str, *, campaign: str = "") -> str:
 
 
 def should_badge_morning(seed: str) -> bool:
-    if not enabled() or not social_proof_config().get("badge_on_morning_flyers", True):
+    # Default OFF — Founder rejected v1/v2 on-image marks (Aug 11 ~2:52pm CT).
+    if not enabled() or not social_proof_config().get("badge_on_morning_flyers", False):
         return False
     # ~4/5 mornings get a badge so layout still breathes.
     return _pick_index(5, f"sp-mf-badge|{seed}") != 0
@@ -114,7 +120,8 @@ def should_badge_morning(seed: str) -> bool:
 
 def should_badge_night(*, mode: str = "", creative_id: str = "", seed: str = "") -> bool:
     """Night plates: prefer shop/generic; skip pure celestial when configured."""
-    if not enabled() or not social_proof_config().get("badge_on_night", True):
+    # Default OFF — Founder rejected v1/v2 on-image marks (Aug 11 ~2:52pm CT).
+    if not enabled() or not social_proof_config().get("badge_on_night", False):
         return False
     if social_proof_config().get("badge_skip_celestial", True):
         m = (mode or "").lower()
@@ -240,8 +247,8 @@ def _badge_font(size: int):
     from PIL import ImageFont
 
     candidates = [
-        "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
         "/System/Library/Fonts/Supplemental/Georgia Bold.ttf",
+        "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
         "/System/Library/Fonts/Avenir Next.ttc",
         "/Library/Fonts/Arial Unicode.ttf",
         "/System/Library/Fonts/Helvetica.ttc",
@@ -264,8 +271,8 @@ def _wrap_lines(text: str) -> List[str]:
     return lines or ["Chicagoland favorite"]
 
 
-def _one_line(lines: Sequence[str], *, max_chars: int = 36) -> str:
-    """Join badge lines for thin bands — never leave dangling '&' wraps."""
+def _one_line(lines: Sequence[str], *, max_chars: int = 42) -> str:
+    """Join badge lines for footer band — confident single claim."""
     one = " · ".join(str(ln).strip() for ln in lines if str(ln).strip())
     one = " ".join(one.split())
     if len(one) > max_chars:
@@ -273,13 +280,12 @@ def _one_line(lines: Sequence[str], *, max_chars: int = 36) -> str:
     return one or "Chicagoland favorite"
 
 
-def _fit_lines(lines: Sequence[str], *, max_lines: int = 2) -> List[str]:
+def _fit_lines(lines: Sequence[str], *, max_lines: int = 3) -> List[str]:
     cleaned = [str(ln).strip() for ln in lines if str(ln).strip()]
     if not cleaned:
         return ["Chicagoland favorite"]
     if len(cleaned) <= max_lines:
         return cleaned
-    # Prefer keeping first lines; collapse remainder onto last slot.
     head = list(cleaned[: max_lines - 1])
     tail = " ".join(cleaned[max_lines - 1 :])
     head.append(tail)
@@ -300,6 +306,25 @@ def _draw_centered_lines(draw, lines: Sequence[str], *, cx: int, cy: int, font, 
         y += th + gap
 
 
+def _seal_font_for(draw, lines: Sequence[str], *, max_w: int, max_h: int, start: int):
+    """Pick the largest bold font that fits the seal’s text box."""
+    size = start
+    while size >= 11:
+        font = _badge_font(size)
+        widths = []
+        heights = []
+        for ln in lines:
+            bbox = draw.textbbox((0, 0), ln, font=font)
+            widths.append(bbox[2] - bbox[0])
+            heights.append(bbox[3] - bbox[1])
+        gap = max(2, size // 8)
+        total_h = sum(heights) + gap * (len(lines) - 1)
+        if max(widths or [0]) <= max_w and total_h <= max_h:
+            return font, gap
+        size -= 1
+    return _badge_font(11), 2
+
+
 def draw_badge(
     img,
     *,
@@ -309,19 +334,19 @@ def draw_badge(
 ):
     """Draw a designed-in social-proof mark; returns (new_image, style_drawn).
 
-    Placement rules (Founder Aug 11 2026 remake):
-    - Never cover Sacred Ground wordmark, event cards, circular logo, or phone footer
-    - Prefer flush top thin cream/gold band, bottom strip above footer, or small seal
-      in empty sky/margin
-    - Soft cream wash OK — no giant opaque white sticker disks
+    Styles (Founder Aug 11 ~2:52pm CT rebuild — preview only until approved):
+    - seal: substantial gold/cream wax-seal (~14–18% width), 2–3 line claim,
+      empty margin only (not over title/cards/logo)
+    - footer_band: dedicated cream band extending the canvas below content —
+      brand-footer energy, not a floating pill over art
 
     photo_bottom = Y above cream/contact footer (default: full height).
     """
     from PIL import Image, ImageDraw
 
-    style = (style or "pill").lower()
+    style = (style or "seal").lower()
     if style not in BADGE_STYLES:
-        style = "pill"
+        style = "seal"
     lines = _wrap_lines(text)
     cols = _colors()
     gold, ink, cream, eggplant = cols["gold"], cols["ink"], cols["cream"], cols["eggplant"]
@@ -329,132 +354,119 @@ def draw_badge(
     base = img.convert("RGBA")
     w, h = base.size
     pb = photo_bottom if photo_bottom is not None else h
-    # Keep marks inside the photo area with a tiny inset from the footer seam.
     safe_bottom = max(1, pb - max(4, int(w * 0.006)))
+    pad = max(12, int(w * 0.02))
+
+    if style == "footer_band":
+        # Dedicated cream claim band extending the canvas — never floats over art.
+        band_h = max(56, int(w * 0.062))
+        new_h = h + band_h
+        out = Image.new("RGBA", (w, new_h), (*cream, 255))
+        out.paste(base, (0, 0))
+        draw = ImageDraw.Draw(out)
+        y0 = h
+        # Gold top rule + soft double line for boutique footer energy
+        draw.rectangle((0, y0, w, new_h), fill=(*cream, 255))
+        draw.line((0, y0, w, y0), fill=(*gold, 255), width=3)
+        draw.line((0, y0 + 4, w, y0 + 4), fill=(*gold, 140), width=1)
+        draw.line((0, new_h - 2, w, new_h - 2), fill=(*gold, 180), width=2)
+        one = _one_line(lines, max_chars=44)
+        font = _badge_font(max(22, int(w * 0.032)))
+        bbox = draw.textbbox((0, 0), one, font=font)
+        tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
+        # Shrink once if claim is wide
+        if tw > w - 2 * pad:
+            font = _badge_font(max(16, int(w * 0.026)))
+            bbox = draw.textbbox((0, 0), one, font=font)
+            tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
+        draw.text(
+            ((w - tw) // 2, y0 + (band_h - th) // 2 - 1),
+            one,
+            font=font,
+            fill=(*eggplant, 255),
+        )
+        if img.mode == "RGB":
+            return out.convert("RGB"), style
+        return out, style
+
+    # --- seal ---
+    # Substantial boutique wax seal — 14–18% of image width (not a tiny sticker).
+    # Slight oval (wider than tall) reads more like a pressed wax seal than a chip.
+    diam_x = max(120, int(w * 0.165))
+    diam_x = min(diam_x, int(w * 0.18))
+    diam_y = max(110, int(diam_x * 0.92))
+    rx, ry = diam_x // 2, diam_y // 2
+    # Prefer true empty margin: upper-right sky / margin, clear of title cards
+    # (left) and circular logo (bottom-left). Avoid lower-right graphic zones
+    # on Thursday-style flyers (tarot / horse art).
+    cx = w - rx - pad
+    header_clear = max(pad, int(w * 0.105))
+    cy = header_clear + ry + max(4, int(w * 0.008))
+    # Keep fully inside the photo area when a cream footer is present.
+    cy = min(cy, safe_bottom - ry - 4)
+    cy = max(cy, ry + pad)
+
     overlay = Image.new("RGBA", (w, h), (0, 0, 0, 0))
     draw = ImageDraw.Draw(overlay)
 
-    font = _badge_font(max(15, int(w * 0.024)))
-    font_sm = _badge_font(max(13, int(w * 0.019)))
-    font_xs = _badge_font(max(12, int(w * 0.016)))
-    pad = max(10, int(w * 0.018))
+    # Soft drop shadow so it sits *in* the plate (not a flat cutout sticker)
+    sh = max(3, int(w * 0.006))
+    draw.ellipse(
+        (cx - rx + sh, cy - ry + sh, cx + rx + sh, cy + ry + sh),
+        fill=(20, 12, 28, 70),
+    )
+    # Outer gold wash (wax rim)
+    glow = max(3, int(w * 0.005))
+    draw.ellipse(
+        (cx - rx - glow, cy - ry - glow, cx + rx + glow, cy + ry + glow),
+        fill=(*gold, 95),
+    )
+    # Cream fill + thick gold rim
+    rim = max(5, int(w * 0.007))
+    draw.ellipse(
+        (cx - rx, cy - ry, cx + rx, cy + ry),
+        fill=(*cream, 242),
+        outline=(*gold, 255),
+        width=rim,
+    )
+    # Warm gold inner wash (wax depth — not flat white Canva)
+    wash_rx = max(10, rx - rim - 2)
+    wash_ry = max(10, ry - rim - 2)
+    draw.ellipse(
+        (cx - wash_rx, cy - wash_ry, cx + wash_rx, cy + wash_ry),
+        fill=(245, 230, 190, 55),
+    )
+    # Inner decorative ring
+    inner_rx = max(12, rx - max(12, int(rx * 0.16)))
+    inner_ry = max(12, ry - max(12, int(ry * 0.16)))
+    draw.ellipse(
+        (cx - inner_rx, cy - inner_ry, cx + inner_rx, cy + inner_ry),
+        outline=(*gold, 210),
+        width=max(2, int(w * 0.003)),
+    )
+    # Tiny ticks at N/E/S/W — boutique seal energy
+    tick = max(4, int(min(rx, ry) * 0.09))
+    for angle_pts in (
+        (cx, cy - ry + rim, cx, cy - ry + rim + tick),
+        (cx, cy + ry - rim - tick, cx, cy + ry - rim),
+        (cx - rx + rim, cy, cx - rx + rim + tick, cy),
+        (cx + rx - rim - tick, cy, cx + rx - rim, cy),
+    ):
+        draw.line(angle_pts, fill=(*eggplant, 170), width=2)
 
-    if style == "banner":
-        # Flush top-edge thin cream/gold band — sits above the wordmark.
-        bh = max(26, int(w * 0.030))
-        draw.rectangle((0, 0, w, bh), fill=(*cream, 238))
-        draw.line((0, 0, w, 0), fill=(*gold, 220), width=1)
-        draw.line((0, bh - 2, w, bh - 2), fill=(*gold, 255), width=2)
-        one = _one_line(lines, max_chars=40)
-        bbox = draw.textbbox((0, 0), one, font=font_sm)
-        tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
-        draw.text(
-            ((w - tw) // 2, (bh - th) // 2 - 1),
-            one,
-            font=font_sm,
-            fill=(*eggplant, 255),
-        )
-
-    elif style == "pill":
-        # Full-width thin strip just above the contact footer (not a floating chip).
-        ph = max(26, int(w * 0.030))
-        y0 = max(pad, safe_bottom - ph)
-        draw.rectangle((0, y0, w, y0 + ph), fill=(*cream, 232))
-        draw.line((0, y0, w, y0), fill=(*gold, 255), width=2)
-        draw.line((0, y0 + ph - 1, w, y0 + ph - 1), fill=(*gold, 200), width=1)
-        one = _one_line(lines, max_chars=40)
-        bbox = draw.textbbox((0, 0), one, font=font_sm)
-        tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
-        draw.text(
-            ((w - tw) // 2, y0 + (ph - th) // 2 - 1),
-            one,
-            font=font_sm,
-            fill=(*eggplant, 255),
-        )
-
-    elif style == "circle":
-        # Small sky seal — soft cream wash + gold ring (not a giant opaque white disk).
-        r = max(30, int(min(w, safe_bottom) * 0.055))
-        cx = w - r - pad
-        cy = r + max(6, int(w * 0.010))
-        # Keep seal in the upper photo margin (empty sky), never mid-wordmark.
-        cy = min(cy, max(r + 4, int(safe_bottom * 0.10)))
-        draw.ellipse(
-            (cx - r, cy - r, cx + r, cy + r),
-            fill=(*cream, 150),
-            outline=(*gold, 255),
-            width=3,
-        )
-        inner = max(8, r - 6)
-        draw.ellipse(
-            (cx - inner, cy - inner, cx + inner, cy + inner),
-            outline=(*gold, 170),
-            width=1,
-        )
-        seal_lines = _fit_lines(lines, max_lines=2)
-        _draw_centered_lines(
-            draw, seal_lines, cx=cx, cy=cy, font=font_xs, fill=(*eggplant, 255), gap=2
-        )
-
-    elif style == "ribbon":
-        # Slim top-left boutique ribbon hanging from the top edge (not over title).
-        rw = int(w * 0.30)
-        rh = max(26, int(w * 0.034))
-        y0 = 0
-        notch = max(10, int(rh * 0.42))
-        pts = [
-            (0, y0),
-            (rw, y0),
-            (rw - notch, y0 + rh // 2),
-            (rw, y0 + rh),
-            (0, y0 + rh),
-        ]
-        draw.polygon(pts, fill=(*gold, 220), outline=(*eggplant, 160))
-        # Soft cream inset for shop-made (not Canva sticker) feel.
-        inset = 3
-        pts_in = [
-            (inset, y0 + inset),
-            (rw - notch - 2, y0 + inset),
-            (rw - notch * 2 + 2, y0 + rh // 2),
-            (rw - notch - 2, y0 + rh - inset),
-            (inset, y0 + rh - inset),
-        ]
-        draw.polygon(pts_in, fill=(*cream, 90))
-        one = _one_line(lines, max_chars=22)
-        bbox = draw.textbbox((0, 0), one, font=font_xs)
-        tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
-        tx = max(6, (rw - notch - tw) // 2)
-        draw.text((tx, y0 + (rh - th) // 2 - 1), one, font=font_xs, fill=(*ink, 255))
-
-    else:  # corner
-        # Compact top-right corner chip in empty margin — soft wash, short type.
-        cw = int(w * 0.22)
-        ch = max(34, int(w * 0.048))
-        x0 = w - cw - pad
-        y0 = max(6, int(w * 0.01))
-        draw.rounded_rectangle(
-            (x0, y0, x0 + cw, y0 + ch),
-            radius=10,
-            fill=(*cream, 170),
-            outline=(*gold, 245),
-            width=2,
-        )
-        # Tiny gold tick on the outer corner so it feels designed-in.
-        draw.line(
-            (x0 + cw - 14, y0 + 3, x0 + cw - 3, y0 + 3),
-            fill=(*eggplant, 160),
-            width=1,
-        )
-        corner_lines = _fit_lines(lines, max_lines=2)
-        _draw_centered_lines(
-            draw,
-            corner_lines,
-            cx=x0 + cw // 2,
-            cy=y0 + ch // 2,
-            font=font_xs,
-            fill=(*ink, 255),
-            gap=1,
-        )
+    seal_lines = _fit_lines(lines, max_lines=3)
+    text_box_w = int(inner_rx * 1.65)
+    text_box_h = int(inner_ry * 1.55)
+    font, gap = _seal_font_for(
+        draw,
+        seal_lines,
+        max_w=text_box_w,
+        max_h=text_box_h,
+        start=max(18, int(diam_x * 0.15)),
+    )
+    _draw_centered_lines(
+        draw, seal_lines, cx=cx, cy=cy, font=font, fill=(*eggplant, 255), gap=gap
+    )
 
     out = Image.alpha_composite(base, overlay)
     if img.mode == "RGB":
@@ -471,7 +483,11 @@ def apply_badge_to_path(
     force_style: Optional[str] = None,
     force_text: Optional[str] = None,
 ) -> Optional[Dict[str, Any]]:
-    """Load image, draw rotating badge, save. Returns meta or None if skipped."""
+    """Load image, draw rotating badge, save. Returns meta or None if skipped.
+
+    Note: live morning/night pipelines gate via should_badge_*; this helper still
+    draws when enabled so Founder previews can force styles while badges are OFF.
+    """
     if not enabled() or not path or not os.path.isfile(path):
         return None
     from PIL import Image
@@ -486,7 +502,8 @@ def apply_badge_to_path(
         dest = out_path or path
         os.makedirs(os.path.dirname(dest) or ".", exist_ok=True)
         img.save(dest, "PNG", optimize=True)
-    return {"style": drawn, "text": text, "path": dest}
+        size = list(img.size)
+    return {"style": drawn, "text": text, "path": dest, "size": size}
 
 
 def apply_night_badge_if_eligible(

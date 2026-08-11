@@ -1,0 +1,70 @@
+{
+  "timezone": "America/Chicago",
+  "remake": "v3",
+  "generated_at": "2026-08-11T14:53:55-05:00",
+  "design_note": "Founder Aug 11 ~2:52pm CT: rejected v1 sticker + v2 tiny marks. Rebuild: seal (14\u201318% wax seal) + footer_band (canvas-extending cream claim). Live badge_on_morning_flyers / badge_on_night = false until Founder greenlights.",
+  "live_on_image": false,
+  "caption_and_first_comment": true,
+  "previews": [
+    {
+      "source": "assets/sg-morning-flyer-2026-08-06-today-collage.png",
+      "source_label": "Aug 6 gold-standard morning flyer",
+      "style": "seal",
+      "claim": "Chicago\u2019s #1\ncrystal shop",
+      "photo_bottom": 1696,
+      "scale": 2,
+      "size": [
+        2048,
+        2048
+      ],
+      "path": "/Users/deneene/Projects/sacred-ground-marketing-autopilot/data/composites/social-proof-previews/v3-morning-aug06-seal.png",
+      "via": "social_proof.apply_badge_to_path",
+      "remake": "v3-2026-08-11"
+    },
+    {
+      "source": "assets/sg-morning-flyer-2026-08-06-today-collage.png",
+      "source_label": "Aug 6 gold-standard morning flyer",
+      "style": "footer_band",
+      "claim": "Chicagoland\u2019s favorite crystal shop",
+      "photo_bottom": 1696,
+      "scale": 2,
+      "size": [
+        2048,
+        2174
+      ],
+      "path": "/Users/deneene/Projects/sacred-ground-marketing-autopilot/data/composites/social-proof-previews/v3-morning-aug06-footer_band.png",
+      "via": "social_proof.apply_badge_to_path",
+      "remake": "v3-2026-08-11"
+    },
+    {
+      "source": "assets/sg-night-fall.png",
+      "source_label": "Night fall storefront (sg-night-fall)",
+      "style": "seal",
+      "claim": "Chicago\u2019s #1\ncrystal shop",
+      "photo_bottom": null,
+      "scale": 2,
+      "size": [
+        2048,
+        2048
+      ],
+      "path": "/Users/deneene/Projects/sacred-ground-marketing-autopilot/data/composites/social-proof-previews/v3-night-fall-seal.png",
+      "via": "social_proof.apply_badge_to_path",
+      "remake": "v3-2026-08-11"
+    },
+    {
+      "source": "assets/sg-night-fall.png",
+      "source_label": "Night fall storefront (sg-night-fall)",
+      "style": "footer_band",
+      "claim": "Chicagoland\u2019s favorite crystal shop",
+      "photo_bottom": null,
+      "scale": 2,
+      "size": [
+        2048,
+        2174
+      ],
+      "path": "/Users/deneene/Projects/sacred-ground-marketing-autopilot/data/composites/social-proof-previews/v3-night-fall-footer_band.png",
+      "via": "social_proof.apply_badge_to_path",
+      "remake": "v3-2026-08-11"
+    }
+  ]
+}

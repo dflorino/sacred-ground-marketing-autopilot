@@ -928,8 +928,8 @@ def render_local_flyer(
         fill=gold,
     )
 
-    # Rotating shop-pride mark (top band / small seal / footer strip / ribbon / corner).
-    # Designed-in placements only — never over wordmark, cards, logo, or phone footer.
+    # Optional shop-pride mark (seal / footer_band). Gated OFF until Founder
+    # greenlights — never over wordmark, cards, logo, or phone footer.
     try:
         from . import social_proof as sp
 

@@ -322,6 +322,6 @@ Hard rules:
 Rotating local-pride lines (not formal award citations) live in `config/social_proof.json`
 (`enabled: true`). See **docs/SOCIAL-PROOF.md**.
 
-- Captions + Zernio **firstComment** (FB/IG) rotate via `marketing/social_proof.py`
-- Morning flyer badges rotate styles (banner / circle / pill / ribbon / corner)
+- Captions + Zernio **firstComment** (FB/IG) rotate via `marketing/social_proof.py` (**ON**)
+- On-image badges **OFF** (`badge_on_morning_flyers` / `badge_on_night` = false) until Founder greenlights; preview rebuild styles: `seal` · `footer_band`
 - Do **not** republish already-live posts just to add a claim line

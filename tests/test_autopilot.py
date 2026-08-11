@@ -2018,17 +2018,32 @@ class AutopilotTests(unittest.TestCase):
 
         sp.clear_social_proof_cache()
         img = Image.new("RGB", (1080, 1080), (40, 30, 60))
-        for style in sp.badge_styles():
-            out, drawn = sp.draw_badge(
-                img,
-                style=style,
-                text="Chicago’s #1\ntalked-about\ncrystal shop",
-                photo_bottom=930,
-            )
-            self.assertEqual(drawn, style)
-            self.assertEqual(out.size, (1080, 1080))
-            # Badge must change some pixels (placement varies by style)
-            self.assertNotEqual(out.tobytes(), img.tobytes())
+        self.assertEqual(set(sp.badge_styles()), {"seal", "footer_band"})
+        # Live on-image gates stay OFF until Founder approves a style.
+        self.assertFalse(sp.should_badge_morning("any-seed"))
+        self.assertFalse(sp.should_badge_night(seed="any-seed"))
+
+        out_seal, drawn = sp.draw_badge(
+            img,
+            style="seal",
+            text="Chicago’s #1\ncrystal shop",
+            photo_bottom=930,
+        )
+        self.assertEqual(drawn, "seal")
+        self.assertEqual(out_seal.size, (1080, 1080))
+        self.assertNotEqual(out_seal.tobytes(), img.tobytes())
+
+        out_band, drawn = sp.draw_badge(
+            img,
+            style="footer_band",
+            text="Chicago’s #1\ncrystal shop",
+            photo_bottom=930,
+        )
+        self.assertEqual(drawn, "footer_band")
+        # footer_band extends the canvas below the photo/flyer content
+        self.assertEqual(out_band.size[0], 1080)
+        self.assertGreater(out_band.size[1], 1080)
+        self.assertNotEqual(out_band.tobytes()[: 1080 * 1080 * 3], img.tobytes())
 
 
 if __name__ == "__main__":

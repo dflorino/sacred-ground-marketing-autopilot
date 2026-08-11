@@ -14,7 +14,7 @@ Use **versions of this layout system** — beautiful and easy to read — not an
 | **Left** | Clear stacked rounded **equal cards** — one event per card, same height: icon + name + host + time + short keywords |
 | **Right** | Evocative graphics supporting those events (clear zones, not overlapping clutter) |
 | **Footer** | Sacred Ground circular logo + `shopsacredground.com` + `847-749-3922` + come-as-you-are energy |
-| **Optional badge** | Rotating playful shop-pride seal (banner / circle / pill / ribbon / corner) above footer — see `docs/SOCIAL-PROOF.md` |
+| **Optional badge** | On-image shop-pride marks **OFF** until Founder approves (`seal` / `footer_band` preview rebuild) — see `docs/SOCIAL-PROOF.md` |
 
 ## Equal space (hard — Founder Aug 7, 2026)
 
