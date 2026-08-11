@@ -865,7 +865,157 @@
           "message": "Post published successfully"
         }
       }
+    },
+    "week_ahead|2026-08-10|facebook|21514,24177,24245,24592": {
+      "draft_id": "sgma-2026-08-10-week_ahead-fb-c140cfd2",
+      "posted_at": "2026-08-10T19:03:38.706896-05:00",
+      "external": {
+        "zernio": {
+          "post": {
+            "recycling": {
+              "enabled": false,
+              "gapFreq": "month",
+              "recycleCount": 0,
+              "contentVariations": [],
+              "contentVariationIndex": 0
+            },
+            "_id": "6a7a66d36539d88f0c18ca20",
+            "userId": "6a49a0ca1f5ee39905d0dc6f",
+            "title": "",
+            "content": "As evening settles over the shop, we’re reminded tomorrow is another day—and there’s plenty coming up.\n\nTuesday, August 11\n\n• Astrology & Tarot With Lisa\n  12:00 PM–5:00 PM\n  https://shopsacredground.com/book/lisa/\n\n• Amber | Customized Therapeutic Massage Sessions\n  12:00 PM–5:00 PM\n  https://shopsacredground.com/book/amber/\n\n• Free Community Meditation\nTuesday night 7:00–8:00 PM\nAll are welcome\nNo sign-up needed\nDoors close at 7:05pm\n\nWednesday, August 12\n\n• Tina’s Tarot & Rune Sessions\n  12:00 PM–6:00 PM\n  https://shopsacredground.com/tina/\n\nBefore you turn in — if the evening still has a little room in it…\nVisit the Observatory. It changes every day.\nhttps://shopsacredground.com/sacred-ground-observatory/\n\nOr wander the Library for a meditation, a playlist, or something gentle to watch or hear.\nhttps://shopsacredground.com/library/\n\nBook a session when you’re ready — free community gatherings are open to all.\n847-749-3922\nhttps://shopsacredground.com/events/\n\nIf you’re still awake, peek at the Observatory — it changes every day.\n\n#SacredGround #ArlingtonHeights #ShopSacredGround #ChicagoEvents #CrystalShop #EnergyHealing #HolisticCenter #RockShop #Kindness",
+            "mediaItems": [
+              {
+                "type": "image",
+                "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-searchlights-hills.png",
+                "_id": "6a7a66d36539d88f0c18ca21"
+              }
+            ],
+            "platforms": [
+              {
+                "platform": "facebook",
+                "accountId": {
+                  "_id": "6a49a1f49d9472faae7c274e",
+                  "platform": "facebook",
+                  "profileId": "6a49a0ca1f5ee39905d0dc87",
+                  "displayName": "Sacred Ground",
+                  "isActive": true,
+                  "profilePicture": "https://scontent-lhr11-1.xx.fbcdn.net/v/t39.30808-1/525520556_778113704730537_8989064612556217432_n.jpg?stp=c412.0.720.720a_cp0_dst-jpg_s50x50_tt6&_nc_cat=106&ccb=1-7&_nc_sid=f907e8&_nc_ohc=UllIV0N4T8cQ7kNvwEsAVNO&_nc_oc=AdpqyI4lElUDi6hCcOB7kI_cyIt2UL4UwrEWW539mmF-oGdNDQKXE8_IJ7aL4Rj60DE&_nc_zt=24&_nc_ht=scontent-lhr11-1.xx&edm=AJdBtusEAAAA&_nc_gid=NPFZ1UrjuPqtJVfK__HzAw&_nc_tpa=Q5bMBQKx-mY-4foZ8x1Na7XHU92r5lpmqXieX0cb7hbjQR5-FH_UEZQuRq-Kz4oGMPBF6_tI30DBkMqP&oh=00_AQG7XwTHKDJJqtzVhPfL90sbC1XiCcAfsTDsc22yJ4-WhA&oe=6A7F2BBC",
+                  "username": "shopsacredground"
+                },
+                "profileId": "6a49a0ca1f5ee39905d0dc87",
+                "customMedia": [],
+                "scheduledFor": "2026-08-11T00:03:31.073Z",
+                "platformSpecificData": {
+                  "__platformUserIdSnapshot": "10236438766043851:page:101428372368870",
+                  "__usernameSnapshot": "shopsacredground",
+                  "publishingStarted": "2026-08-11T00:03:31.718Z",
+                  "lastPublishStage": "publishing"
+                },
+                "status": "published",
+                "publishAttempts": 0,
+                "contentHash": "4101b3e8484654afb3f05858e4feb62f",
+                "_id": "6a7a66d36539d88f0c18ca22",
+                "platformPostId": "101428372368870_1083618337513404",
+                "platformPostUrl": "https://www.facebook.com/101428372368870_1083618337513404",
+                "publishedAt": "2026-08-11T00:03:38.383Z"
+              }
+            ],
+            "scheduledFor": "2026-08-11T00:03:31.073Z",
+            "timezone": "America/Chicago",
+            "status": "published",
+            "tags": [],
+            "hashtags": [],
+            "mentions": [],
+            "visibility": "public",
+            "crosspostingEnabled": true,
+            "metadata": {
+              "usageCounted": true
+            },
+            "publishAttempts": 0,
+            "createdAt": "2026-08-11T00:03:31.287Z",
+            "updatedAt": "2026-08-11T00:03:38.486Z",
+            "__v": 0,
+            "publishingClaimedAt": "2026-08-11T00:03:31.417Z"
+          },
+          "message": "Post published successfully"
+        }
+      }
+    },
+    "week_ahead|2026-08-10|instagram|21514,24177,24245,24592": {
+      "draft_id": "sgma-2026-08-10-week_ahead-ig-5eec4492",
+      "posted_at": "2026-08-10T19:03:52.685173-05:00",
+      "external": {
+        "zernio": {
+          "post": {
+            "recycling": {
+              "enabled": false,
+              "gapFreq": "month",
+              "recycleCount": 0,
+              "contentVariations": [],
+              "contentVariationIndex": 0
+            },
+            "_id": "6a7a66dbd3bd58af4f53e883",
+            "userId": "6a49a0ca1f5ee39905d0dc6f",
+            "title": "",
+            "content": "As the shop settles in for the night, we’re reminded that tomorrow’s another day—and there’s plenty to look forward to.\n\nTuesday, August 11\n\n• Astrology & Tarot With Lisa\n  12:00 PM–5:00 PM\n  https://shopsacredground.com/book/lisa/\n\n• Amber | Customized Therapeutic Massage Sessions\n  12:00 PM–5:00 PM\n  https://shopsacredground.com/book/amber/\n\n• Free Community Meditation\nTuesday night 7:00–8:00 PM\nAll are welcome\nNo sign-up needed\nDoors close at 7:05pm\n\nWednesday, August 12\n\n• Tina’s Tarot & Rune Sessions\n  12:00 PM–6:00 PM\n  https://shopsacredground.com/tina/\n\nIf the night still feels open…\nThe Observatory is waiting — it changes every day.\nhttps://shopsacredground.com/sacred-ground-observatory/\n\nAnd the Library is there when you want something soft to land in: meditations, playlists, video, chanting, and music.\nhttps://shopsacredground.com/library/\n\nBook a session when you’re ready — free community gatherings are open to all.\n847-749-3922\nhttps://shopsacredground.com/events/\n\nIf you’re still awake, peek at the Observatory — it changes every day.\n\n#SacredGround #ArlingtonHeights #ShopSacredGround #ChicagoEvents #CrystalShop #EnergyHealing #HolisticCenter #RockShop #Kindness #Chicagoland #HolisticChicago",
+            "mediaItems": [
+              {
+                "type": "image",
+                "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-searchlights-hills.png",
+                "_id": "6a7a66dbd3bd58af4f53e884"
+              }
+            ],
+            "platforms": [
+              {
+                "platform": "instagram",
+                "accountId": {
+                  "_id": "6a49a12e9d9472faae7c2220",
+                  "profileId": "6a49a0ca1f5ee39905d0dc87",
+                  "platform": "instagram",
+                  "displayName": "Sacred Ground",
+                  "isActive": true,
+                  "profilePicture": "https://scontent-lhr11-1.cdninstagram.com/v/t51.2885-19/313932603_854045628963650_758437280360514790_n.jpg?stp=dst-jpg_s206x206_tt6&_nc_cat=107&ccb=7-5&_nc_sid=bf7eb4&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=jb_SBskBoKYQ7kNvwEXEYqV&_nc_oc=Adr1ERZxVh0s6z6AIHvXKnAfnLvPPYt2mBbLdeIB3aL4tZVdGmcs5GWeVCIssOOZsgM&_nc_zt=24&_nc_ht=scontent-lhr11-1.cdninstagram.com&edm=AP4hL3IEAAAA&_nc_tpa=Q5bMBQJCyZXdWTiwvYsVK8nMVoY_9eqbSHS-q3Huew9lW2tqrPsBfurVuT4th8lexSoxOqJZ_E1UUBvFog&oh=00_AQEj5_YH2m3hymt8cj7AaNWdlXS2mRlgJgw8BiXcI67z0g&oe=6A7F0CCA",
+                  "username": "shopsacredground"
+                },
+                "profileId": "6a49a0ca1f5ee39905d0dc87",
+                "customMedia": [],
+                "scheduledFor": "2026-08-11T00:03:38.880Z",
+                "platformSpecificData": {
+                  "__platformUserIdSnapshot": "27979692144969047",
+                  "__usernameSnapshot": "shopsacredground",
+                  "publishingStarted": "2026-08-11T00:03:39.847Z",
+                  "lastPublishStage": "awaiting-finalize",
+                  "containerCreatedAt": "2026-08-11T00:03:52.084Z",
+                  "pendingContainerId": "18080553392677764",
+                  "publishedCaption": "As the shop settles in for the night, we’re reminded that tomorrow’s another day—and there’s plenty to look forward to.\n\nTuesday, August 11\n\n• Astrology & Tarot With Lisa\n  12:00 PM–5:00 PM\n  https://shopsacredground.com/book/lisa/\n\n• Amber | Customized Therapeutic Massage Sessions\n  12:00 PM–5:00 PM\n  https://shopsacredground.com/book/amber/\n\n• Free Community Meditation\nTuesday night 7:00–8:00 PM\nAll are welcome\nNo sign-up needed\nDoors close at 7:05pm\n\nWednesday, August 12\n\n• Tina’s Tarot & Rune Sessions\n  12:00 PM–6:00 PM\n  https://shopsacredground.com/tina/\n\nIf the night still feels open…\nThe Observatory is waiting — it changes every day.\nhttps://shopsacredground.com/sacred-ground-observatory/\n\nAnd the Library is there when you want something soft to land in: meditations, playlists, video, chanting, and music.\nhttps://shopsacredground.com/library/\n\nBook a session when you’re ready — free community gatherings are open to all.\n847-749-3922\nhttps://shopsacredground.com/events/\n\nIf you’re still awake, peek at the Observatory — it changes every day.\n\n#SacredGround #ArlingtonHeights #ShopSacredGround #ChicagoEvents #CrystalShop #EnergyHealing #HolisticCenter #RockShop #Kindness #Chicagoland #HolisticChicago"
+                },
+                "status": "processing",
+                "publishAttempts": 0,
+                "contentHash": "57ddcc1c30cca33720cb0b651eb14279",
+                "_id": "6a7a66dbd3bd58af4f53e885"
+              }
+            ],
+            "scheduledFor": "2026-08-11T00:03:38.880Z",
+            "timezone": "America/Chicago",
+            "status": "publishing",
+            "tags": [],
+            "hashtags": [],
+            "mentions": [],
+            "visibility": "public",
+            "crosspostingEnabled": true,
+            "metadata": {
+              "usageCounted": true
+            },
+            "publishAttempts": 0,
+            "createdAt": "2026-08-11T00:03:39.290Z",
+            "updatedAt": "2026-08-11T00:03:52.103Z",
+            "__v": 0,
+            "publishingClaimedAt": "2026-08-11T00:03:39.383Z"
+          },
+          "message": "Post published successfully"
+        }
+      }
     }
   },
-  "updated_at": "2026-08-10T13:19:06.732470-05:00"
+  "updated_at": "2026-08-10T19:03:52.685184-05:00"
 }

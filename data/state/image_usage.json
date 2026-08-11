@@ -158,6 +158,18 @@
     },
     {
       "date": "2026-08-10",
+      "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Seven-glowing-chakra-energy-ce_1764775438.png",
+      "rule": "event_featured",
+      "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-08-10",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-searchlights-hills.png",
+      "rule": "week_ahead_creative_searchlights_hills",
+      "campaign": "week_ahead"
+    },
+    {
+      "date": "2026-08-10",
       "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-10-lisa-tarot.png",
       "rule": "morning_flyer",
       "campaign": "today",
@@ -169,6 +181,12 @@
       "rule": "morning_flyer",
       "campaign": "today",
       "platform": "instagram"
+    },
+    {
+      "date": "2026-08-11",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-11-meditation-1.png",
+      "rule": "morning_flyer",
+      "campaign": "today"
     }
   ]
 }
