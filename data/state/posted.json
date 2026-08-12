@@ -865,7 +865,159 @@
           "message": "Post published successfully"
         }
       }
+    },
+    "today|2026-08-12|facebook|22654,23981,24137,26069": {
+      "draft_id": "sgma-2026-08-12-today-fb-a504b41c",
+      "posted_at": "2026-08-12T09:14:13.337139-05:00",
+      "external": {
+        "zernio": {
+          "post": {
+            "recycling": {
+              "enabled": false,
+              "gapFreq": "month",
+              "recycleCount": 0,
+              "contentVariations": [],
+              "contentVariationIndex": 0
+            },
+            "_id": "6a7c7fa7fc98a7c602a174e1",
+            "userId": "6a49a0ca1f5ee39905d0dc6f",
+            "title": "",
+            "content": "Today’s total solar eclipse in Leo…\n\nToday at Sacred Ground\n\n• Tina’s Intuitive Tarot, Runes & Reiki Experience\n  Wednesday, August 12 · 12:00 PM–6:00 PM\n  https://shopsacredground.com/tina-3/\n\nTomorrow at Sacred Ground\n\n• Tarot with Adie\n  Thursday, August 13 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/book/adie/\n\n• Tai Chi Gung with Sherry Gurley\n  Thursday, August 13 · 12:00 PM–1:00 PM\n  https://shopsacredground.com/sherry/\n\n• Quantum Alignment Series With Eve\n  Thursday, August 13 · 7:00 PM–9:00 PM\n  https://shopsacredground.com/eve-quantum-class/\n\nDetails & signup on each event page.\n\nCome as you are.\n\nCome stop by the #1-vibe crystal & holistic center in Chicagoland.\n\n#SacredGround #ArlingtonHeights #ShopSacredGround #ChicagoEvents #CrystalShop #EnergyHealing #HolisticCenter #RockShop #Kindness",
+            "mediaItems": [
+              {
+                "type": "image",
+                "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-08-12-solar-eclipse.png",
+                "_id": "6a7c7fa7fc98a7c602a174e2"
+              }
+            ],
+            "platforms": [
+              {
+                "platform": "facebook",
+                "accountId": {
+                  "_id": "6a49a1f49d9472faae7c274e",
+                  "platform": "facebook",
+                  "profileId": "6a49a0ca1f5ee39905d0dc87",
+                  "displayName": "Sacred Ground",
+                  "isActive": true,
+                  "profilePicture": "https://scontent-lhr11-1.xx.fbcdn.net/v/t39.30808-1/525520556_778113704730537_8989064612556217432_n.jpg?stp=c412.0.720.720a_cp0_dst-jpg_s50x50_tt6&_nc_cat=106&ccb=1-7&_nc_sid=f907e8&_nc_ohc=bpZ2hsMlldsQ7kNvwGuqyZW&_nc_oc=AdplAjhhjM25WfQzSL_oeFG_3IhJu66MR9KeifhmPXG5zqwuo5uxcOk_FHn8NAyQWxQ&_nc_zt=24&_nc_ht=scontent-lhr11-1.xx&edm=AJdBtusEAAAA&_nc_gid=3aXcohGeHK_lEb74nbYPCA&_nc_tpa=Q5bMBQKJSISAwaL3BHx9rPZWe5YSsxqFIh5gPUor0MZeYXnS0eOCugBkFI7kwjkwYM3ZTEcO9aMgK8Of&oh=00_AQFWJMuSv37FCg49qtFYiexdI__j68Brb7m-HmsnKk8VBg&oe=6A81CEBC",
+                  "username": "shopsacredground"
+                },
+                "profileId": "6a49a0ca1f5ee39905d0dc87",
+                "customMedia": [],
+                "scheduledFor": "2026-08-12T14:13:59.367Z",
+                "platformSpecificData": {
+                  "firstComment": "Come stop by the #1-vibe crystal & holistic center in Chicagoland.",
+                  "__platformUserIdSnapshot": "10236438766043851:page:101428372368870",
+                  "__usernameSnapshot": "shopsacredground",
+                  "publishingStarted": "2026-08-12T14:14:00.388Z",
+                  "lastPublishStage": "publishing"
+                },
+                "status": "published",
+                "publishAttempts": 0,
+                "contentHash": "a5f61bad7f90b4e08fc11792ef46aa2d",
+                "_id": "6a7c7fa7fc98a7c602a174e3",
+                "platformPostId": "101428372368870_1084992494042655",
+                "platformPostUrl": "https://www.facebook.com/101428372368870_1084992494042655",
+                "publishedAt": "2026-08-12T14:14:12.848Z"
+              }
+            ],
+            "scheduledFor": "2026-08-12T14:13:59.367Z",
+            "timezone": "America/Chicago",
+            "status": "published",
+            "tags": [],
+            "hashtags": [],
+            "mentions": [],
+            "visibility": "public",
+            "crosspostingEnabled": true,
+            "metadata": {
+              "usageCounted": true
+            },
+            "publishAttempts": 0,
+            "createdAt": "2026-08-12T14:13:59.674Z",
+            "updatedAt": "2026-08-12T14:14:13.011Z",
+            "__v": 0,
+            "publishingClaimedAt": "2026-08-12T14:13:59.821Z"
+          },
+          "message": "Post published successfully"
+        }
+      }
+    },
+    "today|2026-08-12|instagram|22654,23981,24137,26069": {
+      "draft_id": "sgma-2026-08-12-today-ig-8fe640c4",
+      "posted_at": "2026-08-12T09:14:23.329229-05:00",
+      "external": {
+        "zernio": {
+          "post": {
+            "recycling": {
+              "enabled": false,
+              "gapFreq": "month",
+              "recycleCount": 0,
+              "contentVariations": [],
+              "contentVariationIndex": 0
+            },
+            "_id": "6a7c7fb5fc98a7c602a1785d",
+            "userId": "6a49a0ca1f5ee39905d0dc6f",
+            "title": "",
+            "content": "Today’s total solar eclipse in Leo…\n\nToday at Sacred Ground\n\n• Tina’s Intuitive Tarot, Runes & Reiki Experience\n  Wednesday, August 12 · 12:00 PM–6:00 PM\n  https://shopsacredground.com/tina-3/\n\nTomorrow at Sacred Ground\n\n• Tarot with Adie\n  Thursday, August 13 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/book/adie/\n\n• Tai Chi Gung with Sherry Gurley\n  Thursday, August 13 · 12:00 PM–1:00 PM\n  https://shopsacredground.com/sherry/\n\n• Quantum Alignment Series With Eve\n  Thursday, August 13 · 7:00 PM–9:00 PM\n  https://shopsacredground.com/eve-quantum-class/\n\nDetails & signup on each event page.\n\nThe door is open.\n\nArlington Heights pride: the crystal shop Chicago can’t stop talking about.\n\n#SacredGround #ArlingtonHeights #ShopSacredGround #ChicagoEvents #CrystalShop #EnergyHealing #HolisticCenter #RockShop #Kindness #Chicagoland #HolisticChicago",
+            "mediaItems": [
+              {
+                "type": "image",
+                "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-08-12-solar-eclipse.png",
+                "_id": "6a7c7fb5fc98a7c602a1785e"
+              }
+            ],
+            "platforms": [
+              {
+                "platform": "instagram",
+                "accountId": {
+                  "_id": "6a49a12e9d9472faae7c2220",
+                  "profileId": "6a49a0ca1f5ee39905d0dc87",
+                  "platform": "instagram",
+                  "displayName": "Sacred Ground",
+                  "isActive": true,
+                  "profilePicture": "https://scontent-lhr11-1.cdninstagram.com/v/t51.2885-19/313932603_854045628963650_758437280360514790_n.jpg?stp=dst-jpg_s206x206_tt6&_nc_cat=107&ccb=7-5&_nc_sid=bf7eb4&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=9aJKA52JKIUQ7kNvwGKWf6N&_nc_oc=Adp1VoHKH7wR_QTyJ_N99XgTI32zMth0IbDMuBASTVz61W0o071yIIRJ2IDKYcBEAG4&_nc_zt=24&_nc_ht=scontent-lhr11-1.cdninstagram.com&edm=AP4hL3IEAAAA&_nc_tpa=Q5bMBQJEX_ihD71_lbYwQ1aFAi-yEDO1MkXrUeoqNIPfMN1jrFPjfthEA6IgHhz4SFZRgjKY9dEnqxaPGA&oh=00_AQEu2Ymv6hJUP0Fep_ygIcVUc9DGFHDH24Q2b5z9Uh549A&oe=6A81AFCA",
+                  "username": "shopsacredground"
+                },
+                "profileId": "6a49a0ca1f5ee39905d0dc87",
+                "customMedia": [],
+                "scheduledFor": "2026-08-12T14:14:13.549Z",
+                "platformSpecificData": {
+                  "firstComment": "Arlington Heights pride: the crystal shop Chicago can’t stop talking about.",
+                  "__platformUserIdSnapshot": "27979692144969047",
+                  "__usernameSnapshot": "shopsacredground",
+                  "publishingStarted": "2026-08-12T14:14:14.925Z",
+                  "lastPublishStage": "awaiting-finalize",
+                  "containerCreatedAt": "2026-08-12T14:14:22.249Z",
+                  "pendingContainerId": "18080779856677764",
+                  "publishedCaption": "Today’s total solar eclipse in Leo…\n\nToday at Sacred Ground\n\n• Tina’s Intuitive Tarot, Runes & Reiki Experience\n  Wednesday, August 12 · 12:00 PM–6:00 PM\n  https://shopsacredground.com/tina-3/\n\nTomorrow at Sacred Ground\n\n• Tarot with Adie\n  Thursday, August 13 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/book/adie/\n\n• Tai Chi Gung with Sherry Gurley\n  Thursday, August 13 · 12:00 PM–1:00 PM\n  https://shopsacredground.com/sherry/\n\n• Quantum Alignment Series With Eve\n  Thursday, August 13 · 7:00 PM–9:00 PM\n  https://shopsacredground.com/eve-quantum-class/\n\nDetails & signup on each event page.\n\nThe door is open.\n\nArlington Heights pride: the crystal shop Chicago can’t stop talking about.\n\n#SacredGround #ArlingtonHeights #ShopSacredGround #ChicagoEvents #CrystalShop #EnergyHealing #HolisticCenter #RockShop #Kindness #Chicagoland #HolisticChicago"
+                },
+                "status": "processing",
+                "publishAttempts": 0,
+                "contentHash": "b224aad9e214ef23d10a6ec321be7834",
+                "_id": "6a7c7fb5fc98a7c602a1785f"
+              }
+            ],
+            "scheduledFor": "2026-08-12T14:14:13.549Z",
+            "timezone": "America/Chicago",
+            "status": "publishing",
+            "tags": [],
+            "hashtags": [],
+            "mentions": [],
+            "visibility": "public",
+            "crosspostingEnabled": true,
+            "metadata": {
+              "usageCounted": true
+            },
+            "publishAttempts": 0,
+            "createdAt": "2026-08-12T14:14:13.899Z",
+            "updatedAt": "2026-08-12T14:14:22.280Z",
+            "__v": 0,
+            "publishingClaimedAt": "2026-08-12T14:14:14.442Z"
+          },
+          "message": "Post published successfully"
+        }
+      }
     }
   },
-  "updated_at": "2026-08-10T13:19:06.732470-05:00"
+  "updated_at": "2026-08-12T09:14:23.329241-05:00"
 }
