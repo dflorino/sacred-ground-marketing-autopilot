@@ -865,7 +865,159 @@
           "message": "Post published successfully"
         }
       }
+    },
+    "week_ahead|2026-08-11|facebook|22654,23981,24137,24245": {
+      "draft_id": "sgma-2026-08-11-week_ahead-fb-8d426412",
+      "posted_at": "2026-08-11T19:04:23.155319-05:00",
+      "external": {
+        "zernio": {
+          "post": {
+            "recycling": {
+              "enabled": false,
+              "gapFreq": "month",
+              "recycleCount": 0,
+              "contentVariations": [],
+              "contentVariationIndex": 0
+            },
+            "_id": "6a7bb86f5b6c2d1dd443c069",
+            "userId": "6a49a0ca1f5ee39905d0dc6f",
+            "title": "",
+            "content": "Tomorrow’s total solar eclipse in Leo…\n\nWednesday, August 12\n\n• Tina’s Tarot & Rune Sessions\n  12:00 PM–6:00 PM\n  https://shopsacredground.com/tina/\n\nThursday, August 13\n\n• Tarot with Adie\n  12:00 PM–5:00 PM\n  https://shopsacredground.com/book/adie/\n\n• Tai Chi Gung with Sherry Gurley\n  12:00 PM–1:00 PM\n  https://shopsacredground.com/sherry/\n\n• Quantum Alignment Series With Eve\n  7:00 PM–9:00 PM\n  https://shopsacredground.com/eve-quantum-class/\n\nIf the night still feels open…\nThe Observatory is waiting — it changes every day.\nhttps://shopsacredground.com/sacred-ground-observatory/\n\nAnd the Library is there when you want something soft to land in: meditations, playlists, video, chanting, and music.\nhttps://shopsacredground.com/library/\n\nCall to book a session or grab your spot online.\n847-749-3922\nhttps://shopsacredground.com/events/\n\nCheck out the Observatory before you rest — a little wonder for the evening.\n\n#1 vibe in Chicagoland for crystals & healing.\n\n#SacredGround #ArlingtonHeights #ShopSacredGround #ChicagoEvents #CrystalShop #EnergyHealing #HolisticCenter #RockShop #Kindness",
+            "mediaItems": [
+              {
+                "type": "image",
+                "url": "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-08-12-solar-eclipse.png",
+                "_id": "6a7bb86f5b6c2d1dd443c06a"
+              }
+            ],
+            "platforms": [
+              {
+                "platform": "facebook",
+                "accountId": {
+                  "_id": "6a49a1f49d9472faae7c274e",
+                  "platform": "facebook",
+                  "profileId": "6a49a0ca1f5ee39905d0dc87",
+                  "displayName": "Sacred Ground",
+                  "isActive": true,
+                  "profilePicture": "https://scontent-lhr11-1.xx.fbcdn.net/v/t39.30808-1/525520556_778113704730537_8989064612556217432_n.jpg?stp=c412.0.720.720a_cp0_dst-jpg_s50x50_tt6&_nc_cat=106&ccb=1-7&_nc_sid=f907e8&_nc_ohc=bpZ2hsMlldsQ7kNvwGXUcz6&_nc_oc=Adpe4159bvTLKW6Z5kgcr5svzN_k3VUHrSowsLX0LM4Vw2CZigMon3radOpc3gponkU&_nc_zt=24&_nc_ht=scontent-lhr11-1.xx&edm=AJdBtusEAAAA&_nc_gid=7dkysYR0-DDs76sXyg-N2A&_nc_tpa=Q5bMBQLtBM3QhSen_e3qWmQL9638-YTHJPstk-7VmHK5062hUSjTI8R79vcAte_M2kC7ZFlYd-Dx5fIA&oh=00_AQHKdL7lO_Vv4jg-Zrvvfu5OMAqRF8fft6Q6iJrzc55GAw&oe=6A807D3C",
+                  "username": "shopsacredground"
+                },
+                "profileId": "6a49a0ca1f5ee39905d0dc87",
+                "customMedia": [],
+                "scheduledFor": "2026-08-12T00:03:59.608Z",
+                "platformSpecificData": {
+                  "firstComment": "#1 vibe in Chicagoland for crystals & healing.",
+                  "__platformUserIdSnapshot": "10236438766043851:page:101428372368870",
+                  "__usernameSnapshot": "shopsacredground",
+                  "publishingStarted": "2026-08-12T00:04:00.178Z",
+                  "lastPublishStage": "publishing"
+                },
+                "status": "published",
+                "publishAttempts": 0,
+                "contentHash": "aac6d0f406a0ec8c1c3a8b9eb4ba2d45",
+                "_id": "6a7bb86f5b6c2d1dd443c06b",
+                "platformPostId": "101428372368870_1084474907427747",
+                "platformPostUrl": "https://www.facebook.com/101428372368870_1084474907427747",
+                "publishedAt": "2026-08-12T00:04:22.699Z"
+              }
+            ],
+            "scheduledFor": "2026-08-12T00:03:59.608Z",
+            "timezone": "America/Chicago",
+            "status": "published",
+            "tags": [],
+            "hashtags": [],
+            "mentions": [],
+            "visibility": "public",
+            "crosspostingEnabled": true,
+            "metadata": {
+              "usageCounted": true
+            },
+            "publishAttempts": 0,
+            "createdAt": "2026-08-12T00:03:59.822Z",
+            "updatedAt": "2026-08-12T00:04:22.895Z",
+            "__v": 0,
+            "publishingClaimedAt": "2026-08-12T00:03:59.902Z"
+          },
+          "message": "Post published successfully"
+        }
+      }
+    },
+    "week_ahead|2026-08-11|instagram|22654,23981,24137,24245": {
+      "draft_id": "sgma-2026-08-11-week_ahead-ig-c660b8f7",
+      "posted_at": "2026-08-11T19:04:37.695338-05:00",
+      "external": {
+        "zernio": {
+          "post": {
+            "recycling": {
+              "enabled": false,
+              "gapFreq": "month",
+              "recycleCount": 0,
+              "contentVariations": [],
+              "contentVariationIndex": 0
+            },
+            "_id": "6a7bb8878670329140a61f71",
+            "userId": "6a49a0ca1f5ee39905d0dc6f",
+            "title": "",
+            "content": "Tomorrow’s total solar eclipse in Leo…\n\nWednesday, August 12\n\n• Tina’s Tarot & Rune Sessions\n  12:00 PM–6:00 PM\n  https://shopsacredground.com/tina/\n\nThursday, August 13\n\n• Tarot with Adie\n  12:00 PM–5:00 PM\n  https://shopsacredground.com/book/adie/\n\n• Tai Chi Gung with Sherry Gurley\n  12:00 PM–1:00 PM\n  https://shopsacredground.com/sherry/\n\n• Quantum Alignment Series With Eve\n  7:00 PM–9:00 PM\n  https://shopsacredground.com/eve-quantum-class/\n\nIf the night still feels open…\nThe Observatory is waiting — it changes every day.\nhttps://shopsacredground.com/sacred-ground-observatory/\n\nAnd the Library is there when you want something soft to land in: meditations, playlists, video, chanting, and music.\nhttps://shopsacredground.com/library/\n\nCall to book a session or grab your spot online.\n847-749-3922\nhttps://shopsacredground.com/events/\n\nCheck out the Observatory before you rest — a little wonder for the evening.\n\n#SacredGround #ArlingtonHeights #ShopSacredGround #ChicagoEvents #CrystalShop #EnergyHealing #HolisticCenter #RockShop #Kindness #Chicagoland #HolisticChicago",
+            "mediaItems": [
+              {
+                "type": "image",
+                "url": "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-08-12-solar-eclipse.png",
+                "_id": "6a7bb8878670329140a61f72"
+              }
+            ],
+            "platforms": [
+              {
+                "platform": "instagram",
+                "accountId": {
+                  "_id": "6a49a12e9d9472faae7c2220",
+                  "profileId": "6a49a0ca1f5ee39905d0dc87",
+                  "platform": "instagram",
+                  "displayName": "Sacred Ground",
+                  "isActive": true,
+                  "profilePicture": "https://scontent-lhr11-1.cdninstagram.com/v/t51.2885-19/313932603_854045628963650_758437280360514790_n.jpg?stp=dst-jpg_s206x206_tt6&_nc_cat=107&ccb=7-5&_nc_sid=bf7eb4&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=9aJKA52JKIUQ7kNvwHtEeFD&_nc_oc=AdrsTzTKSjC8miNM2xT_FuMrpYC7jJQOiG2QpRk4gjzRK53biaAN2GwTDSYoJKxolnY&_nc_zt=24&_nc_ht=scontent-lhr11-1.cdninstagram.com&edm=AP4hL3IEAAAA&_nc_tpa=Q5bMBQJKPlPqB6a_Bb6Wp1R3Qo4V6iV0lc05f8NTzOa-zvgfgaEqVJodOnQ7jo2h6I4kkhK7SsdxIymXaA&oh=00_AQGL4PADnPkaFg41CkWZm85VwyhKjFeoMlpVuh-ZCpkLug&oe=6A805E4A",
+                  "username": "shopsacredground"
+                },
+                "profileId": "6a49a0ca1f5ee39905d0dc87",
+                "customMedia": [],
+                "scheduledFor": "2026-08-12T00:04:23.317Z",
+                "platformSpecificData": {
+                  "firstComment": "Chicago’s best-loved crystals in the Chicagoland area.",
+                  "__platformUserIdSnapshot": "27979692144969047",
+                  "__usernameSnapshot": "shopsacredground",
+                  "publishingStarted": "2026-08-12T00:04:24.016Z",
+                  "lastPublishStage": "awaiting-finalize",
+                  "containerCreatedAt": "2026-08-12T00:04:37.396Z",
+                  "pendingContainerId": "18080700332677764",
+                  "publishedCaption": "Tomorrow’s total solar eclipse in Leo…\n\nWednesday, August 12\n\n• Tina’s Tarot & Rune Sessions\n  12:00 PM–6:00 PM\n  https://shopsacredground.com/tina/\n\nThursday, August 13\n\n• Tarot with Adie\n  12:00 PM–5:00 PM\n  https://shopsacredground.com/book/adie/\n\n• Tai Chi Gung with Sherry Gurley\n  12:00 PM–1:00 PM\n  https://shopsacredground.com/sherry/\n\n• Quantum Alignment Series With Eve\n  7:00 PM–9:00 PM\n  https://shopsacredground.com/eve-quantum-class/\n\nIf the night still feels open…\nThe Observatory is waiting — it changes every day.\nhttps://shopsacredground.com/sacred-ground-observatory/\n\nAnd the Library is there when you want something soft to land in: meditations, playlists, video, chanting, and music.\nhttps://shopsacredground.com/library/\n\nCall to book a session or grab your spot online.\n847-749-3922\nhttps://shopsacredground.com/events/\n\nCheck out the Observatory before you rest — a little wonder for the evening.\n\n#SacredGround #ArlingtonHeights #ShopSacredGround #ChicagoEvents #CrystalShop #EnergyHealing #HolisticCenter #RockShop #Kindness #Chicagoland #HolisticChicago"
+                },
+                "status": "processing",
+                "publishAttempts": 0,
+                "contentHash": "e7170cc5bbd5b2f832c25d5da6552280",
+                "_id": "6a7bb8878670329140a61f73"
+              }
+            ],
+            "scheduledFor": "2026-08-12T00:04:23.317Z",
+            "timezone": "America/Chicago",
+            "status": "publishing",
+            "tags": [],
+            "hashtags": [],
+            "mentions": [],
+            "visibility": "public",
+            "crosspostingEnabled": true,
+            "metadata": {
+              "usageCounted": true
+            },
+            "publishAttempts": 0,
+            "createdAt": "2026-08-12T00:04:23.644Z",
+            "updatedAt": "2026-08-12T00:04:37.428Z",
+            "__v": 0,
+            "publishingClaimedAt": "2026-08-12T00:04:23.706Z"
+          },
+          "message": "Post published successfully"
+        }
+      }
     }
   },
-  "updated_at": "2026-08-10T13:19:06.732470-05:00"
+  "updated_at": "2026-08-11T19:04:37.695360-05:00"
 }
