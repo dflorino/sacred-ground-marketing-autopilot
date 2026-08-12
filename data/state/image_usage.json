@@ -169,6 +169,24 @@
       "rule": "morning_flyer",
       "campaign": "today",
       "platform": "instagram"
+    },
+    {
+      "date": "2026-08-12",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-08-12-solar-eclipse.png",
+      "rule": "celestial_morning",
+      "campaign": "today"
+    },
+    {
+      "date": "2026-08-12",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-08-12-solar-eclipse.png",
+      "rule": "celestial_morning",
+      "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-08-12",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-08-13-perseids-2.png",
+      "rule": "week_ahead_celestial_perseids_peak_2026",
+      "campaign": "week_ahead"
     }
   ]
 }

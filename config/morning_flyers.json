@@ -185,6 +185,51 @@
         "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-14-soundbath-2.png",
         "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-14-sound-bath-or-shamanic-drum-b.png"
       ]
+    },
+    "2026-08-15": {
+      "label": "Shaman Medium Melissa + Tarot +",
+      "covers": [
+        "Shaman Medium Melissa",
+        "Tarot with Adie",
+        "Keeper of the Cards: Robert"
+      ],
+      "local": "assets/sg-morning-flyer-2026-08-15-shaman-medium-melissa.png",
+      "url": "",
+      "prebranded": true,
+      "template": "thursday-style"
+    },
+    "2026-08-16": {
+      "label": "Reiki Share Free Community Event + Angel & Quick Astrology Readings",
+      "covers": [
+        "Reiki Share Free Community Event",
+        "Angel & Quick Astrology Readings with Lin Bufelli"
+      ],
+      "local": "assets/sg-morning-flyer-2026-08-16-reiki-share-free-community-e.png",
+      "url": "",
+      "prebranded": true,
+      "template": "thursday-style"
+    },
+    "2026-08-17": {
+      "label": "Lisa Maria Intuitive Tarot",
+      "covers": [
+        "Lisa Maria Intuitive Tarot"
+      ],
+      "local": "assets/sg-morning-flyer-2026-08-17-lisa-maria-intuitive-tarot.png",
+      "url": "",
+      "prebranded": true,
+      "template": "thursday-style"
+    },
+    "2026-08-18": {
+      "label": "Meditation Free Community Event + Amber | Customized Therapeutic Massage Sessions +",
+      "covers": [
+        "Meditation Free Community Event",
+        "Amber | Customized Therapeutic Massage Sessions",
+        "Astrology & Tarot With Lisa"
+      ],
+      "local": "assets/sg-morning-flyer-2026-08-18-meditation-free-community-ev.png",
+      "url": "",
+      "prebranded": true,
+      "template": "thursday-style"
     }
   },
   "template": {
