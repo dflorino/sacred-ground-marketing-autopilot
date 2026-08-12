@@ -170,21 +170,46 @@ def _is_night_pool_eligible(plate: Dict[str, Any]) -> bool:
     )
 
 
-def _night_no_repeat_days() -> int:
+def _night_never_reuse() -> bool:
+    """Founder FINAL 2026-08-12: permanent URL never-reuse (default True)."""
     night = atmosphere_config().get("nighttime") or {}
+    if "never_reuse" in night:
+        return bool(night.get("never_reuse"))
     try:
-        return max(1, int(night.get("no_repeat_days") or 7))
+        from .images import never_reuse_urls
+
+        return never_reuse_urls()
+    except Exception:
+        return True
+
+
+def _night_no_repeat_days() -> Optional[int]:
+    """Legacy family soft-cooldown window; None / <=0 means lifetime URL block."""
+    night = atmosphere_config().get("nighttime") or {}
+    if _night_never_reuse():
+        return None
+    raw = night.get("no_repeat_days")
+    if raw is None:
+        return None
+    try:
+        days = int(raw)
     except (TypeError, ValueError):
-        return 7
+        return None
+    return days if days > 0 else None
 
 
-def _recent_week_ahead_usage(day: date, within_days: int) -> Tuple[set[str], set[str]]:
-    """Return (urls, families) used by week_ahead in [day-(within_days-1), day)."""
+def _recent_week_ahead_usage(
+    day: date, within_days: Optional[int] = None
+) -> Tuple[set[str], set[str]]:
+    """Return (urls, families) used by week_ahead.
+
+    within_days None → lifetime (all prior week_ahead history before today).
+    Positive within_days → rolling window [day-(n-1), day).
+    """
     try:
         from .images import load_image_usage
     except Exception:
         return set(), set()
-    cutoff = day - timedelta(days=within_days - 1)
     urls: set[str] = set()
     families: set[str] = set()
     history = load_image_usage().get("history") or []
@@ -201,6 +226,8 @@ def _recent_week_ahead_usage(day: date, within_days: int) -> Tuple[set[str], set
             fam = str(p.get("family") or "").strip().lower()
             if u and fam:
                 url_family[u] = fam
+    lifetime = within_days is None or int(within_days) <= 0
+    cutoff = None if lifetime else day - timedelta(days=int(within_days) - 1)
     for h in history:
         if h.get("campaign") != "week_ahead" or not h.get("url"):
             continue
@@ -208,12 +235,16 @@ def _recent_week_ahead_usage(day: date, within_days: int) -> Tuple[set[str], set
             d = date.fromisoformat(str(h.get("date")))
         except ValueError:
             continue
-        if cutoff <= d < day:
-            url = str(h["url"])
-            urls.add(url)
-            fam = url_family.get(url) or str(h.get("family") or "").strip().lower()
-            if fam:
-                families.add(fam)
+        if lifetime:
+            if d >= day:
+                continue
+        elif not (cutoff <= d < day):
+            continue
+        url = str(h["url"])
+        urls.add(url)
+        fam = url_family.get(url) or str(h.get("family") or "").strip().lower()
+        if fam:
+            families.add(fam)
     return urls, families
 
 
@@ -306,7 +337,7 @@ def _filter_cooldown(
     recent_families: set[str],
     hard_block_urls: set[str],
 ) -> List[Dict[str, Any]]:
-    """Prefer plates not used recently; never reuse yesterday / same-night exclude."""
+    """Prefer plates not used recently; never ship hard-blocked / excluded URLs."""
     out: List[Dict[str, Any]] = []
     for p in plates:
         url = str(p.get("url") or "")
@@ -333,17 +364,18 @@ def _pick_night_creative(
     and never after a recent storefront streak — so creatives cannot get stuck
     behind founder exterior / season storefront photos.
 
-    exclude_urls: URLs already claimed by the other platform tonight.
-    Also enforces no-repeat cooldown (default 7 days) and never reuses the
-    same URL from the prior night (Founder 2026-08-09).
+    exclude_urls: lifetime never-reuse set from image_usage (cross-campaign) plus
+    any same-slot claims. Never silently fall back to a used URL (Founder
+    2026-08-12 FINAL). Returns {} when no unused plate remains.
     """
     excluded = {str(u) for u in (exclude_urls or []) if u}
     creatives, storefronts = _eligible_creative_pool(day)
     no_repeat = _night_no_repeat_days()
     recent_urls, recent_families = _recent_week_ahead_usage(day, no_repeat)
-    # Hard block: exact URLs used yesterday (within_days=2 → [day-1, day)).
-    yesterday_urls, _ = _recent_week_ahead_usage(day, within_days=2)
-    hard_block = set(yesterday_urls) | set(excluded)
+    # Hard block: every URL already used (lifetime via exclude_urls) + prior
+    # week_ahead history when never_reuse is on.
+    prior_urls, _ = _recent_week_ahead_usage(day, within_days=no_repeat)
+    hard_block = set(prior_urls) | set(excluded)
 
     creatives_fresh = _filter_cooldown(
         creatives,
@@ -359,8 +391,7 @@ def _pick_night_creative(
         recent_families=recent_families,
         hard_block_urls=hard_block,
     )
-    # Soft fallback: ignore longer family/url cooldown, still hard-block yesterday
-    # and same-night exclude.
+    # Soft fallback: ignore family soft-cooldown only — still hard-block used URLs.
     creatives_avail = creatives_fresh or [
         p
         for p in creatives
@@ -375,22 +406,8 @@ def _pick_night_creative(
     if not creatives_avail and storefronts_avail:
         return _rotate_pool(storefronts_avail, day, platform)
     if not creatives_avail and not storefronts_avail:
-        # Nothing unique left — fall back to full pools (may duplicate).
-        if not creatives and storefronts:
-            return _rotate_pool(
-                [p for p in storefronts if str(p.get("url") or "") not in excluded]
-                or list(storefronts),
-                day,
-                platform,
-            )
-        if not creatives:
-            return {}
-        creatives_avail = [
-            p for p in creatives if str(p.get("url") or "") not in excluded
-        ] or list(creatives)
-        storefronts_avail = [
-            p for p in storefronts if str(p.get("url") or "") not in excluded
-        ] or list(storefronts)
+        # Nothing unique left — fail closed (never silently reuse).
+        return {}
 
     # Storefront slot: every 5th night only, and only if no recent streak.
     allow_storefront = (

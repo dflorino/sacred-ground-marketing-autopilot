@@ -71,13 +71,15 @@ The shared plate must be **colorful, bright, interesting, engaging**:
 - Morning automation @ 9am: ensure flyer for **today + tomorrow** before publish (see AUTOMATION-DRAFT.md / docs/MORNING-FLYERS.md).
 - CLI tip: `generate-morning-flyers --start-offset 0 --days 2` for today+tomorrow.
 
-## Shop pride (Founder Aug 11 ~3:05pm CT)
+## Shop pride (Founder Aug 11 + Aug 12 FINAL)
 
 - Do **not** overlay Chicago #1 / favorite badges onto already-made morning flyers
 - Caption + first-comment claims stay ON
-- Future **NEW** AI generations may include designed-in pride via
-  `social_proof.designed_in_generation_brief` in `build_generation_prompt`
+- Every **NEW** AI morning flyer generation/remake MUST include designed-in pride
+  via `social_proof.designed_in_generation_brief` in `build_generation_prompt`
+  (`designed_in_required: true`)
 - `badge_on_morning_flyers` stays false — no post-hoc sticker path
+- Never reuse a morning flyer URL that already appears in `image_usage` (lifetime)
 
 ## Do not
 

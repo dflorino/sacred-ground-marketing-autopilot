@@ -16,9 +16,9 @@ Autopilot overlay logo + cream footer (see `.cursor/rules/social-image-branding.
 - Sun-dominating / sun-in-sky plates are retired under
   `nighttime.creative_pool_retired_daytime_sun` (`daytime_sun: true`).
   Code skips them even if someone leaves a copy in `creative_pool`.
-- Rotation enforces `nighttime.no_repeat_days` (default **7**) via
-  `data/state/image_usage.json`, and **never** reuses the same URL from the prior night.
-- FB and IG still take different URLs the same night when the pool allows.
+- Rotation enforces lifetime `never_reuse` via `data/state/image_usage.json` —
+  any URL already posted is permanently blocked; fail closed rather than silently
+  reuse (Founder Aug 12 FINAL). Same-slot FB+IG single-image mode may share one URL.
 
 Cursor rule: `.cursor/rules/night-image-sacred-ground.mdc`.
 
@@ -35,13 +35,14 @@ Cursor rule: `.cursor/rules/night-image-sacred-ground.mdc`.
 3. Set `url` on the pool entry; `sg_identity: "pass"`; remove from `creative_pool_needs_sg_identity`.
 4. Atmosphere code skips any plate with `sg_identity` fail, `active: false`, or `daytime_sun: true`.
 
-## Shop pride (Founder Aug 11 ~3:05pm CT)
+## Shop pride (Founder Aug 11 + Aug 12 FINAL)
 
 - **Do not** overlay Chicago #1 / favorite badges onto existing night or celestial pool plates.
 - Keep posting the current no-badge inventory until it naturally rotates out.
-- When generating a **NEW** night creative later, optionally append
-  `social_proof.designed_in_generation_brief(seed, day=…, surface="night")` to the
-  generation prompt so pride is designed into the plate (not a sticker after the fact).
+- When generating a **NEW** night / celestial creative, **must** append
+  `social_proof.designed_in_generation_brief(seed, day=…, surface="night"|"celestial")`
+  to the generation prompt (`designed_in_required: true`) so pride is designed into
+  the plate (not a sticker after the fact).
 - Live gates `badge_on_night` stay **false**.
 
 ## Audit

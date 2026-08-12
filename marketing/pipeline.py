@@ -27,6 +27,15 @@ def _campaign_auto_publish(campaign: str) -> bool:
     return bool(camp.get("auto_publish"))
 
 
+def _image_never_reuse_blocked(image) -> bool:
+    """True when plan_image refused every already-used media URL."""
+    if image is None:
+        return True
+    rule = str(getattr(image, "rule", "") or "")
+    url = getattr(image, "url", None)
+    return rule == "reuse_blocked" or not url
+
+
 def _make_draft(
     *,
     campaign: str,
@@ -216,74 +225,83 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                 day=flyer_day,
                 platform="facebook",
             )
-            for platform in platforms:
-                img = shared_img
-                prebranded = bool(getattr(img, "prebranded", False)) or images.skip_brand_overlays(
-                    img
+            if _image_never_reuse_blocked(shared_img):
+                skipped_drafts.append(
+                    {
+                        "campaign": "today",
+                        "reason": "image_never_reuse_blocked",
+                        "detail": getattr(shared_img, "recommendation", "") or "",
+                    }
                 )
-                camp_word = schedule.morning_campaign_word(
-                    flyer_day=flyer_day,
-                    publish_day=day,
-                    prebranded=prebranded,
-                )
-                visit_notes = notes_base + [
-                    f"event_day:{event_day.isoformat()}",
-                    f"flyer_day:{flyer_day.isoformat()}",
-                    f"campaign_word:{camp_word or 'skip_prebranded'}",
-                ]
-                if cel_morning_hit:
-                    visit_notes.append(f"celestial_morning:{cel_morning_hit[0]}")
-                if prebranded:
-                    visit_notes.append("skip_brand_overlays:prebranded_flyer")
-                if today_slice:
-                    visit_notes.append(
-                        "includes_publish_day:"
-                        + ",".join(str(e.id) for e in today_slice)
+            else:
+                for platform in platforms:
+                    img = shared_img
+                    prebranded = bool(
+                        getattr(img, "prebranded", False)
+                    ) or images.skip_brand_overlays(img)
+                    camp_word = schedule.morning_campaign_word(
+                        flyer_day=flyer_day,
+                        publish_day=day,
+                        prebranded=prebranded,
                     )
-                if not morning_events:
-                    visit_notes.append("empty_day_visit")
-                rule_note = (
-                    f"image_rule:{img.rule}" if getattr(img, "rule", None) else None
-                )
-                day_notes = visit_notes + ([rule_note] if rule_note else [])
-                cap = captions.caption_today(
-                    tomorrow_slice,
-                    platform,
-                    event_day,
-                    today_events=today_slice,
-                    flyer_day=flyer_day,
-                    publish_day=day,
-                )
-                draft = _make_draft(
-                    campaign="today",
-                    platform=platform,
-                    date_key=day.isoformat(),
-                    events=morning_events,
-                    caption=cap,
-                    image=img,
-                    sched=sched,
-                    extra_fp="empty_visit" if not morning_events else "",
-                    notes=day_notes,
-                )
-                if draft:
-                    if today_cfg.get("auto_publish") and not is_paused():
-                        draft = _auto_ready_for_publish(draft["id"])
-                    created.append(draft)
-                else:
-                    skipped_drafts.append(
-                        {
-                            "campaign": "today",
-                            "platform": platform,
-                            "reason": "duplicate_or_override",
-                        }
+                    visit_notes = notes_base + [
+                        f"event_day:{event_day.isoformat()}",
+                        f"flyer_day:{flyer_day.isoformat()}",
+                        f"campaign_word:{camp_word or 'skip_prebranded'}",
+                    ]
+                    if cel_morning_hit:
+                        visit_notes.append(f"celestial_morning:{cel_morning_hit[0]}")
+                    if prebranded:
+                        visit_notes.append("skip_brand_overlays:prebranded_flyer")
+                    if today_slice:
+                        visit_notes.append(
+                            "includes_publish_day:"
+                            + ",".join(str(e.id) for e in today_slice)
+                        )
+                    if not morning_events:
+                        visit_notes.append("empty_day_visit")
+                    rule_note = (
+                        f"image_rule:{img.rule}" if getattr(img, "rule", None) else None
                     )
-            if shared_img.url:
-                images.record_image_use(
-                    day=flyer_day,
-                    url=shared_img.url,
-                    rule=str(shared_img.rule or shared_img.source),
-                    campaign="today",
-                )
+                    day_notes = visit_notes + ([rule_note] if rule_note else [])
+                    cap = captions.caption_today(
+                        tomorrow_slice,
+                        platform,
+                        event_day,
+                        today_events=today_slice,
+                        flyer_day=flyer_day,
+                        publish_day=day,
+                    )
+                    draft = _make_draft(
+                        campaign="today",
+                        platform=platform,
+                        date_key=day.isoformat(),
+                        events=morning_events,
+                        caption=cap,
+                        image=img,
+                        sched=sched,
+                        extra_fp="empty_visit" if not morning_events else "",
+                        notes=day_notes,
+                    )
+                    if draft:
+                        if today_cfg.get("auto_publish") and not is_paused():
+                            draft = _auto_ready_for_publish(draft["id"])
+                        created.append(draft)
+                    else:
+                        skipped_drafts.append(
+                            {
+                                "campaign": "today",
+                                "platform": platform,
+                                "reason": "duplicate_or_override",
+                            }
+                        )
+                if shared_img.url:
+                    images.record_image_use(
+                        day=flyer_day,
+                        url=shared_img.url,
+                        rule=str(shared_img.rule or shared_img.source),
+                        campaign="today",
+                    )
         else:
             skipped_drafts.append(
                 {"campaign": "today", "reason": "no_events_for_target_day"}
@@ -344,48 +362,57 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                 platform="facebook",
                 exclude_urls=af_exclude,
             )
-            for platform in platforms:
-                img = shared_af
-                cap = captions.caption_afternoon_spotlight(
-                    spotlight_ev, platform, day
+            if _image_never_reuse_blocked(shared_af):
+                skipped_drafts.append(
+                    {
+                        "campaign": "afternoon_spotlight",
+                        "reason": "image_never_reuse_blocked",
+                        "detail": getattr(shared_af, "recommendation", "") or "",
+                    }
                 )
-                af_notes = notes_base + ["afternoon_spotlight_5pm"]
-                if spotlight_ev:
-                    af_notes.append(f"spotlight_event:{spotlight_ev.id}")
-                else:
-                    af_notes.append("empty_afternoon_brand")
-                if img.rule:
-                    af_notes.append(f"image_rule:{img.rule}")
-                draft = _make_draft(
-                    campaign="afternoon_spotlight",
-                    platform=platform,
-                    date_key=day.isoformat(),
-                    events=af_events,
-                    caption=cap,
-                    image=img,
-                    sched=sched_af,
-                    extra_fp="" if spotlight_ev else "brand_visit",
-                    notes=af_notes,
-                )
-                if draft:
-                    if af_cfg.get("auto_publish") and not is_paused():
-                        draft = _auto_ready_for_publish(draft["id"])
-                    created.append(draft)
-                else:
-                    skipped_drafts.append(
-                        {
-                            "campaign": "afternoon_spotlight",
-                            "platform": platform,
-                            "reason": "duplicate_or_override",
-                        }
+            else:
+                for platform in platforms:
+                    img = shared_af
+                    cap = captions.caption_afternoon_spotlight(
+                        spotlight_ev, platform, day
                     )
-            if shared_af.url:
-                images.record_image_use(
-                    day=day,
-                    url=shared_af.url,
-                    rule=str(shared_af.rule or shared_af.source),
-                    campaign="afternoon_spotlight",
-                )
+                    af_notes = notes_base + ["afternoon_spotlight_5pm"]
+                    if spotlight_ev:
+                        af_notes.append(f"spotlight_event:{spotlight_ev.id}")
+                    else:
+                        af_notes.append("empty_afternoon_brand")
+                    if img.rule:
+                        af_notes.append(f"image_rule:{img.rule}")
+                    draft = _make_draft(
+                        campaign="afternoon_spotlight",
+                        platform=platform,
+                        date_key=day.isoformat(),
+                        events=af_events,
+                        caption=cap,
+                        image=img,
+                        sched=sched_af,
+                        extra_fp="" if spotlight_ev else "brand_visit",
+                        notes=af_notes,
+                    )
+                    if draft:
+                        if af_cfg.get("auto_publish") and not is_paused():
+                            draft = _auto_ready_for_publish(draft["id"])
+                        created.append(draft)
+                    else:
+                        skipped_drafts.append(
+                            {
+                                "campaign": "afternoon_spotlight",
+                                "platform": platform,
+                                "reason": "duplicate_or_override",
+                            }
+                        )
+                if shared_af.url:
+                    images.record_image_use(
+                        day=day,
+                        url=shared_af.url,
+                        rule=str(shared_af.rule or shared_af.source),
+                        campaign="afternoon_spotlight",
+                    )
         else:
             skipped_drafts.append(
                 {"campaign": "afternoon_spotlight", "reason": "no_spotlight_event"}
@@ -424,48 +451,57 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                 platform="facebook",
                 exclude_urls=wa_exclude,
             )
-            for platform in platforms:
-                img = shared_wa
-                cap = captions.caption_week_ahead(ahead_events, platform, day)
-                wa_notes = notes_base + [
-                    "daily_7pm_upcoming",
-                    f"horizon_days={horizon}",
-                    f"horizon_start={window_start.isoformat()}",
-                ]
-                if cel_night_hit:
-                    wa_notes.append(f"celestial_night:{cel_night_hit[0]}")
-                if img.rule:
-                    wa_notes.append(f"image_rule:{img.rule}")
-                draft = _make_draft(
-                    campaign="week_ahead",
-                    platform=platform,
-                    date_key=day.isoformat(),
-                    events=ahead_events,
-                    caption=cap,
-                    image=img,
-                    sched=sched,
-                    notes=wa_notes,
+            if _image_never_reuse_blocked(shared_wa):
+                skipped_drafts.append(
+                    {
+                        "campaign": "week_ahead",
+                        "reason": "image_never_reuse_blocked",
+                        "detail": getattr(shared_wa, "recommendation", "") or "",
+                    }
                 )
-                if draft:
-                    if wa_cfg.get("auto_publish") and not is_paused():
-                        draft = _auto_ready_for_publish(draft["id"])
-                    created.append(draft)
-                    wa_created += 1
-                else:
-                    skipped_drafts.append(
-                        {
-                            "campaign": "week_ahead",
-                            "platform": platform,
-                            "reason": "duplicate_or_override",
-                        }
+            else:
+                for platform in platforms:
+                    img = shared_wa
+                    cap = captions.caption_week_ahead(ahead_events, platform, day)
+                    wa_notes = notes_base + [
+                        "daily_7pm_upcoming",
+                        f"horizon_days={horizon}",
+                        f"horizon_start={window_start.isoformat()}",
+                    ]
+                    if cel_night_hit:
+                        wa_notes.append(f"celestial_night:{cel_night_hit[0]}")
+                    if img.rule:
+                        wa_notes.append(f"image_rule:{img.rule}")
+                    draft = _make_draft(
+                        campaign="week_ahead",
+                        platform=platform,
+                        date_key=day.isoformat(),
+                        events=ahead_events,
+                        caption=cap,
+                        image=img,
+                        sched=sched,
+                        notes=wa_notes,
                     )
-            if wa_created and shared_wa.url:
-                images.record_image_use(
-                    day=day,
-                    url=shared_wa.url,
-                    rule=str(shared_wa.rule or shared_wa.source),
-                    campaign="week_ahead",
-                )
+                    if draft:
+                        if wa_cfg.get("auto_publish") and not is_paused():
+                            draft = _auto_ready_for_publish(draft["id"])
+                        created.append(draft)
+                        wa_created += 1
+                    else:
+                        skipped_drafts.append(
+                            {
+                                "campaign": "week_ahead",
+                                "platform": platform,
+                                "reason": "duplicate_or_override",
+                            }
+                        )
+                if wa_created and shared_wa.url:
+                    images.record_image_use(
+                        day=day,
+                        url=shared_wa.url,
+                        rule=str(shared_wa.rule or shared_wa.source),
+                        campaign="week_ahead",
+                    )
         else:
             skipped_drafts.append(
                 {"campaign": "week_ahead", "reason": "no_events_in_horizon"}
@@ -504,39 +540,49 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                 )
             else:
                 img = images.plan_image(med_events, "tuesday_meditation", day=day)
+                if _image_never_reuse_blocked(img):
+                    skipped_drafts.append(
+                        {
+                            "campaign": "tuesday_meditation",
+                            "reason": "image_never_reuse_blocked",
+                            "detail": getattr(img, "recommendation", "") or "",
+                        }
+                    )
+                    img = None
                 sched = schedule.schedule_tuesday_meditation(day)
                 tm_platforms = list(tm_cfg.get("platforms") or platforms)
                 tm_created = 0
-                for platform in tm_platforms:
-                    cap = captions.caption_tuesday_meditation(platform, day)
-                    draft = _make_draft(
-                        campaign="tuesday_meditation",
-                        platform=platform,
-                        date_key=day.isoformat(),
-                        events=med_events,
-                        caption=cap,
-                        image=img,
-                        sched=sched,
-                        notes=notes_base
-                        + [
-                            "tuesday_4pm_meditation",
-                            f"image_rule:{img.rule}",
-                        ],
-                    )
-                    if draft:
-                        if tm_cfg.get("auto_publish") and not is_paused():
-                            draft = _auto_ready_for_publish(draft["id"])
-                        created.append(draft)
-                        tm_created += 1
-                    else:
-                        skipped_drafts.append(
-                            {
-                                "campaign": "tuesday_meditation",
-                                "platform": platform,
-                                "reason": "duplicate_or_override",
-                            }
+                if img is not None:
+                    for platform in tm_platforms:
+                        cap = captions.caption_tuesday_meditation(platform, day)
+                        draft = _make_draft(
+                            campaign="tuesday_meditation",
+                            platform=platform,
+                            date_key=day.isoformat(),
+                            events=med_events,
+                            caption=cap,
+                            image=img,
+                            sched=sched,
+                            notes=notes_base
+                            + [
+                                "tuesday_4pm_meditation",
+                                f"image_rule:{img.rule}",
+                            ],
                         )
-                if tm_created and img.url:
+                        if draft:
+                            if tm_cfg.get("auto_publish") and not is_paused():
+                                draft = _auto_ready_for_publish(draft["id"])
+                            created.append(draft)
+                            tm_created += 1
+                        else:
+                            skipped_drafts.append(
+                                {
+                                    "campaign": "tuesday_meditation",
+                                    "platform": platform,
+                                    "reason": "duplicate_or_override",
+                                }
+                            )
+                if tm_created and img and img.url:
                     images.record_image_use(
                         day=day,
                         url=img.url,

@@ -470,7 +470,7 @@ class AutopilotTests(unittest.TestCase):
         robert_day2 = images.plan_image(robert_ev, "today", day=date(2026, 9, 4))
         self.assertNotEqual(robert_day2.url, robert_url)
 
-        # 7-day no-repeat on rotation
+        # Lifetime never-reuse on rotation
         images.record_image_use(
             day=date(2026, 9, 2),
             url=plan_r.url or "",
@@ -1492,16 +1492,12 @@ class AutopilotTests(unittest.TestCase):
             shared.url,
         )
 
-        # Date-keyed morning flyers: single-image mode — same URL on FB+IG.
+        # Date-keyed morning flyers: single-image mode — plan once, same URL on FB+IG.
+        # Do not pass the shared URL as exclude_urls (that is cross-slot never-reuse,
+        # not same-slot FB+IG pairing).
         flyer_day = date(2026, 8, 6)
         f_fb = images.plan_image([], "today", day=flyer_day, platform="facebook")
-        f_ig = images.plan_image(
-            [],
-            "today",
-            day=flyer_day,
-            platform="instagram",
-            exclude_urls=[f_fb.url or ""],
-        )
+        f_ig = images.plan_image([], "today", day=flyer_day, platform="instagram")
         self.assertEqual(f_fb.rule, "morning_flyer")
         self.assertEqual(f_ig.rule, "morning_flyer")
         self.assertTrue(f_fb.prebranded and f_ig.prebranded)
@@ -1915,14 +1911,9 @@ class AutopilotTests(unittest.TestCase):
             platform="facebook",
         )
         images.morning_flyers.cache_clear()
+        # Single-image mode: same primary URL on FB+IG (do not exclude the shared URL).
         plan_fb = images.plan_image(events, "today", day=day, platform="facebook")
-        plan_ig = images.plan_image(
-            events,
-            "today",
-            day=day,
-            platform="instagram",
-            exclude_urls=[plan_fb.url or ""],
-        )
+        plan_ig = images.plan_image(events, "today", day=day, platform="instagram")
         self.assertEqual(plan_fb.rule, "morning_flyer")
         self.assertEqual(plan_ig.rule, "morning_flyer")
         self.assertEqual(plan_fb.url, plan_ig.url)
@@ -2052,9 +2043,53 @@ class AutopilotTests(unittest.TestCase):
         self.assertEqual(plan.rule, "event_featured")
         self.assertEqual(plan.url, event_url)
         self.assertNotEqual(plan.url, morning_url)
-        # Cross-campaign cooldown includes same-day morning URL.
-        blocked = images.cooldown_blocked_urls(day, within_days=7)
+        # Lifetime never-reuse includes same-day morning URL.
+        blocked = images.cooldown_blocked_urls(day)
         self.assertIn(morning_url, blocked)
+        self.assertTrue(images.never_reuse_urls())
+
+    def test_never_reuse_blocks_prior_eve_flyer_next_day(self) -> None:
+        """Founder FINAL: tomorrow cannot re-ship today's Eve afternoon flyer."""
+        from marketing import images
+        from marketing.models import Event
+
+        images.IMAGE_USAGE_PATH = os.path.join(self._tmpdir, "state", "image_usage.json")
+        images.image_rules.cache_clear()
+        wed = date(2026, 8, 12)
+        thu = date(2026, 8, 13)
+        eve_url = (
+            "https://shopsacredground.com/wp-content/uploads/"
+            "sg-afternoon-eve-quantum-firehorse-2026-08-13.jpg"
+        )
+        images.record_image_use(
+            day=wed,
+            url=eve_url,
+            rule="event_featured",
+            campaign="afternoon_spotlight",
+        )
+        blocked = images.cooldown_blocked_urls(thu)
+        self.assertIn(eve_url, blocked)
+        ev = Event(
+            id=22654,
+            title="Quantum Manifesting with FireHorse Energy with Eve",
+            start_date="2026-08-13 19:00:00",
+            end_date="2026-08-13 21:00:00",
+            url="https://shopsacredground.com/eve-quantum-class/",
+            image_url=eve_url,
+        )
+        plan = images.plan_image(
+            [ev],
+            "afternoon_spotlight",
+            day=thu,
+            platform="facebook",
+        )
+        self.assertNotEqual(plan.url, eve_url)
+        if plan.rule == "reuse_blocked":
+            self.assertIsNone(plan.url)
+            self.assertIn("NEVER-REUSE", plan.recommendation)
+        else:
+            self.assertTrue(plan.url)
+            self.assertNotIn(plan.url, blocked)
 
     def test_social_proof_no_overlay_on_existing_inventory(self) -> None:
         """Founder cutover: never stamp badges onto finished plates; captions OK."""
@@ -2074,13 +2109,23 @@ class AutopilotTests(unittest.TestCase):
             )
         )
 
-        # Future NEW generation prompts may include designed-in pride brief.
+        # NEW generation prompts MUST include designed-in pride brief.
         self.assertTrue(sp.designed_in_on_new_generation())
+        self.assertTrue(sp.designed_in_required())
         brief = sp.designed_in_generation_brief(
             "new-flyer", day=date(2026, 8, 20), surface="morning"
         )
         self.assertIn("DESIGNED-IN SHOP PRIDE", brief)
+        self.assertIn("REQUIRED", brief)
         self.assertIn("not a post-hoc", brief.lower())
+        night_brief = sp.designed_in_generation_brief(
+            "new-night", day=date(2026, 8, 20), surface="night"
+        )
+        self.assertIn("DESIGNED-IN SHOP PRIDE", night_brief)
+        aft_brief = sp.designed_in_generation_brief(
+            "new-aft", day=date(2026, 8, 20), surface="afternoon"
+        )
+        self.assertIn("afternoon event art", aft_brief)
 
         prompt = mf.build_generation_prompt(
             date(2026, 8, 20),

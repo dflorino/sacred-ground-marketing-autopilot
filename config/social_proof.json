@@ -1,12 +1,13 @@
 {
   "enabled": true,
-  "honesty_note": "Playful shop pride / local vibe — NOT a formal third-party award citation. Founder tone (Aug 11 2026): 'i vote it the best! lol'. Prefer warm bold local pride (#1 talked-about, favorite, Chicago keeps talking about). Soften or avoid fake verified 'officially voted by [publication]' + trophy award year language. No inventing Chicago Reader / Best Of winners unless Founder confirms a real source.",
-  "on_image_status": "NO overlays on existing inventory (Founder Aug 11 ~3:05pm CT). Do not stamp badges onto already-made morning flyers, celestial plates, or night creatives. Captions + first_comment stay ON. On-image pride is designed-in only when generating NEW art after the current no-badge inventory is used up — never a post-hoc sticker remake of old plates.",
+  "honesty_note": "Playful shop pride / local vibe — NOT a formal third-party award citation. Founder tone (Aug 11 2026): 'i vote it the best! lol'. Prefer warm bold local pride (#1 talked-about, favorite, Chicago keeps talking about, Chicagoland’s Best Crystal Store). Soften or avoid fake verified 'officially voted by [publication]' + trophy award year language. No inventing Chicago Reader / Best Of winners unless Founder confirms a real source.",
+  "on_image_status": "NO overlays on existing inventory (Founder Aug 11 ~3:05pm CT). Do not stamp badges onto already-made morning flyers, celestial plates, or night creatives. Captions + first_comment stay ON. HARD (Founder Aug 12 ~5:54pm CT): every NEW image generation/remake MUST include designed-in shop pride (banner/seal/band) — designed_in_required true. Never a post-hoc sticker remake of old plates.",
   "only_on_newly_generated": true,
   "never_overlay_existing": true,
   "designed_in_on_new_generation": true,
+  "designed_in_required": true,
   "badge_from_date": null,
-  "badge_from_date_note": "Optional America/Chicago cutover YYYY-MM-DD. When set, generation prompts may include designed-in pride for NEW art on/after that date. null = include designed-in brief whenever a NEW image is generated (still never overlay old inventory).",
+  "badge_from_date_note": "Optional America/Chicago cutover YYYY-MM-DD. When designed_in_required is true, NEW gens always get the designed-in brief (badge_from_date still gates if set). null + required = include brief whenever a NEW image is generated (still never overlay old inventory).",
   "caption_campaigns": [
     "today",
     "afternoon_spotlight",
@@ -23,6 +24,7 @@
     "both"
   ],
   "claims": [
+    "Sacred Ground — Chicagoland’s Best Crystal Store.",
     "Chicago’s #1 talked-about crystal shop.",
     "Chicagoland’s favorite crystal & holistic center.",
     "Come stop by the crystal shop Chicago keeps talking about.",
@@ -35,6 +37,7 @@
     "Crystals, healing, and that #1 Chicagoland shop feeling."
   ],
   "badge_claims": [
+    "Sacred Ground\nBest Crystal Store",
     "Chicago’s #1\nCrystal Shop",
     "Chicagoland’s\nFavorite",
     "#1 Local\nCrystal Shop",
@@ -42,16 +45,19 @@
   ],
   "badge_claims_by_style": {
     "seal": [
+      "Sacred Ground\nBest Crystal Store",
       "Chicago’s #1\nCrystal Shop",
       "Chicagoland’s\nFavorite",
       "#1 Local\nCrystal Shop"
     ],
     "footer_band": [
+      "Sacred Ground — Chicagoland’s Best Crystal Store",
       "Chicagoland’s favorite crystal & holistic center",
       "Chicago’s #1 talked-about crystal shop",
       "The crystal shop Chicago keeps talking about"
     ],
     "top_banner": [
+      "Sacred Ground — Chicagoland’s Best Crystal Store",
       "Chicago’s #1 crystal shop",
       "Chicagoland’s favorite crystal center",
       "#1 vibe · crystals & healing · Chicagoland"
@@ -59,12 +65,14 @@
     "ribbon": [
       "#1 CHICAGO",
       "CHICAGO #1",
-      "#1 LOCAL"
+      "#1 LOCAL",
+      "BEST LOCAL"
     ],
     "medallion": [
       "Chicago’s #1",
       "#1 Local",
-      "Favorite"
+      "Favorite",
+      "Best Local"
     ]
   },
   "designed_in_prompt_styles": [

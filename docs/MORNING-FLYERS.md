@@ -14,7 +14,7 @@ Use **versions of this layout system** — beautiful and easy to read — not an
 | **Left** | Clear stacked rounded **equal cards** — one event per card, same height: icon + name + host + time + short keywords |
 | **Right** | Evocative graphics supporting those events (clear zones, not overlapping clutter) |
 | **Footer** | Sacred Ground circular logo + `shopsacredground.com` + `847-749-3922` + come-as-you-are energy |
-| **Shop pride** | Caption/first-comment claims **ON**. No overlay badges on existing flyers. Future **NEW** AI gens may bake designed-in pride via `designed_in_generation_brief` — see `docs/SOCIAL-PROOF.md` |
+| **Shop pride** | Caption/first-comment claims **ON**. No overlay badges on existing flyers. Every **NEW** AI gen/remake **must** bake designed-in pride via `designed_in_generation_brief` (`designed_in_required`) — see `docs/SOCIAL-PROOF.md` |
 
 ## Equal space (hard — Founder Aug 7, 2026)
 

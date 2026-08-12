@@ -48,8 +48,9 @@ opacity) on social plates — bake into prebranded plates when overlays do not r
   **not daytime sun**.
 - Retire sun-dominating plates (`daytime_sun: true`, family `daytime_sun`) under
   `creative_pool_retired_daytime_sun` — never pick them for `week_ahead`.
-- Do **not** reuse the same night URL two nights in a row; prefer
-  `nighttime.no_repeat_days` cooldown (default 7).
+- Do **not** reuse any media URL already in `image_usage` (lifetime
+  `nighttime.never_reuse` / `image_rules.never_reuse`). Fail closed and
+  regenerate rather than silently repeat.
 
 ## Not enough
 
@@ -70,11 +71,13 @@ opacity) on social plates — bake into prebranded plates when overlays do not r
 - New plates: save under `assets/sg-night-creative-*.png`, upload via WP `upload_media`,
   wire URL into atmosphere; keep local PNG as source of truth
 
-## Shop pride overlays
+## Shop pride
 
 - **Never** stamp social-proof badges onto existing night / celestial pool plates
-- Captions + first-comment claims stay ON; on-image pride is designed-in only for
-  **NEW** generations (`docs/SOCIAL-PROOF.md`, `.cursor/rules/social-proof-on-image.mdc`)
+- Captions + first-comment claims stay ON
+- Every **NEW** night / celestial generation MUST include designed-in shop pride
+  via `social_proof.designed_in_generation_brief(..., surface="night"|"celestial")`
+  (`designed_in_required: true` — see `.cursor/rules/social-proof-on-image.mdc`)
 
 ## Do not
 

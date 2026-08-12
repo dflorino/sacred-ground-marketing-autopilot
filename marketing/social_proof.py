@@ -5,12 +5,12 @@ the best! lol” energy — NOT formal third-party award citations. Do not inven
 Chicago Reader / Best Of winners unless Founder confirms a real source.
 See config/social_proof.json → honesty_note + enabled flag.
 
-On-image (Founder Aug 11 ~3:05pm CT cutover):
+On-image (Founder Aug 11 ~3:05pm CT cutover + Aug 12 FINAL):
 - Captions + first_comment stay ON.
 - NEVER overlay / stamp badges onto already-made morning flyers, celestial
   plates, or night creatives in the pool.
-- On-image pride is designed-in only when generating NEW art after the current
-  no-badge inventory ends — bake into the generation prompt, not a sticker.
+- Every NEW image generation/remake MUST bake designed-in shop pride into the
+  generation prompt (designed_in_required) — banner / seal / band, not a sticker.
 - badge_on_morning_flyers / badge_on_night stay false (no live overlay path).
 """
 from __future__ import annotations
@@ -145,8 +145,15 @@ def only_on_newly_generated() -> bool:
     return bool(social_proof_config().get("only_on_newly_generated", True))
 
 
+def designed_in_required() -> bool:
+    """Founder Aug 12 FINAL: every NEW gen/remake must include designed-in pride."""
+    return bool(social_proof_config().get("designed_in_required", False))
+
+
 def designed_in_on_new_generation() -> bool:
-    """When True, NEW image generation prompts may include a designed-in pride mark."""
+    """When True, NEW image generation prompts include a designed-in pride mark."""
+    if designed_in_required():
+        return True
     return bool(social_proof_config().get("designed_in_on_new_generation", False))
 
 
@@ -162,7 +169,7 @@ def badge_from_date() -> Optional[date]:
 
 
 def should_designed_in_for_day(day: Union[date, datetime, str, None] = None) -> bool:
-    """True when a FUTURE new-image generation may bake pride into the art brief.
+    """True when a NEW-image generation must bake pride into the art brief.
 
     Never authorizes overlaying existing inventory. Overlay gates stay separate
     and remain false (`badge_on_morning_flyers` / `badge_on_night`).
@@ -173,7 +180,8 @@ def should_designed_in_for_day(day: Union[date, datetime, str, None] = None) -> 
     if cut is None:
         return True
     if day is None:
-        return False
+        # Required + cutover set but no day → still require (agents must pass day).
+        return bool(designed_in_required())
     if isinstance(day, datetime):
         d = day.date()
     elif isinstance(day, date):
@@ -182,7 +190,7 @@ def should_designed_in_for_day(day: Union[date, datetime, str, None] = None) -> 
         try:
             d = date.fromisoformat(str(day)[:10])
         except ValueError:
-            return False
+            return bool(designed_in_required())
     return d >= cut
 
 
@@ -194,11 +202,16 @@ def designed_in_generation_brief(
 ) -> str:
     """Prompt fragment for NEW art only — boutique pride designed into the plate.
 
-    Returns "" when designed-in is off / before badge_from_date. Never use this
-    to justify overlaying finished flyers or pool creatives.
+    REQUIRED for every new morning flyer / night creative / afternoon event art /
+    celestial remake when designed_in_required is true. Returns "" only when
+    designed-in is off / before badge_from_date. Never use this to justify
+    overlaying finished flyers or pool creatives.
     """
+    # When required + enabled, always emit a brief for NEW gens (even if day
+    # parsing failed) so agents cannot ship pride-free art by accident.
     if not should_designed_in_for_day(day):
-        return ""
+        if not (enabled() and designed_in_required()):
+            return ""
     styles = [
         str(s).strip().lower()
         for s in (social_proof_config().get("designed_in_prompt_styles") or ["seal", "top_banner"])
@@ -207,19 +220,32 @@ def designed_in_generation_brief(
     styles = [s for s in styles if s in BADGE_STYLES] or ["seal", "top_banner"]
     style = styles[_pick_index(len(styles), f"sp-designed-in|{surface}|{seed}")]
     claim = pick_badge_claim(seed or str(day or "new"), style=style).replace("\n", " / ")
-    surface_bit = (
-        "morning flyer"
-        if surface == "morning"
-        else "night / week-ahead creative"
+    surface_key = str(surface or "morning").lower().strip()
+    surface_bit = {
+        "morning": "morning flyer",
+        "night": "night / week-ahead creative",
+        "week_ahead": "night / week-ahead creative",
+        "afternoon": "afternoon event art",
+        "afternoon_spotlight": "afternoon event art",
+        "celestial": "celestial plate",
+        "celestial_morning": "celestial plate",
+        "celestial_night": "celestial plate",
+    }.get(surface_key, f"{surface_key} creative")
+    required_bit = (
+        " REQUIRED on every NEW generation/remake."
+        if designed_in_required()
+        else ""
     )
     return (
         f" DESIGNED-IN SHOP PRIDE (new {surface_bit} only — not a post-hoc "
-        f"sticker on old art): elegantly bake a boutique '{style}' pride mark "
-        f"into the composition with claim '{claim}' (Chicago’s #1 / favorite "
-        "crystal shop energy). Deep eggplant or navy + gold for seals; cream "
-        "band with dark ink for footer/banner. Keep clear of event cards, "
-        "Sacred Ground script wordmark, and the circular sun logo. Playful "
-        "local pride — not a fake award citation."
+        f"sticker on old art).{required_bit} Elegantly bake a boutique '{style}' "
+        f"pride mark into the composition with claim '{claim}' (rotating "
+        "Sacred Ground — Chicagoland’s Best Crystal Store / Chicago’s #1 "
+        "talked-about / favorite crystal & holistic center energy). Deep "
+        "eggplant or navy + gold for seals; cream band with dark ink for "
+        "footer/banner. Keep clear of event cards, Sacred Ground script "
+        "wordmark, and the circular sun logo. Playful local pride — not a "
+        "fake award citation."
     )
 
 

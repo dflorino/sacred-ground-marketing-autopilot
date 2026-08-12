@@ -27,6 +27,14 @@ WEEKDAY_INDEX = {
     "sunday": 6,
 }
 
+# Founder FINAL 2026-08-12 ~5:54pm CT — never silently reuse a posted URL.
+REUSE_BLOCKED_MSG = (
+    "NEVER-REUSE: every candidate media URL was already posted or used in a "
+    "published draft. Regenerate a new plate, pick an unused alternate, or skip "
+    "— do not ship a repeat. Same-slot FB+IG single-image mode (one URL to both "
+    "platforms in one publish) is OK; cross-campaign / cross-day reuse is not."
+)
+
 
 def store_exterior_url() -> str:
     """Canonical Sacred Ground exterior — empty-day / last-resort fallback."""
@@ -151,13 +159,41 @@ def record_image_use(
     if plat:
         entry["platform"] = plat
     history.append(entry)
-    cutoff = (day - timedelta(days=30)).isoformat()
-    history = [h for h in history if (h.get("date") or "") >= cutoff]
+    # Lifetime ledger (Founder 2026-08-12 FINAL): never truncate — permanent never-reuse.
     data["history"] = sorted(
         history,
         key=lambda h: (h.get("date") or "", h.get("platform") or "", h.get("url") or ""),
     )
     save_image_usage(data)
+
+
+def never_reuse_urls() -> bool:
+    """
+    Founder FINAL 2026-08-12 ~5:54pm CT: permanent never-reuse of any media URL
+    already posted / used in a published draft. Default True.
+
+    Config: image_rules.never_reuse (bool). Legacy: no_repeat_days null/<=0 → lifetime;
+    positive no_repeat_days only applies when never_reuse is explicitly false.
+    """
+    cfg = image_rules()
+    if "never_reuse" in cfg:
+        return bool(cfg.get("never_reuse"))
+    raw = cfg.get("no_repeat_days")
+    if raw is None:
+        return True
+    try:
+        return int(raw) <= 0
+    except (TypeError, ValueError):
+        return True
+
+
+def urls_ever_used() -> set[str]:
+    """Every media URL ever recorded in image_usage history (all campaigns)."""
+    used: set[str] = set()
+    for h in load_image_usage().get("history") or []:
+        if h.get("url"):
+            used.add(str(h["url"]))
+    return used
 
 
 def urls_used_before_day(day: date, within_days: int) -> set[str]:
@@ -178,11 +214,11 @@ def urls_used_recently(day: date, within_days: int) -> set[str]:
     """
     URLs used in [day-(within_days-1), day] inclusive — all campaigns.
 
-    Hard rule (Founder 2026-08-12): the same media URL must not be reused across
-    morning / afternoon / night / tuesday (or any other campaign) inside the
-    cooldown window. FB+IG may still share one URL for the *same* slot under
-    single-image mode.
+    Prefer urls_ever_used() / cooldown_blocked_urls() under never_reuse (default).
+    Legacy windowed helper kept for tests and explicit within_days callers.
     """
+    if within_days <= 0:
+        return urls_ever_used()
     cutoff = day - timedelta(days=max(1, int(within_days)) - 1)
     used: set[str] = set()
     for h in load_image_usage().get("history") or []:
@@ -224,11 +260,31 @@ def cooldown_blocked_urls(
     exclude_campaign: str = "",
     extra_exclude: Optional[Sequence[str]] = None,
 ) -> set[str]:
-    """Union of recent cooldown URLs + same-day other-campaign claims + extras."""
-    days = int(within_days if within_days is not None else (image_rules().get("no_repeat_days") or 7))
-    blocked = urls_used_recently(day, days)
-    # Same-day other campaigns are already in urls_used_recently; keep exclude_campaign
-    # so a campaign can re-plan its own slot without blocking itself.
+    """
+    URLs that must not be selected.
+
+    Default (never_reuse): lifetime block of every URL in image_usage history.
+    Optional within_days>0: legacy rolling window (only when never_reuse is false
+    or caller passes an explicit positive window).
+
+    exclude_campaign: drop this campaign's *same-day* rows so a slot can re-plan
+    itself (idempotent). That is not cross-slot reuse — FB+IG single-image mode
+    still records one shared URL for the pair.
+    """
+    if within_days is None:
+        if never_reuse_urls():
+            blocked = urls_ever_used()
+        else:
+            try:
+                days = int(image_rules().get("no_repeat_days") or 7)
+            except (TypeError, ValueError):
+                days = 7
+            blocked = urls_used_recently(day, days) if days > 0 else urls_ever_used()
+    elif int(within_days) <= 0:
+        blocked = urls_ever_used()
+    else:
+        blocked = urls_used_recently(day, int(within_days))
+    # Allow a campaign to re-plan its own same-day slot without blocking itself.
     if exclude_campaign:
         own = {
             str(h["url"])
@@ -242,6 +298,17 @@ def cooldown_blocked_urls(
         if u:
             blocked.add(str(u))
     return blocked
+
+
+def reuse_blocked_plan(campaign: str) -> ImagePlan:
+    """Clear failure plan when no unused media URL remains."""
+    return ImagePlan(
+        source="reuse_blocked",
+        url=None,
+        recommendation=f"{REUSE_BLOCKED_MSG} (campaign={campaign})",
+        rule="reuse_blocked",
+        prebranded=False,
+    )
 
 
 def _event_haystack(events: Sequence[Event]) -> str:
@@ -345,15 +412,17 @@ def select_today_image(
     campaign: str = "today",
     allow_morning_plates: bool = True,
 ) -> Tuple[str, str, str]:
-    """Return (url, rule_id, recommendation). Does not record usage."""
+    """Return (url, rule_id, recommendation). Does not record usage.
+
+    Empty url + rule_id ``reuse_blocked`` when every candidate was already used
+    (Founder never-reuse — never silently ship a repeat).
+    """
     cfg = image_rules()
     rules = cfg.get("rules") or {}
     priority = list(cfg.get("priority") or [])
-    no_repeat = int(cfg.get("no_repeat_days") or 7)
     excluded = [str(u) for u in (exclude_urls or []) if u]
     blocked = cooldown_blocked_urls(
         day,
-        within_days=no_repeat,
         exclude_campaign=campaign,
         extra_exclude=excluded,
     )
@@ -444,7 +513,7 @@ def select_today_image(
     if len(events) == 1 and events[0].image_url:
         e = events[0]
         featured = str(e.image_url)
-        if featured not in excluded:
+        if featured not in blocked and featured not in excluded:
             return (
                 featured,
                 "event_featured",
@@ -475,19 +544,15 @@ def select_today_image(
             )
 
     exterior = store_exterior_url()
-    if exterior not in excluded or not prefer_unique:
+    if exterior and exterior not in blocked and exterior not in excluded:
         return (
             exterior,
             "store_exterior",
             "Store exterior fallback (empty day or no matching rule).",
         )
 
-    # Last resort: may duplicate the other platform when no other plate exists.
-    return (
-        excluded[0] if excluded else exterior,
-        "store_exterior",
-        "Store exterior fallback (empty day or no matching rule).",
-    )
+    # Never silently reuse a blocked URL (Founder 2026-08-12 FINAL).
+    return ("", "reuse_blocked", REUSE_BLOCKED_MSG)
 
 
 def plan_image(
@@ -498,16 +563,17 @@ def plan_image(
     exclude_urls: Optional[Sequence[str]] = None,
 ) -> ImagePlan:
     """
-    today: specialty rules + multi-event rotation + 7-day no-repeat,
+    today: specialty rules + multi-event rotation + lifetime never-reuse,
     then single event featured, then store exterior.
 
-    afternoon_spotlight: NEVER reuse morning plates (celestial / morning_flyer).
-    Prefer the spotlight event's TEC featured image, then specialty / exterior,
-    always respecting cross-campaign URL cooldown (Founder 2026-08-12).
+    afternoon_spotlight: NEVER reuse morning plates (celestial / morning_flyer)
+    and NEVER reuse any previously posted media URL — including TEC thumbnails /
+    Eve flyers / event_featured (Founder 2026-08-12 FINAL). Prefer an unused
+    event featured image, then specialty / exterior; fail clearly if none left.
 
-    platform / exclude_urls: legacy diversification hooks. Pipeline now plans
-    once and reuses the same media URL on Facebook and Instagram (Founder
-    Aug 10 2026 single-image mode).
+    platform / exclude_urls: legacy diversification hooks. Pipeline plans once
+    and uses the same media URL on Facebook and Instagram for one slot
+    (Founder Aug 10 2026 single-image mode — that is one post pair, not reuse).
     """
     with_images = [e for e in events if e.image_url]
     excluded = [str(u) for u in (exclude_urls or []) if u]
@@ -516,10 +582,8 @@ def plan_image(
         from .ingest import today_local
 
         on = day or today_local()
-        no_repeat = int(image_rules().get("no_repeat_days") or 7)
         blocked = cooldown_blocked_urls(
             on,
-            within_days=no_repeat,
             exclude_campaign="afternoon_spotlight",
             extra_exclude=excluded,
         )
@@ -537,8 +601,9 @@ def plan_image(
                     url=featured,
                     event_id=events[0].id,
                     recommendation=(
-                        "Afternoon spotlight — event featured / TEC thumbnail "
-                        "(never the morning plate)."
+                        "Afternoon spotlight — unused event featured / TEC "
+                        "thumbnail (never a previously posted URL; never the "
+                        "morning plate)."
                     ),
                     rule="event_featured",
                     prebranded=False,
@@ -552,23 +617,29 @@ def plan_image(
             campaign="afternoon_spotlight",
             allow_morning_plates=False,
         )
-        if rule_id in morning_owned or (url and url in blocked):
+        if rule_id == "reuse_blocked" or not url:
+            return reuse_blocked_plan("afternoon_spotlight")
+        if rule_id in morning_owned or url in blocked:
             exterior = store_exterior_url()
-            url = exterior
-            rule_id = "store_exterior"
-            rec = (
-                "Afternoon spotlight — store exterior fallback "
-                "(blocked morning/celestial reuse)."
-            )
+            if exterior and exterior not in blocked:
+                url = exterior
+                rule_id = "store_exterior"
+                rec = (
+                    "Afternoon spotlight — store exterior fallback "
+                    "(blocked morning/celestial / used-URL reuse)."
+                )
+            else:
+                return reuse_blocked_plan("afternoon_spotlight")
         source = {
             "event_featured": "event_featured",
             "store_exterior": "store_photo",
             "multi_event_rotation": "rotation",
             "morning_creative": "rotation",
+            "reuse_blocked": "reuse_blocked",
         }.get(rule_id, "rule_library")
         return ImagePlan(
             source=source,
-            url=url,
+            url=url or None,
             event_id=events[0].id if len(events) == 1 else None,
             recommendation=rec,
             rule=rule_id,
@@ -582,6 +653,8 @@ def plan_image(
         url, rule_id, rec = select_today_image(
             events, on, platform=platform, exclude_urls=excluded
         )
+        if rule_id == "reuse_blocked" or not url:
+            return reuse_blocked_plan("today")
         source = {
             "event_featured": "event_featured",
             "store_exterior": "store_photo",
@@ -589,6 +662,7 @@ def plan_image(
             "morning_creative": "rotation",
             "morning_flyer": "morning_flyer",
             "celestial_morning": "celestial_morning",
+            "reuse_blocked": "reuse_blocked",
         }.get(rule_id, "rule_library")
         prebranded = rule_id == "morning_flyer" or skip_brand_overlays(
             {"rule": rule_id, "url": url}
@@ -631,10 +705,8 @@ def plan_image(
         from .ingest import today_local
 
         on = day or today_local()
-        no_repeat = int(image_rules().get("no_repeat_days") or 7)
         cross_blocked = cooldown_blocked_urls(
             on,
-            within_days=no_repeat,
             exclude_campaign="week_ahead",
             extra_exclude=excluded,
         )
@@ -645,16 +717,14 @@ def plan_image(
         if url and url in cross_blocked:
             url = ""
         if not url:
-            # Last resort: current-season night plate from atmosphere, then brand exterior.
+            # Last resort: unused season night plate, then unused brand exterior.
             season_url = str(season_meta(on).get("url") or "")
-            url = season_url or store_exterior_url()
-            if url in cross_blocked and season_url and season_url not in cross_blocked:
-                url = season_url
-            if url in cross_blocked:
-                for candidate in (season_url, store_exterior_url()):
-                    if candidate and candidate not in cross_blocked:
-                        url = candidate
-                        break
+            for candidate in (season_url, store_exterior_url()):
+                if candidate and candidate not in cross_blocked:
+                    url = candidate
+                    break
+        if not url:
+            return reuse_blocked_plan("week_ahead")
 
         mode = atm.get("mode") or "creative"
         season = atm.get("season") or "summer"
@@ -722,14 +792,14 @@ def plan_image(
                 pool.append(journey)
         if not pool:
             pool = [store_exterior_url()]
-        no_repeat = int(image_rules().get("no_repeat_days") or 7)
         blocked = cooldown_blocked_urls(
             on,
-            within_days=no_repeat,
             exclude_campaign="tuesday_meditation",
             extra_exclude=excluded,
         )
-        url = _pick_from_urls(pool, day=on, blocked=blocked) or pool[0]
+        url = _pick_from_urls(pool, day=on, blocked=blocked)
+        if not url:
+            return reuse_blocked_plan("tuesday_meditation")
         return ImagePlan(
             source="meditation_pool",
             url=url,

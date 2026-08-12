@@ -327,5 +327,5 @@ Rotating local-pride lines (not formal award citations) live in `config/social_p
   `badge_on_night` = false; `never_overlay_existing` = true). Do **not** stamp badges onto
   already-made morning flyers, celestial plates, or night pool creatives.
 - Future **NEW** image generations may bake pride into the art brief via
-  `designed_in_generation_brief()` (`designed_in_on_new_generation`: true) — not a post-hoc sticker.
+  `designed_in_generation_brief()` (`designed_in_required` + `designed_in_on_new_generation`: true) — not a post-hoc sticker.
 - Do **not** republish already-live posts just to add a claim line or badge overlay
