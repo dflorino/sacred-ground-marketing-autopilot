@@ -73,10 +73,11 @@
       "platforms": ["facebook", "instagram"],
       "image_policy": "config/image_rules.json",
       "no_repeat_days": 7,
+      "cross_campaign_no_repeat": true,
       "default_background": "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.15-AM.png",
       "empty_day": "visit_brand_store_exterior",
       "purpose": "next_day_events_or_visit_invite",
-      "notes": "campaign_word TOMORROW only when flyer is tomorrow-dated. Same-day evening flyer uses TODAY. Prebranded morning flyers skip all overlays."
+      "notes": "campaign_word TOMORROW only when flyer is tomorrow-dated. Same-day evening flyer uses TODAY. Prebranded morning flyers skip all overlays. HARD (2026-08-12): same URL must not reuse across morning/afternoon/night/tuesday inside no_repeat_days."
     },
     "week_ahead": {
       "time": "19:00 America/Chicago",

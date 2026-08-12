@@ -174,12 +174,74 @@ def urls_used_before_day(day: date, within_days: int) -> set[str]:
     return used
 
 
+def urls_used_recently(day: date, within_days: int) -> set[str]:
+    """
+    URLs used in [day-(within_days-1), day] inclusive — all campaigns.
+
+    Hard rule (Founder 2026-08-12): the same media URL must not be reused across
+    morning / afternoon / night / tuesday (or any other campaign) inside the
+    cooldown window. FB+IG may still share one URL for the *same* slot under
+    single-image mode.
+    """
+    cutoff = day - timedelta(days=max(1, int(within_days)) - 1)
+    used: set[str] = set()
+    for h in load_image_usage().get("history") or []:
+        try:
+            d = date.fromisoformat(str(h.get("date")))
+        except ValueError:
+            continue
+        if cutoff <= d <= day and h.get("url"):
+            used.add(str(h["url"]))
+    return used
+
+
+def urls_used_on_day(day: date, *, exclude_campaign: str = "") -> set[str]:
+    """URLs already claimed today by any campaign (optionally skip one campaign)."""
+    used: set[str] = set()
+    key = day.isoformat()
+    skip = str(exclude_campaign or "")
+    for h in load_image_usage().get("history") or []:
+        if h.get("date") != key or not h.get("url"):
+            continue
+        if skip and str(h.get("campaign") or "") == skip:
+            continue
+        used.add(str(h["url"]))
+    return used
+
+
 def used_yesterday(url: str, day: date) -> bool:
     y = (day - timedelta(days=1)).isoformat()
     for h in load_image_usage().get("history") or []:
         if h.get("date") == y and h.get("url") == url:
             return True
     return False
+
+
+def cooldown_blocked_urls(
+    day: date,
+    *,
+    within_days: Optional[int] = None,
+    exclude_campaign: str = "",
+    extra_exclude: Optional[Sequence[str]] = None,
+) -> set[str]:
+    """Union of recent cooldown URLs + same-day other-campaign claims + extras."""
+    days = int(within_days if within_days is not None else (image_rules().get("no_repeat_days") or 7))
+    blocked = urls_used_recently(day, days)
+    # Same-day other campaigns are already in urls_used_recently; keep exclude_campaign
+    # so a campaign can re-plan its own slot without blocking itself.
+    if exclude_campaign:
+        own = {
+            str(h["url"])
+            for h in load_image_usage().get("history") or []
+            if h.get("date") == day.isoformat()
+            and str(h.get("campaign") or "") == exclude_campaign
+            and h.get("url")
+        }
+        blocked -= own
+    for u in extra_exclude or []:
+        if u:
+            blocked.add(str(u))
+    return blocked
 
 
 def _event_haystack(events: Sequence[Event]) -> str:
@@ -279,55 +341,67 @@ def select_today_image(
     day: date,
     platform: Optional[str] = None,
     exclude_urls: Optional[Sequence[str]] = None,
+    *,
+    campaign: str = "today",
+    allow_morning_plates: bool = True,
 ) -> Tuple[str, str, str]:
     """Return (url, rule_id, recommendation). Does not record usage."""
     cfg = image_rules()
     rules = cfg.get("rules") or {}
     priority = list(cfg.get("priority") or [])
     no_repeat = int(cfg.get("no_repeat_days") or 7)
-    blocked = urls_used_before_day(day, no_repeat)
-    haystack = _event_haystack(events)
     excluded = [str(u) for u in (exclude_urls or []) if u]
+    blocked = cooldown_blocked_urls(
+        day,
+        within_days=no_repeat,
+        exclude_campaign=campaign,
+        extra_exclude=excluded,
+    )
+    haystack = _event_haystack(events)
     # When the other platform already claimed a URL, skip single-URL specialties
     # that cannot diversify and fall through to the next eligible rule/pool.
     prefer_unique = bool(excluded)
 
     # Celestial morning-of plate beats generic morning flyers (Founder 2026-08-10).
-    from . import celestial as cel_mod
+    # Afternoon spotlight must never take these — different time-of-day slot.
+    if allow_morning_plates:
+        from . import celestial as cel_mod
 
-    cel_m = cel_mod.morning_plan(day, platform=platform, exclude_urls=excluded)
-    if cel_m and cel_m.get("image_url"):
-        label = cel_m.get("label") or cel_m.get("id") or day.isoformat()
-        return (
-            str(cel_m["image_url"]),
-            "celestial_morning",
-            (
-                f"Celestial morning plate for {day.isoformat()} ({label}) — "
-                "today’s celestial moment; shop events stay in caption."
-            ),
-        )
-
-    # Date-keyed finished flyers beat specialty / atmospheric plates.
-    # Single-image mode (Founder Aug 10 2026): primary `url` for FB+IG.
-    flyer = _flyer_for_day(day)
-    if flyer:
-        from . import morning_flyers as mf
-
-        chosen, shared = mf.select_flyer_url_for_platform(flyer, platform)
-        if chosen:
-            label = flyer.get("label") or day.isoformat()
-            if shared:
-                rec = (
-                    f"Prebranded morning flyer for {day.isoformat()} ({label}) — "
-                    "single-image mode (same plate on FB+IG). Skip overlays."
+        cel_m = cel_mod.morning_plan(day, platform=platform, exclude_urls=list(blocked))
+        if cel_m and cel_m.get("image_url"):
+            cel_url = str(cel_m["image_url"])
+            if cel_url not in blocked:
+                label = cel_m.get("label") or cel_m.get("id") or day.isoformat()
+                return (
+                    cel_url,
+                    "celestial_morning",
+                    (
+                        f"Celestial morning plate for {day.isoformat()} ({label}) — "
+                        "today’s celestial moment; shop events stay in caption."
+                    ),
                 )
-            else:
-                plat = (platform or "facebook").lower()
-                rec = (
-                    f"Prebranded morning flyer for {day.isoformat()} ({label}) — "
-                    f"{plat} variant (allow_ig_variant). Skip overlays."
-                )
-            return (chosen, "morning_flyer", rec)
+
+        # Date-keyed finished flyers beat specialty / atmospheric plates.
+        # Single-image mode (Founder Aug 10 2026): primary `url` for FB+IG.
+        flyer = _flyer_for_day(day)
+        if flyer:
+            from . import morning_flyers as mf
+
+            chosen, shared = mf.select_flyer_url_for_platform(flyer, platform)
+            if chosen and str(chosen) not in blocked:
+                label = flyer.get("label") or day.isoformat()
+                if shared:
+                    rec = (
+                        f"Prebranded morning flyer for {day.isoformat()} ({label}) — "
+                        "single-image mode (same plate on FB+IG). Skip overlays."
+                    )
+                else:
+                    plat = (platform or "facebook").lower()
+                    rec = (
+                        f"Prebranded morning flyer for {day.isoformat()} ({label}) — "
+                        f"{plat} variant (allow_ig_variant). Skip overlays."
+                    )
+                return (chosen, "morning_flyer", rec)
 
     for rule_id in priority:
         rule = rules.get(rule_id) or {}
@@ -427,6 +501,10 @@ def plan_image(
     today: specialty rules + multi-event rotation + 7-day no-repeat,
     then single event featured, then store exterior.
 
+    afternoon_spotlight: NEVER reuse morning plates (celestial / morning_flyer).
+    Prefer the spotlight event's TEC featured image, then specialty / exterior,
+    always respecting cross-campaign URL cooldown (Founder 2026-08-12).
+
     platform / exclude_urls: legacy diversification hooks. Pipeline now plans
     once and reuses the same media URL on Facebook and Instagram (Founder
     Aug 10 2026 single-image mode).
@@ -434,7 +512,70 @@ def plan_image(
     with_images = [e for e in events if e.image_url]
     excluded = [str(u) for u in (exclude_urls or []) if u]
 
-    if campaign in ("today", "afternoon_spotlight"):
+    if campaign == "afternoon_spotlight":
+        from .ingest import today_local
+
+        on = day or today_local()
+        no_repeat = int(image_rules().get("no_repeat_days") or 7)
+        blocked = cooldown_blocked_urls(
+            on,
+            within_days=no_repeat,
+            exclude_campaign="afternoon_spotlight",
+            extra_exclude=excluded,
+        )
+        # Hard refuse morning-owned plate families even if usage ledger lagged.
+        morning_owned = {
+            "celestial_morning",
+            "morning_flyer",
+            "morning_creative",
+        }
+        if events and events[0].image_url:
+            featured = str(events[0].image_url)
+            if featured not in blocked:
+                return ImagePlan(
+                    source="event_featured",
+                    url=featured,
+                    event_id=events[0].id,
+                    recommendation=(
+                        "Afternoon spotlight — event featured / TEC thumbnail "
+                        "(never the morning plate)."
+                    ),
+                    rule="event_featured",
+                    prebranded=False,
+                )
+        # Specialty / pool path — never celestial / morning flyer plates.
+        url, rule_id, rec = select_today_image(
+            events,
+            on,
+            platform=platform,
+            exclude_urls=list(blocked),
+            campaign="afternoon_spotlight",
+            allow_morning_plates=False,
+        )
+        if rule_id in morning_owned or (url and url in blocked):
+            exterior = store_exterior_url()
+            url = exterior
+            rule_id = "store_exterior"
+            rec = (
+                "Afternoon spotlight — store exterior fallback "
+                "(blocked morning/celestial reuse)."
+            )
+        source = {
+            "event_featured": "event_featured",
+            "store_exterior": "store_photo",
+            "multi_event_rotation": "rotation",
+            "morning_creative": "rotation",
+        }.get(rule_id, "rule_library")
+        return ImagePlan(
+            source=source,
+            url=url,
+            event_id=events[0].id if len(events) == 1 else None,
+            recommendation=rec,
+            rule=rule_id,
+            prebranded=False,
+        )
+
+    if campaign == "today":
         from .ingest import today_local
 
         on = day or today_local()
@@ -456,20 +597,6 @@ def plan_image(
             # Celestial plates bake circular logo bottom-left (Founder Aug 10 2026).
             # Overlays never ran for these URLs — treat as prebranded to avoid a gap.
             prebranded = True
-        if campaign == "afternoon_spotlight" and events:
-            # Prefer specialty / event art over a full-day morning flyer dump.
-            if rule_id == "morning_flyer" and events[0].image_url:
-                url = str(events[0].image_url)
-                rule_id = "event_featured"
-                source = "event_featured"
-                prebranded = False
-                rec = "Afternoon spotlight — event featured image (not full-day flyer)."
-            elif rule_id == "morning_flyer":
-                url = store_exterior_url()
-                rule_id = "store_exterior"
-                source = "store_photo"
-                prebranded = False
-                rec = "Afternoon spotlight — store exterior (single-event focus)."
         return ImagePlan(
             source=source,
             url=url,
@@ -504,18 +631,28 @@ def plan_image(
         from .ingest import today_local
 
         on = day or today_local()
-        atm = nighttime_plan(on, platform=platform, exclude_urls=excluded)
+        no_repeat = int(image_rules().get("no_repeat_days") or 7)
+        cross_blocked = cooldown_blocked_urls(
+            on,
+            within_days=no_repeat,
+            exclude_campaign="week_ahead",
+            extra_exclude=excluded,
+        )
+        atm = nighttime_plan(
+            on, platform=platform, exclude_urls=list(cross_blocked)
+        )
         url = str(atm.get("image_url") or "")
+        if url and url in cross_blocked:
+            url = ""
         if not url:
             # Last resort: current-season night plate from atmosphere, then brand exterior.
             season_url = str(season_meta(on).get("url") or "")
             url = season_url or store_exterior_url()
-            if url in excluded and season_url and season_url != url:
+            if url in cross_blocked and season_url and season_url not in cross_blocked:
                 url = season_url
-            if url in excluded:
-                # Prefer any non-excluded season/exterior; else keep last resort.
+            if url in cross_blocked:
                 for candidate in (season_url, store_exterior_url()):
-                    if candidate and candidate not in excluded:
+                    if candidate and candidate not in cross_blocked:
                         url = candidate
                         break
 
@@ -586,7 +723,12 @@ def plan_image(
         if not pool:
             pool = [store_exterior_url()]
         no_repeat = int(image_rules().get("no_repeat_days") or 7)
-        blocked = urls_used_before_day(on, no_repeat)
+        blocked = cooldown_blocked_urls(
+            on,
+            within_days=no_repeat,
+            exclude_campaign="tuesday_meditation",
+            extra_exclude=excluded,
+        )
         url = _pick_from_urls(pool, day=on, blocked=blocked) or pool[0]
         return ImagePlan(
             source="meditation_pool",

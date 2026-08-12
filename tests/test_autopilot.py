@@ -2012,6 +2012,50 @@ class AutopilotTests(unittest.TestCase):
                 meta["claim"],
             )
 
+    def test_afternoon_never_reuses_morning_celestial_or_same_url(self) -> None:
+        """Founder 2026-08-12: afternoon must not ship the morning plate."""
+        from marketing import images
+        from marketing.models import Event
+
+        images.IMAGE_USAGE_PATH = os.path.join(self._tmpdir, "state", "image_usage.json")
+        images.image_rules.cache_clear()
+        day = date(2026, 8, 12)
+        morning_url = (
+            "https://shopsacredground.com/wp-content/uploads/"
+            "sg-morning-celestial-2026-08-12-solar-eclipse.png"
+        )
+        event_url = (
+            "https://shopsacredground.com/wp-content/uploads/"
+            "sg-afternoon-eve-quantum-firehorse-2026-08-13.jpg"
+        )
+        images.record_image_use(
+            day=day,
+            url=morning_url,
+            rule="celestial_morning",
+            campaign="today",
+        )
+        ev = Event(
+            id=22654,
+            title="Quantum Manifesting with FireHorse Energy with Eve",
+            start_date="2026-08-13 19:00:00",
+            end_date="2026-08-13 21:00:00",
+            url="https://shopsacredground.com/eve-quantum-class/",
+            image_url=event_url,
+        )
+        plan = images.plan_image(
+            [ev],
+            "afternoon_spotlight",
+            day=day,
+            platform="facebook",
+            exclude_urls=[morning_url],
+        )
+        self.assertEqual(plan.rule, "event_featured")
+        self.assertEqual(plan.url, event_url)
+        self.assertNotEqual(plan.url, morning_url)
+        # Cross-campaign cooldown includes same-day morning URL.
+        blocked = images.cooldown_blocked_urls(day, within_days=7)
+        self.assertIn(morning_url, blocked)
+
     def test_social_proof_no_overlay_on_existing_inventory(self) -> None:
         """Founder cutover: never stamp badges onto finished plates; captions OK."""
         from marketing import morning_flyers as mf

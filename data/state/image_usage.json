@@ -169,6 +169,32 @@
       "rule": "morning_flyer",
       "campaign": "today",
       "platform": "instagram"
+    },
+    {
+      "date": "2026-08-11",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-08-12-solar-eclipse.png",
+      "rule": "week_ahead_celestial_solar_eclipse_leo_2026",
+      "campaign": "week_ahead"
+    },
+    {
+      "date": "2026-08-12",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-08-12-solar-eclipse.png",
+      "rule": "celestial_morning",
+      "campaign": "today"
+    },
+    {
+      "date": "2026-08-12",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-eve-quantum-firehorse-2026-08-13.jpg",
+      "rule": "event_featured",
+      "campaign": "afternoon_spotlight",
+      "platform": "facebook"
+    },
+    {
+      "date": "2026-08-12",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-eve-quantum-firehorse-2026-08-13-ig45.png",
+      "rule": "event_featured_ig45",
+      "campaign": "afternoon_spotlight",
+      "platform": "instagram"
     }
   ]
 }

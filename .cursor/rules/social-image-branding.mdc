@@ -45,6 +45,15 @@ Every Sacred Ground social graphic for Autopilot / ML Social / Zernio **must** i
 - **Same media URL on Facebook and Instagram** for every campaign (morning, afternoon spotlight, week_ahead night, Tuesday meditation, etc.)
 - Do not ship a weaker separate Instagram variant — one excellent plate for both
 
+## Never reuse images across times of day (hard — Founder Aug 12, 2026)
+
+- **Different campaigns / times of day MUST use different images.** Morning 9am, afternoon 5pm, evening 7pm week_ahead, and Tuesday meditation are separate slots.
+- FB+IG may share **one** plate for the **same** slot (single-image mode) — that is the only allowed reuse.
+- Enforce via `image_usage` cooldown (`no_repeat_days`, default **7**): the same media URL must not appear twice in that window across any campaign. Select an alternate or fail — never ship a repeat.
+- Afternoon spotlight must prefer the event’s TEC featured / provided flyer — **never** the morning celestial plate or morning flyer (Aug 12 solar-eclipse duplicate bug).
+- Code: `marketing.images.urls_used_recently` / `cooldown_blocked_urls` + afternoon `plan_image` path.
+- Shared FB+IG plates must be Instagram feed-safe aspect (**0.75–1.91**, prefer **4:5**). Taller Story/TikTok ratios (e.g. 2:3 / 0.67) fail IG publish.
+
 ## Color energy (required — Founder Aug 10, 2026)
 
 - Creatives must be **colorful, bright, interesting, engaging** — jewel tones, strong contrast, something worth stopping for

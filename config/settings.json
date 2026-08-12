@@ -75,7 +75,7 @@
       "skip_tuesday_meditation_duplicate": true,
       "empty_day_fallback": true,
       "image_policy": "image_rules_library",
-      "notes": "Daily 5:00 PM CT (Meta Insights: Lions Gate–style ~5pm promo had strong early traction; leaves a clear gap before 7pm week_ahead). Flip schedule_local_time to 16:00 for 4pm. Single-event spotlight — not a full calendar dump. Prefer tonight's best remaining evening event; else tomorrow's standout; else warm brand/visit. Avoids stacking a third full calendar with morning-tomorrow + week_ahead."
+      "notes": "Daily 5:00 PM CT (Meta Insights: Lions Gate–style ~5pm promo had strong early traction; leaves a clear gap before 7pm week_ahead). Flip schedule_local_time to 16:00 for 4pm. Single-event spotlight — not a full calendar dump. Prefer tonight's best remaining evening event; else tomorrow's standout; else warm brand/visit. Image: prefer event_featured / TEC thumbnail / Founder-provided flyer — NEVER reuse morning celestial or morning_flyer (Founder 2026-08-12 hard rule; cross-campaign 7-day URL cooldown). Avoids stacking a third full calendar with morning-tomorrow + week_ahead."
     },
     "spotlight": {
       "enabled": true,

@@ -334,11 +334,15 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
             sched_af = schedule.schedule_afternoon_spotlight(day)
             af_events = [spotlight_ev] if spotlight_ev else []
             # Single-image mode: same media URL on Facebook and Instagram.
+            # Hard exclude URLs already used today (morning etc.) even if ledger
+            # write order is odd — different times of day never share a plate.
+            af_exclude = list(images.urls_used_on_day(day, exclude_campaign="afternoon_spotlight"))
             shared_af = images.plan_image(
                 af_events,
                 "afternoon_spotlight",
                 day=day,
                 platform="facebook",
+                exclude_urls=af_exclude,
             )
             for platform in platforms:
                 img = shared_af
@@ -411,11 +415,14 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
             sched = schedule.schedule_week_ahead(day)
             wa_created = 0
             # Single-image mode: same night plate on Facebook and Instagram.
+            # Never reuse morning/afternoon URLs from earlier today.
+            wa_exclude = list(images.urls_used_on_day(day, exclude_campaign="week_ahead"))
             shared_wa = images.plan_image(
                 ahead_events,
                 "week_ahead",
                 day=day,
                 platform="facebook",
+                exclude_urls=wa_exclude,
             )
             for platform in platforms:
                 img = shared_wa
