@@ -178,23 +178,21 @@
     },
     {
       "date": "2026-08-12",
+      "url": "https://shopsacredground.com/wp-content/uploads/ChatGPT-Image-Jul-6-2026-04_43_43-PM.png",
+      "rule": "event_featured",
+      "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-08-12",
       "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-08-12-solar-eclipse.png",
       "rule": "celestial_morning",
       "campaign": "today"
     },
     {
       "date": "2026-08-12",
-      "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-eve-quantum-firehorse-2026-08-13.jpg",
-      "rule": "event_featured",
-      "campaign": "afternoon_spotlight",
-      "platform": "facebook"
-    },
-    {
-      "date": "2026-08-12",
-      "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-eve-quantum-firehorse-2026-08-13-ig45.png",
-      "rule": "event_featured_ig45",
-      "campaign": "afternoon_spotlight",
-      "platform": "instagram"
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-08-13-perseids-2.png",
+      "rule": "week_ahead_celestial_perseids_peak_2026",
+      "campaign": "week_ahead"
     }
   ]
 }
