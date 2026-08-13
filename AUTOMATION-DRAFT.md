@@ -317,15 +317,18 @@ Hard rules:
 
 ---
 
-## Social proof (playful shop pride — Aug 11 2026)
+## Social proof (shop pride — Aug 11 + Aug 13 2026 email Options A/B/C)
 
 Rotating local-pride lines (not formal award citations) live in `config/social_proof.json`
-(`enabled: true`). See **docs/SOCIAL-PROOF.md**.
+(`enabled: true`). Primary set = email Options A/B/C (Premier / #1 / Voted #1).
+See **docs/SOCIAL-PROOF.md**.
 
 - Captions + Zernio **firstComment** (FB/IG) rotate via `marketing/social_proof.py` (**ON**)
+- Optional `day_assignment` for Tue/Thu/Sun → A/B/C is **TBD** (America/Chicago);
+  until Founder fills it, every post rotates A/B/C
 - On-image overlays **OFF** forever for existing inventory (`badge_on_morning_flyers` /
   `badge_on_night` = false; `never_overlay_existing` = true). Do **not** stamp badges onto
   already-made morning flyers, celestial plates, or night pool creatives.
-- Future **NEW** image generations may bake pride into the art brief via
-  `designed_in_generation_brief()` (`designed_in_required` + `designed_in_on_new_generation`: true) — not a post-hoc sticker.
+- Future **NEW** image generations bake pride into the art brief via
+  `designed_in_generation_brief()` (`designed_in_required` + `designed_in_on_new_generation`: true) — not a post-hoc sticker. Phrases match Options A/B/C.
 - Do **not** republish already-live posts just to add a claim line or badge overlay

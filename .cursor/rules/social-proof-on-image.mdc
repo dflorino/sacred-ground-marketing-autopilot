@@ -1,4 +1,4 @@
-# Social proof on-image — designed-in only (Founder Aug 11–12, 2026)
+# Social proof on-image — designed-in only (Founder Aug 11–13, 2026)
 
 ## Hard rule — never stamp old inventory
 
@@ -14,12 +14,15 @@ Forbidden targets for post-hoc badges:
 ## Hard rule — every NEW generation (Founder Aug 12 ~5:54pm CT)
 
 **Every NEW image we make/remake must include designed-in shop pride** — banner /
-seal / cream band / medallion baked into the composition, with rotating wording
-like:
+seal / cream band / medallion baked into the composition, with email Options
+A/B/C wording (Founder Aug 13 ~9:06am CT):
 
-- Sacred Ground — Chicagoland’s Best Crystal Store
-- Chicago’s #1 talked-about crystal shop
-- Chicagoland’s favorite crystal & holistic center
+- Sacred Ground — Chicagoland’s Premier Crystal Store & Holistic Destination
+- Sacred Ground — Chicagoland’s #1 Crystal Shop & Holistic Center
+- Sacred Ground — Voted #1 Chicagoland’s Crystal Store & Holistic Destination
+
+ALL CAPS banners OK (match email blocks). Day→option map for Tue/Thu/Sun is
+TBD in `config/social_proof.json` → `day_assignment` (null = rotate A/B/C).
 
 Applies to: morning flyers, night creatives, afternoon event art we generate,
 celestial remakes, and any other new AI plate. **New generation only** — not
@@ -27,7 +30,7 @@ stamping old inventory.
 
 ## What stays ON
 
-- Caption shop-pride lines (`config/social_proof.json` → `claims`)
+- Caption shop-pride lines (`config/social_proof.json` → `claims` / Options A/B/C)
 - Zernio first-comment pride lines
 - Gates: `badge_on_morning_flyers` / `badge_on_night` stay **false** (no overlay pipeline)
 

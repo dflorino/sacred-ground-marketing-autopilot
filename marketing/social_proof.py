@@ -1,9 +1,10 @@
-"""Rotating playful shop-pride social proof (captions, badges, first comment).
+"""Rotating shop-pride social proof (captions, badges, first comment).
 
-Honesty (Founder Aug 11 2026): these are warm local-pride lines — “i vote it
-the best! lol” energy — NOT formal third-party award citations. Do not invent
-Chicago Reader / Best Of winners unless Founder confirms a real source.
-See config/social_proof.json → honesty_note + enabled flag.
+Honesty (Founder Aug 11 + Aug 13 2026): warm local-pride lines aligned with
+email Options A/B/C — NOT formal third-party award citations. “Voted #1” is
+Founder/community vibe (“i vote it the best! lol”), not a publication trophy.
+Do not invent Chicago Reader / Best Of winners unless Founder confirms a source.
+See config/social_proof.json → honesty_note + canonical_options + enabled flag.
 
 On-image (Founder Aug 11 ~3:05pm CT cutover + Aug 12 FINAL):
 - Captions + first_comment stay ON.
@@ -12,11 +13,16 @@ On-image (Founder Aug 11 ~3:05pm CT cutover + Aug 12 FINAL):
 - Every NEW image generation/remake MUST bake designed-in shop pride into the
   generation prompt (designed_in_required) — banner / seal / band, not a sticker.
 - badge_on_morning_flyers / badge_on_night stay false (no live overlay path).
+
+Day map (Founder Aug 13 ~9:06am CT): optional tuesday/thursday/sunday → A/B/C
+in day_assignment. Until Founder fills those, rotate A/B/C every post
+(America/Chicago). Other weekdays always rotate.
 """
 from __future__ import annotations
 
 import hashlib
 import os
+import re
 from datetime import date, datetime
 from functools import lru_cache
 from typing import Any, Dict, List, Optional, Sequence, Tuple, Union
@@ -33,6 +39,14 @@ MODE_SKIP = "skip"
 
 # Style names kept for designed-in generation briefs (not live overlays).
 BADGE_STYLES = ("seal", "footer_band", "top_banner", "ribbon", "medallion")
+
+# Canonical email Options A/B/C (Founder Aug 13 2026).
+OPTION_IDS = ("A", "B", "C")
+_WEEKDAY_ASSIGN_KEYS = ("monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday")
+_DEFAULT_CAPTION = (
+    "Sacred Ground — Chicagoland’s #1 Crystal Shop & Holistic Center."
+)
+_DEFAULT_BADGE = "Chicagoland’s #1\nCrystal Shop"
 
 
 @lru_cache(maxsize=1)
@@ -89,24 +103,135 @@ def badge_styles() -> List[str]:
     return [s for s in styles if s in BADGE_STYLES] or list(BADGE_STYLES)
 
 
-def pick_claim(seed: str) -> str:
-    """Rotating caption / first-comment claim line."""
-    return _pick(claims(), f"sp-claim|{seed}", "Chicagoland’s favorite crystal & holistic center.")
+def canonical_options() -> Dict[str, Dict[str, Any]]:
+    """Options A/B/C from email monthly org (Founder Aug 13 2026)."""
+    raw = social_proof_config().get("canonical_options") or {}
+    out: Dict[str, Dict[str, Any]] = {}
+    for key in OPTION_IDS:
+        block = raw.get(key) or raw.get(key.lower())
+        if isinstance(block, dict) and block:
+            out[key] = block
+    return out
 
 
-def pick_badge_claim(seed: str, *, style: Optional[str] = None) -> str:
-    """Shorter multi-line claim for on-image badges (style-aware when provided)."""
+def day_assignment() -> Dict[str, Any]:
+    """America/Chicago weekday → option map (tue/thu/sun TBD until Founder sets)."""
+    raw = social_proof_config().get("day_assignment") or {}
+    return raw if isinstance(raw, dict) else {}
+
+
+def _parse_day_key(day_key: Union[date, datetime, str, None]) -> Optional[date]:
+    if day_key is None:
+        return None
+    if isinstance(day_key, datetime):
+        return day_key.date()
+    if isinstance(day_key, date):
+        return day_key
+    text = str(day_key).strip()
+    if not text:
+        return None
+    # Prefer ISO date anywhere in the seed / day_key string.
+    m = re.search(r"(20\d{2}-\d{2}-\d{2})", text)
+    if m:
+        try:
+            return date.fromisoformat(m.group(1))
+        except ValueError:
+            pass
+    try:
+        return date.fromisoformat(text[:10])
+    except ValueError:
+        return None
+
+
+def resolve_option_id(
+    seed: str = "",
+    *,
+    day_key: Union[date, datetime, str, None] = None,
+) -> str:
+    """Pick Option A/B/C.
+
+    If Founder assigned tuesday/thursday/sunday in day_assignment, pin that
+    weekday to the assigned letter. Otherwise (and for other weekdays) rotate
+    A/B/C by seed. America/Chicago calendar day when day_key is a date string.
+    """
+    opts = canonical_options()
+    ids = [i for i in OPTION_IDS if i in opts] or list(OPTION_IDS)
+    d = _parse_day_key(day_key) or _parse_day_key(seed)
+    assign = day_assignment()
+    if d is not None:
+        weekday = d.strftime("%A").lower()
+        if weekday in _WEEKDAY_ASSIGN_KEYS:
+            raw = assign.get(weekday)
+            if raw is not None and str(raw).strip():
+                letter = str(raw).strip().upper()
+                if letter in ids:
+                    return letter
+    return ids[_pick_index(len(ids), f"sp-option|{seed}|{d or ''}")]
+
+
+def option_field(
+    option_id: str,
+    field: str,
+    *,
+    fallback: str = "",
+) -> str:
+    block = canonical_options().get(str(option_id or "").upper()) or {}
+    val = block.get(field)
+    if val is None:
+        return fallback
+    return str(val).strip()
+
+
+def pick_claim(
+    seed: str,
+    *,
+    day_key: Union[date, datetime, str, None] = None,
+) -> str:
+    """Caption / first-comment claim — Options A/B/C (day map when set, else rotate)."""
+    opt = resolve_option_id(seed, day_key=day_key)
+    caption = option_field(opt, "caption")
+    if caption:
+        return caption
+    return _pick(claims(), f"sp-claim|{seed}", _DEFAULT_CAPTION)
+
+
+def pick_badge_claim(
+    seed: str,
+    *,
+    style: Optional[str] = None,
+    day_key: Union[date, datetime, str, None] = None,
+) -> str:
+    """On-image / designed-in claim for Options A/B/C (style-aware)."""
+    opt = resolve_option_id(seed, day_key=day_key)
+    style_key = str(style or "").lower()
+    if style_key == "top_banner":
+        text = option_field(opt, "all_caps")
+        if text:
+            return text
+    if style_key in ("footer_band",):
+        text = option_field(opt, "on_image")
+        if text:
+            return text
+    if style_key in ("ribbon", "medallion"):
+        text = option_field(opt, "badge_short")
+        if text:
+            return text
+    if style_key == "seal" or not style_key:
+        text = option_field(opt, "badge_seal") or option_field(opt, "badge_short")
+        if text:
+            return text
+    # Fall back to rotating style lists (still A/B/C vocabulary).
     if style:
         opts = badge_claims_for_style(style)
         fallback = {
-            "seal": "Chicago’s #1\nCrystal Shop",
-            "footer_band": "Chicagoland’s favorite crystal & holistic center",
-            "top_banner": "Chicago’s #1 crystal shop",
-            "ribbon": "#1 CHICAGO",
-            "medallion": "Chicago’s #1",
-        }.get(style.lower(), "Chicago’s #1\nCrystal Shop")
+            "seal": _DEFAULT_BADGE,
+            "footer_band": option_field("B", "on_image", fallback=_DEFAULT_CAPTION.rstrip(".")),
+            "top_banner": option_field("B", "all_caps", fallback="CHICAGOLAND'S #1 CRYSTAL SHOP & HOLISTIC CENTER"),
+            "ribbon": "CHICAGO #1",
+            "medallion": "Chicagoland’s #1",
+        }.get(style_key, _DEFAULT_BADGE)
         return _pick(opts, f"sp-badge-claim|{style}|{seed}", fallback)
-    return _pick(badge_claims(), f"sp-badge-claim|{seed}", "Chicago’s #1\nCrystal Shop")
+    return _pick(badge_claims(), f"sp-badge-claim|{seed}", _DEFAULT_BADGE)
 
 
 def pick_badge_style(seed: str) -> str:
@@ -206,6 +331,9 @@ def designed_in_generation_brief(
     celestial remake when designed_in_required is true. Returns "" only when
     designed-in is off / before badge_from_date. Never use this to justify
     overlaying finished flyers or pool creatives.
+
+    Phrasing uses email Options A/B/C (Founder Aug 13 2026), e.g.
+    “Sacred Ground — Chicagoland’s #1 Crystal Shop & Holistic Center”.
     """
     # When required + enabled, always emit a brief for NEW gens (even if day
     # parsing failed) so agents cannot ship pride-free art by accident.
@@ -219,7 +347,15 @@ def designed_in_generation_brief(
     ]
     styles = [s for s in styles if s in BADGE_STYLES] or ["seal", "top_banner"]
     style = styles[_pick_index(len(styles), f"sp-designed-in|{surface}|{seed}")]
-    claim = pick_badge_claim(seed or str(day or "new"), style=style).replace("\n", " / ")
+    day_key = day if day is not None else seed
+    opt = resolve_option_id(seed or str(day or "new"), day_key=day_key)
+    # Prefer full on-image phrase for the generation brief (readable sentence case).
+    claim = (
+        option_field(opt, "on_image")
+        or pick_badge_claim(
+            seed or str(day or "new"), style=style, day_key=day_key
+        ).replace("\n", " / ")
+    )
     surface_key = str(surface or "morning").lower().strip()
     surface_bit = {
         "morning": "morning flyer",
@@ -239,13 +375,14 @@ def designed_in_generation_brief(
     return (
         f" DESIGNED-IN SHOP PRIDE (new {surface_bit} only — not a post-hoc "
         f"sticker on old art).{required_bit} Elegantly bake a boutique '{style}' "
-        f"pride mark into the composition with claim '{claim}' (rotating "
-        "Sacred Ground — Chicagoland’s Best Crystal Store / Chicago’s #1 "
-        "talked-about / favorite crystal & holistic center energy). Deep "
+        f"pride mark into the composition with claim '{claim}' (rotating email "
+        "Options A/B/C: Chicagoland’s Premier Crystal Store & Holistic "
+        "Destination / Chicagoland’s #1 Crystal Shop & Holistic Center / "
+        "Voted #1 Chicagoland’s Crystal Store & Holistic Destination). Deep "
         "eggplant or navy + gold for seals; cream band with dark ink for "
-        "footer/banner. Keep clear of event cards, Sacred Ground script "
-        "wordmark, and the circular sun logo. Playful local pride — not a "
-        "fake award citation."
+        "footer/banner. ALL CAPS OK on banners. Keep clear of event cards, "
+        "Sacred Ground script wordmark, and the circular sun logo. Warm shop "
+        "pride — not a fake award citation."
     )
 
 
@@ -293,9 +430,10 @@ def plan_for_post(
     """Single rotation plan for a draft (caption line + optional first comment + badge)."""
     seed = f"{campaign}|{day_key}|{platform}"
     mode = pick_placement_mode(seed, campaign=campaign)
-    claim = pick_claim(seed) if mode != MODE_SKIP else ""
+    option_id = resolve_option_id(seed, day_key=day_key)
+    claim = pick_claim(seed, day_key=day_key) if mode != MODE_SKIP else ""
     badge_style = pick_badge_style(seed)
-    badge_text = pick_badge_claim(seed, style=badge_style)
+    badge_text = pick_badge_claim(seed, style=badge_style, day_key=day_key)
     in_caption = mode in (MODE_CAPTION, MODE_BOTH) and bool(claim)
     in_comment = (
         mode in (MODE_FIRST_COMMENT, MODE_BOTH)
@@ -308,6 +446,7 @@ def plan_for_post(
     return {
         "enabled": enabled() and mode != MODE_SKIP,
         "mode": mode,
+        "option": option_id,
         "claim": claim,
         "in_caption": in_caption,
         "in_first_comment": in_comment,
@@ -365,6 +504,7 @@ def enrich_caption_dict(
     out["text"] = new_text
     out["social_proof"] = {
         "mode": plan.get("mode"),
+        "option": plan.get("option") or "",
         "claim": plan.get("claim") or "",
         "in_caption": bool(plan.get("in_caption")),
         "in_first_comment": bool(plan.get("in_first_comment")),

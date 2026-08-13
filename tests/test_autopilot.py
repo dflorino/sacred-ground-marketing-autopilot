@@ -1922,19 +1922,34 @@ class AutopilotTests(unittest.TestCase):
 
 
     def test_social_proof_claims_and_badge_styles_rotate(self) -> None:
-        """Playful shop-pride config: non-empty claims + known badge styles."""
+        """Email Options A/B/C shop-pride: claims + known badge styles."""
         from marketing import social_proof as sp
 
         sp.clear_social_proof_cache()
         self.assertTrue(sp.enabled())
         claims = sp.claims()
-        self.assertGreaterEqual(len(claims), 4)
+        self.assertGreaterEqual(len(claims), 3)
+        joined = " ".join(claims).lower()
+        self.assertIn("premier", joined)
+        self.assertIn("#1 crystal shop", joined)
+        self.assertIn("voted #1", joined)
         for c in claims:
             self.assertTrue(c.strip())
             low = c.lower()
             # Soften formal fake-award vibe
             self.assertNotIn("chicago reader", low)
             self.assertNotIn("best of 20", low)
+            # Demoted playful lines should not be primary claims
+            self.assertNotIn("talked-about", low)
+            self.assertNotIn("#1 vibe", low)
+
+        opts = sp.canonical_options()
+        self.assertEqual(set(opts.keys()), {"A", "B", "C"})
+        assign = sp.day_assignment()
+        # TBD until Founder maps Tue/Thu/Sun
+        self.assertIsNone(assign.get("tuesday"))
+        self.assertIsNone(assign.get("thursday"))
+        self.assertIsNone(assign.get("sunday"))
 
         styles = sp.badge_styles()
         self.assertTrue(styles)
@@ -1947,6 +1962,10 @@ class AutopilotTests(unittest.TestCase):
         self.assertEqual(a, b)
         seen = {sp.pick_claim(f"rot-{i}") for i in range(40)}
         self.assertGreaterEqual(len(seen), 2)
+        option_seen = {
+            sp.resolve_option_id(f"opt-{i}", day_key="2026-08-13") for i in range(40)
+        }
+        self.assertGreaterEqual(len(option_seen), 2)
 
         style_seen = {sp.pick_badge_style(f"sty-{i}") for i in range(40)}
         self.assertGreaterEqual(len(style_seen), 2)
@@ -1955,6 +1974,7 @@ class AutopilotTests(unittest.TestCase):
             campaign="today", platform="facebook", day_key="2026-08-11"
         )
         self.assertTrue(plan.get("claim"))
+        self.assertIn(plan.get("option"), ("A", "B", "C"))
         self.assertIn(plan.get("mode"), ("caption", "first_comment", "both"))
 
     def test_social_proof_weaves_caption_and_first_comment_payload(self) -> None:
@@ -2109,7 +2129,7 @@ class AutopilotTests(unittest.TestCase):
             )
         )
 
-        # NEW generation prompts MUST include designed-in pride brief.
+        # NEW generation prompts MUST include designed-in pride brief (A/B/C).
         self.assertTrue(sp.designed_in_on_new_generation())
         self.assertTrue(sp.designed_in_required())
         brief = sp.designed_in_generation_brief(
@@ -2118,6 +2138,17 @@ class AutopilotTests(unittest.TestCase):
         self.assertIn("DESIGNED-IN SHOP PRIDE", brief)
         self.assertIn("REQUIRED", brief)
         self.assertIn("not a post-hoc", brief.lower())
+        self.assertTrue(
+            any(
+                phrase in brief
+                for phrase in (
+                    "Premier Crystal Store",
+                    "#1 Crystal Shop",
+                    "Voted #1",
+                )
+            ),
+            brief,
+        )
         night_brief = sp.designed_in_generation_brief(
             "new-night", day=date(2026, 8, 20), surface="night"
         )
