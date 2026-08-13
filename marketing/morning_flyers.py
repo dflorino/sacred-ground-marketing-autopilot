@@ -478,6 +478,7 @@ def build_generation_prompt(
         f"morning|{day.isoformat()}|{variant}",
         day=day,
         surface="morning",
+        campaign="today",
     )
     shared = (
         f"Chicago date {day.isoformat()}. "

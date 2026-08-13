@@ -324,8 +324,10 @@ Rotating local-pride lines (not formal award citations) live in `config/social_p
 See **docs/SOCIAL-PROOF.md**.
 
 - Captions + Zernio **firstComment** (FB/IG) rotate via `marketing/social_proof.py` (**ON**)
-- Optional `day_assignment` for Tue/Thu/Sun → A/B/C is **TBD** (America/Chicago);
-  until Founder fills it, every post rotates A/B/C
+- **Slot rotation** (Founder Aug 13 ~9:13am CT — no weekday map): within each
+  America/Chicago day, `today`→A, `afternoon_spotlight`→B, `week_ahead`→C;
+  specialty/4th posts (`tuesday_meditation`, etc.) always **B**. See
+  `config/social_proof.json` → `slot_rotation` / `docs/SOCIAL-PROOF.md`.
 - On-image overlays **OFF** forever for existing inventory (`badge_on_morning_flyers` /
   `badge_on_night` = false; `never_overlay_existing` = true). Do **not** stamp badges onto
   already-made morning flyers, celestial plates, or night pool creatives.

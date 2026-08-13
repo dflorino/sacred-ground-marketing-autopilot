@@ -1,6 +1,6 @@
 {
   "enabled": true,
-  "honesty_note": "Warm shop pride aligned with email vocabulary (Founder Aug 13 2026 ~9:06am CT) — NOT a formal third-party award citation. Canonical rotating set is Options A/B/C from the email monthly org brief. 'Voted #1' = Founder / community vibe ('i vote it the best! lol'), not a verified publication trophy. Soften or avoid fake 'officially voted by [publication]' + award-year language. No inventing Chicago Reader / Best Of winners unless Founder confirms a real source.",
+  "honesty_note": "Warm shop pride aligned with email vocabulary (Founder Aug 13 2026 ~9:06am CT) — NOT a formal third-party award citation. Canonical rotating set is Options A/B/C from the email monthly org brief. Slot rotation (Founder Aug 13 ~9:13am CT): NO weekday map — today→A, afternoon_spotlight→B, week_ahead→C; specialty/4th posts always B. 'Voted #1' = Founder / community vibe ('i vote it the best! lol'), not a verified publication trophy. Soften or avoid fake 'officially voted by [publication]' + award-year language. No inventing Chicago Reader / Best Of winners unless Founder confirms a real source.",
   "on_image_status": "NO overlays on existing inventory (Founder Aug 11 ~3:05pm CT). Do not stamp badges onto already-made morning flyers, celestial plates, or night creatives. Captions + first_comment stay ON. HARD (Founder Aug 12 ~5:54pm CT): every NEW image generation/remake MUST include designed-in shop pride (banner/seal/band) — designed_in_required true. Never a post-hoc sticker remake of old plates. NEW gens use Options A/B/C phrasing (Aug 13).",
   "only_on_newly_generated": true,
   "never_overlay_existing": true,
@@ -37,12 +37,32 @@
       "badge_short": "Voted #1"
     }
   },
-  "day_assignment": {
-    "note": "TBD — Founder will assign Options A/B/C to Tuesday, Thursday, and Sunday (America/Chicago). Until confirmed, every post rotates A/B/C. Other weekdays always rotate A/B/C. Set values to \"A\", \"B\", or \"C\" when ready.",
+  "day_assignment": null,
+  "slot_rotation": {
+    "note": "Founder Aug 13 ~9:13am CT — NO weekday→option map. Within each America/Chicago calendar day, the three normal posts get Options A/B/C by fixed campaign slot order (each different). A 4th special/specialty post always uses Option B.",
     "timezone": "America/Chicago",
-    "tuesday": null,
-    "thursday": null,
-    "sunday": null
+    "daily_slots": {
+      "today": "A",
+      "afternoon_spotlight": "B",
+      "week_ahead": "C"
+    },
+    "always_option_b_campaigns": [
+      "tuesday_meditation",
+      "visit",
+      "spotlight"
+    ],
+    "surface_to_campaign": {
+      "morning": "today",
+      "today": "today",
+      "afternoon": "afternoon_spotlight",
+      "afternoon_spotlight": "afternoon_spotlight",
+      "night": "week_ahead",
+      "week_ahead": "week_ahead",
+      "celestial": "today",
+      "celestial_morning": "today",
+      "celestial_night": "week_ahead",
+      "tuesday_meditation": "tuesday_meditation"
+    }
   },
   "caption_campaigns": [
     "today",

@@ -21,8 +21,10 @@ A/B/C wording (Founder Aug 13 ~9:06am CT):
 - Sacred Ground — Chicagoland’s #1 Crystal Shop & Holistic Center
 - Sacred Ground — Voted #1 Chicagoland’s Crystal Store & Holistic Destination
 
-ALL CAPS banners OK (match email blocks). Day→option map for Tue/Thu/Sun is
-TBD in `config/social_proof.json` → `day_assignment` (null = rotate A/B/C).
+ALL CAPS banners OK (match email blocks). **No weekday→option map** (Founder
+Aug 13 ~9:13am CT). Slot map in `config/social_proof.json` → `slot_rotation`:
+`today`→A, `afternoon_spotlight`→B, `week_ahead`→C; specialty/4th posts
+(`tuesday_meditation`, etc.) always **B**.
 
 Applies to: morning flyers, night creatives, afternoon event art we generate,
 celestial remakes, and any other new AI plate. **New generation only** — not

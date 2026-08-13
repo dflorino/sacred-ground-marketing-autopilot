@@ -4,6 +4,8 @@
 
 **Vocabulary** aligned with email monthly org (Founder Aug 13 ~9:06am CT).
 
+**Slot rotation** (Founder Aug 13 ~9:13am CT) — **no** weekday→option map.
+
 ## Canonical Options (primary rotating set)
 
 | Option | ALL CAPS (on-image banners OK) | Caption / designed-in (title case) |
@@ -14,20 +16,37 @@
 
 Config: `canonical_options` + `claims` / `badge_claims` / `badge_claims_by_style`.
 
-## Day assignment (TBD — America/Chicago)
+## Slot rotation (America/Chicago) — no day mapping
 
-`day_assignment` in `config/social_proof.json`:
+`day_assignment` is **null / retired**. Options are assigned by **campaign slot
+within each calendar day**, not by Tuesday/Thursday/Sunday.
 
-| Weekday | Option |
-|---|---|
-| tuesday | `null` (TBD) |
-| thursday | `null` (TBD) |
-| sunday | `null` (TBD) |
-| other weekdays | always rotate A/B/C |
+Config: `config/social_proof.json` → `slot_rotation`.
 
-Until Founder assigns Tue / Thu / Sun → A/B/C, **every post rotates all three**.
-Set `"tuesday": "A"` (etc.) when confirmed; code pins that weekday via
-`resolve_option_id()`.
+### Normal day (3 posts)
+
+| Slot | Campaign | Time (CT) | Option | Claim |
+|---|---|---|---|---|
+| Morning | `today` | 9:00 AM | **A** | Chicagoland’s Premier Crystal Store & Holistic Destination |
+| Afternoon | `afternoon_spotlight` | 5:00 PM | **B** | Chicagoland’s #1 Crystal Shop & Holistic Center |
+| Night | `week_ahead` | 7:00 PM | **C** | Voted #1 Chicagoland’s Crystal Store & Holistic Destination |
+
+Each of the three daily posts gets a **different** Option (A / B / C).
+
+### Tuesday (4 posts) — special always B
+
+| Slot | Campaign | Time (CT) | Option |
+|---|---|---|---|
+| Morning | `today` | 9:00 AM | **A** |
+| Special | `tuesday_meditation` | 4:00 PM | **B** (always) |
+| Afternoon | `afternoon_spotlight` | 5:00 PM | **B** |
+| Night | `week_ahead` | 7:00 PM | **C** |
+
+Any other specialty / 4th post (`visit`, `spotlight`, … listed in
+`always_option_b_campaigns`) also uses **Option B** exactly.
+
+Code: `social_proof.resolve_option_id(..., campaign=…)` /
+`designed_in_generation_brief(..., surface=…, campaign=…)`.
 
 ## Tone (hard)
 
@@ -59,7 +78,7 @@ Meaning:
 | Do | Do not |
 |---|---|
 | Keep posting current no-badge morning / night / celestial inventory | Stamp badges onto already-made flyers or pool plates |
-| Keep rotating caption + first-comment claims (A/B/C) | Remake Aug 6 / v3 / v4 overlay preview spam on finished art |
+| Keep rotating caption + first-comment claims (A/B/C by slot) | Remake Aug 6 / v3 / v4 overlay preview spam on finished art |
 | When generating **NEW** art, bake pride into the generation prompt (**required**) | Post-hoc sticker / seal / footer_band overlay on old creatives |
 
 Config flags:
@@ -73,9 +92,9 @@ Config flags:
 
 Code:
 
-- `social_proof.resolve_option_id(seed, day_key=…)` → `"A"` / `"B"` / `"C"`
-- `social_proof.designed_in_generation_brief(seed, day=…, surface="morning"|"night"|"afternoon"|"celestial")` → prompt fragment for **new** gens only (uses Option A/B/C phrases)
-- Wired into `morning_flyers.build_generation_prompt` for AI flyer generations
+- `social_proof.resolve_option_id(seed, day_key=…, campaign=…)` → `"A"` / `"B"` / `"C"` by slot
+- `social_proof.designed_in_generation_brief(seed, day=…, surface="morning"|"night"|"afternoon"|"celestial", campaign=…)` → prompt fragment for **new** gens only (uses Option A/B/C phrases for that slot)
+- Wired into `morning_flyers.build_generation_prompt` for AI flyer generations (`campaign="today"` → A)
 - Night / celestial / afternoon **regen** prompts **must** call the same helper — do **not** stamp old inventory
 - `should_badge_morning` / `should_badge_night` / `apply_badge_to_path` refuse overlays while `never_overlay_existing` is true
 

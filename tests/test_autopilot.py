@@ -1945,27 +1945,53 @@ class AutopilotTests(unittest.TestCase):
 
         opts = sp.canonical_options()
         self.assertEqual(set(opts.keys()), {"A", "B", "C"})
-        assign = sp.day_assignment()
-        # TBD until Founder maps Tue/Thu/Sun
-        self.assertIsNone(assign.get("tuesday"))
-        self.assertIsNone(assign.get("thursday"))
-        self.assertIsNone(assign.get("sunday"))
+        # Founder Aug 13 ~9:13am CT: no weekday→option map; slot_rotation instead
+        self.assertIsNone(sp.social_proof_config().get("day_assignment"))
+        slots = sp.daily_slot_options()
+        self.assertEqual(slots.get("today"), "A")
+        self.assertEqual(slots.get("afternoon_spotlight"), "B")
+        self.assertEqual(slots.get("week_ahead"), "C")
+        self.assertIn("tuesday_meditation", sp.always_option_b_campaigns())
 
         styles = sp.badge_styles()
         self.assertTrue(styles)
         for s in styles:
             self.assertIn(s, sp.BADGE_STYLES)
 
-        # Rotation is stable for a seed and varies across seeds
-        a = sp.pick_claim("seed-a")
-        b = sp.pick_claim("seed-a")
-        self.assertEqual(a, b)
-        seen = {sp.pick_claim(f"rot-{i}") for i in range(40)}
-        self.assertGreaterEqual(len(seen), 2)
-        option_seen = {
-            sp.resolve_option_id(f"opt-{i}", day_key="2026-08-13") for i in range(40)
-        }
-        self.assertGreaterEqual(len(option_seen), 2)
+        # Slot map is deterministic by campaign (same day → distinct A/B/C)
+        day = "2026-08-13"
+        self.assertEqual(sp.resolve_option_id(day_key=day, campaign="today"), "A")
+        self.assertEqual(
+            sp.resolve_option_id(day_key=day, campaign="afternoon_spotlight"), "B"
+        )
+        self.assertEqual(sp.resolve_option_id(day_key=day, campaign="week_ahead"), "C")
+        self.assertEqual(
+            sp.resolve_option_id(day_key=day, campaign="tuesday_meditation"), "B"
+        )
+        # FB + IG same option for the same campaign slot
+        plan_fb = sp.plan_for_post(
+            campaign="today", platform="facebook", day_key=day
+        )
+        plan_ig = sp.plan_for_post(
+            campaign="today", platform="instagram", day_key=day
+        )
+        self.assertEqual(plan_fb.get("option"), "A")
+        self.assertEqual(plan_ig.get("option"), "A")
+        self.assertIn("Premier", plan_fb.get("claim") or "")
+        aft = sp.plan_for_post(
+            campaign="afternoon_spotlight", platform="facebook", day_key=day
+        )
+        night = sp.plan_for_post(
+            campaign="week_ahead", platform="facebook", day_key=day
+        )
+        tue = sp.plan_for_post(
+            campaign="tuesday_meditation", platform="facebook", day_key=day
+        )
+        self.assertEqual(aft.get("option"), "B")
+        self.assertEqual(night.get("option"), "C")
+        self.assertEqual(tue.get("option"), "B")
+        self.assertIn("#1 Crystal Shop", aft.get("claim") or "")
+        self.assertIn("Voted #1", night.get("claim") or "")
 
         style_seen = {sp.pick_badge_style(f"sty-{i}") for i in range(40)}
         self.assertGreaterEqual(len(style_seen), 2)
@@ -1974,7 +2000,7 @@ class AutopilotTests(unittest.TestCase):
             campaign="today", platform="facebook", day_key="2026-08-11"
         )
         self.assertTrue(plan.get("claim"))
-        self.assertIn(plan.get("option"), ("A", "B", "C"))
+        self.assertEqual(plan.get("option"), "A")
         self.assertIn(plan.get("mode"), ("caption", "first_comment", "both"))
 
     def test_social_proof_weaves_caption_and_first_comment_payload(self) -> None:
@@ -2133,30 +2159,25 @@ class AutopilotTests(unittest.TestCase):
         self.assertTrue(sp.designed_in_on_new_generation())
         self.assertTrue(sp.designed_in_required())
         brief = sp.designed_in_generation_brief(
-            "new-flyer", day=date(2026, 8, 20), surface="morning"
+            "new-flyer", day=date(2026, 8, 20), surface="morning", campaign="today"
         )
         self.assertIn("DESIGNED-IN SHOP PRIDE", brief)
         self.assertIn("REQUIRED", brief)
         self.assertIn("not a post-hoc", brief.lower())
-        self.assertTrue(
-            any(
-                phrase in brief
-                for phrase in (
-                    "Premier Crystal Store",
-                    "#1 Crystal Shop",
-                    "Voted #1",
-                )
-            ),
-            brief,
-        )
+        self.assertIn("Premier Crystal Store", brief)
         night_brief = sp.designed_in_generation_brief(
-            "new-night", day=date(2026, 8, 20), surface="night"
+            "new-night", day=date(2026, 8, 20), surface="night", campaign="week_ahead"
         )
         self.assertIn("DESIGNED-IN SHOP PRIDE", night_brief)
+        self.assertIn("Voted #1", night_brief)
         aft_brief = sp.designed_in_generation_brief(
-            "new-aft", day=date(2026, 8, 20), surface="afternoon"
+            "new-aft",
+            day=date(2026, 8, 20),
+            surface="afternoon",
+            campaign="afternoon_spotlight",
         )
         self.assertIn("afternoon event art", aft_brief)
+        self.assertIn("#1 Crystal Shop", aft_brief)
 
         prompt = mf.build_generation_prompt(
             date(2026, 8, 20),

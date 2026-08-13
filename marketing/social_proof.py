@@ -14,9 +14,10 @@ On-image (Founder Aug 11 ~3:05pm CT cutover + Aug 12 FINAL):
   generation prompt (designed_in_required) — banner / seal / band, not a sticker.
 - badge_on_morning_flyers / badge_on_night stay false (no live overlay path).
 
-Day map (Founder Aug 13 ~9:06am CT): optional tuesday/thursday/sunday → A/B/C
-in day_assignment. Until Founder fills those, rotate A/B/C every post
-(America/Chicago). Other weekdays always rotate.
+Slot rotation (Founder Aug 13 ~9:13am CT — NO weekday→option map):
+- Normal day (3 posts): today → A, afternoon_spotlight → B, week_ahead → C
+- 4th special campaigns (tuesday_meditation, visit, spotlight, …) → always B
+America/Chicago. See config/social_proof.json → slot_rotation.
 """
 from __future__ import annotations
 
@@ -42,7 +43,25 @@ BADGE_STYLES = ("seal", "footer_band", "top_banner", "ribbon", "medallion")
 
 # Canonical email Options A/B/C (Founder Aug 13 2026).
 OPTION_IDS = ("A", "B", "C")
-_WEEKDAY_ASSIGN_KEYS = ("monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday")
+# Fixed daily slot order (America/Chicago) — documented in slot_rotation.
+_DEFAULT_DAILY_SLOTS = {
+    "today": "A",
+    "afternoon_spotlight": "B",
+    "week_ahead": "C",
+}
+_DEFAULT_ALWAYS_B = ("tuesday_meditation", "visit", "spotlight")
+_DEFAULT_SURFACE_TO_CAMPAIGN = {
+    "morning": "today",
+    "today": "today",
+    "afternoon": "afternoon_spotlight",
+    "afternoon_spotlight": "afternoon_spotlight",
+    "night": "week_ahead",
+    "week_ahead": "week_ahead",
+    "celestial": "today",
+    "celestial_morning": "today",
+    "celestial_night": "week_ahead",
+    "tuesday_meditation": "tuesday_meditation",
+}
 _DEFAULT_CAPTION = (
     "Sacred Ground — Chicagoland’s #1 Crystal Shop & Holistic Center."
 )
@@ -114,10 +133,58 @@ def canonical_options() -> Dict[str, Dict[str, Any]]:
     return out
 
 
-def day_assignment() -> Dict[str, Any]:
-    """America/Chicago weekday → option map (tue/thu/sun TBD until Founder sets)."""
-    raw = social_proof_config().get("day_assignment") or {}
+def slot_rotation() -> Dict[str, Any]:
+    """America/Chicago campaign-slot → Option A/B/C map (no weekday map)."""
+    raw = social_proof_config().get("slot_rotation") or {}
     return raw if isinstance(raw, dict) else {}
+
+
+def daily_slot_options() -> Dict[str, str]:
+    """Normal 3 daily posts → option letters (today/afternoon/week_ahead)."""
+    raw = slot_rotation().get("daily_slots") or {}
+    out: Dict[str, str] = {}
+    source = raw if isinstance(raw, dict) and raw else _DEFAULT_DAILY_SLOTS
+    for camp, letter in source.items():
+        key = str(camp or "").strip().lower()
+        opt = str(letter or "").strip().upper()
+        if key and opt in OPTION_IDS:
+            out[key] = opt
+    return out or dict(_DEFAULT_DAILY_SLOTS)
+
+
+def always_option_b_campaigns() -> set:
+    """Specialty / 4th posts that always use Option B."""
+    raw = slot_rotation().get("always_option_b_campaigns")
+    if isinstance(raw, list) and raw:
+        return {str(c).strip().lower() for c in raw if str(c).strip()}
+    return set(_DEFAULT_ALWAYS_B)
+
+
+def surface_to_campaign() -> Dict[str, str]:
+    raw = slot_rotation().get("surface_to_campaign") or {}
+    source = raw if isinstance(raw, dict) and raw else _DEFAULT_SURFACE_TO_CAMPAIGN
+    out: Dict[str, str] = {}
+    for surf, camp in source.items():
+        s = str(surf or "").strip().lower()
+        c = str(camp or "").strip().lower()
+        if s and c:
+            out[s] = c
+    return out or dict(_DEFAULT_SURFACE_TO_CAMPAIGN)
+
+
+def normalize_campaign(
+    campaign: str = "",
+    *,
+    surface: str = "",
+) -> str:
+    """Map campaign or designed-in surface → canonical campaign key."""
+    camp = str(campaign or "").strip().lower()
+    if camp:
+        return camp
+    surf = str(surface or "").strip().lower()
+    if not surf:
+        return ""
+    return surface_to_campaign().get(surf, surf)
 
 
 def _parse_day_key(day_key: Union[date, datetime, str, None]) -> Optional[date]:
@@ -147,26 +214,49 @@ def resolve_option_id(
     seed: str = "",
     *,
     day_key: Union[date, datetime, str, None] = None,
+    campaign: str = "",
+    surface: str = "",
 ) -> str:
-    """Pick Option A/B/C.
+    """Pick Option A/B/C by campaign slot within the America/Chicago day.
 
-    If Founder assigned tuesday/thursday/sunday in day_assignment, pin that
-    weekday to the assigned letter. Otherwise (and for other weekdays) rotate
-    A/B/C by seed. America/Chicago calendar day when day_key is a date string.
+    Fixed daily map (config slot_rotation.daily_slots):
+      today → A, afternoon_spotlight → B, week_ahead → C
+    Special / 4th posts (always_option_b_campaigns) → always B.
+    No tuesday/thursday/sunday weekday map.
     """
     opts = canonical_options()
     ids = [i for i in OPTION_IDS if i in opts] or list(OPTION_IDS)
-    d = _parse_day_key(day_key) or _parse_day_key(seed)
-    assign = day_assignment()
-    if d is not None:
-        weekday = d.strftime("%A").lower()
-        if weekday in _WEEKDAY_ASSIGN_KEYS:
-            raw = assign.get(weekday)
-            if raw is not None and str(raw).strip():
-                letter = str(raw).strip().upper()
-                if letter in ids:
-                    return letter
-    return ids[_pick_index(len(ids), f"sp-option|{seed}|{d or ''}")]
+    camp = normalize_campaign(campaign, surface=surface)
+    if not camp:
+        # Infer campaign from seed prefixes used by callers.
+        low = str(seed or "").lower()
+        for key in (
+            "tuesday_meditation",
+            "afternoon_spotlight",
+            "week_ahead",
+            "today",
+            "visit",
+            "spotlight",
+        ):
+            if key in low:
+                camp = key
+                break
+        if not camp:
+            for surf in ("morning", "afternoon", "night", "celestial"):
+                if surf in low:
+                    camp = normalize_campaign(surface=surf)
+                    break
+    if camp in always_option_b_campaigns():
+        return "B" if "B" in ids else ids[0]
+    slots = daily_slot_options()
+    if camp in slots:
+        letter = slots[camp]
+        if letter in ids:
+            return letter
+    # Unknown campaign: fall back to Option B (safe specialty default).
+    if "B" in ids:
+        return "B"
+    return ids[_pick_index(len(ids), f"sp-option|{seed}|{_parse_day_key(day_key) or ''}")]
 
 
 def option_field(
@@ -186,9 +276,13 @@ def pick_claim(
     seed: str,
     *,
     day_key: Union[date, datetime, str, None] = None,
+    campaign: str = "",
+    surface: str = "",
 ) -> str:
-    """Caption / first-comment claim — Options A/B/C (day map when set, else rotate)."""
-    opt = resolve_option_id(seed, day_key=day_key)
+    """Caption / first-comment claim — Options A/B/C by campaign slot."""
+    opt = resolve_option_id(
+        seed, day_key=day_key, campaign=campaign, surface=surface
+    )
     caption = option_field(opt, "caption")
     if caption:
         return caption
@@ -200,9 +294,13 @@ def pick_badge_claim(
     *,
     style: Optional[str] = None,
     day_key: Union[date, datetime, str, None] = None,
+    campaign: str = "",
+    surface: str = "",
 ) -> str:
     """On-image / designed-in claim for Options A/B/C (style-aware)."""
-    opt = resolve_option_id(seed, day_key=day_key)
+    opt = resolve_option_id(
+        seed, day_key=day_key, campaign=campaign, surface=surface
+    )
     style_key = str(style or "").lower()
     if style_key == "top_banner":
         text = option_field(opt, "all_caps")
@@ -324,6 +422,7 @@ def designed_in_generation_brief(
     *,
     day: Union[date, datetime, str, None] = None,
     surface: str = "morning",
+    campaign: str = "",
 ) -> str:
     """Prompt fragment for NEW art only — boutique pride designed into the plate.
 
@@ -332,8 +431,8 @@ def designed_in_generation_brief(
     designed-in is off / before badge_from_date. Never use this to justify
     overlaying finished flyers or pool creatives.
 
-    Phrasing uses email Options A/B/C (Founder Aug 13 2026), e.g.
-    “Sacred Ground — Chicagoland’s #1 Crystal Shop & Holistic Center”.
+    Phrasing uses email Options A/B/C by campaign slot (Founder Aug 13 2026),
+    e.g. morning/today → Premier (A), afternoon → #1 (B), night → Voted #1 (C).
     """
     # When required + enabled, always emit a brief for NEW gens (even if day
     # parsing failed) so agents cannot ship pride-free art by accident.
@@ -348,12 +447,22 @@ def designed_in_generation_brief(
     styles = [s for s in styles if s in BADGE_STYLES] or ["seal", "top_banner"]
     style = styles[_pick_index(len(styles), f"sp-designed-in|{surface}|{seed}")]
     day_key = day if day is not None else seed
-    opt = resolve_option_id(seed or str(day or "new"), day_key=day_key)
+    camp = normalize_campaign(campaign, surface=surface)
+    opt = resolve_option_id(
+        seed or str(day or "new"),
+        day_key=day_key,
+        campaign=camp,
+        surface=surface,
+    )
     # Prefer full on-image phrase for the generation brief (readable sentence case).
     claim = (
         option_field(opt, "on_image")
         or pick_badge_claim(
-            seed or str(day or "new"), style=style, day_key=day_key
+            seed or str(day or "new"),
+            style=style,
+            day_key=day_key,
+            campaign=camp,
+            surface=surface,
         ).replace("\n", " / ")
     )
     surface_key = str(surface or "morning").lower().strip()
@@ -430,10 +539,16 @@ def plan_for_post(
     """Single rotation plan for a draft (caption line + optional first comment + badge)."""
     seed = f"{campaign}|{day_key}|{platform}"
     mode = pick_placement_mode(seed, campaign=campaign)
-    option_id = resolve_option_id(seed, day_key=day_key)
-    claim = pick_claim(seed, day_key=day_key) if mode != MODE_SKIP else ""
+    option_id = resolve_option_id(seed, day_key=day_key, campaign=campaign)
+    claim = (
+        pick_claim(seed, day_key=day_key, campaign=campaign)
+        if mode != MODE_SKIP
+        else ""
+    )
     badge_style = pick_badge_style(seed)
-    badge_text = pick_badge_claim(seed, style=badge_style, day_key=day_key)
+    badge_text = pick_badge_claim(
+        seed, style=badge_style, day_key=day_key, campaign=campaign
+    )
     in_caption = mode in (MODE_CAPTION, MODE_BOTH) and bool(claim)
     in_comment = (
         mode in (MODE_FIRST_COMMENT, MODE_BOTH)
