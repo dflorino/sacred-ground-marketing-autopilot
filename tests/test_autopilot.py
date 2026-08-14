@@ -2002,6 +2002,48 @@ class AutopilotTests(unittest.TestCase):
         self.assertTrue(plan.get("claim"))
         self.assertEqual(plan.get("option"), "A")
         self.assertIn(plan.get("mode"), ("caption", "first_comment", "both"))
+        # Founder Aug 14: first comment is never skipped on FB/IG.
+        self.assertTrue(plan.get("in_first_comment"))
+        self.assertTrue(plan.get("first_comment"))
+
+    def test_social_proof_always_attaches_first_comment_even_caption_mode(self) -> None:
+        """Placement may prefer caption, but FB/IG still get firstComment."""
+        from marketing import publish, social_proof as sp
+
+        sp.clear_social_proof_cache()
+        # Aug 14 today+facebook was historically caption-only before the fix.
+        plan = sp.plan_for_post(
+            campaign="today", platform="facebook", day_key="2026-08-14"
+        )
+        self.assertTrue(plan.get("in_first_comment"), plan)
+        self.assertIn("Premier", plan.get("first_comment") or "")
+
+        draft = {
+            "id": "test-always-fc",
+            "fingerprint": "today|2026-08-14|facebook|1",
+            "platform": "facebook",
+            "timezone": "America/Chicago",
+            "caption": {
+                "text": "Hello\n\n#SacredGround",
+                "social_proof": {
+                    "mode": "caption",
+                    "claim": plan["claim"],
+                    "in_caption": True,
+                    "in_first_comment": False,  # legacy draft shape
+                    "first_comment": "",
+                },
+            },
+            "image": {"url": "https://example.com/x.png"},
+            "schedule_recommendation": {
+                "recommended_at": "2026-08-14T09:00:00-05:00"
+            },
+        }
+        payload = publish.schedule_payload(draft)
+        plat = payload["platforms"][0]
+        self.assertEqual(
+            (plat.get("platformSpecificData") or {}).get("firstComment"),
+            plan["claim"],
+        )
 
     def test_social_proof_weaves_caption_and_first_comment_payload(self) -> None:
         from marketing import captions, publish, social_proof as sp

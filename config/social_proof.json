@@ -72,8 +72,10 @@
     "visit",
     "spotlight"
   ],
+  "always_first_comment": true,
+  "always_first_comment_note": "Founder Aug 14 2026: every FB+IG publish must get ONE Zernio firstComment (pride A/B/C by slot). Caption placement still rotates; first comment is never skipped.",
   "placement_modes": [
-    "caption",
+    "both",
     "first_comment",
     "both",
     "caption",

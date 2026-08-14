@@ -61,12 +61,14 @@ def schedule_payload(draft: Dict[str, Any]) -> Dict[str, Any]:
         "platform": platform,
         "accountId": account_id,
     }
-    # Zernio firstComment (FB + IG feed) — playful shop-pride line when planned.
-    # Docs: platformSpecificData.firstComment auto-posts after publish.
+    # Zernio firstComment (FB + IG feed) — auto-posts after publish.
+    # Founder Aug 14 2026: every FB/IG publish gets ONE pride first comment.
+    # Prefer planned first_comment; fall back to claim whenever present so older
+    # caption-only placement drafts still ship a comment.
     cap = draft.get("caption") or {}
     sp = cap.get("social_proof") or {}
     first_comment = (sp.get("first_comment") or "").strip()
-    if not first_comment and sp.get("in_first_comment") and sp.get("claim"):
+    if not first_comment and sp.get("claim"):
         first_comment = str(sp.get("claim") or "").strip()
     if first_comment and platform in ("facebook", "instagram"):
         platform_entry["platformSpecificData"] = {"firstComment": first_comment}

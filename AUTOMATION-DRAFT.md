@@ -323,7 +323,9 @@ Rotating local-pride lines (not formal award citations) live in `config/social_p
 (`enabled: true`). Primary set = email Options A/B/C (Premier / #1 / Voted #1).
 See **docs/SOCIAL-PROOF.md**.
 
-- Captions + Zernio **firstComment** (FB/IG) rotate via `marketing/social_proof.py` (**ON**)
+- Captions + Zernio **firstComment** (FB/IG) rotate pride Options A/B/C via
+  `marketing/social_proof.py` (**ON**). Founder Aug 14: **every** FB+IG publish
+  gets one first comment (`always_first_comment`); caption weave may still rotate.
 - **Slot rotation** (Founder Aug 13 ~9:13am CT — no weekday map): within each
   America/Chicago day, `today`→A, `afternoon_spotlight`→B, `week_ahead`→C;
   specialty/4th posts (`tuesday_meditation`, etc.) always **B**. See

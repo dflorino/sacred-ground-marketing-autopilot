@@ -337,8 +337,21 @@ def pick_badge_style(seed: str) -> str:
     return styles[_pick_index(len(styles), f"sp-badge-style|{seed}")]
 
 
+def always_first_comment() -> bool:
+    """Founder Aug 14 2026: every FB/IG publish gets one Zernio firstComment."""
+    cfg = social_proof_config()
+    if "always_first_comment" in cfg:
+        return bool(cfg.get("always_first_comment"))
+    # Default ON — caption placement may still rotate; comment must not be skipped.
+    return True
+
+
 def pick_placement_mode(seed: str, *, campaign: str = "") -> str:
-    """Where the claim appears this post: caption / first_comment / both."""
+    """Where the claim appears this post: caption / first_comment / both.
+
+    When always_first_comment is on, caption-only modes still get a first comment
+    at plan time (treated as both for comment attachment).
+    """
     if not enabled():
         return MODE_SKIP
     camps = set(social_proof_config().get("caption_campaigns") or [])
@@ -555,12 +568,26 @@ def plan_for_post(
         and bool(claim)
         and first_comment_supported(platform)
     )
+    # Founder Aug 14: never skip the first comment on supported platforms.
+    if (
+        always_first_comment()
+        and bool(claim)
+        and first_comment_supported(platform)
+        and mode != MODE_SKIP
+    ):
+        in_comment = True
     # If first_comment was chosen but platform unsupported, keep claim in caption.
     if mode == MODE_FIRST_COMMENT and not in_comment and claim:
         in_caption = True
+    # Record effective mode so drafts / dry-runs show comment will ship.
+    effective_mode = mode
+    if in_comment and in_caption and mode == MODE_CAPTION:
+        effective_mode = MODE_BOTH
+    elif in_comment and not in_caption:
+        effective_mode = MODE_FIRST_COMMENT
     return {
         "enabled": enabled() and mode != MODE_SKIP,
-        "mode": mode,
+        "mode": effective_mode,
         "option": option_id,
         "claim": claim,
         "in_caption": in_caption,

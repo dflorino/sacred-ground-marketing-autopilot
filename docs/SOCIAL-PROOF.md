@@ -65,9 +65,14 @@ silence everywhere.
 
 ## Where it appears
 
-1. **Captions** — short line woven before hashtags (placement mode rotates). **ON.**
-2. **First comment** — Zernio `platformSpecificData.firstComment` on Facebook + Instagram. **ON.**
+1. **Captions** — short line woven before hashtags (placement mode still rotates caption-in vs comment-only). **ON.**
+2. **First comment** — Zernio `platformSpecificData.firstComment` on Facebook + Instagram. **ALWAYS ON** for every FB/IG publish (`always_first_comment: true`, Founder Aug 14 2026). Caption-only placement no longer skips the comment.
 3. **On-image** — **not via overlays on existing art.**
+
+Publish path: `marketing/publish.schedule_payload` attaches `firstComment` from
+`caption.social_proof.first_comment` (or falls back to `claim`) for facebook +
+instagram. When `firstComment` is in the create payload, Zernio auto-posts it
+after publish (verified live on IG Aug 14 morning).
 
 ## On-image cutover (Founder Aug 11 ~3:05pm CT) — hard
 
