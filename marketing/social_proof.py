@@ -272,6 +272,14 @@ def option_field(
     return str(val).strip()
 
 
+def option_on_image_text(option_id: str) -> str:
+    """Canonical on-image pride line for Option A/B/C."""
+    text = option_field(option_id, "on_image")
+    if text:
+        return text
+    return option_field(option_id, "all_caps") or option_field(option_id, "caption")
+
+
 def pick_claim(
     seed: str,
     *,
@@ -1192,7 +1200,8 @@ def apply_badge_to_path(
     """Legacy overlay helper — refused while never_overlay_existing is true.
 
     Do not use on finished inventory. Designed-in pride for NEW art goes through
-    designed_in_generation_brief() in generation prompts.
+    designed_in_generation_brief() in generation prompts. Morning queued plates
+    missing pride use bake_designed_in_pride_new_asset() (NEW url only).
     """
     if never_overlay_existing():
         return None
@@ -1216,6 +1225,57 @@ def apply_badge_to_path(
         img.save(dest, "PNG", optimize=True)
         size = list(img.size)
     return {"style": drawn, "text": text, "path": dest, "size": size}
+
+
+def bake_designed_in_pride_new_asset(
+    src_path: str,
+    *,
+    out_path: str,
+    text: str,
+    style: str = "footer_band",
+    seed: str = "",
+    photo_bottom: Optional[int] = None,
+) -> Optional[Dict[str, Any]]:
+    """
+    Bake designed-in Chicagoland pride into a NEW file path.
+
+    Founder Aug 14 ~2:31pm CT: every morning plate must show pride on the image.
+    When a queued flyer lacks pride, write a NEW local (and later NEW url) —
+    never stamp the old media URL in place. Allowed even when
+    never_overlay_existing is true because the destination must differ.
+    """
+    if not enabled() or not src_path or not out_path:
+        return None
+    if not os.path.isfile(src_path):
+        return None
+    if os.path.abspath(src_path) == os.path.abspath(out_path):
+        raise ValueError(
+            "bake_designed_in_pride_new_asset refuses in-place overwrite — "
+            "destination must be a NEW path/url"
+        )
+    from PIL import Image
+
+    claim = (text or "").strip()
+    if not claim:
+        claim = option_on_image_text("B")
+    badge_style = (style or "footer_band").lower()
+    with Image.open(src_path) as im:
+        img = im.convert("RGB")
+        img, drawn = draw_badge(
+            img, style=badge_style, text=claim, photo_bottom=photo_bottom
+        )
+        os.makedirs(os.path.dirname(out_path) or ".", exist_ok=True)
+        img.save(out_path, "PNG", optimize=True)
+        size = list(img.size)
+    return {
+        "style": drawn,
+        "text": claim,
+        "path": out_path,
+        "size": size,
+        "seed": seed,
+        "pride_baked_in": True,
+        "new_asset": True,
+    }
 
 
 def apply_night_badge_if_eligible(

@@ -2221,21 +2221,64 @@ class AutopilotTests(unittest.TestCase):
         self.assertIn("afternoon event art", aft_brief)
         self.assertIn("#1 Crystal Shop", aft_brief)
 
-        # Founder Aug 14: four-style morning rotation (Magritte→Folk→Da Vinci→Einstein)
-        rot = mf.active_style_rotation()
+        # Founder Aug 14 ~2:31pm CT: mixed pool + random pick + series limits + pride.
+        pool = mf.active_mixed_pool()
         self.assertEqual(
-            rot,
+            pool,
             [
                 "magritte_floating_door",
                 "folk_outsider_night",
                 "davinci_storefront_sketch",
                 "einstein_chalkboard_map",
+                "thursday_cards_shop_made",
+                "artistic_hero_shop_made",
             ],
         )
-        self.assertNotIn("bauhaus_swiss_goldleaf", rot)
-        self.assertNotIn("victorian_botanical_ledger", rot)
-        d0 = date(2026, 8, 16)  # Magritte day in rotation
-        self.assertEqual(mf.choose_visual_style(d0), "magritte_floating_door")
+        self.assertNotIn("bauhaus_swiss_goldleaf", pool)
+        self.assertNotIn("victorian_botanical_ledger", pool)
+        lim = mf.series_limit_config()
+        self.assertEqual(lim["max_consecutive_days"], 1)
+        self.assertEqual(lim["rolling_window_days"], 7)
+        self.assertEqual(lim["max_per_style_in_window"], 2)
+        self.assertIn("generic_mystic_ai_navy_template", lim["banned_ids"])
+        self.assertIn("bauhaus_swiss_goldleaf", lim["banned_ids"])
+        d0 = date(2026, 8, 16)
+        pick = mf.choose_visual_style(d0, history={})
+        self.assertIn(pick, pool)
+        # Day-seeded: stable across calls.
+        self.assertEqual(pick, mf.choose_visual_style(d0, history={}))
+        # Consecutive block: yesterday Magritte → never Magritte today.
+        no_mag = mf.choose_visual_style(
+            d0,
+            history={date(2026, 8, 15): "magritte_floating_door"},
+        )
+        self.assertNotEqual(no_mag, "magritte_floating_door")
+        self.assertIn(no_mag, pool)
+        # Rolling 7: Magritte already twice → skip Magritte.
+        hist_week = {
+            date(2026, 8, 10): "magritte_floating_door",
+            date(2026, 8, 13): "magritte_floating_door",
+            date(2026, 8, 15): "folk_outsider_night",
+        }
+        no_mag2 = mf.choose_visual_style(d0, history=hist_week)
+        self.assertNotEqual(no_mag2, "magritte_floating_door")
+        with self.assertRaises(ValueError):
+            mf.choose_visual_style(
+                d0, force="generic_mystic_ai_navy_template"
+            )
+        # Legacy Thursday approach stays in the mix (force path).
+        self.assertEqual(
+            mf.choose_visual_style(d0, force="thursday_cards_shop_made"),
+            "thursday_cards_shop_made",
+        )
+        thu_prompt = mf.build_generation_prompt(
+            date(2026, 8, 17),
+            {"date_short": "Mon", "covers": ["A", "B"], "empty_day": False},
+            visual_style="thursday_cards_shop_made",
+        )
+        self.assertIn("thursday_cards_shop_made", thu_prompt)
+        self.assertIn("DESIGNED-IN SHOP PRIDE", thu_prompt)
+        self.assertTrue(sp.option_on_image_text("B"))
         ein = mf.build_generation_prompt(
             date(2026, 8, 15),
             {"date_short": "Sat", "covers": ["A"], "empty_day": False},

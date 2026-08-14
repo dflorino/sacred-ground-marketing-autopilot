@@ -1,9 +1,11 @@
 """Cheryl-style date-keyed morning flyers — generate, validate, register."""
 from __future__ import annotations
 
+import hashlib
 import json
 import math
 import os
+import random
 import re
 from datetime import date, datetime, timedelta
 from typing import Any, Dict, List, Optional, Sequence, Tuple
@@ -47,28 +49,45 @@ THURSDAY_CARDS_SHARE = 0.75
 LAYOUT_THURSDAY = "thursday_cards"
 LAYOUT_ARTISTIC = "artistic_hero"
 
-# Default rotation if styles config missing (Founder love-order).
+# Default mixed pool if styles config missing (Founder Aug 14 ~2:31pm CT).
 DEFAULT_STYLE_ROTATION = (
     "magritte_floating_door",
     "folk_outsider_night",
     "davinci_storefront_sketch",
     "einstein_chalkboard_map",
+    "thursday_cards_shop_made",
+    "artistic_hero_shop_made",
 )
 
 NOTES = (
-    "Sacred Ground morning flyers (Founder Aug 14 2026): rotate among four "
-    "approved visual languages — Magritte floating door, Folk outsider night, "
-    "Da Vinci storefront sketch, Einstein chalkboard map (Einstein production "
-    "must keep large high-contrast schedule type). Equal schedule weight when "
-    "2+ events. BAN Bauhaus Swiss goldleaf + Victorian botanical ledger from "
-    "rotation (archived). BAN generic mystic AI navy wellness template. Gold "
-    "standard readability reference: "
-    "assets/sg-morning-flyer-2026-08-06-today-collage.png. EVERY new plate "
-    "MUST include designed-in Chicagoland #1 / Premier / Voted pride. FOOTER "
-    f"logo + {WEBSITE} + {PHONE}. COLOR ENERGY: colorful, bright, engaging. "
-    "SINGLE-IMAGE MODE: one primary plate for FB+IG. NEVER prices on graphics. "
-    "Do not replace a live morning post unless Founder asks."
+    "Sacred Ground morning flyers (Founder Aug 14 2026): MIXED visual pool — "
+    "four approved art languages (Magritte, Folk, Da Vinci, Einstein) PLUS "
+    "existing shop-made Thursday equal-card + artistic hero approaches, "
+    "interleaved with unused date-keyed queued plates. TRUE RANDOM "
+    "(day-seeded) pick among series-eligible styles — do NOT run new styles "
+    "only for two weeks then dump old approaches. SERIES LIMITS: max 1 "
+    "consecutive day per style id, max 2 per style in any rolling 7 Chicago "
+    "days. BAN Bauhaus + Victorian (archived). BAN generic mystic AI navy "
+    "template (series_limit 0). EVERY plate MUST bake in Chicagoland #1 / "
+    "Premier / Voted pride (NEW gens via designed_in_generation_brief; "
+    "queued plates missing pride → NEW url with pride band). Gold standard "
+    "readability: assets/sg-morning-flyer-2026-08-06-today-collage.png. "
+    f"FOOTER logo + {WEBSITE} + {PHONE}. NEVER prices. Never-reuse URLs "
+    "absolute. Do not replace a live morning post unless Founder asks."
 )
+
+# Series-limit defaults (Founder Aug 14 ~2:29pm CT) — config overrides.
+DEFAULT_MAX_CONSECUTIVE_DAYS = 1
+DEFAULT_ROLLING_WINDOW_DAYS = 7
+DEFAULT_MAX_PER_STYLE_IN_WINDOW = 2
+
+# Legacy template → mixed-pool style id (for series history).
+LEGACY_TEMPLATE_TO_STYLE = {
+    "thursday-style": "thursday_cards_shop_made",
+    "thursday_cards": "thursday_cards_shop_made",
+    "artistic_hero": "artistic_hero_shop_made",
+    "artistic-hero": "artistic_hero_shop_made",
+}
 
 # Founder Aug 10 2026 — share one excellent primary plate on FB+IG.
 # Opt-in only: entry["allow_ig_variant"] = true to use url_instagram again.
@@ -351,15 +370,32 @@ def load_styles_config() -> Dict[str, Any]:
 
 
 def active_style_rotation() -> List[str]:
-    """Ordered style ids for day rotation (Magritte → Folk → Da Vinci → Einstein)."""
+    """Active mixed-pool style ids (approved art + legacy shop-made approaches)."""
+    return active_mixed_pool()
+
+
+def active_mixed_pool() -> List[str]:
+    """
+    Full morning visual mix (Founder Aug 14 ~2:31pm CT).
+
+    Four approved art languages + existing Thursday equal-card / artistic hero
+    approaches. Not 'new styles only.'
+    """
     data = load_styles_config()
-    raw = data.get("rotation_order") or list(DEFAULT_STYLE_ROTATION)
+    raw = (
+        data.get("mixed_pool")
+        or data.get("rotation_order")
+        or list(DEFAULT_STYLE_ROTATION)
+    )
     styles = data.get("styles") or {}
     archived = set((data.get("archived_out") or {}).keys())
+    banned = set(
+        ((data.get("series_limits") or {}).get("banned_series_limit_0") or {}).keys()
+    )
     out: List[str] = []
     for sid in raw:
         key = str(sid).strip()
-        if not key or key in archived:
+        if not key or key in archived or key in banned:
             continue
         meta = styles.get(key) or {}
         if str(meta.get("status") or "active").lower() == "archived":
@@ -368,10 +404,26 @@ def active_style_rotation() -> List[str]:
     return out or list(DEFAULT_STYLE_ROTATION)
 
 
+def style_family(style_id: str) -> str:
+    """Series-limit family key (defaults to style id)."""
+    meta = style_meta(style_id)
+    fam = str(meta.get("family") or style_id or "").strip()
+    return fam or str(style_id)
+
+
 def style_meta(style_id: str) -> Dict[str, Any]:
     styles = load_styles_config().get("styles") or {}
     meta = styles.get(style_id)
     return dict(meta) if isinstance(meta, dict) else {"id": style_id}
+
+
+def normalize_queued_style_id(entry: Dict[str, Any]) -> str:
+    """Map a morning_flyers.json entry to a mixed-pool style id when possible."""
+    vs = str(entry.get("visual_style") or "").strip()
+    if vs:
+        return vs
+    tmpl = str(entry.get("template") or "").strip().lower()
+    return LEGACY_TEMPLATE_TO_STYLE.get(tmpl, "")
 
 
 def pride_option_for_style(style_id: str) -> str:
@@ -385,26 +437,182 @@ def pride_option_for_style(style_id: str) -> str:
     return "B"
 
 
+def series_limit_config() -> Dict[str, Any]:
+    """
+    Founder Aug 14 ~2:29–2:31pm CT series caps for the mixed morning pool.
+
+    max_consecutive_days=1 → never the same style/family two Chicago days in a row.
+    max_per_style_in_window=2 over rolling_window_days=7 → at most twice/week.
+    Banned / archived ids have series_limit 0 (never generate).
+    """
+    raw = load_styles_config().get("series_limits") or {}
+    banned = set((raw.get("banned_series_limit_0") or {}).keys())
+    banned.update((load_styles_config().get("archived_out") or {}).keys())
+    return {
+        "max_consecutive_days": int(
+            raw.get("max_consecutive_days", DEFAULT_MAX_CONSECUTIVE_DAYS)
+        ),
+        "rolling_window_days": int(
+            raw.get("rolling_window_days", DEFAULT_ROLLING_WINDOW_DAYS)
+        ),
+        "max_per_style_in_window": int(
+            raw.get("max_per_style_in_window", DEFAULT_MAX_PER_STYLE_IN_WINDOW)
+        ),
+        "banned_ids": banned,
+    }
+
+
+def queued_visual_style_history(
+    day: date,
+    *,
+    lookback_days: int = DEFAULT_ROLLING_WINDOW_DAYS,
+    extra: Optional[Dict[date, str]] = None,
+) -> Dict[date, str]:
+    """
+    Recent Chicago days → style id from the morning_flyers queue.
+
+    Uses explicit visual_style when present; else maps legacy template
+    (thursday-style / artistic_hero) into mixed-pool ids for series counting.
+    """
+    flyers = load_flyers_config().get("flyers") or {}
+    out: Dict[date, str] = {}
+    window = max(1, int(lookback_days))
+    for i in range(1, window + 1):
+        d = day - timedelta(days=i)
+        entry = flyers.get(d.isoformat())
+        if not isinstance(entry, dict):
+            continue
+        vs = normalize_queued_style_id(entry)
+        if vs:
+            out[d] = vs
+    if extra:
+        for d, vs in extra.items():
+            if d < day and vs:
+                out[d] = str(vs).strip()
+    return out
+
+
+def style_passes_series_limits(
+    style_id: str,
+    day: date,
+    history: Dict[date, str],
+    *,
+    limits: Optional[Dict[str, Any]] = None,
+) -> bool:
+    """True when assigning style_id on day would respect consecutive + rolling caps."""
+    lim = limits or series_limit_config()
+    key = str(style_id).strip()
+    if not key or key in lim["banned_ids"]:
+        return False
+    fam = style_family(key)
+
+    def _hist_family(d: date) -> str:
+        prev = history.get(d)
+        return style_family(prev) if prev else ""
+
+    max_consec = max(1, int(lim["max_consecutive_days"]))
+    run = 0
+    cursor = day - timedelta(days=1)
+    while _hist_family(cursor) == fam:
+        run += 1
+        cursor -= timedelta(days=1)
+        if run >= max_consec:
+            return False
+
+    window = max(1, int(lim["rolling_window_days"]))
+    max_in = max(0, int(lim["max_per_style_in_window"]))
+    prior = 0
+    for i in range(1, window):
+        if _hist_family(day - timedelta(days=i)) == fam:
+            prior += 1
+    if prior + 1 > max_in:
+        return False
+    return True
+
+
+def _day_style_rng(day: date) -> random.Random:
+    """Stable per-Chicago-day RNG so dry-runs / reruns pick the same mix."""
+    digest = hashlib.sha256(f"sg-morning-mixed|{day.isoformat()}".encode()).hexdigest()
+    return random.Random(int(digest[:16], 16))
+
+
 def choose_visual_style(
     day: date,
     *,
     force: Optional[str] = None,
+    history: Optional[Dict[date, str]] = None,
+    respect_series_limits: bool = True,
+    events: Optional[Sequence[Event]] = None,
 ) -> str:
     """
-    Rotate Magritte / Folk / Da Vinci / Einstein by Chicago calendar day.
+    Random mix among the full morning visual pool (Founder Aug 14 ~2:31pm CT).
 
-    Index = day.toordinal() % len(rotation). Never returns archived OUT styles
-    (Bauhaus, Victorian).
+    Pool = Magritte / Folk / Da Vinci / Einstein + Thursday equal-card shop-made
+    + artistic hero shop-made. Day-seeded shuffle among series-eligible ids
+    (max 1 consecutive, max 2 in rolling 7). Not a rigid new-styles-only block.
+
+    Date-keyed queue entries are separate: ensure_flyer_for_day keeps unused
+    queued plates when present; this chooser applies to NEW generation / remake.
     """
-    rotation = active_style_rotation()
+    pool = active_mixed_pool()
+    lim = series_limit_config()
     if force:
         key = str(force).strip()
-        if key in rotation:
+        if key in lim["banned_ids"]:
+            raise ValueError(
+                f"visual style {key!r} is banned (series_limit 0) — "
+                "cannot force for morning generation"
+            )
+        if key in pool:
             return key
-        # Allow explicit force even if not in rotation (tests / remakes).
         if key in (load_styles_config().get("styles") or {}):
             return key
-    return rotation[day.toordinal() % len(rotation)]
+        raise ValueError(f"unknown visual style force={key!r}")
+
+    # Artistic hero only when ≤1 event; drop from pool on multi-event days.
+    n_events = len(pick_events_for_flyer(events or []))
+    candidates = []
+    for sid in pool:
+        meta = style_meta(sid)
+        if meta.get("single_event_only") and n_events >= 2:
+            continue
+        candidates.append(sid)
+    if not candidates:
+        candidates = list(pool)
+
+    if not respect_series_limits:
+        return _day_style_rng(day).choice(candidates)
+
+    hist = history
+    if hist is None:
+        hist = queued_visual_style_history(
+            day, lookback_days=int(lim["rolling_window_days"])
+        )
+
+    eligible = [
+        sid
+        for sid in candidates
+        if style_passes_series_limits(sid, day, hist, limits=lim)
+    ]
+    if not eligible:
+        # Fail soft: least-used families in the window.
+        window = int(lim["rolling_window_days"])
+        counts: Dict[str, int] = {sid: 0 for sid in candidates}
+        for i in range(1, window):
+            prev = hist.get(day - timedelta(days=i))
+            if not prev:
+                continue
+            fam = style_family(prev)
+            for sid in candidates:
+                if style_family(sid) == fam:
+                    counts[sid] += 1
+        eligible = sorted(candidates, key=lambda s: (counts[s], s))
+
+    rng = _day_style_rng(day)
+    # Shuffle then pick first — true mix, not ordinal lockstep.
+    shuffled = list(eligible)
+    rng.shuffle(shuffled)
+    return shuffled[0]
 
 
 def visual_style_prompt_bit(style_id: str) -> str:
@@ -414,8 +622,10 @@ def visual_style_prompt_bit(style_id: str) -> str:
     brief = str(meta.get("prompt_brief") or "").strip()
     pride_place = str(meta.get("pride_placement") or "").strip()
     fix = str(meta.get("readability_fix") or "").strip()
+    pool_kind = str(meta.get("pool") or "mixed").strip()
     parts = [
-        f" VISUAL STYLE (Founder Aug 14 rotation — required): '{label}' ({style_id})."
+        f" VISUAL STYLE (Founder Aug 14 mixed pool — required): '{label}' "
+        f"({style_id}, pool={pool_kind})."
     ]
     if brief:
         parts.append(f" {brief}")
@@ -425,7 +635,8 @@ def visual_style_prompt_bit(style_id: str) -> str:
         parts.append(f" Pride placement: {pride_place}")
     parts.append(
         " Do NOT use Bauhaus Swiss goldleaf or Victorian botanical ledger "
-        "(Founder OUT). Do NOT use the banned mystic AI navy template."
+        "(Founder OUT). Do NOT use the banned mystic AI navy template. "
+        "Chicagoland #1 / Premier / Voted pride MUST be baked into this plate."
     )
     return "".join(parts)
 
@@ -435,12 +646,13 @@ def choose_layout_style(
     events: Optional[Sequence[Event]] = None,
     *,
     force: Optional[str] = None,
+    visual_style: Optional[str] = None,
 ) -> str:
     """
-    Deterministic equal-weight vs artistic-hero structure.
+    Equal-weight vs artistic-hero structure.
 
     Multi-event days (2+) always prefer equal cards/bands for readability.
-    Single-event / empty days may roll the artistic 25% bucket via day hash.
+    Visual style may request artistic_hero only for single-event days.
     Art *language* is separate — see choose_visual_style().
     """
     if force in (LAYOUT_THURSDAY, LAYOUT_ARTISTIC):
@@ -448,10 +660,71 @@ def choose_layout_style(
     picked = pick_events_for_flyer(events or [])
     if len(picked) >= 2:
         return LAYOUT_THURSDAY
+    if visual_style:
+        layout_hint = str(style_meta(visual_style).get("layout") or "").strip()
+        if layout_hint == LAYOUT_ARTISTIC and len(picked) <= 1:
+            return LAYOUT_ARTISTIC
+        if layout_hint == LAYOUT_THURSDAY:
+            return LAYOUT_THURSDAY
     # Stable ~25% artistic: day ordinal mod 4 == 0 → artistic (1/4).
     if (day.toordinal() % 4) == 0 and len(picked) <= 1:
         return LAYOUT_ARTISTIC
     return LAYOUT_THURSDAY
+
+
+def entry_has_pride_baked(entry: Optional[Dict[str, Any]]) -> bool:
+    """True when a queued flyer already records designed-in Chicagoland pride."""
+    if not isinstance(entry, dict):
+        return False
+    if entry.get("pride_baked_in") is True:
+        return True
+    # Explicit false / missing → needs bake for Founder Aug 14 every-plate rule.
+    return False
+
+
+def bake_pride_band_new_asset(
+    src_path: str,
+    *,
+    day: date,
+    style_id: str = "",
+    out_path: Optional[str] = None,
+) -> Optional[Dict[str, Any]]:
+    """
+    Bake Chicagoland pride into a NEW local file (Founder Aug 14 ~2:31pm CT).
+
+    Never overwrites the source path / old media URL in place. Used when a
+    queued flyer will ship but lacks pride_baked_in — creates a new asset that
+    must be uploaded as a fresh URL (never-reuse still absolute).
+    """
+    if not src_path or not os.path.isfile(src_path):
+        return None
+    from . import social_proof as sp
+
+    pride_opt = pride_option_for_style(style_id or "thursday_cards_shop_made")
+    claim = sp.option_on_image_text(pride_opt) or sp.option_on_image_text("B")
+    if not claim:
+        return None
+    abs_src = src_path if os.path.isabs(src_path) else os.path.join(ROOT, src_path)
+    if not os.path.isfile(abs_src):
+        return None
+    if not out_path:
+        base, ext = os.path.splitext(abs_src)
+        out_path = f"{base}-pride-{day.isoformat()}{ext or '.png'}"
+    if os.path.abspath(out_path) == os.path.abspath(abs_src):
+        raise ValueError("pride bake must write a NEW path — refuse in-place stamp")
+    result = sp.bake_designed_in_pride_new_asset(
+        abs_src,
+        out_path=out_path,
+        text=claim,
+        style="footer_band",
+        seed=f"morning-pride|{day.isoformat()}|{style_id}",
+    )
+    if not result:
+        return None
+    result["pride_baked_in"] = True
+    result["pride_option"] = pride_opt
+    result["local"] = _rel_asset(str(result.get("path") or out_path))
+    return result
 
 
 def build_flyer_copy(day: date, events: Sequence[Event]) -> Dict[str, Any]:
@@ -518,11 +791,11 @@ def build_generation_prompt(
     variant: str = VARIANT_A,
     visual_style: Optional[str] = None,
 ) -> str:
-    """Prompt for mlimg / GenerateImage polish — style rotation + equal cards.
+    """Prompt for mlimg / GenerateImage polish — mixed pool + equal cards.
 
     `variant` a = Facebook (cleaner card energy OK);
     `variant` b = Instagram — same full-day cards, richer background pop required.
-    `visual_style` overrides Magritte/Folk/Da Vinci/Einstein day rotation.
+    `visual_style` overrides the day-seeded random mixed-pool pick.
     """
     covers = list(copy.get("covers") or [])
     events_bit = ""
@@ -534,8 +807,8 @@ def build_generation_prompt(
             " Empty calendar visit day: warm invite to come into Sacred Ground "
             "(crystals, quiet wonder) — not a plain storefront photo."
         )
-    style = layout or choose_layout_style(day, events)
-    art_id = visual_style or choose_visual_style(day)
+    art_id = visual_style or choose_visual_style(day, events=events)
+    style = layout or choose_layout_style(day, events, visual_style=art_id)
     art_bit = visual_style_prompt_bit(art_id)
     n_events = len(pick_events_for_flyer(events or []))
     # Multi-event days never use artistic hero (equal cards only).
@@ -1110,7 +1383,8 @@ def register_flyer(
     )
 
     layout = choose_layout_style(day, events or [])
-    art_id = choose_visual_style(day)
+    art_id = choose_visual_style(day, events=events or [])
+    layout = choose_layout_style(day, events or [], visual_style=art_id)
     entry: Dict[str, Any] = {
         "label": copy["label"],
         "covers": list(copy.get("covers") or []),
@@ -1119,6 +1393,7 @@ def register_flyer(
         "prebranded": True,
         "template": "thursday-style" if layout == LAYOUT_THURSDAY else "artistic_hero",
         "visual_style": art_id,
+        "pride_baked_in": True,
     }
     if media_id is not None:
         entry["media_id"] = int(media_id)
@@ -1150,6 +1425,8 @@ def register_flyer(
             "alt_template",
             "note",
             "template",
+            "visual_style",
+            "pride_baked_in",
         ]
         if reset_public_urls:
             preserve_keys = [
@@ -1193,6 +1470,19 @@ def register_flyer(
         if prev.get("template") and not events:
             entry["template"] = prev["template"]
 
+    # Queue priority: keep an existing visual_style unless regenerating.
+    prev_vs = ""
+    prev_pride = False
+    if isinstance(prev, dict):
+        prev_vs = str(prev.get("visual_style") or "").strip()
+        prev_pride = bool(prev.get("pride_baked_in"))
+    if reset_public_urls or not prev_vs:
+        entry["visual_style"] = art_id
+        entry["pride_baked_in"] = True
+    else:
+        entry["visual_style"] = prev_vs
+        entry["pride_baked_in"] = prev_pride or bool(entry.get("pride_baked_in"))
+
     fb_u = str(entry.get("url") or "").strip()
     ig_u = str(entry.get("url_instagram") or "").strip()
     if fb_u and ig_u and fb_u != ig_u:
@@ -1202,12 +1492,23 @@ def register_flyer(
         pass
 
     flyers[day.isoformat()] = entry
+    lim = series_limit_config()
     data["layout_mix"] = {
         "thursday_cards_share": THURSDAY_CARDS_SHARE,
         "artistic_hero_share": round(1.0 - THURSDAY_CARDS_SHARE, 2),
         "default": LAYOUT_THURSDAY,
-        "visual_style_rotation": active_style_rotation(),
+        "visual_style_mixed_pool": active_mixed_pool(),
         "visual_styles_config": "config/morning_flyer_styles.json",
+        "selection_mode": "random_mixed",
+        "queue_and_reuse": (
+            "keep unused queued plates + legacy approaches in the mix; "
+            "never-reuse URLs absolute; pride baked into every morning plate"
+        ),
+        "series_limits": {
+            "max_consecutive_days": lim["max_consecutive_days"],
+            "rolling_window_days": lim["rolling_window_days"],
+            "max_per_style_in_window": lim["max_per_style_in_window"],
+        },
         "platform_variants": (
             "single-image mode (Founder Aug 10 2026): primary url/local "
             "posts to FB+IG; url_instagram ignored unless allow_ig_variant:true"
@@ -1266,14 +1567,20 @@ def ensure_flyer_for_day(
     """
     Ensure a primary full-day flyer exists for Chicago `day`.
 
+    Mixed pool (Founder Aug 14 ~2:31pm CT): unused date-keyed queue entries stay
+    in the mix; NEW gens pick randomly among Magritte/Folk/Da Vinci/Einstein +
+    Thursday shop-made + artistic hero (series-limited). Every plate must have
+    Chicagoland pride baked in — queued plates missing pride get a NEW local
+    (and cleared public URL for re-upload). Never-reuse URLs remain absolute.
+
     Single-image mode (Founder Aug 10 2026): one excellent `url`/`local` plate
     is shared on Facebook and Instagram. Separate IG variants are not required
     (opt-in via allow_ig_variant + url_instagram only).
     """
     day_events = _day_events(day, events)
     copy = build_flyer_copy(day, day_events)
-    layout = choose_layout_style(day, day_events)
-    art_id = choose_visual_style(day)
+    art_id = choose_visual_style(day, events=day_events)
+    layout = choose_layout_style(day, day_events, visual_style=art_id)
     prompt = build_generation_prompt(
         day,
         copy,
@@ -1292,20 +1599,70 @@ def ensure_flyer_for_day(
     )
     if energy_failed and not force:
         force = True
+
+    # Pride guarantee: queued plate without pride_baked_in → bake NEW local.
+    pride_baked_now = False
+    if (
+        existing
+        and not force
+        and day.isoformat() not in PROTECTED_DAYS
+        and not entry_has_pride_baked(existing)
+        and (load_styles_config().get("pride_on_morning") or {}).get(
+            "bake_missing_into_new_url", True
+        )
+    ):
+        local_rel = str(existing.get("local") or "").strip()
+        abs_local = (
+            local_rel
+            if os.path.isabs(local_rel)
+            else os.path.join(ROOT, local_rel)
+            if local_rel
+            else ""
+        )
+        style_for_pride = (
+            normalize_queued_style_id(existing) or art_id or "thursday_cards_shop_made"
+        )
+        baked = bake_pride_band_new_asset(
+            abs_local, day=day, style_id=style_for_pride
+        )
+        if baked:
+            # NEW asset → clear public URL so upload creates a fresh never-used URL.
+            existing = register_flyer(
+                day,
+                local=str(baked.get("local") or baked.get("path") or ""),
+                url="",
+                media_id=None,
+                copy=copy,
+                events=day_events,
+                merge=True,
+                reset_public_urls=True,
+            )
+            existing["pride_baked_in"] = True
+            existing["visual_style"] = style_for_pride
+            # Persist pride flag (register may have set it True for reset path).
+            data = load_flyers_config()
+            flyers = data.setdefault("flyers", {})
+            flyers[day.isoformat()] = existing
+            save_flyers_config(data)
+            pride_baked_now = True
+
     if existing and not force:
         fb = str(existing.get("url") or "").strip()
         missing = [] if fb else ["facebook"]
         return {
             "day": day.isoformat(),
-            "action": "exists",
+            "action": "exists" if not pride_baked_now else "pride_baked",
             "needs_upload": bool(missing),
             "needs_upload_platforms": missing,
             "entry": existing,
             "local": existing.get("local"),
             "layout": layout,
-            "visual_style": existing.get("visual_style") or art_id,
+            "visual_style": existing.get("visual_style")
+            or normalize_queued_style_id(existing)
+            or art_id,
             "prompt": prompt,
             "single_image_mode": True,
+            "pride_baked_in": entry_has_pride_baked(existing) or pride_baked_now,
         }
 
     if force and day.isoformat() in PROTECTED_DAYS and existing:
@@ -1320,6 +1677,7 @@ def ensure_flyer_for_day(
             "prompt": prompt,
             "protected": True,
             "single_image_mode": True,
+            "pride_baked_in": entry_has_pride_baked(existing),
         }
 
     out_a = render_local_flyer(day, day_events, variant=VARIANT_A)
@@ -1349,6 +1707,7 @@ def ensure_flyer_for_day(
         "visual_style": art_id,
         "prompt": prompt,
         "single_image_mode": True,
+        "pride_baked_in": True,
         "regenerated_for_visual_energy": energy_failed or None,
     }
 

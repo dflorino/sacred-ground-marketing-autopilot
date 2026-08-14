@@ -1,32 +1,77 @@
 {
-  "notes": "Founder scoring Fri Aug 14 2026 ~2:14pm CT. Four IN styles rotate as morning flyer visual languages. Bauhaus + Victorian archived (OUT). Never the banned generic mystic AI navy template. Every plate MUST include designed-in Chicagoland #1 / Premier / Voted pride. Do not replace live posts unless Founder asks.",
+  "notes": "Founder Fri Aug 14 2026 America/Chicago. Morning visual MIXED POOL — not 'new styles only for two weeks.' Include: (1) four approved art languages Magritte/Folk/Da Vinci/Einstein, (2) existing shop-made Thursday equal-card approach, (3) artistic single-event hero when appropriate, (4) date-keyed queued flyers in morning_flyers.json when their URL is still unused. TRUE RANDOM mix among eligible pool members each day (day-seeded). Series limits keep any one style from dominating. BAN generic mystic AI navy template forever (series_limit 0). EVERY morning plate must have Chicagoland #1 / Premier / Voted pride BAKED INTO the image (NEW gens via designed_in_generation_brief; queued plates missing pride → bake into a NEW url before use, never reuse a used URL). Do not replace live posts unless Founder asks.",
   "scored_at": "2026-08-14T14:14:00-05:00",
+  "mixed_pool_clarified_at": "2026-08-14T14:31:00-05:00",
+  "series_limits_set_at": "2026-08-14T14:29:00-05:00",
   "timezone": "America/Chicago",
+  "selection_mode": "random_mixed",
+  "selection_note": "Day-seeded shuffle among series-eligible pool ids. Do NOT run Magritte→Folk→Da Vinci→Einstein as a rigid two-week block then dump old Thursday plates afterward — interleave ALL eligible approaches.",
+  "queue_and_reuse": {
+    "keep_approaches": "Existing morning approaches and unused date-keyed queued plates stay in the mix alongside the four approved styles.",
+    "never_reuse_urls": "Lifetime never-reuse via image_usage is absolute. Keeping an approach does NOT mean re-posting a used URL. Unused queued flyer URLs may be chosen; used URLs must fail closed (reuse_blocked) and force alternate / regenerate.",
+    "pride_on_queued": "If a queued flyer will be used and lacks baked-in Chicagoland pride text, bake a designed-in pride band into a NEW local/url before publish (do not stamp the old media URL in place)."
+  },
+  "series_limits": {
+    "max_consecutive_days": 1,
+    "rolling_window_days": 7,
+    "max_per_style_in_window": 2,
+    "notes": "Founder Aug 14 ~2:29–2:31pm CT: no single style id more than 1 consecutive Chicago day; at most ~2 uses of the same style id (family) in any rolling 7 Chicago days. Applies across the whole mixed pool so Thursday cards and Magritte both get series caps.",
+    "banned_series_limit_0": {
+      "generic_mystic_ai_navy_template": {
+        "series_limit": 0,
+        "reason": "Founder hated the Fri Aug 14 live navy equal-card mystic AI wellness starter pack — never generate again"
+      },
+      "bauhaus_swiss_goldleaf": {
+        "series_limit": 0,
+        "reason": "Founder OUT — archived"
+      },
+      "victorian_botanical_ledger": {
+        "series_limit": 0,
+        "reason": "Founder OUT — archived"
+      }
+    }
+  },
+  "mixed_pool": [
+    "magritte_floating_door",
+    "folk_outsider_night",
+    "davinci_storefront_sketch",
+    "einstein_chalkboard_map",
+    "thursday_cards_shop_made",
+    "artistic_hero_shop_made"
+  ],
   "rotation_order": [
     "magritte_floating_door",
     "folk_outsider_night",
     "davinci_storefront_sketch",
-    "einstein_chalkboard_map"
+    "einstein_chalkboard_map",
+    "thursday_cards_shop_made",
+    "artistic_hero_shop_made"
   ],
-  "rotation_note": "Day-of-year (America/Chicago) % 4 → rotation_order index. Magritte first (LOVED), then Folk, Da Vinci, Einstein. Multi-event days still keep equal schedule weight inside the style.",
+  "rotation_note": "Legacy key — same as mixed_pool. Selection is random_mixed among series-eligible ids, not day-ordinal lockstep.",
   "pride_on_morning": {
     "required": true,
-    "founder_emphasis": "number one Chicagoland — prefer visible #1 / Chicagoland / Premier / Voted #1 on every morning plate",
+    "every_plate": true,
+    "founder_emphasis": "EVERY single morning image must show Chicagoland #1 / Premier / Voted #1 baked into the picture — not caption-only.",
     "slot_caption_option": "A",
-    "on_image_preference": "Prefer Option B (#1 Crystal Shop) or clear #1 Chicagoland wording when the style allows; A Premier and C Voted #1 still rotate by style so mornings are not identical. Always clearly about Sacred Ground being #1 / premier / voted in Chicagoland.",
+    "on_image_preference": "Prefer visible #1 Chicagoland / Premier / Voted #1 on every plate. Style map below varies the Option letter so mornings are not identical.",
+    "bake_missing_into_new_url": true,
     "by_style": {
       "magritte_floating_door": "B",
       "folk_outsider_night": "C",
       "davinci_storefront_sketch": "A",
-      "einstein_chalkboard_map": "B"
+      "einstein_chalkboard_map": "B",
+      "thursday_cards_shop_made": "B",
+      "artistic_hero_shop_made": "A"
     }
   },
   "styles": {
     "magritte_floating_door": {
       "id": "magritte_floating_door",
       "label": "Magritte floating door",
+      "family": "magritte_floating_door",
       "verdict": "LOVED — IN",
       "status": "active",
+      "pool": "approved_art",
       "concept_file": "05-magritte-floating-door.png",
       "prompt_brief": "René Magritte surrealism: Sacred Ground eggplant-awning storefront (or shop door) floating in a bright cloudy blue sky over water; optional bowler-hatted figure on the roof facing away. Equal-weight clean cream modernist schedule panels (not mystic collage). Soft painterly sky, precise architecture, gold SACRED GROUND on awning. Whimsical, individual, never generic wellness AI.",
       "pride_placement": "Cream pride band under the sky scene with clear #1 Chicagoland claim; circular sun logo bottom of photo area; website + phone in footer band."
@@ -34,8 +79,10 @@
     "folk_outsider_night": {
       "id": "folk_outsider_night",
       "label": "Folk outsider night",
+      "family": "folk_outsider_night",
       "verdict": "YES — IN",
       "status": "active",
+      "pool": "approved_art",
       "concept_file": "06-folk-outsider-night.png",
       "prompt_brief": "Hand-painted folk / outsider-art night: thick oil-pastel or acrylic texture, starry deep-blue sky, sun-face + moon-face, glowing Sacred Ground storefront with eggplant purple frame and warm crystal-shop interior light. Equal colorful schedule blocks on a wooden board (same visual weight). Naive joyful energy — shop-made, never polished Canva mystic template.",
       "pride_placement": "Bold warm banner with Voted #1 / Chicagoland pride; website + phone along the bottom ground; hearts / folk accents OK."
@@ -43,8 +90,10 @@
     "davinci_storefront_sketch": {
       "id": "davinci_storefront_sketch",
       "label": "Leonardo da Vinci storefront sketch",
+      "family": "davinci_storefront_sketch",
       "verdict": "LIKE — IN",
       "status": "active",
+      "pool": "approved_art",
       "concept_file": "01-davinci-storefront-sketch.png",
       "prompt_brief": "Leonardo da Vinci notebook: aged parchment / sepia wash, fine ink storefront elevation of Sacred Ground (eggplant awning, Campbell St energy), Vitruvian / geometry / anatomical margin sketches as decoration only. Equal-weight event columns under the shop drawing in dark ink or eggplant. Readable serif schedule — not tiny script. Shop-made invention, not stock mystic AI.",
       "pride_placement": "Hand-drawn scroll / ribbon with Premier or #1 Chicagoland pride; circular sun logo; website + phone in ink footer."
@@ -52,12 +101,37 @@
     "einstein_chalkboard_map": {
       "id": "einstein_chalkboard_map",
       "label": "Einstein chalkboard map",
+      "family": "einstein_chalkboard_map",
       "verdict": "LIKE — IN (production must fix readability)",
       "status": "active",
+      "pool": "approved_art",
       "concept_file": "02-einstein-chalkboard-map.png",
       "readability_fix": "Founder Aug 14 ~2:14pm CT: concept was hard to read. Production MUST use larger thick chalk/white type, high contrast, calm dark slate behind schedule text (no dense equation noise under titles/times). Equations and relativity curves stay in margins only. Schedule columns equal weight, bold host + modality + time.",
       "prompt_brief": "Einstein chalkboard / relativity energy map on dark slate. Chalk sketches of curves, E=mc², spirals ONLY in margins or above a clear schedule zone. READABILITY HARD RULE: primary schedule text is LARGE, thick white or bright chalk (min ~28–36pt feel), high contrast; leave a quieter chalkboard band behind event titles so chalk dust / formulas do NOT compete with names and times. Equal columns for each practitioner. Small Sacred Ground storefront chalk sketch OK in a corner. Never thin faint scribbles for the schedule.",
       "pride_placement": "Large high-contrast chalk or colored pride line with Chicagoland’s #1 claim; website + phone in thick white chalk at bottom."
+    },
+    "thursday_cards_shop_made": {
+      "id": "thursday_cards_shop_made",
+      "label": "Thursday equal-card shop-made",
+      "family": "thursday_cards_shop_made",
+      "verdict": "IN — existing morning approach (keep in mix)",
+      "status": "active",
+      "pool": "legacy_shop_made",
+      "layout": "thursday_cards",
+      "prompt_brief": "Sacred Ground shop-made Thursday-style morning flyer: colorful equal-weight stacked event cards, clear host + modality + time, rich jewel-tone or unexpected bold color field, circular sun logo, cream contact footer. Individual / hand-finished energy — NOT the banned navy mystic AI wellness collage (no floating singing bowls, glowing healing hands, Akashic prop books, Flower of Life wallpaper). Reference readability: Aug 6 gold-standard equal cards.",
+      "pride_placement": "Designed-in cream or gold pride band with clear #1 / Premier / Voted Chicagoland claim — baked into the plate, not a post-hoc sticker on an old URL."
+    },
+    "artistic_hero_shop_made": {
+      "id": "artistic_hero_shop_made",
+      "label": "Artistic single-event hero (shop-made)",
+      "family": "artistic_hero_shop_made",
+      "verdict": "IN — existing morning approach (single-event only)",
+      "status": "active",
+      "pool": "legacy_shop_made",
+      "layout": "artistic_hero",
+      "single_event_only": true,
+      "prompt_brief": "Sacred Ground artistic single-event hero morning flyer — one strong original illustration or photography-led composition with highly readable event title + time. Shop-individual color energy. FORBIDDEN when 2+ events share the day (equal cards required). Never the banned mystic AI navy template.",
+      "pride_placement": "Premier / #1 Chicagoland pride baked into hero field or cream band; circular logo; website + phone footer."
     }
   },
   "archived_out": {

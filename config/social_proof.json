@@ -1,7 +1,7 @@
 {
   "enabled": true,
   "honesty_note": "Warm shop pride aligned with email vocabulary (Founder Aug 13 2026 ~9:06am CT) — NOT a formal third-party award citation. Canonical rotating set is Options A/B/C from the email monthly org brief. Slot rotation (Founder Aug 13 ~9:13am CT): NO weekday map — today→A, afternoon_spotlight→B, week_ahead→C; specialty/4th posts always B. 'Voted #1' = Founder / community vibe ('i vote it the best! lol'), not a verified publication trophy. Soften or avoid fake 'officially voted by [publication]' + award-year language. No inventing Chicago Reader / Best Of winners unless Founder confirms a real source.",
-  "on_image_status": "NO overlays on existing inventory (Founder Aug 11 ~3:05pm CT). Do not stamp badges onto already-made morning flyers, celestial plates, or night creatives. Captions + first_comment stay ON. HARD (Founder Aug 12 ~5:54pm CT): every NEW image generation/remake MUST include designed-in shop pride (banner/seal/band) — designed_in_required true. Never a post-hoc sticker remake of old plates. NEW gens use Options A/B/C phrasing (Aug 13).",
+  "on_image_status": "NO in-place overlays on existing inventory URLs (Founder Aug 11). Captions + first_comment stay ON. HARD (Founder Aug 12): every NEW generation/remake MUST include designed-in shop pride — designed_in_required true. Founder Aug 14 ~2:31pm: if a morning queued plate will ship without pride, bake into a NEW local/url before use (never reuse a used URL; never stamp old WP media in place).",
   "only_on_newly_generated": true,
   "never_overlay_existing": true,
   "designed_in_on_new_generation": true,
@@ -74,7 +74,7 @@
   ],
   "always_first_comment": true,
   "always_first_comment_note": "Founder Aug 14 2026: every FB+IG publish must get ONE Zernio firstComment (pride A/B/C by slot). Caption placement still rotates; first comment is never skipped.",
-  "morning_on_image_note": "Founder Aug 14 ~2:14pm CT: morning NEW plates must show clear #1 / Chicagoland / Premier / Voted pride. Caption slot for today remains Option A; on-image pride follows config/morning_flyer_styles.json by_style (Magritte→B, Folk→C, Da Vinci→A, Einstein→B) via designed_in_generation_brief(force_option=…).",
+  "morning_on_image_note": "Founder Aug 14 ~2:14–2:31pm CT: EVERY morning plate must show clear #1 / Chicagoland / Premier / Voted pride baked into the image. Caption slot for today remains Option A; on-image pride follows config/morning_flyer_styles.json by_style via designed_in_generation_brief(force_option=…). Queued plates missing pride bake into a NEW url (bake_designed_in_pride_new_asset) — never stamp the old media URL in place. Mixed pool is random (not new-styles-only for two weeks).",
   "placement_modes": [
     "both",
     "first_comment",

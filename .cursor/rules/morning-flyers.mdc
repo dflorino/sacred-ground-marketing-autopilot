@@ -25,11 +25,15 @@ look Sacred Ground’s using the AI. Completely individual, out of the box, noth
   when it reads as a template, not a shop-made plate
 
 ### REQUIRE instead
-- **Shop-made / individual** via the **Founder-approved visual rotation** (Aug 14 ~2:14pm CT):
-  Magritte floating door · Folk outsider night · Da Vinci storefront sketch · Einstein
-  chalkboard map — see `config/morning_flyer_styles.json`
-- Designed-in Chicagoland pride on **every NEW** plate — prefer visible **#1 Chicagoland** /
-  Premier / Voted #1 (style map in morning_flyer_styles; caption slot still Option A)
+- **Shop-made / individual** via the **Founder-approved mixed pool** (Aug 14 ~2:14–2:31pm CT):
+  Magritte · Folk · Da Vinci · Einstein **plus** existing Thursday equal-card shop-made
+  + artistic hero — see `config/morning_flyer_styles.json` (`random_mixed`, not
+  “new styles only for two weeks”)
+- **Unused queued** date-keyed flyers stay in the mix; never-reuse URLs still absolute
+- **Series limits:** max **1 consecutive** day per style id; max **2** in any rolling **7**
+  Chicago days — banned mystic template `series_limit` 0
+- **EVERY** morning plate must bake Chicagoland **#1 / Premier / Voted #1** into the image
+  (NEW gens via designed_in brief; queued missing pride → NEW url with pride band)
 - Still readable schedule info; **no prices** on graphics
 - Equal visual space for practitioners when multi-event
 - **NEVER** reuse image URLs (`image_usage` lifetime block)
@@ -39,10 +43,13 @@ look Sacred Ground’s using the AI. Completely individual, out of the box, noth
 - Victorian botanical ledger
 (Archived under `data/composites/flyer-concepts-v1/archived/` — do not pick.)
 
-## Sacred Ground daily flyer system (readable equal info — rotate the 4 styles)
+## Sacred Ground daily flyer system (readable equal info — mixed pool)
 
 Reference readability: `assets/sg-morning-flyer-2026-08-06-today-collage.png`.
-Art language rotates: `choose_visual_style(day)` → Magritte → Folk → Da Vinci → Einstein.
+Art language for **NEW** gens: day-seeded **random** pick from mixed pool
+(`choose_visual_style`) — Magritte / Folk / Da Vinci / Einstein / Thursday shop-made /
+artistic hero — with series limits (1 consecutive / max 2 per rolling 7). Unused
+queued date flyers stay eligible. Do **not** run new styles only for two weeks.
 
 | Zone | Content |
 |---|---|
@@ -68,10 +75,11 @@ higher contrast, and a quieter slate band behind schedule text (equations only i
 ## Layout mix (required)
 
 - Multi-event days → **always equal visual weight** per practitioner (never hero + tiny secondary)
-- Rotate Magritte / Folk / Da Vinci / Einstein across days so mornings are not the same look
+- Random-mix Magritte / Folk / Da Vinci / Einstein / Thursday shop-made / artistic hero
+  (series-limited); keep unused date-keyed queue entries
 - Single-event days may use an artistic hero structure **only** when still highly readable
-- `generate-morning-flyers` / `build_generation_prompt` must use `morning_flyer_styles` rotation,
-  ban mystic AI starter-pack + Bauhaus/Victorian, and require designed-in pride
+- `generate-morning-flyers` / `build_generation_prompt` must use `morning_flyer_styles` mixed
+  pool, ban mystic AI starter-pack + Bauhaus/Victorian, and bake designed-in pride on every plate
 
 ## Never put prices on flyers
 

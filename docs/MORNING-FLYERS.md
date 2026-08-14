@@ -8,34 +8,77 @@ Date-keyed finished flyers power the morning Autopilot post (9:00 AM CT → **to
 
 **BAN:** floating singing bowls · glowing healing hands · pristine tarot fan · crystals on black velvet · Flower of Life wallpaper · Akashic prop books · ethereal purple fog · same factory layout every day (three dark cards + right mystic collage + gold script) when it reads as a template.
 
-**REQUIRE:** one of the four Founder-approved visual styles (below). Designed-in Chicagoland **#1 / Premier / Voted** pride on every NEW plate. No prices. Equal space when multi-event. Never reuse URLs.
+**REQUIRE:** mixed-pool art (four approved languages + existing shop-made approaches below). Designed-in Chicagoland **#1 / Premier / Voted** pride on every morning plate. No prices. Equal space when multi-event. Never reuse URLs.
 
-## Visual style rotation (Founder Aug 14 ~2:14pm CT)
+## Visual style mixed pool (Founder Aug 14 ~2:14pm + ~2:29–2:31pm CT)
 
-Config: `config/morning_flyer_styles.json` · picker: `choose_visual_style(day)` (day ordinal % 4).
+Config: `config/morning_flyer_styles.json` · picker: `choose_visual_style(day)` (`selection_mode: random_mixed`).
 
-| Order | Style | Verdict | On-image pride default |
-|---|---|---|---|
-| 1 | Magritte floating door | LOVED — IN | B `#1 Crystal Shop` |
-| 2 | Folk outsider night | YES — IN | C `Voted #1` |
-| 3 | Da Vinci storefront sketch | LIKE — IN | A `Premier` |
-| 4 | Einstein chalkboard map | LIKE — IN | B `#1` — **must** use large high-contrast schedule type |
+**Do not** run “new styles only for two weeks” then dump old Thursday plates afterward — interleave the full mix.
 
-**OUT (archived, never rotate):** Bauhaus Swiss goldleaf · Victorian botanical ledger → `data/composites/flyer-concepts-v1/archived/`.
+### What’s in the mix
+
+| Id | Kind |
+|---|---|
+| Magritte floating door | Approved art |
+| Folk outsider night | Approved art |
+| Da Vinci storefront sketch | Approved art |
+| Einstein chalkboard map | Approved art (large high-contrast schedule type) |
+| Thursday equal-card shop-made | Existing morning approach (keep) |
+| Artistic single-event hero shop-made | Existing approach (single-event only) |
+| Unused date-keyed flyers in `morning_flyers.json` | Queued plates (URL must still be unused) |
+
+**OUT / series_limit 0:** Bauhaus · Victorian · generic mystic AI navy wellness template.
+
+### How random pick works
+
+1. Build the mixed pool (above), drop artistic-hero on multi-event days.
+2. Drop any style that would break series limits against recent queue/`visual_style` history.
+3. Day-seeded shuffle → pick first eligible (stable per Chicago date; not ordinal lockstep).
+
+### Series limits (hard)
+
+| Cap | Value |
+|---|---|
+| Max consecutive days | **1** (same style id/family) |
+| Rolling window | **7** Chicago days |
+| Max per style in window | **2** |
+| Banned mystic / Bauhaus / Victorian | **0** |
+
+### Queue + never-reuse
+
+| Rule | Detail |
+|---|---|
+| Keep approaches | Unused queued plates + legacy shop-made styles stay eligible |
+| Never-reuse URLs | Absolute via `image_usage` — keeping a *style* ≠ re-posting a used URL |
+| Pride on queued | If a queued flyer lacks baked-in pride → bake into a **NEW** local/url before use |
+
+### Pride guarantee (every morning plate)
+
+Every single morning image must show Chicagoland **#1 / Premier / Voted #1** baked into the picture (not caption-only). NEW gens use `designed_in_generation_brief` + style pride map. Queued plates missing pride use `bake_designed_in_pride_new_asset` → new URL.
+
+| Style | On-image pride default |
+|---|---|
+| Magritte | B `#1 Crystal Shop` |
+| Folk | C `Voted #1` |
+| Da Vinci | A `Premier` |
+| Einstein | B `#1` |
+| Thursday shop-made | B `#1` |
+| Artistic hero | A `Premier` |
 
 Approved samples: `data/composites/flyer-concepts-v1/approved/`. Do **not** replace live posts unless Founder asks.
 
 ## Sacred Ground daily flyer system
 
-Readability reference: `assets/sg-morning-flyer-2026-08-06-today-collage.png`. Art language rotates among the four styles above.
+Readability reference: `assets/sg-morning-flyer-2026-08-06-today-collage.png`. Art language is a day-seeded random mix from the full pool above (series-limited).
 
 | Zone | Content |
 |---|---|
 | **Header** | Day / shop identity (mix fonts; gold script optional — not mandatory every day) |
 | **Schedule** | 1–3 **equal-weight** event blocks — title + host + time + short keywords |
-| **Art** | Magritte / Folk / Da Vinci / Einstein — never mystic dump, never Bauhaus/Victorian |
+| **Art** | Mixed pool (Magritte / Folk / Da Vinci / Einstein / Thursday shop-made / artistic hero) — never mystic dump, never Bauhaus/Victorian |
 | **Footer** | Circular logo + `shopsacredground.com` + `847-749-3922` + come-as-you-are |
-| **Shop pride** | Caption/first-comment **ON**. No overlay badges on existing flyers. Every **NEW** gen/remake must bake designed-in pride (`designed_in_generation_brief` + style pride map). Prefer visible **#1 Chicagoland** energy on morning art. |
+| **Shop pride** | Caption/first-comment **ON**. No overlay badges on used URLs. Every morning plate must bake designed-in pride (`designed_in_generation_brief` / `bake_designed_in_pride_new_asset`). Prefer visible **#1 Chicagoland** energy on morning art. |
 
 ## Equal space (hard — Founder Aug 7, 2026)
 
@@ -50,7 +93,7 @@ Artistic single-event hero is allowed **only** when the day has exactly one even
 
 ## Layout mix (required)
 
-Vary the *look* day to day via Magritte / Folk / Da Vinci / Einstein so the feed does not read as one template factory. Multi-event days always keep equal visual weight. `build_generation_prompt` must include the day’s `visual_style`, ban mystic AI + Bauhaus/Victorian, and require designed-in #1 / Chicagoland pride.
+True **random mix** of Magritte / Folk / Da Vinci / Einstein / Thursday shop-made / artistic hero (series limits: 1 consecutive / max 2 per rolling 7) so the feed does not read as one template factory or a two-week new-styles block. Keep unused queued date flyers. Multi-event days always keep equal visual weight. `build_generation_prompt` must include the day’s `visual_style`, ban mystic AI + Bauhaus/Victorian, and require designed-in #1 / Chicagoland pride on **every** plate.
 
 ## Hard rule — no prices
 
