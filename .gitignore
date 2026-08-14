@@ -34,3 +34,6 @@ assets/heygen/*.mov
 data/reels/*.mp4
 data/reels/*.mov
 data/reels/_out/
+
+# Morning flyer concept R&D plates (large; keep local)
+data/composites/flyer-concepts-v1/*.png

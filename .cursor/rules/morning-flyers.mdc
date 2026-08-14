@@ -10,17 +10,42 @@ The morning Autopilot post runs at **9:00 AM America/Chicago** and promotes **to
 full day**, then **tomorrow**. Prefer today’s date-key flyer when today has events;
 else tomorrow’s flyer. Flyer date keys match the **event calendar day** on the plate.
 
-## Sacred Ground daily flyer template (Thursday-style)
+## Hard creative ban — generic mystic AI template (Founder Aug 14, 2026 ~1:35pm CT)
 
-Gold standard: `assets/sg-morning-flyer-2026-08-06-today-collage.png` (Founder-approved).
+**Rejected live look:** Fri Aug 14 navy “FRIDAY AT Sacred Ground” equal-card collage with
+pristine AI singing bowls, shamanic drum, glowing healing hands, “Akashic Records” prop
+book — the Canva/Midjourney wellness starter pack. Founder: *“I don’t want them to go oh
+look Sacred Ground’s using the AI. Completely individual, out of the box, nothing like this.”*
 
-Use **versions of this layout system** — not an exact clone every day (stale), and **not** busy collage soup.
+### BAN on morning flyers / new social art
+- Generic mystic AI collage: floating singing bowls, glowing healing hands, pristine tarot
+  fan, crystal clusters on black velvet, Flower of Life wallpaper, “Akashic Records” prop
+  books, ethereal purple fog — the wellness starter pack everyone ships
+- Same factory layout every day (three equal dark cards + right mystic collage + gold script)
+  when it reads as a template, not a shop-made plate
+
+### REQUIRE instead
+- **Shop-made / individual:** real Sacred Ground storefront or interior when available,
+  real practitioner vibes, handcrafted collage, bold poster / typographic art, unexpected
+  color, photography-first, or one strong original illustration — **not** the same mystic
+  object dump
+- Designed-in Chicagoland pride (Premier / #1 / Voted #1 per slot rules)
+- Still readable schedule info; **no prices** on graphics
+- Equal visual space for practitioners when multi-event
+- **NEVER** reuse image URLs (`image_usage` lifetime block)
+
+## Sacred Ground daily flyer system (readable equal info — vary the art)
+
+Reference readability (not a daily clone): `assets/sg-morning-flyer-2026-08-06-today-collage.png`.
+
+Use **versions of a readable schedule system** — not an exact clone every day (stale),
+**not** busy collage soup, and **not** the banned mystic AI template above.
 
 | Zone | Content |
 |---|---|
-| **Header** | `{WEEKDAY} AT` + `Sacred Ground` (gold script) + `Mind • Body • Spirit • Community` |
-| **Left** | 1–3 stacked rounded **equal event cards** — icon + title + host + time + short keywords |
-| **Right** | Evocative graphics aligned to those cards (clear zones, not overlapping clutter) |
+| **Header** | Day / shop identity (mix fonts; gold script OK sometimes — not mandatory every day) |
+| **Schedule** | 1–3 **equal-weight** event blocks — title + host + time + short keywords |
+| **Art** | Shop-made / photo / bold poster / original illustration — never generic mystic dump |
 | **Footer** | Circular logo + `shopsacredground.com` + `847-749-3922` + come-as-you-are energy |
 
 ## Equal space (hard — Founder Aug 7, 2026)
@@ -34,10 +59,12 @@ Use **versions of this layout system** — not an exact clone every day (stale),
 
 ## Layout mix (required)
 
-- **~75%** of new/future morning flyers → Thursday-style **equal** card layout (default)
-- **~25%** may be artistic single-event hero layouts **ONLY when there is exactly one event**
-- Multi-event days → **always** Thursday-style equal cards (never artistic hero)
-- `generate-morning-flyers` / `build_generation_prompt` defaults to Thursday-style
+- Multi-event days → **always equal visual weight** per practitioner (never hero + tiny secondary)
+- Vary the *look* day to day (poster / photo / handcrafted collage / original illustration) so
+  the feed does not read as one mystic-card template factory
+- Single-event days may use an artistic hero **only** when still highly readable
+- `generate-morning-flyers` / `build_generation_prompt` must ban mystic AI starter-pack imagery
+  and require shop-individual energy + designed-in pride
 
 ## Never put prices on flyers
 
@@ -54,14 +81,16 @@ Use **versions of this layout system** — not an exact clone every day (stale),
 - Pipeline plans the image once and reuses the same media URL on both platforms
 - Aug 6 gold standard stays single-URL (do not overwrite)
 
-### Color energy (hard — Founder Aug 10, 2026)
+### Color energy (hard — Founder Aug 10 + Aug 14, 2026)
 
 The shared plate must be **colorful, bright, interesting, engaging**:
-- Jewel tones + strong contrast (emerald / amethyst / teal / sapphire / amber + gold)
-- Lit details like the Aug 6 gold standard (cards, crystals, candles, sacred geometry that glow)
-- Generators + selection must **reject** drab / muddy / beige / grey / desaturated purple sludge, empty near-black voids, giant blank cards, thin faint line-art on a dead field
-- Aug 10 IG Lisa Maria muddy-purple empty-card plate is the reject example
-- Dark elegant backgrounds OK only when bright jewel accents carry the energy
+- Unexpected bold color welcome (coral, chartreuse, teal, sunflower, eggplant) — not only navy+gold
+- Strong contrast and shop-individual energy beat polished mystic gloss
+- Generators + selection must **reject** drab / muddy / beige / grey / desaturated purple sludge,
+  empty near-black voids, giant blank cards, thin faint line-art on a dead field, **and** the
+  generic mystic AI starter pack (Aug 14 reject)
+- Aug 10 IG Lisa Maria muddy-purple empty-card plate is the energy reject example
+- Dark elegant backgrounds OK only when bright accents carry the energy — never a mystic void
 - Code gate: `flyer_passes_visual_energy` (min colorfulness + accent ratio)
 
 ## Every day
@@ -89,3 +118,6 @@ The shared plate must be **colorful, bright, interesting, engaging**:
 - Do not republish Aug 6 just to split FB/IG images
 - Do not ship hero + tiny secondary corner badges on multi-event days
 - Do not remake finished flyers just to stamp shop-pride overlays
+- Do **not** remake + republish an already-live morning post for aesthetic alone
+  unless the Founder explicitly asks (Aug 14: leave live flyer; explore concepts
+  offline in `data/composites/flyer-concepts-v1/` first)

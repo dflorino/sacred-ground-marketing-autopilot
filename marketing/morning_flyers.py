@@ -480,44 +480,51 @@ def build_generation_prompt(
         surface="morning",
         campaign="today",
     )
+    anti_template = (
+        " HARD BAN (Founder Aug 14 2026): NEVER the generic mystic AI wellness "
+        "starter pack — no floating singing bowls, glowing healing hands, "
+        "pristine tarot fan, crystal clusters on black velvet, Flower of Life "
+        "wallpaper, Akashic Records prop books, ethereal purple fog, or the "
+        "factory navy three-equal-dark-cards + right mystic collage + gold "
+        "script when it reads like every Canva/Midjourney holistic template. "
+        "Must feel completely individual / shop-made / out of the box — real "
+        "Sacred Ground storefront or interior cues when possible, bold poster "
+        "or typographic art, unexpected color, photography-first collage, or "
+        "one strong original illustration. Nice and unusual."
+    )
     shared = (
         f"Chicago date {day.isoformat()}. "
         f"Date/time text: {copy.get('date_short')}. "
         f"{events_bit}{visit}{free_bit} {equal_rule} "
-        "Elegant mixed fonts (script + serif), circular Sacred Ground sun-face "
-        f"logo, footer with {WEBSITE} and {PHONE}. Prebranded finished flyer. "
-        "CRITICAL: do NOT include any prices, dollar signs, ticket costs, or "
-        "dollar amounts anywhere on the graphic. FREE / Free Community for "
+        "Mixed expressive fonts (not one rigid template), circular Sacred Ground "
+        f"sun-face logo, footer with {WEBSITE} and {PHONE}. Prebranded finished "
+        "flyer. CRITICAL: do NOT include any prices, dollar signs, ticket costs, "
+        "or dollar amounts anywhere on the graphic. FREE / Free Community for "
         "free community gatherings is allowed and preferred. No invented "
         "practitioner faces unless a real photo reference is provided. "
-        "COLOR ENERGY (hard — Founder Aug 10 2026): colorful, bright, "
-        "interesting, engaging — jewel tones (emerald, amethyst, teal, "
-        "sapphire, amber) with strong gold contrast and luminous accents. "
-        "Match the Aug 6 gold-standard energy: rich lit details, tarot cards / "
-        "crystals / candles / sacred geometry that actually glow. FORBIDDEN: "
-        "drab, muddy, beige, grey, desaturated purple sludge, empty near-black "
-        "voids, giant blank cards, thin faint line-art on a dead field. Vary "
-        "gold/jewel accents by day — versions of the system, not exact clones."
-        f"{pride_bit}"
+        "COLOR ENERGY (hard — Founder Aug 10 + Aug 14 2026): colorful, bright, "
+        "interesting, engaging — jewel tones OR unexpected bold color (coral, "
+        "teal, sunflower, eggplant) with strong contrast. FORBIDDEN: drab, "
+        "muddy, beige, grey, desaturated purple sludge, empty near-black voids, "
+        "giant blank cards, thin faint line-art on a dead field. Vary the visual "
+        "language by day — never clone yesterday's plate."
+        f"{anti_template}{pride_bit}"
     )
     if is_b:
         bg_energy = (
-            " VARIANT B / Instagram: same full-day readable Thursday-style "
-            "event cards and info as Facebook, but the BACKGROUND must have "
-            "MORE visual pop — richer multi-tone jewel color (jewel gradients, "
-            "aurora ribbons, luminous orbs, layered light), stronger shapes "
-            "and sacred geometry with real contrast, mystical energy that "
-            "makes someone want to stop and read. FORBIDDEN: flat single-color "
-            "washes, bland muted purple voids, low-contrast thin line art on "
-            "a dead field, empty stretched cards. Cards stay legible; energy "
-            "lives in the field around them."
+            " VARIANT B / Instagram: same full-day readable equal-weight event "
+            "info as Facebook, but the FIELD must have MORE visual pop — richer "
+            "multi-tone color, stronger shapes, unexpected composition that "
+            "makes someone stop and read. FORBIDDEN: flat washes, mystic AI "
+            "object dumps, bland muted purple voids, empty stretched cards. "
+            "Schedule stays legible; originality lives in the art language."
         )
     else:
         bg_energy = (
-            " VARIANT A / Facebook: cleaner gold-standard Thursday-style card "
-            "layout energy is OK — clear readable cards, elegant contrast, "
-            "polished and still colorful/bright (not beige or muddy). Jewel "
-            "accents required even when the field is calmer than Instagram."
+            " VARIANT A / Facebook: clear readable equal-weight schedule, "
+            "elegant contrast, polished and still colorful/bright (not beige "
+            "or muddy). Still ban the generic mystic AI template — shop-"
+            "individual art required even when the field is calmer."
         )
     if style == LAYOUT_ARTISTIC and n_events <= 1:
         return (
@@ -527,17 +534,16 @@ def build_generation_prompt(
             "Centered hero composition OK only when there is exactly ONE event. "
             "Never use this layout to demote a second practitioner into a tiny corner."
         )
-    # Default / multi-event path: Thursday-style equal cards.
+    # Default / multi-event path: equal visual weight, varied art language.
     return (
-        "Sacred Ground Thursday-style EQUAL card morning flyer, square 1080x1080. "
-        "Gold-standard layout system (do not clone colors): HEADER "
-        f"'{weekday} AT' + Sacred Ground gold script + "
-        "'Mind • Body • Spirit • Community'; LEFT 1–3 stacked rounded event "
-        "cards of IDENTICAL height (icon + title + host + time + short keywords) "
-        "— equal visual weight for every event; RIGHT evocative graphics in "
-        "clear zones aligned to those cards (not a second tiny event badge); "
-        "FOOTER logo + website + phone + come-as-you-are. Dark elegant ONLY "
-        "when lit with bright jewel + gold accents (never a muddy void). "
+        "Sacred Ground EQUAL-WEIGHT multi-event morning flyer, square 1080x1080. "
+        "Readable schedule for every event (IDENTICAL visual weight — stacked "
+        "bands, equal cards, or equal poster columns OK). HEADER may use "
+        f"'{weekday} AT Sacred Ground' or an original typographic treatment — "
+        "do NOT default to navy+gold script factory every day. Art language must "
+        "be shop-individual (poster / photo collage / illustration / storefront) "
+        "— NEVER right-side mystic object dump. FOOTER logo + website + phone + "
+        "come-as-you-are. "
         f"{shared}{bg_energy}"
     )
 

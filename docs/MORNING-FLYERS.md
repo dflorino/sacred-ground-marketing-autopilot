@@ -1,20 +1,28 @@
-# Morning flyers (Thursday-style equal cards)
+# Morning flyers (readable equal schedule — vary the art)
 
 Date-keyed finished flyers power the morning Autopilot post (9:00 AM CT → **today’s full day**, then **tomorrow**). Prefer today’s date-key flyer when today has events. Config: `config/morning_flyers.json`.
 
-## Sacred Ground daily flyer template (Thursday-style)
+## Hard creative ban — generic mystic AI template (Founder Aug 14, 2026 ~1:35pm CT)
 
-**Gold standard (Founder-approved):** `assets/sg-morning-flyer-2026-08-06-today-collage.png`
+**Rejected live look:** Fri Aug 14 navy equal-card collage with pristine AI singing bowls, shamanic drum, glowing healing hands, “Akashic Records” prop book — Canva/Midjourney wellness starter pack. Founder: *do not look like “Sacred Ground’s using the AI.” Completely individual, out of the box.*
 
-Use **versions of this layout system** — beautiful and easy to read — not an exact clone every day (gets stale), and not busy collage soup.
+**BAN:** floating singing bowls · glowing healing hands · pristine tarot fan · crystals on black velvet · Flower of Life wallpaper · Akashic prop books · ethereal purple fog · same factory layout every day (three dark cards + right mystic collage + gold script) when it reads as a template.
+
+**REQUIRE:** shop-made / individual art — real storefront or interior when available, practitioner vibes, handcrafted collage, bold poster / typography, unexpected color, photography-first, or one strong original illustration. Designed-in Chicagoland pride. No prices. Equal space when multi-event. Never reuse URLs.
+
+Future visual R&D concepts (preview only, not live posts): `data/composites/flyer-concepts-v1/`.
+
+## Sacred Ground daily flyer system
+
+Readability reference (not a daily clone): `assets/sg-morning-flyer-2026-08-06-today-collage.png`.
 
 | Zone | Content |
 |---|---|
-| **Header** | `{WEEKDAY} AT` + **Sacred Ground** (gold script) + `Mind • Body • Spirit • Community` |
-| **Left** | Clear stacked rounded **equal cards** — one event per card, same height: icon + name + host + time + short keywords |
-| **Right** | Evocative graphics supporting those events (clear zones, not overlapping clutter) |
-| **Footer** | Sacred Ground circular logo + `shopsacredground.com` + `847-749-3922` + come-as-you-are energy |
-| **Shop pride** | Caption/first-comment claims **ON**. No overlay badges on existing flyers. Every **NEW** AI gen/remake **must** bake designed-in pride via `designed_in_generation_brief` (`designed_in_required`) — see `docs/SOCIAL-PROOF.md` |
+| **Header** | Day / shop identity (mix fonts; gold script optional — not mandatory every day) |
+| **Schedule** | 1–3 **equal-weight** event blocks — title + host + time + short keywords |
+| **Art** | Shop-individual — never generic mystic dump |
+| **Footer** | Circular logo + `shopsacredground.com` + `847-749-3922` + come-as-you-are |
+| **Shop pride** | Caption/first-comment **ON**. No overlay badges on existing flyers. Every **NEW** gen/remake must bake designed-in pride via `designed_in_generation_brief` |
 
 ## Equal space (hard — Founder Aug 7, 2026)
 
@@ -22,19 +30,14 @@ Multi-event days must give **every practitioner the same visual weight**.
 
 | OK | Not OK |
 |---|---|
-| Aug 6 gold standard — 3 equal stacked cards | Aug 7 FB reflexology hero + tiny Robert “Also today” corner |
-| Aug 7 IG / Aug 8 Lions Gate — equal cards | One giant photo + secondary badge |
+| Equal stacked / equal bands for every host | Aug 7 FB reflexology hero + tiny Robert “Also today” corner |
+| Varied art languages day to day | Same mystic-card factory every morning |
 
-Artistic single-event hero is allowed **only** when the day has exactly one event. Never demote a second practitioner into a corner callout.
+Artistic single-event hero is allowed **only** when the day has exactly one event.
 
 ## Layout mix (required)
 
-| Share | Style | When |
-|---|---|---|
-| **~75%** | **Thursday-style equal card layout** | Default; **always** for multi-event days |
-| **~25%** | Artistic single-event hero | Only when still highly readable **and** exactly one event |
-
-`generate-morning-flyers` / `build_generation_prompt` force Thursday equal cards when 2+ events.
+Vary the *look* day to day so the feed does not read as one template factory. Multi-event days always keep equal visual weight. `build_generation_prompt` must ban mystic AI starter-pack imagery and require shop-individual energy + designed-in pride.
 
 ## Hard rule — no prices
 
@@ -84,4 +87,4 @@ Do not republish live posts just to swap a plate — updating archive assets for
 | Footer | Logo + shopsacredground.com + 847-749-3922 |
 | Faces | Tina circle only with real ref photos; otherwise symbols |
 | Overlays | `prebranded: true` → skip brand overlays |
-| Layout mix | ~75% equal Thursday cards / ~25% single-event artistic hero only |
+| Layout mix | Equal weight multi-event; vary visual language; ban mystic AI template |
