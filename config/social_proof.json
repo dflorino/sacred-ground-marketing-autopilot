@@ -74,6 +74,7 @@
   ],
   "always_first_comment": true,
   "always_first_comment_note": "Founder Aug 14 2026: every FB+IG publish must get ONE Zernio firstComment (pride A/B/C by slot). Caption placement still rotates; first comment is never skipped.",
+  "morning_on_image_note": "Founder Aug 14 ~2:14pm CT: morning NEW plates must show clear #1 / Chicagoland / Premier / Voted pride. Caption slot for today remains Option A; on-image pride follows config/morning_flyer_styles.json by_style (Magritte→B, Folk→C, Da Vinci→A, Einstein→B) via designed_in_generation_brief(force_option=…).",
   "placement_modes": [
     "both",
     "first_comment",

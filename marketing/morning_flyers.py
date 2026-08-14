@@ -13,6 +13,7 @@ from .models import Event
 from .paths import CONFIG_DIR, ROOT, write_json
 
 FLYERS_PATH = os.path.join(CONFIG_DIR, "morning_flyers.json")
+STYLES_PATH = os.path.join(CONFIG_DIR, "morning_flyer_styles.json")
 ASSETS_DIR = os.path.join(ROOT, "assets")
 LOGO_PATH = os.path.join(
     CONFIG_DIR, "brand", "sacred-ground-logo-circle-transparent.png"
@@ -40,39 +41,33 @@ PRICE_RE = re.compile(
 )
 
 # ~75% Thursday-style clear cards; up to ~25% artistic single-event hero.
+# Visual *art language* rotates via config/morning_flyer_styles.json (Founder
+# Aug 14 2026) — Magritte / Folk / Da Vinci / Einstein — not mystic AI navy.
 THURSDAY_CARDS_SHARE = 0.75
 LAYOUT_THURSDAY = "thursday_cards"
 LAYOUT_ARTISTIC = "artistic_hero"
 
+# Default rotation if styles config missing (Founder love-order).
+DEFAULT_STYLE_ROTATION = (
+    "magritte_floating_door",
+    "folk_outsider_night",
+    "davinci_storefront_sketch",
+    "einstein_chalkboard_map",
+)
+
 NOTES = (
-    "Sacred Ground daily flyer template (Thursday-style): gold standard "
-    "assets/sg-morning-flyer-2026-08-06-today-collage.png. ~75% of new/future "
-    "morning flyers MUST use Thursday-style clear stacked EQUAL event cards "
-    "(left cards + right graphics + logo footer) — multi-event days give "
-    "EVERY practitioner the SAME card size / visual weight (gold standard "
-    "Aug 6). FORBIDDEN: one hero photo + tiny ALSO TODAY corner badge "
-    "(Aug 7 FB reflexology/Robert rejected). Up to ~25% may be artistic "
-    "single-event hero layouts ONLY when there is exactly one event. Header "
-    "WEEKDAY AT Sacred Ground + Mind • Body • Spirit • Community; LEFT stacked rounded event "
-    "cards; RIGHT evocative graphics in clear zones; FOOTER logo + "
-    f"{WEBSITE} + {PHONE} + come-as-you-are. COLOR ENERGY (Founder Aug 10 "
-    "2026): FB and IG plates MUST be colorful, bright, interesting, and "
-    "engaging — jewel tones, strong contrast, rich accents (gold / emerald / "
-    "amethyst / teal / amber). FORBIDDEN: drab, muddy, beige, grey, "
-    "desaturated purple AI sludge, empty near-black voids, low-saturation "
-    "washes, thin faint line-art on a dead field (Aug 10 IG Lisa Maria "
-    "muddy-purple empty-card plate rejected). Dark elegant backgrounds OK "
-    "ONLY when lit with bright jewel accents like the Aug 6 gold standard. "
-    "Versions of the system, not exact clones. Date-keyed flyers are "
-    "prebranded (skip overlays). SINGLE-IMAGE MODE (Founder Aug 10 2026): "
-    "one excellent primary plate (`url` / `local`) posts to BOTH Facebook "
-    "and Instagram. Do not generate or require a separate weaker "
-    "`url_instagram` variant — Aug 10 Lisa Maria IG muddy-purple plate "
-    "proved dual variants hurt quality. Legacy `url_instagram` is ignored "
-    "unless entry sets allow_ig_variant:true. Primary plate must pass "
-    "flyer_passes_visual_energy. NEVER include $, dollar amounts, ticket "
-    "costs, or \"$55\"-style prices on flyer graphics. Empty days get a "
-    "warm visit flyer. 1–3 events max. No invented practitioner faces."
+    "Sacred Ground morning flyers (Founder Aug 14 2026): rotate among four "
+    "approved visual languages — Magritte floating door, Folk outsider night, "
+    "Da Vinci storefront sketch, Einstein chalkboard map (Einstein production "
+    "must keep large high-contrast schedule type). Equal schedule weight when "
+    "2+ events. BAN Bauhaus Swiss goldleaf + Victorian botanical ledger from "
+    "rotation (archived). BAN generic mystic AI navy wellness template. Gold "
+    "standard readability reference: "
+    "assets/sg-morning-flyer-2026-08-06-today-collage.png. EVERY new plate "
+    "MUST include designed-in Chicagoland #1 / Premier / Voted pride. FOOTER "
+    f"logo + {WEBSITE} + {PHONE}. COLOR ENERGY: colorful, bright, engaging. "
+    "SINGLE-IMAGE MODE: one primary plate for FB+IG. NEVER prices on graphics. "
+    "Do not replace a live morning post unless Founder asks."
 )
 
 # Founder Aug 10 2026 — share one excellent primary plate on FB+IG.
@@ -341,6 +336,100 @@ def pick_events_for_flyer(events: Sequence[Event], limit: int = MAX_EVENTS_ON_FL
     return [e for _, __, ___, e in scored[: max(0, limit)]]
 
 
+def load_styles_config() -> Dict[str, Any]:
+    """Founder-approved morning visual style catalog (Aug 14 2026)."""
+    if not os.path.isfile(STYLES_PATH):
+        return {
+            "rotation_order": list(DEFAULT_STYLE_ROTATION),
+            "styles": {},
+            "archived_out": {},
+            "pride_on_morning": {},
+        }
+    with open(STYLES_PATH, encoding="utf-8") as fh:
+        data = json.load(fh)
+    return data if isinstance(data, dict) else {}
+
+
+def active_style_rotation() -> List[str]:
+    """Ordered style ids for day rotation (Magritte → Folk → Da Vinci → Einstein)."""
+    data = load_styles_config()
+    raw = data.get("rotation_order") or list(DEFAULT_STYLE_ROTATION)
+    styles = data.get("styles") or {}
+    archived = set((data.get("archived_out") or {}).keys())
+    out: List[str] = []
+    for sid in raw:
+        key = str(sid).strip()
+        if not key or key in archived:
+            continue
+        meta = styles.get(key) or {}
+        if str(meta.get("status") or "active").lower() == "archived":
+            continue
+        out.append(key)
+    return out or list(DEFAULT_STYLE_ROTATION)
+
+
+def style_meta(style_id: str) -> Dict[str, Any]:
+    styles = load_styles_config().get("styles") or {}
+    meta = styles.get(style_id)
+    return dict(meta) if isinstance(meta, dict) else {"id": style_id}
+
+
+def pride_option_for_style(style_id: str) -> str:
+    """On-image Option A/B/C preferred for this visual style (morning plates)."""
+    pride = load_styles_config().get("pride_on_morning") or {}
+    by_style = pride.get("by_style") or {}
+    opt = str(by_style.get(style_id) or "").strip().upper()
+    if opt in ("A", "B", "C"):
+        return opt
+    # Founder: prefer visible #1 Chicagoland on morning art.
+    return "B"
+
+
+def choose_visual_style(
+    day: date,
+    *,
+    force: Optional[str] = None,
+) -> str:
+    """
+    Rotate Magritte / Folk / Da Vinci / Einstein by Chicago calendar day.
+
+    Index = day.toordinal() % len(rotation). Never returns archived OUT styles
+    (Bauhaus, Victorian).
+    """
+    rotation = active_style_rotation()
+    if force:
+        key = str(force).strip()
+        if key in rotation:
+            return key
+        # Allow explicit force even if not in rotation (tests / remakes).
+        if key in (load_styles_config().get("styles") or {}):
+            return key
+    return rotation[day.toordinal() % len(rotation)]
+
+
+def visual_style_prompt_bit(style_id: str) -> str:
+    """Art-language fragment for build_generation_prompt."""
+    meta = style_meta(style_id)
+    label = meta.get("label") or style_id
+    brief = str(meta.get("prompt_brief") or "").strip()
+    pride_place = str(meta.get("pride_placement") or "").strip()
+    fix = str(meta.get("readability_fix") or "").strip()
+    parts = [
+        f" VISUAL STYLE (Founder Aug 14 rotation — required): '{label}' ({style_id})."
+    ]
+    if brief:
+        parts.append(f" {brief}")
+    if fix:
+        parts.append(f" READABILITY FIX: {fix}")
+    if pride_place:
+        parts.append(f" Pride placement: {pride_place}")
+    parts.append(
+        " Do NOT use Bauhaus Swiss goldleaf or Victorian botanical ledger "
+        "(Founder OUT). Do NOT use the banned mystic AI navy template."
+    )
+    return "".join(parts)
+
+
 def choose_layout_style(
     day: date,
     events: Optional[Sequence[Event]] = None,
@@ -348,10 +437,11 @@ def choose_layout_style(
     force: Optional[str] = None,
 ) -> str:
     """
-    Deterministic layout mix: ~75% thursday_cards, ~25% artistic_hero.
+    Deterministic equal-weight vs artistic-hero structure.
 
-    Multi-event days (2+) always prefer Thursday-style cards for readability.
+    Multi-event days (2+) always prefer equal cards/bands for readability.
     Single-event / empty days may roll the artistic 25% bucket via day hash.
+    Art *language* is separate — see choose_visual_style().
     """
     if force in (LAYOUT_THURSDAY, LAYOUT_ARTISTIC):
         return force
@@ -426,11 +516,13 @@ def build_generation_prompt(
     layout: Optional[str] = None,
     events: Optional[Sequence[Event]] = None,
     variant: str = VARIANT_A,
+    visual_style: Optional[str] = None,
 ) -> str:
-    """Prompt for mlimg / GenerateImage polish — defaults to Thursday-style cards.
+    """Prompt for mlimg / GenerateImage polish — style rotation + equal cards.
 
-    `variant` a = Facebook (cleaner gold-standard card energy OK);
+    `variant` a = Facebook (cleaner card energy OK);
     `variant` b = Instagram — same full-day cards, richer background pop required.
+    `visual_style` overrides Magritte/Folk/Da Vinci/Einstein day rotation.
     """
     covers = list(copy.get("covers") or [])
     events_bit = ""
@@ -443,6 +535,8 @@ def build_generation_prompt(
             "(crystals, quiet wonder) — not a plain storefront photo."
         )
     style = layout or choose_layout_style(day, events)
+    art_id = visual_style or choose_visual_style(day)
+    art_bit = visual_style_prompt_bit(art_id)
     n_events = len(pick_events_for_flyer(events or []))
     # Multi-event days never use artistic hero (equal cards only).
     if n_events >= 2:
@@ -452,8 +546,8 @@ def build_generation_prompt(
     is_b = key in (VARIANT_B, "b", "ig", "instagram", "alt")
     equal_rule = (
         " EQUAL SPACE RULE (hard): when 2+ events appear, every event gets the "
-        "SAME card size and visual weight — stacked equal rounded cards like "
-        "the Aug 6 gold standard. FORBIDDEN: one large hero photo/title with a "
+        "SAME card size and visual weight — stacked equal rounded cards / equal "
+        "bands / equal columns. FORBIDDEN: one large hero photo/title with a "
         "tiny ALSO TODAY / secondary corner badge for another practitioner."
     )
     free_bit = ""
@@ -474,11 +568,20 @@ def build_generation_prompt(
             )
     from . import social_proof as sp
 
+    pride_opt = pride_option_for_style(art_id)
     pride_bit = sp.designed_in_generation_brief(
-        f"morning|{day.isoformat()}|{variant}",
+        f"morning|{day.isoformat()}|{variant}|{art_id}",
         day=day,
         surface="morning",
         campaign="today",
+        force_option=pride_opt,
+    )
+    # Founder Aug 14: morning plates must show clear #1 / Chicagoland pride.
+    pride_bit += (
+        " MORNING PRIDE EMPHASIS (Founder Aug 14): on-image claim must read as "
+        "number-one / premier / voted Chicagoland at a glance — prefer visible "
+        f"'#1 Chicagoland' or Option {pride_opt} phrasing for this style. "
+        "Never omit store pride from a NEW morning plate."
     )
     anti_template = (
         " HARD BAN (Founder Aug 14 2026): NEVER the generic mystic AI wellness "
@@ -507,8 +610,9 @@ def build_generation_prompt(
         "teal, sunflower, eggplant) with strong contrast. FORBIDDEN: drab, "
         "muddy, beige, grey, desaturated purple sludge, empty near-black voids, "
         "giant blank cards, thin faint line-art on a dead field. Vary the visual "
-        "language by day — never clone yesterday's plate."
-        f"{anti_template}{pride_bit}"
+        "language by day via the approved style rotation — never clone "
+        "yesterday's plate."
+        f"{art_bit}{anti_template}{pride_bit}"
     )
     if is_b:
         bg_energy = (
@@ -534,16 +638,16 @@ def build_generation_prompt(
             "Centered hero composition OK only when there is exactly ONE event. "
             "Never use this layout to demote a second practitioner into a tiny corner."
         )
-    # Default / multi-event path: equal visual weight, varied art language.
+    # Default / multi-event path: equal visual weight inside the day's art style.
     return (
-        "Sacred Ground EQUAL-WEIGHT multi-event morning flyer, square 1080x1080. "
+        "Sacred Ground EQUAL-WEIGHT multi-event morning flyer, square 1080x1080 "
+        "(Thursday-style readable schedule energy inside the day's art style). "
         "Readable schedule for every event (IDENTICAL visual weight — stacked "
         "bands, equal cards, or equal poster columns OK). HEADER may use "
         f"'{weekday} AT Sacred Ground' or an original typographic treatment — "
-        "do NOT default to navy+gold script factory every day. Art language must "
-        "be shop-individual (poster / photo collage / illustration / storefront) "
-        "— NEVER right-side mystic object dump. FOOTER logo + website + phone + "
-        "come-as-you-are. "
+        "do NOT default to navy+gold script factory every day. Art language MUST "
+        f"follow the rotated style '{art_id}' — NEVER right-side mystic object "
+        "dump. FOOTER logo + website + phone + come-as-you-are. "
         f"{shared}{bg_energy}"
     )
 
@@ -1006,6 +1110,7 @@ def register_flyer(
     )
 
     layout = choose_layout_style(day, events or [])
+    art_id = choose_visual_style(day)
     entry: Dict[str, Any] = {
         "label": copy["label"],
         "covers": list(copy.get("covers") or []),
@@ -1013,6 +1118,7 @@ def register_flyer(
         "url": url or "",
         "prebranded": True,
         "template": "thursday-style" if layout == LAYOUT_THURSDAY else "artistic_hero",
+        "visual_style": art_id,
     }
     if media_id is not None:
         entry["media_id"] = int(media_id)
@@ -1100,6 +1206,8 @@ def register_flyer(
         "thursday_cards_share": THURSDAY_CARDS_SHARE,
         "artistic_hero_share": round(1.0 - THURSDAY_CARDS_SHARE, 2),
         "default": LAYOUT_THURSDAY,
+        "visual_style_rotation": active_style_rotation(),
+        "visual_styles_config": "config/morning_flyer_styles.json",
         "platform_variants": (
             "single-image mode (Founder Aug 10 2026): primary url/local "
             "posts to FB+IG; url_instagram ignored unless allow_ig_variant:true"
@@ -1165,8 +1273,14 @@ def ensure_flyer_for_day(
     day_events = _day_events(day, events)
     copy = build_flyer_copy(day, day_events)
     layout = choose_layout_style(day, day_events)
+    art_id = choose_visual_style(day)
     prompt = build_generation_prompt(
-        day, copy, layout=layout, events=day_events, variant=VARIANT_A
+        day,
+        copy,
+        layout=layout,
+        events=day_events,
+        variant=VARIANT_A,
+        visual_style=art_id,
     )
 
     existing = flyer_entry_for_day(day)
@@ -1189,6 +1303,7 @@ def ensure_flyer_for_day(
             "entry": existing,
             "local": existing.get("local"),
             "layout": layout,
+            "visual_style": existing.get("visual_style") or art_id,
             "prompt": prompt,
             "single_image_mode": True,
         }
@@ -1201,6 +1316,7 @@ def ensure_flyer_for_day(
             "needs_upload": not bool(existing.get("url")),
             "entry": existing,
             "layout": layout,
+            "visual_style": existing.get("visual_style") or art_id,
             "prompt": prompt,
             "protected": True,
             "single_image_mode": True,
@@ -1230,6 +1346,7 @@ def ensure_flyer_for_day(
         "entry": entry,
         "local": out_a,
         "layout": layout,
+        "visual_style": art_id,
         "prompt": prompt,
         "single_image_mode": True,
         "regenerated_for_visual_energy": energy_failed or None,

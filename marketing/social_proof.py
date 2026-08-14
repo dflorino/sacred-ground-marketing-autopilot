@@ -436,6 +436,7 @@ def designed_in_generation_brief(
     day: Union[date, datetime, str, None] = None,
     surface: str = "morning",
     campaign: str = "",
+    force_option: str = "",
 ) -> str:
     """Prompt fragment for NEW art only — boutique pride designed into the plate.
 
@@ -446,6 +447,9 @@ def designed_in_generation_brief(
 
     Phrasing uses email Options A/B/C by campaign slot (Founder Aug 13 2026),
     e.g. morning/today → Premier (A), afternoon → #1 (B), night → Voted #1 (C).
+    `force_option` (A/B/C) overrides slot pick — used by morning visual-style
+    rotation so Magritte/Folk/Da Vinci/Einstein each carry distinct pride text
+    while still reading as #1 / Premier / Voted Chicagoland.
     """
     # When required + enabled, always emit a brief for NEW gens (even if day
     # parsing failed) so agents cannot ship pride-free art by accident.
@@ -461,12 +465,16 @@ def designed_in_generation_brief(
     style = styles[_pick_index(len(styles), f"sp-designed-in|{surface}|{seed}")]
     day_key = day if day is not None else seed
     camp = normalize_campaign(campaign, surface=surface)
-    opt = resolve_option_id(
-        seed or str(day or "new"),
-        day_key=day_key,
-        campaign=camp,
-        surface=surface,
-    )
+    forced = str(force_option or "").strip().upper()
+    if forced in ("A", "B", "C"):
+        opt = forced
+    else:
+        opt = resolve_option_id(
+            seed or str(day or "new"),
+            day_key=day_key,
+            campaign=camp,
+            surface=surface,
+        )
     # Prefer full on-image phrase for the generation brief (readable sentence case).
     claim = (
         option_field(opt, "on_image")

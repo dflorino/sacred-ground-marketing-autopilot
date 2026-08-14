@@ -25,28 +25,36 @@ look Sacred Ground’s using the AI. Completely individual, out of the box, noth
   when it reads as a template, not a shop-made plate
 
 ### REQUIRE instead
-- **Shop-made / individual:** real Sacred Ground storefront or interior when available,
-  real practitioner vibes, handcrafted collage, bold poster / typographic art, unexpected
-  color, photography-first, or one strong original illustration — **not** the same mystic
-  object dump
-- Designed-in Chicagoland pride (Premier / #1 / Voted #1 per slot rules)
+- **Shop-made / individual** via the **Founder-approved visual rotation** (Aug 14 ~2:14pm CT):
+  Magritte floating door · Folk outsider night · Da Vinci storefront sketch · Einstein
+  chalkboard map — see `config/morning_flyer_styles.json`
+- Designed-in Chicagoland pride on **every NEW** plate — prefer visible **#1 Chicagoland** /
+  Premier / Voted #1 (style map in morning_flyer_styles; caption slot still Option A)
 - Still readable schedule info; **no prices** on graphics
 - Equal visual space for practitioners when multi-event
 - **NEVER** reuse image URLs (`image_usage` lifetime block)
 
-## Sacred Ground daily flyer system (readable equal info — vary the art)
+### BAN from morning rotation (Founder OUT Aug 14)
+- Bauhaus Swiss goldleaf
+- Victorian botanical ledger
+(Archived under `data/composites/flyer-concepts-v1/archived/` — do not pick.)
 
-Reference readability (not a daily clone): `assets/sg-morning-flyer-2026-08-06-today-collage.png`.
+## Sacred Ground daily flyer system (readable equal info — rotate the 4 styles)
 
-Use **versions of a readable schedule system** — not an exact clone every day (stale),
-**not** busy collage soup, and **not** the banned mystic AI template above.
+Reference readability: `assets/sg-morning-flyer-2026-08-06-today-collage.png`.
+Art language rotates: `choose_visual_style(day)` → Magritte → Folk → Da Vinci → Einstein.
 
 | Zone | Content |
 |---|---|
 | **Header** | Day / shop identity (mix fonts; gold script OK sometimes — not mandatory every day) |
 | **Schedule** | 1–3 **equal-weight** event blocks — title + host + time + short keywords |
-| **Art** | Shop-made / photo / bold poster / original illustration — never generic mystic dump |
+| **Art** | One of the four approved styles — never generic mystic dump, never Bauhaus/Victorian |
+| **Pride** | Designed-in #1 / Premier / Voted Chicagoland on every NEW plate |
 | **Footer** | Circular logo + `shopsacredground.com` + `847-749-3922` + come-as-you-are energy |
+
+### Einstein readability (hard — Founder Aug 14)
+Concept was hard to read. Production Einstein plates MUST use larger thick chalk type,
+higher contrast, and a quieter slate band behind schedule text (equations only in margins).
 
 ## Equal space (hard — Founder Aug 7, 2026)
 
@@ -60,11 +68,10 @@ Use **versions of a readable schedule system** — not an exact clone every day 
 ## Layout mix (required)
 
 - Multi-event days → **always equal visual weight** per practitioner (never hero + tiny secondary)
-- Vary the *look* day to day (poster / photo / handcrafted collage / original illustration) so
-  the feed does not read as one mystic-card template factory
-- Single-event days may use an artistic hero **only** when still highly readable
-- `generate-morning-flyers` / `build_generation_prompt` must ban mystic AI starter-pack imagery
-  and require shop-individual energy + designed-in pride
+- Rotate Magritte / Folk / Da Vinci / Einstein across days so mornings are not the same look
+- Single-event days may use an artistic hero structure **only** when still highly readable
+- `generate-morning-flyers` / `build_generation_prompt` must use `morning_flyer_styles` rotation,
+  ban mystic AI starter-pack + Bauhaus/Victorian, and require designed-in pride
 
 ## Never put prices on flyers
 

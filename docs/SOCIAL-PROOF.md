@@ -98,7 +98,7 @@ Config flags:
 Code:
 
 - `social_proof.resolve_option_id(seed, day_key=…, campaign=…)` → `"A"` / `"B"` / `"C"` by slot
-- `social_proof.designed_in_generation_brief(seed, day=…, surface="morning"|"night"|"afternoon"|"celestial", campaign=…)` → prompt fragment for **new** gens only (uses Option A/B/C phrases for that slot)
+- `social_proof.designed_in_generation_brief(seed, day=…, surface="morning"|"night"|"afternoon"|"celestial", campaign=…, force_option=…)` → prompt fragment for **new** gens only (Option A/B/C by slot; morning visual styles may `force_option` so Magritte/Folk/Da Vinci/Einstein each carry distinct #1 / Premier / Voted Chicagoland pride — Founder Aug 14)
 - Wired into `morning_flyers.build_generation_prompt` for AI flyer generations (`campaign="today"` → A)
 - Night / celestial / afternoon **regen** prompts **must** call the same helper — do **not** stamp old inventory
 - `should_badge_morning` / `should_badge_night` / `apply_badge_to_path` refuse overlays while `never_overlay_existing` is true

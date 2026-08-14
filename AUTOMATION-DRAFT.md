@@ -90,7 +90,7 @@ Hard rules:
 1. Timezone context is America/Chicago. Shop-local post time is 9:00 AM America/Chicago.
 2. Checkout this repo and run from the project root.
 3. Content promotes TODAY’s full day (all remaining events — not evening-only), then TOMORROW. Caption opener is today-first when today has events; tomorrow-only wording only if today is empty. Never open with “tonight” at 9am when daytime sessions exist.
-4. Ensure Thursday-style equal-card morning flyer(s) before drafts (never prices/$ on graphics; never hero+tiny secondary):
+4. Ensure morning flyer(s) before drafts — Magritte/Folk/Da Vinci/Einstein style rotation + equal schedule weight (never prices/$; never hero+tiny secondary; never Bauhaus/Victorian):
    python3 -m marketing generate-morning-flyers --start-offset 0 --days 2 --source live-strict
    Prefer a weekly --days 7 prebuild so 9am is not inventing art cold. Prefer today’s date flyer when today has events.
 5. Refresh live WordPress / The Events Calendar only:

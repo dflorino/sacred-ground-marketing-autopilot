@@ -1751,7 +1751,7 @@ class AutopilotTests(unittest.TestCase):
         )
         self.assertIn("VARIANT B / Instagram", prompt_b)
         self.assertIn("MORE visual pop", prompt_b)
-        self.assertIn("flat single-color", prompt_b)
+        self.assertIn("flat washes", prompt_b)
         self.assertIn("COLOR ENERGY", prompt_b)
         self.assertIn("jewel tones", prompt_b)
         self.assertIn("do NOT include any prices", prompt_b)
@@ -2220,6 +2220,30 @@ class AutopilotTests(unittest.TestCase):
         )
         self.assertIn("afternoon event art", aft_brief)
         self.assertIn("#1 Crystal Shop", aft_brief)
+
+        # Founder Aug 14: four-style morning rotation (Magritte→Folk→Da Vinci→Einstein)
+        rot = mf.active_style_rotation()
+        self.assertEqual(
+            rot,
+            [
+                "magritte_floating_door",
+                "folk_outsider_night",
+                "davinci_storefront_sketch",
+                "einstein_chalkboard_map",
+            ],
+        )
+        self.assertNotIn("bauhaus_swiss_goldleaf", rot)
+        self.assertNotIn("victorian_botanical_ledger", rot)
+        d0 = date(2026, 8, 16)  # Magritte day in rotation
+        self.assertEqual(mf.choose_visual_style(d0), "magritte_floating_door")
+        ein = mf.build_generation_prompt(
+            date(2026, 8, 15),
+            {"date_short": "Sat", "covers": ["A"], "empty_day": False},
+            visual_style="einstein_chalkboard_map",
+        )
+        self.assertIn("einstein_chalkboard_map", ein)
+        self.assertIn("READABILITY", ein)
+        self.assertIn("Bauhaus", ein)
 
         prompt = mf.build_generation_prompt(
             date(2026, 8, 20),

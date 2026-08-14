@@ -37,3 +37,4 @@ data/reels/_out/
 
 # Morning flyer concept R&D plates (large; keep local)
 data/composites/flyer-concepts-v1/*.png
+data/composites/flyer-concepts-v1/**/*.png

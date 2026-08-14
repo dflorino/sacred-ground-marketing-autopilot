@@ -1,14 +1,24 @@
 # Flyer concepts v1 — catalog
 
-Preview only. Not published. Not replacing Fri Aug 14 live art.
+Founder scoring Fri Aug 14 2026 ~2:14pm CT. Active rotation wired into
+`config/morning_flyer_styles.json`.
 
-| File | One-line |
-|---|---|
-| `01-davinci-storefront-sketch.png` | Da Vinci parchment anatomy + sacred geometry sketch meets Campbell St eggplant-awning storefront |
-| `02-einstein-chalkboard-map.png` | Einstein chalkboard / relativity curves as an energy map of the day’s modalities |
-| `03-bauhaus-swiss-goldleaf.png` | Bauhaus / Swiss poster brutalism with gold-leaf bars and equal typographic bands |
-| `04-victorian-botanical-ledger.png` | Victorian botanical engraving + crystal commerce daybook ledger rows |
-| `05-magritte-floating-door.png` | Magritte-like shop door floating in sky with precise modernist schedule panels |
-| `06-folk-outsider-night.png` | Hand-painted folk / outsider-art Arlington Heights night storefront |
+## IN — morning rotation
 
-Pride variants rotated across plates (Premier / #1 / Voted #1). No prices. Dummy Fri schedule.
+| Order | Style | File (concept) | Pride default | Notes |
+|---|---|---|---|---|
+| 1 | Magritte floating door | `05-magritte-floating-door.png` | B #1 | LOVED |
+| 2 | Folk outsider night | `06-folk-outsider-night.png` | C Voted #1 | YES |
+| 3 | Da Vinci storefront sketch | `01-davinci-storefront-sketch.png` | A Premier | LIKE |
+| 4 | Einstein chalkboard map | `02-einstein-chalkboard-map.png` | B #1 | LIKE — fix readability in production |
+
+Approved samples: `approved/prod-*.png` (gitignored large PNGs).
+
+## OUT — archived (do not rotate)
+
+| Style | File | Reason |
+|---|---|---|
+| Bauhaus Swiss goldleaf | `archived/03-bauhaus-swiss-goldleaf.png` | Founder not liked |
+| Victorian botanical ledger | `archived/04-victorian-botanical-ledger.png` | Founder OUT |
+
+Dummy Fri schedule on concepts. No prices. Never replace live posts without ask.

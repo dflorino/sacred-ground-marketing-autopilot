@@ -8,21 +8,34 @@ Date-keyed finished flyers power the morning Autopilot post (9:00 AM CT → **to
 
 **BAN:** floating singing bowls · glowing healing hands · pristine tarot fan · crystals on black velvet · Flower of Life wallpaper · Akashic prop books · ethereal purple fog · same factory layout every day (three dark cards + right mystic collage + gold script) when it reads as a template.
 
-**REQUIRE:** shop-made / individual art — real storefront or interior when available, practitioner vibes, handcrafted collage, bold poster / typography, unexpected color, photography-first, or one strong original illustration. Designed-in Chicagoland pride. No prices. Equal space when multi-event. Never reuse URLs.
+**REQUIRE:** one of the four Founder-approved visual styles (below). Designed-in Chicagoland **#1 / Premier / Voted** pride on every NEW plate. No prices. Equal space when multi-event. Never reuse URLs.
 
-Future visual R&D concepts (preview only, not live posts): `data/composites/flyer-concepts-v1/`.
+## Visual style rotation (Founder Aug 14 ~2:14pm CT)
+
+Config: `config/morning_flyer_styles.json` · picker: `choose_visual_style(day)` (day ordinal % 4).
+
+| Order | Style | Verdict | On-image pride default |
+|---|---|---|---|
+| 1 | Magritte floating door | LOVED — IN | B `#1 Crystal Shop` |
+| 2 | Folk outsider night | YES — IN | C `Voted #1` |
+| 3 | Da Vinci storefront sketch | LIKE — IN | A `Premier` |
+| 4 | Einstein chalkboard map | LIKE — IN | B `#1` — **must** use large high-contrast schedule type |
+
+**OUT (archived, never rotate):** Bauhaus Swiss goldleaf · Victorian botanical ledger → `data/composites/flyer-concepts-v1/archived/`.
+
+Approved samples: `data/composites/flyer-concepts-v1/approved/`. Do **not** replace live posts unless Founder asks.
 
 ## Sacred Ground daily flyer system
 
-Readability reference (not a daily clone): `assets/sg-morning-flyer-2026-08-06-today-collage.png`.
+Readability reference: `assets/sg-morning-flyer-2026-08-06-today-collage.png`. Art language rotates among the four styles above.
 
 | Zone | Content |
 |---|---|
 | **Header** | Day / shop identity (mix fonts; gold script optional — not mandatory every day) |
 | **Schedule** | 1–3 **equal-weight** event blocks — title + host + time + short keywords |
-| **Art** | Shop-individual — never generic mystic dump |
+| **Art** | Magritte / Folk / Da Vinci / Einstein — never mystic dump, never Bauhaus/Victorian |
 | **Footer** | Circular logo + `shopsacredground.com` + `847-749-3922` + come-as-you-are |
-| **Shop pride** | Caption/first-comment **ON**. No overlay badges on existing flyers. Every **NEW** gen/remake must bake designed-in pride via `designed_in_generation_brief` |
+| **Shop pride** | Caption/first-comment **ON**. No overlay badges on existing flyers. Every **NEW** gen/remake must bake designed-in pride (`designed_in_generation_brief` + style pride map). Prefer visible **#1 Chicagoland** energy on morning art. |
 
 ## Equal space (hard — Founder Aug 7, 2026)
 
@@ -37,7 +50,7 @@ Artistic single-event hero is allowed **only** when the day has exactly one even
 
 ## Layout mix (required)
 
-Vary the *look* day to day so the feed does not read as one template factory. Multi-event days always keep equal visual weight. `build_generation_prompt` must ban mystic AI starter-pack imagery and require shop-individual energy + designed-in pride.
+Vary the *look* day to day via Magritte / Folk / Da Vinci / Einstein so the feed does not read as one template factory. Multi-event days always keep equal visual weight. `build_generation_prompt` must include the day’s `visual_style`, ban mystic AI + Bauhaus/Victorian, and require designed-in #1 / Chicagoland pride.
 
 ## Hard rule — no prices
 
@@ -87,4 +100,4 @@ The shared plate must look **colorful, bright, interesting, engaging** — unexp
 | Footer | Logo + shopsacredground.com + 847-749-3922 |
 | Faces | Tina circle only with real ref photos; otherwise symbols |
 | Overlays | `prebranded: true` → skip brand overlays |
-| Layout mix | Equal weight multi-event; vary visual language; ban mystic AI template |
+| Layout mix | Equal weight multi-event; rotate Magritte/Folk/Da Vinci/Einstein; ban mystic AI + Bauhaus/Victorian |
