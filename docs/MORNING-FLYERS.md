@@ -54,11 +54,11 @@ One excellent primary plate posts to **both Facebook and Instagram**.
 
 Do not generate a separate weaker Instagram variant. Pipeline reuses the same media URL on both platforms (all campaigns).
 
-### Color energy (hard — Founder Aug 10, 2026)
+### Color energy (hard — Founder Aug 10 + Aug 14, 2026)
 
-The shared plate must look **colorful, bright, interesting, engaging** (jewel tones + strong contrast). Reject drab / muddy / beige / grey / desaturated purple sludge and empty near-black voids. Gate: `marketing.morning_flyers.flyer_passes_visual_energy`. Aug 10 IG Lisa Maria muddy-purple empty-card plate is the reject example.
+The shared plate must look **colorful, bright, interesting, engaging** — unexpected bold color welcome (coral, teal, sunflower, eggplant), not only navy+gold. Reject drab / muddy sludge, empty near-black voids, **and** the generic mystic AI starter pack (Aug 14 reject). Gate: `flyer_passes_visual_energy`.
 
-Do not republish live posts just to swap a plate — updating archive assets for future reuse is fine.
+**Do not republish** already-live morning posts just to swap art unless the Founder explicitly asks (Aug 14: leave rejected live flyer alone; explore concepts offline in `data/composites/flyer-concepts-v1/` first).
 
 ## Daily system
 
