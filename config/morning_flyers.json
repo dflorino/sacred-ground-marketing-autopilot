@@ -1,5 +1,5 @@
 {
-  "notes": "Sacred Ground morning flyers (Founder Aug 14 2026): MIXED visual pool — four approved art languages (Magritte, Folk, Da Vinci, Einstein) PLUS existing shop-made Thursday equal-card + artistic hero / storefront collage. Sat–Wed 2026-08-15..19 regenerated ~8:39pm CT as REAL distinct art gens (not PIL navy equal-card twins). Do NOT publish to social until Founder reviews data/preview-next5-mornings/.",
+  "notes": "Sacred Ground morning flyers (Founder Aug 14 2026): MIXED visual pool — four approved art languages (Magritte, Folk, Da Vinci, Einstein) PLUS existing shop-made Thursday equal-card + artistic hero / storefront collage. Sat–Wed 2026-08-15..19 Founder-approved ~9:02pm CT for Autopilot morning publish (data/preview-next5-mornings/). Holds cleared; 9am automations may use them.",
   "prebranded_default": true,
   "layout_mix": {
     "thursday_cards_share": 0.75,
@@ -216,12 +216,13 @@
       "visual_style": "magritte_floating_door",
       "pride_baked_in": true,
       "pride_option": "B",
-      "note": "Founder Aug 14 ~8:39pm CT fix: REAL Magritte art gen — not PIL Thursday twin. Preview only until Founder approves social.",
+      "note": "Founder approved Aug 14 ~9:02pm CT for Autopilot morning publish (magritte_floating_door). Unlocked — do not manually publish tonight.",
       "media_id": 26386,
       "regenerated_at": "2026-08-14T20:45:09-05:00",
       "regenerated_reason": "founder_angry_same_thursday_design_aug14_2039ct",
       "preview_path": "data/preview-next5-mornings/01-sat-15.png",
-      "do_not_publish_until_founder_ok": true
+      "founder_approved_at": "2026-08-14T21:02:00-05:00",
+      "founder_approved": true
     },
     "2026-08-16": {
       "label": "Reiki Share Free Community Event + Angel & Quick Astrology Readings",
@@ -236,12 +237,13 @@
       "visual_style": "folk_outsider_night",
       "pride_baked_in": true,
       "pride_option": "C",
-      "note": "Founder Aug 14 ~8:39pm CT fix: REAL Folk outsider night art gen — not PIL Thursday twin. Preview only until Founder approves social.",
+      "note": "Founder approved Aug 14 ~9:02pm CT for Autopilot morning publish (folk_outsider_night). Unlocked — do not manually publish tonight.",
       "media_id": 26385,
       "regenerated_at": "2026-08-14T20:45:09-05:00",
       "regenerated_reason": "founder_angry_same_thursday_design_aug14_2039ct",
       "preview_path": "data/preview-next5-mornings/02-sun-16.png",
-      "do_not_publish_until_founder_ok": true
+      "founder_approved_at": "2026-08-14T21:02:00-05:00",
+      "founder_approved": true
     },
     "2026-08-17": {
       "label": "Lisa Maria Intuitive Tarot",
@@ -255,12 +257,13 @@
       "visual_style": "davinci_storefront_sketch",
       "pride_baked_in": true,
       "pride_option": "A",
-      "note": "Founder Aug 14 ~8:39pm CT fix: REAL Da Vinci storefront sketch art gen — not PIL Thursday twin. Preview only until Founder approves social.",
+      "note": "Founder approved Aug 14 ~9:02pm CT for Autopilot morning publish (davinci_storefront_sketch). Unlocked — do not manually publish tonight.",
       "media_id": 26382,
       "regenerated_at": "2026-08-14T20:45:09-05:00",
       "regenerated_reason": "founder_angry_same_thursday_design_aug14_2039ct",
       "preview_path": "data/preview-next5-mornings/03-mon-17.png",
-      "do_not_publish_until_founder_ok": true
+      "founder_approved_at": "2026-08-14T21:02:00-05:00",
+      "founder_approved": true
     },
     "2026-08-18": {
       "label": "Meditation Free Community Event + Amber | Customized Therapeutic Massage Sessions +",
@@ -276,12 +279,13 @@
       "visual_style": "einstein_chalkboard_map",
       "pride_baked_in": true,
       "pride_option": "B",
-      "note": "Founder Aug 14 ~8:39pm CT fix: REAL Einstein chalkboard art gen (readable) — not PIL Thursday twin. Preview only until Founder approves social.",
+      "note": "Founder approved Aug 14 ~9:02pm CT for Autopilot morning publish (einstein_chalkboard_map). Unlocked — do not manually publish tonight.",
       "media_id": 26383,
       "regenerated_at": "2026-08-14T20:45:09-05:00",
       "regenerated_reason": "founder_angry_same_thursday_design_aug14_2039ct",
       "preview_path": "data/preview-next5-mornings/04-tue-18.png",
-      "do_not_publish_until_founder_ok": true
+      "founder_approved_at": "2026-08-14T21:02:00-05:00",
+      "founder_approved": true
     },
     "2026-08-19": {
       "label": "Tina’s Tarot & Rune Sessions + Free Community Educational Night",
@@ -296,12 +300,13 @@
       "visual_style": "artistic_hero_shop_made",
       "pride_baked_in": true,
       "pride_option": "A",
-      "note": "Founder Aug 14 ~8:39pm CT fix: real storefront photo collage — NOT Thursday equal-card twin of Sat–Tue. Preview only until Founder approves social.",
+      "note": "Founder approved Aug 14 ~9:02pm CT for Autopilot morning publish (artistic_hero_shop_made). Unlocked — do not manually publish tonight.",
       "media_id": 26384,
       "regenerated_at": "2026-08-14T20:45:09-05:00",
       "regenerated_reason": "founder_angry_same_thursday_design_aug14_2039ct",
       "preview_path": "data/preview-next5-mornings/05-wed-19.png",
-      "do_not_publish_until_founder_ok": true
+      "founder_approved_at": "2026-08-14T21:02:00-05:00",
+      "founder_approved": true
     }
   },
   "template": {
@@ -340,5 +345,17 @@
       "2026-08-19"
     ],
     "reason": "Founder angry: preview showed 5 identical Thursday equal-card designs"
+  },
+  "last_founder_approval": {
+    "at": "2026-08-14T21:02:00-05:00",
+    "timezone": "America/Chicago",
+    "days": [
+      "2026-08-15",
+      "2026-08-16",
+      "2026-08-17",
+      "2026-08-18",
+      "2026-08-19"
+    ],
+    "note": "looks good the next 5 days — unlock for 9am Autopilot; no manual publish tonight"
   }
 }
