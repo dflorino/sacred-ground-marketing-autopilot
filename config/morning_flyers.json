@@ -1,5 +1,5 @@
 {
-  "notes": "Sacred Ground morning flyers (Founder Aug 14 2026): MIXED visual pool — four approved art languages (Magritte, Folk, Da Vinci, Einstein) PLUS existing shop-made Thursday equal-card + artistic hero / storefront collage. Sat–Wed 2026-08-15..19 Founder-approved ~9:02pm CT for Autopilot morning publish (data/preview-next5-mornings/). Holds cleared; 9am automations may use them.",
+  "notes": "Sacred Ground morning flyers (Founder Aug 14 2026): MIXED visual pool — four approved art languages (Magritte, Folk, Da Vinci, Einstein) PLUS existing shop-made Thursday equal-card + artistic hero approaches, interleaved with unused date-keyed queued plates. TRUE RANDOM (day-seeded) pick among series-eligible styles — do NOT run new styles only for two weeks then dump old approaches. SERIES LIMITS: max 1 consecutive day per style id, max 2 per style in any rolling 7 Chicago days. BAN Bauhaus + Victorian (archived). BAN generic mystic AI navy template (series_limit 0). EVERY plate MUST bake in Chicagoland #1 / Premier / Voted pride (NEW gens via designed_in_generation_brief; queued plates missing pride → NEW url with pride band). Gold standard readability: assets/sg-morning-flyer-2026-08-06-today-collage.png. FOOTER logo + shopsacredground.com + 847-749-3922. NEVER prices. Never-reuse URLs absolute. Do not replace a live morning post unless Founder asks.",
   "prebranded_default": true,
   "layout_mix": {
     "thursday_cards_share": 0.75,
@@ -272,20 +272,14 @@
         "Amber | Customized Therapeutic Massage Sessions",
         "Astrology & Tarot With Lisa"
       ],
-      "local": "assets/sg-morning-flyer-2026-08-18-einstein-chalkboard.png",
-      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-18-einstein-chalkboard.png",
+      "local": "assets/sg-morning-flyer-2026-08-18-meditation-free-community-ev.png",
+      "url": "",
       "prebranded": true,
-      "template": "einstein_chalkboard_map",
+      "template": "thursday-style",
       "visual_style": "einstein_chalkboard_map",
       "pride_baked_in": true,
-      "pride_option": "B",
       "note": "Founder approved Aug 14 ~9:02pm CT for Autopilot morning publish (einstein_chalkboard_map). Unlocked — do not manually publish tonight.",
-      "media_id": 26383,
-      "regenerated_at": "2026-08-14T20:45:09-05:00",
-      "regenerated_reason": "founder_angry_same_thursday_design_aug14_2039ct",
-      "preview_path": "data/preview-next5-mornings/04-tue-18.png",
-      "founder_approved_at": "2026-08-14T21:02:00-05:00",
-      "founder_approved": true
+      "url_instagram": ""
     },
     "2026-08-19": {
       "label": "Tina’s Tarot & Rune Sessions + Free Community Educational Night",
@@ -307,6 +301,34 @@
       "preview_path": "data/preview-next5-mornings/05-wed-19.png",
       "founder_approved_at": "2026-08-14T21:02:00-05:00",
       "founder_approved": true
+    },
+    "2026-08-20": {
+      "label": "Tarot + TarotHeads +",
+      "covers": [
+        "Tarot with Adie",
+        "TarotHeads With Andre Free Community Event",
+        "Tai Chi Gung with Sherry Gurley"
+      ],
+      "local": "assets/sg-morning-flyer-2026-08-20-tarot.png",
+      "url": "",
+      "prebranded": true,
+      "template": "thursday-style",
+      "visual_style": "magritte_floating_door",
+      "pride_baked_in": true
+    },
+    "2026-08-21": {
+      "label": "Vibrational Chakra Healing + Sacred Creations – A Monthly Creative & Spiritual Gathering +",
+      "covers": [
+        "Vibrational Chakra Healing With Kate",
+        "Sacred Creations – A Monthly Creative & Spiritual Gathering",
+        "Keeper of the Cards: Robert"
+      ],
+      "local": "assets/sg-morning-flyer-2026-08-21-vibrational-chakra-healing.png",
+      "url": "",
+      "prebranded": true,
+      "template": "thursday-style",
+      "visual_style": "einstein_chalkboard_map",
+      "pride_baked_in": true
     }
   },
   "template": {
