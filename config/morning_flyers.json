@@ -1,10 +1,26 @@
 {
-  "notes": "Sacred Ground daily flyer template (Thursday-style): gold standard assets/sg-morning-flyer-2026-08-06-today-collage.png. ~75% of new/future morning flyers MUST use Thursday-style clear stacked EQUAL event cards (left cards + right graphics + logo footer) — multi-event days give EVERY practitioner the SAME card size / visual weight (gold standard Aug 6). FORBIDDEN: one hero photo + tiny ALSO TODAY corner badge (Aug 7 FB reflexology/Robert rejected). Up to ~25% may be artistic single-event hero layouts ONLY when there is exactly one event. Header WEEKDAY AT Sacred Ground + Mind • Body • Spirit • Community; LEFT stacked rounded event cards; RIGHT evocative graphics in clear zones; FOOTER logo + shopsacredground.com + 847-749-3922 + come-as-you-are. COLOR ENERGY (Founder Aug 10 2026): FB and IG plates MUST be colorful, bright, interesting, and engaging — jewel tones, strong contrast, rich accents (gold / emerald / amethyst / teal / amber). FORBIDDEN: drab, muddy, beige, grey, desaturated purple AI sludge, empty near-black voids, low-saturation washes, thin faint line-art on a dead field (Aug 10 IG Lisa Maria muddy-purple empty-card plate rejected). Dark elegant backgrounds OK ONLY when lit with bright jewel accents like the Aug 6 gold standard. Versions of the system, not exact clones. Date-keyed flyers are prebranded (skip overlays). SINGLE-IMAGE MODE (Founder Aug 10 2026): one excellent primary plate (`url` / `local`) posts to BOTH Facebook and Instagram. Do not generate or require a separate weaker `url_instagram` variant — Aug 10 Lisa Maria IG muddy-purple plate proved dual variants hurt quality. Legacy `url_instagram` is ignored unless entry sets allow_ig_variant:true. Primary plate must pass flyer_passes_visual_energy. NEVER include $, dollar amounts, ticket costs, or \"$55\"-style prices on flyer graphics. Empty days get a warm visit flyer. 1–3 events max. No invented practitioner faces.",
+  "notes": "Sacred Ground morning flyers (Founder Aug 14 2026): MIXED visual pool — four approved art languages (Magritte, Folk, Da Vinci, Einstein) PLUS existing shop-made Thursday equal-card + artistic hero / storefront collage. Sat–Wed 2026-08-15..19 regenerated ~8:39pm CT as REAL distinct art gens (not PIL navy equal-card twins). Do NOT publish to social until Founder reviews data/preview-next5-mornings/.",
   "prebranded_default": true,
   "layout_mix": {
     "thursday_cards_share": 0.75,
     "artistic_hero_share": 0.25,
     "default": "thursday_cards",
+    "visual_style_mixed_pool": [
+      "magritte_floating_door",
+      "folk_outsider_night",
+      "davinci_storefront_sketch",
+      "einstein_chalkboard_map",
+      "thursday_cards_shop_made",
+      "artistic_hero_shop_made"
+    ],
+    "visual_styles_config": "config/morning_flyer_styles.json",
+    "selection_mode": "random_mixed",
+    "queue_and_reuse": "keep unused queued plates + legacy approaches in the mix; never-reuse URLs absolute; pride baked into every morning plate",
+    "series_limits": {
+      "max_consecutive_days": 1,
+      "rolling_window_days": 7,
+      "max_per_style_in_window": 2
+    },
     "platform_variants": "single-image mode (Founder Aug 10 2026): primary url/local posts to FB+IG; url_instagram ignored unless allow_ig_variant:true"
   },
   "flyers": {
@@ -185,6 +201,107 @@
         "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-14-soundbath-2.png",
         "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-14-sound-bath-or-shamanic-drum-b.png"
       ]
+    },
+    "2026-08-15": {
+      "label": "Shaman Medium Melissa + Tarot +",
+      "covers": [
+        "Shaman Medium Melissa",
+        "Tarot with Adie",
+        "Keeper of the Cards: Robert"
+      ],
+      "local": "assets/sg-morning-flyer-2026-08-15-magritte-floating-door.png",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-15-magritte-floating-door.png",
+      "prebranded": true,
+      "template": "magritte_floating_door",
+      "visual_style": "magritte_floating_door",
+      "pride_baked_in": true,
+      "pride_option": "B",
+      "note": "Founder Aug 14 ~8:39pm CT fix: REAL Magritte art gen — not PIL Thursday twin. Preview only until Founder approves social.",
+      "media_id": 26386,
+      "regenerated_at": "2026-08-14T20:45:09-05:00",
+      "regenerated_reason": "founder_angry_same_thursday_design_aug14_2039ct",
+      "preview_path": "data/preview-next5-mornings/01-sat-15.png",
+      "do_not_publish_until_founder_ok": true
+    },
+    "2026-08-16": {
+      "label": "Reiki Share Free Community Event + Angel & Quick Astrology Readings",
+      "covers": [
+        "Reiki Share Free Community Event",
+        "Angel & Quick Astrology Readings with Lin Bufelli"
+      ],
+      "local": "assets/sg-morning-flyer-2026-08-16-folk-outsider-night.png",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-16-folk-outsider-night.png",
+      "prebranded": true,
+      "template": "folk_outsider_night",
+      "visual_style": "folk_outsider_night",
+      "pride_baked_in": true,
+      "pride_option": "C",
+      "note": "Founder Aug 14 ~8:39pm CT fix: REAL Folk outsider night art gen — not PIL Thursday twin. Preview only until Founder approves social.",
+      "media_id": 26385,
+      "regenerated_at": "2026-08-14T20:45:09-05:00",
+      "regenerated_reason": "founder_angry_same_thursday_design_aug14_2039ct",
+      "preview_path": "data/preview-next5-mornings/02-sun-16.png",
+      "do_not_publish_until_founder_ok": true
+    },
+    "2026-08-17": {
+      "label": "Lisa Maria Intuitive Tarot",
+      "covers": [
+        "Lisa Maria Intuitive Tarot"
+      ],
+      "local": "assets/sg-morning-flyer-2026-08-17-davinci-storefront-sketch.png",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-17-davinci-storefront-sketch.png",
+      "prebranded": true,
+      "template": "davinci_storefront_sketch",
+      "visual_style": "davinci_storefront_sketch",
+      "pride_baked_in": true,
+      "pride_option": "A",
+      "note": "Founder Aug 14 ~8:39pm CT fix: REAL Da Vinci storefront sketch art gen — not PIL Thursday twin. Preview only until Founder approves social.",
+      "media_id": 26382,
+      "regenerated_at": "2026-08-14T20:45:09-05:00",
+      "regenerated_reason": "founder_angry_same_thursday_design_aug14_2039ct",
+      "preview_path": "data/preview-next5-mornings/03-mon-17.png",
+      "do_not_publish_until_founder_ok": true
+    },
+    "2026-08-18": {
+      "label": "Meditation Free Community Event + Amber | Customized Therapeutic Massage Sessions +",
+      "covers": [
+        "Meditation Free Community Event",
+        "Amber | Customized Therapeutic Massage Sessions",
+        "Astrology & Tarot With Lisa"
+      ],
+      "local": "assets/sg-morning-flyer-2026-08-18-einstein-chalkboard.png",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-18-einstein-chalkboard.png",
+      "prebranded": true,
+      "template": "einstein_chalkboard_map",
+      "visual_style": "einstein_chalkboard_map",
+      "pride_baked_in": true,
+      "pride_option": "B",
+      "note": "Founder Aug 14 ~8:39pm CT fix: REAL Einstein chalkboard art gen (readable) — not PIL Thursday twin. Preview only until Founder approves social.",
+      "media_id": 26383,
+      "regenerated_at": "2026-08-14T20:45:09-05:00",
+      "regenerated_reason": "founder_angry_same_thursday_design_aug14_2039ct",
+      "preview_path": "data/preview-next5-mornings/04-tue-18.png",
+      "do_not_publish_until_founder_ok": true
+    },
+    "2026-08-19": {
+      "label": "Tina’s Tarot & Rune Sessions + Free Community Educational Night",
+      "covers": [
+        "Tina’s Tarot & Rune Sessions",
+        "Free Community Educational Night"
+      ],
+      "local": "assets/sg-morning-flyer-2026-08-19-storefront-photo-collage.png",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-19-storefront-photo-collage.png",
+      "prebranded": true,
+      "template": "storefront_photo_collage",
+      "visual_style": "artistic_hero_shop_made",
+      "pride_baked_in": true,
+      "pride_option": "A",
+      "note": "Founder Aug 14 ~8:39pm CT fix: real storefront photo collage — NOT Thursday equal-card twin of Sat–Tue. Preview only until Founder approves social.",
+      "media_id": 26384,
+      "regenerated_at": "2026-08-14T20:45:09-05:00",
+      "regenerated_reason": "founder_angry_same_thursday_design_aug14_2039ct",
+      "preview_path": "data/preview-next5-mornings/05-wed-19.png",
+      "do_not_publish_until_founder_ok": true
     }
   },
   "template": {
@@ -211,5 +328,17 @@
       "No invented practitioner faces",
       "FB≠IG visuals (url + url_instagram); same full-day events; never incomplete alts"
     ]
+  },
+  "last_distinct_regen": {
+    "at": "2026-08-14T20:45:09-05:00",
+    "timezone": "America/Chicago",
+    "days": [
+      "2026-08-15",
+      "2026-08-16",
+      "2026-08-17",
+      "2026-08-18",
+      "2026-08-19"
+    ],
+    "reason": "Founder angry: preview showed 5 identical Thursday equal-card designs"
   }
 }
