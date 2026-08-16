@@ -1,0 +1,33 @@
+{
+  "timezone": "America/Chicago",
+  "note": "Founder-confirmed WordPress Media Library IDs for Cursor / ML Social video posts. Use these — never 26546 or lowercase s01e01-store-quest.mp4 for S1E1.",
+  "updated": "2026-08-16",
+  "episodes": {
+    "s1e1": {
+      "season": 1,
+      "episode": 1,
+      "library_name": "S1E1",
+      "title": "Store Quest",
+      "media_id": 26545,
+      "url": "https://shopsacredground.com/wp-content/uploads/S1E1-Store-Quest.mp4",
+      "mime_type": "video/mp4",
+      "schedule_status": "scheduled_sun_2026-08-16_night",
+      "do_not_use": {
+        "wrong_media_id": 26546,
+        "wrong_url": "https://shopsacredground.com/wp-content/uploads/s01e01-store-quest.mp4",
+        "note": "26546 was a mistaken ID / poster path; scheduled posts must use 26545 + S1E1-Store-Quest.mp4"
+      }
+    },
+    "s1e2": {
+      "season": 1,
+      "episode": 2,
+      "library_name": "S1E2",
+      "title": "Lemuria",
+      "media_id": 26537,
+      "url": "https://shopsacredground.com/wp-content/uploads/S1E2-Lemuria.mp4",
+      "mime_type": "video/mp4",
+      "schedule_status": "cancelled_not_scheduled",
+      "note": "Founder remaking S1E2 — do NOT schedule until Founder asks. Prior Mon Aug 17 drafts cancelled."
+    }
+  }
+}

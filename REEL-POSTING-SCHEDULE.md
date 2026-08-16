@@ -46,21 +46,38 @@ Still-image Autopilot (Zernio) stays separate:
 
 This reel/short cadence is for **video** story / comedy / decoder posts. It does **not** replace those image jobs and does **not** enable `campaigns.daily_reel` (scaffold schedule `10:30` in `config/reels.json` remains inactive until video publish is proven).
 
-## One-time note — S1E1 Store Quest (Sun Aug 16, 2026)
+## WordPress Media Library IDs (Founder-confirmed)
 
-S1E1 was already queued for **Sunday Aug 16** night on ML Social:
+Canonical file: **`config/reels_media.json`**. Agents must use these IDs / URLs for ML Social video posts:
 
-| Platform | Scheduled (CT) |
-|---|---|
-| Facebook | 6:45 PM |
-| Instagram | 7:00 PM |
-| YouTube | 7:00 PM |
-| TikTok | 7:30 PM |
+| Episode | Library name | Media ID | URL |
+|---|---|---|---|
+| Season 1 Episode 1 — Store Quest | **S1E1** | **26545** | `https://shopsacredground.com/wp-content/uploads/S1E1-Store-Quest.mp4` |
+| Season 1 Episode 2 — Lemuria | **S1E2** | **26537** | `https://shopsacredground.com/wp-content/uploads/S1E2-Lemuria.mp4` |
 
-**Leave those posts alone.** Founder did **not** ask to reschedule tonight. This document is the **ongoing cadence going forward**, not a retroactive change to S1E1.
+**Do not use** media ID **26546** or `…/s01e01-store-quest.mp4` for S1E1.  
+**S1E2** — Founder remaking; **not scheduled**. Do not queue until Founder asks.
+
+## S1E1 Store Quest — Sun Aug 16, 2026 (TONIGHT — KEEP)
+
+Media **26545** (`S1E1-Store-Quest.mp4`). Wrong-media originals were deleted earlier; these corrected posts stay scheduled:
+
+| Platform | Scheduled (CT) | Post id | Media |
+|---|---|---|---|
+| Facebook | 6:45 PM | `6a820b7a323f485ce2f6cd5e` | 26545 |
+| Instagram | 7:00 PM | `6a820b7b323f485ce2f6cd96` | 26545 |
+| YouTube Shorts | 7:00 PM | `6a820b7c323f485ce2f6cdc1` | 26545 |
+| TikTok | 7:30 PM | `6a820b7c323f485ce2f6cde8` | 26545 |
+
+Old wrong-media ids (deleted): `6a8204a952e7ad0aab0854d9` · `6a8204ab23fabe1c288bd828` · `6a8204ac23fabe1c288bd85a` · `6a8204ac52e7ad0aab085527`
+
+## S1E2 Lemuria — CANCELLED (not scheduled)
+
+Founder remaking S1E2. Any Mon Aug 17 drafts cancelled. Media ID **26537** remains inventory only — **do not schedule**.
 
 ## Related docs
 
+- `config/reels_media.json` — Founder Media Library IDs (S1E1 / S1E2)
 - `REELS-PLAN.md` — HeyGen AI-Deneene stack, scaffold status, isolation from image jobs
 - `AUTOMATION-DRAFT.md` — inactive “SG Daily Reels 10:30am” Cloud Agent draft (do not activate from this schedule alone)
 - `config/reels.json` — scaffold publish config (`auto_publish: false`)
