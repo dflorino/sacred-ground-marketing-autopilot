@@ -113,6 +113,6 @@ assets/heygen/   store backgrounds for AI-Deneene reels
 scripts/         one-shot runners + WP import + heygen_dry_run.py
 ```
 
-**Reels (Instagram + Facebook Reels daily target):** HeyGen 9:16 video path — scaffolded, **not** auto-published yet. Image Today/week-ahead/Tuesday jobs stay on Zernio. See `REELS-PLAN.md`. Status: `python3 -m marketing reels-status`. Dry-run: `python3 scripts/heygen_dry_run.py`.
+**Reels (Instagram + Facebook Reels daily target):** HeyGen 9:16 video path — scaffolded, **not** auto-published yet. Image Today/week-ahead/Tuesday jobs stay on Zernio. See `REELS-PLAN.md`. **Founder posting cadence (ML Social):** `REEL-POSTING-SCHEDULE.md`. Status: `python3 -m marketing reels-status`. Dry-run: `python3 scripts/heygen_dry_run.py`.
 
 See `API-CONTRACT.md` for the draft artifact shape.

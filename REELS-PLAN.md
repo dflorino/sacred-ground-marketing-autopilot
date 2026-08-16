@@ -5,6 +5,8 @@ Daily short-form spoken by an AI avatar of Deneene (look + voice), with Sacred G
 **Founder target (locked):** daily **Instagram Reels** + **Facebook Reels** (America/Chicago).  
 TikTok + YouTube Shorts stay optional / later.
 
+**Posting cadence (story / comedy / Shorts going forward):** see **`REEL-POSTING-SCHEDULE.md`** (Founder 2026 guidelines — ML Social scheduled; not Autopilot cron).
+
 ## Chosen stack: HeyGen
 
 **Locked** (Founder: “pick for me”). Default was HeyGen; that is now the v1 stack.
@@ -34,7 +36,7 @@ Dry-run CLI: `python3 scripts/heygen_dry_run.py`
 | First short scripts | Batch 01 committed (welcome, Tuesday meditation, shop vibe, …) |
 | Target platforms | **Instagram Reels + Facebook Reels** (primary, daily) |
 | Optional later | TikTok + YouTube Shorts |
-| Suggested post time | **10:30 AM** America/Chicago (late morning; avoids 7am/4pm/7pm image jobs) |
+| Suggested post time (scaffold only) | **10:30 AM** America/Chicago — inactive Autopilot stub; **live cadence** → `REEL-POSTING-SCHEDULE.md` |
 | API generate | Needs `HEYGEN_API_KEY` + avatar/voice IDs in env (not in repo) |
 | **FB/IG still-image autopilot** | **Live via Zernio** — Today 7am, Tuesday meditation 4pm, week-ahead 7pm |
 | **Video / Reels auto-publish** | **Not ready** — scaffold only (`auto_publish: false`) |

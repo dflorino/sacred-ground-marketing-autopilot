@@ -266,7 +266,9 @@ Daily AI-Deneene short-form video for **Instagram Reels + Facebook Reels**.
 
 **Status: NOT Active.** Scaffold only. `daily_reel.auto_publish=false`. Do **not** turn this automation on until a 9:16 video has been posted successfully via Zernio/ML Social (or Meta Reels) end-to-end.
 
-Suggested time: **10:30 AM America/Chicago** (late morning — clears 9am morning, 4pm Tuesday meditation, 5pm afternoon, 7pm week-ahead image jobs).
+Suggested time (scaffold only): **10:30 AM America/Chicago** (late morning — clears 9am morning, 4pm Tuesday meditation, 5pm afternoon, 7pm week-ahead image jobs).
+
+**Founder live reel/short cadence (going forward):** see **`REEL-POSTING-SCHEDULE.md`** — Wed 6pm main episode, Tue/Thu/Fri slots, platform defaults. That cadence is **ML Social scheduled**, not this Cloud Agent. Do not invent Autopilot cron from that doc; do not reschedule already-queued one-offs (e.g. S1E1) unless Founder asks.
 
 TikTok / YouTube Shorts = optional later (same asset).
 
