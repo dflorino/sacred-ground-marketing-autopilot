@@ -213,6 +213,12 @@
       "url": "https://shopsacredground.com/wp-content/uploads/tarot-9.png",
       "rule": "event_featured",
       "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-08-17",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-17-davinci-storefront-sketch.png",
+      "rule": "morning_flyer",
+      "campaign": "today"
     }
   ]
 }

@@ -32,8 +32,8 @@
       "start_date": "2026-08-16 15:00:00",
       "end_date": "2026-08-16 17:00:00",
       "all_day": false,
-      "featured": true,
-      "timezone": "America/New_York",
+      "featured": false,
+      "timezone": "America/Chicago",
       "image": {
         "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_mystical-reiki-share-with-a-gl_1767925832.png"
       },
