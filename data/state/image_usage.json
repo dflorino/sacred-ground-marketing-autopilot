@@ -213,6 +213,24 @@
       "url": "https://shopsacredground.com/wp-content/uploads/tarot-9.png",
       "rule": "event_featured",
       "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-08-17",
+      "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Close-up-intimate-view-of-a-sm_1762732993.png",
+      "rule": "event_featured",
+      "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-08-17",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-17-davinci-storefront-sketch.png",
+      "rule": "morning_flyer",
+      "campaign": "today"
+    },
+    {
+      "date": "2026-08-17",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-neon-fog-alley-1.png",
+      "rule": "week_ahead_creative_neon_fog_alley",
+      "campaign": "week_ahead"
     }
   ]
 }

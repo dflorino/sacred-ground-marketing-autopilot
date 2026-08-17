@@ -83,9 +83,11 @@ Canonical file: **`config/reels_media.json`**. Agents must use these IDs / URLs 
 **Do not use** media ID **26546** or `…/s01e01-store-quest.mp4` for S1E1.  
 **S1E2** — Founder remaking; **not scheduled**. Do not queue until Founder asks.
 
-## S1E1 Store Quest — Sun Aug 16, 2026 (TONIGHT — published)
+## S1E1 Store Quest — Sun Aug 16, 2026 (PUBLISHED — DO NOT REPOST)
 
 Media **26545** (`S1E1-Store-Quest.mp4`). Verified ~7:43 PM CT via ML Social `social_posts` / `social_accounts`. Do **not** cancel live successes.
+
+**Hard rule (Founder Aug 17, 2026 ~9:35 AM CT):** S1E1 is a **one-shot**. Do **not** republish, recycle, or put on any daily/weekly Autopilot or “Reel-building Friday” cron. Stories remaining visible the next morning (~24h tray) are **not** a new publish. If ML Social shows a **future scheduled** S1E1 duplicate, cancel that queue only — never cancel live successes or legitimate image Autopilot posts.
 
 ### Brand traction (Sacred Ground)
 

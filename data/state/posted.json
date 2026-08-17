@@ -1035,7 +1035,159 @@
           "message": "Post published successfully"
         }
       }
+    },
+    "today|2026-08-17|facebook|19980,23853,24179,24594": {
+      "draft_id": "sgma-2026-08-17-today-fb-33326974",
+      "posted_at": "2026-08-17T09:40:00.219238-05:00",
+      "external": {
+        "zernio": {
+          "post": {
+            "recycling": {
+              "enabled": false,
+              "gapFreq": "month",
+              "recycleCount": 0,
+              "contentVariations": [],
+              "contentVariationIndex": 0
+            },
+            "_id": "6a831d0acb6a30bf1f9d6f5d",
+            "userId": "6a49a0ca1f5ee39905d0dc6f",
+            "title": "",
+            "content": "Here’s today at Sacred Ground, then what’s coming tomorrow.\n\nToday at Sacred Ground\n\n• Lisa Maria Intuitive Tarot\n  Monday, August 17 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/book/lisa-maria/\n\nTomorrow at Sacred Ground\n\n• Astrology & Tarot With Lisa\n  Tuesday, August 18 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/book/lisa/\n\n• Amber | Customized Therapeutic Massage Sessions\n  Tuesday, August 18 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/book/amber/\n\n• Free Community Meditation\nTuesday night 7:00–8:00 PM\nAll are welcome\nNo sign-up needed\nDoors close at 7:05pm\n\nDetails & signup on each event page.\n\nHope to see you soon.\n\n#SacredGround #ArlingtonHeights #ShopSacredGround #ChicagoEvents #CrystalShop #EnergyHealing #HolisticCenter #RockShop #Kindness",
+            "mediaItems": [
+              {
+                "type": "image",
+                "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-17-davinci-storefront-sketch.png",
+                "_id": "6a831d0acb6a30bf1f9d6f5e"
+              }
+            ],
+            "platforms": [
+              {
+                "platform": "facebook",
+                "accountId": {
+                  "_id": "6a49a1f49d9472faae7c274e",
+                  "platform": "facebook",
+                  "profileId": "6a49a0ca1f5ee39905d0dc87",
+                  "displayName": "Sacred Ground",
+                  "isActive": true,
+                  "profilePicture": "https://scontent-lhr11-1.xx.fbcdn.net/v/t39.30808-1/525520556_778113704730537_8989064612556217432_n.jpg?stp=c412.0.720.720a_cp0_dst-jpg_s50x50_tt6&_nc_cat=106&ccb=1-7&_nc_sid=f907e8&_nc_ohc=oVvv85bo7w8Q7kNvwFU803F&_nc_oc=AdrQvyRsi-5pQ8aQKfGwu0iw-AHiq4225B8zRlffbcbeJ70zfzE9rRTzLQrrOmPhcXw&_nc_zt=24&_nc_ht=scontent-lhr11-1.xx&edm=AJdBtusEAAAA&_nc_gid=i8OIgurvuWxxAi22m_90_A&_nc_tpa=Q5bMBQJRDWomjJ1hFWDsppVLkwmwtDwlAagryctqML4vEXe6GzBwYGxxG0ki5bjg96D2ZzXJKitoafUS&oh=00_AQEpC6Yo5al33JKWiu8ZtDvtUFMGeXi6fUN1pkYaREIvlQ&oe=6A88663C",
+                  "username": "shopsacredground"
+                },
+                "profileId": "6a49a0ca1f5ee39905d0dc87",
+                "customMedia": [],
+                "scheduledFor": "2026-08-17T14:39:05.638Z",
+                "platformSpecificData": {
+                  "firstComment": "Sacred Ground — Chicagoland’s Premier Crystal Store & Holistic Destination.",
+                  "__platformUserIdSnapshot": "10236438766043851:page:101428372368870",
+                  "__usernameSnapshot": "shopsacredground",
+                  "publishingStarted": "2026-08-17T14:39:07.095Z",
+                  "lastPublishStage": "publishing"
+                },
+                "status": "published",
+                "publishAttempts": 0,
+                "contentHash": "3fbf57b1c4d2c89b418aa6f2a1df160a",
+                "_id": "6a831d0acb6a30bf1f9d6f5f",
+                "platformPostId": "101428372368870_1089353440273227",
+                "platformPostUrl": "https://www.facebook.com/101428372368870_1089353440273227",
+                "publishedAt": "2026-08-17T14:39:59.803Z"
+              }
+            ],
+            "scheduledFor": "2026-08-17T14:39:05.638Z",
+            "timezone": "America/Chicago",
+            "status": "published",
+            "tags": [],
+            "hashtags": [],
+            "mentions": [],
+            "visibility": "public",
+            "crosspostingEnabled": true,
+            "metadata": {
+              "usageCounted": true
+            },
+            "publishAttempts": 0,
+            "createdAt": "2026-08-17T14:39:06.506Z",
+            "updatedAt": "2026-08-17T14:39:59.935Z",
+            "__v": 0,
+            "publishingClaimedAt": "2026-08-17T14:39:06.693Z"
+          },
+          "message": "Post published successfully"
+        }
+      }
+    },
+    "today|2026-08-17|instagram|19980,23853,24179,24594": {
+      "draft_id": "sgma-2026-08-17-today-ig-8b8b92fa",
+      "posted_at": "2026-08-17T09:40:17.885661-05:00",
+      "external": {
+        "zernio": {
+          "post": {
+            "recycling": {
+              "enabled": false,
+              "gapFreq": "month",
+              "recycleCount": 0,
+              "contentVariations": [],
+              "contentVariationIndex": 0
+            },
+            "_id": "6a831d452a0f48580e69adf4",
+            "userId": "6a49a0ca1f5ee39905d0dc6f",
+            "title": "",
+            "content": "Here’s today at Sacred Ground — then a peek at tomorrow.\n\nToday at Sacred Ground\n\n• Lisa Maria Intuitive Tarot\n  Monday, August 17 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/book/lisa-maria/\n\nTomorrow at Sacred Ground\n\n• Astrology & Tarot With Lisa\n  Tuesday, August 18 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/book/lisa/\n\n• Amber | Customized Therapeutic Massage Sessions\n  Tuesday, August 18 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/book/amber/\n\n• Free Community Meditation\nTuesday night 7:00–8:00 PM\nAll are welcome\nNo sign-up needed\nDoors close at 7:05pm\n\nDetails & signup on each event page.\n\nWe'll keep a seat warm.\n\nSacred Ground — Chicagoland’s Premier Crystal Store & Holistic Destination.\n\n#SacredGround #ArlingtonHeights #ShopSacredGround #ChicagoEvents #CrystalShop #EnergyHealing #HolisticCenter #RockShop #Kindness #Chicagoland #HolisticChicago",
+            "mediaItems": [
+              {
+                "type": "image",
+                "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-17-davinci-storefront-sketch.png",
+                "_id": "6a831d452a0f48580e69adf5"
+              }
+            ],
+            "platforms": [
+              {
+                "platform": "instagram",
+                "accountId": {
+                  "_id": "6a49a12e9d9472faae7c2220",
+                  "profileId": "6a49a0ca1f5ee39905d0dc87",
+                  "platform": "instagram",
+                  "displayName": "Sacred Ground",
+                  "isActive": true,
+                  "profilePicture": "https://scontent-lhr11-1.cdninstagram.com/v/t51.2885-19/313932603_854045628963650_758437280360514790_n.jpg?stp=dst-jpg_s206x206_tt6&_nc_cat=107&ccb=7-5&_nc_sid=bf7eb4&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=9AmypcX1KSQQ7kNvwE9B99O&_nc_oc=AdpsrrsKFBejc_HqSe5uMzCDYIVsPEGGkBbfqXTPMAOGAl9wOWcS7wcLy7G_GEjVgvw&_nc_zt=24&_nc_ht=scontent-lhr11-1.cdninstagram.com&edm=AP4hL3IEAAAA&_nc_tpa=Q5bMBQKyfxK06S0aM3TrOQMmSdXm7y_MS8Z4j0fMe_TUl57uPSrCzrQ_iGQkHGH-SDrAQpoG-VVKlMMnOA&oh=00_AQHmc1JfCRXWv9sJZFwIeF1HvFbN-9-JaqgrxzyDYNcGRg&oe=6A88474A",
+                  "username": "shopsacredground"
+                },
+                "profileId": "6a49a0ca1f5ee39905d0dc87",
+                "customMedia": [],
+                "scheduledFor": "2026-08-17T14:40:02.338Z",
+                "platformSpecificData": {
+                  "firstComment": "Sacred Ground — Chicagoland’s Premier Crystal Store & Holistic Destination.",
+                  "__platformUserIdSnapshot": "27979692144969047",
+                  "__usernameSnapshot": "shopsacredground",
+                  "publishingStarted": "2026-08-17T14:40:06.928Z",
+                  "lastPublishStage": "awaiting-finalize",
+                  "containerCreatedAt": "2026-08-17T14:40:17.499Z",
+                  "pendingContainerId": "18081635108677764",
+                  "publishedCaption": "Here’s today at Sacred Ground — then a peek at tomorrow.\n\nToday at Sacred Ground\n\n• Lisa Maria Intuitive Tarot\n  Monday, August 17 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/book/lisa-maria/\n\nTomorrow at Sacred Ground\n\n• Astrology & Tarot With Lisa\n  Tuesday, August 18 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/book/lisa/\n\n• Amber | Customized Therapeutic Massage Sessions\n  Tuesday, August 18 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/book/amber/\n\n• Free Community Meditation\nTuesday night 7:00–8:00 PM\nAll are welcome\nNo sign-up needed\nDoors close at 7:05pm\n\nDetails & signup on each event page.\n\nWe'll keep a seat warm.\n\nSacred Ground — Chicagoland’s Premier Crystal Store & Holistic Destination.\n\n#SacredGround #ArlingtonHeights #ShopSacredGround #ChicagoEvents #CrystalShop #EnergyHealing #HolisticCenter #RockShop #Kindness #Chicagoland #HolisticChicago"
+                },
+                "status": "processing",
+                "publishAttempts": 0,
+                "contentHash": "a75aa4111845e3c56974b03950a8685b",
+                "_id": "6a831d452a0f48580e69adf6"
+              }
+            ],
+            "scheduledFor": "2026-08-17T14:40:02.338Z",
+            "timezone": "America/Chicago",
+            "status": "publishing",
+            "tags": [],
+            "hashtags": [],
+            "mentions": [],
+            "visibility": "public",
+            "crosspostingEnabled": true,
+            "metadata": {
+              "usageCounted": true
+            },
+            "publishAttempts": 0,
+            "createdAt": "2026-08-17T14:40:05.782Z",
+            "updatedAt": "2026-08-17T14:40:17.517Z",
+            "__v": 0,
+            "publishingClaimedAt": "2026-08-17T14:40:06.241Z"
+          },
+          "message": "Post published successfully"
+        }
+      }
     }
   },
-  "updated_at": "2026-08-16T11:14:02.346745-05:00"
+  "updated_at": "2026-08-17T09:40:17.885666-05:00"
 }
