@@ -22,11 +22,11 @@ Secret on all live image jobs: **`ZERNIO_API_KEY`**. Repo: `dflorino/sacred-grou
 
 ### Hard anti-repost rules (reels / one-shots)
 
-1. **S1E1 Store Quest (media 26545) is DONE** — published Sun Aug 16 evening. Never republish, never recycle, never put on any Autopilot / ML Social daily or weekly republish cron (including brand YouTube catch-up).
-2. Image Autopilot jobs (9am / 5pm / 7pm / Tue 4pm) must **never** call reel publish or re-queue finished video episodes.
-3. `SG Daily Reels 10:30am` stays **Inactive**. Live reel/short cadence is ML Social one-shots per `REEL-POSTING-SCHEDULE.md` — not that HeyGen scaffold.
-4. **SG Reel-building Friday Spencer stays Active** — separate job. Weekly YouTube scrub of Spencer’s Friday video → file into `sacredground-maintenance` `reel-building/` → report findings. It does **not** publish or republish S1E1 / shop episodes. Do **not** deactivate it when locking S1E1.
-5. If Founder sees a reel “again,” check ML Social `scheduled` queue first; cancel only **future** S1E1 duplicates — never cancel live successes, legitimate morning/afternoon/week-ahead image posts, or the Friday Spencer scrub Automation.
+1. **S1E1 Store Quest (media 26545) is COMPLETE / NEVER republish** — published once Sun Aug 16 evening. Permanently blocked on every platform (FB / IG / TikTok / YouTube / Stories / Reels / Shorts). Never recycle, requeue, or brand-YouTube backfill.
+2. Image Autopilot jobs (9am / 5pm / 7pm / Tue 4pm) must **never** call reel publish or re-queue finished video episodes — especially never S1E1 / 26545 / Store Quest.
+3. `SG Daily Reels 10:30am` stays **Inactive**. Live reel/short cadence for **new** episodes is ML Social one-shots per `REEL-POSTING-SCHEDULE.md` — not that HeyGen scaffold.
+4. **SG Reel-building Friday Spencer stays Active** — Founder clarification Mon Aug 17. Separate weekly YouTube scrub of Spencer’s Friday video → file into `sacredground-maintenance` `reel-building/` → report findings. It does **not** publish or republish S1E1 / shop episodes. Do **not** deactivate it when locking S1E1.
+5. If Founder sees a reel “again,” check ML Social `scheduled` queue first; cancel only **future** S1E1 / 26545 / Store Quest duplicates — never cancel live successes, legitimate morning/afternoon/week-ahead image posts, or the Friday Spencer scrub Automation.
 
 ## Founder clicks — morning (rename + 9am) — DO THIS FIRST after a miss
 
@@ -266,7 +266,8 @@ Hard rules:
    Uses ZERNIO_API_KEY from Cloud Agent secrets. Do not call publish-today or publish-week-ahead.
 9. Caption is the dedicated meditation post (anonymous block only — Founder 2026-08-09: never name who leads): Free Community Meditation / Tuesday night 7:00–8:00 PM (`session_display`) / All are welcome / No sign-up needed / Doors close at 7:05pm (`doors_close_display`). `meditation_hosts.json` is ops-only, not for captions. No door/light goodnight closer. No o'clock. Not the morning Today lineup. Do not regenerate or republish an already-published Tuesday (e.g. leave Aug 4 2026 as-is).
 10. Image from the meditation pool only (Om / silhouette / metaphysical journey / sg-morning-meditation).
-11. Summarize: platforms, image URL, scheduledFor (should be 4:00 PM America/Chicago unless already past), Zernio post IDs/links.
+11. NEVER publish or republish Reels / S1E1 / video episodes from this job. S1E1 Store Quest (media 26545) is COMPLETE / NEVER republish on any platform.
+12. Summarize: platforms, image URL, scheduledFor (should be 4:00 PM America/Chicago unless already past), Zernio post IDs/links.
 ```
 
 ## Editor checklist — Tuesday 4pm
@@ -290,7 +291,7 @@ Suggested time (scaffold only): **10:30 AM America/Chicago** (late morning — c
 
 **Founder live reel/short cadence (going forward):** see **`REEL-POSTING-SCHEDULE.md`** — Wed 6pm main episode, Tue/Thu/Fri slots, platform defaults. That cadence is **ML Social scheduled**, not this HeyGen Cloud Agent scaffold. Do not invent Autopilot cron from that doc. **S1E1 is COMPLETE — never republish** (not even if Founder reconnects brand YouTube).
 
-**ANTI-REPOST (Founder Aug 17, 2026):** S1E1 Store Quest is **finished** (Sun Aug 16 evening) — **never** republish media **26545** (no daily Autopilot, no recycle, no brand-YouTube catch-up republish). **SG Reel-building Friday Spencer stays Active** — that job is a weekly Spencer YouTube scrub → `sacredground-maintenance` `reel-building/` filing + report; it is **not** S1E1 republish. `SG Daily Reels 10:30am` (HeyGen scaffold) stays **Inactive**. Image Autopilot (9am/5pm/7pm/Tue4pm) stays separate.
+**ANTI-REPOST FINAL (Founder Mon Aug 17, 2026 America/Chicago):** S1E1 Store Quest (media **26545**) is **COMPLETE / NEVER republish** on any platform — it only went out once and must never go out again. **SG Reel-building Friday Spencer stays Active** — weekly Spencer YouTube scrub → `sacredground-maintenance` `reel-building/` filing + report; it is **not** S1E1 republish and must not be deactivated. `SG Daily Reels 10:30am` (HeyGen scaffold) stays **Inactive**. Image Autopilot (9am/5pm/7pm/Tue4pm) stays separate and must never ship S1E1.
 
 TikTok / YouTube Shorts = optional later (same asset).
 
