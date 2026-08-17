@@ -7,6 +7,20 @@ TikTok + YouTube Shorts stay optional / later.
 
 **Posting cadence (story / comedy / Shorts going forward):** see **`REEL-POSTING-SCHEDULE.md`** (Founder 2026 guidelines — ML Social scheduled; not Autopilot cron).
 
+## North star (Founder Mon Aug 17, 2026 America/Chicago)
+
+Metaphysics is getting big — Sacred Ground / Team Sacred Ground wants an **unusual cartoon** take, not generic crystal-shop content. Spend on fun, distinctive, shareable reels so someone notices; investment is discovery bait for a bigger opportunity (audience / partners), not a guarantee.
+
+| Pillar | Rule |
+|---|---|
+| **Series** | Unusual metaphysics cartoon — distinctive, series-driven |
+| **S1E1** | Store Quest shipped once — **never republish** (see schedule) |
+| **Reach** | Organic + optional legitimate boosts only — **never** bots / fake engagement |
+| **Path to bigger** | Consistency + brand channels + hooks; discovery by people, not promised outcomes |
+| **vs 5pm image** | Reels may eventually replace **some** afternoon spotlight posts when production keeps up — **not daily yet** |
+
+Cadence + media IDs: `REEL-POSTING-SCHEDULE.md`.
+
 ## Chosen stack: HeyGen
 
 **Locked** (Founder: “pick for me”). Default was HeyGen; that is now the v1 stack.

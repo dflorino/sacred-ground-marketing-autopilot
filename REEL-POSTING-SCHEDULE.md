@@ -6,6 +6,10 @@ Canonical cadence for Sacred Ground **Reels / Shorts** across Instagram, Faceboo
 **Source:** Founder recommendations reflecting large 2026 platform studies (IG, FB, TikTok, YouTube Shorts).  
 **How this is posted today:** ML Social **manual / scheduled** posts — **not** Zernio Autopilot cron. Do not invent or activate Autopilot reel automation from this doc alone. See `REELS-PLAN.md` + `AUTOMATION-DRAFT.md` for the separate (still inactive) HeyGen `daily_reel` scaffold.
 
+## North star (Founder Mon Aug 17, 2026 America/Chicago)
+
+Unusual **metaphysics cartoon** series (Sacred Ground / Team Sacred Ground) — fun, distinctive, shareable, series-driven. Goal: reach people who notice something special; not generic crystal-shop content. Organic reach + optional legitimate boosts only (**never** bots / fake engagement). Path to bigger = consistency + brand channels + hooks; discovery by audience/partners, not guaranteed. **S1E1 Store Quest** shipped once — never republish. Reels may eventually replace **some** 5pm image posts when production keeps up — **not daily yet**. Full vision: `REELS-PLAN.md` → North star.
+
 ## Hard rule — brand coverage (all SM platforms)
 
 **Founder (Aug 16, 2026):** traction requires every episode on **all** social platforms — brand accounts only.
@@ -69,7 +73,7 @@ Still-image Autopilot (Zernio) stays separate:
 | Afternoon spotlight | 5:00 PM | Image Autopilot |
 | Week-ahead night | 7:00 PM | Image Autopilot |
 
-This reel/short cadence is for **video** story / comedy / decoder posts. It does **not** replace those image jobs and does **not** enable `campaigns.daily_reel` (scaffold schedule `10:30` in `config/reels.json` remains inactive until video publish is proven).
+This reel/short cadence is for **video** story / comedy / decoder posts. It does **not** enable `campaigns.daily_reel` (scaffold schedule `10:30` in `config/reels.json` remains inactive until video publish is proven). Image Autopilot stays on until Founder says otherwise; reels may later absorb **some** 5pm slots when production keeps up (North star) — not daily yet.
 
 ## WordPress Media Library IDs (Founder-confirmed)
 
