@@ -96,7 +96,7 @@ Media **26545** (`S1E1-Store-Quest.mp4`). Verified ~7:43 PM CT via ML Social `so
 | **FB Story** (Zernio CDN) | ✅ brand | ~7:35 PM | `6a825747be9ba353a3d363aa` → stories on Sacred Ground page |
 | **IG Reel** | ✅ brand | ~6:57 PM | `6a824e52f73862dcd77323da` → [reel](https://www.instagram.com/reel/DcHsgELka4k/) |
 | **IG Story** | ✅ brand | ~7:05 PM | `6a82504ee9b3fe4cc1f571d0` |
-| **TikTok** | ✅ brand `@shopsacredground` | 7:30 PM | `6a820b7c323f485ce2f6cde8` |
+| **TikTok** | ✅ brand `@shopsacredground` | 7:30 PM | `6a820b7c323f485ce2f6cde8` → [video](https://www.tiktok.com/@shopsacredground/video/7674791869305441550) |
 
 ### Gap — brand YouTube
 
@@ -132,6 +132,32 @@ Tonight’s failure: ML Social / Zernio FB Story with a WP-hosted MP4 failed bec
 3. Schedule IG/FB shorts with explicit `contentType: "reel"` or `contentType: "story"` (not plain video alone).
 4. Do not rewrite or cancel live/scheduled successful posts unless Founder asks.
 5. After brand YouTube is connected: republish S1E1 (media **26545**) as a Short on the brand channel only.
+6. **Name in closed captions:** never rely on platform auto-ASR for the Founder’s name (see hard rule below).
+
+## Hard rule — closed captions / name spelling (Founder Aug 16, 2026)
+
+**Correct spelling always:** **Deneene** (D-E-N-E-E-N-E). Never **Denise**. Never incomplete **Deneen**.
+
+Auto closed captions (volume-off viewers) routinely mishear the name. Platform auto-ASR is **not** good enough for Sacred Ground video posts.
+
+| Requirement | Rule |
+|---|---|
+| Before publish | Burn in correct captions **or** upload / review custom captions (SRT or in-app editor) with **Deneene** spelled correctly |
+| Never | Ship relying on unreviewed auto-generated captions for any spoken “Deneene” |
+| Post-publish | YouTube Studio can Duplicate & Edit / upload SRT; Meta Page videos may allow caption edit in Business Suite; **IG Reels auto-captions generally lock after publish**; TikTok may allow Edit post → captions on eligible videos only |
+| Agent APIs | ML Social MCP (`social_publish` / `social_posts`) has **no** subtitle/caption-track edit — agents cannot fix ASR remotely |
+
+### Founder fix paths (S1E1 Store Quest — live Sun Aug 16, 2026)
+
+Do **not** delete live posts unless a platform forces re-upload.
+
+| Platform | Live URL | Remote agent fix? | Founder action |
+|---|---|---|---|
+| **YouTube** (personal `@deneeneflorino4711`) | [OqDCjr3BPY0](https://www.youtube.com/watch?v=OqDCjr3BPY0) | **No** (no YT OAuth / caption API in this workspace) | Auto track currently opens with **“I'm Deni.”** — fix to **“I'm Deneene.”** YouTube Studio → Subtitles → English (auto-generated) → **Duplicate and edit** → correct every wrong name → Publish. Or upload a corrected `.srt`. |
+| **Facebook Watch** | [watch/?v=1326169786395522](https://www.facebook.com/watch/?v=1326169786395522) | **No** | Meta Business Suite → Content → that video → Edit → Captions / Closed captions → edit auto-generated or upload `.srt` with **Deneene**. (Official help also: Page post → Edit Post → Closed captions.) |
+| **Facebook Reel** | [reel/2118708588998551](https://www.facebook.com/reel/2118708588998551) | **No** | Try same Business Suite / Edit path first. If captions are not editable on the Reel surface, options are limited — prefer leaving engagement and fixing via Watch copy if that track is what CC uses, or re-upload only if Founder decides. |
+| **Instagram Reel** | [DcHsgELka4k](https://www.instagram.com/reel/DcHsgELka4k/) | **No** | Auto video captions generally **cannot** be edited after publish. Written post caption under the Reel can still be edited (does not fix on-video CC). Fix requires delete + re-upload with corrected Captions sticker / burn-in — **only if Founder accepts losing engagement**. |
+| **TikTok** `@shopsacredground` | [video/7674791869305441550](https://www.tiktok.com/@shopsacredground/video/7674791869305441550) | **No** | App → video → **⋯** → **Edit post** → if Captions appear, correct every Denise → **Deneene**. If Edit captions is missing, re-upload with Captions enabled and reviewed before post. |
 
 ## Related docs
 
