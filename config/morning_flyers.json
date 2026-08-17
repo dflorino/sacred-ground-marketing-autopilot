@@ -1,5 +1,5 @@
 {
-  "notes": "Sacred Ground morning flyers (Founder Aug 14 2026): MIXED visual pool — four approved art languages (Magritte, Folk, Da Vinci, Einstein) PLUS existing shop-made Thursday equal-card + artistic hero / storefront collage. Sat–Wed 2026-08-15..19 Founder-approved ~9:02pm CT for Autopilot morning publish (data/preview-next5-mornings/). Holds cleared; 9am automations may use them.",
+  "notes": "Sacred Ground morning flyers (Founder Aug 14 2026): MIXED visual pool \u2014 four approved art languages (Magritte, Folk, Da Vinci, Einstein) PLUS existing shop-made Thursday equal-card + artistic hero / storefront collage. Sat\u2013Wed 2026-08-15..19 Founder-approved ~9:02pm CT for Autopilot morning publish (data/preview-next5-mornings/). Holds cleared; 9am automations may use them.",
   "prebranded_default": true,
   "layout_mix": {
     "thursday_cards_share": 0.75,
@@ -27,7 +27,7 @@
     "2026-08-05": {
       "label": "Tina Tarot & Runes + Karen Soul Alignment",
       "covers": [
-        "Tina’s Tarot & Rune Sessions",
+        "Tina\u2019s Tarot & Rune Sessions",
         "Soul Alignment w/ Karen"
       ],
       "local": "assets/sg-morning-flyer-2026-08-05-tina-karen.png",
@@ -37,18 +37,18 @@
       "template": "thursday-style"
     },
     "2026-08-06": {
-      "label": "Thursday collage — Tai Chi, Adie Tarot, Eve Quantum (Fire Horse)",
+      "label": "Thursday collage \u2014 Tai Chi, Adie Tarot, Eve Quantum (Fire Horse)",
       "covers": [
         "Tai Chi Gung with Sherry Gurley",
         "Tarot with Adie",
-        "Quantum Alignment Series — Light Codes with Eve"
+        "Quantum Alignment Series \u2014 Light Codes with Eve"
       ],
       "local": "assets/sg-morning-flyer-2026-08-06-today-collage.png",
       "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-06-today-collage-1.png",
       "prebranded": true,
       "media_id": 25906,
       "template": "thursday-style",
-      "note": "Gold standard. FB+IG may share this single primary url for Aug 6 (do not overwrite / do not force a second variant / do not republish). Priced WP eve-quantum.png ($55) removed from rotation — archival price-free Fire Horse alt at eve-quantum-2.png media 25907 (not selected)."
+      "note": "Gold standard. FB+IG may share this single primary url for Aug 6 (do not overwrite / do not force a second variant / do not republish). Priced WP eve-quantum.png ($55) removed from rotation \u2014 archival price-free Fire Horse alt at eve-quantum-2.png media 25907 (not selected)."
     },
     "2026-08-07": {
       "label": "The Reflexology Reset + Keeper of the Cards",
@@ -69,7 +69,7 @@
         "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-07-the-reflexology-reset-b-1.png"
       ],
       "archive_unequal_fb": "assets/sg-morning-flyer-2026-08-07-reflexology.png",
-      "note": "Founder Aug 7 2026 evening: FB live URL was unequal hero+tiny Robert corner — REJECTED for future. Local FB replaced with equal-cards PIL (sg-morning-flyer-2026-08-07-equal-cards.png). IG equal cards OK. Do NOT republish Aug 7 live posts. Live url left as historical published asset."
+      "note": "Founder Aug 7 2026 evening: FB live URL was unequal hero+tiny Robert corner \u2014 REJECTED for future. Local FB replaced with equal-cards PIL (sg-morning-flyer-2026-08-07-equal-cards.png). IG equal cards OK. Do NOT republish Aug 7 live posts. Live url left as historical published asset."
     },
     "2026-08-08": {
       "label": "Shaman Medium Melissa + Tarot with Andre + Lions Gate Meditation with Eve",
@@ -90,7 +90,7 @@
         "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-08-lions-gate-1.png",
         "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-08-lions-gate-b-1.png"
       ],
-      "note": "Updated for Lions Gate Meditation with Eve 8pm (TEC 25926). Dual full-day Thursday-style variants; no prices. FREE · Community stamped on Lions Gate card. Live WP media 25940 (FB) / 25939 (IG) uploaded Aug 7 2026 — prior 25924/25925 were pre-FREE. Prior shaman/tarot-b plates retired from rotation."
+      "note": "Updated for Lions Gate Meditation with Eve 8pm (TEC 25926). Dual full-day Thursday-style variants; no prices. FREE \u00b7 Community stamped on Lions Gate card. Live WP media 25940 (FB) / 25939 (IG) uploaded Aug 7 2026 \u2014 prior 25924/25925 were pre-FREE. Prior shaman/tarot-b plates retired from rotation."
     },
     "2026-08-09": {
       "label": "Quantum Chakras Event; An Immersive Healing Experience Through Live Musi + Restore Your Solar Plexus-Third Chakra +",
@@ -122,7 +122,7 @@
       "prebranded": true,
       "template": "thursday-style",
       "media_id": 25891,
-      "note": "Single-image mode Aug 10 2026 — amazing FB plate shared to IG; muddy url_instagram retired"
+      "note": "Single-image mode Aug 10 2026 \u2014 amazing FB plate shared to IG; muddy url_instagram retired"
     },
     "2026-08-11": {
       "label": "Astrology & Tarot + Free Community Meditation +",
@@ -145,9 +145,9 @@
       ]
     },
     "2026-08-12": {
-      "label": "Tina’s Tarot & Rune Sessions",
+      "label": "Tina\u2019s Tarot & Rune Sessions",
       "covers": [
-        "Tina’s Tarot & Rune Sessions"
+        "Tina\u2019s Tarot & Rune Sessions"
       ],
       "local": "assets/sg-morning-flyer-2026-08-12-tina.png",
       "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-12-tina.png",
@@ -216,7 +216,7 @@
       "visual_style": "magritte_floating_door",
       "pride_baked_in": true,
       "pride_option": "B",
-      "note": "Founder approved Aug 14 ~9:02pm CT for Autopilot morning publish (magritte_floating_door). Unlocked — do not manually publish tonight.",
+      "note": "Founder approved Aug 14 ~9:02pm CT for Autopilot morning publish (magritte_floating_door). Unlocked \u2014 do not manually publish tonight.",
       "media_id": 26386,
       "regenerated_at": "2026-08-14T20:45:09-05:00",
       "regenerated_reason": "founder_angry_same_thursday_design_aug14_2039ct",
@@ -237,7 +237,7 @@
       "visual_style": "folk_outsider_night",
       "pride_baked_in": true,
       "pride_option": "C",
-      "note": "Founder approved Aug 14 ~9:02pm CT for Autopilot morning publish (folk_outsider_night). Unlocked — do not manually publish tonight.",
+      "note": "Founder approved Aug 14 ~9:02pm CT for Autopilot morning publish (folk_outsider_night). Unlocked \u2014 do not manually publish tonight.",
       "media_id": 26385,
       "regenerated_at": "2026-08-14T20:45:09-05:00",
       "regenerated_reason": "founder_angry_same_thursday_design_aug14_2039ct",
@@ -257,7 +257,7 @@
       "visual_style": "davinci_storefront_sketch",
       "pride_baked_in": true,
       "pride_option": "A",
-      "note": "Founder approved Aug 14 ~9:02pm CT for Autopilot morning publish (davinci_storefront_sketch). Unlocked — do not manually publish tonight.",
+      "note": "Founder approved Aug 14 ~9:02pm CT for Autopilot morning publish (davinci_storefront_sketch). Unlocked \u2014 do not manually publish tonight.",
       "media_id": 26382,
       "regenerated_at": "2026-08-14T20:45:09-05:00",
       "regenerated_reason": "founder_angry_same_thursday_design_aug14_2039ct",
@@ -279,7 +279,7 @@
       "visual_style": "einstein_chalkboard_map",
       "pride_baked_in": true,
       "pride_option": "B",
-      "note": "Founder approved Aug 14 ~9:02pm CT for Autopilot morning publish (einstein_chalkboard_map). Unlocked — do not manually publish tonight.",
+      "note": "Founder approved Aug 14 ~9:02pm CT for Autopilot morning publish (einstein_chalkboard_map). Unlocked \u2014 do not manually publish tonight.",
       "media_id": 26383,
       "regenerated_at": "2026-08-14T20:45:09-05:00",
       "regenerated_reason": "founder_angry_same_thursday_design_aug14_2039ct",
@@ -288,9 +288,9 @@
       "founder_approved": true
     },
     "2026-08-19": {
-      "label": "Tina’s Tarot & Rune Sessions + Free Community Educational Night",
+      "label": "Tina\u2019s Tarot & Rune Sessions + Free Community Educational Night",
       "covers": [
-        "Tina’s Tarot & Rune Sessions",
+        "Tina\u2019s Tarot & Rune Sessions",
         "Free Community Educational Night"
       ],
       "local": "assets/sg-morning-flyer-2026-08-19-storefront-photo-collage.png",
@@ -300,7 +300,7 @@
       "visual_style": "artistic_hero_shop_made",
       "pride_baked_in": true,
       "pride_option": "A",
-      "note": "Founder approved Aug 14 ~9:02pm CT for Autopilot morning publish (artistic_hero_shop_made). Unlocked — do not manually publish tonight.",
+      "note": "Founder approved Aug 14 ~9:02pm CT for Autopilot morning publish (artistic_hero_shop_made). Unlocked \u2014 do not manually publish tonight.",
       "media_id": 26384,
       "regenerated_at": "2026-08-14T20:45:09-05:00",
       "regenerated_reason": "founder_angry_same_thursday_design_aug14_2039ct",
@@ -315,42 +315,44 @@
         "Tai Chi Gung with Sherry Gurley",
         "TarotHeads With Andre Free Community Event"
       ],
-      "local": "assets/sg-morning-flyer-2026-08-20-magritte-floating-door-logo-v2.png",
-      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-20-magritte-floating-door-logo-v2.png",
+      "local": "assets/sg-morning-flyer-2026-08-20-magritte-floating-door-remake-v4.png",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-20-magritte-floating-door-remake-v4.png",
       "prebranded": true,
       "template": "magritte_floating_door",
       "visual_style": "magritte_floating_door",
       "pride_baked_in": true,
       "pride_option": "B",
-      "media_id": 26658,
+      "media_id": 26687,
       "founder_approved": false,
       "locked_until_founder_review": true,
-      "note": "Founder Aug 16 review: overall good — replaced made-up footer sun with REAL brand circular logo (logo-v2). LOCKED until Founder re-approves.",
+      "note": "Founder Aug 16 review: overall good \u2014 replaced made-up footer sun with REAL brand circular logo (logo-v2). LOCKED until Founder re-approves.",
       "generated_at": "2026-08-16T23:00:44-05:00",
-      "logo_fixed_at": "2026-08-16T23:20:00-05:00",
-      "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-20-magritte-floating-door.png"
+      "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-20-magritte-floating-door-logo-v2.png",
+      "remade_at": "2026-08-16T23:32:00-05:00",
+      "remake_note": "Aug 16 ~11:30pm CT remake-v4 FROM SCRATCH (Founder rejected logo-v2 paste). New gen + reserved plate / designed-in real circular brand sun. Still locked until re-approval."
     },
     "2026-08-21": {
       "label": "Keeper of the Cards: Robert + Vibrational Chakra Healing With Kate + Sacred Creations",
       "covers": [
         "Keeper of the Cards: Robert",
         "Vibrational Chakra Healing With Kate",
-        "Sacred Creations – A Monthly Creative & Spiritual Gathering"
+        "Sacred Creations \u2013 A Monthly Creative & Spiritual Gathering"
       ],
-      "local": "assets/sg-morning-flyer-2026-08-21-folk-outsider-night-logo-v2.png",
-      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-21-folk-outsider-night-logo-v2.png",
+      "local": "assets/sg-morning-flyer-2026-08-21-folk-outsider-night-remake-v4.png",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-21-folk-outsider-night-remake-v4.png",
       "prebranded": true,
       "template": "folk_outsider_night",
       "visual_style": "folk_outsider_night",
       "pride_baked_in": true,
       "pride_option": "C",
-      "media_id": 26657,
+      "media_id": 26684,
       "founder_approved": false,
       "locked_until_founder_review": true,
-      "note": "Founder Aug 16 review: hanging sign sun → REAL brand circular logo (logo-v2). LOCKED until Founder re-approves.",
+      "note": "Founder Aug 16 review: hanging sign sun \u2192 REAL brand circular logo (logo-v2). LOCKED until Founder re-approves.",
       "generated_at": "2026-08-16T23:00:44-05:00",
-      "logo_fixed_at": "2026-08-16T23:20:00-05:00",
-      "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-21-folk-outsider-night.png"
+      "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-21-folk-outsider-night-logo-v2.png",
+      "remade_at": "2026-08-16T23:32:00-05:00",
+      "remake_note": "Aug 16 ~11:30pm CT remake-v4 FROM SCRATCH (Founder rejected logo-v2 paste). New gen + reserved plate / designed-in real circular brand sun. Still locked until re-approval."
     },
     "2026-08-22": {
       "label": "Tarot with Adie + Shaman Medium Melissa + Keeper of the Cards: Robert",
@@ -359,20 +361,21 @@
         "Shaman Medium Melissa",
         "Keeper of the Cards: Robert"
       ],
-      "local": "assets/sg-morning-flyer-2026-08-22-davinci-storefront-sketch-logo-v2.png",
-      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-22-davinci-storefront-sketch-logo-v2.png",
+      "local": "assets/sg-morning-flyer-2026-08-22-davinci-storefront-sketch-remake-v4.png",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-22-davinci-storefront-sketch-remake-v4.png",
       "prebranded": true,
       "template": "davinci_storefront_sketch",
       "visual_style": "davinci_storefront_sketch",
       "pride_baked_in": true,
       "pride_option": "A",
-      "media_id": 26659,
+      "media_id": 26686,
       "founder_approved": false,
       "locked_until_founder_review": true,
-      "note": "Founder Aug 16 review: round badge sun → REAL brand circular logo (logo-v2). LOCKED until Founder re-approves.",
+      "note": "Founder Aug 16 review: round badge sun \u2192 REAL brand circular logo (logo-v2). LOCKED until Founder re-approves.",
       "generated_at": "2026-08-16T23:00:44-05:00",
-      "logo_fixed_at": "2026-08-16T23:20:00-05:00",
-      "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-22-davinci-storefront-sketch.png"
+      "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-22-davinci-storefront-sketch-logo-v2.png",
+      "remade_at": "2026-08-16T23:32:00-05:00",
+      "remake_note": "Aug 16 ~11:30pm CT remake-v4 FROM SCRATCH (Founder rejected logo-v2 paste). New gen + reserved plate / designed-in real circular brand sun. Still locked until re-approval."
     },
     "2026-08-23": {
       "label": "Soul Guidance Through Channeled Poetry with Lisa Seyring",
@@ -389,7 +392,7 @@
       "media_id": 26633,
       "founder_approved": true,
       "locked_until_founder_review": false,
-      "note": "Founder Aug 16 review: fine — leave as-is. Unlocked for Autopilot.",
+      "note": "Founder Aug 16 review: fine \u2014 leave as-is. Unlocked for Autopilot.",
       "generated_at": "2026-08-16T23:00:44-05:00",
       "founder_approved_at": "2026-08-16T23:11:00-05:00"
     },
@@ -398,21 +401,21 @@
       "covers": [
         "Lisa Maria Intuitive Tarot"
       ],
-      "local": "assets/sg-morning-flyer-2026-08-24-matisse-cut-paper-garden-v3.png",
-      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-24-matisse-cut-paper-garden-v3.png",
+      "local": "assets/sg-morning-flyer-2026-08-24-matisse-cut-paper-garden-remake-v4.png",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-24-matisse-cut-paper-garden-remake-v4.png",
       "prebranded": true,
       "template": "matisse_cut_paper_garden",
       "visual_style": "matisse_cut_paper_garden",
       "pride_baked_in": true,
       "pride_option": "A",
-      "media_id": 26660,
+      "media_id": 26685,
       "founder_approved": false,
       "locked_until_founder_review": true,
-      "note": "Founder Aug 16: original 'kind of lame' — regenerated denser Matisse cut-paper v3 + REAL brand circular logo bottom-left. Same Lisa Maria Aug 24 text. LOCKED until Founder re-approves / before mixed-pool unlock.",
+      "note": "Founder Aug 16: original 'kind of lame' \u2014 regenerated denser Matisse cut-paper v3 + REAL brand circular logo bottom-left. Same Lisa Maria Aug 24 text. LOCKED until Founder re-approves / before mixed-pool unlock.",
       "generated_at": "2026-08-16T23:16:00-05:00",
-      "logo_fixed_at": "2026-08-16T23:20:00-05:00",
-      "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-24-matisse-cut-paper-garden.png",
-      "logo_v2_local": "assets/sg-morning-flyer-2026-08-24-matisse-cut-paper-garden-logo-v2.png"
+      "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-24-matisse-cut-paper-garden-v3.png",
+      "remade_at": "2026-08-16T23:32:00-05:00",
+      "remake_note": "Aug 16 ~11:30pm CT remake-v4 FROM SCRATCH (Founder rejected logo-v2 paste). New gen + reserved plate / designed-in real circular brand sun. Still locked until re-approval."
     }
   },
   "template": {
@@ -425,19 +428,19 @@
       "note": "~75% Thursday-style clear card layout; up to ~25% artistic single-event hero IF still readable"
     },
     "layout": [
-      "Header: {WEEKDAY} AT + Sacred Ground (script) + Mind • Body • Spirit • Community",
-      "Left: 1–3 stacked rounded event cards (icon, title, host, time, keywords)",
+      "Header: {WEEKDAY} AT + Sacred Ground (script) + Mind \u2022 Body \u2022 Spirit \u2022 Community",
+      "Left: 1\u20133 stacked rounded event cards (icon, title, host, time, keywords)",
       "Right: evocative graphics aligned to cards (clear zones)",
       "Footer: logo + shopsacredground.com + 847-749-3922 + come-as-you-are"
     ],
     "rules": [
       "No prices on graphic",
       "Dark elegant + gold accents; vary palette by day",
-      "Easy to read — not collage soup",
+      "Easy to read \u2014 not collage soup",
       "Versions of the system, not exact daily clones",
       "~75% Thursday-style cards; ~25% artistic hero only if readable",
       "No invented practitioner faces",
-      "FB≠IG visuals (url + url_instagram); same full-day events; never incomplete alts"
+      "FB\u2260IG visuals (url + url_instagram); same full-day events; never incomplete alts"
     ]
   },
   "last_distinct_regen": {
@@ -462,7 +465,7 @@
       "2026-08-18",
       "2026-08-19"
     ],
-    "note": "looks good the next 5 days — unlock for 9am Autopilot; no manual publish tonight"
+    "note": "looks good the next 5 days \u2014 unlock for 9am Autopilot; no manual publish tonight"
   },
   "last_batch_aug16_night": {
     "at": "2026-08-16T23:00:44-05:00",
@@ -474,7 +477,7 @@
       "2026-08-23",
       "2026-08-24"
     ],
-    "note": "Generated Sun Aug 16 night — LOCKED pending Founder review before Autopilot unlock (same pattern as Aug 14–19 batch)."
+    "note": "Generated Sun Aug 16 night \u2014 LOCKED pending Founder review before Autopilot unlock (same pattern as Aug 14\u201319 batch)."
   },
   "last_logo_fix_aug16": {
     "at": "2026-08-16T23:20:00-05:00",
@@ -489,5 +492,6 @@
     "unlocked": [
       "2026-08-23"
     ]
-  }
+  },
+  "notes_remake_v4": "2026-08-16 ~11:32pm CT America/Chicago: Founder rejected logo-v2 paste. Remade Aug 20/21/22/24 mornings + 8 late-summer nights from scratch (remake-v4). Einstein Aug 23 left AS-IS. All remake-v4 mornings remain locked_until_founder_review."
 }
