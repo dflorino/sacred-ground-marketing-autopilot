@@ -1,7 +1,7 @@
 {
   "timezone": "America/Chicago",
   "note": "Founder-confirmed WordPress Media Library IDs for Cursor / ML Social video posts. Use these — never 26546 or lowercase s01e01-store-quest.mp4 for S1E1.",
-  "updated": "2026-08-16",
+  "updated": "2026-08-17",
   "brand_coverage_hard_rule": {
     "updated": "2026-08-16",
     "summary": "Every episode must hit Facebook + Instagram + TikTok + YouTube on Sacred Ground BRAND accounts. YouTube must be the Sacred Ground brand channel — never personal @deneeneflorino4711. Use contentType reel or story. FB Story must use Zernio CDN (media.zernio.com).",
@@ -16,8 +16,26 @@
     "lesson_date": "2026-08-16",
     "summary": "Facebook Stories via ML Social/Zernio fail when media is only on shopsacredground.com WP URLs — Cloudflare 403s Meta meta-externalagent. Upload the same video to Zernio CDN (media.zernio.com) and publish Story with that URL + contentType story. Reels/IG Story may work from WP; FB Story needed Zernio CDN tonight.",
     "content_types": "Use contentType reel or story when scheduling IG/FB shorts — not plain video alone.",
-    "youtube_gap": "As of Sun Aug 16 night, only personal @deneeneflorino4711 YouTube is connected in ML Social. Brand Sacred Ground YouTube is NOT connected — Founder OAuth required before any brand Short. Do not republish S1E1 to personal again.",
+    "youtube_gap": "As of Sun Aug 16 night, only personal @deneeneflorino4711 YouTube is connected in ML Social. Brand Sacred Ground YouTube is NOT connected — Founder OAuth required before any brand Short. Do NOT fill the gap by republishing S1E1 (media 26545) — that episode is COMPLETE forever.",
     "see": "REEL-POSTING-SCHEDULE.md#operational-lesson--fb-story-media-hosting-sun-aug-16-2026"
+  },
+  "s1e1_never_republish": {
+    "updated": "2026-08-17",
+    "founder_clarification": "Mon Aug 17 2026 America/Chicago — S1E1 only went out once; they do NOT want it to ever go out again.",
+    "media_id": 26545,
+    "episode_key": "s1e1",
+    "title": "Store Quest",
+    "status": "COMPLETE",
+    "rule": "NEVER republish on any platform (FB / IG / TikTok / YouTube / Stories / Reels / Shorts). Permanently blocked.",
+    "do_not": [
+      "schedule",
+      "recycle",
+      "requeue",
+      "brand_youtube_backfill",
+      "daily_or_weekly_cron",
+      "morning_afternoon_week_ahead_publish"
+    ],
+    "spencer_friday_reel_building": "SEPARATE job — stays Active. Does not republish S1E1. Do not deactivate Spencer Friday when enforcing this block."
   },
   "episodes": {
     "s1e1": {
@@ -28,12 +46,14 @@
       "media_id": 26545,
       "url": "https://shopsacredground.com/wp-content/uploads/S1E1-Store-Quest.mp4",
       "mime_type": "video/mp4",
-      "schedule_status": "published_sun_2026-08-16_night",
-      "brand_youtube_status": "blocked_missing_oauth",
+      "schedule_status": "COMPLETE_never_republish",
+      "published": "2026-08-16_evening_CT",
+      "republish": "FORBIDDEN_permanent",
+      "brand_youtube_status": "blocked_never_republish_s1e1",
       "do_not_use": {
         "wrong_media_id": 26546,
         "wrong_url": "https://shopsacredground.com/wp-content/uploads/s01e01-store-quest.mp4",
-        "note": "26546 was a mistaken ID / poster path; scheduled posts must use 26545 + S1E1-Store-Quest.mp4"
+        "note": "26546 was a mistaken ID / poster path; and S1E1 must never be scheduled again anyway"
       }
     },
     "s1e2": {

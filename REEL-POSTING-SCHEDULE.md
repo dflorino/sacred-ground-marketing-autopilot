@@ -26,10 +26,10 @@ Canonical cadence for Sacred Ground **Reels / Shorts** across Instagram, Faceboo
 1. Open **ML Social → Accounts** (same workspace that shows FB / IG / TikTok Sacred Ground).
 2. Click **Connect** / **Add account** → choose **YouTube**.
 3. Complete Google OAuth while signed into the **Sacred Ground brand** Google/YouTube channel (not the personal `@deneeneflorino4711` channel).
-4. Confirm the new account shows Sacred Ground branding / brand channel name — then tell the agent so S1E1 (media **26545**) can be republished as a brand Short.
+4. Confirm the new account shows Sacred Ground branding / brand channel name — then tell the agent. **Do not** backfill S1E1 (media **26545**) as a brand Short — that episode is **COMPLETE / NEVER republish**.
 5. Optional later: leave personal YouTube disconnected or clearly labeled so agents never pick it for brand episodes.
 
-Until step 4 succeeds, **brand YouTube republish is blocked** — no agent workaround.
+Until step 4 succeeds, **brand YouTube for future episodes is blocked** — no agent workaround. S1E1 stays permanently off the queue either way.
 
 ## Team Sacred Ground recommended week
 
@@ -83,11 +83,15 @@ Canonical file: **`config/reels_media.json`**. Agents must use these IDs / URLs 
 **Do not use** media ID **26546** or `…/s01e01-store-quest.mp4` for S1E1.  
 **S1E2** — Founder remaking; **not scheduled**. Do not queue until Founder asks.
 
-## S1E1 Store Quest — Sun Aug 16, 2026 (PUBLISHED — DO NOT REPOST)
+## S1E1 Store Quest — COMPLETE / NEVER REPUBLISH (media 26545)
 
-Media **26545** (`S1E1-Store-Quest.mp4`). Verified ~7:43 PM CT via ML Social `social_posts` / `social_accounts`. Do **not** cancel live successes.
+Media **26545** (`S1E1-Store-Quest.mp4`). Published **once** Sun Aug 16 evening CT. Verified via ML Social `social_posts` / `social_accounts`. Do **not** cancel live successes.
 
-**Hard rule (Founder Aug 17, 2026 ~9:35 AM CT):** S1E1 is a **one-shot**. Do **not** republish, recycle, or put on any daily/weekly Autopilot or “Reel-building Friday” cron. Stories remaining visible the next morning (~24h tray) are **not** a new publish. If ML Social shows a **future scheduled** S1E1 duplicate, cancel that queue only — never cancel live successes or legitimate image Autopilot posts.
+**Hard rule FINAL (Founder Mon Aug 17, 2026 America/Chicago):** S1E1 **only went out once** and must **never** go out again — on **any** platform (FB / IG / TikTok / YouTube / Stories / Reels / Shorts). Status: **COMPLETE**. Permanently block republish, recycle, requeue, brand-YouTube backfill, and any Autopilot cron that would ship media **26545** / “Store Quest” again.
+
+**Separate job — keep Active:** **SG Reel-building Friday Spencer** is a different Cursor Automation. It stays **Active**. Weekly: scrub Spencer’s Friday YouTube video → file important new info into `dflorino/sacredground-maintenance` `reel-building/` → report findings to Founder. It does **not** publish shop Reels. Do **not** deactivate it when enforcing the S1E1 block. It must never select or republish S1E1 / 26545.
+
+Stories remaining visible the next morning (~24h tray) are **not** a new publish. If ML Social shows a **future scheduled** S1E1 / 26545 / Store Quest duplicate, cancel that queue only — never cancel live successes or legitimate image Autopilot posts.
 
 ### Brand traction (Sacred Ground)
 
@@ -105,7 +109,7 @@ Media **26545** (`S1E1-Store-Quest.mp4`). Verified ~7:43 PM CT via ML Social `so
 | Surface | Status | Detail |
 |---|---|---|
 | **YouTube Short** | ⚠️ **personal only** | `6a820b7c323f485ce2f6cdc1` → [watch](https://www.youtube.com/watch?v=OqDCjr3BPY0) on `@deneeneflorino4711` |
-| **Sacred Ground YouTube** | ❌ **not connected** | No brand YT account in ML Social `social_accounts` — cannot republish until Founder OAuth |
+| **Sacred Ground YouTube** | ❌ **not connected** | Brand YT still missing OAuth — **do not** use that gap to republish S1E1; episode is permanently done |
 
 Old wrong-media ids (deleted earlier): `6a8204a952e7ad0aab0854d9` · `6a8204ab23fabe1c288bd828` · `6a8204ac23fabe1c288bd85a` · `6a8204ac52e7ad0aab085527`
 
@@ -133,7 +137,7 @@ Tonight’s failure: ML Social / Zernio FB Story with a WP-hosted MP4 failed bec
 2. **FB Story:** upload video to Zernio CDN first; use `media.zernio.com` URL — never rely on WP alone.
 3. Schedule IG/FB shorts with explicit `contentType: "reel"` or `contentType: "story"` (not plain video alone).
 4. Do not rewrite or cancel live/scheduled successful posts unless Founder asks.
-5. After brand YouTube is connected: republish S1E1 (media **26545**) as a Short on the brand channel only.
+5. After brand YouTube is connected: use it for **future** episodes only — **never** republish S1E1 (media **26545**).
 6. **Name in closed captions:** never rely on platform auto-ASR for the Founder’s name (see hard rule below).
 
 ## Hard rule — closed captions / name spelling (Founder Aug 16, 2026)
@@ -166,6 +170,6 @@ Do **not** delete live posts unless a platform forces re-upload.
 - `config/accounts.json` — brand FB / IG / TikTok IDs + YouTube brand-missing gate
 - `config/reels_media.json` — Founder Media Library IDs (S1E1 / S1E2) + brand coverage + FB Story hosting
 - `REELS-PLAN.md` — HeyGen AI-Deneene stack, scaffold status, isolation from image jobs
-- `AUTOMATION-DRAFT.md` — inactive “SG Daily Reels 10:30am” Cloud Agent draft (do not activate from this schedule alone)
+- `AUTOMATION-DRAFT.md` — image Autopilot jobs + **Active** “SG Reel-building Friday Spencer” (YouTube scrub → `reel-building/`) + inactive “SG Daily Reels 10:30am” HeyGen scaffold (do not activate from this schedule alone)
 - `config/reels.json` — scaffold publish config (`auto_publish: false`)
 - `data/reels/scripts-batch-01.md` — starter spoken scripts
