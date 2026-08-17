@@ -307,6 +307,102 @@
       "preview_path": "data/preview-next5-mornings/05-wed-19.png",
       "founder_approved_at": "2026-08-14T21:02:00-05:00",
       "founder_approved": true
+    },
+    "2026-08-20": {
+      "label": "Tarot with Adie + Tai Chi Gung with Sherry Gurley + TarotHeads With Andre Free Community Event",
+      "covers": [
+        "Tarot with Adie",
+        "Tai Chi Gung with Sherry Gurley",
+        "TarotHeads With Andre Free Community Event"
+      ],
+      "local": "assets/sg-morning-flyer-2026-08-20-magritte-floating-door.png",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-20-magritte-floating-door.png",
+      "prebranded": true,
+      "template": "magritte_floating_door",
+      "visual_style": "magritte_floating_door",
+      "pride_baked_in": true,
+      "pride_option": "B",
+      "media_id": 26631,
+      "founder_approved": false,
+      "locked_until_founder_review": true,
+      "note": "Batch Sun Aug 16 ~10:48pm CT — Magritte. LOCKED pending Founder review before Autopilot unlock.",
+      "generated_at": "2026-08-16T23:00:44-05:00"
+    },
+    "2026-08-21": {
+      "label": "Keeper of the Cards: Robert + Vibrational Chakra Healing With Kate + Sacred Creations",
+      "covers": [
+        "Keeper of the Cards: Robert",
+        "Vibrational Chakra Healing With Kate",
+        "Sacred Creations – A Monthly Creative & Spiritual Gathering"
+      ],
+      "local": "assets/sg-morning-flyer-2026-08-21-folk-outsider-night.png",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-21-folk-outsider-night.png",
+      "prebranded": true,
+      "template": "folk_outsider_night",
+      "visual_style": "folk_outsider_night",
+      "pride_baked_in": true,
+      "pride_option": "C",
+      "media_id": 26632,
+      "founder_approved": false,
+      "locked_until_founder_review": true,
+      "note": "Batch Sun Aug 16 ~10:48pm CT — Folk (today's liked look). LOCKED pending Founder review.",
+      "generated_at": "2026-08-16T23:00:44-05:00"
+    },
+    "2026-08-22": {
+      "label": "Tarot with Adie + Shaman Medium Melissa + Keeper of the Cards: Robert",
+      "covers": [
+        "Tarot with Adie",
+        "Shaman Medium Melissa",
+        "Keeper of the Cards: Robert"
+      ],
+      "local": "assets/sg-morning-flyer-2026-08-22-davinci-storefront-sketch.png",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-22-davinci-storefront-sketch.png",
+      "prebranded": true,
+      "template": "davinci_storefront_sketch",
+      "visual_style": "davinci_storefront_sketch",
+      "pride_baked_in": true,
+      "pride_option": "A",
+      "media_id": 26634,
+      "founder_approved": false,
+      "locked_until_founder_review": true,
+      "note": "Batch Sun Aug 16 ~10:48pm CT — Da Vinci. LOCKED pending Founder review.",
+      "generated_at": "2026-08-16T23:00:44-05:00"
+    },
+    "2026-08-23": {
+      "label": "Soul Guidance Through Channeled Poetry with Lisa Seyring",
+      "covers": [
+        "Soul Guidance Through Channeled Poetry with Lisa Seyring"
+      ],
+      "local": "assets/sg-morning-flyer-2026-08-23-einstein-chalkboard.png",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-23-einstein-chalkboard.png",
+      "prebranded": true,
+      "template": "einstein_chalkboard_map",
+      "visual_style": "einstein_chalkboard_map",
+      "pride_baked_in": true,
+      "pride_option": "B",
+      "media_id": 26633,
+      "founder_approved": false,
+      "locked_until_founder_review": true,
+      "note": "Batch Sun Aug 16 ~10:48pm CT — Einstein. LOCKED pending Founder review.",
+      "generated_at": "2026-08-16T23:00:44-05:00"
+    },
+    "2026-08-24": {
+      "label": "Lisa Maria Intuitive Tarot",
+      "covers": [
+        "Lisa Maria Intuitive Tarot"
+      ],
+      "local": "assets/sg-morning-flyer-2026-08-24-matisse-cut-paper-garden.png",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-24-matisse-cut-paper-garden.png",
+      "prebranded": true,
+      "template": "matisse_cut_paper_garden",
+      "visual_style": "matisse_cut_paper_garden",
+      "pride_baked_in": true,
+      "pride_option": "A",
+      "media_id": 26635,
+      "founder_approved": false,
+      "locked_until_founder_review": true,
+      "note": "Batch Sun Aug 16 ~10:48pm CT — NEW Matisse cut-paper garden (candidate style). LOCKED pending Founder review before unlocking / adding to mixed pool.",
+      "generated_at": "2026-08-16T23:00:44-05:00"
     }
   },
   "template": {
@@ -357,5 +453,17 @@
       "2026-08-19"
     ],
     "note": "looks good the next 5 days — unlock for 9am Autopilot; no manual publish tonight"
+  },
+  "last_batch_aug16_night": {
+    "at": "2026-08-16T23:00:44-05:00",
+    "timezone": "America/Chicago",
+    "days": [
+      "2026-08-20",
+      "2026-08-21",
+      "2026-08-22",
+      "2026-08-23",
+      "2026-08-24"
+    ],
+    "note": "Generated Sun Aug 16 night — LOCKED pending Founder review before Autopilot unlock (same pattern as Aug 14–19 batch)."
   }
 }

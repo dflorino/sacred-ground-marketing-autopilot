@@ -270,6 +270,126 @@
         "season": "winter",
         "sg_identity": "pass",
         "sg_anchor": "Sacred Ground eggplant-awning storefront"
+      },
+      {
+        "id": "late_summer_sky_letters",
+        "label": "Late-summer sky — glowing SACRED GROUND letters + Milky Way",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-late-summer-sky-letters.png",
+        "local": "assets/sg-night-creative-late-summer-sky-letters.png",
+        "sg_identity": "pass",
+        "sg_anchor": "Glowing SACRED GROUND sky letters + circular sun logo + storefront",
+        "season_mood": "late_summer",
+        "no_snow": true,
+        "no_fall_leaves": true,
+        "pride_baked_in": true,
+        "wp_media_id": 26636,
+        "active": true,
+        "generated_at": "2026-08-16T23:00:44-05:00"
+      },
+      {
+        "id": "late_summer_store_porch",
+        "label": "Late-summer store-at-night porch lights + fireflies",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-late-summer-store-porch.png",
+        "local": "assets/sg-night-creative-late-summer-store-porch.png",
+        "sg_identity": "pass",
+        "sg_anchor": "Eggplant-awning SACRED GROUND storefront + circular logo",
+        "season_mood": "late_summer",
+        "no_snow": true,
+        "no_fall_leaves": true,
+        "pride_baked_in": true,
+        "wp_media_id": 26637,
+        "active": true,
+        "generated_at": "2026-08-16T23:00:44-05:00"
+      },
+      {
+        "id": "late_summer_crystal_window",
+        "label": "Late-summer candlelit crystal shop windows",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-late-summer-crystal-window.png",
+        "local": "assets/sg-night-creative-late-summer-crystal-window.png",
+        "sg_identity": "pass",
+        "sg_anchor": "SACRED GROUND awning + window sun logo + candlelit crystals",
+        "season_mood": "late_summer",
+        "no_snow": true,
+        "no_fall_leaves": true,
+        "pride_baked_in": true,
+        "wp_media_id": 26638,
+        "active": true,
+        "generated_at": "2026-08-16T23:00:44-05:00"
+      },
+      {
+        "id": "late_summer_cicada_porch",
+        "label": "Late-summer cicada-night porch string lights",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-late-summer-cicada-porch.png",
+        "local": "assets/sg-night-creative-late-summer-cicada-porch.png",
+        "sg_identity": "pass",
+        "sg_anchor": "Eggplant-awning SACRED GROUND + warm porch lights",
+        "season_mood": "late_summer",
+        "no_snow": true,
+        "no_fall_leaves": true,
+        "pride_baked_in": true,
+        "wp_media_id": 26640,
+        "active": true,
+        "generated_at": "2026-08-16T23:00:44-05:00"
+      },
+      {
+        "id": "late_summer_milkyway_storefront",
+        "label": "Late-summer Milky Way over Sacred Ground storefront",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-late-summer-milkyway-storefront.png",
+        "local": "assets/sg-night-creative-late-summer-milkyway-storefront.png",
+        "sg_identity": "pass",
+        "sg_anchor": "Eggplant-awning storefront + sky bat-signal logo",
+        "season_mood": "late_summer",
+        "no_snow": true,
+        "no_fall_leaves": true,
+        "pride_baked_in": true,
+        "wp_media_id": 26641,
+        "active": true,
+        "generated_at": "2026-08-16T23:00:44-05:00"
+      },
+      {
+        "id": "late_summer_candlelit_windows",
+        "label": "Late-summer candlelit windows dusk-to-night",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-late-summer-candlelit-windows.png",
+        "local": "assets/sg-night-creative-late-summer-candlelit-windows.png",
+        "sg_identity": "pass",
+        "sg_anchor": "SACRED GROUND awning + warm interior + circular logo",
+        "season_mood": "late_summer",
+        "no_snow": true,
+        "no_fall_leaves": true,
+        "pride_baked_in": true,
+        "wp_media_id": 26639,
+        "active": true,
+        "generated_at": "2026-08-16T23:00:44-05:00"
+      },
+      {
+        "id": "late_summer_warm_rain_puddles",
+        "label": "Late-summer warm rain — neon/logo puddle reflection",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-late-summer-warm-rain-puddles.png",
+        "local": "assets/sg-night-creative-late-summer-warm-rain-puddles.png",
+        "sg_identity": "pass",
+        "sg_anchor": "SACRED GROUND awning + circular logo projected on wet sidewalk",
+        "season_mood": "late_summer",
+        "no_snow": true,
+        "no_fall_leaves": true,
+        "pride_baked_in": true,
+        "wp_media_id": 26642,
+        "active": true,
+        "generated_at": "2026-08-16T23:00:44-05:00"
+      },
+      {
+        "id": "late_summer_garden_lantern",
+        "label": "Late-summer garden lantern alley / side door",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-late-summer-garden-lantern.png",
+        "local": "assets/sg-night-creative-late-summer-garden-lantern.png",
+        "sg_identity": "pass",
+        "sg_anchor": "SACRED GROUND on door + glowing circular sun lantern + crystals",
+        "season_mood": "late_summer",
+        "no_snow": true,
+        "no_fall_leaves": true,
+        "pride_baked_in": true,
+        "wp_media_id": 26643,
+        "active": true,
+        "generated_at": "2026-08-16T23:00:44-05:00"
       }
     ],
     "events_in_image": false,
@@ -423,6 +543,21 @@
         "meditation_night_om",
         "meditation_night_silhouette"
       ]
+    },
+    "late_summer_batch_aug16": {
+      "at": "2026-08-16T23:00:44-05:00",
+      "timezone": "America/Chicago",
+      "ids": [
+        "late_summer_sky_letters",
+        "late_summer_store_porch",
+        "late_summer_crystal_window",
+        "late_summer_cicada_porch",
+        "late_summer_milkyway_storefront",
+        "late_summer_candlelit_windows",
+        "late_summer_warm_rain_puddles",
+        "late_summer_garden_lantern"
+      ],
+      "note": "8 late-summer night creatives (no snow / no fall leaves). Founder review welcome; wired into creative_pool as sg_identity pass."
     }
   }
 }

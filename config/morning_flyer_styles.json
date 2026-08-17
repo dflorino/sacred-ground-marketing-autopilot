@@ -132,6 +132,16 @@
       "single_event_only": true,
       "prompt_brief": "Sacred Ground artistic single-event hero morning flyer — one strong original illustration or photography-led composition with highly readable event title + time. Shop-individual color energy. FORBIDDEN when 2+ events share the day (equal cards required). Never the banned mystic AI navy template.",
       "pride_placement": "Premier / #1 Chicagoland pride baked into hero field or cream band; circular logo; website + phone footer."
+    },
+    "matisse_cut_paper_garden": {
+      "id": "matisse_cut_paper_garden",
+      "label": "Matisse cut-paper garden",
+      "family": "matisse_cut_paper_garden",
+      "verdict": "CANDIDATE — awaiting Founder review (executed Aug 16 night on Aug 24 plate)",
+      "status": "candidate",
+      "pool": "candidate_art",
+      "prompt_brief": "Henri Matisse late cut-paper / gouache découpé: bold flat jewel-tone paper shapes (coral, teal, sunflower, eggplant, leaf green), organic leaf/flower silhouettes, Sacred Ground eggplant-awning storefront as flat colorful cut-paper collage. Equal-weight cream cut-paper schedule panels with thick dark readable type. Shop-made, never Victorian lace, never mystic AI dump.",
+      "pride_placement": "Bold cut-paper banner with Premier / #1 Chicagoland; circular sun logo; cream footer website + phone."
     }
   },
   "archived_out": {
@@ -156,5 +166,9 @@
     "generic mystic AI wellness starter pack",
     "navy three-equal-dark-cards + right mystic collage + gold script factory",
     "floating singing bowls / glowing healing hands / Akashic prop books / Flower of Life wallpaper as the main art"
-  ]
+  ],
+  "candidate_styles": [
+    "matisse_cut_paper_garden"
+  ],
+  "candidate_note": "Matisse cut-paper garden executed on 2026-08-24 plate Sun Aug 16 night. Do not add to mixed_pool until Founder approves."
 }
