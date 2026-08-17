@@ -2,11 +2,21 @@
   "timezone": "America/Chicago",
   "note": "Founder-confirmed WordPress Media Library IDs for Cursor / ML Social video posts. Use these — never 26546 or lowercase s01e01-store-quest.mp4 for S1E1.",
   "updated": "2026-08-16",
+  "brand_coverage_hard_rule": {
+    "updated": "2026-08-16",
+    "summary": "Every episode must hit Facebook + Instagram + TikTok + YouTube on Sacred Ground BRAND accounts. YouTube must be the Sacred Ground brand channel — never personal @deneeneflorino4711. Use contentType reel or story. FB Story must use Zernio CDN (media.zernio.com).",
+    "required_platforms": ["facebook", "instagram", "tiktok", "youtube"],
+    "youtube_brand_only": true,
+    "forbidden_youtube": "deneeneflorino4711",
+    "content_types": "reel or story (not plain video alone)",
+    "fb_story_media": "Zernio CDN only",
+    "see": "REEL-POSTING-SCHEDULE.md#hard-rule--brand-coverage-all-sm-platforms"
+  },
   "fb_story_media_hosting": {
     "lesson_date": "2026-08-16",
     "summary": "Facebook Stories via ML Social/Zernio fail when media is only on shopsacredground.com WP URLs — Cloudflare 403s Meta meta-externalagent. Upload the same video to Zernio CDN (media.zernio.com) and publish Story with that URL + contentType story. Reels/IG Story may work from WP; FB Story needed Zernio CDN tonight.",
     "content_types": "Use contentType reel or story when scheduling IG/FB shorts — not plain video alone.",
-    "youtube_note": "Tonight Shorts used personal @deneeneflorino4711; reconnect brand channel when Founder ready — do not change accounts now.",
+    "youtube_gap": "As of Sun Aug 16 night, only personal @deneeneflorino4711 YouTube is connected in ML Social. Brand Sacred Ground YouTube is NOT connected — Founder OAuth required before any brand Short. Do not republish S1E1 to personal again.",
     "see": "REEL-POSTING-SCHEDULE.md#operational-lesson--fb-story-media-hosting-sun-aug-16-2026"
   },
   "episodes": {
@@ -18,7 +28,8 @@
       "media_id": 26545,
       "url": "https://shopsacredground.com/wp-content/uploads/S1E1-Store-Quest.mp4",
       "mime_type": "video/mp4",
-      "schedule_status": "scheduled_sun_2026-08-16_night",
+      "schedule_status": "published_sun_2026-08-16_night",
+      "brand_youtube_status": "blocked_missing_oauth",
       "do_not_use": {
         "wrong_media_id": 26546,
         "wrong_url": "https://shopsacredground.com/wp-content/uploads/s01e01-store-quest.mp4",

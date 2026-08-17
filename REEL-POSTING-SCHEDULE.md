@@ -6,6 +6,31 @@ Canonical cadence for Sacred Ground **Reels / Shorts** across Instagram, Faceboo
 **Source:** Founder recommendations reflecting large 2026 platform studies (IG, FB, TikTok, YouTube Shorts).  
 **How this is posted today:** ML Social **manual / scheduled** posts — **not** Zernio Autopilot cron. Do not invent or activate Autopilot reel automation from this doc alone. See `REELS-PLAN.md` + `AUTOMATION-DRAFT.md` for the separate (still inactive) HeyGen `daily_reel` scaffold.
 
+## Hard rule — brand coverage (all SM platforms)
+
+**Founder (Aug 16, 2026):** traction requires every episode on **all** social platforms — brand accounts only.
+
+| Requirement | Rule |
+|---|---|
+| Platforms | Every episode **must** hit **Facebook + Instagram + TikTok + YouTube** |
+| Accounts | **Sacred Ground brand only** (`shopsacredground` / Sacred Ground page) |
+| YouTube | **Sacred Ground brand channel** — **never** personal `@deneeneflorino4711` |
+| contentType | Use `reel` or `story` (not plain video alone) |
+| FB Story media | **Zernio CDN** (`media.zernio.com`) — WP URLs fail Meta fetch (CF 403) |
+| Live posts | Do **not** cancel successful live posts to “fix” coverage |
+
+**Agent gate before publish:** confirm `social_accounts` shows brand YouTube connected. If only personal YouTube is present, **stop** and tell Founder to reconnect brand OAuth — do not ship the Short to personal as a brand substitute.
+
+**Founder click path (connect brand YouTube in ML Social / Zernio):**
+
+1. Open **ML Social → Accounts** (same workspace that shows FB / IG / TikTok Sacred Ground).
+2. Click **Connect** / **Add account** → choose **YouTube**.
+3. Complete Google OAuth while signed into the **Sacred Ground brand** Google/YouTube channel (not the personal `@deneeneflorino4711` channel).
+4. Confirm the new account shows Sacred Ground branding / brand channel name — then tell the agent so S1E1 (media **26545**) can be republished as a brand Short.
+5. Optional later: leave personal YouTube disconnected or clearly labeled so agents never pick it for brand episodes.
+
+Until step 4 succeeds, **brand YouTube republish is blocked** — no agent workaround.
+
 ## Team Sacred Ground recommended week
 
 | Day | Local time (CT) | Content |
@@ -58,18 +83,31 @@ Canonical file: **`config/reels_media.json`**. Agents must use these IDs / URLs 
 **Do not use** media ID **26546** or `…/s01e01-store-quest.mp4` for S1E1.  
 **S1E2** — Founder remaking; **not scheduled**. Do not queue until Founder asks.
 
-## S1E1 Store Quest — Sun Aug 16, 2026 (TONIGHT — KEEP)
+## S1E1 Store Quest — Sun Aug 16, 2026 (TONIGHT — published)
 
-Media **26545** (`S1E1-Store-Quest.mp4`). Wrong-media originals were deleted earlier; these corrected posts stay scheduled:
+Media **26545** (`S1E1-Store-Quest.mp4`). Verified ~7:43 PM CT via ML Social `social_posts` / `social_accounts`. Do **not** cancel live successes.
 
-| Platform | Scheduled (CT) | Post id | Media |
+### Brand traction (Sacred Ground)
+
+| Surface | Status | When (CT) | Post / URL |
 |---|---|---|---|
-| Facebook | 6:45 PM | `6a820b7a323f485ce2f6cd5e` | 26545 |
-| Instagram | 7:00 PM | `6a820b7b323f485ce2f6cd96` | 26545 |
-| YouTube Shorts | 7:00 PM | `6a820b7c323f485ce2f6cdc1` | 26545 |
-| TikTok | 7:30 PM | `6a820b7c323f485ce2f6cde8` | 26545 |
+| **FB Watch** (video) | ✅ brand | 6:45 PM | `6a820b7a323f485ce2f6cd5e` → [watch](https://www.facebook.com/watch/?v=1326169786395522) |
+| **FB Reel** | ✅ brand | ~7:05 PM | `6a825050d4b2f7ccc74b778f` → [reel](https://www.facebook.com/reel/2118708588998551) |
+| **FB Story** (Zernio CDN) | ✅ brand | ~7:35 PM | `6a825747be9ba353a3d363aa` → stories on Sacred Ground page |
+| **IG Reel** | ✅ brand | ~6:57 PM | `6a824e52f73862dcd77323da` → [reel](https://www.instagram.com/reel/DcHsgELka4k/) |
+| **IG Story** | ✅ brand | ~7:05 PM | `6a82504ee9b3fe4cc1f571d0` |
+| **TikTok** | ✅ brand `@shopsacredground` | 7:30 PM | `6a820b7c323f485ce2f6cde8` |
 
-Old wrong-media ids (deleted): `6a8204a952e7ad0aab0854d9` · `6a8204ab23fabe1c288bd828` · `6a8204ac23fabe1c288bd85a` · `6a8204ac52e7ad0aab085527`
+### Gap — brand YouTube
+
+| Surface | Status | Detail |
+|---|---|---|
+| **YouTube Short** | ⚠️ **personal only** | `6a820b7c323f485ce2f6cdc1` → [watch](https://www.youtube.com/watch?v=OqDCjr3BPY0) on `@deneeneflorino4711` |
+| **Sacred Ground YouTube** | ❌ **not connected** | No brand YT account in ML Social `social_accounts` — cannot republish until Founder OAuth |
+
+Old wrong-media ids (deleted earlier): `6a8204a952e7ad0aab0854d9` · `6a8204ab23fabe1c288bd828` · `6a8204ac23fabe1c288bd85a` · `6a8204ac52e7ad0aab085527`
+
+WP-only FB Story attempts failed (CF 403) and stay failed — CDN Story above is the keeper.
 
 ## S1E2 Lemuria — CANCELLED (not scheduled)
 
@@ -89,14 +127,16 @@ Tonight’s failure: ML Social / Zernio FB Story with a WP-hosted MP4 failed bec
 
 ### Agent checklist (shorts / Stories)
 
-1. **FB Story:** upload video to Zernio CDN first; use `media.zernio.com` URL — never rely on WP alone.
-2. Schedule IG/FB shorts with explicit `contentType: "reel"` or `contentType: "story"` (not plain video alone).
-3. **YouTube (do not change accounts now):** tonight’s Shorts landed on personal `@deneeneflorino4711`. Reconnect the brand channel when Founder is ready — leave accounts as-is until then.
-4. Do not rewrite or cancel live/scheduled posts to “fix” hosting unless Founder asks.
+1. **Brand coverage first:** confirm FB + IG + TikTok + **brand** YouTube are connected. If brand YouTube is missing, stop and ask Founder to OAuth-connect it (see Hard rule above) — do not use personal YT for brand traction.
+2. **FB Story:** upload video to Zernio CDN first; use `media.zernio.com` URL — never rely on WP alone.
+3. Schedule IG/FB shorts with explicit `contentType: "reel"` or `contentType: "story"` (not plain video alone).
+4. Do not rewrite or cancel live/scheduled successful posts unless Founder asks.
+5. After brand YouTube is connected: republish S1E1 (media **26545**) as a Short on the brand channel only.
 
 ## Related docs
 
-- `config/reels_media.json` — Founder Media Library IDs (S1E1 / S1E2) + FB Story hosting note
+- `config/accounts.json` — brand FB / IG / TikTok IDs + YouTube brand-missing gate
+- `config/reels_media.json` — Founder Media Library IDs (S1E1 / S1E2) + brand coverage + FB Story hosting
 - `REELS-PLAN.md` — HeyGen AI-Deneene stack, scaffold status, isolation from image jobs
 - `AUTOMATION-DRAFT.md` — inactive “SG Daily Reels 10:30am” Cloud Agent draft (do not activate from this schedule alone)
 - `config/reels.json` — scaffold publish config (`auto_publish: false`)

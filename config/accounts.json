@@ -1,14 +1,47 @@
 {
-  "note": "ML Social account IDs for Phase 2+ scheduling. Phase 1 never publishes.",
+  "note": "ML Social account IDs for Phase 2+ scheduling. Phase 1 never publishes. Every reel/short episode must hit brand FB+IG+TikTok+YouTube — never personal YouTube.",
+  "timezone": "America/Chicago",
   "facebook": {
     "accountId": "6a49a1f49d9472faae7c274e",
     "displayName": "Sacred Ground",
-    "username": "shopsacredground"
+    "username": "shopsacredground",
+    "brand": true
   },
   "instagram": {
     "accountId": "6a49a12e9d9472faae7c2220",
     "displayName": "Sacred Ground",
-    "username": "shopsacredground"
+    "username": "shopsacredground",
+    "brand": true
   },
-  "timezone": "America/Chicago"
+  "tiktok": {
+    "accountId": "6a49a6e79d9472faae7c4b52",
+    "displayName": "Sacred Ground",
+    "username": "shopsacredground",
+    "brand": true
+  },
+  "youtube": {
+    "brand": false,
+    "status": "missing_brand_channel",
+    "connected_personal_only": {
+      "accountId": "6a4d93a63ecd8aa344590059",
+      "displayName": "Deneene Florino",
+      "username": "deneeneflorino4711",
+      "brand": false,
+      "note": "Do NOT use for Sacred Ground episode traction. Personal Shorts only until brand channel is connected."
+    },
+    "brand_channel": {
+      "accountId": null,
+      "displayName": null,
+      "username": null,
+      "brand": true,
+      "note": "Not connected in ML Social as of 2026-08-16. Founder must OAuth-connect the Sacred Ground YouTube channel before any brand Short republish."
+    }
+  },
+  "hard_rule_brand_coverage": {
+    "updated": "2026-08-16",
+    "every_episode_must_hit": ["facebook", "instagram", "tiktok", "youtube"],
+    "youtube_must_be": "Sacred Ground brand channel — never @deneeneflorino4711",
+    "content_types": "reel or story (not plain video alone)",
+    "fb_story_hosting": "Zernio CDN (media.zernio.com) — never WP-only for FB Story"
+  }
 }
