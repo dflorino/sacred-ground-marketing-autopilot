@@ -315,18 +315,20 @@
         "Tai Chi Gung with Sherry Gurley",
         "TarotHeads With Andre Free Community Event"
       ],
-      "local": "assets/sg-morning-flyer-2026-08-20-magritte-floating-door.png",
-      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-20-magritte-floating-door.png",
+      "local": "assets/sg-morning-flyer-2026-08-20-magritte-floating-door-logo-v2.png",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-20-magritte-floating-door-logo-v2.png",
       "prebranded": true,
       "template": "magritte_floating_door",
       "visual_style": "magritte_floating_door",
       "pride_baked_in": true,
       "pride_option": "B",
-      "media_id": 26631,
+      "media_id": 26658,
       "founder_approved": false,
       "locked_until_founder_review": true,
-      "note": "Batch Sun Aug 16 ~10:48pm CT — Magritte. LOCKED pending Founder review before Autopilot unlock.",
-      "generated_at": "2026-08-16T23:00:44-05:00"
+      "note": "Founder Aug 16 review: overall good — replaced made-up footer sun with REAL brand circular logo (logo-v2). LOCKED until Founder re-approves.",
+      "generated_at": "2026-08-16T23:00:44-05:00",
+      "logo_fixed_at": "2026-08-16T23:20:00-05:00",
+      "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-20-magritte-floating-door.png"
     },
     "2026-08-21": {
       "label": "Keeper of the Cards: Robert + Vibrational Chakra Healing With Kate + Sacred Creations",
@@ -335,18 +337,20 @@
         "Vibrational Chakra Healing With Kate",
         "Sacred Creations – A Monthly Creative & Spiritual Gathering"
       ],
-      "local": "assets/sg-morning-flyer-2026-08-21-folk-outsider-night.png",
-      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-21-folk-outsider-night.png",
+      "local": "assets/sg-morning-flyer-2026-08-21-folk-outsider-night-logo-v2.png",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-21-folk-outsider-night-logo-v2.png",
       "prebranded": true,
       "template": "folk_outsider_night",
       "visual_style": "folk_outsider_night",
       "pride_baked_in": true,
       "pride_option": "C",
-      "media_id": 26632,
+      "media_id": 26657,
       "founder_approved": false,
       "locked_until_founder_review": true,
-      "note": "Batch Sun Aug 16 ~10:48pm CT — Folk (today's liked look). LOCKED pending Founder review.",
-      "generated_at": "2026-08-16T23:00:44-05:00"
+      "note": "Founder Aug 16 review: hanging sign sun → REAL brand circular logo (logo-v2). LOCKED until Founder re-approves.",
+      "generated_at": "2026-08-16T23:00:44-05:00",
+      "logo_fixed_at": "2026-08-16T23:20:00-05:00",
+      "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-21-folk-outsider-night.png"
     },
     "2026-08-22": {
       "label": "Tarot with Adie + Shaman Medium Melissa + Keeper of the Cards: Robert",
@@ -355,18 +359,20 @@
         "Shaman Medium Melissa",
         "Keeper of the Cards: Robert"
       ],
-      "local": "assets/sg-morning-flyer-2026-08-22-davinci-storefront-sketch.png",
-      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-22-davinci-storefront-sketch.png",
+      "local": "assets/sg-morning-flyer-2026-08-22-davinci-storefront-sketch-logo-v2.png",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-22-davinci-storefront-sketch-logo-v2.png",
       "prebranded": true,
       "template": "davinci_storefront_sketch",
       "visual_style": "davinci_storefront_sketch",
       "pride_baked_in": true,
       "pride_option": "A",
-      "media_id": 26634,
+      "media_id": 26659,
       "founder_approved": false,
       "locked_until_founder_review": true,
-      "note": "Batch Sun Aug 16 ~10:48pm CT — Da Vinci. LOCKED pending Founder review.",
-      "generated_at": "2026-08-16T23:00:44-05:00"
+      "note": "Founder Aug 16 review: round badge sun → REAL brand circular logo (logo-v2). LOCKED until Founder re-approves.",
+      "generated_at": "2026-08-16T23:00:44-05:00",
+      "logo_fixed_at": "2026-08-16T23:20:00-05:00",
+      "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-22-davinci-storefront-sketch.png"
     },
     "2026-08-23": {
       "label": "Soul Guidance Through Channeled Poetry with Lisa Seyring",
@@ -381,28 +387,32 @@
       "pride_baked_in": true,
       "pride_option": "B",
       "media_id": 26633,
-      "founder_approved": false,
-      "locked_until_founder_review": true,
-      "note": "Batch Sun Aug 16 ~10:48pm CT — Einstein. LOCKED pending Founder review.",
-      "generated_at": "2026-08-16T23:00:44-05:00"
+      "founder_approved": true,
+      "locked_until_founder_review": false,
+      "note": "Founder Aug 16 review: fine — leave as-is. Unlocked for Autopilot.",
+      "generated_at": "2026-08-16T23:00:44-05:00",
+      "founder_approved_at": "2026-08-16T23:11:00-05:00"
     },
     "2026-08-24": {
       "label": "Lisa Maria Intuitive Tarot",
       "covers": [
         "Lisa Maria Intuitive Tarot"
       ],
-      "local": "assets/sg-morning-flyer-2026-08-24-matisse-cut-paper-garden.png",
-      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-24-matisse-cut-paper-garden.png",
+      "local": "assets/sg-morning-flyer-2026-08-24-matisse-cut-paper-garden-v3.png",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-24-matisse-cut-paper-garden-v3.png",
       "prebranded": true,
       "template": "matisse_cut_paper_garden",
       "visual_style": "matisse_cut_paper_garden",
       "pride_baked_in": true,
       "pride_option": "A",
-      "media_id": 26635,
+      "media_id": 26660,
       "founder_approved": false,
       "locked_until_founder_review": true,
-      "note": "Batch Sun Aug 16 ~10:48pm CT — NEW Matisse cut-paper garden (candidate style). LOCKED pending Founder review before unlocking / adding to mixed pool.",
-      "generated_at": "2026-08-16T23:00:44-05:00"
+      "note": "Founder Aug 16: original 'kind of lame' — regenerated denser Matisse cut-paper v3 + REAL brand circular logo bottom-left. Same Lisa Maria Aug 24 text. LOCKED until Founder re-approves / before mixed-pool unlock.",
+      "generated_at": "2026-08-16T23:16:00-05:00",
+      "logo_fixed_at": "2026-08-16T23:20:00-05:00",
+      "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-24-matisse-cut-paper-garden.png",
+      "logo_v2_local": "assets/sg-morning-flyer-2026-08-24-matisse-cut-paper-garden-logo-v2.png"
     }
   },
   "template": {
@@ -465,5 +475,19 @@
       "2026-08-24"
     ],
     "note": "Generated Sun Aug 16 night — LOCKED pending Founder review before Autopilot unlock (same pattern as Aug 14–19 batch)."
+  },
+  "last_logo_fix_aug16": {
+    "at": "2026-08-16T23:20:00-05:00",
+    "timezone": "America/Chicago",
+    "action": "Replaced made-up AI suns with config/brand/sacred-ground-logo-circle-transparent.png; Matisse regenerated to v3; Einstein left as-is and unlocked.",
+    "still_locked": [
+      "2026-08-20",
+      "2026-08-21",
+      "2026-08-22",
+      "2026-08-24"
+    ],
+    "unlocked": [
+      "2026-08-23"
+    ]
   }
 }
