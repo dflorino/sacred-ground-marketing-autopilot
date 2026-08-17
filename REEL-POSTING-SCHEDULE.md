@@ -75,9 +75,28 @@ Old wrong-media ids (deleted): `6a8204a952e7ad0aab0854d9` · `6a8204ab23fabe1c28
 
 Founder remaking S1E2. Any Mon Aug 17 drafts cancelled. Media ID **26537** remains inventory only — **do not schedule**.
 
+## Operational lesson — FB Story media hosting (Sun Aug 16, 2026)
+
+**Do not publish Facebook Stories from shopsacredground.com WordPress media URLs.**
+
+Tonight’s failure: ML Social / Zernio FB Story with a WP-hosted MP4 failed because Cloudflare returns **403** to Meta’s `meta-externalagent` crawler. Meta never fetches the file.
+
+| Path | Result tonight |
+|---|---|
+| FB Story ← `shopsacredground.com/wp-content/uploads/…` | **Fail** (CF 403 to Meta crawler) |
+| FB Story ← **Zernio CDN** (`media.zernio.com`) | **Works** — upload same video there, publish with that URL + `contentType: "story"` |
+| Reels / IG Story ← WP URL | May still work; **FB Story specifically needed Zernio CDN** |
+
+### Agent checklist (shorts / Stories)
+
+1. **FB Story:** upload video to Zernio CDN first; use `media.zernio.com` URL — never rely on WP alone.
+2. Schedule IG/FB shorts with explicit `contentType: "reel"` or `contentType: "story"` (not plain video alone).
+3. **YouTube (do not change accounts now):** tonight’s Shorts landed on personal `@deneeneflorino4711`. Reconnect the brand channel when Founder is ready — leave accounts as-is until then.
+4. Do not rewrite or cancel live/scheduled posts to “fix” hosting unless Founder asks.
+
 ## Related docs
 
-- `config/reels_media.json` — Founder Media Library IDs (S1E1 / S1E2)
+- `config/reels_media.json` — Founder Media Library IDs (S1E1 / S1E2) + FB Story hosting note
 - `REELS-PLAN.md` — HeyGen AI-Deneene stack, scaffold status, isolation from image jobs
 - `AUTOMATION-DRAFT.md` — inactive “SG Daily Reels 10:30am” Cloud Agent draft (do not activate from this schedule alone)
 - `config/reels.json` — scaffold publish config (`auto_publish: false`)

@@ -2,6 +2,13 @@
   "timezone": "America/Chicago",
   "note": "Founder-confirmed WordPress Media Library IDs for Cursor / ML Social video posts. Use these — never 26546 or lowercase s01e01-store-quest.mp4 for S1E1.",
   "updated": "2026-08-16",
+  "fb_story_media_hosting": {
+    "lesson_date": "2026-08-16",
+    "summary": "Facebook Stories via ML Social/Zernio fail when media is only on shopsacredground.com WP URLs — Cloudflare 403s Meta meta-externalagent. Upload the same video to Zernio CDN (media.zernio.com) and publish Story with that URL + contentType story. Reels/IG Story may work from WP; FB Story needed Zernio CDN tonight.",
+    "content_types": "Use contentType reel or story when scheduling IG/FB shorts — not plain video alone.",
+    "youtube_note": "Tonight Shorts used personal @deneeneflorino4711; reconnect brand channel when Founder ready — do not change accounts now.",
+    "see": "REEL-POSTING-SCHEDULE.md#operational-lesson--fb-story-media-hosting-sun-aug-16-2026"
+  },
   "episodes": {
     "s1e1": {
       "season": 1,
