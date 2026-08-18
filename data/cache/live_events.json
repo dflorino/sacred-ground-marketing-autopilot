@@ -3,48 +3,6 @@
   "site": "https://shopsacredground.com",
   "events": [
     {
-      "id": 25389,
-      "title": "Angel & Quick Astrology Readings with Lin Bufelli",
-      "description": "Connect with uplifting, heart-centered guidance through Angel Readings and Quick Astrology Readings with Lin Bufelli. Whether you’re seeking clarity, encouragement, or insight into the energies shaping your life, Lin offers supportive messages that are easy to receive and act on. Choose an Angel Card Reading, a Quick Astrology Reading, or blend both to explore your questions from more than one perspective. Each session is warm, intuitive, and tailored to what you need in the moment.",
-      "excerpt": "",
-      "url": "https://shopsacredground.com/book/linn/",
-      "start_date": "2026-08-16 12:00:00",
-      "end_date": "2026-08-16 17:00:00",
-      "all_day": false,
-      "featured": false,
-      "timezone": "America/New_York",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_blend-these-angel-card-readin_1765490396.png"
-      },
-      "categories": [],
-      "tags": [],
-      "cost": "$55 – $99",
-      "venue": {
-        "venue": "Sacred Ground"
-      }
-    },
-    {
-      "id": 23838,
-      "title": "Reiki Share Free Community Event",
-      "description": "Reiki Share Join our Reiki Share gathering, a welcoming space for both experienced practitioners and those curious about energy healing. This community-centered event offers an opportunity to give and receive Reiki in a supportive, heart-centered environment while connecting with others on a healing path. Whether you are a Reiki Master, newly certified practitioner, or simply interested in experiencing Reiki energy, all are welcome. Participants will have the chance to practice, exchange healing energy, ask questions, and deepen their understanding of Reiki in a relaxed and nurturing setting. Come recharge, connect, and experience the power of collective healing energy within a compassionate community. Join our Reiki Share gathering, a welcoming space for both experienced practitioners and those curious about energy healing. This community-centered event offers an opportunity to give and receive Reiki in a supportive, heart-centered environment while connecting with others on a healing path. Whether you are a Reiki Master, newly certified practitioner, or simply interested in experiencing Reiki energy, all are welcome. Participants will have the chance to practice, exchange healing energy, ask questions, and deepen their understanding of Reiki in a relaxed and nurturing setting. Come recharge, connect, and experience the power of collective healing energy within a compassionate community.",
-      "excerpt": "",
-      "url": "https://shopsacredground.com/event/reiki-share-free-community-event-3/",
-      "start_date": "2026-08-16 15:00:00",
-      "end_date": "2026-08-16 17:00:00",
-      "all_day": false,
-      "featured": true,
-      "timezone": "America/New_York",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_mystical-reiki-share-with-a-gl_1767925832.png"
-      },
-      "categories": [],
-      "tags": [],
-      "cost": "Free",
-      "venue": {
-        "venue": "Sacred Ground"
-      }
-    },
-    {
       "id": 23853,
       "title": "Lisa Maria Intuitive Tarot",
       "description": "Step into a calm, intuitive space where the cards help you better understand what you’re moving through. Lisa Maria’s readings bring clarity, reassurance, and meaningful insight. Choose 30 or 60 minutes.",
@@ -151,8 +109,8 @@
     },
     {
       "id": 24225,
-      "title": "Free Community Educational Night",
-      "description": "Join us for our Free Community Educational Night an evening of learning, connection, and spiritual growth. Each month features a different topic and guide, offering fresh insight into the practices and tools that support your journey. These gatherings are free and open to all. Come with an open heart and a curious mind no experience necessary. This month’s topic will be announced soon check back for details.",
+      "title": "Free Community Educational Night With TIna",
+      "description": "Join us for our Free Community Educational Night an evening of learning, connection, and spiritual growth. Each month features a different topic and guide, offering fresh insight into the practices and tools that support your journey. These gatherings are free and open to all. Come with an open heart and a curious mind no experience necessary. My Spiritual Journey: Lessons from Tarot, Reiki & Trusting Intuition What happens when you begin listening to the quiet voice within? Join Reiki Master Teacher and intuitive practitioner Tina Santana for an inspiring and interactive evening as she shares the experiences, lessons, and unexpected moments that shaped her spiritual journey. From her first introduction to Tarot and Reiki to learning to trust her intuition through life’s challenges, Tina offers an honest look at how these practices have transformed not only her own life, but the lives of countless clients she has been honored to serve. Date: Wednesday, August 19, 2026 Time: 7:00 pm Event Type: Free Community Event More than a lecture, this community gathering invites you to experience spirituality in a practical, approachable, and engaging way. Through interactive exercises, thoughtful discussion, and guided reflection, you’ll explore what intuition really is, discover how it naturally shows up in everyday life, and learn simple ways to strengthen your own inner guidance. Whether you’re simply curious about Tarot, interested in Reiki, searching for deeper meaning, or wondering how to better trust yourself, this evening is designed to meet you exactly where you are—regardless of your background or beliefs. Throughout the evening, you’ll explore topics including: • Tina’s personal spiritual journey and what inspired her path • The role Tarot and Reiki have played in her life and practice • Common myths and misconceptions about spirituality and intuition • Practical ways to develop and trust your own intuitive abilities • Interactive experiences that allow you to explore intuition firsthand • Time for questions, conversation, and community connection There is no right way to begin a spiritual journey—only the willingness to take the first step. Come with an open mind, bring your questions, and discover how learning to trust your intuition can become one of life’s greatest gifts. No experience is necessary. Everyone is warmly welcome. My hope isn’t that you leave wanting to follow my path. It’s that you leave feeling inspired to discover your own.",
       "excerpt": "",
       "url": "https://shopsacredground.com/event/free-community-educational-night-2/",
       "start_date": "2026-08-19 19:00:00",
@@ -696,6 +654,27 @@
       }
     },
     {
+      "id": 26578,
+      "title": "Frequency Reset",
+      "description": "Frequency Reset Relax. Recharge. Realign. Frequency Reset is a personalized wellness experience combining OlyLife frequency technology with guided meditation to support relaxation, energetic balance, and overall well-being. OlyLife devices use PEMF (Pulsed Electromagnetic Field) and terahertz frequency technologies, with options that may also incorporate massage, red light, heat, and EMS (Electrical Muscle Stimulation) depending on your individual session. Relax with the frequency technology while being guided through a personalized meditation, or deepen your experience by adding an intuitive energy healing session for additional clearing, balancing, and energetic alignment. 30 min for $66 , 60 min for $144 Individual (one-to-one) session",
+      "excerpt": "",
+      "url": "https://shopsacredground.com/event/frequency-reset-3/",
+      "start_date": "2026-08-29 15:00:00",
+      "end_date": "2026-08-29 20:00:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Chicago",
+      "image": {
+        "url": "https://shopsacredground.com/wp-content/uploads/ChatGPT-Image-Aug-16-2026-07_55_15-AM.png"
+      },
+      "categories": [],
+      "tags": [],
+      "cost": "",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
       "id": 25482,
       "title": "Oracle of the Stones: A Reading with Diane",
       "description": "Diane’s Oracle Stone Readings offer clear, intuitive insight through the use of sacred stones, each chosen to reflect what’s happening beneath the surface. This session helps you gain perspective, direction, and a better understanding of your current situation. 30 minutes – quick, focused clarity 60 minutes – deeper exploration and guidance Select your session length at booking.",
@@ -1027,6 +1006,27 @@
       "categories": [],
       "tags": [],
       "cost": "",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
+      "id": 26075,
+      "title": "Tina’s Intuitive Tarot, Runes & Reiki Experience",
+      "description": "Every session with Tina is uniquely guided by your needs, intentions, and the energy of the moment. Whether you are seeking clarity through Tarot, insight from the ancient wisdom of the Runes, healing through Reiki, or a personalized blend of all three, Tina creates a customized experience designed to support your journey. Some clients come with specific questions and receive intuitive guidance through Tarot and Rune readings. Others seek relaxation, energetic balance, and renewal through Reiki. Many choose a combination of modalities, allowing insight and healing to work together in a deeply meaningful way. Available in 30 or 60-minute sessions, each appointment is thoughtfully tailored to provide the guidance, perspective, and energetic support that best serves you. Whether you’re navigating a life transition, seeking answers, or simply looking to reconnect with yourself, Tina offers a welcoming space for exploration, healing, and discovery.",
+      "excerpt": "",
+      "url": "/tina-3/",
+      "start_date": "2026-09-07 12:00:00",
+      "end_date": "2026-09-07 17:00:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Chicago",
+      "image": {
+        "url": "https://shopsacredground.com/wp-content/uploads/d9804f91-3cae-4125-8b3d-39db0437237a.png"
+      },
+      "categories": [],
+      "tags": [],
+      "cost": "$55 – $99.00",
       "venue": {
         "venue": "Sacred Ground"
       }
