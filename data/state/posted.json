@@ -1187,7 +1187,51 @@
           "message": "Post published successfully"
         }
       }
+    },
+    "week_ahead|2026-08-17|facebook|19980,24179,24225,24247,24594": {
+      "draft_id": "sgma-2026-08-17-week_ahead-fb-9b7e986b",
+      "posted_at": "2026-08-17T21:37:15.550913-05:00",
+      "external": {
+        "zernio": {
+          "post": {
+            "_id": "6a83c4fea0e5620f344179d3",
+            "status": "published",
+            "platforms": [
+              {
+                "platform": "facebook",
+                "status": "published",
+                "platformPostUrl": "https://www.facebook.com/101428372368870_1089835413558363",
+                "platformPostId": "101428372368870_1089835413558363"
+              }
+            ]
+          },
+          "via": "ml_mcp_social_publish",
+          "note": "Founder-approved clean-v5 graybar repost Aug 17 ~9:36pm CT"
+        }
+      }
+    },
+    "week_ahead|2026-08-17|instagram|19980,24179,24225,24247,24594": {
+      "draft_id": "sgma-2026-08-17-week_ahead-ig-8e3dca94",
+      "posted_at": "2026-08-17T21:37:15.555617-05:00",
+      "external": {
+        "zernio": {
+          "post": {
+            "_id": "6a83c520705ccfb4df027765",
+            "status": "published",
+            "platforms": [
+              {
+                "platform": "instagram",
+                "status": "published",
+                "platformPostUrl": "https://www.instagram.com/p/DcKjf5ZCqhq/",
+                "platformPostId": null
+              }
+            ]
+          },
+          "via": "ml_mcp_social_publish",
+          "note": "Founder-approved clean-v5 graybar repost Aug 17 ~9:36pm CT"
+        }
+      }
     }
   },
-  "updated_at": "2026-08-17T09:40:17.885666-05:00"
+  "updated_at": "2026-08-17T21:37:15.555625-05:00"
 }

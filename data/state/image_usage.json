@@ -231,6 +231,20 @@
       "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-neon-fog-alley-1.png",
       "rule": "week_ahead_creative_neon_fog_alley",
       "campaign": "week_ahead"
+    },
+    {
+      "date": "2026-08-17",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-neon-fog-storefront-clean-v5.png",
+      "rule": "week_ahead_creative_neon_fog_storefront_clean_v5",
+      "campaign": "week_ahead",
+      "platform": "facebook"
+    },
+    {
+      "date": "2026-08-17",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-neon-fog-storefront-clean-v5.png",
+      "rule": "week_ahead_creative_neon_fog_storefront_clean_v5",
+      "campaign": "week_ahead",
+      "platform": "instagram"
     }
   ]
 }
