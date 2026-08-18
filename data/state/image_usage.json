@@ -231,6 +231,30 @@
       "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-neon-fog-alley-1.png",
       "rule": "week_ahead_creative_neon_fog_alley",
       "campaign": "week_ahead"
+    },
+    {
+      "date": "2026-08-18",
+      "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Inner-Knowing-Portal-cosmic_1766408164.png",
+      "rule": "massage",
+      "campaign": "today"
+    },
+    {
+      "date": "2026-08-18",
+      "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Metaphysical-spiritual-journey_1763939976.png",
+      "rule": "tuesday_meditation_pool",
+      "campaign": "tuesday_meditation"
+    },
+    {
+      "date": "2026-08-18",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-educational-night-generic.png",
+      "rule": "event_featured",
+      "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-08-18",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-crystal-mountain-v2.png",
+      "rule": "week_ahead_creative_crystal_mountain_v2",
+      "campaign": "week_ahead"
     }
   ]
 }
