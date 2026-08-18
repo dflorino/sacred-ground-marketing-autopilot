@@ -182,7 +182,23 @@
         "label": "Foggy alley neon Sacred Ground",
         "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-neon-fog-alley-1.png",
         "sg_identity": "pass",
-        "sg_anchor": "SACRED GROUND neon alley storefront"
+        "sg_anchor": "SACRED GROUND neon alley storefront",
+        "active": false,
+        "quarantine": true,
+        "quarantine_reason": "Founder Mon Aug 17 2026 ~7:17pm CT: baked-in translucent gray mid-image veil / failed composite seam (chroma-drop ~16.7). Live week_ahead FB+IG used this URL; Founder deleting posts. Do not reuse. Replacement candidate: neon_fog_storefront_clean_v5 (awaiting Founder approval before activate/repost)."
+      },
+      {
+        "id": "neon_fog_storefront_clean_v5",
+        "label": "Night storefront clean v5 (neon-fog replacement)",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-neon-fog-storefront-clean-v5.png",
+        "local": "assets/sg-night-creative-neon-fog-storefront-clean-v5.png",
+        "wp_media_id": 26727,
+        "sg_identity": "pass",
+        "sg_anchor": "Eggplant-awning SACRED GROUND storefront + circular sun logo BL",
+        "active": false,
+        "founder_approval_required": true,
+        "replaces": "neon_fog_alley",
+        "remake_note": "Aug 17 2026 — clean regen for gray-bar incident. Mid chroma-drop ~4.7. Do NOT activate or repost until Founder approves."
       },
       {
         "id": "neon_puddles",
