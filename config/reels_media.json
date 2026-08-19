@@ -1,7 +1,7 @@
 {
   "timezone": "America/Chicago",
   "note": "Founder-confirmed WordPress Media Library IDs for Cursor / ML Social video posts. Use these — never 26546 or lowercase s01e01-store-quest.mp4 for S1E1.",
-  "updated": "2026-08-17",
+  "updated": "2026-08-19",
   "brand_coverage_hard_rule": {
     "updated": "2026-08-16",
     "summary": "Every episode must hit Facebook + Instagram + TikTok + YouTube on Sacred Ground BRAND accounts. YouTube must be the Sacred Ground brand channel — never personal @deneeneflorino4711. Use contentType reel or story. FB Story must use Zernio CDN (media.zernio.com).",
@@ -60,12 +60,32 @@
       "season": 1,
       "episode": 2,
       "library_name": "S1E2",
-      "title": "Lemuria",
-      "media_id": 26537,
-      "url": "https://shopsacredground.com/wp-content/uploads/S1E2-Lemuria.mp4",
+      "title": "Help Team Sacred Ground",
+      "media_id": 26738,
+      "plate_id": 26736,
+      "url": "https://shopsacredground.com/wp-content/uploads/s01e02-help-team-sacred-ground.mp4",
       "mime_type": "video/mp4",
-      "schedule_status": "cancelled_not_scheduled",
-      "note": "Founder remaking S1E2 — do NOT schedule until Founder asks. Prior Mon Aug 17 drafts cancelled."
+      "schedule_status": "KEEP_scheduled_2026-08-19",
+      "note": "KEEP 26738. Supersedes old Lemuria media 26537 — do not use 26537.",
+      "do_not_use": {
+        "wrong_media_id": 26537,
+        "wrong_url": "https://shopsacredground.com/wp-content/uploads/S1E2-Lemuria.mp4",
+        "note": "26537 superseded by 26738 KEEP"
+      }
+    },
+    "s1e3": {
+      "season": 1,
+      "episode": 3,
+      "library_name": "S1E3",
+      "title": "First Crystal",
+      "media_id": 26743,
+      "plate_id": 26742,
+      "plate_library_name": "S1E3 KEEP plate",
+      "file": "s01e03-first-crystal.mp4",
+      "url": "https://shopsacredground.com/wp-content/uploads/s01e03-first-crystal.mp4",
+      "mime_type": "video/mp4",
+      "schedule_status": "KEEP_not_scheduled",
+      "note": "Founder KEEP FINAL 2026-08-19 — do not remake, do not remux. Do not schedule until Founder asks."
     }
   }
 }

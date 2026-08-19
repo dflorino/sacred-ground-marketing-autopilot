@@ -82,10 +82,13 @@ Canonical file: **`config/reels_media.json`**. Agents must use these IDs / URLs 
 | Episode | Library name | Media ID | URL |
 |---|---|---|---|
 | Season 1 Episode 1 — Store Quest | **S1E1** | **26545** | `https://shopsacredground.com/wp-content/uploads/S1E1-Store-Quest.mp4` |
-| Season 1 Episode 2 — Lemuria | **S1E2** | **26537** | `https://shopsacredground.com/wp-content/uploads/S1E2-Lemuria.mp4` |
+| Season 1 Episode 2 — Help Team Sacred Ground | **S1E2** | **26738** (plate **26736**) | `https://shopsacredground.com/wp-content/uploads/s01e02-help-team-sacred-ground.mp4` |
+| Season 1 Episode 3 — First Crystal | **S1E3** | **26743** (plate **26742**) | `https://shopsacredground.com/wp-content/uploads/s01e03-first-crystal.mp4` |
 
 **Do not use** media ID **26546** or `…/s01e01-store-quest.mp4` for S1E1.  
-**S1E2** — Founder remaking; **not scheduled**. Do not queue until Founder asks.
+**S1E1** — COMPLETE / NEVER republish.  
+**S1E2** — KEEP **26738** (not old Lemuria **26537**).  
+**S1E3** — KEEP FINAL 2026-08-19 — **do not remake, do not remux**. Media **26743**. Do not schedule until Founder asks.
 
 ## S1E1 Store Quest — COMPLETE / NEVER REPUBLISH (media 26545)
 
@@ -119,9 +122,10 @@ Old wrong-media ids (deleted earlier): `6a8204a952e7ad0aab0854d9` · `6a8204ab23
 
 WP-only FB Story attempts failed (CF 403) and stay failed — CDN Story above is the keeper.
 
-## S1E2 Lemuria — CANCELLED (not scheduled)
+## S1E2 — KEEP 26738 (old Lemuria 26537 retired)
 
-Founder remaking S1E2. Any Mon Aug 17 drafts cancelled. Media ID **26537** remains inventory only — **do not schedule**.
+**Ship:** media **26738** / plate **26736** — Help Team Sacred Ground. Scheduled Wed Aug 19 evening CT (FB/IG/TT/YT).  
+Old Lemuria media **26537** remains inventory only — **do not schedule**. Mon Aug 17 drafts cancelled.
 
 ## Operational lesson — FB Story media hosting (Sun Aug 16, 2026)
 
@@ -172,7 +176,7 @@ Do **not** delete live posts unless a platform forces re-upload.
 ## Related docs
 
 - `config/accounts.json` — brand FB / IG / TikTok IDs + YouTube brand-missing gate
-- `config/reels_media.json` — Founder Media Library IDs (S1E1 / S1E2) + brand coverage + FB Story hosting
+- `config/reels_media.json` — Founder Media Library IDs (S1E1 / S1E2 / S1E3) + brand coverage + FB Story hosting
 - `REELS-PLAN.md` — HeyGen AI-Deneene stack, scaffold status, isolation from image jobs
 - `AUTOMATION-DRAFT.md` — image Autopilot jobs + **Active** “SG Reel-building Friday Spencer” (YouTube scrub → `reel-building/`) + inactive “SG Daily Reels 10:30am” HeyGen scaffold (do not activate from this schedule alone)
 - `config/reels.json` — scaffold publish config (`auto_publish: false`)
