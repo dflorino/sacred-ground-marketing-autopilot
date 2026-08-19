@@ -378,18 +378,23 @@
       "remake_note": "Aug 16 ~11:30pm CT remake-v4 FROM SCRATCH (Founder rejected logo-v2 paste). New gen + reserved plate / designed-in real circular brand sun. Still locked until re-approval."
     },
     "2026-08-23": {
-      "label": "Soul Guidance Through Channeled Poetry",
+      "label": "Soul Guidance Through Channeled Poetry with Lisa Seyring",
       "covers": [
         "Soul Guidance Through Channeled Poetry with Lisa Seyring"
       ],
-      "local": "assets/sg-morning-flyer-2026-08-23-soul-guidance-through-channe.png",
-      "url": "",
+      "local": "assets/sg-morning-flyer-2026-08-23-einstein-chalkboard.png",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-23-einstein-chalkboard.png",
       "prebranded": true,
-      "template": "thursday-style",
-      "visual_style": "thursday_cards_shop_made",
+      "template": "einstein_chalkboard_map",
+      "visual_style": "einstein_chalkboard_map",
       "pride_baked_in": true,
+      "pride_option": "B",
+      "media_id": 26633,
+      "founder_approved": true,
+      "locked_until_founder_review": false,
       "note": "Founder Aug 16 review: fine — leave as-is. Unlocked for Autopilot.",
-      "url_instagram": ""
+      "generated_at": "2026-08-16T23:00:44-05:00",
+      "founder_approved_at": "2026-08-16T23:11:00-05:00"
     },
     "2026-08-24": {
       "label": "Lisa Maria Intuitive Tarot",
