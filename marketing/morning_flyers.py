@@ -1592,9 +1592,19 @@ def ensure_flyer_for_day(
 
     existing = flyer_entry_for_day(day)
     # Founder Aug 10: drab/muddy locals must be rebuilt (except protected gold standard).
+    # Founder-approved plates with a live public URL must not be force-regenerated —
+    # wiping `url` leaves needs_upload and morning plan_image falls through to
+    # specialty pools (e.g. massage), shipping the wrong plate at 9am.
+    founder_locked = bool(
+        existing
+        and existing.get("founder_approved")
+        and str(existing.get("url") or "").strip()
+    )
     energy_failed = (
         entry_fails_visual_energy(existing)
-        if existing and day.isoformat() not in PROTECTED_DAYS
+        if existing
+        and day.isoformat() not in PROTECTED_DAYS
+        and not founder_locked
         else []
     )
     if energy_failed and not force:

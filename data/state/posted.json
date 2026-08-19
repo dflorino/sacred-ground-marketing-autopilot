@@ -1187,7 +1187,159 @@
           "message": "Post published successfully"
         }
       }
+    },
+    "today|2026-08-19|facebook|22827,23983,24139,24225,24247": {
+      "draft_id": "sgma-2026-08-19-today-fb-c84ce8a6",
+      "posted_at": "2026-08-19T09:03:27.933060-05:00",
+      "external": {
+        "zernio": {
+          "post": {
+            "recycling": {
+              "enabled": false,
+              "gapFreq": "month",
+              "recycleCount": 0,
+              "contentVariations": [],
+              "contentVariationIndex": 0
+            },
+            "_id": "6a85b7a0f0900ecdca953ef1",
+            "userId": "6a49a0ca1f5ee39905d0dc6f",
+            "title": "",
+            "content": "Here’s today at Sacred Ground — then a peek at tomorrow.\n\nToday at Sacred Ground\n\n• Tina’s Tarot & Rune Sessions\n  Wednesday, August 19 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/tina/\n\n• Free Community Educational Night With TIna\n  Wednesday, August 19 · 7:00 PM–8:30 PM\n  https://shopsacredground.com/event/free-community-educational-night-2/\n  Free community gathering — all are welcome.\n\nTomorrow at Sacred Ground\n\n• Tarot with Adie\n  Thursday, August 20 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/book/adie/\n\n• Tai Chi Gung with Sherry Gurley\n  Thursday, August 20 · 12:00 PM–1:00 PM\n  https://shopsacredground.com/sherry/\n\n• TarotHeads With Andre Free Community Event\n  Thursday, August 20 · 7:00 PM–9:00 PM\n  https://shopsacredground.com/event/tarotheads-with-andre-free-community-event-2/\n  Free community gathering — all are welcome.\n\nDetails & signup on each event page.\n\nWe'll keep a seat warm.\n\nSacred Ground — Chicagoland’s Premier Crystal Store & Holistic Destination.\n\n#SacredGround #ArlingtonHeights #ShopSacredGround #ChicagoEvents #CrystalShop #EnergyHealing #HolisticCenter #RockShop #Kindness",
+            "mediaItems": [
+              {
+                "type": "image",
+                "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-19-storefront-photo-collage.png",
+                "_id": "6a85b7a0f0900ecdca953ef2"
+              }
+            ],
+            "platforms": [
+              {
+                "platform": "facebook",
+                "accountId": {
+                  "_id": "6a49a1f49d9472faae7c274e",
+                  "platform": "facebook",
+                  "profileId": "6a49a0ca1f5ee39905d0dc87",
+                  "displayName": "Sacred Ground",
+                  "isActive": true,
+                  "profilePicture": "https://scontent-lhr11-1.xx.fbcdn.net/v/t39.30808-1/525520556_778113704730537_8989064612556217432_n.jpg?stp=c412.0.720.720a_cp0_dst-jpg_s50x50_tt6&_nc_cat=106&ccb=1-7&_nc_sid=f907e8&_nc_ohc=oVvv85bo7w8Q7kNvwEmEEiQ&_nc_oc=AdqsTyjSI5A03deAPiAMfDMuq_-WKql2l6H_ORXCjh1MPLENrpMKSwusYkJGP-3eAg0&_nc_zt=24&_nc_ht=scontent-lhr11-1.xx&edm=AJdBtusEAAAA&_nc_gid=gkYtcFxeEbXHFgtP6ETN2Q&_nc_tpa=Q5bMBQLEm04SgAdpLqSXJDw5UnWqTmIzD8xxmixXI7xPTRkBlrtJkFJyupawAm0R_bO37j-sNm2KBEta&oh=00_AQHaP5OdfWPwEN28Y0wU6OmgxDtrk2RyMsvuDlTG5eplXg&oe=6A8B093C",
+                  "username": "shopsacredground"
+                },
+                "profileId": "6a49a0ca1f5ee39905d0dc87",
+                "customMedia": [],
+                "scheduledFor": "2026-08-19T14:03:12.416Z",
+                "platformSpecificData": {
+                  "firstComment": "Sacred Ground — Chicagoland’s Premier Crystal Store & Holistic Destination.",
+                  "__platformUserIdSnapshot": "10236438766043851:page:101428372368870",
+                  "__usernameSnapshot": "shopsacredground",
+                  "publishingStarted": "2026-08-19T14:03:13.308Z",
+                  "lastPublishStage": "publishing"
+                },
+                "status": "published",
+                "publishAttempts": 0,
+                "contentHash": "e26ea13c5f5d293452e35887d8225b65",
+                "_id": "6a85b7a0f0900ecdca953ef3",
+                "platformPostId": "101428372368870_1091096530098918",
+                "platformPostUrl": "https://www.facebook.com/101428372368870_1091096530098918",
+                "publishedAt": "2026-08-19T14:03:27.541Z"
+              }
+            ],
+            "scheduledFor": "2026-08-19T14:03:12.416Z",
+            "timezone": "America/Chicago",
+            "status": "published",
+            "tags": [],
+            "hashtags": [],
+            "mentions": [],
+            "visibility": "public",
+            "crosspostingEnabled": true,
+            "metadata": {
+              "usageCounted": true
+            },
+            "publishAttempts": 0,
+            "createdAt": "2026-08-19T14:03:12.861Z",
+            "updatedAt": "2026-08-19T14:03:27.683Z",
+            "__v": 0,
+            "publishingClaimedAt": "2026-08-19T14:03:12.992Z"
+          },
+          "message": "Post published successfully"
+        }
+      }
+    },
+    "today|2026-08-19|instagram|22827,23983,24139,24225,24247": {
+      "draft_id": "sgma-2026-08-19-today-ig-cf62fa1b",
+      "posted_at": "2026-08-19T09:03:36.416137-05:00",
+      "external": {
+        "zernio": {
+          "post": {
+            "recycling": {
+              "enabled": false,
+              "gapFreq": "month",
+              "recycleCount": 0,
+              "contentVariations": [],
+              "contentVariationIndex": 0
+            },
+            "_id": "6a85b7b02bbe131fda55e8ee",
+            "userId": "6a49a0ca1f5ee39905d0dc6f",
+            "title": "",
+            "content": "Here’s today at Sacred Ground — then a peek at tomorrow.\n\nToday at Sacred Ground\n\n• Tina’s Tarot & Rune Sessions\n  Wednesday, August 19 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/tina/\n\n• Free Community Educational Night With TIna\n  Wednesday, August 19 · 7:00 PM–8:30 PM\n  https://shopsacredground.com/event/free-community-educational-night-2/\n  Free community gathering — all are welcome.\n\nTomorrow at Sacred Ground\n\n• Tarot with Adie\n  Thursday, August 20 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/book/adie/\n\n• Tai Chi Gung with Sherry Gurley\n  Thursday, August 20 · 12:00 PM–1:00 PM\n  https://shopsacredground.com/sherry/\n\n• TarotHeads With Andre Free Community Event\n  Thursday, August 20 · 7:00 PM–9:00 PM\n  https://shopsacredground.com/event/tarotheads-with-andre-free-community-event-2/\n  Free community gathering — all are welcome.\n\nDetails & signup on each event page.\n\nWe'll keep a seat warm.\n\nSacred Ground — Chicagoland’s Premier Crystal Store & Holistic Destination.\n\n#SacredGround #ArlingtonHeights #ShopSacredGround #ChicagoEvents #CrystalShop #EnergyHealing #HolisticCenter #RockShop #Kindness #Chicagoland #HolisticChicago",
+            "mediaItems": [
+              {
+                "type": "image",
+                "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-19-storefront-photo-collage.png",
+                "_id": "6a85b7b02bbe131fda55e8ef"
+              }
+            ],
+            "platforms": [
+              {
+                "platform": "instagram",
+                "accountId": {
+                  "_id": "6a49a12e9d9472faae7c2220",
+                  "profileId": "6a49a0ca1f5ee39905d0dc87",
+                  "platform": "instagram",
+                  "displayName": "Sacred Ground",
+                  "isActive": true,
+                  "profilePicture": "https://scontent-lhr11-1.cdninstagram.com/v/t51.2885-19/313932603_854045628963650_758437280360514790_n.jpg?stp=dst-jpg_s206x206_tt6&_nc_cat=107&ccb=7-5&_nc_sid=bf7eb4&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=9AmypcX1KSQQ7kNvwHFYb4p&_nc_oc=Adp4uz-qj8Jpi1lx0b9naUIHjvX-TRPsERZ9bifp8f4mVVGc7m3R6JST59tqfkJIxO0&_nc_zt=24&_nc_ht=scontent-lhr11-1.cdninstagram.com&edm=AP4hL3IEAAAA&_nc_tpa=Q5bMBQKxBiEgbZBb9NdMjQIqGEKYOfPfJkTYb_ihI8CaGtQzh6EB_Wo5OahP2g9sUaPOTaM1YmKw2cvBYA&oh=00_AQGRtOpUq-tuRIygWEsNS3raNUlSixE_EOuodYKuMSe5ag&oe=6A8AEA4A",
+                  "username": "shopsacredground"
+                },
+                "profileId": "6a49a0ca1f5ee39905d0dc87",
+                "customMedia": [],
+                "scheduledFor": "2026-08-19T14:03:28.208Z",
+                "platformSpecificData": {
+                  "firstComment": "Sacred Ground — Chicagoland’s Premier Crystal Store & Holistic Destination.",
+                  "__platformUserIdSnapshot": "27979692144969047",
+                  "__usernameSnapshot": "shopsacredground",
+                  "publishingStarted": "2026-08-19T14:03:29.086Z",
+                  "lastPublishStage": "awaiting-finalize",
+                  "containerCreatedAt": "2026-08-19T14:03:36.096Z",
+                  "pendingContainerId": "18081981968677764",
+                  "publishedCaption": "Here’s today at Sacred Ground — then a peek at tomorrow.\n\nToday at Sacred Ground\n\n• Tina’s Tarot & Rune Sessions\n  Wednesday, August 19 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/tina/\n\n• Free Community Educational Night With TIna\n  Wednesday, August 19 · 7:00 PM–8:30 PM\n  https://shopsacredground.com/event/free-community-educational-night-2/\n  Free community gathering — all are welcome.\n\nTomorrow at Sacred Ground\n\n• Tarot with Adie\n  Thursday, August 20 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/book/adie/\n\n• Tai Chi Gung with Sherry Gurley\n  Thursday, August 20 · 12:00 PM–1:00 PM\n  https://shopsacredground.com/sherry/\n\n• TarotHeads With Andre Free Community Event\n  Thursday, August 20 · 7:00 PM–9:00 PM\n  https://shopsacredground.com/event/tarotheads-with-andre-free-community-event-2/\n  Free community gathering — all are welcome.\n\nDetails & signup on each event page.\n\nWe'll keep a seat warm.\n\nSacred Ground — Chicagoland’s Premier Crystal Store & Holistic Destination.\n\n#SacredGround #ArlingtonHeights #ShopSacredGround #ChicagoEvents #CrystalShop #EnergyHealing #HolisticCenter #RockShop #Kindness #Chicagoland #HolisticChicago"
+                },
+                "status": "processing",
+                "publishAttempts": 0,
+                "contentHash": "75bb9945fc6214d6e42c89783762ac32",
+                "_id": "6a85b7b02bbe131fda55e8f0"
+              }
+            ],
+            "scheduledFor": "2026-08-19T14:03:28.208Z",
+            "timezone": "America/Chicago",
+            "status": "publishing",
+            "tags": [],
+            "hashtags": [],
+            "mentions": [],
+            "visibility": "public",
+            "crosspostingEnabled": true,
+            "metadata": {
+              "usageCounted": true
+            },
+            "publishAttempts": 0,
+            "createdAt": "2026-08-19T14:03:28.572Z",
+            "updatedAt": "2026-08-19T14:03:36.117Z",
+            "__v": 0,
+            "publishingClaimedAt": "2026-08-19T14:03:28.681Z"
+          },
+          "message": "Post published successfully"
+        }
+      }
     }
   },
-  "updated_at": "2026-08-17T09:40:17.885666-05:00"
+  "updated_at": "2026-08-19T09:03:36.416146-05:00"
 }

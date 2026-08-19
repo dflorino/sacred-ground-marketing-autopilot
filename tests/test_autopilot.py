@@ -1838,6 +1838,40 @@ class AutopilotTests(unittest.TestCase):
         self.assertEqual(again["action"], "exists")
         self.assertFalse(again["needs_upload"])
 
+    def test_founder_approved_flyer_skips_energy_force_regen(self) -> None:
+        """Founder-approved plates with a live URL must not be wiped by energy gate."""
+        from PIL import Image
+
+        from marketing import morning_flyers as mf
+
+        day = date(2026, 9, 20)
+        drab_abs = os.path.join(mf.ASSETS_DIR, "sg-morning-flyer-test-founder-drab.png")
+        Image.new("RGB", (1080, 1080), (40, 28, 48)).save(drab_abs)
+        self.assertFalse(mf.flyer_passes_visual_energy(drab_abs))
+
+        live_url = (
+            "https://shopsacredground.com/wp-content/uploads/"
+            "sg-morning-flyer-test-founder-approved.png"
+        )
+        data = mf.load_flyers_config()
+        data.setdefault("flyers", {})[day.isoformat()] = {
+            "label": "Founder approved drab plate",
+            "covers": ["Test"],
+            "local": drab_abs,  # absolute so energy gate finds the tmp asset
+            "url": live_url,
+            "prebranded": True,
+            "pride_baked_in": True,
+            "founder_approved": True,
+            "visual_style": "einstein_chalkboard_map",
+        }
+        mf.save_flyers_config(data)
+
+        info = mf.ensure_flyer_for_day(day, [], force=False)
+        self.assertEqual(info["action"], "exists")
+        self.assertFalse(info["needs_upload"])
+        self.assertEqual(info["entry"].get("url"), live_url)
+        self.assertTrue(info["entry"].get("founder_approved"))
+
     def test_config_morning_flyers_price_free(self) -> None:
         """Repo morning_flyers.json labels/covers must never carry $ prices."""
         from marketing import morning_flyers as mf

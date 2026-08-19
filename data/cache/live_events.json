@@ -3,142 +3,16 @@
   "site": "https://shopsacredground.com",
   "events": [
     {
-      "id": 25389,
-      "title": "Angel & Quick Astrology Readings with Lin Bufelli",
-      "description": "Connect with uplifting, heart-centered guidance through Angel Readings and Quick Astrology Readings with Lin Bufelli. Whether you’re seeking clarity, encouragement, or insight into the energies shaping your life, Lin offers supportive messages that are easy to receive and act on. Choose an Angel Card Reading, a Quick Astrology Reading, or blend both to explore your questions from more than one perspective. Each session is warm, intuitive, and tailored to what you need in the moment.",
-      "excerpt": "",
-      "url": "https://shopsacredground.com/book/linn/",
-      "start_date": "2026-08-16 12:00:00",
-      "end_date": "2026-08-16 17:00:00",
-      "all_day": false,
-      "featured": false,
-      "timezone": "America/New_York",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_blend-these-angel-card-readin_1765490396.png"
-      },
-      "categories": [],
-      "tags": [],
-      "cost": "$55 – $99",
-      "venue": {
-        "venue": "Sacred Ground"
-      }
-    },
-    {
-      "id": 23838,
-      "title": "Reiki Share Free Community Event",
-      "description": "Reiki Share Join our Reiki Share gathering, a welcoming space for both experienced practitioners and those curious about energy healing. This community-centered event offers an opportunity to give and receive Reiki in a supportive, heart-centered environment while connecting with others on a healing path. Whether you are a Reiki Master, newly certified practitioner, or simply interested in experiencing Reiki energy, all are welcome. Participants will have the chance to practice, exchange healing energy, ask questions, and deepen their understanding of Reiki in a relaxed and nurturing setting. Come recharge, connect, and experience the power of collective healing energy within a compassionate community. Join our Reiki Share gathering, a welcoming space for both experienced practitioners and those curious about energy healing. This community-centered event offers an opportunity to give and receive Reiki in a supportive, heart-centered environment while connecting with others on a healing path. Whether you are a Reiki Master, newly certified practitioner, or simply interested in experiencing Reiki energy, all are welcome. Participants will have the chance to practice, exchange healing energy, ask questions, and deepen their understanding of Reiki in a relaxed and nurturing setting. Come recharge, connect, and experience the power of collective healing energy within a compassionate community.",
-      "excerpt": "",
-      "url": "https://shopsacredground.com/event/reiki-share-free-community-event-3/",
-      "start_date": "2026-08-16 15:00:00",
-      "end_date": "2026-08-16 17:00:00",
-      "all_day": false,
-      "featured": true,
-      "timezone": "America/New_York",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_mystical-reiki-share-with-a-gl_1767925832.png"
-      },
-      "categories": [],
-      "tags": [],
-      "cost": "Free",
-      "venue": {
-        "venue": "Sacred Ground"
-      }
-    },
-    {
-      "id": 23853,
-      "title": "Lisa Maria Intuitive Tarot",
-      "description": "Step into a calm, intuitive space where the cards help you better understand what you’re moving through. Lisa Maria’s readings bring clarity, reassurance, and meaningful insight. Choose 30 or 60 minutes.",
-      "excerpt": "",
-      "url": "/book/lisa-maria/",
-      "start_date": "2026-08-17 12:00:00",
-      "end_date": "2026-08-17 17:00:00",
-      "all_day": false,
-      "featured": false,
-      "timezone": "America/New_York",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/tarot-9.png"
-      },
-      "categories": [],
-      "tags": [],
-      "cost": "$55 – $99",
-      "venue": {
-        "venue": "Sacred Ground"
-      }
-    },
-    {
-      "id": 24594,
-      "title": "Astrology & Tarot With Lisa",
-      "description": "Astrology & Tarot with Lisa Enjoy a personalized session that blends the wisdom of astrology with the insight of tarot. Choose a full hour and divide your time between both modalities, exploring your birth chart, current planetary influences, and the guidance the cards have to offer. A beautiful way to gain clarity, confirmation, and perspective on your path.",
-      "excerpt": "",
-      "url": "/book/lisa/",
-      "start_date": "2026-08-18 12:00:00",
-      "end_date": "2026-08-18 17:00:00",
-      "all_day": false,
-      "featured": false,
-      "timezone": "UTC-5",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Celestial-astrology-chart-with_1762837314.png"
-      },
-      "categories": [],
-      "tags": [],
-      "cost": "",
-      "venue": {
-        "venue": "Sacred Ground"
-      }
-    },
-    {
-      "id": 24179,
-      "title": "Amber | Customized Therapeutic Massage Sessions",
-      "description": "Give your body the reset it deserves. Amber offers personalized therapeutic massage designed to release tension, restore balance, and support your overall well-being.",
-      "excerpt": "",
-      "url": "/book/amber/",
-      "start_date": "2026-08-18 12:00:00",
-      "end_date": "2026-08-18 17:00:00",
-      "all_day": false,
-      "featured": false,
-      "timezone": "America/Chicago",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Restorative-Touch-Abstract-Bo_1766408817.png"
-      },
-      "categories": [],
-      "tags": [],
-      "cost": "$2 – $166",
-      "venue": {
-        "venue": "Sacred Ground"
-      }
-    },
-    {
-      "id": 19980,
-      "title": "Meditation Free Community Event",
-      "description": "Step away from the noise and into shared stillness. Each week, a different skilled practitioner brings a unique tone, intention, and insight to our meditation experience. To honor the peaceful environment, doors close promptly at 7:05 p.m. Please arrive early and allow extra time for parking. Our practitioners graciously take love donations and they are warmly appreciated. If you would like to shop, we invite you to do so before or after the session. Thank you for honoring our shared space.",
-      "excerpt": "",
-      "url": "https://shopsacredground.com/event/meditation-free-community-event-2/",
-      "start_date": "2026-08-18 19:00:00",
-      "end_date": "2026-08-18 20:00:00",
-      "all_day": false,
-      "featured": false,
-      "timezone": "UTC-5",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Close-up-intimate-view-of-a-sm_1762732993.png"
-      },
-      "categories": [],
-      "tags": [],
-      "cost": "Free",
-      "venue": {
-        "venue": "Sacred Ground"
-      }
-    },
-    {
       "id": 24247,
       "title": "Tina’s Tarot & Rune Sessions",
       "description": "Receive guidance through the wisdom of Tarot and the ancient symbols of the Runes. Tina blends intuition with time-honored divination tools to help bring clarity, perspective, and insight to your questions. Available in 30 or 60-minute sessions.",
       "excerpt": "",
       "url": "https://shopsacredground.com/tina/",
       "start_date": "2026-08-19 12:00:00",
-      "end_date": "2026-08-19 18:00:00",
+      "end_date": "2026-08-19 17:00:00",
       "all_day": false,
       "featured": false,
-      "timezone": "America/New_York",
+      "timezone": "America/Chicago",
       "image": {
         "url": "https://shopsacredground.com/wp-content/uploads/d9804f91-3cae-4125-8b3d-39db0437237a.png"
       },
@@ -151,15 +25,15 @@
     },
     {
       "id": 24225,
-      "title": "Free Community Educational Night",
-      "description": "Join us for our Free Community Educational Night an evening of learning, connection, and spiritual growth. Each month features a different topic and guide, offering fresh insight into the practices and tools that support your journey. These gatherings are free and open to all. Come with an open heart and a curious mind no experience necessary. This month’s topic will be announced soon check back for details.",
+      "title": "Free Community Educational Night With TIna",
+      "description": "Join us for our Free Community Educational Night an evening of learning, connection, and spiritual growth. Each month features a different topic and guide, offering fresh insight into the practices and tools that support your journey. These gatherings are free and open to all. Come with an open heart and a curious mind no experience necessary. My Spiritual Journey: Lessons from Tarot, Reiki & Trusting Intuition What happens when you begin listening to the quiet voice within? Join Reiki Master Teacher and intuitive practitioner Tina Santana for an inspiring and interactive evening as she shares the experiences, lessons, and unexpected moments that shaped her spiritual journey. From her first introduction to Tarot and Reiki to learning to trust her intuition through life’s challenges, Tina offers an honest look at how these practices have transformed not only her own life, but the lives of countless clients she has been honored to serve. Date: Wednesday, August 19, 2026 Time: 7:00 pm Event Type: Free Community Event More than a lecture, this community gathering invites you to experience spirituality in a practical, approachable, and engaging way. Through interactive exercises, thoughtful discussion, and guided reflection, you’ll explore what intuition really is, discover how it naturally shows up in everyday life, and learn simple ways to strengthen your own inner guidance. Whether you’re simply curious about Tarot, interested in Reiki, searching for deeper meaning, or wondering how to better trust yourself, this evening is designed to meet you exactly where you are—regardless of your background or beliefs. Throughout the evening, you’ll explore topics including: • Tina’s personal spiritual journey and what inspired her path • The role Tarot and Reiki have played in her life and practice • Common myths and misconceptions about spirituality and intuition • Practical ways to develop and trust your own intuitive abilities • Interactive experiences that allow you to explore intuition firsthand • Time for questions, conversation, and community connection There is no right way to begin a spiritual journey—only the willingness to take the first step. Come with an open mind, bring your questions, and discover how learning to trust your intuition can become one of life’s greatest gifts. No experience is necessary. Everyone is warmly welcome. My hope isn’t that you leave wanting to follow my path. It’s that you leave feeling inspired to discover your own.",
       "excerpt": "",
       "url": "https://shopsacredground.com/event/free-community-educational-night-2/",
       "start_date": "2026-08-19 19:00:00",
       "end_date": "2026-08-19 20:30:00",
       "all_day": false,
       "featured": false,
-      "timezone": "America/New_York",
+      "timezone": "America/Chicago",
       "image": {
         "url": "https://shopsacredground.com/wp-content/uploads/sg-educational-night-generic.png"
       },
@@ -180,7 +54,7 @@
       "end_date": "2026-08-20 17:00:00",
       "all_day": false,
       "featured": true,
-      "timezone": "America/New_York",
+      "timezone": "America/Chicago",
       "image": {
         "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Beautiful-tarot-and-oracle-car_1763320027.png"
       },
@@ -201,7 +75,7 @@
       "end_date": "2026-08-20 13:00:00",
       "all_day": false,
       "featured": false,
-      "timezone": "America/New_York",
+      "timezone": "America/Chicago",
       "image": {
         "url": "https://shopsacredground.com/wp-content/uploads/4070F231-3AB2-455E-BD7F-551A261CDF52.png"
       },
@@ -222,7 +96,7 @@
       "end_date": "2026-08-20 21:00:00",
       "all_day": false,
       "featured": true,
-      "timezone": "UTC-5",
+      "timezone": "America/Chicago",
       "image": {
         "url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-05-17-at-8.22.18-AM.png"
       },
@@ -243,7 +117,7 @@
       "end_date": "2026-08-21 18:30:00",
       "all_day": false,
       "featured": false,
-      "timezone": "America/New_York",
+      "timezone": "America/Chicago",
       "image": {
         "url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2025-12-20-at-5.00.19-PM.png"
       },
@@ -264,7 +138,7 @@
       "end_date": "2026-08-21 17:00:00",
       "all_day": false,
       "featured": true,
-      "timezone": "UTC-5",
+      "timezone": "America/Chicago",
       "image": {
         "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Seven-glowing-chakra-energy-ce_1764775438.png"
       },
@@ -285,7 +159,7 @@
       "end_date": "2026-08-21 20:30:00",
       "all_day": false,
       "featured": true,
-      "timezone": "UTC-5",
+      "timezone": "America/Chicago",
       "image": {
         "url": "https://shopsacredground.com/wp-content/uploads/d42573b8-b256-4564-995a-e9c284b50526.png"
       },
@@ -306,7 +180,7 @@
       "end_date": "2026-08-22 15:00:00",
       "all_day": false,
       "featured": false,
-      "timezone": "America/New_York",
+      "timezone": "America/Chicago",
       "image": {
         "url": "https://shopsacredground.com/wp-content/uploads/tarot-13.png"
       },
@@ -327,7 +201,7 @@
       "end_date": "2026-08-22 14:00:00",
       "all_day": false,
       "featured": false,
-      "timezone": "UTC-5",
+      "timezone": "America/Chicago",
       "image": {
         "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Andean-mountain-peaks-with-con_1764776305.png"
       },
@@ -348,7 +222,7 @@
       "end_date": "2026-08-22 19:30:00",
       "all_day": false,
       "featured": false,
-      "timezone": "America/New_York",
+      "timezone": "America/Chicago",
       "image": {
         "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Standard-52-card-playing-deck_1764775808.png"
       },
@@ -369,7 +243,7 @@
       "end_date": "2026-08-23 17:00:00",
       "all_day": false,
       "featured": true,
-      "timezone": "UTC-5",
+      "timezone": "America/Chicago",
       "image": {
         "url": "https://shopsacredground.com/wp-content/uploads/71b020f7-5503-4e03-8b2a-6a0716510305.png"
       },
@@ -390,7 +264,7 @@
       "end_date": "2026-08-24 17:00:00",
       "all_day": false,
       "featured": false,
-      "timezone": "America/New_York",
+      "timezone": "America/Chicago",
       "image": {
         "url": "https://shopsacredground.com/wp-content/uploads/tarot-7.png"
       },
@@ -411,7 +285,7 @@
       "end_date": "2026-08-25 17:00:00",
       "all_day": false,
       "featured": true,
-      "timezone": "America/New_York",
+      "timezone": "America/Chicago",
       "image": {
         "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Restorative-Touch-Abstract-Bo_1766408767.png"
       },
@@ -432,7 +306,7 @@
       "end_date": "2026-08-25 17:00:00",
       "all_day": false,
       "featured": false,
-      "timezone": "UTC-5",
+      "timezone": "America/Chicago",
       "image": {
         "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Intuitive-tarot-cards-floating_1762837337.png"
       },
@@ -453,7 +327,7 @@
       "end_date": "2026-08-25 20:00:00",
       "all_day": false,
       "featured": false,
-      "timezone": "UTC-5",
+      "timezone": "America/Chicago",
       "image": {
         "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Close-up-intimate-view-of-a-sm_1762732993.png"
       },
@@ -474,7 +348,7 @@
       "end_date": "2026-08-26 18:00:00",
       "all_day": false,
       "featured": false,
-      "timezone": "America/New_York",
+      "timezone": "America/Chicago",
       "image": {
         "url": "https://shopsacredground.com/wp-content/uploads/7347a0c3-962d-4a9f-b568-4b831db9a7e2.png"
       },
@@ -495,7 +369,7 @@
       "end_date": "2026-08-26 22:00:00",
       "all_day": false,
       "featured": true,
-      "timezone": "UTC-5",
+      "timezone": "America/Chicago",
       "image": {
         "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Mystical-Akashic-Records-libra_1763937124.png"
       },
@@ -516,7 +390,7 @@
       "end_date": "2026-08-27 17:00:00",
       "all_day": false,
       "featured": false,
-      "timezone": "America/New_York",
+      "timezone": "America/Chicago",
       "image": {
         "url": "https://shopsacredground.com/wp-content/uploads/98e11e87-adaa-4088-ba84-29d26f0069eb.png"
       },
@@ -537,7 +411,7 @@
       "end_date": "2026-08-27 13:00:00",
       "all_day": false,
       "featured": false,
-      "timezone": "America/New_York",
+      "timezone": "America/Chicago",
       "image": {
         "url": "https://shopsacredground.com/wp-content/uploads/4070F231-3AB2-455E-BD7F-551A261CDF52.png"
       },
@@ -558,7 +432,7 @@
       "end_date": "2026-08-27 21:00:00",
       "all_day": false,
       "featured": true,
-      "timezone": "UTC-5",
+      "timezone": "America/Chicago",
       "image": {
         "url": "https://shopsacredground.com/wp-content/uploads/f8b3d068-4500-4950-b8ff-acafaa9904fe.png"
       },
@@ -579,7 +453,7 @@
       "end_date": "2026-08-28 15:00:00",
       "all_day": false,
       "featured": true,
-      "timezone": "UTC-5",
+      "timezone": "America/Chicago",
       "image": {
         "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Reflexology-foot-chart-showing_1763319843.png"
       },
@@ -600,7 +474,7 @@
       "end_date": "2026-08-28 18:30:00",
       "all_day": false,
       "featured": false,
-      "timezone": "America/New_York",
+      "timezone": "America/Chicago",
       "image": {
         "url": "https://shopsacredground.com/wp-content/uploads/832C7C83-B4AA-4EAD-8CD7-8682D0162DEA.png"
       },
@@ -642,7 +516,7 @@
       "end_date": "2026-08-29 15:00:00",
       "all_day": false,
       "featured": false,
-      "timezone": "America/New_York",
+      "timezone": "America/Chicago",
       "image": {
         "url": "https://shopsacredground.com/wp-content/uploads/0da21043-ae5b-4008-aba0-935762cffb12.png"
       },
@@ -663,7 +537,7 @@
       "end_date": "2026-08-29 14:00:00",
       "all_day": false,
       "featured": false,
-      "timezone": "UTC-5",
+      "timezone": "America/Chicago",
       "image": {
         "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Andean-mountain-peaks-with-con_1764776305.png"
       },
@@ -684,7 +558,7 @@
       "end_date": "2026-08-29 19:30:00",
       "all_day": false,
       "featured": false,
-      "timezone": "America/New_York",
+      "timezone": "America/Chicago",
       "image": {
         "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Classic-playing-cards-fanned-o_1764775825.png"
       },
@@ -696,22 +570,22 @@
       }
     },
     {
-      "id": 25482,
-      "title": "Oracle of the Stones: A Reading with Diane",
-      "description": "Diane’s Oracle Stone Readings offer clear, intuitive insight through the use of sacred stones, each chosen to reflect what’s happening beneath the surface. This session helps you gain perspective, direction, and a better understanding of your current situation. 30 minutes – quick, focused clarity 60 minutes – deeper exploration and guidance Select your session length at booking.",
+      "id": 26578,
+      "title": "Frequency Reset",
+      "description": "Frequency Reset Relax. Recharge. Realign. Frequency Reset is a personalized wellness experience combining OlyLife frequency technology with guided meditation to support relaxation, energetic balance, and overall well-being. OlyLife devices use PEMF (Pulsed Electromagnetic Field) and terahertz frequency technologies, with options that may also incorporate massage, red light, heat, and EMS (Electrical Muscle Stimulation) depending on your individual session. Relax with the frequency technology while being guided through a personalized meditation, or deepen your experience by adding an intuitive energy healing session for additional clearing, balancing, and energetic alignment. 30 min for $66 , 60 min for $144 Individual (one-to-one) session",
       "excerpt": "",
-      "url": "/book/diane/",
-      "start_date": "2026-08-30 12:00:00",
-      "end_date": "2026-08-30 17:00:00",
+      "url": "https://shopsacredground.com/event/frequency-reset-3/",
+      "start_date": "2026-08-29 15:00:00",
+      "end_date": "2026-08-29 20:00:00",
       "all_day": false,
-      "featured": true,
-      "timezone": "America/New_York",
+      "featured": false,
+      "timezone": "America/Chicago",
       "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/77814afa-b3e0-40d9-9f09-6eac1983179d.png"
+        "url": "https://shopsacredground.com/wp-content/uploads/ChatGPT-Image-Aug-16-2026-07_55_15-AM.png"
       },
       "categories": [],
       "tags": [],
-      "cost": "$55 – $99.00",
+      "cost": "",
       "venue": {
         "venue": "Sacred Ground"
       }
@@ -733,6 +607,27 @@
       "categories": [],
       "tags": [],
       "cost": "$77.00",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
+      "id": 25482,
+      "title": "Oracle of the Stones: A Reading with Diane",
+      "description": "Diane’s Oracle Stone Readings offer clear, intuitive insight through the use of sacred stones, each chosen to reflect what’s happening beneath the surface. This session helps you gain perspective, direction, and a better understanding of your current situation. 30 minutes – quick, focused clarity 60 minutes – deeper exploration and guidance Select your session length at booking.",
+      "excerpt": "",
+      "url": "/book/diane/",
+      "start_date": "2026-08-30 12:00:00",
+      "end_date": "2026-08-30 17:00:00",
+      "all_day": false,
+      "featured": true,
+      "timezone": "America/Chicago",
+      "image": {
+        "url": "https://shopsacredground.com/wp-content/uploads/77814afa-b3e0-40d9-9f09-6eac1983179d.png"
+      },
+      "categories": [],
+      "tags": [],
+      "cost": "$55 – $99.00",
       "venue": {
         "venue": "Sacred Ground"
       }
@@ -768,7 +663,7 @@
       "end_date": "2026-09-01 17:00:00",
       "all_day": false,
       "featured": false,
-      "timezone": "America/New_York",
+      "timezone": "America/Chicago",
       "image": {
         "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Professional-massage-table-in_1763322651.png"
       },
@@ -810,7 +705,7 @@
       "end_date": "2026-09-01 20:00:00",
       "all_day": false,
       "featured": false,
-      "timezone": "UTC-5",
+      "timezone": "America/Chicago",
       "image": {
         "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Close-up-intimate-view-of-a-sm_1762732993.png"
       },
@@ -852,7 +747,7 @@
       "end_date": "2026-09-03 17:00:00",
       "all_day": false,
       "featured": false,
-      "timezone": "America/New_York",
+      "timezone": "America/Chicago",
       "image": {
         "url": "https://shopsacredground.com/wp-content/uploads/ecb69035-9fd9-4651-ae06-a95df106465e.png"
       },
@@ -873,7 +768,7 @@
       "end_date": "2026-09-03 13:00:00",
       "all_day": false,
       "featured": true,
-      "timezone": "America/New_York",
+      "timezone": "America/Chicago",
       "image": {
         "url": "https://shopsacredground.com/wp-content/uploads/4070F231-3AB2-455E-BD7F-551A261CDF52.png"
       },
@@ -936,7 +831,7 @@
       "end_date": "2026-09-04 18:30:00",
       "all_day": false,
       "featured": true,
-      "timezone": "America/New_York",
+      "timezone": "America/Chicago",
       "image": {
         "url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-06-26-at-9.57.19-AM.png"
       },
@@ -978,7 +873,7 @@
       "end_date": "2026-09-05 19:30:00",
       "all_day": false,
       "featured": false,
-      "timezone": "America/New_York",
+      "timezone": "America/Chicago",
       "image": {
         "url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2025-12-20-at-5.00.19-PM.png"
       },
@@ -999,7 +894,7 @@
       "end_date": "2026-09-05 22:00:00",
       "all_day": false,
       "featured": false,
-      "timezone": "UTC-5",
+      "timezone": "America/Chicago",
       "image": {
         "url": "https://shopsacredground.com/wp-content/uploads/tarot-8.png"
       },
@@ -1027,6 +922,111 @@
       "categories": [],
       "tags": [],
       "cost": "",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
+      "id": 26075,
+      "title": "Tina’s Intuitive Tarot, Runes & Reiki Experience",
+      "description": "Every session with Tina is uniquely guided by your needs, intentions, and the energy of the moment. Whether you are seeking clarity through Tarot, insight from the ancient wisdom of the Runes, healing through Reiki, or a personalized blend of all three, Tina creates a customized experience designed to support your journey. Some clients come with specific questions and receive intuitive guidance through Tarot and Rune readings. Others seek relaxation, energetic balance, and renewal through Reiki. Many choose a combination of modalities, allowing insight and healing to work together in a deeply meaningful way. Available in 30 or 60-minute sessions, each appointment is thoughtfully tailored to provide the guidance, perspective, and energetic support that best serves you. Whether you’re navigating a life transition, seeking answers, or simply looking to reconnect with yourself, Tina offers a welcoming space for exploration, healing, and discovery.",
+      "excerpt": "",
+      "url": "/tina-3/",
+      "start_date": "2026-09-07 12:00:00",
+      "end_date": "2026-09-07 17:00:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Chicago",
+      "image": {
+        "url": "https://shopsacredground.com/wp-content/uploads/d9804f91-3cae-4125-8b3d-39db0437237a.png"
+      },
+      "categories": [],
+      "tags": [],
+      "cost": "$55 – $99.00",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
+      "id": 24185,
+      "title": "Amber | Customized Therapeutic Massage Sessions",
+      "description": "Amber’s results-driven bodywork blends therapeutic technique with genuine care. Whether you’re recovering from stress, tension, or the everyday grind, your session is shaped around what your body needs most.",
+      "excerpt": "",
+      "url": "/book/amber/",
+      "start_date": "2026-09-08 12:00:00",
+      "end_date": "2026-09-08 17:00:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Chicago",
+      "image": {
+        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Healing-hands-with-golden-ener_1764776231.png"
+      },
+      "categories": [],
+      "tags": [],
+      "cost": "$2 – $166",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
+      "id": 26141,
+      "title": "Divine Insight Sessions with Janel: Akashic Records or Angel Card Readings",
+      "description": "Step beyond logic and into luminous clarity with Janel’s Divine Insight Sessions—your choice of an Akashic Records Reading or an Angel Card Reading, each designed to unlock profound guidance from higher realms. Customize your session based on what you need most. Through the Akashic Records, Janel helps you access the “Book of Your Soul,” revealing patterns, past-life influences, and future potentials shaping your path today. Prefer a gentler, more symbolic connection? Her Angel Card Readings offer direct, heart-centered messages that bring reassurance, direction, and alignment to your daily life. 30-minute sessions are ideal for focused guidance—perfect for a clear question, immediate insight, or a concise Akashic or Angel Card experience. 60-minute sessions allow for a deeper, more expansive exploration, offering greater depth within the Akashic Records, extended intuitive dialogue, or a more layered and immersive reading experience. When booking, please select your session length (30 or 60 minutes). The modality—Akashic Records or Angel Card Reading—can be chosen at the time of your appointment. Whether you’re seeking clarity, confirmation, or a broader perspective, this is where insight meets the soul—and guidance becomes tangible.",
+      "excerpt": "",
+      "url": "/book/janel/",
+      "start_date": "2026-09-08 13:00:00",
+      "end_date": "2026-09-08 17:00:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Chicago",
+      "image": {
+        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_blend-these-angel-card-readin_1765490396.png"
+      },
+      "categories": [],
+      "tags": [],
+      "cost": "$55 – $99.00",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
+      "id": 14765,
+      "title": "Free Community Meditation",
+      "description": "Step away from the noise and into shared stillness. Each week, a different skilled practitioner brings a unique tone, intention, and insight to our meditation experience. To honor the peaceful environment, doors close promptly at 7:05 p.m. Please arrive early and allow extra time for parking. Our practitioners graciously take love donations and they are warmly appreciated. If you would like to shop, we invite you to do so before or after the session. Thank you for honoring our shared space.",
+      "excerpt": "",
+      "url": "https://shopsacredground.com/event/free-community-meditation-6/",
+      "start_date": "2026-09-08 19:00:00",
+      "end_date": "2026-09-08 20:00:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Chicago",
+      "image": {
+        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Close-up-intimate-view-of-a-sm_1762732993.png"
+      },
+      "categories": [],
+      "tags": [],
+      "cost": "Free",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
+      "id": 26110,
+      "title": "Moon Alchemy Journey: Planting the Seed with Jeniffer",
+      "description": "Want all six gatherings? Sign up for the complete Moon Alchemy Journey for $330 ($55 × 6) and receive a free moon journal from Jeniffer . Call the store to register: 847-749-3922 . MOON ALCHEMY JOURNEY: SIX MOONS OF INTENTION September 2026–February 2027 Wednesdays, 7–9 PM $55 per gathering Join Jeniffer for Moon Alchemy Journey: Six Moons of Intention, a six-part experiential series designed to help you cultivate a meaningful intention through lunar wisdom, guided journaling, practical rituals, crystals, and crystal-grid work. Over the course of six gatherings, you’ll explore the phases and energies of the Moon, move from intention into aligned action, reflect on your progress, make meaningful adjustments, explore the Moon through the zodiac, and create a personal crystal grid that can support your continued practice. Each 90–120-minute gathering combines interactive conversation, guided journaling, crystal education, crystal-grid work, and practical rituals you can continue at home. Each event stands on its own. Attend one gathering, choose several that speak to you, or experience the complete six-part journey. 1. PLANTING THE SEED Wednesday, September 9, 2026 Understand the lunar cycle, set a meaningful intention, and begin creating a personalized moon practice. Explore the energetic properties and colors of crystals and learn how to select stones that support your intention. Location: Sacred Ground Time: 7–9 PM Price: $55 per gathering Book: shopsacredground.com/book/jeniffer/ Phone: 847-749-3922 Instagram, Facebook, TikTok and YouTube: Shop Sacred Ground Classes still left in the series — tap to book: 2. TAKING ACTION — Wednesday, October 14, 2026 3. SPOTLIGHT — Wednesday, November 25, 2026 4. ADJUSTMENT & ATTUNEMENT — Wednesday, December 23, 2026 5. MOON THROUGH THE ZODIAC, PART I — Wednesday, January 6, 2027 6. MOON THROUGH THE ZODIAC, PART II — Wednesday, February 10, 2027 All six gatherings: 1. PLANTING THE SEED — Wednesday, September 9, 2026 (this gathering) 2. TAKING ACTION — Wednesday, October 14, 2026 3. SPOTLIGHT — Wednesday, November 25, 2026 4. ADJUSTMENT & ATTUNEMENT — Wednesday, December 23, 2026 5. MOON THROUGH THE ZODIAC, PART I — Wednesday, January 6, 2027 6. MOON THROUGH THE ZODIAC, PART II — Wednesday, February 10, 2027",
+      "excerpt": "",
+      "url": "/book/jeniffer/",
+      "start_date": "2026-09-09 19:00:00",
+      "end_date": "2026-09-09 21:00:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Chicago",
+      "image": {
+        "url": "https://shopsacredground.com/wp-content/uploads/exec-48d45f80-e237-4451-9dc8-a8be72cc87c2.png"
+      },
+      "categories": [],
+      "tags": [],
+      "cost": "$55",
       "venue": {
         "venue": "Sacred Ground"
       }
