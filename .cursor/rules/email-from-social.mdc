@@ -1,0 +1,131 @@
+---
+description: Email + CRM follow-up after social posts — Spencer Aug 21 OH Step 3
+alwaysApply: false
+globs: **/fluent*,**/email*,**/reel-building/**,REEL-POSTING-SCHEDULE.md
+---
+
+# Email from social (Spencer Step 3 — Mail + CRM)
+
+**Who this is for:** Any agent writing **FluentCRM / ML Mail** emails, newsletters, or event follow-ups that should **continue** a social post — not restart from scratch.
+
+**Source:** Spencer Office Hours **#00b** (2026-08-21, `ee7Q8-Wptxc`) — “content must not die on the feed.”  
+**Companion rule (social / reel stills):** `.cursor/rules/reel-social-from-stills.mdc`
+
+---
+
+## The rule in one sentence
+
+When Sacred Ground ships a **strong social post** (reel, reel still, morning flyer, spotlight), **email should follow within ~1–2 days** using the **same visual family** and a **clear book/visit CTA** — so the post doesn’t die on the feed.
+
+---
+
+## Where email sits in the stack
+
+| Step | Tool | Job |
+|------|------|-----|
+| 1 | Persona | Clip + stills you own |
+| 2 | ML Social | Publish short-form |
+| **3** | **ML Mail + FluentCRM** | **This rule** — same assets, convert interest |
+| F | Fernando | Voice/desktop can draft; human approves send |
+
+Spencer demo path: ML Social **“Email from this post”** — same thumbnail/copy family, tweak words, send through FluentCRM.
+
+---
+
+## Continuity checklist (required)
+
+### Visual
+
+- [ ] **Hero image = same family** as the social post (exact thumbnail, featured frame from the reel, or the same flyer plate).
+- [ ] **Do not** drop in unrelated stock, a different character, or a generic crystal shop AI plate.
+- [ ] If the post was **Deneene Pixar / Team Sacred Ground**, the email hero should still feel like **that episode’s world**.
+- [ ] If the post was an **event flyer still**, reuse **that** graphic (or the same cropped hero) — not a new design language.
+
+### Copy
+
+- [ ] **Deepen** what the post started — booking link, event page, “what happens next,” guess-the-clue payoff — **don’t** launch a unrelated story.
+- [ ] **Subject + preheader** should connect to the post hook (e.g. “We found the first crystal” → “Where do you think Team Sacred Ground goes next?”).
+- [ ] **Warm Sacred Ground voice** — come-as-you-are, Arlington Heights, hospitality.
+- [ ] **CTA:** one primary action (book, visit, event signup, shop link).
+- [ ] Phone/site may appear in body; event graphics still use **footer on image** when the creative is a designed plate (`social-image-branding.mdc`).
+
+### Timing
+
+- [ ] Target **within 1–2 days** of a strong reel or high-intent event post (Founder may adjust).
+- [ ] **Not required** for every low-engagement image slot — prioritize **episodes, event promos, and posts with comments/shares**.
+
+### Claims
+
+- [ ] **Caption + first-comment shop pride** (#1 Chicagoland, Premier, etc.) **stay ON** in email copy when used on social — do not invent new award citations (`social-proof-on-image.mdc` honesty note).
+
+---
+
+## Workflow (MinuteLaunch / WordPress)
+
+1. **Identify the source post** — ML Social post ID, platform URL, media library ID, or Autopilot `posted.json` entry.
+2. **Pull assets from the same desk:**
+   - Media Library URL used on social, **or**
+   - ML Social composer → **Email from this post** (Spencer’s preferred path when available).
+3. **Draft in FluentCRM / ML Mail:**
+   - Hero = post thumbnail family.
+   - Body = extend the caption (more context, links, one story beat).
+   - Single CTA button/link matching the social first-comment destination when possible.
+4. **Preview** side-by-side: social screenshot + email hero — ask “same campaign?”
+5. **Send or schedule**; log segment/list per existing FluentCRM practice.
+
+---
+
+## Handoff from social agent (paste this)
+
+When social publishes a keeper:
+
+```
+EMAIL HANDOFF
+- Source: [FB/IG/TT/YT URL or ML Social post ID]
+- Media: [WP media ID + URL]
+- Hero for email: [same thumbnail / still frame URL]
+- Hook: [one line from caption]
+- CTA: [booking or event URL]
+- Send window: within 1–2 days
+- Rule: email-from-social.mdc
+```
+
+---
+
+## Examples (pattern, not templates)
+
+| Social post | Email should… |
+|-------------|----------------|
+| **S1E3-B** reel — “We found the first crystal…” | Same episode still or video thumb; invite guesses + Observatory/visit; link events or shop — **don’t** spoil Lemuria unless Founder approves |
+| **Mabon workshop** still | Same simplified flyer art; Kate’s workshop + booking link; warm fall equinox tone |
+| **Morning flyer** (today/tomorrow) | Same flyer image; expand schedule in body with clickable practitioner links |
+| **Afternoon spotlight** | Same practitioner/event image; “still time to book” + Fluent Booking URL |
+
+---
+
+## Analytics loop (Spencer)
+
+After send, track **social → site → conversion** as one campaign:
+
+- What performed on social informs the **next** email angle — not two separate guess-machines.
+- Fernando / analytics can answer “what post won?” — double down in email and the next social slot.
+
+---
+
+## Do not
+
+- Email with a **random** hero while social showed something else (continuity break).
+- **Only** post to social and walk away on **series episodes** or **paid workshops**.
+- Copy **prices onto graphics** if the source flyer was price-free; body may mention booking, not dollar amounts on images.
+- Use email to **republish S1E1** or violate reel never-republish locks.
+
+---
+
+## File map
+
+| Doc | Purpose |
+|-----|---------|
+| `reel-building/sources/00b-ee7Q8-Wptxc.THREE-PASS-SCRUB.md` | Full Spencer scrub |
+| `reel-building/EMAIL-FROM-SOCIAL.md` | Same rules (maintenance repo copy) |
+| `reel-building/SOCIAL-FROM-REEL-STILLS.md` | Social / stills rules (maintenance repo copy) |
+| `.cursor/rules/reel-social-from-stills.mdc` | Social agent rule (this repo) |

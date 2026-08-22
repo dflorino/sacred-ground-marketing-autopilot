@@ -1,0 +1,129 @@
+---
+description: Reel stills → social posts — Spencer Aug 21 OH + Sacred Ground continuity rules
+alwaysApply: false
+globs: REEL-POSTING-SCHEDULE.md,REELS-PLAN.md,config/reels_media.json,**/reel-building/**
+---
+
+# Reel stills → social posts (Spencer + Sacred Ground)
+
+**Who this is for:** Any agent scheduling **video Reels/Shorts** or building **still graphics from reel plates** for ML Social.
+
+**Source:** Spencer Office Hours **#00b** (2026-08-21, `ee7Q8-Wptxc`) — full scrub: `sacredground-maintenance/reel-building/sources/00b-ee7Q8-Wptxc.THREE-PASS-SCRUB.md`.  
+**Companion rule (email follow-up):** `.cursor/rules/email-from-social.mdc`
+
+---
+
+## The spine (do not stop at Social)
+
+Spencer’s **one desk** model:
+
+| Step | Engine | Your job here |
+|------|--------|----------------|
+| **P** | Persona | Clip + locked cast; extract **stills** from KEEP takes |
+| **S** | **Social** | **This rule** — publish short-form with continuity |
+| **M** | Mail + CRM | Hand off to email agent after a strong post (see email rule) |
+| **F** | Fernando / Junior | Talk outcomes; human keeps taste on final mile |
+
+**Hard line:** Social is **step 2**, not the finish line. Content must not **die on the feed** — email/CRM follows (separate rule).
+
+---
+
+## Continuity (Spencer’s #1 social mistake to avoid)
+
+The old world: different face in the **video**, the **FB still**, and the **email** — broken trust.
+
+**Lock instead:**
+
+1. **Same cast / same look** from reel → any still you pull for posts.
+2. **Thumbnail / featured still** should come **from the KEEP video** (frame grab or Persona “set as featured image”), not a new AI face.
+3. **One strong plate per slot** — FB + IG share the **same** media URL (single-image mode). Do not ship a weaker separate IG variant.
+4. After a **KEEP** reel take: **back-fill the actor record** from that media (reference sheet frame + clip + voice trim) before the next episode — Spencer’s “make a thousand until one is great, then lock.”
+
+---
+
+## Stills from reels (how to make them)
+
+### When to use a still vs the video
+
+| Use | When |
+|-----|------|
+| **Video** (`video/mp4`) | Reel / Short / TikTok / primary episode publish |
+| **Still from same KEEP clip** | Thumbnail, email hero (email rule), Story teaser, “guess what happens” posts |
+
+### Extracting the still (Persona / Media Library)
+
+- Use Persona clip builder: scrub timeline → **extract frame** → **set as featured / thumbnail**.
+- Or: open KEEP MP4 in Media Library → pick the frame that matches the hook (faces readable, no mid-blink).
+- **PNG overlays** for sharp shop words (event title, CTA) — **do not** rely on AI baked-in typography (Spencer: words need designed PNGs).
+
+### Visual energy (Sacred Ground)
+
+- Colorful, bright, shop-made — not generic mystic AI sludge.
+- Reel **stills for shop posts** still follow `social-image-branding.mdc` when you add footer/logo overlays (cream band, `shopsacredground.com`, `847-749-3922`).
+
+---
+
+## ML Social publish checklist (Reels / Shorts)
+
+**Schedule:** `REEL-POSTING-SCHEDULE.md` · **Media IDs:** `config/reels_media.json` · **Accounts:** `config/accounts.json`
+
+### Before publish
+
+1. **Correct KEEP file** — e.g. **S1E3-B** media **26795** / `s01e03b-first-crystal.mp4` — never ambiguous **S1E3-A** or archive IDs.
+2. **S1E1 (26545) NEVER republish** — COMPLETE on all platforms forever.
+3. **Brand coverage:** FB + IG + TikTok + **brand** YouTube. If only personal YT is connected, **stop** and tell Founder — do not substitute personal for brand.
+4. **Caption:** warm hook + comment CTA; spell **Deneene** correctly (never Denise / Deneen).
+5. **Media URL must 404-check** — Facebook must fetch the MP4 (broken WP URL = failed publish).
+
+### Per platform (same video, tuned copy)
+
+- **One `social_publish` per platform** (same pattern as S1E2) — or equivalent ML Social UI queue.
+- **`scheduledFor`** in America/Chicago; confirm UTC offset (CDT/CST).
+- **Optimize caption per network** (hashtag placement differs — Spencer: Fernando rewrites per network).
+- **First comment** = short/encoded booking or shop link when the algorithm prefers link off main caption.
+- **`contentType`:** `reel` or `story` where supported — not plain video alone when Reels placement is intended.
+- **FB Story:** video on **Zernio CDN** (`media.zernio.com`) — WP-only URLs fail Meta fetch (CF 403). See `REEL-POSTING-SCHEDULE.md`.
+
+### After publish
+
+- Log post IDs / URLs in `data/state/posted.json` when running through Autopilot helpers.
+- If the post performs: **flag for email follow-up** (see `email-from-social.mdc`) within ~24–48h.
+- Do **not** cancel live successful posts unless Founder asks.
+
+---
+
+## Persona / production lessons that affect social stills
+
+From Spencer → Deneene/Junior live (actor lock):
+
+1. **Actors first** — reference sheet (multi-angle) before batch clips.
+2. **Reference video + voice lock** (ElevenLabs for real distinctive voices).
+3. **After one KEEP take** — rebuild actor assets **from that success**; don’t keep prompting from scratch.
+4. **Dictate the shot list** — casual producer chat → wrong scene (pickleball vs Zoom lesson).
+5. **480p proof** before burning credits on 1080p finals.
+6. Junior: **follow this stack** — no wilderness alternate pipelines.
+
+---
+
+## Sacred Ground series specifics
+
+- **Cosmic Mysteryverse / Team Sacred Ground:** captions from `reel-building/cosmic-mysteryverse/marketing/captions.md` and `S1E3-B-SOCIAL-GRAB.md` (ship **S1E3-B** only).
+- **Cast lock:** `reel-building/CAST-LOCK.md` — do not remake Founder KEEP plates for aesthetics.
+- **Do not** name Lemuria / chakra in public episode copy unless Founder approves.
+
+---
+
+## Quick agent handoff (social → email)
+
+When a reel or reel-derived still post goes live and performs:
+
+> “Strong social post live — email agent: use **same visual family** + deepen the offer within 1–2 days. See `.cursor/rules/email-from-social.mdc`.”
+
+---
+
+## Do not
+
+- Stop at Social with no CRM/email plan for strong episodes.
+- Pull a **different** character still than the reel viewers just saw.
+- Republish **S1E1** or any `image_usage` / lifetime-blocked URL.
+- Schedule duplicate FB posts from parallel agent runs — **check `social_posts` scheduled queue first**.
