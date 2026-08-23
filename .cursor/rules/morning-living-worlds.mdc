@@ -1,0 +1,73 @@
+---
+description: Morning Living Worlds — approved rotating morning series (Founder Aug 23 2026)
+alwaysApply: false
+globs: config/morning_living_worlds.json,docs/MORNING-LIVING-WORLDS.md,config/morning_flyer_styles.json,config/morning_flyers.json
+---
+
+# Morning Living Worlds (approved series)
+
+**Founder approved:** Aug 23, 2026 · **Docs:** `docs/MORNING-LIVING-WORLDS.md` · **Config:** `config/morning_living_worlds.json`
+
+## What it is
+
+20 **living morning worlds** mixed with legacy morning art (Magritte, Folk, Da Vinci, Einstein, Thursday cards, artistic hero). Same morning job: greeting, who's reading, events, **same caption + first-comment links**.
+
+## Six anchors (every design)
+
+Crystal · jewelry · incense · candle · reader · coffee — all clearly visible.
+
+## Deliverables per concept
+
+| Asset | Size |
+|-------|------|
+| MP4 loop (feed) | 1080×1350, 5–8s seamless |
+| MP4 loop (vertical) | 1080×1920 |
+| Static cover | 1080×1350 (email hero, thumbnail) |
+
+Movement: **3–5 elements**, slow — candle, steam, smoke, one reveal, gentle sway. No flash, no everything-moving.
+
+## Remotion (required for MP4 loops)
+
+- **Layered composition** in `remotion/` — not animated flat images
+- **Frame-based only** (`useCurrentFrame`) — no CSS keyframes on wall-clock time
+- **Live React text** via `EventPanel` — not burned into art
+- Reusable components: coffee steam, incense smoke, candle flame, crystal sparkle, hanging jewelry, card flip, door/sign flip, event panel
+- **Seamless loop:** final frame returns to starting state
+- **Prep layers first:** `docs/LIVING-WORLDS-LAYER-PREP.md` · **GitHub repo:** `docs/LIVING-WORLDS-LAYERS-REPO.md` · rule `living-worlds-layers.mdc`
+- PIL `render_preview_loop` is deprecated proof-only; production renders via `npm run render` in `remotion/`
+- **30fps · 210 frames** · Motion Laboratory before full templates
+- Layer decomposition required — see `docs/LIVING-WORLDS-LAYER-PREP.md`
+
+## Information
+
+Hierarchy: greeting → date → reader → main event → times → CTA → footer (`shopsacredground.com`, `847-749-3922`, logo).
+
+Schedule in **readable panel or caption** — not tiny illegible labels in the art. No prices on graphics.
+
+## Rotation
+
+- Not same id within 7 Chicago days
+- Not same **medium** consecutive days (mechanism, compartment, paper, architectural, overhead tabletop, tactile, storytelling)
+- No two dark / compartment / overhead tabletop back-to-back
+- Busy formats when 2+ events; single-object when 1 reader/event
+- Weekday energy hints in config `sample_calendar`
+
+## Autopilot integration
+
+- **Phase 1 (now):** Concepts approved; `status: approved_concept` — **do not pick** until assets exist
+- **Phase 2+:** Set `status: active` per concept after still + MP4 uploaded; enters `living_worlds_pool`
+- Mix with legacy via `pool_mix_ratio` in config (target 50/50)
+- Unused date-keyed flyers in `morning_flyers.json` still win when URL unused
+- Never reuse URLs (`image_usage` lifetime)
+- Designed-in Chicagoland pride on every NEW plate
+
+## Email
+
+Static cover → email within 1–2 days per `email-from-social.mdc`. Same visual family as social MP4.
+
+## Do not
+
+- Pick `approved_concept` styles in generation
+- Replace legacy pool overnight
+- Generic mystic AI wellness template
+- Dollar amounts on images

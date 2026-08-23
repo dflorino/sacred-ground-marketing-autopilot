@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "style_id": "living_crystal_comic",
+  "slug": "living-crystal-comic",
+  "label": "Crystal Comic Morning",
+  "layout": "comic_panels",
+  "medium": "storytelling",
+  "energy": "high_energy",
+  "status": "approved_concept",
+  "movement_summary": "Panel 1 coffee steam; 2 crystal glows; 3 necklace swings; 4 candle; 5 incense; 6 reader reveals schedule",
+  "paths": {
+    "scene_raw": "assets/living_worlds/living-crystal-comic/scene-raw.png",
+    "layers_dir": "assets/living_worlds/living-crystal-comic/layers",
+    "remotion_dir": "remotion/public/layers/living-crystal-comic"
+  },
+  "required_layers": [
+    "background-plate.png",
+    "coffee-cup.png",
+    "candle-body.png",
+    "candle-flame.png",
+    "candle-glow.png",
+    "incense-holder.png",
+    "hero-crystal.png",
+    "pendant.png",
+    "card-front.png",
+    "card-back.png",
+    "panel-1.png",
+    "panel-2.png",
+    "panel-3.png",
+    "panel-4.png",
+    "panel-5.png",
+    "panel-6.png"
+  ],
+  "optional_layers": [
+    "foreground-frame.png",
+    "reader.png",
+    "reader-hand.png",
+    "crystal-highlight.png",
+    "coffee-steam-1.png",
+    "coffee-steam-2.png",
+    "coffee-steam-3.png",
+    "incense-smoke-1.png",
+    "incense-smoke-2.png",
+    "incense-smoke-3.png"
+  ],
+  "approval": {
+    "scene_raw": "present",
+    "layers_complete": "pending",
+    "founder_look": "pending",
+    "assigned_date": null
+  }
+}

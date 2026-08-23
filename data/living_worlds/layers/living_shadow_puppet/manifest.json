@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "style_id": "living_shadow_puppet",
+  "slug": "living-shadow-puppet",
+  "label": "Shadow-Puppet Crystal Morning",
+  "layout": "shadow_silhouette",
+  "medium": "paper_dimensional",
+  "energy": "quiet",
+  "status": "approved_concept",
+  "movement_summary": "Candlelight brightens; jewelry shadows swing; smoke travels; reader reveals card; coffee pour silhouette; crystal sun rises behind shop",
+  "paths": {
+    "scene_raw": "assets/living_worlds/living-shadow-puppet/scene-raw.png",
+    "layers_dir": "assets/living_worlds/living-shadow-puppet/layers",
+    "remotion_dir": "remotion/public/layers/living-shadow-puppet"
+  },
+  "required_layers": [
+    "background-plate.png",
+    "coffee-cup.png",
+    "candle-body.png",
+    "candle-flame.png",
+    "candle-glow.png",
+    "incense-holder.png",
+    "hero-crystal.png",
+    "pendant.png",
+    "card-front.png",
+    "card-back.png",
+    "shadow-backdrop.png",
+    "shadow-jewelry.png",
+    "shadow-reader.png",
+    "shadow-storefront.png"
+  ],
+  "optional_layers": [
+    "foreground-frame.png",
+    "reader.png",
+    "reader-hand.png",
+    "crystal-highlight.png",
+    "coffee-steam-1.png",
+    "coffee-steam-2.png",
+    "coffee-steam-3.png",
+    "incense-smoke-1.png",
+    "incense-smoke-2.png",
+    "incense-smoke-3.png"
+  ],
+  "approval": {
+    "scene_raw": "present",
+    "layers_complete": "pending",
+    "founder_look": "pending",
+    "assigned_date": null
+  }
+}

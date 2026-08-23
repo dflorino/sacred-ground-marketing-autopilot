@@ -1,0 +1,530 @@
+{
+  "notes": "Morning Living Worlds — Founder approved Aug 23 2026 America/Chicago. Rotating imaginative morning worlds with six anchors (crystal, jewelry, incense, candle, reader, coffee). Mixes with legacy morning pool. Autopilot picks only when style status=active and assets exist. Docs: docs/MORNING-LIVING-WORLDS.md",
+  "approved_at": "2026-08-23T18:52:00-05:00",
+  "approved_by": "Founder",
+  "timezone": "America/Chicago",
+  "six_anchors": [
+    "crystal",
+    "jewelry",
+    "incense",
+    "candle",
+    "reader",
+    "coffee"
+  ],
+  "deliverables": {
+    "animated_vertical": "1080x1920",
+    "animated_feed": "1080x1350",
+    "static_cover": "1080x1350",
+    "loop_seconds": { "min": 5, "max": 8, "ideal": 7 },
+    "moving_elements_max": 5
+  },
+  "integration": {
+    "mix_with_legacy_pool": true,
+    "legacy_pool_config": "config/morning_flyer_styles.json",
+    "phase": 2,
+    "phase_notes": "Phase 2 pilot ON HOLD Aug 23 2026: Crystal Morning Machine not publishing until Remotion layers + panel match Founder standard. Aug 24 morning reverted to Matisse remake-v4 in morning_flyers.json.",
+    "pool_mix_ratio_living_worlds": 0.5,
+    "queued_flyers_still_win": true
+  },
+  "rotation_rules": {
+    "min_days_between_same_id": 7,
+    "no_consecutive_same_medium": true,
+    "no_consecutive_dark": true,
+    "no_consecutive_compartment": true,
+    "no_consecutive_overhead_tabletop": true,
+    "busy_formats_min_events": 2,
+    "weekly_medium_mix_required": [
+      "paper_dimensional",
+      "tactile_handmade",
+      "architectural_compartment",
+      "storytelling",
+      "mechanism",
+      "quiet",
+      "high_energy"
+    ]
+  },
+  "weekday_energy": {
+    "monday": "start_awakening",
+    "tuesday": "discovery_surprises",
+    "wednesday": "handmade_bts",
+    "thursday": "feature_presentation",
+    "friday": "celebration_weekend",
+    "saturday": "busy_living_shop",
+    "sunday": "warm_reflective"
+  },
+  "sample_calendar": {
+    "monday": [
+      "living_crystal_morning_machine",
+      "living_crystal_comic",
+      "living_crystal_clockwork",
+      "living_found_object_message"
+    ],
+    "tuesday": [
+      "living_matchbox_mysteries",
+      "living_surreal_scale_shop",
+      "living_cabinet_treasures",
+      "living_curiosity_museum"
+    ],
+    "wednesday": [
+      "living_popup_crystal_shop",
+      "living_shopkeeper_workbench",
+      "living_embroidered_morning",
+      "living_impossible_blueprint"
+    ],
+    "thursday": [
+      "living_nine_oclock_theater",
+      "living_paper_theater_windows",
+      "living_crystal_board_game",
+      "living_ceramic_tile"
+    ],
+    "friday": [
+      "living_crystal_weather",
+      "living_cabinet_treasures",
+      "living_surreal_scale_shop",
+      "living_crystal_clockwork"
+    ],
+    "saturday": [
+      "living_inside_crystal_shop",
+      "living_crystal_board_game",
+      "living_paper_theater_windows",
+      "living_matchbox_mysteries"
+    ],
+    "sunday": [
+      "living_community_quilt",
+      "living_shadow_puppet",
+      "living_embroidered_morning",
+      "living_shopkeeper_workbench"
+    ],
+    "four_week_grid": {
+      "monday": [
+        "living_crystal_morning_machine",
+        "living_crystal_comic",
+        "living_crystal_clockwork",
+        "living_found_object_message"
+      ],
+      "tuesday": [
+        "living_matchbox_mysteries",
+        "living_surreal_scale_shop",
+        "living_cabinet_treasures",
+        "living_curiosity_museum"
+      ],
+      "wednesday": [
+        "living_popup_crystal_shop",
+        "living_shopkeeper_workbench",
+        "living_embroidered_morning",
+        "living_impossible_blueprint"
+      ],
+      "thursday": [
+        "living_nine_oclock_theater",
+        "living_paper_theater_windows",
+        "living_crystal_board_game",
+        "living_ceramic_tile"
+      ],
+      "friday": [
+        "living_crystal_weather",
+        "living_cabinet_treasures",
+        "living_surreal_scale_shop",
+        "living_crystal_clockwork"
+      ],
+      "saturday": [
+        "living_inside_crystal_shop",
+        "living_crystal_board_game",
+        "living_paper_theater_windows",
+        "living_matchbox_mysteries"
+      ],
+      "sunday": [
+        "living_community_quilt",
+        "living_shadow_puppet",
+        "living_embroidered_morning",
+        "living_shopkeeper_workbench"
+      ]
+    }
+  },
+  "living_worlds_pool": [
+    "living_matchbox_mysteries",
+    "living_popup_crystal_shop",
+    "living_nine_oclock_theater",
+    "living_cabinet_treasures",
+    "living_inside_crystal_shop",
+    "living_shopkeeper_workbench",
+    "living_crystal_board_game",
+    "living_crystal_weather",
+    "living_crystal_clockwork",
+    "living_curiosity_museum",
+    "living_shadow_puppet",
+    "living_ceramic_tile",
+    "living_embroidered_morning",
+    "living_community_quilt",
+    "living_impossible_blueprint",
+    "living_surreal_scale_shop",
+    "living_crystal_comic",
+    "living_paper_theater_windows",
+    "living_found_object_message"
+  ],
+  "medium_tags": {
+    "mechanism": [
+      "living_crystal_morning_machine",
+      "living_crystal_clockwork"
+    ],
+    "compartment": [
+      "living_matchbox_mysteries",
+      "living_cabinet_treasures",
+      "living_curiosity_museum"
+    ],
+    "paper_dimensional": [
+      "living_popup_crystal_shop",
+      "living_paper_theater_windows",
+      "living_shadow_puppet"
+    ],
+    "architectural": [
+      "living_inside_crystal_shop",
+      "living_impossible_blueprint",
+      "living_nine_oclock_theater"
+    ],
+    "overhead_tabletop": [
+      "living_shopkeeper_workbench",
+      "living_found_object_message",
+      "living_crystal_board_game"
+    ],
+    "tactile_handmade": [
+      "living_embroidered_morning",
+      "living_community_quilt",
+      "living_ceramic_tile"
+    ],
+    "storytelling": [
+      "living_crystal_comic",
+      "living_surreal_scale_shop",
+      "living_crystal_weather"
+    ]
+  },
+  "energy_tags": {
+    "high_energy": [
+      "living_crystal_morning_machine",
+      "living_crystal_clockwork",
+      "living_crystal_comic",
+      "living_found_object_message"
+    ],
+    "quiet": [
+      "living_shadow_puppet",
+      "living_embroidered_morning",
+      "living_community_quilt",
+      "living_shopkeeper_workbench"
+    ],
+    "busy_multi": [
+      "living_inside_crystal_shop",
+      "living_crystal_board_game",
+      "living_matchbox_mysteries",
+      "living_paper_theater_windows"
+    ]
+  },
+  "styles": {
+    "living_crystal_morning_machine": {
+      "id": "living_crystal_morning_machine",
+      "label": "Crystal Morning Machine",
+      "family": "living_crystal_morning_machine",
+      "status": "pilot_hold",
+      "pool": "living_worlds",
+      "pilot_date": "2026-08-24",
+      "pilot_assets": {
+        "local_cover": "assets/sg-living-2026-08-24-crystal-morning-machine-cover-1350.png",
+        "local_scene": "assets/sg-living-2026-08-24-crystal-morning-machine-scene-raw.png",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-living-2026-08-24-crystal-morning-machine-cover-1350.png",
+        "wp_media_id": 26848,
+        "bundle": "data/living_worlds/2026-08-24-crystal-morning-machine/"
+      },
+      "medium": "mechanism",
+      "energy": "high_energy",
+      "layout": "mechanism_tabletop",
+      "multi_event_ok": true,
+      "best_weekdays": ["monday"],
+      "movement_summary": "Crystal rolls → coffee beans → kettle pours → gear lights candle → incense rises → pendant swings → reader card flips → OPEN sign",
+      "prompt_brief": "Handcrafted tabletop Rube Goldberg machine: copper tubing, jewelry chain, tiny gears, crystal points, wooden tracks, bells, candleholders, coffee gear. Crystal sphere starts track; gemstones roll; chain pulley; candle waits; incense holder; reader card at end; coffee beans/kettle/cup; OPEN sign; event cards emerge. Equal readable info panel for today's reader + events. Six anchors visible. Shop-made tactile energy — not generic AI mystic.",
+      "pride_placement": "Designed-in Chicagoland #1 / Premier pride on clean panel or machine plaque; circular logo; website + phone footer band."
+    },
+    "living_matchbox_mysteries": {
+      "id": "living_matchbox_mysteries",
+      "label": "Matchbox Mysteries",
+      "family": "living_matchbox_mysteries",
+      "status": "approved_concept",
+      "pool": "living_worlds",
+      "medium": "compartment",
+      "energy": "busy_multi",
+      "layout": "compartment_boxes",
+      "multi_event_ok": true,
+      "best_weekdays": ["tuesday"],
+      "movement_summary": "Boxes slide open one by one; crystals glow; wire wrap; candle flicker; smoke between boxes; reader card; coffee steam; boxes close to loop",
+      "prompt_brief": "Five or six oversized matchboxes on clean tabletop. Mini scenes: crystal cave, jewelry bench, candle altar, incense chamber, reader table, tiny coffee café. One event per box. Readable panel for schedule. Six anchors in each box when open.",
+      "pride_placement": "Pride band on tabletop edge or box label strip; logo + contact footer."
+    },
+    "living_popup_crystal_shop": {
+      "id": "living_popup_crystal_shop",
+      "label": "Pop-Up Crystal Shop",
+      "family": "living_popup_crystal_shop",
+      "status": "approved_concept",
+      "pool": "living_worlds",
+      "medium": "paper_dimensional",
+      "energy": "handmade_bts",
+      "layout": "paper_pop_up",
+      "multi_event_ok": true,
+      "best_weekdays": ["wednesday"],
+      "movement_summary": "Book opens; storefront rises; shelves unfold; necklaces sway; candles light; incense curls; reader chair slides; coffee cup last",
+      "prompt_brief": "Illustrated book opens; dimensional paper architecture shop rises. Crystal shelves unfold; jewelry stands lift; candles in niches; incense burner; reader table/chair; miniature coffee station; hanging event tags; foldout shop sign. Paper craft — individual, not Canva template.",
+      "pride_placement": "Foldout sign or hanging tag with Premier / #1 pride; footer band."
+    },
+    "living_nine_oclock_theater": {
+      "id": "living_nine_oclock_theater",
+      "label": "Nine O'Clock Crystal Theater",
+      "family": "living_nine_oclock_theater",
+      "status": "approved_concept",
+      "pool": "living_worlds",
+      "medium": "architectural",
+      "energy": "feature_presentation",
+      "layout": "theater_stage",
+      "multi_event_ok": true,
+      "best_weekdays": ["thursday"],
+      "movement_summary": "Clock 9:00; footlights on; curtains open; crystal rotates; necklace lowers; incense crosses stage; reader name; coffee steam greeting",
+      "prompt_brief": "Miniature theater: velvet curtains, footlights, crystal chandeliers, rotating sets. Crystal of day in spotlight; necklace overhead; candle footlights; incense atmosphere; featured reader booth; coffee on café table; marquee event title. Thursday feature energy.",
+      "pride_placement": "Marquee or side banner pride claim; logo footer."
+    },
+    "living_cabinet_treasures": {
+      "id": "living_cabinet_treasures",
+      "label": "Cabinet of Today's Treasures",
+      "family": "living_cabinet_treasures",
+      "status": "approved_concept",
+      "pool": "living_worlds",
+      "medium": "compartment",
+      "energy": "busy_multi",
+      "layout": "compartment_cabinet",
+      "multi_event_ok": true,
+      "best_weekdays": ["friday", "tuesday"],
+      "movement_summary": "Doors open; crystals rotate; earrings sway; ring box; candle ignites; incense drifts; reader card; coffee steam forms date in center",
+      "prompt_brief": "Warm wooden cabinet, 6–9 compartments: raw crystal, necklace, earrings/rings, candle, incense, reader deck, coffee cup/beans, event ticket, central message compartment. Readable schedule panel beside cabinet.",
+      "pride_placement": "Central compartment or cabinet crest with pride text; footer."
+    },
+    "living_inside_crystal_shop": {
+      "id": "living_inside_crystal_shop",
+      "label": "Inside the Crystal Shop",
+      "family": "living_inside_crystal_shop",
+      "status": "approved_concept",
+      "pool": "living_worlds",
+      "medium": "architectural",
+      "energy": "busy_multi",
+      "layout": "dollhouse_cutaway",
+      "multi_event_ok": true,
+      "best_weekdays": ["saturday"],
+      "movement_summary": "Room lights on; jeweler wraps crystal; candles; incense through building; reader card; coffee pours; shopper lifts necklace; OPEN sign swings",
+      "prompt_brief": "Detailed cutaway dollhouse: crystal gallery, jewelry studio, candle room, incense room, reader room, coffee corner, class space, people browsing. Real SG eggplant awning energy in miniature. Multi-event readable panel.",
+      "pride_placement": "Storefront sign or banner in cutaway; footer band."
+    },
+    "living_shopkeeper_workbench": {
+      "id": "living_shopkeeper_workbench",
+      "label": "Shopkeeper's Mystical Workbench",
+      "family": "living_shopkeeper_workbench",
+      "status": "approved_concept",
+      "pool": "living_worlds",
+      "medium": "overhead_tabletop",
+      "energy": "quiet",
+      "layout": "overhead_workbench",
+      "multi_event_ok": false,
+      "best_weekdays": ["sunday", "wednesday"],
+      "movement_summary": "Hands complete jewelry step; bead rolls; candle flicker; smoke crosses schedule; card slides; coffee ring; finished pendant placed",
+      "prompt_brief": "Overhead active workbench: partial wire wrap, tools, loose stones, candle wax, burning incense, reader notes spread, coffee cup with ring stain, handwritten event cards, calendar corner. Lovingly imperfect tactile shop-made.",
+      "pride_placement": "Handwritten card or stamped pride on event card; footer."
+    },
+    "living_crystal_board_game": {
+      "id": "living_crystal_board_game",
+      "label": "Crystal Board Game",
+      "family": "living_crystal_board_game",
+      "status": "approved_concept",
+      "pool": "living_worlds",
+      "medium": "overhead_tabletop",
+      "energy": "busy_multi",
+      "layout": "board_game",
+      "multi_event_ok": true,
+      "best_weekdays": ["thursday", "saturday"],
+      "movement_summary": "Coffee start square; crystal token moves; stops at jewelry/candle/incense/reader; events appear; shop destination; OPEN banner",
+      "prompt_brief": "Illustrated tabletop board journey: crystal playing pieces, jewelry-chain paths, candle checkpoints, incense shortcuts, reader tent destination, coffee start, event spaces, shop entrance finish. Equal event stops readable.",
+      "pride_placement": "Game board border or finish square pride; footer."
+    },
+    "living_crystal_weather": {
+      "id": "living_crystal_weather",
+      "label": "Crystal Weather Forecast",
+      "family": "living_crystal_weather",
+      "status": "approved_concept",
+      "pool": "living_worlds",
+      "medium": "storytelling",
+      "energy": "playful",
+      "layout": "weather_map",
+      "multi_event_ok": true,
+      "best_weekdays": ["friday"],
+      "movement_summary": "Crystal sun rises; chain rain shimmer; incense fog; candle heat; reader forecast; coffee cloud; events on map",
+      "prompt_brief": "Charming morning weather report: crystal sunlight, jewelry-chain rain, incense fog, candlelight heat, reader forecast, coffee arriving 9:00, event energy levels, shop as forecast location. Playful not childish.",
+      "pride_placement": "Forecast header banner pride; footer."
+    },
+    "living_crystal_clockwork": {
+      "id": "living_crystal_clockwork",
+      "label": "Crystal Clockwork Morning",
+      "family": "living_crystal_clockwork",
+      "status": "approved_concept",
+      "pool": "living_worlds",
+      "medium": "mechanism",
+      "energy": "high_energy",
+      "layout": "ornate_clock",
+      "multi_event_ok": true,
+      "best_weekdays": ["monday", "friday"],
+      "movement_summary": "Hands to 9:00; crystal pendulum; jewelry gears; doors open; reader appears; candle windows; incense chimney; coffee pours at bell",
+      "prompt_brief": "Ornate mechanical clock with moving windows: crystal pendulum, jewelry-chain gears, candle windows, incense chimney, reader at hour, coffee beneath face, events around dial. Month-start / major announcement energy.",
+      "pride_placement": "Clock face banner or engraved pride; footer."
+    },
+    "living_curiosity_museum": {
+      "id": "living_curiosity_museum",
+      "label": "Morning Curiosity Museum",
+      "family": "living_curiosity_museum",
+      "status": "approved_concept",
+      "pool": "living_worlds",
+      "medium": "compartment",
+      "energy": "educational",
+      "layout": "museum_gallery",
+      "multi_event_ok": true,
+      "best_weekdays": ["tuesday"],
+      "movement_summary": "Lights on; cases illuminate; crystal rotates; necklace turns; candle/incense activate; reader exhibit; coffee on pedestal",
+      "prompt_brief": "Warm imaginative museum (not dark antique): illuminated crystal specimen, historic jewelry display, candle exhibit, incense vessel, living reader exhibit, coffee as Essential Morning Artifact, small labels for events.",
+      "pride_placement": "Museum entrance plaque pride; footer."
+    },
+    "living_shadow_puppet": {
+      "id": "living_shadow_puppet",
+      "label": "Shadow-Puppet Crystal Morning",
+      "family": "living_shadow_puppet",
+      "status": "approved_concept",
+      "pool": "living_worlds",
+      "medium": "paper_dimensional",
+      "energy": "quiet",
+      "layout": "shadow_silhouette",
+      "multi_event_ok": false,
+      "best_weekdays": ["sunday"],
+      "movement_summary": "Candlelight brightens; jewelry shadows swing; smoke travels; reader reveals card; coffee pour silhouette; crystal sun rises behind shop",
+      "prompt_brief": "Layered paper silhouettes backlit by warm candlelight. Crystal, hanging jewelry, incense smoke cutouts, reader table, candle shapes, coffee pot, storefront silhouette, illuminated event panels. Reflective quiet energy.",
+      "pride_placement": "Illuminated panel pride text; footer."
+    },
+    "living_ceramic_tile": {
+      "id": "living_ceramic_tile",
+      "label": "Ceramic Tile Morning",
+      "family": "living_ceramic_tile",
+      "status": "approved_concept",
+      "pool": "living_worlds",
+      "medium": "tactile_handmade",
+      "energy": "community",
+      "layout": "tile_mural",
+      "multi_event_ok": true,
+      "best_weekdays": ["thursday"],
+      "movement_summary": "Tiles flip to painted images; glaze catches light; candle flicker; smoke tile to tile; coffee fills cup; jewelry shimmers; greeting assembles",
+      "prompt_brief": "Hand-painted glazed tile mural: crystal, necklace, ring, candle, incense, reader, coffee, storefront, event tiles; date across upper row. Colorful community art energy.",
+      "pride_placement": "Upper row tile pride; footer."
+    },
+    "living_embroidered_morning": {
+      "id": "living_embroidered_morning",
+      "label": "Embroidered Crystal Morning",
+      "family": "living_embroidered_morning",
+      "status": "approved_concept",
+      "pool": "living_worlds",
+      "medium": "tactile_handmade",
+      "energy": "quiet",
+      "layout": "fabric_embroidery",
+      "multi_event_ok": false,
+      "best_weekdays": ["wednesday", "sunday"],
+      "movement_summary": "Needle completes crystal; beads attach; jewelry thread gleams; fabric candle glows; incense thread curls; reader card embroidered; coffee steam thread",
+      "prompt_brief": "Fabric world: embroidery, beads, sequins, metallic thread, appliqué. Beaded crystals, chain-stitched necklaces, fabric candle, curling thread smoke, embroidered reader, coffee appliqué, stitched event labels. Cozy craft energy.",
+      "pride_placement": "Embroidered pride banner; footer."
+    },
+    "living_community_quilt": {
+      "id": "living_community_quilt",
+      "label": "Community Crystal Quilt",
+      "family": "living_community_quilt",
+      "status": "approved_concept",
+      "pool": "living_worlds",
+      "medium": "tactile_handmade",
+      "energy": "quiet",
+      "layout": "patchwork_quilt",
+      "multi_event_ok": true,
+      "best_weekdays": ["sunday"],
+      "movement_summary": "Squares stitch together; crystal sparkles; jewelry sways; candle glows; incense crosses patches; reader card flips; coffee steams; border completes greeting",
+      "prompt_brief": "Warm patchwork quilt: crystal, jewelry, candle, incense, reader, coffee, storefront, event/date patches. Community gathering energy.",
+      "pride_placement": "Quilt border stitched pride; footer."
+    },
+    "living_impossible_blueprint": {
+      "id": "living_impossible_blueprint",
+      "label": "Impossible Crystal Blueprint",
+      "family": "living_impossible_blueprint",
+      "status": "approved_concept",
+      "pool": "living_worlds",
+      "medium": "architectural",
+      "energy": "educational",
+      "layout": "blueprint_drawing",
+      "multi_event_ok": true,
+      "best_weekdays": ["wednesday"],
+      "movement_summary": "Lines draft; crystal elevator; chain pulleys; candle tower lights; incense pipes; reader door; coffee lab; event route glows",
+      "prompt_brief": "Fantastical architectural blueprint: crystal vault, jewelry workshop, candle tower, incense ventilation, reader chamber, coffee laboratory, event rooms, info boxes outside drawing. Educational how-things-work energy.",
+      "pride_placement": "Blueprint title block pride; footer."
+    },
+    "living_surreal_scale_shop": {
+      "id": "living_surreal_scale_shop",
+      "label": "Surreal Scale Crystal Shop",
+      "family": "living_surreal_scale_shop",
+      "status": "approved_concept",
+      "pool": "living_worlds",
+      "medium": "storytelling",
+      "energy": "playful",
+      "layout": "surreal_miniature",
+      "multi_event_ok": false,
+      "best_weekdays": ["tuesday", "friday"],
+      "movement_summary": "Camera toward object; opens; tiny shop revealed; candle/incense; reader waves; jewelry sparkles; miniature coffee; camera returns",
+      "prompt_brief": "Tiny complete shop inside oversized morning object (coffee cup, geode, jewelry box, lantern, incense burner, reader case). Miniature six anchors + day info. Surprise scale shift.",
+      "pride_placement": "Object exterior or miniature sign pride; footer."
+    },
+    "living_crystal_comic": {
+      "id": "living_crystal_comic",
+      "label": "Crystal Comic Morning",
+      "family": "living_crystal_comic",
+      "status": "approved_concept",
+      "pool": "living_worlds",
+      "medium": "storytelling",
+      "energy": "high_energy",
+      "layout": "comic_panels",
+      "multi_event_ok": true,
+      "best_weekdays": ["monday"],
+      "movement_summary": "Panel 1 coffee steam; 2 crystal glows; 3 necklace swings; 4 candle; 5 incense; 6 reader reveals schedule",
+      "prompt_brief": "One-page comic 4–6 panels: coffee wakes shop; crystal glows; jewelry selected; candle/incense prep; reader opens room; final panel today's events. Humorous warm personality.",
+      "pride_placement": "Comic title panel pride; footer."
+    },
+    "living_paper_theater_windows": {
+      "id": "living_paper_theater_windows",
+      "label": "Paper Theater Windows",
+      "family": "living_paper_theater_windows",
+      "status": "approved_concept",
+      "pool": "living_worlds",
+      "medium": "paper_dimensional",
+      "energy": "busy_multi",
+      "layout": "paper_storefront",
+      "multi_event_ok": true,
+      "best_weekdays": ["thursday", "saturday"],
+      "movement_summary": "Windows open one by one; offerings revealed; jewelry moves; candle through paper; incense chimney; reader door; coffee hatch; marquee",
+      "prompt_brief": "Dimensional paper storefront: crystal window, jewelry window, candle window, incense window, reader door, coffee hatch, event marquee, main entrance. Multi-reveal announcement energy.",
+      "pride_placement": "Marquee or awning pride; footer."
+    },
+    "living_found_object_message": {
+      "id": "living_found_object_message",
+      "label": "Found-Object Morning Message",
+      "family": "living_found_object_message",
+      "status": "approved_concept",
+      "pool": "living_worlds",
+      "medium": "overhead_tabletop",
+      "energy": "high_energy",
+      "layout": "found_object_typography",
+      "multi_event_ok": false,
+      "best_weekdays": ["monday"],
+      "movement_summary": "Objects slide in; beans form letter; chain curls; crystals rotate; candles light; smoke draws letter; reader places card; coffee lands",
+      "prompt_brief": "Shop objects spell GOOD MORNING / date / day: crystal points, chains, rings, incense sticks, candles, reader cards, coffee beans, wire tools. Bold readable message + side panel for reader/events.",
+      "pride_placement": "Objects spell pride word or side band; footer."
+    }
+  }
+}

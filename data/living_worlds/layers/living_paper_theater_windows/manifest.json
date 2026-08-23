@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "style_id": "living_paper_theater_windows",
+  "slug": "living-paper-theater-windows",
+  "label": "Paper Theater Windows",
+  "layout": "paper_storefront",
+  "medium": "paper_dimensional",
+  "energy": "busy_multi",
+  "status": "approved_concept",
+  "movement_summary": "Windows open one by one; offerings revealed; jewelry moves; candle through paper; incense chimney; reader door; coffee hatch; marquee",
+  "paths": {
+    "scene_raw": "assets/living_worlds/living-paper-theater-windows/scene-raw.png",
+    "layers_dir": "assets/living_worlds/living-paper-theater-windows/layers",
+    "remotion_dir": "remotion/public/layers/living-paper-theater-windows"
+  },
+  "required_layers": [
+    "background-plate.png",
+    "coffee-cup.png",
+    "candle-body.png",
+    "candle-flame.png",
+    "candle-glow.png",
+    "incense-holder.png",
+    "hero-crystal.png",
+    "pendant.png",
+    "card-front.png",
+    "card-back.png",
+    "storefront-base.png",
+    "window-crystal.png",
+    "window-jewelry.png",
+    "window-candle.png",
+    "window-incense.png",
+    "reader-door.png",
+    "coffee-hatch.png",
+    "marquee-fold.png"
+  ],
+  "optional_layers": [
+    "foreground-frame.png",
+    "reader.png",
+    "reader-hand.png",
+    "crystal-highlight.png",
+    "coffee-steam-1.png",
+    "coffee-steam-2.png",
+    "coffee-steam-3.png",
+    "incense-smoke-1.png",
+    "incense-smoke-2.png",
+    "incense-smoke-3.png"
+  ],
+  "approval": {
+    "scene_raw": "present",
+    "layers_complete": "pending",
+    "founder_look": "pending",
+    "assigned_date": null
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "style_id": "living_matchbox_mysteries",
+  "slug": "living-matchbox-mysteries",
+  "label": "Matchbox Mysteries",
+  "layout": "compartment_boxes",
+  "medium": "compartment",
+  "energy": "busy_multi",
+  "status": "approved_concept",
+  "movement_summary": "Boxes slide open one by one; crystals glow; wire wrap; candle flicker; smoke between boxes; reader card; coffee steam; boxes close to loop",
+  "paths": {
+    "scene_raw": "assets/living_worlds/living-matchbox-mysteries/scene-raw.png",
+    "layers_dir": "assets/living_worlds/living-matchbox-mysteries/layers",
+    "remotion_dir": "remotion/public/layers/living-matchbox-mysteries"
+  },
+  "required_layers": [
+    "background-plate.png",
+    "coffee-cup.png",
+    "candle-body.png",
+    "candle-flame.png",
+    "candle-glow.png",
+    "incense-holder.png",
+    "hero-crystal.png",
+    "pendant.png",
+    "card-front.png",
+    "card-back.png",
+    "matchbox-1.png",
+    "matchbox-2.png",
+    "matchbox-3.png",
+    "matchbox-4.png",
+    "matchbox-5.png",
+    "matchbox-lid.png"
+  ],
+  "optional_layers": [
+    "foreground-frame.png",
+    "reader.png",
+    "reader-hand.png",
+    "crystal-highlight.png",
+    "coffee-steam-1.png",
+    "coffee-steam-2.png",
+    "coffee-steam-3.png",
+    "incense-smoke-1.png",
+    "incense-smoke-2.png",
+    "incense-smoke-3.png"
+  ],
+  "approval": {
+    "scene_raw": "present",
+    "layers_complete": "pending",
+    "founder_look": "pending",
+    "assigned_date": null
+  }
+}

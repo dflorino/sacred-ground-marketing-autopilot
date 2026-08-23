@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "style_id": "living_nine_oclock_theater",
+  "slug": "living-nine-oclock-theater",
+  "label": "Nine O'Clock Crystal Theater",
+  "layout": "theater_stage",
+  "medium": "architectural",
+  "energy": "feature_presentation",
+  "status": "approved_concept",
+  "movement_summary": "Clock 9:00; footlights on; curtains open; crystal rotates; necklace lowers; incense crosses stage; reader name; coffee steam greeting",
+  "paths": {
+    "scene_raw": "assets/living_worlds/living-nine-oclock-theater/scene-raw.png",
+    "layers_dir": "assets/living_worlds/living-nine-oclock-theater/layers",
+    "remotion_dir": "remotion/public/layers/living-nine-oclock-theater"
+  },
+  "required_layers": [
+    "background-plate.png",
+    "coffee-cup.png",
+    "candle-body.png",
+    "candle-flame.png",
+    "candle-glow.png",
+    "incense-holder.png",
+    "hero-crystal.png",
+    "pendant.png",
+    "card-front.png",
+    "card-back.png",
+    "curtain-left.png",
+    "curtain-right.png",
+    "marquee.png",
+    "footlight-glow.png",
+    "stage-crystal.png"
+  ],
+  "optional_layers": [
+    "foreground-frame.png",
+    "reader.png",
+    "reader-hand.png",
+    "crystal-highlight.png",
+    "coffee-steam-1.png",
+    "coffee-steam-2.png",
+    "coffee-steam-3.png",
+    "incense-smoke-1.png",
+    "incense-smoke-2.png",
+    "incense-smoke-3.png"
+  ],
+  "approval": {
+    "scene_raw": "present",
+    "layers_complete": "pending",
+    "founder_look": "pending",
+    "assigned_date": null
+  }
+}

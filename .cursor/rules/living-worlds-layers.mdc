@@ -1,0 +1,65 @@
+---
+description: Living Worlds layer repo — GitHub paths, manifests, 20 concepts (Founder Aug 23 2026)
+alwaysApply: false
+globs: assets/living_worlds/**,data/living_worlds/layers/**,remotion/public/layers/**,marketing/living_worlds_layers.py,docs/LIVING-WORLDS-LAYERS-REPO.md
+---
+
+# Living Worlds layer repository (GitHub)
+
+**20 concepts** in `config/morning_living_worlds.json` · **Docs:** `docs/LIVING-WORLDS-LAYERS-REPO.md` · **Index:** `data/living_worlds/layers/index.json`
+
+## Where files live
+
+| Asset | Path |
+|-------|------|
+| Scene hero plate | `assets/living_worlds/<slug>/scene-raw.png` |
+| Transparent layers | `assets/living_worlds/<slug>/layers/*.png` |
+| Manifest + prompts | `data/living_worlds/layers/<style_id>/` |
+| Remotion public copy | `remotion/public/layers/<slug>/` |
+
+**Slug:** `living_crystal_morning_machine` → `living-crystal-morning-machine`
+
+## Required before Remotion render
+
+1. `scene-raw.png` — colorful shop-made hero, six anchors, **no readable text**
+2. Decomposed **transparent PNGs** per `manifest.json` `required_layers`
+3. `background-plate.png` has moving objects **removed** (no duplicate on top)
+4. `python3 -m marketing living-world-layers sync` then `cd remotion && npm run validate:layers`
+
+## CLI (use these — do not invent paths)
+
+```bash
+python3 -m marketing living-world-layers init --all
+python3 -m marketing living-world-layers status
+python3 -m marketing living-world-layers register-scene <style_id> <png>
+python3 -m marketing living-world-layers sync
+python3 -m marketing living-world-layers validate
+```
+
+Layer prompts: `data/living_worlds/layers/<style_id>/prompts/layer-*.txt`
+
+## Founder approval (not autopilot)
+
+- `manifest.json` → `approval.founder_look`: pending until Founder says yes/no
+- `approval.assigned_date`: null until Founder picks calendar day
+- **Crystal Morning Machine** = `pilot_hold` — do not publish
+
+## Six anchors
+
+Crystal · jewelry · incense · candle · reader · coffee — every scene and decomposition.
+
+## Text
+
+Live React in `EventPanel` — never bake schedule/reader/date/phone/site into PNGs.
+
+## Do not
+
+- Ship flat PIL/ffmpeg animation (`render_preview_loop`) for production
+- Skip layer decomposition and zoom/pan scene-raw
+- Reuse URLs (`image_usage`)
+- Generic mystic AI template art
+- Put dollar prices on graphics
+
+## Color + brand
+
+Bright jewel tones, eggplant Sacred Ground accents, shop-made energy — see `social-image-branding.mdc` and `morning-living-worlds.mdc`.

@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "style_id": "living_community_quilt",
+  "slug": "living-community-quilt",
+  "label": "Community Crystal Quilt",
+  "layout": "patchwork_quilt",
+  "medium": "tactile_handmade",
+  "energy": "quiet",
+  "status": "approved_concept",
+  "movement_summary": "Squares stitch together; crystal sparkles; jewelry sways; candle glows; incense crosses patches; reader card flips; coffee steams; border completes greeting",
+  "paths": {
+    "scene_raw": "assets/living_worlds/living-community-quilt/scene-raw.png",
+    "layers_dir": "assets/living_worlds/living-community-quilt/layers",
+    "remotion_dir": "remotion/public/layers/living-community-quilt"
+  },
+  "required_layers": [
+    "background-plate.png",
+    "coffee-cup.png",
+    "candle-body.png",
+    "candle-flame.png",
+    "candle-glow.png",
+    "incense-holder.png",
+    "hero-crystal.png",
+    "pendant.png",
+    "card-front.png",
+    "card-back.png",
+    "quilt-base.png",
+    "patch-crystal.png",
+    "patch-jewelry.png",
+    "border-stitch.png"
+  ],
+  "optional_layers": [
+    "foreground-frame.png",
+    "reader.png",
+    "reader-hand.png",
+    "crystal-highlight.png",
+    "coffee-steam-1.png",
+    "coffee-steam-2.png",
+    "coffee-steam-3.png",
+    "incense-smoke-1.png",
+    "incense-smoke-2.png",
+    "incense-smoke-3.png"
+  ],
+  "approval": {
+    "scene_raw": "present",
+    "layers_complete": "pending",
+    "founder_look": "pending",
+    "assigned_date": null
+  }
+}

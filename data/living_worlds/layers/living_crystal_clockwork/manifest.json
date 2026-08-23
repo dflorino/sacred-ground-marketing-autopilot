@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "style_id": "living_crystal_clockwork",
+  "slug": "living-crystal-clockwork",
+  "label": "Crystal Clockwork Morning",
+  "layout": "ornate_clock",
+  "medium": "mechanism",
+  "energy": "high_energy",
+  "status": "approved_concept",
+  "movement_summary": "Hands to 9:00; crystal pendulum; jewelry gears; doors open; reader appears; candle windows; incense chimney; coffee pours at bell",
+  "paths": {
+    "scene_raw": "assets/living_worlds/living-crystal-clockwork/scene-raw.png",
+    "layers_dir": "assets/living_worlds/living-crystal-clockwork/layers",
+    "remotion_dir": "remotion/public/layers/living-crystal-clockwork"
+  },
+  "required_layers": [
+    "background-plate.png",
+    "coffee-cup.png",
+    "candle-body.png",
+    "candle-flame.png",
+    "candle-glow.png",
+    "incense-holder.png",
+    "hero-crystal.png",
+    "pendant.png",
+    "card-front.png",
+    "card-back.png",
+    "clock-face.png",
+    "clock-hour-hand.png",
+    "clock-minute-hand.png",
+    "pendulum.png",
+    "clock-door.png"
+  ],
+  "optional_layers": [
+    "foreground-frame.png",
+    "reader.png",
+    "reader-hand.png",
+    "crystal-highlight.png",
+    "coffee-steam-1.png",
+    "coffee-steam-2.png",
+    "coffee-steam-3.png",
+    "incense-smoke-1.png",
+    "incense-smoke-2.png",
+    "incense-smoke-3.png"
+  ],
+  "approval": {
+    "scene_raw": "present",
+    "layers_complete": "pending",
+    "founder_look": "pending",
+    "assigned_date": null
+  }
+}

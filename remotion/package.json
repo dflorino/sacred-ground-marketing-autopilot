@@ -1,0 +1,26 @@
+{
+  "name": "sacred-ground-living-worlds",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Layered Remotion compositions for Morning Living Worlds",
+  "scripts": {
+    "start": "remotion studio",
+    "start:lab": "remotion studio MotionLaboratory",
+    "render:lab": "remotion render MotionLaboratory out/motion-laboratory-1350.mp4 --codec=h264 --pixel-format=yuv420p",
+    "render:machine": "remotion render CrystalMorningMachine out/crystal-morning-machine-2026-08-24-feed.mp4 --codec=h264 --pixel-format=yuv420p",
+    "render:machine:still": "remotion still CrystalMorningMachine out/crystal-morning-machine-2026-08-24-cover.png --frame=0",
+    "render:diagnostics": "remotion render CrystalMorningMachineDiagnostics out/crystal-morning-machine-diagnostics.mp4",
+    "validate:layers": "node scripts/validate-layers.mjs"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "typescript": "^5.6.3"
+  }
+}

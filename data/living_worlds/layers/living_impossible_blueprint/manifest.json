@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "style_id": "living_impossible_blueprint",
+  "slug": "living-impossible-blueprint",
+  "label": "Impossible Crystal Blueprint",
+  "layout": "blueprint_drawing",
+  "medium": "architectural",
+  "energy": "educational",
+  "status": "approved_concept",
+  "movement_summary": "Lines draft; crystal elevator; chain pulleys; candle tower lights; incense pipes; reader door; coffee lab; event route glows",
+  "paths": {
+    "scene_raw": "assets/living_worlds/living-impossible-blueprint/scene-raw.png",
+    "layers_dir": "assets/living_worlds/living-impossible-blueprint/layers",
+    "remotion_dir": "remotion/public/layers/living-impossible-blueprint"
+  },
+  "required_layers": [
+    "background-plate.png",
+    "coffee-cup.png",
+    "candle-body.png",
+    "candle-flame.png",
+    "candle-glow.png",
+    "incense-holder.png",
+    "hero-crystal.png",
+    "pendant.png",
+    "card-front.png",
+    "card-back.png",
+    "blueprint-base.png",
+    "elevator-crystal.png",
+    "route-glow.png"
+  ],
+  "optional_layers": [
+    "foreground-frame.png",
+    "reader.png",
+    "reader-hand.png",
+    "crystal-highlight.png",
+    "coffee-steam-1.png",
+    "coffee-steam-2.png",
+    "coffee-steam-3.png",
+    "incense-smoke-1.png",
+    "incense-smoke-2.png",
+    "incense-smoke-3.png"
+  ],
+  "approval": {
+    "scene_raw": "present",
+    "layers_complete": "pending",
+    "founder_look": "pending",
+    "assigned_date": null
+  }
+}

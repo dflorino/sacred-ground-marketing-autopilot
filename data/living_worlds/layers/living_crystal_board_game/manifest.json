@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "style_id": "living_crystal_board_game",
+  "slug": "living-crystal-board-game",
+  "label": "Crystal Board Game",
+  "layout": "board_game",
+  "medium": "overhead_tabletop",
+  "energy": "busy_multi",
+  "status": "approved_concept",
+  "movement_summary": "Coffee start square; crystal token moves; stops at jewelry/candle/incense/reader; events appear; shop destination; OPEN banner",
+  "paths": {
+    "scene_raw": "assets/living_worlds/living-crystal-board-game/scene-raw.png",
+    "layers_dir": "assets/living_worlds/living-crystal-board-game/layers",
+    "remotion_dir": "remotion/public/layers/living-crystal-board-game"
+  },
+  "required_layers": [
+    "background-plate.png",
+    "coffee-cup.png",
+    "candle-body.png",
+    "candle-flame.png",
+    "candle-glow.png",
+    "incense-holder.png",
+    "hero-crystal.png",
+    "pendant.png",
+    "card-front.png",
+    "card-back.png",
+    "board-base.png",
+    "crystal-token.png",
+    "event-space-1.png",
+    "event-space-2.png",
+    "finish-banner.png"
+  ],
+  "optional_layers": [
+    "foreground-frame.png",
+    "reader.png",
+    "reader-hand.png",
+    "crystal-highlight.png",
+    "coffee-steam-1.png",
+    "coffee-steam-2.png",
+    "coffee-steam-3.png",
+    "incense-smoke-1.png",
+    "incense-smoke-2.png",
+    "incense-smoke-3.png"
+  ],
+  "approval": {
+    "scene_raw": "present",
+    "layers_complete": "pending",
+    "founder_look": "pending",
+    "assigned_date": null
+  }
+}

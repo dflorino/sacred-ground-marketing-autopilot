@@ -127,6 +127,23 @@ def main(argv: Optional[List[str]] = None) -> int:
         help="Optional media_id when using --set-url",
     )
 
+    p_lw = sub.add_parser(
+        "living-world-layers",
+        help="Living Worlds layer repo — init manifests, validate, sync to Remotion",
+    )
+    p_lw_sub = p_lw.add_subparsers(dest="lw_cmd", required=True)
+    p_lw_init = p_lw_sub.add_parser("init", help="Create manifests + prompts for concept(s)")
+    p_lw_init.add_argument("style_id", nargs="?", default=None, help="One style id or omit for all 20")
+    p_lw_init.add_argument("--force", action="store_true", help="Overwrite manifests/prompts")
+    p_lw_init.add_argument("--all", action="store_true", help="Init all concepts (default when no style_id)")
+    p_lw_sub.add_parser("status", help="Print layer index (scene + layer counts)")
+    p_lw_sub.add_parser("validate", help="Validate all concepts have scene + required layers")
+    p_lw_sub.add_parser("sync", help="Copy assets → remotion/public/layers/")
+    p_lw_pending = p_lw_sub.add_parser("pending-scenes", help="List concepts missing scene-raw.png")
+    p_lw_reg = p_lw_sub.add_parser("register-scene", help="Register a scene-raw PNG for a concept")
+    p_lw_reg.add_argument("style_id")
+    p_lw_reg.add_argument("source_path")
+
     sub.add_parser("status", help="Show pause/phase/counts")
     sub.add_parser("review", help="Human-readable review queue for Phase 1")
     sub.add_parser("version", help="Print version")
@@ -277,6 +294,37 @@ def main(argv: Optional[List[str]] = None) -> int:
         )
         _print(result)
         return 0 if result.get("ok") else 1
+
+    if args.cmd == "living-world-layers":
+        from . import living_worlds_layers as lwl
+
+        if args.lw_cmd == "init":
+            if args.style_id:
+                _print(lwl.init_concept(args.style_id, force=args.force))
+            else:
+                _print(lwl.init_all(force=args.force))
+            return 0
+        if args.lw_cmd == "status":
+            lwl.write_index()
+            from .paths import read_json
+            import os
+
+            idx = read_json(os.path.join(lwl.LAYERS_DATA, "index.json"), {})
+            _print(idx)
+            return 0
+        if args.lw_cmd == "validate":
+            result = lwl.validate_all()
+            _print(result)
+            return 0 if result.get("ok") else 1
+        if args.lw_cmd == "sync":
+            _print(lwl.sync_all())
+            return 0
+        if args.lw_cmd == "pending-scenes":
+            _print({"pending": lwl.list_pending_scenes()})
+            return 0
+        if args.lw_cmd == "register-scene":
+            _print(lwl.register_scene_raw(args.style_id, args.source_path))
+            return 0
 
     return 1
 

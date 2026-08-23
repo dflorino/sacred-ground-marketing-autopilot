@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "style_id": "living_found_object_message",
+  "slug": "living-found-object-message",
+  "label": "Found-Object Morning Message",
+  "layout": "found_object_typography",
+  "medium": "overhead_tabletop",
+  "energy": "high_energy",
+  "status": "approved_concept",
+  "movement_summary": "Objects slide in; beans form letter; chain curls; crystals rotate; candles light; smoke draws letter; reader places card; coffee lands",
+  "paths": {
+    "scene_raw": "assets/living_worlds/living-found-object-message/scene-raw.png",
+    "layers_dir": "assets/living_worlds/living-found-object-message/layers",
+    "remotion_dir": "remotion/public/layers/living-found-object-message"
+  },
+  "required_layers": [
+    "background-plate.png",
+    "coffee-cup.png",
+    "candle-body.png",
+    "candle-flame.png",
+    "candle-glow.png",
+    "incense-holder.png",
+    "hero-crystal.png",
+    "pendant.png",
+    "card-front.png",
+    "card-back.png",
+    "letter-g.png",
+    "letter-o.png",
+    "letter-d.png",
+    "object-slide-1.png",
+    "object-slide-2.png"
+  ],
+  "optional_layers": [
+    "foreground-frame.png",
+    "reader.png",
+    "reader-hand.png",
+    "crystal-highlight.png",
+    "coffee-steam-1.png",
+    "coffee-steam-2.png",
+    "coffee-steam-3.png",
+    "incense-smoke-1.png",
+    "incense-smoke-2.png",
+    "incense-smoke-3.png"
+  ],
+  "approval": {
+    "scene_raw": "present",
+    "layers_complete": "pending",
+    "founder_look": "pending",
+    "assigned_date": null
+  }
+}

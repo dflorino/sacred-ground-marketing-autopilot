@@ -1,0 +1,225 @@
+{
+  "generated_at": "2026-08-23",
+  "concepts": [
+    {
+      "style_id": "living_cabinet_treasures",
+      "slug": "living-cabinet-treasures",
+      "label": "Cabinet of Today's Treasures",
+      "layout": "compartment_cabinet",
+      "scene_raw": "present",
+      "layers": "0/13",
+      "founder_look": "pending",
+      "assigned_date": null,
+      "manifest": "data/living_worlds/layers/living_cabinet_treasures/manifest.json"
+    },
+    {
+      "style_id": "living_ceramic_tile",
+      "slug": "living-ceramic-tile",
+      "label": "Ceramic Tile Morning",
+      "layout": "tile_mural",
+      "scene_raw": "present",
+      "layers": "0/14",
+      "founder_look": "pending",
+      "assigned_date": null,
+      "manifest": "data/living_worlds/layers/living_ceramic_tile/manifest.json"
+    },
+    {
+      "style_id": "living_community_quilt",
+      "slug": "living-community-quilt",
+      "label": "Community Crystal Quilt",
+      "layout": "patchwork_quilt",
+      "scene_raw": "present",
+      "layers": "0/14",
+      "founder_look": "pending",
+      "assigned_date": null,
+      "manifest": "data/living_worlds/layers/living_community_quilt/manifest.json"
+    },
+    {
+      "style_id": "living_crystal_board_game",
+      "slug": "living-crystal-board-game",
+      "label": "Crystal Board Game",
+      "layout": "board_game",
+      "scene_raw": "present",
+      "layers": "0/15",
+      "founder_look": "pending",
+      "assigned_date": null,
+      "manifest": "data/living_worlds/layers/living_crystal_board_game/manifest.json"
+    },
+    {
+      "style_id": "living_crystal_clockwork",
+      "slug": "living-crystal-clockwork",
+      "label": "Crystal Clockwork Morning",
+      "layout": "ornate_clock",
+      "scene_raw": "present",
+      "layers": "0/15",
+      "founder_look": "pending",
+      "assigned_date": null,
+      "manifest": "data/living_worlds/layers/living_crystal_clockwork/manifest.json"
+    },
+    {
+      "style_id": "living_crystal_comic",
+      "slug": "living-crystal-comic",
+      "label": "Crystal Comic Morning",
+      "layout": "comic_panels",
+      "scene_raw": "present",
+      "layers": "0/16",
+      "founder_look": "pending",
+      "assigned_date": null,
+      "manifest": "data/living_worlds/layers/living_crystal_comic/manifest.json"
+    },
+    {
+      "style_id": "living_crystal_morning_machine",
+      "slug": "living-crystal-morning-machine",
+      "label": "Crystal Morning Machine",
+      "layout": "mechanism_tabletop",
+      "scene_raw": "present",
+      "layers": "0/14",
+      "founder_look": "pending",
+      "assigned_date": null,
+      "manifest": "data/living_worlds/layers/living_crystal_morning_machine/manifest.json"
+    },
+    {
+      "style_id": "living_crystal_weather",
+      "slug": "living-crystal-weather",
+      "label": "Crystal Weather Forecast",
+      "layout": "weather_map",
+      "scene_raw": "present",
+      "layers": "0/15",
+      "founder_look": "pending",
+      "assigned_date": null,
+      "manifest": "data/living_worlds/layers/living_crystal_weather/manifest.json"
+    },
+    {
+      "style_id": "living_curiosity_museum",
+      "slug": "living-curiosity-museum",
+      "label": "Morning Curiosity Museum",
+      "layout": "museum_gallery",
+      "scene_raw": "present",
+      "layers": "0/14",
+      "founder_look": "pending",
+      "assigned_date": null,
+      "manifest": "data/living_worlds/layers/living_curiosity_museum/manifest.json"
+    },
+    {
+      "style_id": "living_embroidered_morning",
+      "slug": "living-embroidered-morning",
+      "label": "Embroidered Crystal Morning",
+      "layout": "fabric_embroidery",
+      "scene_raw": "present",
+      "layers": "0/13",
+      "founder_look": "pending",
+      "assigned_date": null,
+      "manifest": "data/living_worlds/layers/living_embroidered_morning/manifest.json"
+    },
+    {
+      "style_id": "living_found_object_message",
+      "slug": "living-found-object-message",
+      "label": "Found-Object Morning Message",
+      "layout": "found_object_typography",
+      "scene_raw": "present",
+      "layers": "0/15",
+      "founder_look": "pending",
+      "assigned_date": null,
+      "manifest": "data/living_worlds/layers/living_found_object_message/manifest.json"
+    },
+    {
+      "style_id": "living_impossible_blueprint",
+      "slug": "living-impossible-blueprint",
+      "label": "Impossible Crystal Blueprint",
+      "layout": "blueprint_drawing",
+      "scene_raw": "present",
+      "layers": "0/13",
+      "founder_look": "pending",
+      "assigned_date": null,
+      "manifest": "data/living_worlds/layers/living_impossible_blueprint/manifest.json"
+    },
+    {
+      "style_id": "living_inside_crystal_shop",
+      "slug": "living-inside-crystal-shop",
+      "label": "Inside the Crystal Shop",
+      "layout": "dollhouse_cutaway",
+      "scene_raw": "present",
+      "layers": "0/14",
+      "founder_look": "pending",
+      "assigned_date": null,
+      "manifest": "data/living_worlds/layers/living_inside_crystal_shop/manifest.json"
+    },
+    {
+      "style_id": "living_matchbox_mysteries",
+      "slug": "living-matchbox-mysteries",
+      "label": "Matchbox Mysteries",
+      "layout": "compartment_boxes",
+      "scene_raw": "present",
+      "layers": "0/16",
+      "founder_look": "pending",
+      "assigned_date": null,
+      "manifest": "data/living_worlds/layers/living_matchbox_mysteries/manifest.json"
+    },
+    {
+      "style_id": "living_nine_oclock_theater",
+      "slug": "living-nine-oclock-theater",
+      "label": "Nine O'Clock Crystal Theater",
+      "layout": "theater_stage",
+      "scene_raw": "present",
+      "layers": "0/15",
+      "founder_look": "pending",
+      "assigned_date": null,
+      "manifest": "data/living_worlds/layers/living_nine_oclock_theater/manifest.json"
+    },
+    {
+      "style_id": "living_paper_theater_windows",
+      "slug": "living-paper-theater-windows",
+      "label": "Paper Theater Windows",
+      "layout": "paper_storefront",
+      "scene_raw": "present",
+      "layers": "0/18",
+      "founder_look": "pending",
+      "assigned_date": null,
+      "manifest": "data/living_worlds/layers/living_paper_theater_windows/manifest.json"
+    },
+    {
+      "style_id": "living_popup_crystal_shop",
+      "slug": "living-popup-crystal-shop",
+      "label": "Pop-Up Crystal Shop",
+      "layout": "paper_pop_up",
+      "scene_raw": "present",
+      "layers": "0/15",
+      "founder_look": "pending",
+      "assigned_date": null,
+      "manifest": "data/living_worlds/layers/living_popup_crystal_shop/manifest.json"
+    },
+    {
+      "style_id": "living_shadow_puppet",
+      "slug": "living-shadow-puppet",
+      "label": "Shadow-Puppet Crystal Morning",
+      "layout": "shadow_silhouette",
+      "scene_raw": "present",
+      "layers": "0/14",
+      "founder_look": "pending",
+      "assigned_date": null,
+      "manifest": "data/living_worlds/layers/living_shadow_puppet/manifest.json"
+    },
+    {
+      "style_id": "living_shopkeeper_workbench",
+      "slug": "living-shopkeeper-workbench",
+      "label": "Shopkeeper's Mystical Workbench",
+      "layout": "overhead_workbench",
+      "scene_raw": "present",
+      "layers": "0/13",
+      "founder_look": "pending",
+      "assigned_date": null,
+      "manifest": "data/living_worlds/layers/living_shopkeeper_workbench/manifest.json"
+    },
+    {
+      "style_id": "living_surreal_scale_shop",
+      "slug": "living-surreal-scale-shop",
+      "label": "Surreal Scale Crystal Shop",
+      "layout": "surreal_miniature",
+      "scene_raw": "present",
+      "layers": "0/13",
+      "founder_look": "pending",
+      "assigned_date": null,
+      "manifest": "data/living_worlds/layers/living_surreal_scale_shop/manifest.json"
+    }
+  ]
+}
