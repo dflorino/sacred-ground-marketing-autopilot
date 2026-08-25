@@ -424,19 +424,20 @@
       }
     },
     "2026-08-25": {
-      "label": "Amber | Customized Therapeutic Massage Sessions + Astrology & Tarot +",
+      "label": "Astrology & Tarot + Meditation Free Community Event",
       "covers": [
-        "Amber | Customized Therapeutic Massage Sessions",
         "Astrology & Tarot With Lisa",
         "Meditation Free Community Event"
       ],
-      "local": "assets/sg-morning-flyer-2026-08-25-amber-customized-therapeutic.png",
-      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-25-amber-customized-therapeutic.png",
+      "local": "assets/sg-morning-flyer-2026-08-25-folk-no-amber-v1.jpg",
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-flyer-sq-1787619172.jpg",
       "prebranded": true,
       "template": "thursday-style",
-      "visual_style": "einstein_chalkboard_map",
+      "visual_style": "folk_outsider_night",
       "pride_baked_in": true,
-      "media_id": 26904
+      "media_id": 26944,
+      "generation_source": "mlimg_folk_no_amber_2026-08-24",
+      "note": "Founder Aug 24: Amber canceled — Lisa + free meditation only; folk outsider redo."
     },
     "2026-08-26": {
       "label": "Soul Alignment w/ Karen + Tina’s Tarot & Rune Sessions",
@@ -444,13 +445,15 @@
         "Soul Alignment w/ Karen: Intuitive Energy Reiki or Akashic Record Reading",
         "Tina’s Tarot & Rune Sessions"
       ],
-      "local": "assets/sg-morning-flyer-2026-08-26-soul-alignment-w-karen.png",
-      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-26-soul-alignment-w-karen.png",
+      "local": "assets/sg-morning-flyer-2026-08-26-folk-outsider-night-redo-v1.jpg",
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-EQUAL-WEIGHT-mul-1787594520.jpg",
       "prebranded": true,
       "template": "thursday-style",
       "visual_style": "folk_outsider_night",
       "pride_baked_in": true,
-      "media_id": 26903
+      "media_id": 26939,
+      "generation_source": "mlimg_mixed_pool_redo_2026-08-24",
+      "note": "Founder Aug 24 2026: replaced banned generic navy PIL compositor with mixed-pool AI art (mlimg). Prior bad WP media 26903-26908 deleted by Founder."
     },
     "2026-08-27": {
       "label": "Quantum Alignment Series + Tai Chi Gung +",
@@ -459,13 +462,15 @@
         "Tai Chi Gung with Sherry Gurley",
         "Tarot with Adie"
       ],
-      "local": "assets/sg-morning-flyer-2026-08-27-quantum-alignment-series.png",
-      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-27-quantum-alignment-series.png",
+      "local": "assets/sg-morning-flyer-2026-08-27-thursday-shop-made-redo-v1.jpg",
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-EQUAL-WEIGHT-mul-1787594549.jpg",
       "prebranded": true,
       "template": "thursday-style",
       "visual_style": "thursday_cards_shop_made",
       "pride_baked_in": true,
-      "media_id": 26906
+      "media_id": 26940,
+      "generation_source": "mlimg_mixed_pool_redo_2026-08-24",
+      "note": "Founder Aug 24 2026: replaced banned generic navy PIL compositor with mixed-pool AI art (mlimg). Prior bad WP media 26903-26908 deleted by Founder."
     },
     "2026-08-28": {
       "label": "The Reflexology Reset + Tarot +",
@@ -474,13 +479,15 @@
         "Tarot With Andre",
         "Keeper of the Cards: Robert"
       ],
-      "local": "assets/sg-morning-flyer-2026-08-28-the-reflexology-reset.png",
-      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-28-the-reflexology-reset.png",
+      "local": "assets/sg-morning-flyer-2026-08-28-magritte-floating-door-redo-v1.jpg",
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-EQUAL-WEIGHT-mul-1787594477.jpg",
       "prebranded": true,
       "template": "thursday-style",
       "visual_style": "magritte_floating_door",
       "pride_baked_in": true,
-      "media_id": 26907
+      "media_id": 26935,
+      "generation_source": "mlimg_mixed_pool_redo_2026-08-24",
+      "note": "Founder Aug 24 2026: replaced banned generic navy PIL compositor with mixed-pool AI art (mlimg). Prior bad WP media 26903-26908 deleted by Founder."
     },
     "2026-08-29": {
       "label": "Frequency Reset + Shaman Medium Melissa +",
@@ -489,13 +496,15 @@
         "Shaman Medium Melissa",
         "Tarot with Adie"
       ],
-      "local": "assets/sg-morning-flyer-2026-08-29-frequency-reset.png",
-      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-29-frequency-reset.png",
+      "local": "assets/sg-morning-flyer-2026-08-29-davinci-storefront-redo-v1.jpg",
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-EQUAL-WEIGHT-mul-1787594479.jpg",
       "prebranded": true,
       "template": "thursday-style",
       "visual_style": "davinci_storefront_sketch",
       "pride_baked_in": true,
-      "media_id": 26905
+      "media_id": 26936,
+      "generation_source": "mlimg_mixed_pool_redo_2026-08-24",
+      "note": "Founder Aug 24 2026: replaced banned generic navy PIL compositor with mixed-pool AI art (mlimg). Prior bad WP media 26903-26908 deleted by Founder."
     },
     "2026-08-30": {
       "label": "Integrated Energy Healing with Mary + Oracle of the Stones",
@@ -503,13 +512,15 @@
         "Integrated Energy Healing with Mary: Reiki • Cranial Sacral • Intuitive Guidance",
         "Oracle of the Stones: A Reading with Diane"
       ],
-      "local": "assets/sg-morning-flyer-2026-08-30-integrated-energy-healing-wi.png",
-      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-30-integrated-energy-healing-wi.png",
+      "local": "assets/sg-morning-flyer-2026-08-30-folk-outsider-redo-v2.jpg",
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-EQUAL-WEIGHT-mul-1787595049.jpg",
       "prebranded": true,
       "template": "thursday-style",
-      "visual_style": "einstein_chalkboard_map",
+      "visual_style": "folk_outsider_night",
       "pride_baked_in": true,
-      "media_id": 26908
+      "media_id": 26943,
+      "generation_source": "mlimg_mixed_pool_redo_v2_2026-08-24",
+      "note": "Founder Aug 24: remade — dropped Einstein; warm folk outsider Sunday plate."
     }
   },
   "template": {

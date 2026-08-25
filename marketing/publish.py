@@ -35,6 +35,26 @@ def can_schedule(draft: Dict[str, Any]) -> tuple[bool, str]:
     img = draft.get("image") or {}
     if not img.get("url"):
         return False, "missing_image_url"
+    # Hard gate: never ship the banned navy mystic PIL morning factory
+    # (Founder Aug 25 2026 — pride-baked compositor reached Zernio/FB/IG).
+    campaign = str(draft.get("campaign") or "")
+    rule = str(img.get("rule") or img.get("source") or "")
+    if campaign in ("today", "morning") or rule in ("morning_flyer", "morning"):
+        from . import morning_flyers as mf
+
+        url = str(img.get("url") or "").strip()
+        if url and mf.image_url_is_banned_mystic_navy_pil(url):
+            return False, "banned_mystic_navy_pil_image"
+        # Also refuse when draft notes / recommendation still point at PIL preview.
+        blob = " ".join(
+            [
+                str(img.get("recommendation") or ""),
+                str(img.get("rule") or ""),
+                " ".join(str(n) for n in (draft.get("notes") or [])),
+            ]
+        ).lower()
+        if "pil_compositor" in blob or "banned_pil" in blob:
+            return False, "banned_mystic_navy_pil_image"
     return True, "ok"
 
 

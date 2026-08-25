@@ -456,21 +456,24 @@ def select_today_image(
         if flyer:
             from . import morning_flyers as mf
 
-            chosen, shared = mf.select_flyer_url_for_platform(flyer, platform)
-            if chosen and str(chosen) not in blocked:
-                label = flyer.get("label") or day.isoformat()
-                if shared:
-                    rec = (
-                        f"Prebranded morning flyer for {day.isoformat()} ({label}) — "
-                        "single-image mode (same plate on FB+IG). Skip overlays."
-                    )
-                else:
-                    plat = (platform or "facebook").lower()
-                    rec = (
-                        f"Prebranded morning flyer for {day.isoformat()} ({label}) — "
-                        f"{plat} variant (allow_ig_variant). Skip overlays."
-                    )
-                return (chosen, "morning_flyer", rec)
+            # Refuse banned navy PIL plates before they enter any draft.
+            block = mf.entry_publish_block_reason(flyer)
+            if not block:
+                chosen, shared = mf.select_flyer_url_for_platform(flyer, platform)
+                if chosen and str(chosen) not in blocked:
+                    label = flyer.get("label") or day.isoformat()
+                    if shared:
+                        rec = (
+                            f"Prebranded morning flyer for {day.isoformat()} ({label}) — "
+                            "single-image mode (same plate on FB+IG). Skip overlays."
+                        )
+                    else:
+                        plat = (platform or "facebook").lower()
+                        rec = (
+                            f"Prebranded morning flyer for {day.isoformat()} ({label}) — "
+                            f"{plat} variant (allow_ig_variant). Skip overlays."
+                        )
+                    return (chosen, "morning_flyer", rec)
 
     for rule_id in priority:
         rule = rules.get(rule_id) or {}

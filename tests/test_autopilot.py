@@ -1798,7 +1798,11 @@ class AutopilotTests(unittest.TestCase):
         images.morning_flyers.cache_clear()
 
         empty_day = date(2026, 9, 15)
-        info = mf.ensure_flyer_for_day(empty_day, [], force=True)
+        # Dev-only PIL preview may create a local stub; publish still blocked until
+        # a real mixed-pool AI URL is wired (Founder Aug 25 navy-PIL incident).
+        info = mf.ensure_flyer_for_day(
+            empty_day, [], force=True, allow_pil_preview=True
+        )
         self.assertEqual(info["action"], "created")
         self.assertTrue(info["needs_upload"])
         entry = info["entry"]
@@ -1806,6 +1810,10 @@ class AutopilotTests(unittest.TestCase):
         self.assertTrue(entry.get("empty_day"))
         self.assertIn("visit", (entry.get("label") or "").lower())
         self.assertTrue(os.path.isfile(info["local"]))
+        # Banned PIL stub must not be selectable for publish yet.
+        self.assertEqual(
+            mf.select_flyer_url_for_platform(entry, "facebook"), ("", False)
+        )
 
         # Date-keyed selection only when public URL is set.
         plan_no_url = images.plan_image([], "today", day=empty_day)
@@ -1890,7 +1898,7 @@ class AutopilotTests(unittest.TestCase):
                 cost="$55",
             ),
         ]
-        info = mf.ensure_flyer_for_day(day, events, force=True)
+        info = mf.ensure_flyer_for_day(day, events, force=True, allow_pil_preview=True)
         self.assertEqual(info["action"], "created")
         entry = info["entry"]
         self.assertTrue(entry.get("local"))
@@ -2297,6 +2305,122 @@ class AutopilotTests(unittest.TestCase):
             },
         )
         self.assertIn("DESIGNED-IN SHOP PRIDE", prompt)
+
+
+class TestBannedNavyPilNeverShips(unittest.TestCase):
+    """Founder Aug 25 2026: pride-baked navy PIL reached FB/IG — never again."""
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        from marketing import morning_flyers as morning_flyers_mod
+        from marketing.models import Event as EventModel
+
+        cls.mf = morning_flyers_mod
+        cls.Event = EventModel
+
+    def test_detector_flags_retired_aug25_pil(self):
+        path = os.path.join(
+            ROOT,
+            "assets",
+            "_retired",
+            "banned-navy-pil",
+            "sg-morning-flyer-2026-08-25-astrology-tarot.png",
+        )
+        self.assertTrue(os.path.isfile(path), path)
+        self.assertTrue(self.mf.flyer_is_banned_mystic_navy_pil(path))
+
+    def test_select_and_pride_refuse_banned_entry(self):
+        path = "assets/_retired/banned-navy-pil/sg-morning-flyer-2026-08-25-astrology-tarot.png"
+        entry = {
+            "local": path,
+            "url": (
+                "https://media.zernio.com/media/"
+                "x_sg-morning-flyer-2026-08-25-astrology-tarot-pride-2026-08-25.png"
+            ),
+            "generation_source": "pil_compositor_preview",
+        }
+        self.assertIsNotNone(self.mf.entry_publish_block_reason(entry))
+        self.assertEqual(
+            self.mf.select_flyer_url_for_platform(entry, "facebook"), ("", False)
+        )
+        self.assertIsNone(
+            self.mf.bake_pride_band_new_asset(path, day=date(2026, 8, 25))
+        )
+
+    def test_publish_can_schedule_blocks_banned_url(self):
+        from unittest.mock import patch
+
+        from marketing import publish
+
+        draft = {
+            "campaign": "today",
+            "approval_status": "approved",
+            "status": "approved",
+            "image": {
+                "url": (
+                    "https://media.zernio.com/media/"
+                    "x_sg-morning-flyer-2026-08-25-astrology-tarot-pride-2026-08-25.png"
+                ),
+                "rule": "morning_flyer",
+            },
+        }
+        with patch("marketing.publish.control.phase", return_value=2), patch(
+            "marketing.publish.control.is_paused", return_value=False
+        ):
+            ok, reason = publish.can_schedule(draft)
+        self.assertFalse(ok)
+        self.assertEqual(reason, "banned_mystic_navy_pil_image")
+
+    def test_set_flyer_url_refuses_banned_remote(self):
+        day = date(2099, 1, 1)
+        data = self.mf.load_flyers_config()
+        flyers = data.setdefault("flyers", {})
+        flyers[day.isoformat()] = {
+            "label": "test",
+            "covers": [],
+            "local": "",
+            "url": "",
+            "generation_source": "pil_compositor_preview",
+        }
+        self.mf.save_flyers_config(data)
+        try:
+            with self.assertRaises(ValueError):
+                self.mf.set_flyer_url(
+                    day,
+                    "https://media.zernio.com/media/"
+                    "x_sg-morning-flyer-2099-01-01-foo-pride-2099-01-01.png",
+                )
+        finally:
+            data = self.mf.load_flyers_config()
+            (data.get("flyers") or {}).pop(day.isoformat(), None)
+            self.mf.save_flyers_config(data)
+
+    def test_pil_preview_writes_under_pil_preview_dir(self):
+        day = date(2099, 2, 2)
+        events = [
+            self.Event(
+                id=1,
+                title="Tarot with Adie",
+                start_date="2099-02-02 12:00:00",
+                end_date="2099-02-02 17:00:00",
+                url="https://shopsacredground.com/adie/",
+            )
+        ]
+        info = self.mf.ensure_flyer_for_day(
+            day, events, force=True, allow_pil_preview=True
+        )
+        local = str(info.get("local") or "")
+        self.assertIn("_pil_preview/", local.replace("\\", "/"))
+        self.assertTrue(self.mf.flyer_is_banned_mystic_navy_pil(local))
+        self.assertEqual(
+            self.mf.select_flyer_url_for_platform(info["entry"], "facebook"),
+            ("", False),
+        )
+        data = self.mf.load_flyers_config()
+        (data.get("flyers") or {}).pop(day.isoformat(), None)
+        self.mf.save_flyers_config(data)
+        if local and os.path.isfile(local):
+            os.remove(local)
 
 
 if __name__ == "__main__":

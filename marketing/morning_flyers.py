@@ -12,9 +12,10 @@ from typing import Any, Dict, List, Optional, Sequence, Tuple
 
 from .ingest import parse_tec_datetime, today_local
 from .models import Event
-from .paths import CONFIG_DIR, ROOT, write_json
+from .paths import CONFIG_DIR, ROOT, _load_json, write_json
 
 FLYERS_PATH = os.path.join(CONFIG_DIR, "morning_flyers.json")
+LIVING_WORLDS_PATH = os.path.join(CONFIG_DIR, "morning_living_worlds.json")
 STYLES_PATH = os.path.join(CONFIG_DIR, "morning_flyer_styles.json")
 ASSETS_DIR = os.path.join(ROOT, "assets")
 LOGO_PATH = os.path.join(
@@ -176,6 +177,62 @@ def flyer_passes_visual_energy(path: str) -> bool:
     )
 
 
+# Deprecated PIL compositor palette — Founder Aug 14 banned this navy equal-card factory.
+_PIL_CARD_FILLS_A = frozenset({(28, 92, 72), (72, 42, 98), (28, 52, 96)})
+_PIL_CARD_FILLS_B = frozenset({(110, 48, 120), (36, 78, 120), (78, 42, 98)})
+
+
+def flyer_is_banned_mystic_navy_pil(path: str) -> bool:
+    """Detect the deprecated render_local_flyer navy equal-card template.
+
+    Founder Aug 14 2026: NEVER ship the generic mystic AI navy three-equal-dark-cards
+    + right sacred-geometry collage factory. Approved mornings use mixed-pool AI art
+    (Magritte / Folk / Da Vinci / Einstein / colorful shop-made), not this PIL stub.
+    """
+    if not path or not os.path.isfile(path):
+        return False
+    from PIL import Image
+
+    im = Image.open(path).convert("RGB")
+    if im.size != (CANVAS, CANVAS):
+        return False
+    px = im.load()
+    # Left stacked cards use exact compositor fill colors (within tolerance).
+    card_hits = 0
+    for x in range(80, 580, 24):
+        for y in range(220, 820, 24):
+            r, g, b = px[x, y]
+            for cr, cg, cb in _PIL_CARD_FILLS_A | _PIL_CARD_FILLS_B:
+                if abs(r - cr) <= 8 and abs(g - cg) <= 8 and abs(b - cb) <= 8:
+                    card_hits += 1
+                    break
+    if card_hits < 40:
+        return False
+    header = [px[x, y] for x in range(60, 280, 16) for y in range(40, 170, 16)]
+    hr = sum(p[0] for p in header) / len(header)
+    hg = sum(p[1] for p in header) / len(header)
+    hb = sum(p[2] for p in header) / len(header)
+    lum = (hr + hg + hb) / 3
+    return lum < 95 and hb >= hr - 5 and hb >= hg - 10
+
+
+def flyer_passes_publish_gates(path: str) -> bool:
+    """All gates required before a morning plate may publish."""
+    if flyer_is_banned_mystic_navy_pil(path):
+        return False
+    return flyer_passes_visual_energy(path)
+
+
+# Generation sources that must never reach Facebook / Instagram.
+BANNED_GENERATION_SOURCES = frozenset(
+    {
+        "pil_compositor_preview",
+        "needs_ai_art",
+        "needs_ai_generation",
+    }
+)
+
+
 def _abs_asset(path: str) -> str:
     if not path:
         return ""
@@ -184,11 +241,127 @@ def _abs_asset(path: str) -> str:
     return os.path.join(ROOT, path)
 
 
-def entry_fails_visual_energy(entry: Optional[Dict[str, Any]]) -> List[str]:
-    """Platforms whose local flyer PNGs fail the color-energy gate.
+def entry_generation_source(entry: Optional[Dict[str, Any]]) -> str:
+    if not isinstance(entry, dict):
+        return ""
+    return str(
+        entry.get("generation_source")
+        or entry.get("generation_source")
+        or entry.get("source")
+        or ""
+    ).strip()
 
-    Single-image mode: only the primary `local` plate is gated unless
-    `allow_ig_variant` is explicitly enabled.
+
+def entry_publish_block_reason(entry: Optional[Dict[str, Any]]) -> Optional[str]:
+    """
+    Why this morning_flyers entry must not be planned or published.
+
+    Founder Aug 25 2026: morning automation pride-baked + uploaded the banned
+    navy PIL compositor (`…astrology-tarot-pride…`) to Zernio. Block at every
+    gate — generation_source, local pixels, and remote URL bytes.
+
+    Missing local alone is NOT a block here (URL-only plates can still ship);
+    `entry_fails_publish_blockers` remains the stricter ensure-path check.
+    """
+    if not isinstance(entry, dict):
+        return "missing_flyer_entry"
+    src = entry_generation_source(entry)
+    if src in BANNED_GENERATION_SOURCES:
+        return f"banned_generation_source:{src}"
+    for key in ("local", "local_instagram", "local_path", "path"):
+        local = str(entry.get(key) or "").strip()
+        if not local:
+            continue
+        abs_path = _abs_asset(local)
+        if abs_path and os.path.isfile(abs_path) and flyer_is_banned_mystic_navy_pil(
+            abs_path
+        ):
+            return f"banned_mystic_navy_pil_local:{local}"
+    for key in ("url", "url_instagram"):
+        url = str(entry.get(key) or "").strip()
+        if url and image_url_is_banned_mystic_navy_pil(url):
+            return f"banned_mystic_navy_pil_url:{key}"
+    return None
+
+
+def image_url_is_banned_mystic_navy_pil(url: str, *, timeout: float = 20.0) -> bool:
+    """Download a candidate morning image and run the navy-PIL pixel detector."""
+    u = (url or "").strip()
+    if not u.startswith(("http://", "https://")):
+        return False
+    # Fast path: pride-baked banned compositor filenames (Aug 25 Zernio incident).
+    low = u.lower()
+    if "sg-morning-flyer-" in low and "-pride-" in low:
+        return True
+    if "pil_compositor" in low or "navy-equal-card" in low:
+        return True
+    if "astrology-tarot.png" in low and "morning-flyer" in low:
+        return True
+    import tempfile
+    import urllib.request
+
+    try:
+        req = urllib.request.Request(
+            u,
+            headers={"User-Agent": "SacredGroundMarketingAutopilot/1.0"},
+        )
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            data = resp.read()
+    except Exception:
+        # Fail closed for morning publish only when caller treats True as block;
+        # here network errors return False so offline tests still plan from local.
+        return False
+    suffix = ".png"
+    if ".jpg" in low or ".jpeg" in low:
+        suffix = ".jpg"
+    elif ".webp" in low:
+        suffix = ".webp"
+    fd, tmp = tempfile.mkstemp(prefix="sg-morning-gate-", suffix=suffix)
+    try:
+        os.close(fd)
+        with open(tmp, "wb") as fh:
+            fh.write(data)
+        return flyer_is_banned_mystic_navy_pil(tmp)
+    finally:
+        try:
+            os.unlink(tmp)
+        except OSError:
+            pass
+
+
+def entry_fails_publish_blockers(entry: Optional[Dict[str, Any]]) -> List[str]:
+    """Hard blockers — banned PIL template, or no usable local/URL plate.
+
+    A non-banned public URL alone is enough (Founder Aug 25: after detaching a
+    banned local and wiring real AI art, ensure must treat the day as ready).
+    """
+    if not isinstance(entry, dict):
+        return []
+    failed: List[str] = []
+    keys = [("facebook", "local", "url")]
+    if entry.get(ALLOW_IG_VARIANT_KEY):
+        keys.append(("instagram", "local_instagram", "url_instagram"))
+    for platform, local_key, url_key in keys:
+        local = str(entry.get(local_key) or "").strip()
+        abs_path = _abs_asset(local)
+        url = str(entry.get(url_key) or entry.get("url") or "").strip()
+        local_ok = bool(abs_path and os.path.isfile(abs_path))
+        if local_ok and flyer_is_banned_mystic_navy_pil(abs_path):
+            failed.append(platform)
+            continue
+        if image_url_is_banned_mystic_navy_pil(url):
+            failed.append(platform)
+            continue
+        if not local_ok and not url:
+            failed.append(platform)
+    return failed
+
+
+def entry_fails_visual_energy(entry: Optional[Dict[str, Any]]) -> List[str]:
+    """Platforms whose local flyer PNGs fail soft color-energy gate (muddy/drab).
+
+    Does not include banned PIL (see entry_fails_publish_blockers) or approved
+    dark chalkboard styles that intentionally run low saturation.
     """
     if not isinstance(entry, dict):
         return []
@@ -199,9 +372,14 @@ def entry_fails_visual_energy(entry: Optional[Dict[str, Any]]) -> List[str]:
     for platform, key in keys:
         local = str(entry.get(key) or "").strip()
         abs_path = _abs_asset(local)
-        if abs_path and os.path.isfile(abs_path) and not flyer_passes_visual_energy(
-            abs_path
-        ):
+        if not abs_path or not os.path.isfile(abs_path):
+            continue
+        if flyer_is_banned_mystic_navy_pil(abs_path):
+            continue
+        style_id = str(entry.get("visual_style") or "").strip()
+        if style_id in ("einstein_chalkboard_map",):
+            continue
+        if not flyer_passes_visual_energy(abs_path):
             failed.append(platform)
     return failed
 
@@ -279,7 +457,11 @@ def select_flyer_url_for_platform(
     Default (Founder Aug 10 2026): primary `url` for BOTH Facebook and Instagram.
     Returns (url, shared). `shared` is True in single-image mode (by design).
     Dual IG variants only when entry.allow_ig_variant is true.
+
+    Never returns a URL when the entry is a banned navy PIL plate.
     """
+    if entry_publish_block_reason(entry):
+        return "", False
     fb, ig = resolve_flyer_urls(entry)
     if not fb and not ig:
         return "", False
@@ -414,7 +596,14 @@ def style_family(style_id: str) -> str:
 def style_meta(style_id: str) -> Dict[str, Any]:
     styles = load_styles_config().get("styles") or {}
     meta = styles.get(style_id)
-    return dict(meta) if isinstance(meta, dict) else {"id": style_id}
+    if isinstance(meta, dict):
+        return dict(meta)
+    if os.path.isfile(LIVING_WORLDS_PATH):
+        lw = _load_json(LIVING_WORLDS_PATH).get("styles") or {}
+        meta = lw.get(style_id)
+        if isinstance(meta, dict):
+            return dict(meta)
+    return {"id": style_id}
 
 
 def normalize_queued_style_id(entry: Dict[str, Any]) -> str:
@@ -706,6 +895,9 @@ def bake_pride_band_new_asset(
         return None
     abs_src = src_path if os.path.isabs(src_path) else os.path.join(ROOT, src_path)
     if not os.path.isfile(abs_src):
+        return None
+    # Never pride-stamp the banned navy PIL factory — that is how Aug 25 shipped.
+    if flyer_is_banned_mystic_navy_pil(abs_src):
         return None
     if not out_path:
         base, ext = os.path.splitext(abs_src)
@@ -1090,9 +1282,12 @@ def _keywords_for_event(ev: Event) -> str:
 
 
 def _default_flyer_paths(day: date, slug: str, variant: str) -> str:
+    """PIL preview path — always under `_pil_preview/` (never publishable assets root)."""
     suffix = "" if variant == VARIANT_A else f"-{variant}"
+    preview_dir = os.path.join(ASSETS_DIR, "_pil_preview")
+    os.makedirs(preview_dir, exist_ok=True)
     return os.path.join(
-        ASSETS_DIR, f"sg-morning-flyer-{day.isoformat()}-{slug}{suffix}.png"
+        preview_dir, f"sg-morning-flyer-{day.isoformat()}-{slug}{suffix}.png"
     )
 
 
@@ -1563,6 +1758,7 @@ def ensure_flyer_for_day(
     events: Sequence[Event],
     *,
     force: bool = False,
+    allow_pil_preview: bool = False,
 ) -> Dict[str, Any]:
     """
     Ensure a primary full-day flyer exists for Chicago `day`.
@@ -1591,14 +1787,27 @@ def ensure_flyer_for_day(
     )
 
     existing = flyer_entry_for_day(day)
-    # Founder Aug 10: drab/muddy locals must be rebuilt (except protected gold standard).
+    publish_blockers = (
+        entry_fails_publish_blockers(existing)
+        if existing and day.isoformat() not in PROTECTED_DAYS
+        else []
+    )
     energy_failed = (
         entry_fails_visual_energy(existing)
         if existing and day.isoformat() not in PROTECTED_DAYS
         else []
     )
-    if energy_failed and not force:
+    # Hard blockers always force. Soft energy fails only when there is no
+    # shippable public URL yet — a wired AI/shop URL must win over a leftover
+    # `_pil_preview` local that fails color-energy (Aug 25 ensure regression).
+    if publish_blockers and not force:
         force = True
+    elif energy_failed and not force:
+        url_ok = bool(str((existing or {}).get("url") or "").strip()) and not (
+            entry_publish_block_reason(existing) if existing else True
+        )
+        if not url_ok:
+            force = True
 
     # Pride guarantee: queued plate without pride_baked_in → bake NEW local.
     pride_baked_now = False
@@ -1646,7 +1855,7 @@ def ensure_flyer_for_day(
             save_flyers_config(data)
             pride_baked_now = True
 
-    if existing and not force:
+    if existing and not force and not publish_blockers:
         fb = str(existing.get("url") or "").strip()
         missing = [] if fb else ["facebook"]
         return {
@@ -1680,10 +1889,50 @@ def ensure_flyer_for_day(
             "pride_baked_in": entry_has_pride_baked(existing),
         }
 
-    out_a = render_local_flyer(day, day_events, variant=VARIANT_A)
-    clear_urls = bool(energy_failed) or (
+    clear_urls = bool(publish_blockers or energy_failed) or (
         force and existing and day.isoformat() not in PROTECTED_DAYS
     )
+
+    if not allow_pil_preview:
+        # Never ship the deprecated navy PIL compositor — require mixed-pool AI art.
+        entry = register_flyer(
+            day,
+            local=str((existing or {}).get("local") or "") if existing else "",
+            url="",
+            media_id=None,
+            copy=copy,
+            events=day_events,
+            merge=bool(existing),
+            reset_public_urls=True,
+        )
+        entry["visual_style"] = art_id
+        entry["generation_source"] = "needs_ai_art"
+        entry["banned_pil_cleared"] = True
+        data = load_flyers_config()
+        flyers = data.setdefault("flyers", {})
+        flyers[day.isoformat()] = entry
+        save_flyers_config(data)
+        return {
+            "day": day.isoformat(),
+            "action": "needs_ai_generation",
+            "needs_upload": True,
+            "needs_upload_platforms": ["facebook"],
+            "needs_ai_generation": True,
+            "entry": entry,
+            "local": entry.get("local") or "",
+            "layout": layout,
+            "visual_style": art_id,
+            "prompt": prompt,
+            "single_image_mode": True,
+            "pride_baked_in": True,
+            "regenerated_for_visual_energy": energy_failed or None,
+            "error": (
+                "Banned generic navy PIL template removed — generate mixed-pool AI "
+                f"art ({art_id}) via mlimg / GenerateImage, then upload."
+            ),
+        }
+
+    out_a = render_local_flyer(day, day_events, variant=VARIANT_A)
     keep_url = "" if clear_urls else (str((existing or {}).get("url") or "") if existing else "")
     entry = register_flyer(
         day,
@@ -1695,6 +1944,11 @@ def ensure_flyer_for_day(
         merge=bool(existing),
         reset_public_urls=clear_urls,
     )
+    entry["generation_source"] = "pil_compositor_preview"
+    data = load_flyers_config()
+    flyers = data.setdefault("flyers", {})
+    flyers[day.isoformat()] = entry
+    save_flyers_config(data)
     fb = str(entry.get("url") or "")
     return {
         "day": day.isoformat(),
@@ -1709,6 +1963,7 @@ def ensure_flyer_for_day(
         "single_image_mode": True,
         "pride_baked_in": True,
         "regenerated_for_visual_energy": energy_failed or None,
+        "pil_preview_only": True,
     }
 
 
@@ -1719,6 +1974,7 @@ def ensure_flyers_for_range(
     events: Optional[Sequence[Event]] = None,
     source: str = "cache",
     force: bool = False,
+    allow_pil_preview: bool = False,
 ) -> Dict[str, Any]:
     """Prebuild / ensure flyers for start .. start+days-1 (America/Chicago)."""
     from . import classify
@@ -1737,7 +1993,9 @@ def ensure_flyers_for_range(
     for i in range(max(1, days)):
         day = start + timedelta(days=i)
         day_events = classify.events_on_day(events_list, day)
-        info = ensure_flyer_for_day(day, day_events, force=force)
+        info = ensure_flyer_for_day(
+            day, day_events, force=force, allow_pil_preview=allow_pil_preview
+        )
         results.append(info)
         if info.get("needs_upload"):
             needs_upload.append(info["day"])
@@ -1761,6 +2019,10 @@ def set_flyer_url(
     platform: str = "facebook",
 ) -> Dict[str, Any]:
     """Set public WP URL for facebook (`url`) or instagram (`url_instagram`)."""
+    if image_url_is_banned_mystic_navy_pil(url):
+        raise ValueError(
+            "refusing to wire banned mystic navy PIL URL into morning_flyers"
+        )
     data = load_flyers_config()
     entry = (data.get("flyers") or {}).get(day.isoformat())
     if not isinstance(entry, dict):
@@ -1774,6 +2036,29 @@ def set_flyer_url(
         entry["url"] = url
         if media_id is not None:
             entry["media_id"] = int(media_id)
+    # Real AI / shop upload replaces any prior PIL preview provenance.
+    src = entry_generation_source(entry)
+    if src in BANNED_GENERATION_SOURCES:
+        entry["generation_source"] = "external_ai_or_shop_upload"
+        entry.pop("pil_preview_only", None)
+        entry.pop("banned_pil_cleared", None)
+    # Detach banned / preview locals so plan/publish cannot revive them.
+    local = str(entry.get("local") or "").strip()
+    abs_local = _abs_asset(local) if local else ""
+    local_norm = local.replace("\\", "/")
+    detach_why = ""
+    if abs_local and os.path.isfile(abs_local) and flyer_is_banned_mystic_navy_pil(
+        abs_local
+    ):
+        detach_why = "detached banned navy PIL local after real URL wire"
+    elif entry.get("pil_preview_only") or "/_pil_preview/" in local_norm:
+        detach_why = "detached pil_preview local after real URL wire"
+    if detach_why:
+        entry["local"] = ""
+        entry.pop("pil_preview_only", None)
+        entry["note"] = (str(entry.get("note") or "") + " | " + detach_why).strip(
+            " |"
+        )
     fb = str(entry.get("url") or "").strip()
     ig = str(entry.get("url_instagram") or "").strip()
     if fb and ig and fb != ig:

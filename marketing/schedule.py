@@ -92,16 +92,16 @@ def schedule_afternoon_spotlight(day: date) -> SchedulePlan:
         rationale=(
             f"Daily {hhmm} Central afternoon spotlight — one engaging event "
             "(prefer tonight's evening gathering; else tomorrow's standout). "
-            "5pm chosen for Meta Insights traction headroom before 7pm week_ahead; "
+            "5pm chosen for Meta Insights traction headroom before 8pm week_ahead; "
             "set schedule_local_time to 16:00 for 4pm."
         ),
     )
 
 
 def schedule_week_ahead(day: date) -> SchedulePlan:
-    """Daily 7pm Central — short upcoming-days planner post."""
+    """Daily 8pm Central — short upcoming-days planner post."""
     cfg = settings()["campaigns"]["week_ahead"]
-    when = _at_local(day, cfg.get("schedule_local_time") or "19:00")
+    when = _at_local(day, cfg.get("schedule_local_time") or "20:00")
     horizon = int(cfg.get("horizon_days") or 2)
     return SchedulePlan(
         recommended_at=when.isoformat(),
