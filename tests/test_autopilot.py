@@ -2248,6 +2248,10 @@ class AutopilotTests(unittest.TestCase):
         self.assertEqual(lim["max_consecutive_days"], 1)
         self.assertEqual(lim["rolling_window_days"], 7)
         self.assertEqual(lim["max_per_style_in_window"], 2)
+        self.assertEqual(
+            (lim.get("per_style_max_in_window") or {}).get("folk_outsider_night"),
+            1,
+        )
         self.assertIn("generic_mystic_ai_navy_template", lim["banned_ids"])
         self.assertIn("bauhaus_swiss_goldleaf", lim["banned_ids"])
         d0 = date(2026, 8, 16)
@@ -2270,6 +2274,14 @@ class AutopilotTests(unittest.TestCase):
         }
         no_mag2 = mf.choose_visual_style(d0, history=hist_week)
         self.assertNotEqual(no_mag2, "magritte_floating_door")
+        # Founder Aug 25 2026: folk max 1 in any rolling 7 — never again same week.
+        self.assertFalse(
+            mf.style_passes_series_limits(
+                "folk_outsider_night",
+                d0,
+                {date(2026, 8, 12): "folk_outsider_night"},
+            )
+        )
         with self.assertRaises(ValueError):
             mf.choose_visual_style(
                 d0, force="generic_mystic_ai_navy_template"

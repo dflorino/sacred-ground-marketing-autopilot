@@ -632,11 +632,21 @@ def series_limit_config() -> Dict[str, Any]:
 
     max_consecutive_days=1 → never the same style/family two Chicago days in a row.
     max_per_style_in_window=2 over rolling_window_days=7 → at most twice/week.
+    per_style_max_in_window overrides (Founder Aug 25 2026): folk_outsider_night → 1
+    so folk never appears twice in the same rolling 7 Chicago days.
     Banned / archived ids have series_limit 0 (never generate).
     """
     raw = load_styles_config().get("series_limits") or {}
     banned = set((raw.get("banned_series_limit_0") or {}).keys())
     banned.update((load_styles_config().get("archived_out") or {}).keys())
+    per_style_raw = raw.get("per_style_max_in_window") or {}
+    per_style: Dict[str, int] = {}
+    if isinstance(per_style_raw, dict):
+        for sid, val in per_style_raw.items():
+            try:
+                per_style[str(sid).strip()] = int(val)
+            except (TypeError, ValueError):
+                continue
     return {
         "max_consecutive_days": int(
             raw.get("max_consecutive_days", DEFAULT_MAX_CONSECUTIVE_DAYS)
@@ -647,6 +657,7 @@ def series_limit_config() -> Dict[str, Any]:
         "max_per_style_in_window": int(
             raw.get("max_per_style_in_window", DEFAULT_MAX_PER_STYLE_IN_WINDOW)
         ),
+        "per_style_max_in_window": per_style,
         "banned_ids": banned,
     }
 
@@ -709,7 +720,13 @@ def style_passes_series_limits(
             return False
 
     window = max(1, int(lim["rolling_window_days"]))
-    max_in = max(0, int(lim["max_per_style_in_window"]))
+    per_style = lim.get("per_style_max_in_window") or {}
+    if key in per_style:
+        max_in = max(0, int(per_style[key]))
+    elif fam in per_style:
+        max_in = max(0, int(per_style[fam]))
+    else:
+        max_in = max(0, int(lim["max_per_style_in_window"]))
     prior = 0
     for i in range(1, window):
         if _hist_family(day - timedelta(days=i)) == fam:
@@ -991,7 +1008,21 @@ def build_generation_prompt(
     """
     covers = list(copy.get("covers") or [])
     events_bit = ""
-    if covers:
+    if events:
+        picked = pick_events_for_flyer(events)
+        card_lines = []
+        for ev in picked[:3]:
+            host = _host_from_title(ev.title) or "use real practitioner name from title"
+            time_ln = _event_time_line(ev)
+            title = (ev.title or "").lstrip("*").strip()
+            card_lines.append(f"{title} — host {host} — {time_ln}")
+        if card_lines:
+            events_bit = (
+                " EQUAL CARDS (exact text — never invent 'Host Name' or wrong times): "
+                + " | ".join(card_lines)
+                + "."
+            )
+    elif covers:
         events_bit = " Events on equal cards: " + " · ".join(covers[:3]) + "."
     visit = ""
     if copy.get("empty_day"):
@@ -1232,16 +1263,52 @@ def _variant_palette(variant: str) -> Dict[str, Any]:
     }
 
 
+# Title-only TEC cards that do not encode the host in the title.
+TITLE_HOST_OVERRIDES = {
+    "frequency reset": "Eve",
+    "*frequency reset": "Eve",
+    "shaman medium melissa": "Melissa",
+    "amber | customized therapeutic massage sessions": "Amber",
+    "amber | customized therapeutic massage sessions".lower(): "Amber",
+}
+
+
 def _host_from_title(title: str) -> str:
     t = title or ""
+    key = t.strip().lstrip("*").strip().lower()
+    if key in TITLE_HOST_OVERRIDES:
+        return TITLE_HOST_OVERRIDES[key]
+    for override_key, host in TITLE_HOST_OVERRIDES.items():
+        clean = override_key.lstrip("*").strip().lower()
+        if key == clean or key.startswith(clean.split("|")[0].strip()):
+            return host
+    # "Amber | Customized…" / "Name | Role"
+    if "|" in t:
+        left = t.split("|", 1)[0].strip().lstrip("*").strip()
+        if 2 <= len(left.split()) <= 3 and len(left) <= 24:
+            return left[:40]
+    # "Tina's Intuitive Tarot…" → Tina
+    if "'s " in t or "’s " in t:
+        head = t.replace("’s ", "'s ").split("'s ", 1)[0]
+        head = head.lstrip("*").strip()
+        if head:
+            return head.split()[-1][:40]
     for sep in (" with ", " With ", " w/ ", " W/ ", ": "):
         if sep in t:
             bit = t.split(sep)[-1].strip()
-            # Drop long descriptors after host
-            for cut in (" — ", " - ", "|"):
+            for cut in (" — ", " - ", "|", " • ", "·"):
                 if cut in bit:
                     bit = bit.split(cut)[0].strip()
+            if sep.strip().lower() in {"with", "w/"} and ":" in bit:
+                bit = bit.split(":", 1)[0].strip()
             return bit[:40]
+    low = t.lstrip("*").strip().lower()
+    if "free community" in low or low.startswith("free "):
+        return ""
+    # "Shaman Medium Melissa" → last token if 2–4 words
+    words = t.lstrip("*").strip().split()
+    if 2 <= len(words) <= 4 and words[-1][:1].isupper():
+        return words[-1][:40]
     return ""
 
 
