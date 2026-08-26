@@ -453,7 +453,9 @@
       "pride_baked_in": true,
       "media_id": 26939,
       "generation_source": "mlimg_mixed_pool_redo_2026-08-24",
-      "note": "Founder Aug 24 2026: replaced banned generic navy PIL compositor with mixed-pool AI art (mlimg). Prior bad WP media 26903-26908 deleted by Founder."
+      "note": "Founder Aug 24 2026: replaced banned generic navy PIL compositor with mixed-pool AI art (mlimg). Prior bad WP media 26903-26908 deleted by Founder. \u2014 Founder Aug 26 approved; locked for 9am Autopilot.",
+      "founder_approved": true,
+      "locked_until_founder_review": false
     },
     "2026-08-27": {
       "label": "Quantum Alignment Series + Tai Chi Gung +",
@@ -470,7 +472,9 @@
       "pride_baked_in": true,
       "media_id": 26940,
       "generation_source": "mlimg_mixed_pool_redo_2026-08-24",
-      "note": "Founder Aug 24 2026: replaced banned generic navy PIL compositor with mixed-pool AI art (mlimg). Prior bad WP media 26903-26908 deleted by Founder."
+      "note": "Founder Aug 24 2026: replaced banned generic navy PIL compositor with mixed-pool AI art (mlimg). Prior bad WP media 26903-26908 deleted by Founder. \u2014 Founder Aug 26 approved; locked for 9am Autopilot.",
+      "founder_approved": true,
+      "locked_until_founder_review": false
     },
     "2026-08-28": {
       "label": "The Reflexology Reset + Tarot +",
@@ -487,7 +491,9 @@
       "pride_baked_in": true,
       "media_id": 26935,
       "generation_source": "mlimg_mixed_pool_redo_2026-08-24",
-      "note": "Founder Aug 24 2026: replaced banned generic navy PIL compositor with mixed-pool AI art (mlimg). Prior bad WP media 26903-26908 deleted by Founder."
+      "note": "Founder Aug 24 2026: replaced banned generic navy PIL compositor with mixed-pool AI art (mlimg). Prior bad WP media 26903-26908 deleted by Founder. \u2014 Founder Aug 26 approved; locked for 9am Autopilot.",
+      "founder_approved": true,
+      "locked_until_founder_review": false
     },
     "2026-08-29": {
       "label": "Frequency Reset + Shaman Medium Melissa +",
@@ -504,7 +510,9 @@
       "pride_baked_in": true,
       "media_id": 26948,
       "generation_source": "mlimg_aug29_eve_fix_2026-08-25",
-      "note": "Founder Aug 25: remade \u2014 Frequency Reset host Eve (not Host Name); times 3\u20138pm / Melissa 11\u20132 / Adie 11\u20133."
+      "note": "Founder Aug 25: remade \u2014 Frequency Reset host Eve (not Host Name); times 3\u20138pm / Melissa 11\u20132 / Adie 11\u20133. \u2014 Founder Aug 26 approved; locked for 9am Autopilot.",
+      "founder_approved": true,
+      "locked_until_founder_review": false
     },
     "2026-08-30": {
       "label": "Integrated Energy Healing with Mary + Oracle of the Stones",
@@ -520,22 +528,27 @@
       "pride_baked_in": true,
       "media_id": 26950,
       "generation_source": "mlimg_aug30_leave_folk_2026-08-25",
-      "note": "Founder Aug 25: remade off folk \u2014 folk max 1 per rolling 7; Einstein chalkboard."
+      "note": "Founder Aug 25: remade off folk \u2014 folk max 1 per rolling 7; Einstein chalkboard. \u2014 Founder Aug 26 approved; locked for 9am Autopilot.",
+      "founder_approved": true,
+      "locked_until_founder_review": false
     },
     "2026-08-31": {
       "label": "Tina's Intuitive Tarot, Runes & Reiki Experience",
       "covers": [
         "Tina's Intuitive Tarot, Runes & Reiki Experience"
       ],
-      "local": "assets/sg-morning-flyer-2026-08-31-magritte-v1.jpg",
-      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-flyer-s-1787671153.jpg",
+      "local": "assets/sg-morning-flyer-2026-08-31-artistic-v2.jpg",
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-artistic-single-1787750907.jpg",
       "prebranded": true,
-      "template": "thursday-style",
-      "visual_style": "magritte_floating_door",
+      "template": "artistic-hero",
+      "visual_style": "artistic_hero_shop_made",
       "pride_baked_in": true,
-      "media_id": 26954,
-      "generation_source": "mlimg_aug31_magritte_2026-08-25",
-      "note": "Founder Aug 25: Magritte Tina plate (new)."
+      "media_id": 26977,
+      "generation_source": "mlimg_aug31_artistic_tina_2026-08-26",
+      "prior_url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-flyer-s-1787671153.jpg",
+      "note": "Founder Aug 26: remade \u2014 NOT Magritte (Lisa already has that). Artistic tarot/runes/reiki hero like Rose plate. \u2014 Founder Aug 26 approved; locked for 9am Autopilot.",
+      "founder_approved": true,
+      "locked_until_founder_review": false
     },
     "2026-09-01": {
       "label": "Amber + Divine Insight Sessions with Janel +",
@@ -544,15 +557,18 @@
         "Divine Insight Sessions with Janel: Akashic Records or Angel Card Readings",
         "Free Community Meditation"
       ],
-      "local": "assets/sg-morning-flyer-2026-09-01-thursday-v1.jpg",
-      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-EQUAL-WEIGHT-mul-1787670981.jpg",
+      "local": "assets/sg-morning-flyer-2026-09-01-thursday-v2.jpg",
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-multi-event-morn-1787750841.jpg",
       "prebranded": true,
       "template": "thursday-style",
       "visual_style": "thursday_cards_shop_made",
       "pride_baked_in": true,
-      "media_id": 26951,
-      "generation_source": "mlimg_sep01_amber_back_2026-08-25",
-      "note": "Founder Aug 25: Amber is back \u2014 Thursday equal cards with Janel + free meditation."
+      "media_id": 26975,
+      "generation_source": "mlimg_sep01_creative_cards_2026-08-26",
+      "prior_url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-EQUAL-WEIGHT-mul-1787670981.jpg",
+      "note": "Founder Aug 26: remade boring flat bars \u2192 creative Aug 27-style collage. Amber is back + Janel + free meditation. \u2014 Founder Aug 26 approved; locked for 9am Autopilot.",
+      "founder_approved": true,
+      "locked_until_founder_review": false
     },
     "2026-09-02": {
       "label": "Ankh Lifeforce Alignment Reiki with Rose",
@@ -567,7 +583,9 @@
       "pride_baked_in": true,
       "media_id": 26955,
       "generation_source": "mlimg_sep02_rose_2026-08-25",
-      "note": "Founder Aug 25: artistic hero Rose plate."
+      "note": "Founder Aug 25: artistic hero Rose plate. \u2014 Founder Aug 26 approved; locked for 9am Autopilot.",
+      "founder_approved": true,
+      "locked_until_founder_review": false
     },
     "2026-09-03": {
       "label": "Tarot with Adie + Tai Chi Gung +",
@@ -584,7 +602,28 @@
       "pride_baked_in": true,
       "media_id": 26956,
       "generation_source": "mlimg_sep03_multi_2026-08-25",
-      "note": "Founder Aug 25: Thursday multi plate (Adie / Sherry / Renee) \u2014 not folk."
+      "note": "Founder Aug 25: Thursday multi plate (Adie / Sherry / Renee) \u2014 not folk. \u2014 Founder Aug 26 approved; locked for 9am Autopilot.",
+      "founder_approved": true,
+      "locked_until_founder_review": false
+    },
+    "2026-09-04": {
+      "label": "The Reflexology Reset + Keeper of the Cards +",
+      "covers": [
+        "The Reflexology Reset: Restorative Wellness w/ Cheryl",
+        "Keeper of the Cards: Robert",
+        "Working with Pendulums for Beginners"
+      ],
+      "local": "assets/sg-morning-flyer-2026-09-04-davinci-v1.jpg",
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-multi-event-morn-1787751215.jpg",
+      "prebranded": true,
+      "template": "thursday-style",
+      "visual_style": "davinci_storefront_sketch",
+      "pride_baked_in": true,
+      "media_id": 26978,
+      "generation_source": "mlimg_sep04_davinci_2026-08-26",
+      "note": "Founder Aug 26: Cheryl + Robert + Pendulums class \u2014 Da Vinci equal bands (collage style at weekly cap). \u2014 Founder Aug 26 approved; locked for 9am Autopilot.",
+      "founder_approved": true,
+      "locked_until_founder_review": false
     }
   },
   "template": {
@@ -662,5 +701,22 @@
       "2026-08-23"
     ]
   },
-  "notes_remake_v4": "2026-08-16 ~11:32pm CT America/Chicago: Founder rejected logo-v2 paste. Remade Aug 20/21/22/24 mornings + 8 late-summer nights from scratch (remake-v4). Einstein Aug 23 left AS-IS. All remake-v4 mornings remain locked_until_founder_review."
+  "notes_remake_v4": "2026-08-16 ~11:32pm CT America/Chicago: Founder rejected logo-v2 paste. Remade Aug 20/21/22/24 mornings + 8 late-summer nights from scratch (remake-v4). Einstein Aug 23 left AS-IS. All remake-v4 mornings remain locked_until_founder_review.",
+  "last_founder_approval_aug26_next10": {
+    "at": "2026-08-26T08:40:00-05:00",
+    "timezone": "America/Chicago",
+    "days": [
+      "2026-08-26",
+      "2026-08-27",
+      "2026-08-28",
+      "2026-08-29",
+      "2026-08-30",
+      "2026-08-31",
+      "2026-09-01",
+      "2026-09-02",
+      "2026-09-03",
+      "2026-09-04"
+    ],
+    "note": "Founder: looks good \u2014 lock Aug 26 through Sep 4 morning flyers for Autopilot. Sep 1 + Sep 3 super cool; Aug 31 artistic Tina; Sep 4 Da Vinci triple."
+  }
 }
