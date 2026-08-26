@@ -207,6 +207,7 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
 
     # --- Morning / "today" campaign ---
     if today_cfg.get("enabled", True):
+        store.retire_stale_morning_drafts(day_key=day.isoformat())
         morning_events = classify.cap_events(
             combined_morning,
             int(cfg.get("max_today_events_in_caption") or 8),
@@ -225,6 +226,38 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                 day=flyer_day,
                 platform="facebook",
             )
+            from . import morning_flyers as mf
+            from .models import ImagePlan
+
+            locked_url = mf.founder_approved_flyer_url(flyer_day, "facebook")
+            if locked_url:
+                shared_img = ImagePlan(
+                    source="morning_flyer",
+                    url=locked_url,
+                    event_id=shared_img.event_id,
+                    recommendation=(
+                        f"Founder-locked morning flyer for {flyer_day.isoformat()} "
+                        "(config/morning_flyers.json — overrides stale compositor uploads)."
+                    ),
+                    rule="morning_flyer",
+                    prebranded=True,
+                )
+            elif shared_img.url and not mf.morning_image_url_is_authorized(
+                flyer_day, str(shared_img.url), platform="facebook"
+            ):
+                skipped_drafts.append(
+                    {
+                        "campaign": "today",
+                        "reason": "unauthorized_morning_flyer_image",
+                        "detail": str(shared_img.url),
+                    }
+                )
+                shared_img = ImagePlan(
+                    source="reuse_blocked",
+                    url=None,
+                    recommendation="Morning flyer URL failed authorization gate.",
+                    rule="reuse_blocked",
+                )
             if _image_never_reuse_blocked(shared_img):
                 skipped_drafts.append(
                     {

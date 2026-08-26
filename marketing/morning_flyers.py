@@ -252,6 +252,54 @@ def entry_generation_source(entry: Optional[Dict[str, Any]]) -> str:
     ).strip()
 
 
+def image_url_looks_like_banned_compositor_upload(url: str) -> bool:
+    """True for Zernio/CDN/WP URLs that name or carry the banned navy PIL factory."""
+    u = (url or "").strip()
+    if not u:
+        return False
+    if image_url_is_banned_mystic_navy_pil(u):
+        return True
+    low = u.lower()
+    if "sg-morning-flyer-" in low and "-pride-" in low:
+        return True
+    if "pil_compositor" in low or "navy-equal-card" in low:
+        return True
+    return False
+
+
+def founder_approved_flyer_url(
+    day: date, platform: Optional[str] = None
+) -> str:
+    """Locked morning plate URL from morning_flyers.json (Founder sign-off)."""
+    entry = flyer_entry_for_day(day)
+    if not entry or not entry.get("founder_approved"):
+        return ""
+    chosen, _ = select_flyer_url_for_platform(entry, platform)
+    return str(chosen or "").strip()
+
+
+def morning_image_url_is_authorized(
+    day: date,
+    url: str,
+    *,
+    platform: Optional[str] = None,
+) -> bool:
+    """Publish-time check: banned compositor uploads never ship; locked days must match config URL."""
+    u = str(url or "").strip()
+    if not u or image_url_looks_like_banned_compositor_upload(u):
+        return False
+    locked = founder_approved_flyer_url(day, platform)
+    if locked:
+        return u == locked
+    entry = flyer_entry_for_day(day)
+    if not entry:
+        return True
+    expected, _ = select_flyer_url_for_platform(entry, platform)
+    if expected and u != expected:
+        return False
+    return True
+
+
 def entry_publish_block_reason(entry: Optional[Dict[str, Any]]) -> Optional[str]:
     """
     Why this morning_flyers entry must not be planned or published.
@@ -272,6 +320,8 @@ def entry_publish_block_reason(entry: Optional[Dict[str, Any]]) -> Optional[str]
         local = str(entry.get(key) or "").strip()
         if not local:
             continue
+        if "-pride-" in local.replace("\\", "/").lower():
+            return f"banned_compositor_pride_local:{local}"
         abs_path = _abs_asset(local)
         if abs_path and os.path.isfile(abs_path) and flyer_is_banned_mystic_navy_pil(
             abs_path
@@ -279,7 +329,7 @@ def entry_publish_block_reason(entry: Optional[Dict[str, Any]]) -> Optional[str]
             return f"banned_mystic_navy_pil_local:{local}"
     for key in ("url", "url_instagram"):
         url = str(entry.get(key) or "").strip()
-        if url and image_url_is_banned_mystic_navy_pil(url):
+        if url and image_url_looks_like_banned_compositor_upload(url):
             return f"banned_mystic_navy_pil_url:{key}"
     return None
 
@@ -1877,12 +1927,18 @@ def ensure_flyer_for_day(
             force = True
 
     # Pride guarantee: queued plate without pride_baked_in → bake NEW local.
+    # NEVER pride-stamp over founder-locked plates with a wired public URL
+    # (Aug 26 2026 incident: compositor -pride- file reached Zernio/FB/IG).
     pride_baked_now = False
     if (
         existing
         and not force
         and day.isoformat() not in PROTECTED_DAYS
         and not entry_has_pride_baked(existing)
+        and not (
+            existing.get("founder_approved")
+            and str(existing.get("url") or "").strip()
+        )
         and (load_styles_config().get("pride_on_morning") or {}).get(
             "bake_missing_into_new_url", True
         )

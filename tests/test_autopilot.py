@@ -2407,6 +2407,50 @@ class TestBannedNavyPilNeverShips(unittest.TestCase):
             (data.get("flyers") or {}).pop(day.isoformat(), None)
             self.mf.save_flyers_config(data)
 
+    def test_founder_locked_url_blocks_compositor_and_stale_drafts(self):
+        from marketing import publish, store
+
+        day = date(2026, 8, 26)
+        locked = self.mf.founder_approved_flyer_url(day, "facebook")
+        self.assertIn("1787594520", locked)
+        bad = (
+            "https://media.zernio.com/media/"
+            "x_sg-morning-flyer-2026-08-26-tina-karen-pride-2026-08-26.png"
+        )
+        self.assertFalse(
+            self.mf.morning_image_url_is_authorized(day, bad, platform="facebook")
+        )
+        self.assertTrue(
+            self.mf.morning_image_url_is_authorized(day, locked, platform="facebook")
+        )
+        stale = {
+            "campaign": "today",
+            "platform": "facebook",
+            "fingerprint": "today|2026-08-26|facebook|1,2",
+            "status": "approved",
+            "image": {"url": bad},
+            "notes": ["flyer_day:2026-08-26"],
+        }
+        self.assertTrue(store.is_stale_morning_draft(stale, "2026-08-26"))
+        ok, reason = publish.can_schedule(stale)
+        self.assertFalse(ok)
+        self.assertIn(
+            reason,
+            ("stale_morning_flyer_image", "banned_mystic_navy_pil_image"),
+        )
+
+    def test_ensure_flyer_skips_pride_bake_on_founder_locked_url(self):
+        day = date(2026, 8, 26)
+        entry = self.mf.flyer_entry_for_day(day)
+        self.assertTrue(entry.get("founder_approved"))
+        self.assertTrue(entry.get("pride_baked_in"))
+        url_before = entry.get("url")
+        info = self.mf.ensure_flyer_for_day(day, [], force=False)
+        self.assertEqual(info.get("action"), "exists")
+        self.assertFalse(info.get("needs_upload"))
+        self.assertEqual(self.mf.flyer_entry_for_day(day).get("url"), url_before)
+        self.assertNotIn("-pride-", str(info.get("local") or ""))
+
     def test_pil_preview_writes_under_pil_preview_dir(self):
         day = date(2099, 2, 2)
         events = [

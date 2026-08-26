@@ -41,10 +41,29 @@ def can_schedule(draft: Dict[str, Any]) -> tuple[bool, str]:
     rule = str(img.get("rule") or img.get("source") or "")
     if campaign in ("today", "morning") or rule in ("morning_flyer", "morning"):
         from . import morning_flyers as mf
+        from .ingest import today_local
 
         url = str(img.get("url") or "").strip()
-        if url and mf.image_url_is_banned_mystic_navy_pil(url):
+        if url and mf.image_url_looks_like_banned_compositor_upload(url):
             return False, "banned_mystic_navy_pil_image"
+        day_key = str(draft.get("fingerprint") or "").split("|")
+        publish_day = day_key[1] if len(day_key) > 1 else today_local().isoformat()
+        flyer_day_s = ""
+        for note in draft.get("notes") or []:
+            if str(note).startswith("flyer_day:"):
+                flyer_day_s = str(note).split(":", 1)[1].strip()
+                break
+        try:
+            from datetime import date
+
+            flyer_day = date.fromisoformat(flyer_day_s or publish_day)
+        except ValueError:
+            flyer_day = today_local()
+        platform = str(draft.get("platform") or "facebook")
+        if url and not mf.morning_image_url_is_authorized(
+            flyer_day, url, platform=platform
+        ):
+            return False, "stale_morning_flyer_image"
         # Also refuse when draft notes / recommendation still point at PIL preview.
         blob = " ".join(
             [
@@ -252,9 +271,18 @@ def publish_campaign_drafts(*, campaign: str) -> Dict[str, Any]:
         wa = (settings().get("campaigns") or {}).get("week_ahead") or {}
         horizon = int(wa.get("horizon_days") or 2)
 
+    skipped_stale: List[Dict[str, Any]] = []
+    if campaign == "today":
+        skipped_stale.extend(store.retire_stale_morning_drafts(day_key=day_key))
+    elif campaign == "week_ahead":
+        skipped_stale.extend(
+            store.retire_stale_week_ahead_drafts(
+                day=today_local(), horizon_days=horizon
+            )
+        )
+
     # Collect candidates; for week_ahead prefer newest non-stale draft per platform.
     candidates: List[Dict[str, Any]] = []
-    skipped_stale: List[Dict[str, Any]] = []
     for d in store.list_drafts():
         if d.get("campaign") != campaign:
             continue

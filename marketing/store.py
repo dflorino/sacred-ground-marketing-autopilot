@@ -81,6 +81,15 @@ def is_blocked(fp: str) -> Optional[str]:
         if d.get("fingerprint") != fp:
             continue
         if is_reviewed(d):
+            if d.get("status") == "skipped" and (
+                d.get("publish_blocked_reason")
+                == "stale_morning_flyer_banned_or_unlocked"
+                or any(
+                    "stale_morning_flyer" in str(n)
+                    for n in (d.get("notes") or [])
+                )
+            ):
+                continue
             return "reviewed_draft_exists"
         return "draft_exists"
     return None
@@ -188,6 +197,43 @@ def _week_ahead_event_day_count(draft: Dict[str, Any]) -> int:
     return len(days)
 
 
+def _draft_flyer_day(draft: Dict[str, Any]) -> str:
+    for note in draft.get("notes") or []:
+        text = str(note)
+        if text.startswith("flyer_day:"):
+            return text.split(":", 1)[1].strip()
+    fp = str(draft.get("fingerprint") or "")
+    parts = fp.split("|")
+    return parts[1] if len(parts) > 1 else ""
+
+
+def is_stale_morning_draft(draft: Dict[str, Any], day_key: str) -> bool:
+    """True when a today draft would ship a banned compositor or wrong locked flyer URL."""
+    if draft.get("campaign") != "today":
+        return False
+    fp = draft.get("fingerprint") or ""
+    if day_key and f"|{day_key}|" not in f"|{fp}|":
+        return False
+    img = draft.get("image") or {}
+    url = str(img.get("url") or "").strip()
+    if not url:
+        return True
+    from . import morning_flyers as mf
+    from datetime import date
+
+    flyer_day_s = _draft_flyer_day(draft) or day_key
+    try:
+        flyer_day = date.fromisoformat(flyer_day_s)
+    except ValueError:
+        flyer_day = date.fromisoformat(day_key)
+    platform = str(draft.get("platform") or "facebook")
+    if mf.image_url_looks_like_banned_compositor_upload(url):
+        return True
+    return not mf.morning_image_url_is_authorized(
+        flyer_day, url, platform=platform
+    )
+
+
 def is_stale_week_ahead_draft(draft: Dict[str, Any], horizon_days: int) -> bool:
     """True if draft still carries a pre-2-day / Screenshot-exterior night post."""
     if draft.get("campaign") != "week_ahead":
@@ -205,6 +251,36 @@ def is_stale_week_ahead_draft(draft: Dict[str, Any], horizon_days: int) -> bool:
     if source in ("branded_store_composite", "store_photo") and "sg-night" not in url:
         return True
     return False
+
+
+def retire_stale_morning_drafts(*, day_key: str) -> List[Dict[str, Any]]:
+    """Skip unposted today drafts with banned compositor or wrong locked flyer URLs."""
+    retired: List[Dict[str, Any]] = []
+    for d in list_drafts():
+        if d.get("campaign") != "today":
+            continue
+        if d.get("status") in ("posted", "scheduled", "skipped", "rejected"):
+            continue
+        if not is_stale_morning_draft(d, day_key):
+            continue
+        reason = "stale_morning_flyer_banned_or_unlocked"
+        update_draft(
+            d["id"],
+            status="skipped",
+            approval_status="skipped",
+            publish_blocked_reason=reason,
+            notes=list(d.get("notes") or []) + [reason],
+        )
+        retired.append(
+            {
+                "campaign": "today",
+                "platform": d.get("platform"),
+                "draft_id": d.get("id"),
+                "reason": reason,
+                "image_url": (d.get("image") or {}).get("url"),
+            }
+        )
+    return retired
 
 
 def retire_stale_week_ahead_drafts(

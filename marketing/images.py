@@ -456,6 +456,18 @@ def select_today_image(
         if flyer:
             from . import morning_flyers as mf
 
+            locked = mf.founder_approved_flyer_url(day, platform)
+            if locked and locked not in blocked:
+                label = flyer.get("label") or day.isoformat()
+                return (
+                    locked,
+                    "morning_flyer",
+                    (
+                        f"Founder-locked morning flyer for {day.isoformat()} ({label}) — "
+                        "config URL only; never compositor pride uploads."
+                    ),
+                )
+
             # Refuse banned navy PIL plates before they enter any draft.
             block = mf.entry_publish_block_reason(flyer)
             if not block:
