@@ -1231,7 +1231,58 @@
           "note": "Founder-approved clean-v5 graybar repost Aug 17 ~9:36pm CT"
         }
       }
+    },
+    "today|2026-08-19|facebook|22827,23983,24139,24225,24247": {
+      "draft_id": "sgma-2026-08-19-today-fb-20299c36",
+      "posted_at": "2026-08-19T09:04:57.827557-05:00",
+      "external": {
+        "zernio": {
+          "_id": "6a85b7f22e2c4a73a7f5c40f",
+          "via": "ml_mcp",
+          "url": "https://www.facebook.com/101428372368870_1091097670098804"
+        }
+      }
+    },
+    "today|2026-08-19|instagram|22827,23983,24139,24225,24247": {
+      "draft_id": "sgma-2026-08-19-today-ig-6d5fabdf",
+      "posted_at": "2026-08-19T09:04:57.829877-05:00",
+      "external": {
+        "zernio": {
+          "_id": "6a85b7f41ec78c539b05be69",
+          "via": "ml_mcp",
+          "note": "publishing"
+        }
+      }
+    },
+    "today|2026-08-26|facebook|22656,23985,24141,24249,24620": {
+      "draft_id": "sgma-2026-08-26-today-fb-b70a17dd",
+      "posted_at": "2026-08-26T09:22:21.484459-05:00",
+      "external": {
+        "zernio": {
+          "post": {
+            "_id": "6a8ef68f85ba13a77f0eda60"
+          }
+        },
+        "via": "ml_mcp_social_publish",
+        "note": "Founder Aug 26 repost — corrected folk AI plate after banned compositor deleted",
+        "platform_url": "https://www.facebook.com/101428372368870_1097127486162489",
+        "media_url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-EQUAL-WEIGHT-mul-1787594520.jpg"
+      }
+    },
+    "today|2026-08-26|instagram|22656,23985,24141,24249,24620": {
+      "draft_id": "sgma-2026-08-26-today-ig-619b8850",
+      "posted_at": "2026-08-26T09:22:21.488003-05:00",
+      "external": {
+        "zernio": {
+          "post": {
+            "_id": "6a8ef68f535b95e3705f7853"
+          }
+        },
+        "via": "ml_mcp_social_publish",
+        "note": "Founder Aug 26 repost — corrected folk AI plate after banned compositor deleted",
+        "media_url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-EQUAL-WEIGHT-mul-1787594520.jpg"
+      }
     }
   },
-  "updated_at": "2026-08-17T21:37:15.555625-05:00"
+  "updated_at": "2026-08-26T09:22:21.488014-05:00"
 }
