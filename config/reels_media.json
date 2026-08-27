@@ -114,6 +114,28 @@
       "do_not_use": {
         "note": "Do not post draft / with-bubble / proof uploads — only title S1E4 media 27008"
       }
+    },
+    "s1e5": {
+      "season": 1,
+      "episode": 5,
+      "library_name": "S1E5",
+      "title": "Egypt Touchdown",
+      "media_id": 27018,
+      "plate_id": 27011,
+      "file": "s01e05-egypt-touchdown.mp4",
+      "url": "https://shopsacredground.com/wp-content/uploads/s01e05-egypt-touchdown.mp4",
+      "mime_type": "video/mp4",
+      "schedule_status": "scheduled_2026-08-30_3pm_CT",
+      "note": "Founder KEEP 2026-08-27 — USE S1E5 / 27018 only. Scheduled Sun Aug 30 3pm CT FB/IG/TT/YT.",
+      "ml_social_ids": {
+        "facebook": "6a908eadd3bfcae266fd2600",
+        "instagram": "6a908eae88095716b594b3d4",
+        "tiktok": "6a908eb088095716b594b440",
+        "youtube": "6a908ec0b2ec847bd0479e63"
+      },
+      "do_not_use": {
+        "note": "Do not post draft / with-cta / proof uploads — only title S1E5 media 27018"
+      }
     }
   }
 }
