@@ -1,7 +1,7 @@
 {
   "timezone": "America/Chicago",
   "note": "Founder-confirmed WordPress Media Library IDs for Cursor / ML Social video posts. Use these — never 26546 or lowercase s01e01-store-quest.mp4 for S1E1.",
-  "updated": "2026-08-19",
+  "updated": "2026-08-27",
   "brand_coverage_hard_rule": {
     "updated": "2026-08-16",
     "summary": "Every episode must hit Facebook + Instagram + TikTok + YouTube on Sacred Ground BRAND accounts. YouTube must be the Sacred Ground brand channel — never personal @deneeneflorino4711. Use contentType reel or story. FB Story must use Zernio CDN (media.zernio.com).",
@@ -76,16 +76,44 @@
     "s1e3": {
       "season": 1,
       "episode": 3,
-      "library_name": "S1E3",
+      "library_name": "S1E3-B",
       "title": "First Crystal",
-      "media_id": 26743,
-      "plate_id": 26742,
-      "plate_library_name": "S1E3 KEEP plate",
-      "file": "s01e03-first-crystal.mp4",
-      "url": "https://shopsacredground.com/wp-content/uploads/s01e03-first-crystal.mp4",
+      "media_id": 26795,
+      "plate_id": 26790,
+      "plate_library_name": "S1E3-B KEEP plate",
+      "file": "s01e03b-first-crystal.mp4",
+      "url": "https://shopsacredground.com/wp-content/uploads/s01e03b-first-crystal.mp4",
       "mime_type": "video/mp4",
-      "schedule_status": "KEEP_not_scheduled",
-      "note": "Founder KEEP FINAL 2026-08-19 — do not remake, do not remux. Do not schedule until Founder asks."
+      "schedule_status": "scheduled_2026-08-22_3pm_CT",
+      "note": "Founder KEEP 2026-08-20 — USE S1E3-B only. Scheduled Sat Aug 22 3pm CT FB/IG/TT/YT.",
+      "do_not_use": {
+        "wrong_media_id": 26743,
+        "wrong_title": "S1E3-A",
+        "wrong_url": "https://shopsacredground.com/wp-content/uploads/s01e03-first-crystal.mp4",
+        "note": "26743 = S1E3-A archive — never post"
+      }
+    },
+    "s1e4": {
+      "season": 1,
+      "episode": 4,
+      "library_name": "S1E4",
+      "title": "First Chamber",
+      "media_id": 27008,
+      "plate_id": 26995,
+      "file": "s01e04-first-chamber.mp4",
+      "url": "https://shopsacredground.com/wp-content/uploads/s01e04-first-chamber.mp4",
+      "mime_type": "video/mp4",
+      "schedule_status": "scheduled_2026-08-27_7pm_CT",
+      "note": "Founder KEEP 2026-08-27 — USE S1E4 / 27008 only. Scheduled Thu Aug 27 ~7pm CT FB/IG/TT/YT.",
+      "ml_social_ids": {
+        "facebook": "6a907f1e6f801c59dc4fd674",
+        "instagram": "6a907f2f6f801c59dc4fdcc3",
+        "tiktok": "6a907f316f801c59dc4fddd3",
+        "youtube": "6a907f318b1a4f326c1b92bf"
+      },
+      "do_not_use": {
+        "note": "Do not post draft / with-bubble / proof uploads — only title S1E4 media 27008"
+      }
     }
   }
 }
