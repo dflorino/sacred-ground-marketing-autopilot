@@ -245,6 +245,125 @@
       "rule": "week_ahead_creative_neon_fog_storefront_clean_v5",
       "campaign": "week_ahead",
       "platform": "instagram"
+    },
+    {
+      "date": "2026-08-19",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-educational-night-generic.png",
+      "rule": "event_featured",
+      "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-08-19",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-19-storefront-photo-collage.png",
+      "rule": "morning_flyer",
+      "campaign": "today"
+    },
+    {
+      "date": "2026-08-19",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-moonlit-lake-v2.png",
+      "rule": "week_ahead_creative_moonlit_lake_v2",
+      "campaign": "week_ahead"
+    },
+    {
+      "date": "2026-08-19",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-19-storefront-photo-collage.png",
+      "rule": "morning_flyer",
+      "campaign": "today",
+      "platform": "facebook"
+    },
+    {
+      "date": "2026-08-19",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-19-storefront-photo-collage.png",
+      "rule": "morning_flyer",
+      "campaign": "today",
+      "platform": "instagram"
+    },
+    {
+      "date": "2026-08-20",
+      "url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-05-17-at-8.22.18-AM.png",
+      "rule": "event_featured",
+      "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-08-20",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-20-magritte-floating-door-remake-v4.png",
+      "rule": "morning_flyer",
+      "campaign": "today"
+    },
+    {
+      "date": "2026-08-20",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-late-summer-sky-letters-remake-v4.png",
+      "rule": "week_ahead_creative_late_summer_sky_letters",
+      "campaign": "week_ahead"
+    },
+    {
+      "date": "2026-08-21",
+      "url": "https://shopsacredground.com/wp-content/uploads/d42573b8-b256-4564-995a-e9c284b50526.png",
+      "rule": "event_featured",
+      "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-08-21",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-21-folk-outsider-night-remake-v4.png",
+      "rule": "morning_flyer",
+      "campaign": "today"
+    },
+    {
+      "date": "2026-08-21",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-late-summer-warm-rain-puddles-remake-v4.png",
+      "rule": "week_ahead_creative_late_summer_warm_rain_puddles",
+      "campaign": "week_ahead"
+    },
+    {
+      "date": "2026-08-24",
+      "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Silhouette-of-person-meditatin_1763937058.png",
+      "rule": "meditation",
+      "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-08-24",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-08-24-matisse-cut-paper-garden-remake-v5-awning.png",
+      "rule": "morning_flyer",
+      "campaign": "today"
+    },
+    {
+      "date": "2026-08-24",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-late-summer-milkyway-storefront-remake-v4.png",
+      "rule": "week_ahead_storefront_late_summer_milkyway_storefront",
+      "campaign": "week_ahead"
+    },
+    {
+      "date": "2026-08-25",
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-flyer-sq-1787619172.jpg",
+      "rule": "morning_flyer",
+      "campaign": "today"
+    },
+    {
+      "date": "2026-08-26",
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-EQUAL-WEIGHT-mul-1787594520.jpg",
+      "rule": "morning_flyer",
+      "campaign": "today"
+    },
+    {
+      "date": "2026-08-26",
+      "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Ancient-glowing-book-with-gold_1764775297.png",
+      "rule": "akashic_records",
+      "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-08-26",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-08-27-lunar-eclipse.png",
+      "rule": "week_ahead_celestial_lunar_eclipse_pisces_2026",
+      "campaign": "week_ahead"
     }
-  ]
+  ],
+  "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-EQUAL-WEIGHT-mul-1787594477.jpg": {
+    "last_used": "2026-08-28T10:31:48-05:00",
+    "campaign": "today",
+    "platforms": [
+      "facebook",
+      "instagram"
+    ],
+    "note": "2026-08-28 Magritte morning republish"
+  }
 }

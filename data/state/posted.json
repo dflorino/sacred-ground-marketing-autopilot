@@ -1285,5 +1285,27 @@
       }
     }
   },
-  "updated_at": "2026-08-26T09:22:21.488014-05:00"
+  "updated_at": "2026-08-26T09:22:21.488014-05:00",
+  "sgma-2026-08-28-today-fb-magritte-repost": {
+    "campaign": "today",
+    "platform": "facebook",
+    "publish_day": "2026-08-28",
+    "posted_at": "2026-08-28T10:31:48-05:00",
+    "image_url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-EQUAL-WEIGHT-mul-1787594477.jpg",
+    "zernio_id": "6a91a98cc2ec86314ebdf604",
+    "platform_post_url": "https://www.facebook.com/101428372368870_1098892425985995",
+    "platform_post_id": "101428372368870_1098892425985995",
+    "note": "Founder deleted banned navy pride plate; Magritte EQUAL-WEIGHT-mul-1787594477 republished"
+  },
+  "sgma-2026-08-28-today-ig-magritte-repost": {
+    "campaign": "today",
+    "platform": "instagram",
+    "publish_day": "2026-08-28",
+    "posted_at": "2026-08-28T10:31:48-05:00",
+    "image_url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-EQUAL-WEIGHT-mul-1787594477.jpg",
+    "zernio_id": "6a91a9b6f4c15500a5a51b13",
+    "platform_post_url": "https://www.instagram.com/p/DclsG9-EaZC/",
+    "platform_post_id": "18263943457305999",
+    "note": "Founder deleted banned navy pride plate; Magritte EQUAL-WEIGHT-mul-1787594477 republished"
+  }
 }
