@@ -1,7 +1,7 @@
 {
   "timezone": "America/Chicago",
   "note": "Founder-confirmed WordPress Media Library IDs for Cursor / ML Social video posts. Use these — never 26546 or lowercase s01e01-store-quest.mp4 for S1E1.",
-  "updated": "2026-08-27",
+  "updated": "2026-08-29",
   "brand_coverage_hard_rule": {
     "updated": "2026-08-16",
     "summary": "Every episode must hit Facebook + Instagram + TikTok + YouTube on Sacred Ground BRAND accounts. YouTube must be the Sacred Ground brand channel — never personal @deneeneflorino4711. Use contentType reel or story. FB Story must use Zernio CDN (media.zernio.com).",
@@ -135,6 +135,28 @@
       },
       "do_not_use": {
         "note": "Do not post draft / with-cta / proof uploads — only title S1E5 media 27018"
+      }
+    },
+    "s1e6": {
+      "season": 1,
+      "episode": 6,
+      "library_name": "S1E6",
+      "title": "Tut's Chamber / Crystal Two",
+      "media_id": 27101,
+      "plate_id": 27096,
+      "file": "s01e06-tuts-chamber.mp4",
+      "url": "https://shopsacredground.com/wp-content/uploads/s01e06-tuts-chamber.mp4",
+      "mime_type": "video/mp4",
+      "schedule_status": "scheduled_2026-09-02_6pm_CT",
+      "note": "Founder KEEP 2026-08-29 — USE S1E6 / 27101 only. Scheduled Wed Sep 2 6pm CT FB/IG/TT/YT.",
+      "ml_social_ids": {
+        "facebook": "6a9303025a41cd869c7fb1b4",
+        "instagram": "6a93031067644f2a338086cb",
+        "tiktok": "6a93031367644f2a33808809",
+        "youtube": "6a93031598683db6f604dd98"
+      },
+      "do_not_use": {
+        "note": "Do not post gen 83 / media 27091 / plate 27064 — only title S1E6 media 27101"
       }
     }
   }
