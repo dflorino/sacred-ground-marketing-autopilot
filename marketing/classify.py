@@ -61,6 +61,20 @@ def _looks_one_time(event: Event) -> bool:
 def enrich(event: Event) -> Event:
     event.is_special = _matches_special(event)
     event.is_one_time = _looks_one_time(event)
+    # Founder hard rule: Free Community Meditation is always 7:00–8:00 PM CT.
+    # TEC series cards were wrongly saved as 7–9; never let that leak into captions.
+    if is_community_meditation(event):
+        start = parse_tec_datetime(event.start_date)
+        if start:
+            end = start.replace(hour=20, minute=0, second=0, microsecond=0)
+            # Keep same calendar day as the session start (Chicago wall clock).
+            if start.hour >= 19:
+                end = start.replace(hour=20, minute=0, second=0, microsecond=0)
+            else:
+                from datetime import timedelta
+
+                end = start + timedelta(hours=1)
+            event.end_date = end.strftime("%Y-%m-%d %H:%M:%S")
     return event
 
 
@@ -340,6 +354,8 @@ def spotlight_candidates(events: List[Event], on: Optional[date] = None) -> List
 
 
 def format_when(event: Event) -> str:
+    # Clamp meditation before formatting so afternoon spotlight never shows 7–9.
+    event = enrich(event)
     start = parse_tec_datetime(event.start_date)
     if not start:
         return event.start_date

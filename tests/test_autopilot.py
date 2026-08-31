@@ -2481,3 +2481,32 @@ class TestBannedNavyPilNeverShips(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+class TestMeditationAlwaysSevenToEight(unittest.TestCase):
+    """Founder Aug 31 2026: Free Community Meditation is always 7–8 CT, never 7–9."""
+
+    def test_enrich_clamps_tec_two_hour_window(self):
+        from marketing.models import Event
+        from marketing.classify import enrich, format_when
+
+        ev = Event(
+            id=14767,
+            title="Free Community Meditation",
+            start_date="2026-09-01 19:00:00",
+            end_date="2026-09-01 21:00:00",
+            url="https://shopsacredground.com/event/free-community-meditation-7/",
+        )
+        out = enrich(ev)
+        self.assertTrue(out.end_date.endswith("20:00:00"))
+        when = format_when(
+            Event(
+                id=14767,
+                title="Free Community Meditation",
+                start_date="2026-09-01 19:00:00",
+                end_date="2026-09-01 21:00:00",
+                url="https://shopsacredground.com/event/free-community-meditation-7/",
+            )
+        )
+        self.assertIn("7:00 PM", when)
+        self.assertIn("8:00 PM", when)
+        self.assertNotIn("9:00", when)
