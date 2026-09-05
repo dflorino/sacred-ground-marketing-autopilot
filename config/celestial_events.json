@@ -378,6 +378,90 @@
         "sg_identity": "pass",
         "logo_baked": true
       }
+    },
+    "new_moon_scorpio_2026": {
+      "label": "New Moon in Scorpio",
+      "event_date": "2026-11-09",
+      "post_night_before": "2026-11-08",
+      "caption_tomorrow": "Tomorrow’s new moon in Scorpio…",
+      "caption_today": "Today’s new moon in Scorpio…",
+      "one_liner_night": "Deep Scorpio new moon night plate — SG storefront or logo-sun anchor required.",
+      "one_liner_morning": "Morning Scorpio new moon — bright accents, not muddy void.",
+      "night": {
+        "look": "Scorpio new moon night — needs SG identity art",
+        "sg_anchor": "required",
+        "urls": [],
+        "local": [],
+        "url": "",
+        "sg_identity": "needs_art",
+        "status": "needs_generation"
+      },
+      "morning": {
+        "look": "Scorpio new moon morning",
+        "sg_anchor": "required",
+        "urls": [],
+        "local": [],
+        "url": "",
+        "prebranded": false,
+        "sg_identity": "needs_art",
+        "status": "needs_generation"
+      }
+    },
+    "full_moon_gemini_2026": {
+      "label": "Full Moon in Gemini",
+      "event_date": "2026-11-24",
+      "post_night_before": "2026-11-23",
+      "caption_tomorrow": "Tomorrow’s full moon in Gemini…",
+      "caption_today": "Today’s full moon in Gemini…",
+      "one_liner_night": "Gemini full moon night — twin-light sky with SG anchor.",
+      "one_liner_morning": "Morning Gemini full moon plate.",
+      "night": {
+        "look": "Gemini full moon night — needs SG identity art",
+        "sg_anchor": "required",
+        "urls": [],
+        "local": [],
+        "url": "",
+        "sg_identity": "needs_art",
+        "status": "needs_generation"
+      },
+      "morning": {
+        "look": "Gemini full moon morning",
+        "sg_anchor": "required",
+        "urls": [],
+        "local": [],
+        "url": "",
+        "prebranded": false,
+        "sg_identity": "needs_art",
+        "status": "needs_generation"
+      }
+    },
+    "new_moon_sagittarius_2026": {
+      "label": "New Moon in Sagittarius",
+      "event_date": "2026-12-09",
+      "post_night_before": "2026-12-08",
+      "caption_tomorrow": "Tomorrow’s new moon in Sagittarius…",
+      "caption_today": "Today’s new moon in Sagittarius…",
+      "one_liner_night": "Sagittarius new moon night — archer spark with SG anchor.",
+      "one_liner_morning": "Morning Sagittarius new moon plate.",
+      "night": {
+        "look": "Sagittarius new moon night — needs SG identity art",
+        "sg_anchor": "required",
+        "urls": [],
+        "local": [],
+        "url": "",
+        "sg_identity": "needs_art",
+        "status": "needs_generation"
+      },
+      "morning": {
+        "look": "Sagittarius new moon morning",
+        "sg_anchor": "required",
+        "urls": [],
+        "local": [],
+        "url": "",
+        "prebranded": false,
+        "sg_identity": "needs_art",
+        "status": "needs_generation"
+      }
     }
   }
 }

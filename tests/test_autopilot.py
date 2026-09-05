@@ -1451,6 +1451,25 @@ class AutopilotTests(unittest.TestCase):
             plan = nighttime_plan(sun, platform=platform)
             self.assertNotEqual(str(plan.get("image_url") or ""), y_url)
 
+    def test_night_pool_excludes_snow_outside_winter(self) -> None:
+        """Founder Sep 5 2026: snow mountains / winter village not in Sep (fall)."""
+        from marketing.atmosphere import _eligible_creative_pool, atmosphere_config
+
+        atmosphere_config.cache_clear()
+        snowy = {
+            "aurora_winter_village",
+            "crystal_mountain_v2",
+            "moonlit_lake_v2",
+            "season_winter_storefront",
+        }
+        for day in (date(2026, 9, 5), date(2026, 6, 15), date(2026, 4, 10)):
+            creatives, storefronts = _eligible_creative_pool(day)
+            ids = {str(p.get("id") or "") for p in creatives + storefronts}
+            self.assertFalse(ids & snowy, f"snow leaked on {day}: {ids & snowy}")
+        creatives_w, storefronts_w = _eligible_creative_pool(date(2026, 12, 20))
+        ids_w = {str(p.get("id") or "") for p in creatives_w + storefronts_w}
+        self.assertTrue(snowy <= ids_w)
+
     def test_fb_ig_shared_images_single_image_mode(self) -> None:
         """Single-image mode: FB+IG share one media URL (pipeline plans once)."""
         from marketing import images, pipeline, store

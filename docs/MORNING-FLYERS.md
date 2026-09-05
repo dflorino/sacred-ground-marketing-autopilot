@@ -68,6 +68,18 @@ Every single morning image must show Chicagoland **#1 / Premier / Voted #1** bak
 
 Approved samples: `data/composites/flyer-concepts-v1/approved/`. Do **not** replace live posts unless Founder asks.
 
+## Living Worlds series (Founder approved Aug 23, 2026)
+
+**20 rotating imaginative morning worlds** — crystal, jewelry, incense, candle, reader, coffee in every design. **5–8s MP4 loops** + static cover for email. Mixes with legacy pool (phased). Full spec: **`docs/MORNING-LIVING-WORLDS.md`** · config: `config/morning_living_worlds.json`. Autopilot picks only when `status: active` and assets exist.
+
+## Surprise campaign (Founder Sep 5, 2026)
+
+**Hard law:** if another metaphysical store would logically use this image, **reject**. First visual should stop the scroll (Vogue / museum / Wes Anderson miniature / absurd editorial) — Sacred Ground + schedule are the reveal.
+
+Config: **`config/morning_surprise_campaign.json`** · styles in `morning_flyer_styles.json` · `choose_visual_style` prefers `date_plan_YYYY_MM` when set.
+
+Flagship recurring: **Where Did Sacred Ground Land Today?** (recognizable eggplant-awning storefront in impossible places; people act normal). Weekly architecture preference: newspaper Mon · artifact Tue · tiny universe Wed (max 2/month) · unpredictable rest. Tarot-card oversized plates max **2/month**. Sep 3 colorful Thursday equal-cards = fall color gold standard for multi-event readable days.
+
 ## Sacred Ground daily flyer system
 
 Readability reference: `assets/sg-morning-flyer-2026-08-06-today-collage.png`. Art language is a day-seeded random mix from the full pool above (series-limited).

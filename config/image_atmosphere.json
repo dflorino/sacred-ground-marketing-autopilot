@@ -161,7 +161,10 @@
         "label": "Winter aurora village neon",
         "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-aurora-winter-village.png",
         "sg_identity": "pass",
-        "sg_anchor": "SACRED GROUND neon wooden sign + logo under aurora"
+        "sg_anchor": "SACRED GROUND neon wooden sign + logo under aurora",
+        "snow": true,
+        "seasons_allowed": ["winter"],
+        "season_note": "Founder Sep 5 2026 — snow village shipped week_ahead Sep 4; winter-only going forward (not Sep/fall in Chicago)."
       },
       {
         "id": "nebula_beams",
@@ -216,7 +219,9 @@
         "active": true,
         "local": "assets/sg-night-creative-crystal-mountain-v2.png",
         "replaces": "crystal_mountain",
-        "wp_media_id": 25929
+        "wp_media_id": 25929,
+        "snow": true,
+        "seasons_allowed": ["winter"]
       },
       {
         "id": "milky_way_v2",
@@ -238,7 +243,9 @@
         "active": true,
         "local": "assets/sg-night-creative-moonlit-lake-v2.png",
         "replaces": "moonlit_lake",
-        "wp_media_id": 25932
+        "wp_media_id": 25932,
+        "snow": true,
+        "seasons_allowed": ["winter"]
       },
       {
         "id": "firefly_meadow_v2",
@@ -317,11 +324,14 @@
         "no_fall_leaves": true,
         "pride_baked_in": true,
         "wp_media_id": 26690,
-        "active": true,
+        "active": false,
         "generated_at": "2026-08-16T23:00:44-05:00",
         "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-late-summer-store-porch-logo-v2.png",
         "remade_at": "2026-08-16T23:32:00-05:00",
-        "remake_note": "remake-v4 from scratch Aug 16 — no logo-v2 paste; reserved plate + real brand sun"
+        "remake_note": "remake-v4 from scratch Aug 16 — no logo-v2 paste; reserved plate + real brand sun",
+        "founder_rejected": true,
+        "founder_rejected_at": "2026-08-18T12:12:00-05:00",
+        "reject_reason": "Founder Tue Aug 18 2026 ~12:12pm CT: not a fan — remove from night rotation."
       },
       {
         "id": "late_summer_crystal_window",
@@ -353,11 +363,14 @@
         "no_fall_leaves": true,
         "pride_baked_in": true,
         "wp_media_id": 26688,
-        "active": true,
+        "active": false,
         "generated_at": "2026-08-16T23:00:44-05:00",
         "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-late-summer-cicada-porch-logo-v2.png",
         "remade_at": "2026-08-16T23:32:00-05:00",
-        "remake_note": "remake-v4 from scratch Aug 16 — no logo-v2 paste; reserved plate + real brand sun"
+        "remake_note": "remake-v4 from scratch Aug 16 — no logo-v2 paste; reserved plate + real brand sun",
+        "founder_rejected": true,
+        "founder_rejected_at": "2026-08-18T12:12:00-05:00",
+        "reject_reason": "Founder Tue Aug 18 2026 ~12:12pm CT: not a fan — remove from night rotation."
       },
       {
         "id": "late_summer_milkyway_storefront",
@@ -599,7 +612,17 @@
         "late_summer_garden_lantern"
       ],
       "note": "8 late-summer night creatives (no snow / no fall leaves). Aug 16 Founder review: logo-v2 applied (REAL brand circular sun). Prior URLs retired from pool entries; wired as sg_identity pass."
-    }
+    },
+    "founder_night_pins": {
+      "2026-08-18": "crystal_mountain_v2",
+      "2026-08-19": "moonlit_lake_v2",
+      "2026-08-20": "late_summer_sky_letters",
+      "2026-08-21": "late_summer_warm_rain_puddles",
+      "2026-08-22": "late_summer_crystal_window",
+      "2026-08-23": "late_summer_candlelit_windows",
+      "2026-08-24": "late_summer_milkyway_storefront"
+    },
+    "founder_night_pins_note": "Aug 18 2026 Founder: rejected late_summer_store_porch (Fri) + late_summer_cicada_porch (Sun). Pinned rest of week to prior review lineup; Fri→warm_rain_puddles, Sun→candlelit_windows."
   },
   "_meta_remake_v4": {
     "at": "2026-08-16T23:32:00-05:00",

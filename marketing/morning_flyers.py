@@ -17,6 +17,7 @@ from .paths import CONFIG_DIR, ROOT, _load_json, write_json
 FLYERS_PATH = os.path.join(CONFIG_DIR, "morning_flyers.json")
 LIVING_WORLDS_PATH = os.path.join(CONFIG_DIR, "morning_living_worlds.json")
 STYLES_PATH = os.path.join(CONFIG_DIR, "morning_flyer_styles.json")
+SURPRISE_CAMPAIGN_PATH = os.path.join(CONFIG_DIR, "morning_surprise_campaign.json")
 ASSETS_DIR = os.path.join(ROOT, "assets")
 LOGO_PATH = os.path.join(
     CONFIG_DIR, "brand", "sacred-ground-logo-circle-transparent.png"
@@ -792,6 +793,29 @@ def _day_style_rng(day: date) -> random.Random:
     return random.Random(int(digest[:16], 16))
 
 
+def load_surprise_campaign() -> Dict[str, Any]:
+    """Founder Sep 5 2026 surprise morning creative campaign + date plans."""
+    if not os.path.isfile(SURPRISE_CAMPAIGN_PATH):
+        return {}
+    with open(SURPRISE_CAMPAIGN_PATH, encoding="utf-8") as fh:
+        data = json.load(fh)
+    return data if isinstance(data, dict) else {}
+
+
+def surprise_date_plan_style(day: date) -> Optional[str]:
+    """Return planned style id for Chicago `day` when date_plan is set."""
+    camp = load_surprise_campaign()
+    key = f"date_plan_{day.year}_{day.month:02d}"
+    plan = camp.get(key) or camp.get("date_plan") or {}
+    if not isinstance(plan, dict):
+        return None
+    entry = plan.get(day.isoformat())
+    if not isinstance(entry, dict):
+        return None
+    style = str(entry.get("style") or "").strip()
+    return style or None
+
+
 def choose_visual_style(
     day: date,
     *,
@@ -804,8 +828,10 @@ def choose_visual_style(
     Random mix among the full morning visual pool (Founder Aug 14 ~2:31pm CT).
 
     Pool = Magritte / Folk / Da Vinci / Einstein + Thursday equal-card shop-made
-    + artistic hero shop-made. Day-seeded shuffle among series-eligible ids
-    (max 1 consecutive, max 2 in rolling 7). Not a rigid new-styles-only block.
+    + artistic hero shop-made + surprise campaign styles (Founder Sep 5).
+    Prefer ``morning_surprise_campaign`` date_plan when present for the day.
+    Day-seeded shuffle among series-eligible ids (max 1 consecutive, max 2 in
+    rolling 7). Not a rigid new-styles-only block.
 
     Date-keyed queue entries are separate: ensure_flyer_for_day keeps unused
     queued plates when present; this chooser applies to NEW generation / remake.
@@ -824,6 +850,11 @@ def choose_visual_style(
         if key in (load_styles_config().get("styles") or {}):
             return key
         raise ValueError(f"unknown visual style force={key!r}")
+
+    planned = surprise_date_plan_style(day)
+    if planned and planned not in lim["banned_ids"]:
+        if planned in pool or planned in (load_styles_config().get("styles") or {}):
+            return planned
 
     # Artistic hero only when ≤1 event; drop from pool on multi-event days.
     n_events = len(pick_events_for_flyer(events or []))

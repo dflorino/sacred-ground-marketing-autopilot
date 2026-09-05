@@ -161,13 +161,35 @@ def _is_daytime_sun_plate(plate: Dict[str, Any]) -> bool:
     return family in ("daytime_sun", "sun_sky")
 
 
-def _is_night_pool_eligible(plate: Dict[str, Any]) -> bool:
-    """Active + SG identity pass + not a retired daytime-sun plate."""
-    return (
+def _plate_allowed_in_season(plate: Dict[str, Any], season: str) -> bool:
+    """
+    Founder Sep 5 2026: snow / winter-only creatives must not ship in spring–
+    summer–fall (e.g. aurora_winter_village snow mountain in September).
+    Storefronts already filter on plate.season; this covers creative skies.
+    """
+    allowed = plate.get("seasons_allowed")
+    if isinstance(allowed, (list, tuple)) and allowed:
+        return season in {str(s).strip().lower() for s in allowed}
+    if plate.get("snow") is True:
+        return season == "winter"
+    # Winter-named creatives without explicit season tags still winter-only.
+    pid = str(plate.get("id") or "").strip().lower()
+    if "winter" in pid and plate.get("kind") != "storefront":
+        return season == "winter"
+    return True
+
+
+def _is_night_pool_eligible(plate: Dict[str, Any], season: Optional[str] = None) -> bool:
+    """Active + SG identity pass + not daytime-sun + season-appropriate."""
+    if not (
         bool(plate.get("url"))
         and _has_sg_identity(plate)
         and not _is_daytime_sun_plate(plate)
-    )
+    ):
+        return False
+    if season is None:
+        return True
+    return _plate_allowed_in_season(plate, season)
 
 
 def _night_never_reuse() -> bool:
@@ -255,7 +277,7 @@ def _eligible_creative_pool(day: date) -> Tuple[List[Dict[str, Any]], List[Dict[
     creatives: List[Dict[str, Any]] = []
     storefronts: List[Dict[str, Any]] = []
     for p in night.get("creative_pool") or []:
-        if not _is_night_pool_eligible(p):
+        if not _is_night_pool_eligible(p, season=season):
             continue
         if p.get("kind") == "storefront":
             p_season = str(p.get("season") or "")
@@ -539,6 +561,36 @@ def nighttime_plan(
                 ),
             }
         # Single holiday plate already used by the other platform — diversify via creatives.
+
+    # Priority 3.5: Founder date pins (keep a reviewed week stable when rejecting plates)
+    pin_id = str((night.get("founder_night_pins") or {}).get(day.isoformat()) or "").strip()
+    if pin_id:
+        pinned = next(
+            (
+                p
+                for p in (night.get("creative_pool") or [])
+                if str(p.get("id") or "") == pin_id and p.get("active") is not False
+            ),
+            None,
+        )
+        pin_url = str((pinned or {}).get("url") or "")
+        if pinned and pin_url and pin_url not in excluded:
+            label = str(pinned.get("label") or pin_id)
+            return {
+                "campaign": "week_ahead",
+                "mode": "creative",
+                "season": season,
+                "holiday": None,
+                "full_moon": False,
+                "creative_id": pin_id,
+                "image_url": pin_url,
+                "season_look": label,
+                "cart": "",
+                "prompt_hint": (
+                    f"Sacred Ground nighttime creative plate ({label}). "
+                    f"Base note: {base} Events stay in caption."
+                ),
+            }
 
     # Priority 4: creative night skies (storefront only sparse / streak-safe)
     pick = _pick_night_creative(day, platform=platform, exclude_urls=list(excluded))

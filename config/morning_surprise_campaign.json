@@ -1,0 +1,256 @@
+{
+  "notes": "Founder Sep 5 2026 America/Chicago — surprise morning creative campaign. Hard law: if another metaphysical store would logically use this image, REJECT. First visual must make people stop (What the hell is THAT?) before they realize it's Sacred Ground. Not every morning should look metaphysical. Prefer Vogue / NASA / Renaissance / 1950s ad / museum / Wes Anderson miniature / archaeology / impossible photograph energy. Sep 3 colorful Thursday equal-cards remain the fall color gold standard for readable multi-event days. Flagship series: Where Did Sacred Ground Land Today? (recognizable storefront in impossible places; nobody in-frame is shocked). Celestial dual cadence still wins on event mornings via celestial_events.json.",
+  "approved_at": "2026-09-05T11:53:00-05:00",
+  "approved_by": "Founder",
+  "timezone": "America/Chicago",
+  "creative_law": "If another metaphysical store would logically use this image, reject the idea.",
+  "reject_looks": [
+    "moons + crystals + purple galaxies + goddesses + aliens + chakras as the whole ad",
+    "generic mystic AI wellness starter pack",
+    "Happy Fall emoji wallpaper"
+  ],
+  "fall_color_reference": {
+    "day": "2026-09-03",
+    "note": "Founder loved Sep 3 colorful Thursday multi plate — jewel / unexpected bold fall color energy for equal cards"
+  },
+  "recurring_weekly_architecture": {
+    "monday": "surprise_newspaper_daily",
+    "tuesday": "surprise_museum_artifact_3026",
+    "wednesday": "surprise_tiny_universe",
+    "thu_sun": "unpredictable mix — where_landed, colorful thursday, hollywood, cake, door, window, meeting, etc."
+  },
+  "series_caps": {
+    "surprise_tarot_oracle_card": {
+      "max_per_calendar_month": 2,
+      "notes": "Only very colorful beautiful Media Library tarot/oracle cards as ref; practitioners in symbolism; TODAY AT SACRED GROUND schedule at bottom"
+    },
+    "surprise_tiny_universe": {
+      "max_per_calendar_month": 2,
+      "notes": "Miniature SG inside geode / watch / bottle / lantern / amethyst cathedral"
+    },
+    "surprise_where_landed": {
+      "max_per_rolling_7_days": 2,
+      "notes": "Where Did Sacred Ground Land Today? — storefront recognizable; location absurd; people act normal"
+    },
+    "surprise_newspaper_daily": {
+      "prefer_weekday": "monday"
+    },
+    "surprise_museum_artifact_3026": {
+      "prefer_weekday": "tuesday"
+    }
+  },
+  "concepts": {
+    "surprise_tarot_oracle_card": {
+      "label": "The Sacred Ground Tarot Card",
+      "family": "surprise_tarot_oracle_card",
+      "layout": "thursday_cards",
+      "prompt_brief": "Oversized newly drawn colorful tarot/oracle card as the entire flyer (NOT purple mystic sludge). Dramatic card title like The Healer / The Seer / The Alchemist / The Mystic / The Messenger matching today's practitioners in rich jewel-tone symbolism. Bottom third: TODAY AT SACRED GROUND with equal readable schedule bands. Reference only very colorful beautiful tarot art — never drab. Shop pride + circular logo + shopsacredground.com + 847-749-3922 footer. Reject if another crystal shop would post the same card."
+    },
+    "surprise_tiny_universe": {
+      "label": "The Tiny Sacred Ground Universe",
+      "family": "surprise_tiny_universe",
+      "layout": "thursday_cards",
+      "prompt_brief": "Photoreal editorial: entire Sacred Ground storefront as an incredibly detailed miniature world INSIDE one object (crystal geode OR antique pocket watch OR glass bottle OR old lantern OR giant amethyst cathedral — pick one). Tiny people walking into the shop. Schedule floats subtly on small equal plaques around the miniature — still readable. Warm fall color when September. Nobody shocked. Footer website + phone. Not generic mystic collage."
+    },
+    "surprise_museum_artifact_3026": {
+      "label": "Museum Artifact From the Future",
+      "family": "surprise_museum_artifact_3026",
+      "layout": "thursday_cards",
+      "prompt_brief": "Futuristic museum exhibit in year 3026. A glowing ancient artifact plaque reads Sacred Ground — [exact Chicago date]. Today's practitioners listed like archaeologists decoding Reiki, Tarot, Akashic Records. Glass case, cool museum lighting with bright accent color — not dark Blade Runner mud. Equal readable schedule as artifact labels. Pride + website + phone."
+    },
+    "surprise_newspaper_daily": {
+      "label": "The Mystical Newspaper Front Page",
+      "family": "surprise_newspaper_daily",
+      "layout": "thursday_cards",
+      "prompt_brief": "Absurdly beautiful old-world newspaper front page: THE SACRED GROUND DAILY. Huge playful dramatic headline (e.g. ENERGY HEALERS DESCEND UPON ARLINGTON HEIGHTS or THE CARDS HAVE SPOKEN — invent a fresh headline for this date). Today's practitioners as equal breaking-news columns with times. Cream paper, bold ink, unexpected color accent — Vogue-meets-broadsheet energy without looking like Canva mystic template. Footer contact."
+    },
+    "surprise_cosmic_subway": {
+      "label": "The Cosmic Subway Map",
+      "family": "surprise_cosmic_subway",
+      "layout": "thursday_cards",
+      "prompt_brief": "Elaborate transit map: Tarot Line, Reiki Line, Astrology Line, Akashic Line, Massage Line. Sacred Ground is Grand Central. Today's practitioners are the stops currently OPEN — equal readable stop labels with times. Spectacular graphic design poster energy (NYC subway map meets art print), bright line colors, not purple galaxy sludge."
+    },
+    "surprise_cabinet_curiosities": {
+      "label": "Impossible Cabinet of Curiosities",
+      "family": "surprise_cabinet_curiosities",
+      "layout": "thursday_cards",
+      "prompt_brief": "Gigantic antique apothecary cabinet, hundreds of tiny drawers. Several drawers open; each open drawer holds a miniature scene for today's practitioners (equal visual weight). Headline: TODAY'S DOORS ARE OPEN. Warm wood + jewel accents, editorial photography. Schedule readable on drawer fronts. Not mystic AI dump."
+    },
+    "surprise_crystal_city": {
+      "label": "The Giant Crystal City",
+      "family": "surprise_crystal_city",
+      "layout": "thursday_cards",
+      "prompt_brief": "Photoreal quartz-point skyscraper city — bright daylight or golden hour, NOT dark Blade Runner. Sacred Ground glowing between crystal towers. Today's practitioners on luminous equal signs. Blade Runner meets metaphysical shop WITHOUT darkness or mud. Pride + footer."
+    },
+    "surprise_universe_morning_meeting": {
+      "label": "The Universe's Morning Meeting",
+      "family": "surprise_universe_morning_meeting",
+      "layout": "thursday_cards",
+      "prompt_brief": "Ridiculously wonderful conference table: Sun, Moon, Earth, Saturn, angels, stars, crystals (maybe one polite alien) reviewing today's agenda. Presentation screen behind them: TODAY'S AGENDA / Sacred Ground / [date] / equal readable practitioners + events. Editorial comedy — like the universe staff meeting decided today's shop schedule. Bright colorful boardroom, not purple void."
+    },
+    "surprise_where_landed": {
+      "label": "Where Did Sacred Ground Land Today?",
+      "family": "surprise_where_landed",
+      "layout": "thursday_cards",
+      "prompt_brief": "Surreal editorial photograph: the REAL Sacred Ground storefront (eggplant-purple awning, tan stone, SACRED GROUND lettering) has mysteriously relocated somewhere that makes absolutely no sense — but everyone in the scene treats it as perfectly normal. Location varies by day (refrigerator shelf, peony petals, seashell, typewriter key, walnut, bird nest, autumn leaf, lighthouse, grandfather clock, etc.). Simple copy energy: LOOK WHERE SACRED GROUND LANDED TODAY or SOMEHOW, WE'RE OPEN. Equal readable TODAY AT SACRED GROUND schedule underneath or on a small sidewalk sign. Photoreal, beautiful production. Reject space/aliens cliché unless rare. Fall color welcome in September."
+    },
+    "surprise_hollywood_poster": {
+      "label": "1940s Hollywood Movie Poster",
+      "family": "surprise_hollywood_poster",
+      "layout": "thursday_cards",
+      "prompt_brief": "Enormous old Hollywood movie poster: SACRED GROUND PRESENTS… [WEEKDAY]. Starring [practitioners] with equal billing. Events as special appearances. Dramatic glamorous slightly tongue-in-cheek. Painted poster color, gold foil accents, readable cast list with times. Not mystic collage."
+    },
+    "surprise_layer_cake": {
+      "label": "World's Most Elaborate Layer Cake",
+      "family": "surprise_layer_cake",
+      "layout": "thursday_cards",
+      "prompt_brief": "Editorial-fashion photograph of an enormous ornate multi-layer cake; each exposed layer contains a miniature Sacred Ground scene (tarot / crystals / healing / astrology). Today's schedule piped elegantly like icing in equal bands. People stop because they don't know what they're looking at. Bright delicious color — not purple sludge."
+    },
+    "surprise_secret_door": {
+      "label": "The Secret Door",
+      "family": "surprise_secret_door",
+      "layout": "thursday_cards",
+      "prompt_brief": "Simple powerful composition: extraordinary ornate door somewhere it shouldn't exist (field, giant tree, cliff, library). Golden light through the crack. Small plaque: TODAY, BEHIND THE DOOR… then equal readable practitioners. Photoreal. Not generic forest mystic stock."
+    },
+    "surprise_department_window": {
+      "label": "Department Store Window",
+      "family": "surprise_department_window",
+      "layout": "thursday_cards",
+      "prompt_brief": "Extravagant Fifth Avenue holiday-style window installation built around today's practitioners. TODAY AT SACRED GROUND painted elegantly across the glass. Equal scenes for each practitioner inside the window. Theatrical color, editorial."
+    },
+    "surprise_vending_machine": {
+      "label": "Mystical Vending Machine",
+      "family": "surprise_vending_machine",
+      "layout": "thursday_cards",
+      "prompt_brief": "Gorgeous retro vending machine labeled WHAT DO YOU NEED TODAY? Illuminated compartments: REIKI / TAROT / MASSAGE / ASTROLOGY / CRYSTALS — today's practitioners lit up like selections with times. Choose wisely. Mid-century color, not purple galaxy."
+    },
+    "surprise_fortune_cookie": {
+      "label": "Sacred Ground Fortune Cookie",
+      "family": "surprise_fortune_cookie",
+      "layout": "thursday_cards",
+      "prompt_brief": "Extreme close-up of an enormous fortune cookie cracked open. Paper fortune: YOUR [WEEKDAY] HOLDS… then equal readable practitioner lines. Super simple Vogue-product composition — dramatically different from elaborate posts. Warm bakery light."
+    },
+    "surprise_board_game": {
+      "label": "Sacred Ground Board Game",
+      "family": "surprise_board_game",
+      "layout": "thursday_cards",
+      "prompt_brief": "Elaborate board game photographed from above. Path winds Tarot → Reiki → Crystals → Astrology → Sound Healing → Sacred Ground. Today's practitioners as game pieces with equal readable labels. YOUR MOVE. Rich fall board colors."
+    },
+    "thursday_cards_shop_made_fall": {
+      "label": "Thursday equal-card fall color (Sep 3 energy)",
+      "family": "thursday_cards_shop_made",
+      "maps_to_style": "thursday_cards_shop_made",
+      "layout": "thursday_cards",
+      "prompt_brief": "Same as thursday_cards_shop_made but lean HARD into Sep 3 Founder-loved fall color: coral, chartreuse, teal, sunflower, eggplant, amber — colorful equal stacked cards, shop-made, never mystic AI navy template."
+    }
+  },
+  "date_plan_2026_09": {
+    "2026-09-05": {
+      "style": "surprise_universe_morning_meeting",
+      "episode": "Universe staff meeting reviews Saturday agenda (Melissa / Robert / Andre)"
+    },
+    "2026-09-06": {
+      "style": "surprise_where_landed",
+      "episode": "Sacred Ground nestled inside an enormous peony — beautiful Sunday"
+    },
+    "2026-09-07": {
+      "style": "surprise_newspaper_daily",
+      "episode": "Monday paper — Tina headline"
+    },
+    "2026-09-08": {
+      "style": "surprise_museum_artifact_3026",
+      "episode": "Tuesday artifact — Meditation / Amber / Janel"
+    },
+    "2026-09-09": {
+      "style": "surprise_tiny_universe",
+      "episode": "Wednesday geode miniature — Robert + Moon Alchemy"
+    },
+    "2026-09-10": {
+      "style": "thursday_cards_shop_made",
+      "episode": "New Moon in Virgo morning — Sep 3 fall color equal cards (Adie / Sherry / Rose); celestial morning plate also eligible",
+      "celestial": "new_moon_virgo_2026"
+    },
+    "2026-09-11": {
+      "style": "surprise_hollywood_poster",
+      "episode": "Friday Hollywood poster — Lisa Maria / Lin / Frequency Reset"
+    },
+    "2026-09-12": {
+      "style": "surprise_cosmic_subway",
+      "episode": "Saturday transit map — Melissa / Adie / Robert"
+    },
+    "2026-09-13": {
+      "style": "surprise_secret_door",
+      "episode": "Sunday secret door — Rose"
+    },
+    "2026-09-14": {
+      "style": "surprise_newspaper_daily",
+      "episode": "Monday paper — Lisa Maria"
+    },
+    "2026-09-15": {
+      "style": "surprise_museum_artifact_3026",
+      "episode": "Tuesday artifact"
+    },
+    "2026-09-16": {
+      "style": "surprise_tiny_universe",
+      "episode": "Wednesday pocket-watch miniature (2nd tiny universe this month)"
+    },
+    "2026-09-17": {
+      "style": "thursday_cards_shop_made",
+      "episode": "Fall color equal cards — Renee / Adie / Sherry"
+    },
+    "2026-09-18": {
+      "style": "surprise_layer_cake",
+      "episode": "Friday cake — Cheryl / Robert / Mabon Kate"
+    },
+    "2026-09-19": {
+      "style": "surprise_vending_machine",
+      "episode": "Saturday vending — Melissa / Andre / Adie"
+    },
+    "2026-09-20": {
+      "style": "surprise_where_landed",
+      "episode": "Sunday Reiki Share — SG inside seashell"
+    },
+    "2026-09-21": {
+      "style": "surprise_newspaper_daily",
+      "episode": "Monday paper — equinox week"
+    },
+    "2026-09-22": {
+      "style": "thursday_cards_shop_made",
+      "episode": "Autumn Equinox — fall color cards + Equinox Meditation; celestial morning eligible",
+      "celestial": "autumn_equinox_2026"
+    },
+    "2026-09-23": {
+      "style": "surprise_where_landed",
+      "episode": "SG inside an enormous autumn leaf"
+    },
+    "2026-09-24": {
+      "style": "thursday_cards_shop_made",
+      "episode": "Fall color Thursday — Quantum / Adie / Sherry"
+    },
+    "2026-09-25": {
+      "style": "surprise_department_window",
+      "episode": "Friday window — visit day"
+    },
+    "2026-09-26": {
+      "style": "surprise_fortune_cookie",
+      "episode": "Full Moon in Aries — fortune cookie visit/celestial morning eligible",
+      "celestial": "full_moon_aries_2026"
+    },
+    "2026-09-27": {
+      "style": "surprise_tarot_oracle_card",
+      "episode": "Sunday tarot card (1 of 2 this month) — visit / colorful card"
+    },
+    "2026-09-28": {
+      "style": "surprise_newspaper_daily",
+      "episode": "Monday paper"
+    },
+    "2026-09-29": {
+      "style": "surprise_board_game",
+      "episode": "Tuesday board game — Free Community Meditation"
+    },
+    "2026-09-30": {
+      "style": "surprise_cabinet_curiosities",
+      "episode": "Wednesday cabinet — visit day"
+    }
+  }
+}

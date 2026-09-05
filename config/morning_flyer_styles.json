@@ -1,13 +1,15 @@
 {
-  "notes": "Founder Fri Aug 14 2026 America/Chicago. Morning visual MIXED POOL \u2014 not 'new styles only for two weeks.' Include: (1) four approved art languages Magritte/Folk/Da Vinci/Einstein, (2) existing shop-made Thursday equal-card + artistic hero, (3) date-keyed queued flyers. Founder Aug 23 2026: Living Worlds series APPROVED \u2014 20 imaginative morning worlds mix in phased rollout; see config/morning_living_worlds.json + docs/MORNING-LIVING-WORLDS.md. TRUE RANDOM mix among eligible pool members each day (day-seeded). EVERY morning plate must have Chicagoland #1 / Premier / Voted pride BAKED INTO the image.",
+  "notes": "Founder Fri Aug 14 2026 America/Chicago. Morning visual MIXED POOL \u2014 not 'new styles only for two weeks.' Include: (1) four approved art languages Magritte/Folk/Da Vinci/Einstein, (2) existing shop-made Thursday equal-card + artistic hero, (3) date-keyed queued flyers. Founder Aug 23 2026: Living Worlds series APPROVED \u2014 20 imaginative morning worlds mix in phased rollout; see config/morning_living_worlds.json + docs/MORNING-LIVING-WORLDS.md. Founder Sep 5 2026: surprise creative campaign (Where Did Sacred Ground Land / newspaper / artifact / tiny universe / etc.) — see config/morning_surprise_campaign.json; date_plan overrides day-seeded pick when present. Hard law: if another metaphysical store would logically use this image, REJECT. TRUE RANDOM mix among eligible pool members each day (day-seeded) when no date_plan. EVERY morning plate must have Chicagoland #1 / Premier / Voted pride BAKED INTO the image.",
   "living_worlds_config": "config/morning_living_worlds.json",
+  "surprise_campaign_config": "config/morning_surprise_campaign.json",
   "living_worlds_approved_at": "2026-08-23T18:52:00-05:00",
+  "surprise_campaign_approved_at": "2026-09-05T11:53:00-05:00",
   "scored_at": "2026-08-14T14:14:00-05:00",
   "mixed_pool_clarified_at": "2026-08-14T14:31:00-05:00",
   "series_limits_set_at": "2026-08-14T14:29:00-05:00",
   "timezone": "America/Chicago",
   "selection_mode": "random_mixed",
-  "selection_note": "Day-seeded shuffle among series-eligible pool ids. Do NOT run Magritte\u2192Folk\u2192Da Vinci\u2192Einstein as a rigid two-week block then dump old Thursday plates afterward \u2014 interleave ALL eligible approaches.",
+  "selection_note": "Prefer morning_surprise_campaign date_plan when set for a Chicago day. Else day-seeded shuffle among series-eligible pool ids. Do NOT run Magritte\u2192Folk\u2192Da Vinci\u2192Einstein as a rigid two-week block then dump old Thursday plates afterward \u2014 interleave ALL eligible approaches.",
   "queue_and_reuse": {
     "keep_approaches": "Existing morning approaches and unused date-keyed queued plates stay in the mix alongside the four approved styles.",
     "never_reuse_urls": "Lifetime never-reuse via image_usage is absolute. Keeping an approach does NOT mean re-posting a used URL. Unused queued flyer URLs may be chosen; used URLs must fail closed (reuse_blocked) and force alternate / regenerate.",
@@ -18,7 +20,14 @@
     "rolling_window_days": 7,
     "max_per_style_in_window": 2,
     "per_style_max_in_window": {
-      "folk_outsider_night": 1
+      "folk_outsider_night": 1,
+      "surprise_tarot_oracle_card": 1,
+      "surprise_tiny_universe": 1,
+      "surprise_where_landed": 2
+    },
+    "per_style_max_per_calendar_month": {
+      "surprise_tarot_oracle_card": 2,
+      "surprise_tiny_universe": 2
     },
     "notes": "Founder Aug 14 ~2:29\u20132:31pm CT: no single style id more than 1 consecutive Chicago day; at most ~2 uses of the same style id (family) in any rolling 7 Chicago days. Founder Aug 25 2026: folk_outsider_night max 1 in any rolling 7 Chicago days (never two folk days in the same week). Applies across the whole mixed pool.",
     "banned_series_limit_0": {
@@ -42,7 +51,23 @@
     "davinci_storefront_sketch",
     "einstein_chalkboard_map",
     "thursday_cards_shop_made",
-    "artistic_hero_shop_made"
+    "artistic_hero_shop_made",
+    "surprise_where_landed",
+    "surprise_newspaper_daily",
+    "surprise_museum_artifact_3026",
+    "surprise_tiny_universe",
+    "surprise_universe_morning_meeting",
+    "surprise_hollywood_poster",
+    "surprise_layer_cake",
+    "surprise_secret_door",
+    "surprise_cosmic_subway",
+    "surprise_vending_machine",
+    "surprise_fortune_cookie",
+    "surprise_board_game",
+    "surprise_department_window",
+    "surprise_cabinet_curiosities",
+    "surprise_tarot_oracle_card",
+    "surprise_crystal_city"
   ],
   "rotation_order": [
     "magritte_floating_door",
@@ -50,7 +75,12 @@
     "davinci_storefront_sketch",
     "einstein_chalkboard_map",
     "thursday_cards_shop_made",
-    "artistic_hero_shop_made"
+    "artistic_hero_shop_made",
+    "surprise_where_landed",
+    "surprise_newspaper_daily",
+    "surprise_museum_artifact_3026",
+    "surprise_tiny_universe",
+    "surprise_universe_morning_meeting"
   ],
   "rotation_note": "Legacy key \u2014 same as mixed_pool. Selection is random_mixed among series-eligible ids, not day-ordinal lockstep.",
   "pride_on_morning": {
@@ -147,6 +177,182 @@
       "pool": "candidate_art",
       "prompt_brief": "Henri Matisse late cut-paper / gouache d\u00e9coup\u00e9: bold flat jewel-tone paper shapes (coral, teal, sunflower, eggplant, leaf green), organic leaf/flower silhouettes, Sacred Ground eggplant-awning storefront as flat colorful cut-paper collage. Equal-weight cream cut-paper schedule panels with thick dark readable type. Shop-made, never Victorian lace, never mystic AI dump.",
       "pride_placement": "Bold cut-paper banner with Premier / #1 Chicagoland; circular sun logo; cream footer website + phone."
+    },
+    "surprise_where_landed": {
+      "id": "surprise_where_landed",
+      "label": "Where Did Sacred Ground Land Today?",
+      "family": "surprise_where_landed",
+      "verdict": "IN \u2014 Founder Sep 5 2026 surprise campaign",
+      "status": "active",
+      "pool": "surprise_campaign",
+      "layout": "thursday_cards",
+      "prompt_brief": "Surreal editorial photograph: the REAL Sacred Ground storefront (eggplant-purple awning, tan stone, white SACRED GROUND lettering) mysteriously relocated somewhere that makes no sense — refrigerator, peony, seashell, typewriter key, walnut, bird nest, autumn leaf, lighthouse, etc. Everyone in-frame acts like this is normal. LOOK WHERE SACRED GROUND LANDED TODAY / SOMEHOW WE'RE OPEN. Equal readable TODAY AT SACRED GROUND schedule. Photoreal. Hard law: if another metaphysical store would use this image, reject. No purple galaxy sludge.",
+      "pride_placement": "Boutique pride band + circular logo + shopsacredground.com + 847-749-3922"
+    },
+    "surprise_newspaper_daily": {
+      "id": "surprise_newspaper_daily",
+      "label": "The Sacred Ground Daily newspaper",
+      "family": "surprise_newspaper_daily",
+      "verdict": "IN \u2014 Founder Sep 5 (prefer Mondays)",
+      "status": "active",
+      "pool": "surprise_campaign",
+      "layout": "thursday_cards",
+      "prompt_brief": "Absurdly beautiful old-world newspaper: THE SACRED GROUND DAILY. Huge playful headline. Today's practitioners as equal breaking-news columns with times. Cream paper, bold ink, unexpected color — not Canva mystic template.",
+      "pride_placement": "Masthead pride claim; footer website + phone"
+    },
+    "surprise_museum_artifact_3026": {
+      "id": "surprise_museum_artifact_3026",
+      "label": "Museum Artifact From the Future",
+      "family": "surprise_museum_artifact_3026",
+      "verdict": "IN \u2014 Founder Sep 5 (prefer Tuesdays)",
+      "status": "active",
+      "pool": "surprise_campaign",
+      "layout": "thursday_cards",
+      "prompt_brief": "Year 3026 museum: glowing ancient artifact plaque Sacred Ground — [date]. Practitioners listed as archaeological labels for Reiki/Tarot/Akashic. Bright museum accents, not dark Blade Runner mud. Equal readable schedule.",
+      "pride_placement": "Exhibit label pride + footer contact"
+    },
+    "surprise_tiny_universe": {
+      "id": "surprise_tiny_universe",
+      "label": "Tiny Sacred Ground Universe",
+      "family": "surprise_tiny_universe",
+      "verdict": "IN \u2014 Founder Sep 5 (max 2/month)",
+      "status": "active",
+      "pool": "surprise_campaign",
+      "layout": "thursday_cards",
+      "prompt_brief": "Photoreal miniature Sacred Ground inside one object (geode / pocket watch / bottle / lantern / amethyst cathedral). Tiny people entering. Schedule on subtle equal plaques. Max 2 uses per calendar month.",
+      "pride_placement": "Small pride plaque + footer"
+    },
+    "surprise_universe_morning_meeting": {
+      "id": "surprise_universe_morning_meeting",
+      "label": "Universe's Morning Meeting",
+      "family": "surprise_universe_morning_meeting",
+      "verdict": "IN \u2014 Founder Sep 5 loved",
+      "status": "active",
+      "pool": "surprise_campaign",
+      "layout": "thursday_cards",
+      "prompt_brief": "Sun, Moon, Earth, Saturn, angels, stars around a conference table. Screen: TODAY'S AGENDA Sacred Ground [date] + equal practitioners. Bright colorful boardroom comedy — not purple void.",
+      "pride_placement": "Screen corner pride + footer"
+    },
+    "surprise_hollywood_poster": {
+      "id": "surprise_hollywood_poster",
+      "label": "1940s Hollywood Movie Poster",
+      "family": "surprise_hollywood_poster",
+      "verdict": "IN \u2014 Founder Sep 5",
+      "status": "active",
+      "pool": "surprise_campaign",
+      "layout": "thursday_cards",
+      "prompt_brief": "Old Hollywood poster: SACRED GROUND PRESENTS… [weekday]. Practitioners as equal starring credits with times. Glamorous tongue-in-cheek painted poster color.",
+      "pride_placement": "Poster billing block pride + footer"
+    },
+    "surprise_layer_cake": {
+      "id": "surprise_layer_cake",
+      "label": "Elaborate Layer Cake",
+      "family": "surprise_layer_cake",
+      "verdict": "IN \u2014 Founder Sep 5",
+      "status": "active",
+      "pool": "surprise_campaign",
+      "layout": "thursday_cards",
+      "prompt_brief": "Enormous ornate cake; each layer a miniature Sacred Ground scene. Schedule piped as icing equal bands. Editorial fashion photography — stop-scroll absurdity.",
+      "pride_placement": "Cake stand band pride + footer"
+    },
+    "surprise_secret_door": {
+      "id": "surprise_secret_door",
+      "label": "The Secret Door",
+      "family": "surprise_secret_door",
+      "verdict": "IN \u2014 Founder Sep 5",
+      "status": "active",
+      "pool": "surprise_campaign",
+      "layout": "thursday_cards",
+      "prompt_brief": "Ornate door somewhere impossible; golden light. Plaque: TODAY, BEHIND THE DOOR… equal practitioners. Simple powerful photoreal.",
+      "pride_placement": "Plaque pride line + footer"
+    },
+    "surprise_cosmic_subway": {
+      "id": "surprise_cosmic_subway",
+      "label": "Cosmic Subway Map",
+      "family": "surprise_cosmic_subway",
+      "verdict": "IN \u2014 Founder Sep 5",
+      "status": "active",
+      "pool": "surprise_campaign",
+      "layout": "thursday_cards",
+      "prompt_brief": "Transit map: Tarot/Reiki/Astrology/Akashic/Massage lines; Sacred Ground = Grand Central; today's practitioners = open stops with times. Bright graphic poster.",
+      "pride_placement": "Map legend pride + footer"
+    },
+    "surprise_vending_machine": {
+      "id": "surprise_vending_machine",
+      "label": "Mystical Vending Machine",
+      "family": "surprise_vending_machine",
+      "verdict": "IN \u2014 Founder Sep 5",
+      "status": "active",
+      "pool": "surprise_campaign",
+      "layout": "thursday_cards",
+      "prompt_brief": "Retro vending machine WHAT DO YOU NEED TODAY? Lit compartments for today's practitioners/services with times. Mid-century color.",
+      "pride_placement": "Machine badge pride + footer"
+    },
+    "surprise_fortune_cookie": {
+      "id": "surprise_fortune_cookie",
+      "label": "Fortune Cookie",
+      "family": "surprise_fortune_cookie",
+      "verdict": "IN \u2014 Founder Sep 5",
+      "status": "active",
+      "pool": "surprise_campaign",
+      "layout": "thursday_cards",
+      "prompt_brief": "Extreme close-up enormous fortune cookie; paper fortune YOUR [weekday] HOLDS… equal practitioner lines. Simple Vogue product ad.",
+      "pride_placement": "Fortune strip pride + footer"
+    },
+    "surprise_board_game": {
+      "id": "surprise_board_game",
+      "label": "Sacred Ground Board Game",
+      "family": "surprise_board_game",
+      "verdict": "IN \u2014 Founder Sep 5",
+      "status": "active",
+      "pool": "surprise_campaign",
+      "layout": "thursday_cards",
+      "prompt_brief": "Overhead elaborate board game; practitioners as pieces; YOUR MOVE; equal readable labels.",
+      "pride_placement": "Board corner pride + footer"
+    },
+    "surprise_department_window": {
+      "id": "surprise_department_window",
+      "label": "Department Store Window",
+      "family": "surprise_department_window",
+      "verdict": "IN \u2014 Founder Sep 5",
+      "status": "active",
+      "pool": "surprise_campaign",
+      "layout": "thursday_cards",
+      "prompt_brief": "Fifth Avenue window installation for today's practitioners; TODAY AT SACRED GROUND on glass; equal scenes.",
+      "pride_placement": "Window placard pride + footer"
+    },
+    "surprise_cabinet_curiosities": {
+      "id": "surprise_cabinet_curiosities",
+      "label": "Cabinet of Curiosities",
+      "family": "surprise_cabinet_curiosities",
+      "verdict": "IN \u2014 Founder Sep 5",
+      "status": "active",
+      "pool": "surprise_campaign",
+      "layout": "thursday_cards",
+      "prompt_brief": "Giant apothecary cabinet; open drawers = equal miniature practitioner scenes; TODAY'S DOORS ARE OPEN.",
+      "pride_placement": "Cabinet nameplate pride + footer"
+    },
+    "surprise_tarot_oracle_card": {
+      "id": "surprise_tarot_oracle_card",
+      "label": "Sacred Ground Tarot Card",
+      "family": "surprise_tarot_oracle_card",
+      "verdict": "IN \u2014 Founder Sep 5 (max 2/month; colorful Media Library refs only)",
+      "status": "active",
+      "pool": "surprise_campaign",
+      "layout": "thursday_cards",
+      "prompt_brief": "Oversized newly drawn VERY colorful tarot/oracle card (The Healer/Seer/Alchemist/Mystic/Messenger). Practitioners in symbolism. Bottom: TODAY AT SACRED GROUND equal schedule. Max 2/month. Never drab purple mystic sludge.",
+      "pride_placement": "Card border pride + footer"
+    },
+    "surprise_crystal_city": {
+      "id": "surprise_crystal_city",
+      "label": "Giant Crystal City",
+      "family": "surprise_crystal_city",
+      "verdict": "IN \u2014 Founder Sep 5",
+      "status": "active",
+      "pool": "surprise_campaign",
+      "layout": "thursday_cards",
+      "prompt_brief": "Bright quartz skyscraper city (NOT dark Blade Runner). Sacred Ground glowing between towers; equal luminous practitioner signs.",
+      "pride_placement": "Neon pride sign + footer"
     }
   },
   "archived_out": {
