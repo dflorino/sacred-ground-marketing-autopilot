@@ -1,3 +1,7 @@
+## 2026-09-06 — Celestial calendar dual cadence complete through Dec
+
+Founder calendar (Sep 5 screenshot) verified. Sep–Oct already had night+morning plates. Generated + wired Nov 9 Scorpio, Nov 24 Gemini, Dec 9 Sagittarius (night media 27513/27514/27517 · morning 27512/27515/27516). Gallery: `assets/celestial-2026/CELESTIAL-DUAL-CADENCE.html`. Fall evening batch 10/15 parked in `assets/sg-night-fall-batch-2026-09/meta.json`.
+
 ## 2026-09-06 — S1E9 scheduled + Sep 25 morning locked
 
 S1E9 media **27385**: all brand platforms **Wed Sep 16 6:00 PM CT** — FB `6a9d9b49655de817d79c0045` · IG `6a9d9b5a5fe11bec973cf59a` · TT `6a9d9b5b6dbd3c283b2fe44e` · YT `6a9d9b5d6dbd3c283b2fe4a2` (@sacredgroundchicagoland). Caption from S1E9-SOCIAL-GRAB.
