@@ -1147,12 +1147,13 @@
       "generation_source": "mlimg_edit_2026-09-28_janel_off",
       "banned_pil_cleared": true,
       "media_id": 27500,
-      "note": "Janel moved off Sep 28 → Sep 30 · Lisa Maria only 12–5 · Voted #1",
-      "locked_until_founder_review": true,
+      "note": "Founder-approved 2026-09-06: Lisa Maria only (Janel moved to Sep 30) · Voted #1 · do not remake",
+      "locked_until_founder_review": false,
       "prior_url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Keep-the-exact-same-ornate-aut-1788710397.jpg",
       "prior_media_id": 27488,
-      "founder_approved": false,
-      "updated_at": "2026-09-06T17:11:37Z"
+      "founder_approved": true,
+      "updated_at": "2026-09-06T17:15:50Z",
+      "do_not_remake": true
     },
     "2026-09-29": {
       "label": "Free Community Meditation",
@@ -1196,12 +1197,13 @@
       "generation_source": "mlimg_edit_2026-09-30_janel_on",
       "banned_pil_cleared": true,
       "media_id": 27499,
-      "note": "Janel moved here from Sep 28 · Divine Insight 1–5 + Frequency Reset 3–8 · Voted #1",
-      "locked_until_founder_review": true,
+      "note": "Founder-approved 2026-09-06: Janel Divine Insight 1–5 + Frequency Reset 3–8 · Voted #1 · do not remake",
+      "locked_until_founder_review": false,
       "prior_url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Keep-the-exact-same-cabinet-of-1788710728.jpg",
       "prior_media_id": 27493,
-      "founder_approved": false,
-      "updated_at": "2026-09-06T17:11:37Z"
+      "founder_approved": true,
+      "updated_at": "2026-09-06T17:15:50Z",
+      "do_not_remake": true
     }
   },
   "template": {
