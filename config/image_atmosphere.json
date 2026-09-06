@@ -163,7 +163,9 @@
         "sg_identity": "pass",
         "sg_anchor": "SACRED GROUND neon wooden sign + logo under aurora",
         "snow": true,
-        "seasons_allowed": ["winter"],
+        "seasons_allowed": [
+          "winter"
+        ],
         "season_note": "Founder Sep 5 2026 — snow village shipped week_ahead Sep 4; winter-only going forward (not Sep/fall in Chicago)."
       },
       {
@@ -221,7 +223,9 @@
         "replaces": "crystal_mountain",
         "wp_media_id": 25929,
         "snow": true,
-        "seasons_allowed": ["winter"]
+        "seasons_allowed": [
+          "winter"
+        ]
       },
       {
         "id": "milky_way_v2",
@@ -245,7 +249,9 @@
         "replaces": "moonlit_lake",
         "wp_media_id": 25932,
         "snow": true,
-        "seasons_allowed": ["winter"]
+        "seasons_allowed": [
+          "winter"
+        ]
       },
       {
         "id": "firefly_meadow_v2",
@@ -310,7 +316,11 @@
         "generated_at": "2026-08-16T23:00:44-05:00",
         "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-late-summer-sky-letters-logo-v2.png",
         "remade_at": "2026-08-16T23:32:00-05:00",
-        "remake_note": "remake-v4 from scratch Aug 16 — no logo-v2 paste; reserved plate + real brand sun"
+        "remake_note": "remake-v4 from scratch Aug 16 — no logo-v2 paste; reserved plate + real brand sun",
+        "seasons_allowed": [
+          "summer"
+        ],
+        "season_note": "Founder 2026-09-06 — late-summer looks retired from fall; prefer fall_store_* continuity plates."
       },
       {
         "id": "late_summer_store_porch",
@@ -331,7 +341,11 @@
         "remake_note": "remake-v4 from scratch Aug 16 — no logo-v2 paste; reserved plate + real brand sun",
         "founder_rejected": true,
         "founder_rejected_at": "2026-08-18T12:12:00-05:00",
-        "reject_reason": "Founder Tue Aug 18 2026 ~12:12pm CT: not a fan — remove from night rotation."
+        "reject_reason": "Founder Tue Aug 18 2026 ~12:12pm CT: not a fan — remove from night rotation.",
+        "seasons_allowed": [
+          "summer"
+        ],
+        "season_note": "Founder 2026-09-06 — late-summer looks retired from fall; prefer fall_store_* continuity plates."
       },
       {
         "id": "late_summer_crystal_window",
@@ -349,7 +363,11 @@
         "generated_at": "2026-08-16T23:00:44-05:00",
         "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-late-summer-crystal-window-logo-v2.png",
         "remade_at": "2026-08-16T23:32:00-05:00",
-        "remake_note": "remake-v4 from scratch Aug 16 — no logo-v2 paste; reserved plate + real brand sun"
+        "remake_note": "remake-v4 from scratch Aug 16 — no logo-v2 paste; reserved plate + real brand sun",
+        "seasons_allowed": [
+          "summer"
+        ],
+        "season_note": "Founder 2026-09-06 — late-summer looks retired from fall; prefer fall_store_* continuity plates."
       },
       {
         "id": "late_summer_cicada_porch",
@@ -370,7 +388,11 @@
         "remake_note": "remake-v4 from scratch Aug 16 — no logo-v2 paste; reserved plate + real brand sun",
         "founder_rejected": true,
         "founder_rejected_at": "2026-08-18T12:12:00-05:00",
-        "reject_reason": "Founder Tue Aug 18 2026 ~12:12pm CT: not a fan — remove from night rotation."
+        "reject_reason": "Founder Tue Aug 18 2026 ~12:12pm CT: not a fan — remove from night rotation.",
+        "seasons_allowed": [
+          "summer"
+        ],
+        "season_note": "Founder 2026-09-06 — late-summer looks retired from fall; prefer fall_store_* continuity plates."
       },
       {
         "id": "late_summer_milkyway_storefront",
@@ -388,7 +410,11 @@
         "generated_at": "2026-08-16T23:00:44-05:00",
         "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-late-summer-milkyway-storefront-logo-v2.png",
         "remade_at": "2026-08-16T23:32:00-05:00",
-        "remake_note": "remake-v4 from scratch Aug 16 — no logo-v2 paste; reserved plate + real brand sun"
+        "remake_note": "remake-v4 from scratch Aug 16 — no logo-v2 paste; reserved plate + real brand sun",
+        "seasons_allowed": [
+          "summer"
+        ],
+        "season_note": "Founder 2026-09-06 — late-summer looks retired from fall; prefer fall_store_* continuity plates."
       },
       {
         "id": "late_summer_candlelit_windows",
@@ -407,7 +433,11 @@
         "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-late-summer-candlelit-windows-logo-v2.png",
         "note": "Founder liked plate; swapped bottom-left made-up sun for REAL brand logo only.",
         "remade_at": "2026-08-16T23:32:00-05:00",
-        "remake_note": "remake-v4 from scratch Aug 16 — no logo-v2 paste; reserved plate + real brand sun"
+        "remake_note": "remake-v4 from scratch Aug 16 — no logo-v2 paste; reserved plate + real brand sun",
+        "seasons_allowed": [
+          "summer"
+        ],
+        "season_note": "Founder 2026-09-06 — late-summer looks retired from fall; prefer fall_store_* continuity plates."
       },
       {
         "id": "late_summer_warm_rain_puddles",
@@ -425,7 +455,11 @@
         "generated_at": "2026-08-16T23:00:44-05:00",
         "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-late-summer-warm-rain-puddles-logo-v2.png",
         "remade_at": "2026-08-16T23:32:00-05:00",
-        "remake_note": "remake-v4 from scratch Aug 16 — no logo-v2 paste; reserved plate + real brand sun"
+        "remake_note": "remake-v4 from scratch Aug 16 — no logo-v2 paste; reserved plate + real brand sun",
+        "seasons_allowed": [
+          "summer"
+        ],
+        "season_note": "Founder 2026-09-06 — late-summer looks retired from fall; prefer fall_store_* continuity plates."
       },
       {
         "id": "late_summer_garden_lantern",
@@ -443,7 +477,366 @@
         "generated_at": "2026-08-16T23:00:44-05:00",
         "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-late-summer-garden-lantern-logo-v2.png",
         "remade_at": "2026-08-16T23:32:00-05:00",
-        "remake_note": "remake-v4 from scratch Aug 16 — no logo-v2 paste; reserved plate + real brand sun"
+        "remake_note": "remake-v4 from scratch Aug 16 — no logo-v2 paste; reserved plate + real brand sun",
+        "seasons_allowed": [
+          "summer"
+        ],
+        "season_note": "Founder 2026-09-06 — late-summer looks retired from fall; prefer fall_store_* continuity plates."
+      },
+      {
+        "id": "fall_store_maple_leaves",
+        "label": "Maple leaves around locked SG storefront",
+        "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-week-ahead-1788738273.jpg",
+        "local": "assets/sg-night-creative-fall-store-maple-leaves.png",
+        "wp_media_id": 27532,
+        "sg_identity": "pass",
+        "sg_anchor": "lit Sacred Ground storefront (eggplant awning) — continuity lock",
+        "storefront_continuity": true,
+        "seasons_allowed": [
+          "fall"
+        ],
+        "logo_baked": true,
+        "pride_baked_in": true,
+        "active": true,
+        "batch": "fall_store_continuity_2026-09-06",
+        "note": "Founder 2026-09-06 — same real SG store look as celestial keepers; sky/props vary only"
+      },
+      {
+        "id": "fall_store_harvest_moonlight",
+        "label": "Harvest moonlight on locked SG storefront",
+        "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-week-ahead-1788738272.jpg",
+        "local": "assets/sg-night-creative-fall-store-harvest-moonlight.png",
+        "wp_media_id": 27531,
+        "sg_identity": "pass",
+        "sg_anchor": "lit Sacred Ground storefront (eggplant awning) — continuity lock",
+        "storefront_continuity": true,
+        "seasons_allowed": [
+          "fall"
+        ],
+        "logo_baked": true,
+        "pride_baked_in": true,
+        "active": true,
+        "batch": "fall_store_continuity_2026-09-06",
+        "note": "Founder 2026-09-06 — same real SG store look as celestial keepers; sky/props vary only"
+      },
+      {
+        "id": "fall_store_amber_lanterns",
+        "label": "Amber porch lanterns at locked SG storefront",
+        "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-week-ahead-1788738276.jpg",
+        "local": "assets/sg-night-creative-fall-store-amber-lanterns.png",
+        "wp_media_id": 27533,
+        "sg_identity": "pass",
+        "sg_anchor": "lit Sacred Ground storefront (eggplant awning) — continuity lock",
+        "storefront_continuity": true,
+        "seasons_allowed": [
+          "fall"
+        ],
+        "logo_baked": true,
+        "pride_baked_in": true,
+        "active": true,
+        "batch": "fall_store_continuity_2026-09-06",
+        "note": "Founder 2026-09-06 — same real SG store look as celestial keepers; sky/props vary only"
+      },
+      {
+        "id": "fall_store_crystal_window",
+        "label": "Crystal window glow at locked SG storefront",
+        "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-week-ahead-1788738277.jpg",
+        "local": "assets/sg-night-creative-fall-store-crystal-window.png",
+        "wp_media_id": 27534,
+        "sg_identity": "pass",
+        "sg_anchor": "lit Sacred Ground storefront (eggplant awning) — continuity lock",
+        "storefront_continuity": true,
+        "seasons_allowed": [
+          "fall"
+        ],
+        "logo_baked": true,
+        "pride_baked_in": true,
+        "active": true,
+        "batch": "fall_store_continuity_2026-09-06",
+        "note": "Founder 2026-09-06 — same real SG store look as celestial keepers; sky/props vary only"
+      },
+      {
+        "id": "fall_store_foggy_neon",
+        "label": "Foggy neon around locked SG storefront",
+        "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-week-ahead-1788738287.jpg",
+        "local": "assets/sg-night-creative-fall-store-foggy-neon.png",
+        "wp_media_id": 27535,
+        "sg_identity": "pass",
+        "sg_anchor": "lit Sacred Ground storefront (eggplant awning) — continuity lock",
+        "storefront_continuity": true,
+        "seasons_allowed": [
+          "fall"
+        ],
+        "logo_baked": true,
+        "pride_baked_in": true,
+        "active": true,
+        "batch": "fall_store_continuity_2026-09-06",
+        "note": "Founder 2026-09-06 — same real SG store look as celestial keepers; sky/props vary only"
+      },
+      {
+        "id": "fall_store_bonfire_street",
+        "label": "Bonfire glow with locked SG storefront",
+        "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-week-ahead-1788738321.jpg",
+        "local": "assets/sg-night-creative-fall-store-bonfire-street.png",
+        "wp_media_id": 27536,
+        "sg_identity": "pass",
+        "sg_anchor": "lit Sacred Ground storefront (eggplant awning) — continuity lock",
+        "storefront_continuity": true,
+        "seasons_allowed": [
+          "fall"
+        ],
+        "logo_baked": true,
+        "pride_baked_in": true,
+        "active": true,
+        "batch": "fall_store_continuity_2026-09-06",
+        "note": "Founder 2026-09-06 — same real SG store look as celestial keepers; sky/props vary only"
+      },
+      {
+        "id": "fall_store_crow_awning",
+        "label": "Crow on awning of locked SG storefront",
+        "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-week-ahead-1788738322.jpg",
+        "local": "assets/sg-night-creative-fall-store-crow-awning.png",
+        "wp_media_id": 27537,
+        "sg_identity": "pass",
+        "sg_anchor": "lit Sacred Ground storefront (eggplant awning) — continuity lock",
+        "storefront_continuity": true,
+        "seasons_allowed": [
+          "fall"
+        ],
+        "logo_baked": true,
+        "pride_baked_in": true,
+        "active": true,
+        "batch": "fall_store_continuity_2026-09-06",
+        "note": "Founder 2026-09-06 — same real SG store look as celestial keepers; sky/props vary only"
+      },
+      {
+        "id": "fall_store_leaf_confetti",
+        "label": "Leaf confetti over locked SG storefront",
+        "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-week-ahead-1788738327-1.jpg",
+        "local": "assets/sg-night-creative-fall-store-leaf-confetti.png",
+        "wp_media_id": 27539,
+        "sg_identity": "pass",
+        "sg_anchor": "lit Sacred Ground storefront (eggplant awning) — continuity lock",
+        "storefront_continuity": true,
+        "seasons_allowed": [
+          "fall"
+        ],
+        "logo_baked": true,
+        "pride_baked_in": true,
+        "active": true,
+        "batch": "fall_store_continuity_2026-09-06",
+        "note": "Founder 2026-09-06 — same real SG store look as celestial keepers; sky/props vary only"
+      },
+      {
+        "id": "fall_store_rain_puddles",
+        "label": "Rain puddles leading to locked SG storefront",
+        "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-week-ahead-1788738327.jpg",
+        "local": "assets/sg-night-creative-fall-store-rain-puddles.png",
+        "wp_media_id": 27538,
+        "sg_identity": "pass",
+        "sg_anchor": "lit Sacred Ground storefront (eggplant awning) — continuity lock",
+        "storefront_continuity": true,
+        "seasons_allowed": [
+          "fall"
+        ],
+        "logo_baked": true,
+        "pride_baked_in": true,
+        "active": true,
+        "batch": "fall_store_continuity_2026-09-06",
+        "note": "Founder 2026-09-06 — same real SG store look as celestial keepers; sky/props vary only"
+      },
+      {
+        "id": "fall_store_candle_spill",
+        "label": "Candle spill sidewalk at locked SG storefront",
+        "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-week-ahead-1788738327-2.jpg",
+        "local": "assets/sg-night-creative-fall-store-candle-spill.png",
+        "wp_media_id": 27540,
+        "sg_identity": "pass",
+        "sg_anchor": "lit Sacred Ground storefront (eggplant awning) — continuity lock",
+        "storefront_continuity": true,
+        "seasons_allowed": [
+          "fall"
+        ],
+        "logo_baked": true,
+        "pride_baked_in": true,
+        "active": true,
+        "batch": "fall_store_continuity_2026-09-06",
+        "note": "Founder 2026-09-06 — same real SG store look as celestial keepers; sky/props vary only"
+      },
+      {
+        "id": "fall_store_orion_rising",
+        "label": "Orion rising over locked SG storefront",
+        "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-week-ahead-1788738378.jpg",
+        "local": "assets/sg-night-creative-fall-store-orion-rising.png",
+        "wp_media_id": 27542,
+        "sg_identity": "pass",
+        "sg_anchor": "lit Sacred Ground storefront (eggplant awning) — continuity lock",
+        "storefront_continuity": true,
+        "seasons_allowed": [
+          "fall"
+        ],
+        "logo_baked": true,
+        "pride_baked_in": true,
+        "active": true,
+        "batch": "fall_store_continuity_2026-09-06",
+        "note": "Founder 2026-09-06 — same real SG store look as celestial keepers; sky/props vary only"
+      },
+      {
+        "id": "fall_store_pumpkin_porch",
+        "label": "Soft pumpkin porch at locked SG storefront",
+        "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-week-ahead-1788738361.jpg",
+        "local": "assets/sg-night-creative-fall-store-pumpkin-porch.png",
+        "wp_media_id": 27541,
+        "sg_identity": "pass",
+        "sg_anchor": "lit Sacred Ground storefront (eggplant awning) — continuity lock",
+        "storefront_continuity": true,
+        "seasons_allowed": [
+          "fall"
+        ],
+        "logo_baked": true,
+        "pride_baked_in": true,
+        "active": true,
+        "batch": "fall_store_continuity_2026-09-06",
+        "note": "Founder 2026-09-06 — same real SG store look as celestial keepers; sky/props vary only"
+      },
+      {
+        "id": "fall_store_teal_copper_aurora",
+        "label": "Teal copper aurora over locked SG storefront",
+        "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-week-ahead-1788738396.jpg",
+        "local": "assets/sg-night-creative-fall-store-teal-copper-aurora.png",
+        "wp_media_id": 27544,
+        "sg_identity": "pass",
+        "sg_anchor": "lit Sacred Ground storefront (eggplant awning) — continuity lock",
+        "storefront_continuity": true,
+        "seasons_allowed": [
+          "fall"
+        ],
+        "logo_baked": true,
+        "pride_baked_in": true,
+        "active": true,
+        "batch": "fall_store_continuity_2026-09-06",
+        "note": "Founder 2026-09-06 — same real SG store look as celestial keepers; sky/props vary only"
+      },
+      {
+        "id": "fall_store_star_trails",
+        "label": "Star trails over locked SG storefront",
+        "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-week-ahead-1788738388.jpg",
+        "local": "assets/sg-night-creative-fall-store-star-trails.png",
+        "wp_media_id": 27543,
+        "sg_identity": "pass",
+        "sg_anchor": "lit Sacred Ground storefront (eggplant awning) — continuity lock",
+        "storefront_continuity": true,
+        "seasons_allowed": [
+          "fall"
+        ],
+        "logo_baked": true,
+        "pride_baked_in": true,
+        "active": true,
+        "batch": "fall_store_continuity_2026-09-06",
+        "note": "Founder 2026-09-06 — same real SG store look as celestial keepers; sky/props vary only"
+      },
+      {
+        "id": "fall_store_cozy_upstairs",
+        "label": "Cozy upstairs glow at locked SG storefront",
+        "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-week-ahead-1788738426.jpg",
+        "local": "assets/sg-night-creative-fall-store-cozy-upstairs.png",
+        "wp_media_id": 27545,
+        "sg_identity": "pass",
+        "sg_anchor": "lit Sacred Ground storefront (eggplant awning) — continuity lock",
+        "storefront_continuity": true,
+        "seasons_allowed": [
+          "fall"
+        ],
+        "logo_baked": true,
+        "pride_baked_in": true,
+        "active": true,
+        "batch": "fall_store_continuity_2026-09-06",
+        "note": "Founder 2026-09-06 — same real SG store look as celestial keepers; sky/props vary only"
+      },
+      {
+        "id": "fall_store_oak_sidewalk",
+        "label": "Oak leaves and acorns at locked SG storefront",
+        "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-week-ahead-1788738544.jpg",
+        "local": "assets/sg-night-creative-fall-store-oak-sidewalk.png",
+        "wp_media_id": 27549,
+        "sg_identity": "pass",
+        "sg_anchor": "lit Sacred Ground storefront (eggplant awning) — continuity lock",
+        "storefront_continuity": true,
+        "seasons_allowed": [
+          "fall"
+        ],
+        "logo_baked": true,
+        "pride_baked_in": true,
+        "active": true,
+        "batch": "fall_store_continuity_2026-09-06"
+      },
+      {
+        "id": "fall_store_blue_hour",
+        "label": "Blue hour behind locked SG storefront",
+        "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-week-ahead-1788738515.jpg",
+        "local": "assets/sg-night-creative-fall-store-blue-hour.png",
+        "wp_media_id": 27546,
+        "sg_identity": "pass",
+        "sg_anchor": "lit Sacred Ground storefront (eggplant awning) — continuity lock",
+        "storefront_continuity": true,
+        "seasons_allowed": [
+          "fall"
+        ],
+        "logo_baked": true,
+        "pride_baked_in": true,
+        "active": true,
+        "batch": "fall_store_continuity_2026-09-06"
+      },
+      {
+        "id": "fall_store_fairy_lights",
+        "label": "Fairy lights path to locked SG storefront",
+        "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-week-ahead-1788738516.jpg",
+        "local": "assets/sg-night-creative-fall-store-fairy-lights.png",
+        "wp_media_id": 27547,
+        "sg_identity": "pass",
+        "sg_anchor": "lit Sacred Ground storefront (eggplant awning) — continuity lock",
+        "storefront_continuity": true,
+        "seasons_allowed": [
+          "fall"
+        ],
+        "logo_baked": true,
+        "pride_baked_in": true,
+        "active": true,
+        "batch": "fall_store_continuity_2026-09-06"
+      },
+      {
+        "id": "fall_store_frost_sparkle",
+        "label": "Frost sparkle leaves at locked SG storefront",
+        "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-week-ahead-1788738530.jpg",
+        "local": "assets/sg-night-creative-fall-store-frost-sparkle.png",
+        "wp_media_id": 27548,
+        "sg_identity": "pass",
+        "sg_anchor": "lit Sacred Ground storefront (eggplant awning) — continuity lock",
+        "storefront_continuity": true,
+        "seasons_allowed": [
+          "fall"
+        ],
+        "logo_baked": true,
+        "pride_baked_in": true,
+        "active": true,
+        "batch": "fall_store_continuity_2026-09-06"
+      },
+      {
+        "id": "fall_store_crescent_venus",
+        "label": "Crescent and Venus over locked SG storefront",
+        "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-week-ahead-1788738550.jpg",
+        "local": "assets/sg-night-creative-fall-store-crescent-venus.png",
+        "wp_media_id": 27550,
+        "sg_identity": "pass",
+        "sg_anchor": "lit Sacred Ground storefront (eggplant awning) — continuity lock",
+        "storefront_continuity": true,
+        "seasons_allowed": [
+          "fall"
+        ],
+        "logo_baked": true,
+        "pride_baked_in": true,
+        "active": true,
+        "batch": "fall_store_continuity_2026-09-06"
       }
     ],
     "events_in_image": false,
@@ -622,7 +1015,13 @@
       "2026-08-23": "late_summer_candlelit_windows",
       "2026-08-24": "late_summer_milkyway_storefront"
     },
-    "founder_night_pins_note": "Aug 18 2026 Founder: rejected late_summer_store_porch (Fri) + late_summer_cicada_porch (Sun). Pinned rest of week to prior review lineup; Fri→warm_rain_puddles, Sun→candlelit_windows."
+    "founder_night_pins_note": "Aug 18 2026 Founder: rejected late_summer_store_porch (Fri) + late_summer_cicada_porch (Sun). Pinned rest of week to prior review lineup; Fri→warm_rain_puddles, Sun→candlelit_windows.",
+    "fall_storefront_continuity": {
+      "updated": "2026-09-06T23:47:56Z",
+      "rule": "Sep/Oct week_ahead prefer fall_store_* plates with locked real Sacred Ground storefront; late_summer_* summer-only.",
+      "count": 20,
+      "still_needed_for_never_reuse_through_oct": "about 28 more"
+    }
   },
   "_meta_remake_v4": {
     "at": "2026-08-16T23:32:00-05:00",

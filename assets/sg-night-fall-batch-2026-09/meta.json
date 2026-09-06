@@ -1,62 +1,130 @@
 {
-  "note": "Fall evening creative batch started 2026-09-06 \u2014 10/15 generated before celestial priority; resume remaining 5 after Founder review of celestial.",
-  "generated": [
+  "updated": "2026-09-06T23:47:56Z",
+  "storefront_lock_ref_media_id": 27519,
+  "plates": [
     {
-      "id": "fall_maple_alley",
-      "media_id": 27504,
-      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-crystal-shop-NIG-1788731099.jpg"
+      "id": "fall_store_maple_leaves",
+      "media_id": 27532,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-week-ahead-1788738273.jpg",
+      "label": "Maple leaves around locked SG storefront"
     },
     {
-      "id": "fall_harvest_moon",
-      "media_id": 27502,
-      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-social-pho-1788731097.jpg"
+      "id": "fall_store_harvest_moonlight",
+      "media_id": 27531,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-week-ahead-1788738272.jpg",
+      "label": "Harvest moonlight on locked SG storefront"
     },
     {
-      "id": "fall_amber_lanterns",
-      "media_id": 27503,
-      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-square-pho-1788731098.jpg"
+      "id": "fall_store_amber_lanterns",
+      "media_id": 27533,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-week-ahead-1788738276.jpg",
+      "label": "Amber porch lanterns at locked SG storefront"
     },
     {
-      "id": "fall_crystal_window",
-      "media_id": 27505,
-      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-square.-Lo-1788731101.jpg"
+      "id": "fall_store_crystal_window",
+      "media_id": 27534,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-week-ahead-1788738277.jpg",
+      "label": "Crystal window glow at locked SG storefront"
     },
     {
-      "id": "fall_foggy_neon",
-      "media_id": 27506,
-      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-square.-FO-1788731101.jpg"
+      "id": "fall_store_foggy_neon",
+      "media_id": 27535,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-week-ahead-1788738287.jpg",
+      "label": "Foggy neon around locked SG storefront"
     },
     {
-      "id": "fall_bonfire_street",
-      "media_id": 27510,
-      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-square.-Di-1788731154.jpg"
+      "id": "fall_store_bonfire_street",
+      "media_id": 27536,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-week-ahead-1788738321.jpg",
+      "label": "Bonfire glow with locked SG storefront"
     },
     {
-      "id": "fall_crow_awning",
-      "media_id": 27509,
-      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-square.-A-1788731144.jpg"
+      "id": "fall_store_crow_awning",
+      "media_id": 27537,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-week-ahead-1788738322.jpg",
+      "label": "Crow on awning of locked SG storefront"
     },
     {
-      "id": "fall_leaf_confetti",
-      "media_id": 27507,
-      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-square.-Ma-1788731139.jpg"
+      "id": "fall_store_leaf_confetti",
+      "media_id": 27539,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-week-ahead-1788738327-1.jpg",
+      "label": "Leaf confetti over locked SG storefront"
     },
     {
-      "id": "fall_rain_puddles",
-      "media_id": 27508,
-      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-square.-FA-1788731142.jpg"
+      "id": "fall_store_rain_puddles",
+      "media_id": 27538,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-week-ahead-1788738327.jpg",
+      "label": "Rain puddles leading to locked SG storefront"
     },
     {
-      "id": "fall_candle_spill",
-      "media_id": 27511,
-      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-square.-Wa-1788731175.jpg"
+      "id": "fall_store_candle_spill",
+      "media_id": 27540,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-week-ahead-1788738327-2.jpg",
+      "label": "Candle spill sidewalk at locked SG storefront"
+    },
+    {
+      "id": "fall_store_orion_rising",
+      "media_id": 27542,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-week-ahead-1788738378.jpg",
+      "label": "Orion rising over locked SG storefront"
+    },
+    {
+      "id": "fall_store_pumpkin_porch",
+      "media_id": 27541,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-week-ahead-1788738361.jpg",
+      "label": "Soft pumpkin porch at locked SG storefront"
+    },
+    {
+      "id": "fall_store_teal_copper_aurora",
+      "media_id": 27544,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-week-ahead-1788738396.jpg",
+      "label": "Teal copper aurora over locked SG storefront"
+    },
+    {
+      "id": "fall_store_star_trails",
+      "media_id": 27543,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-week-ahead-1788738388.jpg",
+      "label": "Star trails over locked SG storefront"
+    },
+    {
+      "id": "fall_store_cozy_upstairs",
+      "media_id": 27545,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-week-ahead-1788738426.jpg",
+      "label": "Cozy upstairs glow at locked SG storefront"
+    },
+    {
+      "id": "fall_store_oak_sidewalk",
+      "media_id": 27549,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-week-ahead-1788738544.jpg",
+      "label": "Oak leaves and acorns at locked SG storefront"
+    },
+    {
+      "id": "fall_store_blue_hour",
+      "media_id": 27546,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-week-ahead-1788738515.jpg",
+      "label": "Blue hour behind locked SG storefront"
+    },
+    {
+      "id": "fall_store_fairy_lights",
+      "media_id": 27547,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-week-ahead-1788738516.jpg",
+      "label": "Fairy lights path to locked SG storefront"
+    },
+    {
+      "id": "fall_store_frost_sparkle",
+      "media_id": 27548,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-week-ahead-1788738530.jpg",
+      "label": "Frost sparkle leaves at locked SG storefront"
+    },
+    {
+      "id": "fall_store_crescent_venus",
+      "media_id": 27550,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-NIGHT-week-ahead-1788738550.jpg",
+      "label": "Crescent and Venus over locked SG storefront"
     }
   ],
-  "remaining": [
-    "orion_rising_filler",
-    "pumpkin_porch_soft",
-    "teal_copper_aurora",
-    "star_trail_neon",
-    "cozy_upstairs_windows"
-  ]
+  "taurus_celestial": {
+    "night": 27530,
+    "morning": 27529
+  }
 }

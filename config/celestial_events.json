@@ -348,41 +348,43 @@
         "look": "Former Taurus morning plate now used as evening — store + moon",
         "sg_anchor": "lit eggplant-awning Sacred Ground storefront",
         "urls": [
-          "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-10-25-full-moon-taurus-6.png"
+          "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-CELESTIAL-NIGHT-1788738231.jpg"
         ],
         "local": [
           "assets/celestial-2026/sg-night-celestial-2026-10-25-full-moon-taurus.png"
         ],
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-10-25-full-moon-taurus-6.png",
-        "wp_media_id": 26063,
+        "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-CELESTIAL-NIGHT-1788738231.jpg",
+        "wp_media_id": 27530,
         "sg_identity": "pass",
         "logo_baked": true,
-        "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-10-25-full-moon-taurus-2.png",
-        "prior_media_id": 26024,
+        "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-10-25-full-moon-taurus-6.png",
+        "prior_media_id": 26063,
         "status": "ready",
-        "note": "Founder 2026-09-06: former morning-6 promoted to evening plate"
+        "note": "Founder 2026-09-06 remake — locked storefront continuity",
+        "pride_baked_in": true
       },
       "morning": {
         "look": "misty prairie harvest dawn under natural Taurus full moon — Sacred Ground shop along the path (single cohesive scene)",
         "sg_anchor": "Sacred Ground eggplant-awning storefront in misty prairie path (no logo-in-moon)",
         "urls": [
-          "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-CELESTIAL-MORNIN-1788732247.jpg"
+          "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-CELESTIAL-MORNIN-1788738232.jpg"
         ],
         "local": [
           "assets/celestial-2026/sg-morning-celestial-2026-10-25-full-moon-taurus.png"
         ],
         "prebranded": true,
-        "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-CELESTIAL-MORNIN-1788732247.jpg",
-        "wp_media_id": 27524,
+        "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-CELESTIAL-MORNIN-1788738232.jpg",
+        "wp_media_id": 27529,
         "sg_identity": "pass",
         "logo_baked": true,
         "notes": "2026-08-11: Founder rejected -5 (shop cutout + logo jammed in moon). Trashed to assets/celestial-2026/_trash/. Regenerated -6 prairie mist single-generation plate; identity via storefront awning; natural moon.",
-        "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-10-25-full-moon-taurus-6.png",
-        "prior_media_id": 26063,
+        "prior_url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-CELESTIAL-MORNIN-1788732247.jpg",
+        "prior_media_id": 27524,
         "pride_baked_in": true,
-        "status": "ready"
+        "status": "ready",
+        "note": "Founder 2026-09-06 remake — locked storefront continuity"
       },
-      "updated_at": "2026-09-06T22:05:48Z",
+      "updated_at": "2026-09-06T23:47:56Z",
       "founder_review_2026_09_06": "storefront remakes in progress"
     },
     "samhain_2026": {
