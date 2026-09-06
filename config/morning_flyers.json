@@ -1054,11 +1054,14 @@
     "2026-09-25": {
       "label": "Browse crystals, jewelry & gifts",
       "covers": [
+        "Keeper of the Cards: Robert",
+        "Vibrational Chakra Healing With Kate",
+        "Sacred Creations",
         "facebook",
         "instagram"
       ],
       "local": "assets/sg-morning-flyer-2026-09-25.jpg",
-      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-flyer-sq-1788708944.jpg",
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Keep-the-exact-same-department-1788710711.jpg",
       "prebranded": true,
       "template": "artistic_hero",
       "visual_style": "surprise_department_window",
@@ -1066,22 +1069,25 @@
       "empty_day": true,
       "generation_source": "mlimg_remake_2026-09-25_2026-09-05",
       "banned_pil_cleared": true,
-      "media_id": 27483,
-      "note": "Department window \u00b7 clean shop inventory (crystals/jewelry/candles/team) \u00b7 Voted #1",
+      "media_id": 27492,
+      "note": "Department window \u00b7 TEC Robert/Kate/Sacred Creations \u00b7 Vibrational spelling fixed \u00b7 Voted #1",
       "locked_until_founder_review": true,
-      "prior_url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Keep-the-exact-same-department-1788708758.jpg",
-      "prior_media_id": 27482,
+      "prior_url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Keep-the-exact-same-department-1788710395.jpg",
+      "prior_media_id": 27486,
       "founder_approved": false,
-      "updated_at": "2026-09-06T15:35:59Z"
+      "updated_at": "2026-09-06T16:05:50Z"
     },
     "2026-09-26": {
       "label": "Full Moon in Aries \u00b7 visit day",
       "covers": [
+        "Shaman Medium Melissa",
+        "Tina's Tarot & Rune Sessions",
+        "Keeper of the Cards: Robert",
         "facebook",
         "instagram"
       ],
       "local": "assets/sg-morning-flyer-2026-09-26.jpg",
-      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Keep-the-exact-same-fortune-co-1788708560.jpg",
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Keep-the-exact-same-fortune-co-1788710396.jpg",
       "prebranded": true,
       "template": "thursday-style",
       "visual_style": "surprise_fortune_cookie",
@@ -1089,22 +1095,25 @@
       "empty_day": true,
       "generation_source": "mlimg_remake_2026-09-26_2026-09-05",
       "banned_pil_cleared": true,
-      "media_id": 27478,
-      "note": "Fortune cookie kept \u00b7 Full Moon + shop inventory \u00b7 Voted #1",
+      "media_id": 27487,
+      "note": "Fortune cookie Full Moon \u00b7 TEC: Melissa / Tina / Robert \u00b7 Voted #1",
       "locked_until_founder_review": true,
-      "prior_url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-social-f-1788629036.jpg",
-      "prior_media_id": 27417,
+      "prior_url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Keep-the-exact-same-fortune-co-1788708560.jpg",
+      "prior_media_id": 27478,
       "founder_approved": false,
-      "updated_at": "2026-09-06T15:30:50Z"
+      "updated_at": "2026-09-06T16:03:41Z"
     },
     "2026-09-27": {
       "label": "Crystals \u00b7 jewelry \u00b7 quiet wonder",
       "covers": [
+        "Integrated Energy Healing with Mary",
+        "Oracle of the Stones: Diane",
+        "Divine Space Manifestation",
         "facebook",
         "instagram"
       ],
       "local": "assets/sg-morning-flyer-2026-09-27.jpg",
-      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Keep-the-exact-same-magical-se-1788708507.jpg",
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Keep-the-exact-same-magical-se-1788710431.jpg",
       "prebranded": true,
       "template": "artistic_hero",
       "visual_style": "surprise_where_landed",
@@ -1112,22 +1121,24 @@
       "empty_day": true,
       "generation_source": "mlimg_sep27_colorful_seashell_where_landed",
       "banned_pil_cleared": true,
-      "media_id": 27477,
-      "note": "Seashell kept \u00b7 crystals/jewelry/books/incense \u00b7 Voted #1",
+      "media_id": 27489,
+      "note": "Seashell \u00b7 TEC: Mary / Diane / Divine Space \u00b7 Voted #1",
       "locked_until_founder_review": true,
-      "prior_url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-flyer-sq-1788634271.jpg",
-      "prior_media_id": 27448,
+      "prior_url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Keep-the-exact-same-magical-se-1788708507.jpg",
+      "prior_media_id": 27477,
       "founder_approved": false,
-      "updated_at": "2026-09-06T15:30:50Z"
+      "updated_at": "2026-09-06T16:03:41Z"
     },
     "2026-09-28": {
       "label": "The shop is open \u2014 come say hi",
       "covers": [
+        "Lisa Maria Intuitive Tarot",
+        "Divine Insight Sessions with Janel",
         "facebook",
         "instagram"
       ],
       "local": "assets/sg-morning-flyer-2026-09-28.jpg",
-      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Keep-the-exact-same-ornate-aut-1788708600.jpg",
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Keep-the-exact-same-ornate-aut-1788710397.jpg",
       "prebranded": true,
       "template": "thursday-style",
       "visual_style": "surprise_newspaper_daily",
@@ -1135,43 +1146,47 @@
       "empty_day": true,
       "generation_source": "mlimg_remake_2026-09-28_2026-09-05",
       "banned_pil_cleared": true,
-      "media_id": 27479,
-      "note": "Newspaper autumn kept \u00b7 IN THE SHOP TODAY inventory \u00b7 Voted #1",
+      "media_id": 27488,
+      "note": "Newspaper autumn \u00b7 TEC: Lisa Maria / Janel \u00b7 Voted #1",
       "locked_until_founder_review": true,
-      "prior_url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-social-f-1788629164.jpg",
-      "prior_media_id": 27419,
+      "prior_url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Keep-the-exact-same-ornate-aut-1788708600.jpg",
+      "prior_media_id": 27479,
       "founder_approved": false,
-      "updated_at": "2026-09-06T15:30:50Z"
+      "updated_at": "2026-09-06T16:03:41Z"
     },
     "2026-09-29": {
       "label": "Free Community Meditation",
       "covers": [
+        "Amber Massage",
+        "Tina's Intuitive Tarot",
+        "Free Community Meditation",
         "facebook",
         "instagram"
       ],
       "local": "assets/sg-morning-flyer-2026-09-29.jpg",
-      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Keep-the-exact-same-mystical-b-1788708629.jpg",
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Keep-the-exact-same-mystical-b-1788710468.jpg",
       "prebranded": true,
       "template": "artistic_hero",
       "visual_style": "surprise_board_game",
       "pride_baked_in": true,
       "generation_source": "mlimg_sep29_surprise_board_game_2026-09-05",
       "banned_pil_cleared": true,
-      "media_id": 27481,
-      "note": "Board game kept \u00b7 Meditation 7\u20138 + daytime shop inventory \u00b7 Voted #1",
+      "media_id": 27490,
+      "note": "Board game \u00b7 TEC: Amber / Tina / Meditation 7\u20138 \u00b7 Voted #1",
       "locked_until_founder_review": true,
-      "updated_at": "2026-09-06T15:30:50Z",
-      "prior_url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-social-f-1788629205.jpg",
-      "prior_media_id": 27420
+      "updated_at": "2026-09-06T16:03:41Z",
+      "prior_url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Keep-the-exact-same-mystical-b-1788708629.jpg",
+      "prior_media_id": 27481
     },
     "2026-09-30": {
       "label": "Crystals \u00b7 Jewelry \u00b7 Gifts",
       "covers": [
+        "Frequency Reset",
         "facebook",
         "instagram"
       ],
       "local": "assets/sg-morning-flyer-2026-09-30.jpg",
-      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Keep-the-exact-same-cabinet-of-1788708605.jpg",
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Keep-the-exact-same-cabinet-of-1788710728.jpg",
       "prebranded": true,
       "template": "thursday-style",
       "visual_style": "surprise_cabinet_curiosities",
@@ -1179,13 +1194,13 @@
       "empty_day": true,
       "generation_source": "mlimg_remake_2026-09-30_2026-09-05",
       "banned_pil_cleared": true,
-      "media_id": 27480,
-      "note": "Cabinet kept \u00b7 INSIDE TODAY shop inventory \u00b7 Voted #1",
+      "media_id": 27493,
+      "note": "Cabinet \u00b7 TEC Frequency Reset 3\u20138 \u00b7 clean (no WHO leak) \u00b7 Voted #1",
       "locked_until_founder_review": true,
-      "prior_url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-social-f-1788629240.jpg",
-      "prior_media_id": 27421,
+      "prior_url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Keep-the-exact-same-cabinet-of-1788710471.jpg",
+      "prior_media_id": 27491,
       "founder_approved": false,
-      "updated_at": "2026-09-06T15:30:50Z"
+      "updated_at": "2026-09-06T16:05:50Z"
     }
   },
   "template": {
