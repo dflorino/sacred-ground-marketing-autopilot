@@ -1,3 +1,9 @@
+## 2026-09-06 — S1E9 scheduled + Sep 25 morning locked
+
+S1E9 media **27385**: all brand platforms **Wed Sep 16 6:00 PM CT** — FB `6a9d9b49655de817d79c0045` · IG `6a9d9b5a5fe11bec973cf59a` · TT `6a9d9b5b6dbd3c283b2fe44e` · YT `6a9d9b5d6dbd3c283b2fe4a2` (@sacredgroundchicagoland). Caption from S1E9-SOCIAL-GRAB.
+
+Sep 25 morning flyer media **27497** Founder-approved (Robert / Kate / Sacred Creations benefit lines).
+
 
 ## 2026-09-05 — Surprise morning campaign + rest-of-September flyers
 

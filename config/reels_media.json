@@ -5,7 +5,12 @@
   "brand_coverage_hard_rule": {
     "updated": "2026-08-16",
     "summary": "Every episode must hit Facebook + Instagram + TikTok + YouTube on Sacred Ground BRAND accounts. YouTube must be the Sacred Ground brand channel — never personal @deneeneflorino4711. Use contentType reel or story. FB Story must use Zernio CDN (media.zernio.com).",
-    "required_platforms": ["facebook", "instagram", "tiktok", "youtube"],
+    "required_platforms": [
+      "facebook",
+      "instagram",
+      "tiktok",
+      "youtube"
+    ],
     "youtube_brand_only": true,
     "forbidden_youtube": "deneeneflorino4711",
     "content_types": "reel or story (not plain video alone)",
@@ -187,7 +192,10 @@
       },
       "do_not_use": {
         "archive_gen87": 27353,
-        "trash_remakes": [27373, 27375],
+        "trash_remakes": [
+          27373,
+          27375
+        ],
         "plate_only": 27352,
         "note": "No Cheryl splices; plate still only"
       }
@@ -205,13 +213,21 @@
       "admin": "https://shopsacredground.com/wp-admin/upload.php?item=27385",
       "filebird_folder": "SG Reels (54)",
       "mime_type": "video/mp4",
-      "schedule_status": "ready_for_social_awaiting_schedule",
+      "schedule_status": "scheduled_2026-09-16_6pm_CT_all_platforms",
       "handed_off": "2026-09-06",
-      "note": "Founder handoff 2026-09-06 — USE video media 27385 / title S1E9. Plate still 27377 is NOT the video.",
+      "note": "Founder 2026-09-06 — USE S1E9 / 27385 only. All platforms Wed Sep 16 6pm CT (FB/IG/TT/YT brand).",
       "do_not_use": {
         "plate_id": 27377,
         "note": "27377 = S1E9 USE plate still only — never post as the Reel video"
-      }
+      },
+      "ml_social_ids": {
+        "facebook": "6a9d9b49655de817d79c0045",
+        "instagram": "6a9d9b5a5fe11bec973cf59a",
+        "tiktok": "6a9d9b5b6dbd3c283b2fe44e",
+        "youtube": "6a9d9b5d6dbd3c283b2fe4a2"
+      },
+      "scheduled_for": "2026-09-16T18:00:00-05:00",
+      "updated_at": "2026-09-06T16:58:20Z"
     }
   }
 }
