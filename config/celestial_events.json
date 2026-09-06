@@ -124,15 +124,19 @@
         "look": "deep cosmic indigo-emerald night; gold crescent, wheat wreath, sacred geometry",
         "sg_anchor": "circular SG logo bottom-left",
         "urls": [
-          "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-09-10-new-moon-virgo-3.png"
+          "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-CELESTIAL-NIGHT-1788732191.jpg"
         ],
         "local": [
           "assets/celestial-2026/sg-night-celestial-2026-09-10-new-moon-virgo.png"
         ],
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-09-10-new-moon-virgo-3.png",
-        "wp_media_id": 26055,
+        "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-CELESTIAL-NIGHT-1788732191.jpg",
+        "wp_media_id": 27519,
         "sg_identity": "pass",
-        "logo_baked": true
+        "logo_baked": true,
+        "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-09-10-new-moon-virgo-3.png",
+        "prior_media_id": 26055,
+        "pride_baked_in": true,
+        "status": "ready"
       },
       "morning": {
         "look": "deep cosmic indigo-violet Virgo new moon; gold geometry + wheat; Founder Birthday Month",
@@ -148,7 +152,9 @@
         "wp_media_id": 26054,
         "sg_identity": "pass",
         "logo_baked": true
-      }
+      },
+      "updated_at": "2026-09-06T22:05:48Z",
+      "founder_review_2026_09_06": "storefront remakes in progress"
     },
     "autumn_equinox_2026": {
       "label": "Autumn Equinox",
@@ -162,31 +168,41 @@
         "look": "split-panel harvest gold vs indigo night, storefront on divide",
         "sg_anchor": "lit eggplant-awning Sacred Ground storefront",
         "urls": [
-          "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-09-22-autumn-equinox-1.png"
+          "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-CELESTIAL-NIGHT-1788732192.jpg"
         ],
         "local": [
           "assets/celestial-2026/sg-night-celestial-2026-09-22-autumn-equinox.png"
         ],
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-09-22-autumn-equinox-1.png",
-        "wp_media_id": 25997,
+        "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-CELESTIAL-NIGHT-1788732192.jpg",
+        "wp_media_id": 27520,
         "sg_identity": "pass",
-        "logo_baked": true
+        "logo_baked": true,
+        "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-09-22-autumn-equinox-1.png",
+        "prior_media_id": 25997,
+        "pride_baked_in": true,
+        "status": "ready"
       },
       "morning": {
         "look": "split dawn harvest / soft morning blue equinox balance",
         "sg_anchor": "Sacred Ground storefront on the seam in morning light",
         "urls": [
-          "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-09-22-autumn-equinox-1.png"
+          "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-CELESTIAL-MORNIN-1788732206.jpg"
         ],
         "local": [
           "assets/celestial-2026/sg-morning-celestial-2026-09-22-autumn-equinox.png"
         ],
         "prebranded": true,
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-09-22-autumn-equinox-1.png",
-        "wp_media_id": 25999,
+        "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-CELESTIAL-MORNIN-1788732206.jpg",
+        "wp_media_id": 27523,
         "sg_identity": "pass",
-        "logo_baked": true
-      }
+        "logo_baked": true,
+        "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-09-22-autumn-equinox-1.png",
+        "prior_media_id": 25999,
+        "pride_baked_in": true,
+        "status": "ready"
+      },
+      "updated_at": "2026-09-06T22:05:48Z",
+      "founder_review_2026_09_06": "storefront remakes in progress"
     },
     "full_moon_aries_2026": {
       "label": "Full Moon in Aries",
@@ -200,15 +216,19 @@
         "look": "copper-red ram-horn full moon graphic poster, ember sky",
         "sg_anchor": "SACRED GROUND searchlight beams",
         "urls": [
-          "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-09-26-full-moon-aries-1.png"
+          "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-CELESTIAL-NIGHT-1788732195.jpg"
         ],
         "local": [
           "assets/celestial-2026/sg-night-celestial-2026-09-26-full-moon-aries.png"
         ],
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-09-26-full-moon-aries-1.png",
-        "wp_media_id": 26000,
+        "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-CELESTIAL-NIGHT-1788732195.jpg",
+        "wp_media_id": 27521,
         "sg_identity": "pass",
-        "logo_baked": true
+        "logo_baked": true,
+        "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-09-26-full-moon-aries-1.png",
+        "prior_media_id": 26000,
+        "pride_baked_in": true,
+        "status": "ready"
       },
       "morning": {
         "look": "Aries full moon graphic with cooler dawn rim light",
@@ -224,7 +244,9 @@
         "wp_media_id": 26003,
         "sg_identity": "pass",
         "logo_baked": true
-      }
+      },
+      "updated_at": "2026-09-06T22:05:48Z",
+      "founder_review_2026_09_06": "storefront remakes in progress"
     },
     "new_moon_libra_2026": {
       "label": "New Moon in Libra",
@@ -238,15 +260,19 @@
         "look": "art deco mirrored Libra scales, rose-gold silver plum",
         "sg_anchor": "circular SG logo as scale fulcrum",
         "urls": [
-          "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-10-10-new-moon-libra-2.png"
+          "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-CELESTIAL-NIGHT-1788732196.jpg"
         ],
         "local": [
           "assets/celestial-2026/sg-night-celestial-2026-10-10-new-moon-libra.png"
         ],
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-10-10-new-moon-libra-2.png",
-        "wp_media_id": 26023,
+        "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-CELESTIAL-NIGHT-1788732196.jpg",
+        "wp_media_id": 27522,
         "sg_identity": "pass",
-        "logo_baked": true
+        "logo_baked": true,
+        "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-10-10-new-moon-libra-2.png",
+        "prior_media_id": 26023,
+        "pride_baked_in": true,
+        "status": "ready"
       },
       "morning": {
         "look": "lighter art-deco Libra new moon — rose morning lacquer",
@@ -262,7 +288,9 @@
         "wp_media_id": 26022,
         "sg_identity": "pass",
         "logo_baked": true
-      }
+      },
+      "updated_at": "2026-09-06T22:05:48Z",
+      "founder_review_2026_09_06": "storefront remakes in progress"
     },
     "orionids_peak_2026": {
       "label": "Orionids Peak",
@@ -276,15 +304,19 @@
         "look": "cool cyan-silver Orion constellation architecture + meteors",
         "sg_anchor": "circular SG sun bat-signal over misty hills",
         "urls": [
-          "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-10-21-orionids-2.png"
+          "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-CELESTIAL-NIGHT-1788732304.jpg"
         ],
         "local": [
           "assets/celestial-2026/sg-night-celestial-2026-10-21-orionids.png"
         ],
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-10-21-orionids-2.png",
-        "wp_media_id": 26029,
+        "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-CELESTIAL-NIGHT-1788732304.jpg",
+        "wp_media_id": 27527,
         "sg_identity": "pass",
-        "logo_baked": true
+        "logo_baked": true,
+        "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-10-21-orionids-2.png",
+        "prior_media_id": 26029,
+        "pride_baked_in": true,
+        "status": "ready"
       },
       "morning": {
         "look": "frost-blue early morning Orionids with sharp constellation lines",
@@ -300,7 +332,9 @@
         "wp_media_id": 26020,
         "sg_identity": "pass",
         "logo_baked": true
-      }
+      },
+      "updated_at": "2026-09-06T22:05:48Z",
+      "founder_review_2026_09_06": "storefront remakes in progress"
     },
     "full_moon_taurus_2026": {
       "label": "Full Moon in Taurus",
@@ -311,35 +345,45 @@
       "one_liner_night": "Cream harvest Taurus moon over orchard storefront.",
       "one_liner_morning": "Golden morning orchard under lingering Taurus moon.",
       "night": {
-        "look": "earthy painterly cream-gold moon over autumn orchard",
+        "look": "Former Taurus morning plate now used as evening — store + moon",
         "sg_anchor": "lit eggplant-awning Sacred Ground storefront",
         "urls": [
-          "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-10-25-full-moon-taurus-2.png"
+          "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-10-25-full-moon-taurus-6.png"
         ],
         "local": [
           "assets/celestial-2026/sg-night-celestial-2026-10-25-full-moon-taurus.png"
         ],
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-10-25-full-moon-taurus-2.png",
-        "wp_media_id": 26024,
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-10-25-full-moon-taurus-6.png",
+        "wp_media_id": 26063,
         "sg_identity": "pass",
-        "logo_baked": true
+        "logo_baked": true,
+        "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-10-25-full-moon-taurus-2.png",
+        "prior_media_id": 26024,
+        "status": "ready",
+        "note": "Founder 2026-09-06: former morning-6 promoted to evening plate"
       },
       "morning": {
         "look": "misty prairie harvest dawn under natural Taurus full moon — Sacred Ground shop along the path (single cohesive scene)",
         "sg_anchor": "Sacred Ground eggplant-awning storefront in misty prairie path (no logo-in-moon)",
         "urls": [
-          "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-10-25-full-moon-taurus-6.png"
+          "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-CELESTIAL-MORNIN-1788732247.jpg"
         ],
         "local": [
-          "assets/celestial-2026/sg-morning-celestial-2026-10-25-full-moon-taurus-6.png"
+          "assets/celestial-2026/sg-morning-celestial-2026-10-25-full-moon-taurus.png"
         ],
         "prebranded": true,
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-10-25-full-moon-taurus-6.png",
-        "wp_media_id": 26063,
+        "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-CELESTIAL-MORNIN-1788732247.jpg",
+        "wp_media_id": 27524,
         "sg_identity": "pass",
-        "logo_baked": false,
-        "notes": "2026-08-11: Founder rejected -5 (shop cutout + logo jammed in moon). Trashed to assets/celestial-2026/_trash/. Regenerated -6 prairie mist single-generation plate; identity via storefront awning; natural moon."
-      }
+        "logo_baked": true,
+        "notes": "2026-08-11: Founder rejected -5 (shop cutout + logo jammed in moon). Trashed to assets/celestial-2026/_trash/. Regenerated -6 prairie mist single-generation plate; identity via storefront awning; natural moon.",
+        "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-10-25-full-moon-taurus-6.png",
+        "prior_media_id": 26063,
+        "pride_baked_in": true,
+        "status": "ready"
+      },
+      "updated_at": "2026-09-06T22:05:48Z",
+      "founder_review_2026_09_06": "storefront remakes in progress"
     },
     "samhain_2026": {
       "label": "Samhain",
@@ -353,31 +397,41 @@
         "look": "folk-sacred indigo veil, marigold, candle paths, night fog",
         "sg_anchor": "Sacred Ground windows as lanterns in fog",
         "urls": [
-          "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-10-31-samhain-2.png"
+          "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-CELESTIAL-NIGHT-1788732255.jpg"
         ],
         "local": [
           "assets/celestial-2026/sg-night-celestial-2026-10-31-samhain.png"
         ],
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-10-31-samhain-2.png",
-        "wp_media_id": 26033,
+        "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-CELESTIAL-NIGHT-1788732255.jpg",
+        "wp_media_id": 27525,
         "sg_identity": "pass",
-        "logo_baked": true
+        "logo_baked": true,
+        "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-10-31-samhain-2.png",
+        "prior_media_id": 26033,
+        "pride_baked_in": true,
+        "status": "ready"
       },
       "morning": {
         "look": "morning marigold mist, soft sacred doorway light — not cartoon pumpkins",
         "sg_anchor": "Sacred Ground windows glowing in morning fog",
         "urls": [
-          "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-10-31-samhain-2.png"
+          "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-CELESTIAL-MORNIN-1788732276.jpg"
         ],
         "local": [
           "assets/celestial-2026/sg-morning-celestial-2026-10-31-samhain.png"
         ],
         "prebranded": true,
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-10-31-samhain-2.png",
-        "wp_media_id": 26034,
+        "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-CELESTIAL-MORNIN-1788732276.jpg",
+        "wp_media_id": 27526,
         "sg_identity": "pass",
-        "logo_baked": true
-      }
+        "logo_baked": true,
+        "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-10-31-samhain-2.png",
+        "prior_media_id": 26034,
+        "pride_baked_in": true,
+        "status": "ready"
+      },
+      "updated_at": "2026-09-06T22:05:48Z",
+      "founder_review_2026_09_06": "storefront remakes in progress"
     },
     "new_moon_scorpio_2026": {
       "label": "New Moon in Scorpio",
