@@ -1131,29 +1131,28 @@
       "updated_at": "2026-09-06T16:03:41Z"
     },
     "2026-09-28": {
-      "label": "The shop is open — come say hi",
+      "label": "Lisa Maria Intuitive Tarot",
       "covers": [
         "Lisa Maria Intuitive Tarot",
-        "Divine Insight Sessions with Janel",
         "facebook",
         "instagram"
       ],
       "local": "assets/sg-morning-flyer-2026-09-28.jpg",
-      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Keep-the-exact-same-ornate-aut-1788710397.jpg",
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-TEXT-ONLY-edit-on-this-Sacred-1788714679.jpg",
       "prebranded": true,
       "template": "thursday-style",
       "visual_style": "surprise_newspaper_daily",
       "pride_baked_in": true,
-      "empty_day": true,
-      "generation_source": "mlimg_remake_2026-09-28_2026-09-05",
+      "empty_day": false,
+      "generation_source": "mlimg_edit_2026-09-28_janel_off",
       "banned_pil_cleared": true,
-      "media_id": 27488,
-      "note": "Newspaper autumn · TEC: Lisa Maria / Janel · Voted #1",
+      "media_id": 27500,
+      "note": "Janel moved off Sep 28 → Sep 30 · Lisa Maria only 12–5 · Voted #1",
       "locked_until_founder_review": true,
-      "prior_url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Keep-the-exact-same-ornate-aut-1788708600.jpg",
-      "prior_media_id": 27479,
+      "prior_url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Keep-the-exact-same-ornate-aut-1788710397.jpg",
+      "prior_media_id": 27488,
       "founder_approved": false,
-      "updated_at": "2026-09-06T16:03:41Z"
+      "updated_at": "2026-09-06T17:11:37Z"
     },
     "2026-09-29": {
       "label": "Free Community Meditation",
@@ -1180,28 +1179,29 @@
       "prior_media_id": 27481
     },
     "2026-09-30": {
-      "label": "Crystals · Jewelry · Gifts",
+      "label": "Janel Divine Insight + Frequency Reset",
       "covers": [
+        "Divine Insight Sessions with Janel",
         "Frequency Reset",
         "facebook",
         "instagram"
       ],
       "local": "assets/sg-morning-flyer-2026-09-30.jpg",
-      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Keep-the-exact-same-cabinet-of-1788710728.jpg",
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Edit-this-Sacred-Ground-Wednes-1788714676.jpg",
       "prebranded": true,
       "template": "thursday-style",
       "visual_style": "surprise_cabinet_curiosities",
       "pride_baked_in": true,
-      "empty_day": true,
-      "generation_source": "mlimg_remake_2026-09-30_2026-09-05",
+      "empty_day": false,
+      "generation_source": "mlimg_edit_2026-09-30_janel_on",
       "banned_pil_cleared": true,
-      "media_id": 27493,
-      "note": "Cabinet · TEC Frequency Reset 3–8 · clean (no WHO leak) · Voted #1",
+      "media_id": 27499,
+      "note": "Janel moved here from Sep 28 · Divine Insight 1–5 + Frequency Reset 3–8 · Voted #1",
       "locked_until_founder_review": true,
-      "prior_url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Keep-the-exact-same-cabinet-of-1788710471.jpg",
-      "prior_media_id": 27491,
+      "prior_url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Keep-the-exact-same-cabinet-of-1788710728.jpg",
+      "prior_media_id": 27493,
       "founder_approved": false,
-      "updated_at": "2026-09-06T16:05:50Z"
+      "updated_at": "2026-09-06T17:11:37Z"
     }
   },
   "template": {
