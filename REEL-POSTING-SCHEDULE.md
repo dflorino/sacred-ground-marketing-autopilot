@@ -8,7 +8,7 @@ Canonical cadence for Sacred Ground **Reels / Shorts** across Instagram, Faceboo
 
 ## North star (Founder Mon Aug 17, 2026 America/Chicago)
 
-Unusual **metaphysics cartoon** series (Sacred Ground / Team Sacred Ground) — fun, distinctive, shareable, series-driven. Goal: reach people who notice something special; not generic crystal-shop content. Organic reach + optional legitimate boosts only (**never** bots / fake engagement). Path to bigger = consistency + brand channels + hooks; discovery by audience/partners, not guaranteed. **S1E1 Store Quest** shipped once — never republish. Reels may eventually replace **some** 5pm image posts when production keeps up — **not daily yet**. Full vision: `REELS-PLAN.md` → North star.
+Unusual **metaphysics cartoon** series (Sacred Ground / Team Sacred Ground) — fun, distinctive, shareable, series-driven. Goal: reach people who notice something special; not generic crystal-shop content. Organic reach + optional legitimate boosts only (**never** bots / fake engagement). Path to bigger = consistency + brand channels + hooks; discovery by audience/partners, not guaranteed. Reels may eventually replace **some** 5pm image posts when production keeps up — **not daily yet**. Full vision: `REELS-PLAN.md` → North star.
 
 ## Hard rule — brand coverage (all SM platforms)
 
@@ -30,10 +30,12 @@ Unusual **metaphysics cartoon** series (Sacred Ground / Team Sacred Ground) — 
 1. Open **ML Social → Accounts** (same workspace that shows FB / IG / TikTok Sacred Ground).
 2. Click **Connect** / **Add account** → choose **YouTube**.
 3. Complete Google OAuth while signed into the **Sacred Ground brand** Google/YouTube channel (not the personal `@deneeneflorino4711` channel).
-4. Confirm the new account shows Sacred Ground branding / brand channel name — then tell the agent. **Do not** backfill S1E1 (media **26545**) as a brand Short — that episode is **COMPLETE / NEVER republish**.
+4. Confirm the new account shows Sacred Ground branding / brand channel name — then tell the agent. Brand YouTube backfill for shipped episodes (S1E1–S1E5) is OK when Founder asks.
 5. Optional later: leave personal YouTube disconnected or clearly labeled so agents never pick it for brand episodes.
 
-Until step 4 succeeds, **brand YouTube for future episodes is blocked** — no agent workaround. S1E1 stays permanently off the queue either way.
+Until brand YouTube is connected, **brand Shorts for new episodes are blocked** — no agent workaround.
+
+**Connect path (Founder Sep 1 2026):** ML Social **Dashboard** → orange **Zernio settings** → authorize YouTube → pick **@sacredgroundchicagoland**.
 
 ## Team Sacred Ground recommended week
 
@@ -83,22 +85,17 @@ Canonical file: **`config/reels_media.json`**. Agents must use these IDs / URLs 
 |---|---|---|---|
 | Season 1 Episode 1 — Store Quest | **S1E1** | **26545** | `https://shopsacredground.com/wp-content/uploads/S1E1-Store-Quest.mp4` |
 | Season 1 Episode 2 — Help Team Sacred Ground | **S1E2** | **26738** (plate **26736**) | `https://shopsacredground.com/wp-content/uploads/s01e02-help-team-sacred-ground.mp4` |
-| Season 1 Episode 3 — First Crystal | **S1E3** | **26743** (plate **26742**) | `https://shopsacredground.com/wp-content/uploads/s01e03-first-crystal.mp4` |
+| Season 1 Episode 3 — First Crystal | **S1E3-B** | **26795** (plate **26790**) | `https://shopsacredground.com/wp-content/uploads/s01e03b-first-crystal.mp4` |
+| Season 1 Episode 9 | **S1E9** | **27385** (plate **27377**) | `https://shopsacredground.com/wp-content/uploads/s01e09-27377-720p-draft.mp4` |
 
-**Do not use** media ID **26546** or `…/s01e01-store-quest.mp4` for S1E1.  
-**S1E1** — COMPLETE / NEVER republish.  
+**Do not use** media ID **26546** or `…/s01e01-store-quest.mp4` for S1E1 — use **26545** / `S1E1-Store-Quest.mp4`.  
 **S1E2** — KEEP **26738** (not old Lemuria **26537**).  
-**S1E3** — KEEP FINAL 2026-08-19 — **do not remake, do not remux**. Media **26743**. Do not schedule until Founder asks.
+**S1E3** — KEEP **S1E3-B** media **26795** (not S1E3-A **26743**).  
+**S1E9** — USE video **27385** only. Plate **27377** (“S1E9 USE plate”) is still-only — never post as the Reel.
 
-## S1E1 Store Quest — COMPLETE / NEVER REPUBLISH (media 26545)
+## S1E1 Store Quest (media 26545)
 
-Media **26545** (`S1E1-Store-Quest.mp4`). Published **once** Sun Aug 16 evening CT. Verified via ML Social `social_posts` / `social_accounts`. Do **not** cancel live successes.
-
-**Hard rule FINAL (Founder Mon Aug 17, 2026 America/Chicago):** S1E1 **only went out once** and must **never** go out again — on **any** platform (FB / IG / TikTok / YouTube / Stories / Reels / Shorts). Status: **COMPLETE**. Permanently block republish, recycle, requeue, brand-YouTube backfill, and any Autopilot cron that would ship media **26545** / “Store Quest” again.
-
-**Separate job — keep Active:** **SG Reel-building Friday Spencer** is a different Cursor Automation. It stays **Active**. Weekly: scrub Spencer’s Friday YouTube video → file important new info into `dflorino/sacredground-maintenance` `reel-building/` → report findings to Founder. It does **not** publish shop Reels. Do **not** deactivate it when enforcing the S1E1 block. It must never select or republish S1E1 / 26545.
-
-Stories remaining visible the next morning (~24h tray) are **not** a new publish. If ML Social shows a **future scheduled** S1E1 / 26545 / Store Quest duplicate, cancel that queue only — never cancel live successes or legitimate image Autopilot posts.
+Published Sun Aug 16 evening CT on FB/IG/TikTok + personal YouTube. **Brand YouTube backfill OK** (Founder Sep 1 2026 — prior never-republish lock removed). Do not re-spam FB/IG/TikTok.
 
 ### Brand traction (Sacred Ground)
 
@@ -115,8 +112,8 @@ Stories remaining visible the next morning (~24h tray) are **not** a new publish
 
 | Surface | Status | Detail |
 |---|---|---|
-| **YouTube Short** | ⚠️ **personal only** | `6a820b7c323f485ce2f6cdc1` → [watch](https://www.youtube.com/watch?v=OqDCjr3BPY0) on `@deneeneflorino4711` |
-| **Sacred Ground YouTube** | ❌ **not connected** | Brand YT still missing OAuth — **do not** use that gap to republish S1E1; episode is permanently done |
+| **YouTube Short** | ✅ brand `@sacredgroundchicagoland` | Sep 1 backfill | Prior personal post OqDCjr3BPY0 — brand channel is canonical going forward |
+| **Sacred Ground YouTube** | ✅ **connected** | Sep 1 2026 | OAuth via ML Social → Zernio settings |
 
 Old wrong-media ids (deleted earlier): `6a8204a952e7ad0aab0854d9` · `6a8204ab23fabe1c288bd828` · `6a8204ac23fabe1c288bd85a` · `6a8204ac52e7ad0aab085527`
 
@@ -145,7 +142,7 @@ Tonight’s failure: ML Social / Zernio FB Story with a WP-hosted MP4 failed bec
 2. **FB Story:** upload video to Zernio CDN first; use `media.zernio.com` URL — never rely on WP alone.
 3. Schedule IG/FB shorts with explicit `contentType: "reel"` or `contentType: "story"` (not plain video alone).
 4. Do not rewrite or cancel live/scheduled successful posts unless Founder asks.
-5. After brand YouTube is connected: use it for **future** episodes only — **never** republish S1E1 (media **26545**).
+5. After brand YouTube is connected: backfill shipped episodes to `@sacredgroundchicagoland` when Founder asks; schedule new episodes on cadence.
 6. **Name in closed captions:** never rely on platform auto-ASR for the Founder’s name (see hard rule below).
 
 ## Hard rule — closed captions / name spelling (Founder Aug 16, 2026)

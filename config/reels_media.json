@@ -1,7 +1,7 @@
 {
   "timezone": "America/Chicago",
   "note": "Founder-confirmed WordPress Media Library IDs for Cursor / ML Social video posts. Use these — never 26546 or lowercase s01e01-store-quest.mp4 for S1E1.",
-  "updated": "2026-08-29",
+  "updated": "2026-09-06",
   "brand_coverage_hard_rule": {
     "updated": "2026-08-16",
     "summary": "Every episode must hit Facebook + Instagram + TikTok + YouTube on Sacred Ground BRAND accounts. YouTube must be the Sacred Ground brand channel — never personal @deneeneflorino4711. Use contentType reel or story. FB Story must use Zernio CDN (media.zernio.com).",
@@ -16,26 +16,8 @@
     "lesson_date": "2026-08-16",
     "summary": "Facebook Stories via ML Social/Zernio fail when media is only on shopsacredground.com WP URLs — Cloudflare 403s Meta meta-externalagent. Upload the same video to Zernio CDN (media.zernio.com) and publish Story with that URL + contentType story. Reels/IG Story may work from WP; FB Story needed Zernio CDN tonight.",
     "content_types": "Use contentType reel or story when scheduling IG/FB shorts — not plain video alone.",
-    "youtube_gap": "As of Sun Aug 16 night, only personal @deneeneflorino4711 YouTube is connected in ML Social. Brand Sacred Ground YouTube is NOT connected — Founder OAuth required before any brand Short. Do NOT fill the gap by republishing S1E1 (media 26545) — that episode is COMPLETE forever.",
+    "youtube_gap": "Resolved 2026-09-01 — brand @sacredgroundchicagoland connected via Zernio OAuth (ML Social dashboard → orange Zernio settings). Backfill S1E1–S1E5 Shorts to brand channel; S1E6+ on schedule.",
     "see": "REEL-POSTING-SCHEDULE.md#operational-lesson--fb-story-media-hosting-sun-aug-16-2026"
-  },
-  "s1e1_never_republish": {
-    "updated": "2026-08-17",
-    "founder_clarification": "Mon Aug 17 2026 America/Chicago — S1E1 only went out once; they do NOT want it to ever go out again.",
-    "media_id": 26545,
-    "episode_key": "s1e1",
-    "title": "Store Quest",
-    "status": "COMPLETE",
-    "rule": "NEVER republish on any platform (FB / IG / TikTok / YouTube / Stories / Reels / Shorts). Permanently blocked.",
-    "do_not": [
-      "schedule",
-      "recycle",
-      "requeue",
-      "brand_youtube_backfill",
-      "daily_or_weekly_cron",
-      "morning_afternoon_week_ahead_publish"
-    ],
-    "spencer_friday_reel_building": "SEPARATE job — stays Active. Does not republish S1E1. Do not deactivate Spencer Friday when enforcing this block."
   },
   "episodes": {
     "s1e1": {
@@ -46,14 +28,15 @@
       "media_id": 26545,
       "url": "https://shopsacredground.com/wp-content/uploads/S1E1-Store-Quest.mp4",
       "mime_type": "video/mp4",
-      "schedule_status": "COMPLETE_never_republish",
+      "schedule_status": "published_2026-08-16_evening_CT",
       "published": "2026-08-16_evening_CT",
-      "republish": "FORBIDDEN_permanent",
-      "brand_youtube_status": "blocked_never_republish_s1e1",
+      "brand_youtube_status": "published_2026-09-01",
+      "brand_youtube_url": "https://www.youtube.com/watch?v=aALb_jxjKRY",
+      "note": "Founder Sep 1 2026 — prior never-republish lock removed. OK to post to brand @sacredgroundchicagoland; do not recycle on FB/IG/TikTok.",
       "do_not_use": {
         "wrong_media_id": 26546,
         "wrong_url": "https://shopsacredground.com/wp-content/uploads/s01e01-store-quest.mp4",
-        "note": "26546 was a mistaken ID / poster path; and S1E1 must never be scheduled again anyway"
+        "note": "26546 was a mistaken ID / lowercase path — use media 26545 / S1E1-Store-Quest.mp4 only"
       }
     },
     "s1e2": {
@@ -157,6 +140,77 @@
       },
       "do_not_use": {
         "note": "Do not post gen 83 / media 27091 / plate 27064 — only title S1E6 media 27101"
+      }
+    },
+    "s1e7": {
+      "season": 1,
+      "episode": 7,
+      "library_name": "S1E7",
+      "title": "Blue Jewel / Third-Eye Energy",
+      "media_id": 27323,
+      "plate_id": 27322,
+      "file": "s01e07-27322-480p-draft.mp4",
+      "url": "https://shopsacredground.com/wp-content/uploads/s01e07-27322-480p-draft.mp4",
+      "mime_type": "video/mp4",
+      "schedule_status": "scheduled_2026-09-07_5pm_CT",
+      "note": "Founder KEEP 2026-09-01 — USE S1E7 / 27323 only. Scheduled Sun Sep 7 5pm CT FB/IG/TT/YT (IG +5m, TT +10m).",
+      "ml_social_ids": {
+        "facebook": "6a970555ac83b184a2418232",
+        "instagram": "6a970555a65cd666e3de9a84",
+        "tiktok": "6a97055679c2525fcb4341e1",
+        "youtube": "6a970555a65cd666e3de9a81"
+      },
+      "do_not_use": {
+        "plate_id": 27322,
+        "poster_id": 27324,
+        "gen": 86,
+        "note": "Plate/poster stills only; gid 86 aborted credits_low"
+      }
+    },
+    "s1e8": {
+      "season": 1,
+      "episode": 8,
+      "library_name": "S1E8",
+      "title": "Second Crystal / Merkabah",
+      "media_id": 27358,
+      "plate_id": 27352,
+      "file": "s01e08-27352-480p-draft.mp4",
+      "url": "https://shopsacredground.com/wp-content/uploads/s01e08-27352-480p-draft.mp4",
+      "mime_type": "video/mp4",
+      "schedule_status": "scheduled_cadence_2026-09-09_through_13",
+      "note": "Founder KEEP wrap 2026-09-04 — USE S1E8 / 27358 only (gen 88). Stagger IG Wed 6pm · FB Thu 9am · YT Fri 4pm · TT Sun 9am CT.",
+      "ml_social_ids": {
+        "instagram": "6a9af25aac10f6514c6a590d",
+        "facebook": "6a9af0993a2fe811a3588393",
+        "youtube": "6a9af09752fc2caa6f54a498",
+        "tiktok": "6a9af0953a2fe811a3588204"
+      },
+      "do_not_use": {
+        "archive_gen87": 27353,
+        "trash_remakes": [27373, 27375],
+        "plate_only": 27352,
+        "note": "No Cheryl splices; plate still only"
+      }
+    },
+    "s1e9": {
+      "season": 1,
+      "episode": 9,
+      "library_name": "S1E9",
+      "title": "S1E9",
+      "media_id": 27385,
+      "plate_id": 27377,
+      "plate_library_name": "S1E9 USE plate",
+      "file": "s01e09-27377-720p-draft.mp4",
+      "url": "https://shopsacredground.com/wp-content/uploads/s01e09-27377-720p-draft.mp4",
+      "admin": "https://shopsacredground.com/wp-admin/upload.php?item=27385",
+      "filebird_folder": "SG Reels (54)",
+      "mime_type": "video/mp4",
+      "schedule_status": "ready_for_social_awaiting_schedule",
+      "handed_off": "2026-09-06",
+      "note": "Founder handoff 2026-09-06 — USE video media 27385 / title S1E9. Plate still 27377 is NOT the video.",
+      "do_not_use": {
+        "plate_id": 27377,
+        "note": "27377 = S1E9 USE plate still only — never post as the Reel video"
       }
     }
   }
