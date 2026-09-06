@@ -1285,7 +1285,7 @@
       }
     }
   },
-  "updated_at": "2026-08-26T09:22:21.488014-05:00",
+  "updated_at": "2026-09-06T15:52:55Z",
   "sgma-2026-08-28-today-fb-magritte-repost": {
     "campaign": "today",
     "platform": "facebook",
@@ -1307,5 +1307,28 @@
     "platform_post_url": "https://www.instagram.com/p/DclsG9-EaZC/",
     "platform_post_id": "18263943457305999",
     "note": "Founder deleted banned navy pride plate; Magritte EQUAL-WEIGHT-mul-1787594477 republished"
+  },
+  "sgma-2026-09-06-today-labor-janel-remake": {
+    "campaign": "today",
+    "date": "2026-09-06",
+    "media_url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-flyer-sq-1788707556.jpg",
+    "media_id": 27474,
+    "platforms": {
+      "facebook": {
+        "status": "published",
+        "post_id": "101428372368870_1106682978540273",
+        "url": "https://www.facebook.com/101428372368870_1106682978540273",
+        "published_at": "2026-09-06T15:52:12.506Z",
+        "via": "ml_mcp_social_publish"
+      },
+      "instagram": {
+        "status": "published",
+        "url": "https://www.instagram.com/p/Dc85rRRCFyj/",
+        "published_at": "2026-09-06T15:52:17Z",
+        "via": "ml_mcp_social_publish"
+      }
+    },
+    "note": "Republish after Founder deleted wrong 7\u20138:30 plate; Crystal Connections 2\u20133:30 + Labor Day 11\u20136",
+    "updated_at": "2026-09-06T15:53:25Z"
   }
 }
