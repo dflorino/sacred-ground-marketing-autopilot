@@ -651,24 +651,27 @@
     "2026-09-06": {
       "label": "Crystal Connections",
       "covers": [
+        "facebook",
+        "instagram",
         "Crystal Connections With Janel"
       ],
-      "local": "assets/sg-morning-flyer-2026-09-06-surprise-where-landed-labor-v3.jpg",
-      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-flyer-sq-1788631546.jpg",
+      "local": "assets/sg-morning-flyer-2026-09-06.jpg",
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-flyer-sq-1788707556.jpg",
       "prebranded": true,
       "template": "thursday-style",
       "visual_style": "surprise_where_landed",
       "pride_baked_in": true,
-      "media_id": 27431,
-      "generation_source": "mlimg_sep06_where_landed_labor_v3_single_banner",
-      "note": "OPEN LABOR DAY \u00b7 11 AM \u2013 6 PM (single banner). \u2014 Founder approved 2026-09-05T13:10-05:00.",
+      "media_id": 27474,
+      "generation_source": "mlimg_sep06_where_landed_labor_v4_janel_230",
+      "note": "Remake: Crystal Connections With Janel 2\u20133:30 PM (was wrong 7\u20138:30) \u00b7 OPEN LABOR DAY 11\u20136 kept \u00b7 media 27474",
       "locked_until_founder_review": false,
       "banned_pil_cleared": true,
-      "prior_url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-social-f-1788630717.jpg",
-      "prior_media_id": 27394,
+      "prior_url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-flyer-sq-1788631546.jpg",
+      "prior_media_id": 27431,
       "labor_day_hours": "Open Labor Day \u00b7 11 AM \u2013 6 PM",
       "founder_approved": true,
-      "founder_approved_at": "2026-09-05T13:10-05:00"
+      "founder_approved_at": "2026-09-05T13:10-05:00",
+      "updated_at": "2026-09-06T15:12:52Z"
     },
     "2026-09-07": {
       "label": "Tina\u2019s Intuitive Tarot, Runes & Reiki Experience",
