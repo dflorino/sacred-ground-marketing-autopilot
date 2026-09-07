@@ -1,0 +1,281 @@
+{
+  "batch": "remake_v4",
+  "rules": [
+    "Max 3 newspapers (Mon 14/21/28 only)",
+    "Ban Morning Social on-image text",
+    "No AI-drawn sun \u2014 paste real logo top-left after",
+    "Light fall theme; Sep 3 jewel colors where they fit",
+    "Crazy individual concepts \u2014 pocket watch energy welcome"
+  ],
+  "color_ref": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-flyer-sq-1787671219.jpg",
+  "logo_file": "config/brand/sacred-ground-logo-circle-transparent.png",
+  "jobs": [
+    {
+      "date": "2026-09-08",
+      "weekday": "TUESDAY",
+      "style_id": "surprise_museum_artifact_3026",
+      "style": "futuristic museum artifact exhibit 3026, jewel gallery light, coral and amber accents",
+      "events": [
+        "Amber \u2014 Customized Therapeutic Massage \u2014 12 PM\u20135 PM",
+        "Janel \u2014 Divine Insight \u2014 12 PM\u20135 PM",
+        "Free Community Meditation \u2014 FREE \u2014 7 PM\u20138 PM"
+      ],
+      "prompt": "Sacred Ground square 1:1 shop-made art poster.\nSTYLE: futuristic museum artifact exhibit 3026, jewel gallery light, coral and amber accents.\nDATE HEADER: TUESDAY \u00b7 September 8, 2026.\n\nSCHEDULE (equal visual weight if 2+):\n1) Amber \u2014 Customized Therapeutic Massage \u2014 12 PM\u20135 PM\n2) Janel \u2014 Divine Insight \u2014 12 PM\u20135 PM\n3) Free Community Meditation \u2014 FREE \u2014 7 PM\u20138 PM\n\nHARD BRANDING:\n- Do NOT draw any sun, circular logo, seal, crest, or Sacred Ground emblem anywhere. Leave a clean empty top-left corner (~12% of width) for the real logo to be added later.\n- Cream footer band with ONLY: shopsacredground.com \u00b7 847-749-3922 \u2014 keep footer completely clear (no logo, no extra seals).\n- Shop pride ONCE only: \"Chicagoland's #1\" OR \"Voted #1 Chicagoland\" \u2014 never twice.\n- Never print on the image: Morning Social, morning social, Morning Social Flyer, designed-in, remake, week-ahead, social flyer, prompt words.\n- No prices. Equal-size cards when 2+ events. Colorful shop-made energy \u2014 light early-fall mood (amber maple accents welcome), Sep 3 jewel colors welcome (coral/chartreuse/teal/sunflower/eggplant/amber). Not purple mystic sludge. Not a pile of identical newspaper templates.\n\n",
+      "ref": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-flyer-sq-1787671219.jpg",
+      "logo_ref_note": "Sep 7 keeper for logo look only \u2014 do not ask model to draw logo; paste real PNG after"
+    },
+    {
+      "date": "2026-09-09",
+      "weekday": "WEDNESDAY",
+      "style_id": "surprise_tiny_universe",
+      "style": "tiny Sacred Ground shop inside an open sparkling amethyst geode, warm fall jewel tones",
+      "events": [
+        "Robert \u2014 Keeper of the Cards \u2014 1 PM\u20137 PM",
+        "Jeniffer \u2014 Moon Alchemy Journey \u2014 7 PM\u20139 PM"
+      ],
+      "prompt": "Sacred Ground square 1:1 shop-made art poster.\nSTYLE: tiny Sacred Ground shop inside an open sparkling amethyst geode, warm fall jewel tones.\nDATE HEADER: WEDNESDAY \u00b7 September 9, 2026.\n\nSCHEDULE (equal visual weight if 2+):\n1) Robert \u2014 Keeper of the Cards \u2014 1 PM\u20137 PM\n2) Jeniffer \u2014 Moon Alchemy Journey \u2014 7 PM\u20139 PM\n\nHARD BRANDING:\n- Do NOT draw any sun, circular logo, seal, crest, or Sacred Ground emblem anywhere. Leave a clean empty top-left corner (~12% of width) for the real logo to be added later.\n- Cream footer band with ONLY: shopsacredground.com \u00b7 847-749-3922 \u2014 keep footer completely clear (no logo, no extra seals).\n- Shop pride ONCE only: \"Chicagoland's #1\" OR \"Voted #1 Chicagoland\" \u2014 never twice.\n- Never print on the image: Morning Social, morning social, Morning Social Flyer, designed-in, remake, week-ahead, social flyer, prompt words.\n- No prices. Equal-size cards when 2+ events. Colorful shop-made energy \u2014 light early-fall mood (amber maple accents welcome), Sep 3 jewel colors welcome (coral/chartreuse/teal/sunflower/eggplant/amber). Not purple mystic sludge. Not a pile of identical newspaper templates.\n\n",
+      "ref": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-flyer-sq-1787671219.jpg",
+      "logo_ref_note": "Sep 7 keeper for logo look only \u2014 do not ask model to draw logo; paste real PNG after"
+    },
+    {
+      "date": "2026-09-11",
+      "weekday": "FRIDAY",
+      "style_id": "surprise_hollywood_poster",
+      "style": "vintage Hollywood movie poster, bold sunflower teal eggplant color",
+      "events": [
+        "Lin Bufelli \u2014 Angel & Quick Astrology \u2014 1 PM\u20135 PM",
+        "Frequency Reset \u2014 3 PM\u20138 PM",
+        "Lisa Maria \u2014 Awaken Your Intuition \u2014 7 PM\u20138:30 PM"
+      ],
+      "prompt": "Sacred Ground square 1:1 shop-made art poster.\nSTYLE: vintage Hollywood movie poster, bold sunflower teal eggplant color.\nDATE HEADER: FRIDAY \u00b7 September 11, 2026.\n\nSCHEDULE (equal visual weight if 2+):\n1) Lin Bufelli \u2014 Angel & Quick Astrology \u2014 1 PM\u20135 PM\n2) Frequency Reset \u2014 3 PM\u20138 PM\n3) Lisa Maria \u2014 Awaken Your Intuition \u2014 7 PM\u20138:30 PM\n\nHARD BRANDING:\n- Do NOT draw any sun, circular logo, seal, crest, or Sacred Ground emblem anywhere. Leave a clean empty top-left corner (~12% of width) for the real logo to be added later.\n- Cream footer band with ONLY: shopsacredground.com \u00b7 847-749-3922 \u2014 keep footer completely clear (no logo, no extra seals).\n- Shop pride ONCE only: \"Chicagoland's #1\" OR \"Voted #1 Chicagoland\" \u2014 never twice.\n- Never print on the image: Morning Social, morning social, Morning Social Flyer, designed-in, remake, week-ahead, social flyer, prompt words.\n- No prices. Equal-size cards when 2+ events. Colorful shop-made energy \u2014 light early-fall mood (amber maple accents welcome), Sep 3 jewel colors welcome (coral/chartreuse/teal/sunflower/eggplant/amber). Not purple mystic sludge. Not a pile of identical newspaper templates.\n\n",
+      "ref": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-flyer-sq-1787671219.jpg",
+      "logo_ref_note": "Sep 7 keeper for logo look only \u2014 do not ask model to draw logo; paste real PNG after"
+    },
+    {
+      "date": "2026-09-12",
+      "weekday": "SATURDAY",
+      "style_id": "surprise_cosmic_subway",
+      "style": "cosmic subway transit map poster, bright line colors chartreuse coral teal",
+      "events": [
+        "Adie \u2014 Tarot \u2014 11 AM\u20133 PM",
+        "Melissa \u2014 Shaman Medium \u2014 11 AM\u20132 PM",
+        "Robert \u2014 Keeper of the Cards \u2014 3 PM\u20137:30 PM"
+      ],
+      "prompt": "Sacred Ground square 1:1 shop-made art poster.\nSTYLE: cosmic subway transit map poster, bright line colors chartreuse coral teal.\nDATE HEADER: SATURDAY \u00b7 September 12, 2026.\n\nSCHEDULE (equal visual weight if 2+):\n1) Adie \u2014 Tarot \u2014 11 AM\u20133 PM\n2) Melissa \u2014 Shaman Medium \u2014 11 AM\u20132 PM\n3) Robert \u2014 Keeper of the Cards \u2014 3 PM\u20137:30 PM\n\nHARD BRANDING:\n- Do NOT draw any sun, circular logo, seal, crest, or Sacred Ground emblem anywhere. Leave a clean empty top-left corner (~12% of width) for the real logo to be added later.\n- Cream footer band with ONLY: shopsacredground.com \u00b7 847-749-3922 \u2014 keep footer completely clear (no logo, no extra seals).\n- Shop pride ONCE only: \"Chicagoland's #1\" OR \"Voted #1 Chicagoland\" \u2014 never twice.\n- Never print on the image: Morning Social, morning social, Morning Social Flyer, designed-in, remake, week-ahead, social flyer, prompt words.\n- No prices. Equal-size cards when 2+ events. Colorful shop-made energy \u2014 light early-fall mood (amber maple accents welcome), Sep 3 jewel colors welcome (coral/chartreuse/teal/sunflower/eggplant/amber). Not purple mystic sludge. Not a pile of identical newspaper templates.\n\n",
+      "ref": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-flyer-sq-1787671219.jpg",
+      "logo_ref_note": "Sep 7 keeper for logo look only \u2014 do not ask model to draw logo; paste real PNG after"
+    },
+    {
+      "date": "2026-09-13",
+      "weekday": "SUNDAY",
+      "style_id": "surprise_secret_door",
+      "style": "secret glowing wooden door in early-autumn forest, maple and amber light",
+      "events": [
+        "Rose \u2014 Ankh Lifeforce Alignment Reiki \u2014 12 PM\u20135 PM"
+      ],
+      "prompt": "Sacred Ground square 1:1 shop-made art poster.\nSTYLE: secret glowing wooden door in early-autumn forest, maple and amber light.\nDATE HEADER: SUNDAY \u00b7 September 13, 2026.\n\nSCHEDULE (equal visual weight if 2+):\n1) Rose \u2014 Ankh Lifeforce Alignment Reiki \u2014 12 PM\u20135 PM\n\nHARD BRANDING:\n- Do NOT draw any sun, circular logo, seal, crest, or Sacred Ground emblem anywhere. Leave a clean empty top-left corner (~12% of width) for the real logo to be added later.\n- Cream footer band with ONLY: shopsacredground.com \u00b7 847-749-3922 \u2014 keep footer completely clear (no logo, no extra seals).\n- Shop pride ONCE only: \"Chicagoland's #1\" OR \"Voted #1 Chicagoland\" \u2014 never twice.\n- Never print on the image: Morning Social, morning social, Morning Social Flyer, designed-in, remake, week-ahead, social flyer, prompt words.\n- No prices. Equal-size cards when 2+ events. Colorful shop-made energy \u2014 light early-fall mood (amber maple accents welcome), Sep 3 jewel colors welcome (coral/chartreuse/teal/sunflower/eggplant/amber). Not purple mystic sludge. Not a pile of identical newspaper templates.\n\n",
+      "ref": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-flyer-sq-1787671219.jpg",
+      "logo_ref_note": "Sep 7 keeper for logo look only \u2014 do not ask model to draw logo; paste real PNG after"
+    },
+    {
+      "date": "2026-09-14",
+      "weekday": "MONDAY",
+      "style_id": "surprise_newspaper_daily",
+      "style": "Sacred Ground Daily newspaper \u2014 ONE beautiful broadsheet only, cream paper with autumn leaf corner accents, playful headline, NOT Morning Social",
+      "events": [
+        "Lisa Maria \u2014 Intuitive Tarot \u2014 12 PM\u20135 PM"
+      ],
+      "prompt": "Sacred Ground square 1:1 shop-made art poster.\nSTYLE: Sacred Ground Daily newspaper \u2014 ONE beautiful broadsheet only, cream paper with autumn leaf corner accents, playful headline, NOT Morning Social.\nDATE HEADER: MONDAY \u00b7 September 14, 2026.\n\nSCHEDULE (equal visual weight if 2+):\n1) Lisa Maria \u2014 Intuitive Tarot \u2014 12 PM\u20135 PM\n\nHARD BRANDING:\n- Do NOT draw any sun, circular logo, seal, crest, or Sacred Ground emblem anywhere. Leave a clean empty top-left corner (~12% of width) for the real logo to be added later.\n- Cream footer band with ONLY: shopsacredground.com \u00b7 847-749-3922 \u2014 keep footer completely clear (no logo, no extra seals).\n- Shop pride ONCE only: \"Chicagoland's #1\" OR \"Voted #1 Chicagoland\" \u2014 never twice.\n- Never print on the image: Morning Social, morning social, Morning Social Flyer, designed-in, remake, week-ahead, social flyer, prompt words.\n- No prices. Equal-size cards when 2+ events. Colorful shop-made energy \u2014 light early-fall mood (amber maple accents welcome), Sep 3 jewel colors welcome (coral/chartreuse/teal/sunflower/eggplant/amber). Not purple mystic sludge. Not a pile of identical newspaper templates.\n\n\nThis is one of only THREE Sacred Ground Daily plates this month \u2014 make it special and individual, not a template repeat.\n",
+      "ref": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-flyer-sq-1787671219.jpg",
+      "logo_ref_note": "Sep 7 keeper for logo look only \u2014 do not ask model to draw logo; paste real PNG after"
+    },
+    {
+      "date": "2026-09-15",
+      "weekday": "TUESDAY",
+      "style_id": "surprise_museum_artifact_3026",
+      "style": "museum artifact pedestal 3026, jewel tones",
+      "events": [
+        "Amber \u2014 Customized Therapeutic Massage \u2014 12 PM\u20135 PM",
+        "Janel \u2014 Divine Insight \u2014 1 PM\u20136 PM",
+        "Free Community Meditation \u2014 FREE \u2014 7 PM\u20138 PM"
+      ],
+      "prompt": "Sacred Ground square 1:1 shop-made art poster.\nSTYLE: museum artifact pedestal 3026, jewel tones.\nDATE HEADER: TUESDAY \u00b7 September 15, 2026.\n\nSCHEDULE (equal visual weight if 2+):\n1) Amber \u2014 Customized Therapeutic Massage \u2014 12 PM\u20135 PM\n2) Janel \u2014 Divine Insight \u2014 1 PM\u20136 PM\n3) Free Community Meditation \u2014 FREE \u2014 7 PM\u20138 PM\n\nHARD BRANDING:\n- Do NOT draw any sun, circular logo, seal, crest, or Sacred Ground emblem anywhere. Leave a clean empty top-left corner (~12% of width) for the real logo to be added later.\n- Cream footer band with ONLY: shopsacredground.com \u00b7 847-749-3922 \u2014 keep footer completely clear (no logo, no extra seals).\n- Shop pride ONCE only: \"Chicagoland's #1\" OR \"Voted #1 Chicagoland\" \u2014 never twice.\n- Never print on the image: Morning Social, morning social, Morning Social Flyer, designed-in, remake, week-ahead, social flyer, prompt words.\n- No prices. Equal-size cards when 2+ events. Colorful shop-made energy \u2014 light early-fall mood (amber maple accents welcome), Sep 3 jewel colors welcome (coral/chartreuse/teal/sunflower/eggplant/amber). Not purple mystic sludge. Not a pile of identical newspaper templates.\n\n",
+      "ref": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-flyer-sq-1787671219.jpg",
+      "logo_ref_note": "Sep 7 keeper for logo look only \u2014 do not ask model to draw logo; paste real PNG after"
+    },
+    {
+      "date": "2026-09-16",
+      "weekday": "WEDNESDAY",
+      "style_id": "surprise_tiny_universe",
+      "style": "tiny Sacred Ground shop inside open gold pocket watch, warm amber copper",
+      "events": [
+        "Tina \u2014 Intuitive Tarot, Runes & Reiki \u2014 12 PM\u20135 PM",
+        "Free Community Educational Night \u2014 7 PM\u20138:30 PM"
+      ],
+      "prompt": "Sacred Ground square 1:1 shop-made art poster.\nSTYLE: tiny Sacred Ground shop inside open gold pocket watch, warm amber copper.\nDATE HEADER: WEDNESDAY \u00b7 September 16, 2026.\n\nSCHEDULE (equal visual weight if 2+):\n1) Tina \u2014 Intuitive Tarot, Runes & Reiki \u2014 12 PM\u20135 PM\n2) Free Community Educational Night \u2014 7 PM\u20138:30 PM\n\nHARD BRANDING:\n- Do NOT draw any sun, circular logo, seal, crest, or Sacred Ground emblem anywhere. Leave a clean empty top-left corner (~12% of width) for the real logo to be added later.\n- Cream footer band with ONLY: shopsacredground.com \u00b7 847-749-3922 \u2014 keep footer completely clear (no logo, no extra seals).\n- Shop pride ONCE only: \"Chicagoland's #1\" OR \"Voted #1 Chicagoland\" \u2014 never twice.\n- Never print on the image: Morning Social, morning social, Morning Social Flyer, designed-in, remake, week-ahead, social flyer, prompt words.\n- No prices. Equal-size cards when 2+ events. Colorful shop-made energy \u2014 light early-fall mood (amber maple accents welcome), Sep 3 jewel colors welcome (coral/chartreuse/teal/sunflower/eggplant/amber). Not purple mystic sludge. Not a pile of identical newspaper templates.\n\n",
+      "ref": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-flyer-sq-1787671219.jpg",
+      "logo_ref_note": "Sep 7 keeper for logo look only \u2014 do not ask model to draw logo; paste real PNG after"
+    },
+    {
+      "date": "2026-09-17",
+      "weekday": "THURSDAY",
+      "style_id": "thursday_cards_shop_made",
+      "style": "equal stacked event cards, Sep 3 fall color energy: coral chartreuse teal sunflower eggplant amber",
+      "events": [
+        "Adie \u2014 Tarot \u2014 12 PM\u20135 PM",
+        "Sherry \u2014 Tai Chi Gung \u2014 12 PM\u20131 PM",
+        "Renee \u2014 Reiki \u2014 5 PM\u20137 PM"
+      ],
+      "prompt": "Sacred Ground square 1:1 shop-made art poster.\nSTYLE: equal stacked event cards, Sep 3 fall color energy: coral chartreuse teal sunflower eggplant amber.\nDATE HEADER: THURSDAY \u00b7 September 17, 2026.\n\nSCHEDULE (equal visual weight if 2+):\n1) Adie \u2014 Tarot \u2014 12 PM\u20135 PM\n2) Sherry \u2014 Tai Chi Gung \u2014 12 PM\u20131 PM\n3) Renee \u2014 Reiki \u2014 5 PM\u20137 PM\n\nHARD BRANDING:\n- Do NOT draw any sun, circular logo, seal, crest, or Sacred Ground emblem anywhere. Leave a clean empty top-left corner (~12% of width) for the real logo to be added later.\n- Cream footer band with ONLY: shopsacredground.com \u00b7 847-749-3922 \u2014 keep footer completely clear (no logo, no extra seals).\n- Shop pride ONCE only: \"Chicagoland's #1\" OR \"Voted #1 Chicagoland\" \u2014 never twice.\n- Never print on the image: Morning Social, morning social, Morning Social Flyer, designed-in, remake, week-ahead, social flyer, prompt words.\n- No prices. Equal-size cards when 2+ events. Colorful shop-made energy \u2014 light early-fall mood (amber maple accents welcome), Sep 3 jewel colors welcome (coral/chartreuse/teal/sunflower/eggplant/amber). Not purple mystic sludge. Not a pile of identical newspaper templates.\n\n",
+      "ref": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-flyer-sq-1787671219.jpg",
+      "logo_ref_note": "Sep 7 keeper for logo look only \u2014 do not ask model to draw logo; paste real PNG after"
+    },
+    {
+      "date": "2026-09-18",
+      "weekday": "FRIDAY",
+      "style_id": "surprise_layer_cake",
+      "style": "whimsical autumn layer cake celebration, delicious bright color",
+      "events": [
+        "Cheryl \u2014 Reflexology Reset \u2014 11 AM\u20133 PM",
+        "Robert \u2014 Keeper of the Cards \u2014 1 PM\u20136:30 PM",
+        "Kate \u2014 Mabon Wheel of the Year \u2014 7 PM\u20139 PM"
+      ],
+      "prompt": "Sacred Ground square 1:1 shop-made art poster.\nSTYLE: whimsical autumn layer cake celebration, delicious bright color.\nDATE HEADER: FRIDAY \u00b7 September 18, 2026.\n\nSCHEDULE (equal visual weight if 2+):\n1) Cheryl \u2014 Reflexology Reset \u2014 11 AM\u20133 PM\n2) Robert \u2014 Keeper of the Cards \u2014 1 PM\u20136:30 PM\n3) Kate \u2014 Mabon Wheel of the Year \u2014 7 PM\u20139 PM\n\nHARD BRANDING:\n- Do NOT draw any sun, circular logo, seal, crest, or Sacred Ground emblem anywhere. Leave a clean empty top-left corner (~12% of width) for the real logo to be added later.\n- Cream footer band with ONLY: shopsacredground.com \u00b7 847-749-3922 \u2014 keep footer completely clear (no logo, no extra seals).\n- Shop pride ONCE only: \"Chicagoland's #1\" OR \"Voted #1 Chicagoland\" \u2014 never twice.\n- Never print on the image: Morning Social, morning social, Morning Social Flyer, designed-in, remake, week-ahead, social flyer, prompt words.\n- No prices. Equal-size cards when 2+ events. Colorful shop-made energy \u2014 light early-fall mood (amber maple accents welcome), Sep 3 jewel colors welcome (coral/chartreuse/teal/sunflower/eggplant/amber). Not purple mystic sludge. Not a pile of identical newspaper templates.\n\n",
+      "ref": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-flyer-sq-1787671219.jpg",
+      "logo_ref_note": "Sep 7 keeper for logo look only \u2014 do not ask model to draw logo; paste real PNG after"
+    },
+    {
+      "date": "2026-09-19",
+      "weekday": "SATURDAY",
+      "style_id": "surprise_vending_machine",
+      "style": "mystical crystal vending machine, colorful jewel tones",
+      "events": [
+        "Adie \u2014 Tarot \u2014 11 AM\u20133 PM",
+        "Melissa \u2014 Shaman Medium \u2014 11 AM\u20132 PM",
+        "Andre \u2014 Sound Bath or Shamanic Drum \u2014 7 PM\u20138:30 PM"
+      ],
+      "prompt": "Sacred Ground square 1:1 shop-made art poster.\nSTYLE: mystical crystal vending machine, colorful jewel tones.\nDATE HEADER: SATURDAY \u00b7 September 19, 2026.\n\nSCHEDULE (equal visual weight if 2+):\n1) Adie \u2014 Tarot \u2014 11 AM\u20133 PM\n2) Melissa \u2014 Shaman Medium \u2014 11 AM\u20132 PM\n3) Andre \u2014 Sound Bath or Shamanic Drum \u2014 7 PM\u20138:30 PM\n\nHARD BRANDING:\n- Do NOT draw any sun, circular logo, seal, crest, or Sacred Ground emblem anywhere. Leave a clean empty top-left corner (~12% of width) for the real logo to be added later.\n- Cream footer band with ONLY: shopsacredground.com \u00b7 847-749-3922 \u2014 keep footer completely clear (no logo, no extra seals).\n- Shop pride ONCE only: \"Chicagoland's #1\" OR \"Voted #1 Chicagoland\" \u2014 never twice.\n- Never print on the image: Morning Social, morning social, Morning Social Flyer, designed-in, remake, week-ahead, social flyer, prompt words.\n- No prices. Equal-size cards when 2+ events. Colorful shop-made energy \u2014 light early-fall mood (amber maple accents welcome), Sep 3 jewel colors welcome (coral/chartreuse/teal/sunflower/eggplant/amber). Not purple mystic sludge. Not a pile of identical newspaper templates.\n\n",
+      "ref": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-flyer-sq-1787671219.jpg",
+      "logo_ref_note": "Sep 7 keeper for logo look only \u2014 do not ask model to draw logo; paste real PNG after"
+    },
+    {
+      "date": "2026-09-20",
+      "weekday": "SUNDAY",
+      "style_id": "surprise_where_landed",
+      "style": "birthday autumn leaves + elegant balloons, NO age number, soft early fall color",
+      "events": [
+        "DENEENE'S BIRTHDAY TODAY \u2014 Solar return blessings",
+        "Reiki Share Free Community Event \u2014 FREE \u2014 3 PM\u20135 PM"
+      ],
+      "prompt": "Sacred Ground square 1:1 shop-made art poster.\nSTYLE: birthday autumn leaves + elegant balloons, NO age number, soft early fall color.\nDATE HEADER: SUNDAY \u00b7 September 20, 2026.\n\nSCHEDULE (equal visual weight if 2+):\n1) DENEENE'S BIRTHDAY TODAY \u2014 Solar return blessings\n2) Reiki Share Free Community Event \u2014 FREE \u2014 3 PM\u20135 PM\n\nHARD BRANDING:\n- Do NOT draw any sun, circular logo, seal, crest, or Sacred Ground emblem anywhere. Leave a clean empty top-left corner (~12% of width) for the real logo to be added later.\n- Cream footer band with ONLY: shopsacredground.com \u00b7 847-749-3922 \u2014 keep footer completely clear (no logo, no extra seals).\n- Shop pride ONCE only: \"Chicagoland's #1\" OR \"Voted #1 Chicagoland\" \u2014 never twice.\n- Never print on the image: Morning Social, morning social, Morning Social Flyer, designed-in, remake, week-ahead, social flyer, prompt words.\n- No prices. Equal-size cards when 2+ events. Colorful shop-made energy \u2014 light early-fall mood (amber maple accents welcome), Sep 3 jewel colors welcome (coral/chartreuse/teal/sunflower/eggplant/amber). Not purple mystic sludge. Not a pile of identical newspaper templates.\n\n",
+      "ref": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-flyer-sq-1787671219.jpg",
+      "logo_ref_note": "Sep 7 keeper for logo look only \u2014 do not ask model to draw logo; paste real PNG after"
+    },
+    {
+      "date": "2026-09-21",
+      "weekday": "MONDAY",
+      "style_id": "surprise_newspaper_daily",
+      "style": "Sacred Ground Daily newspaper \u2014 fresh dramatic headline, cream + one bold fall accent color, NOT Morning Social",
+      "events": [
+        "Lisa Maria \u2014 Intuitive Tarot \u2014 12 PM\u20135 PM",
+        "Karen \u2014 Soul Alignment \u2014 7 PM\u201310 PM"
+      ],
+      "prompt": "Sacred Ground square 1:1 shop-made art poster.\nSTYLE: Sacred Ground Daily newspaper \u2014 fresh dramatic headline, cream + one bold fall accent color, NOT Morning Social.\nDATE HEADER: MONDAY \u00b7 September 21, 2026.\n\nSCHEDULE (equal visual weight if 2+):\n1) Lisa Maria \u2014 Intuitive Tarot \u2014 12 PM\u20135 PM\n2) Karen \u2014 Soul Alignment \u2014 7 PM\u201310 PM\n\nHARD BRANDING:\n- Do NOT draw any sun, circular logo, seal, crest, or Sacred Ground emblem anywhere. Leave a clean empty top-left corner (~12% of width) for the real logo to be added later.\n- Cream footer band with ONLY: shopsacredground.com \u00b7 847-749-3922 \u2014 keep footer completely clear (no logo, no extra seals).\n- Shop pride ONCE only: \"Chicagoland's #1\" OR \"Voted #1 Chicagoland\" \u2014 never twice.\n- Never print on the image: Morning Social, morning social, Morning Social Flyer, designed-in, remake, week-ahead, social flyer, prompt words.\n- No prices. Equal-size cards when 2+ events. Colorful shop-made energy \u2014 light early-fall mood (amber maple accents welcome), Sep 3 jewel colors welcome (coral/chartreuse/teal/sunflower/eggplant/amber). Not purple mystic sludge. Not a pile of identical newspaper templates.\n\n\nThis is one of only THREE Sacred Ground Daily plates this month \u2014 make it special and individual, not a template repeat.\n",
+      "ref": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-flyer-sq-1787671219.jpg",
+      "logo_ref_note": "Sep 7 keeper for logo look only \u2014 do not ask model to draw logo; paste real PNG after"
+    },
+    {
+      "date": "2026-09-23",
+      "weekday": "WEDNESDAY",
+      "style_id": "surprise_where_landed",
+      "style": "Sacred Ground shop inside enormous autumn maple leaf",
+      "events": [
+        "Rose \u2014 Ankh Lifeforce Alignment Reiki \u2014 12 PM\u20135 PM"
+      ],
+      "prompt": "Sacred Ground square 1:1 shop-made art poster.\nSTYLE: Sacred Ground shop inside enormous autumn maple leaf.\nDATE HEADER: WEDNESDAY \u00b7 September 23, 2026.\n\nSCHEDULE (equal visual weight if 2+):\n1) Rose \u2014 Ankh Lifeforce Alignment Reiki \u2014 12 PM\u20135 PM\n\nHARD BRANDING:\n- Do NOT draw any sun, circular logo, seal, crest, or Sacred Ground emblem anywhere. Leave a clean empty top-left corner (~12% of width) for the real logo to be added later.\n- Cream footer band with ONLY: shopsacredground.com \u00b7 847-749-3922 \u2014 keep footer completely clear (no logo, no extra seals).\n- Shop pride ONCE only: \"Chicagoland's #1\" OR \"Voted #1 Chicagoland\" \u2014 never twice.\n- Never print on the image: Morning Social, morning social, Morning Social Flyer, designed-in, remake, week-ahead, social flyer, prompt words.\n- No prices. Equal-size cards when 2+ events. Colorful shop-made energy \u2014 light early-fall mood (amber maple accents welcome), Sep 3 jewel colors welcome (coral/chartreuse/teal/sunflower/eggplant/amber). Not purple mystic sludge. Not a pile of identical newspaper templates.\n\n",
+      "ref": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-flyer-sq-1787671219.jpg",
+      "logo_ref_note": "Sep 7 keeper for logo look only \u2014 do not ask model to draw logo; paste real PNG after"
+    },
+    {
+      "date": "2026-09-24",
+      "weekday": "THURSDAY",
+      "style_id": "thursday_cards_shop_made",
+      "style": "equal stacked cards, Sep 3 jewel fall colors",
+      "events": [
+        "Adie \u2014 Tarot \u2014 12 PM\u20135 PM",
+        "Sherry \u2014 Tai Chi Gung \u2014 12 PM\u20131 PM",
+        "Quantum Shift \u2014 7 PM\u20139 PM"
+      ],
+      "prompt": "Sacred Ground square 1:1 shop-made art poster.\nSTYLE: equal stacked cards, Sep 3 jewel fall colors.\nDATE HEADER: THURSDAY \u00b7 September 24, 2026.\n\nSCHEDULE (equal visual weight if 2+):\n1) Adie \u2014 Tarot \u2014 12 PM\u20135 PM\n2) Sherry \u2014 Tai Chi Gung \u2014 12 PM\u20131 PM\n3) Quantum Shift \u2014 7 PM\u20139 PM\n\nHARD BRANDING:\n- Do NOT draw any sun, circular logo, seal, crest, or Sacred Ground emblem anywhere. Leave a clean empty top-left corner (~12% of width) for the real logo to be added later.\n- Cream footer band with ONLY: shopsacredground.com \u00b7 847-749-3922 \u2014 keep footer completely clear (no logo, no extra seals).\n- Shop pride ONCE only: \"Chicagoland's #1\" OR \"Voted #1 Chicagoland\" \u2014 never twice.\n- Never print on the image: Morning Social, morning social, Morning Social Flyer, designed-in, remake, week-ahead, social flyer, prompt words.\n- No prices. Equal-size cards when 2+ events. Colorful shop-made energy \u2014 light early-fall mood (amber maple accents welcome), Sep 3 jewel colors welcome (coral/chartreuse/teal/sunflower/eggplant/amber). Not purple mystic sludge. Not a pile of identical newspaper templates.\n\n",
+      "ref": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-flyer-sq-1787671219.jpg",
+      "logo_ref_note": "Sep 7 keeper for logo look only \u2014 do not ask model to draw logo; paste real PNG after"
+    },
+    {
+      "date": "2026-09-25",
+      "weekday": "FRIDAY",
+      "style_id": "surprise_department_window",
+      "style": "department store display window for Sacred Ground, amber and teal lights",
+      "events": [
+        "Robert \u2014 Keeper of the Cards",
+        "Kate \u2014 Vibrational Chakra Healing",
+        "Sacred Creations Gathering"
+      ],
+      "prompt": "Sacred Ground square 1:1 shop-made art poster.\nSTYLE: department store display window for Sacred Ground, amber and teal lights.\nDATE HEADER: FRIDAY \u00b7 September 25, 2026.\n\nSCHEDULE (equal visual weight if 2+):\n1) Robert \u2014 Keeper of the Cards\n2) Kate \u2014 Vibrational Chakra Healing\n3) Sacred Creations Gathering\n\nHARD BRANDING:\n- Do NOT draw any sun, circular logo, seal, crest, or Sacred Ground emblem anywhere. Leave a clean empty top-left corner (~12% of width) for the real logo to be added later.\n- Cream footer band with ONLY: shopsacredground.com \u00b7 847-749-3922 \u2014 keep footer completely clear (no logo, no extra seals).\n- Shop pride ONCE only: \"Chicagoland's #1\" OR \"Voted #1 Chicagoland\" \u2014 never twice.\n- Never print on the image: Morning Social, morning social, Morning Social Flyer, designed-in, remake, week-ahead, social flyer, prompt words.\n- No prices. Equal-size cards when 2+ events. Colorful shop-made energy \u2014 light early-fall mood (amber maple accents welcome), Sep 3 jewel colors welcome (coral/chartreuse/teal/sunflower/eggplant/amber). Not purple mystic sludge. Not a pile of identical newspaper templates.\n\n",
+      "ref": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-flyer-sq-1787671219.jpg",
+      "logo_ref_note": "Sep 7 keeper for logo look only \u2014 do not ask model to draw logo; paste real PNG after"
+    },
+    {
+      "date": "2026-09-27",
+      "weekday": "SUNDAY",
+      "style_id": "surprise_where_landed",
+      "style": "Sacred Ground inside giant seashell on colorful shore, warm late-summer into fall light",
+      "events": [
+        "Mary \u2014 Integrated Energy Healing",
+        "Diane \u2014 Oracle of the Stones",
+        "Divine Space Manifestation"
+      ],
+      "prompt": "Sacred Ground square 1:1 shop-made art poster.\nSTYLE: Sacred Ground inside giant seashell on colorful shore, warm late-summer into fall light.\nDATE HEADER: SUNDAY \u00b7 September 27, 2026.\n\nSCHEDULE (equal visual weight if 2+):\n1) Mary \u2014 Integrated Energy Healing\n2) Diane \u2014 Oracle of the Stones\n3) Divine Space Manifestation\n\nHARD BRANDING:\n- Do NOT draw any sun, circular logo, seal, crest, or Sacred Ground emblem anywhere. Leave a clean empty top-left corner (~12% of width) for the real logo to be added later.\n- Cream footer band with ONLY: shopsacredground.com \u00b7 847-749-3922 \u2014 keep footer completely clear (no logo, no extra seals).\n- Shop pride ONCE only: \"Chicagoland's #1\" OR \"Voted #1 Chicagoland\" \u2014 never twice.\n- Never print on the image: Morning Social, morning social, Morning Social Flyer, designed-in, remake, week-ahead, social flyer, prompt words.\n- No prices. Equal-size cards when 2+ events. Colorful shop-made energy \u2014 light early-fall mood (amber maple accents welcome), Sep 3 jewel colors welcome (coral/chartreuse/teal/sunflower/eggplant/amber). Not purple mystic sludge. Not a pile of identical newspaper templates.\n\n",
+      "ref": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-flyer-sq-1787671219.jpg",
+      "logo_ref_note": "Sep 7 keeper for logo look only \u2014 do not ask model to draw logo; paste real PNG after"
+    },
+    {
+      "date": "2026-09-28",
+      "weekday": "MONDAY",
+      "style_id": "surprise_newspaper_daily",
+      "style": "Sacred Ground Daily newspaper \u2014 third and last of the month, playful headline, autumn leaf accents only in corners",
+      "events": [
+        "Lisa Maria \u2014 Intuitive Tarot \u2014 12 PM\u20135 PM"
+      ],
+      "prompt": "Sacred Ground square 1:1 shop-made art poster.\nSTYLE: Sacred Ground Daily newspaper \u2014 third and last of the month, playful headline, autumn leaf accents only in corners.\nDATE HEADER: MONDAY \u00b7 September 28, 2026.\n\nSCHEDULE (equal visual weight if 2+):\n1) Lisa Maria \u2014 Intuitive Tarot \u2014 12 PM\u20135 PM\n\nHARD BRANDING:\n- Do NOT draw any sun, circular logo, seal, crest, or Sacred Ground emblem anywhere. Leave a clean empty top-left corner (~12% of width) for the real logo to be added later.\n- Cream footer band with ONLY: shopsacredground.com \u00b7 847-749-3922 \u2014 keep footer completely clear (no logo, no extra seals).\n- Shop pride ONCE only: \"Chicagoland's #1\" OR \"Voted #1 Chicagoland\" \u2014 never twice.\n- Never print on the image: Morning Social, morning social, Morning Social Flyer, designed-in, remake, week-ahead, social flyer, prompt words.\n- No prices. Equal-size cards when 2+ events. Colorful shop-made energy \u2014 light early-fall mood (amber maple accents welcome), Sep 3 jewel colors welcome (coral/chartreuse/teal/sunflower/eggplant/amber). Not purple mystic sludge. Not a pile of identical newspaper templates.\n\n\nThis is one of only THREE Sacred Ground Daily plates this month \u2014 make it special and individual, not a template repeat.\n",
+      "ref": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-flyer-sq-1787671219.jpg",
+      "logo_ref_note": "Sep 7 keeper for logo look only \u2014 do not ask model to draw logo; paste real PNG after"
+    },
+    {
+      "date": "2026-09-29",
+      "weekday": "TUESDAY",
+      "style_id": "surprise_board_game",
+      "style": "mystical board game board poster, colorful playful",
+      "events": [
+        "Amber \u2014 Customized Therapeutic Massage",
+        "Tina \u2014 Intuitive Tarot",
+        "Free Community Meditation \u2014 FREE \u2014 7 PM\u20138 PM"
+      ],
+      "prompt": "Sacred Ground square 1:1 shop-made art poster.\nSTYLE: mystical board game board poster, colorful playful.\nDATE HEADER: TUESDAY \u00b7 September 29, 2026.\n\nSCHEDULE (equal visual weight if 2+):\n1) Amber \u2014 Customized Therapeutic Massage\n2) Tina \u2014 Intuitive Tarot\n3) Free Community Meditation \u2014 FREE \u2014 7 PM\u20138 PM\n\nHARD BRANDING:\n- Do NOT draw any sun, circular logo, seal, crest, or Sacred Ground emblem anywhere. Leave a clean empty top-left corner (~12% of width) for the real logo to be added later.\n- Cream footer band with ONLY: shopsacredground.com \u00b7 847-749-3922 \u2014 keep footer completely clear (no logo, no extra seals).\n- Shop pride ONCE only: \"Chicagoland's #1\" OR \"Voted #1 Chicagoland\" \u2014 never twice.\n- Never print on the image: Morning Social, morning social, Morning Social Flyer, designed-in, remake, week-ahead, social flyer, prompt words.\n- No prices. Equal-size cards when 2+ events. Colorful shop-made energy \u2014 light early-fall mood (amber maple accents welcome), Sep 3 jewel colors welcome (coral/chartreuse/teal/sunflower/eggplant/amber). Not purple mystic sludge. Not a pile of identical newspaper templates.\n\n",
+      "ref": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-flyer-sq-1787671219.jpg",
+      "logo_ref_note": "Sep 7 keeper for logo look only \u2014 do not ask model to draw logo; paste real PNG after"
+    },
+    {
+      "date": "2026-09-30",
+      "weekday": "WEDNESDAY",
+      "style_id": "surprise_cabinet_curiosities",
+      "style": "glass cabinet of curiosities with crystals, warm wood + jewel accents",
+      "events": [
+        "Janel \u2014 Divine Insight \u2014 1 PM\u20135 PM",
+        "Frequency Reset \u2014 3 PM\u20138 PM"
+      ],
+      "prompt": "Sacred Ground square 1:1 shop-made art poster.\nSTYLE: glass cabinet of curiosities with crystals, warm wood + jewel accents.\nDATE HEADER: WEDNESDAY \u00b7 September 30, 2026.\n\nSCHEDULE (equal visual weight if 2+):\n1) Janel \u2014 Divine Insight \u2014 1 PM\u20135 PM\n2) Frequency Reset \u2014 3 PM\u20138 PM\n\nHARD BRANDING:\n- Do NOT draw any sun, circular logo, seal, crest, or Sacred Ground emblem anywhere. Leave a clean empty top-left corner (~12% of width) for the real logo to be added later.\n- Cream footer band with ONLY: shopsacredground.com \u00b7 847-749-3922 \u2014 keep footer completely clear (no logo, no extra seals).\n- Shop pride ONCE only: \"Chicagoland's #1\" OR \"Voted #1 Chicagoland\" \u2014 never twice.\n- Never print on the image: Morning Social, morning social, Morning Social Flyer, designed-in, remake, week-ahead, social flyer, prompt words.\n- No prices. Equal-size cards when 2+ events. Colorful shop-made energy \u2014 light early-fall mood (amber maple accents welcome), Sep 3 jewel colors welcome (coral/chartreuse/teal/sunflower/eggplant/amber). Not purple mystic sludge. Not a pile of identical newspaper templates.\n\n",
+      "ref": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-flyer-sq-1787671219.jpg",
+      "logo_ref_note": "Sep 7 keeper for logo look only \u2014 do not ask model to draw logo; paste real PNG after"
+    }
+  ]
+}
