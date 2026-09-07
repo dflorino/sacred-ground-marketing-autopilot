@@ -1,3 +1,9 @@
+## 2026-09-07 — Today’s morning DID publish; keeper restored
+
+Founder asked if trash meant today didn’t go out. It did — FB/IG ~9:04–9:05am CT
+with plate media **27430**. Restored `2026-09-07` as keeper (`do_not_remake`).
+Sep 8–30 remain trashed.
+
 ## 2026-09-07 — Founder trashed rest-of-September morning flyers
 
 Founder stop: patching made plates worse (wrong sun logo, missing Chicagoland #1 /

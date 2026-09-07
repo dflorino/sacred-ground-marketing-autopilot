@@ -678,29 +678,34 @@
       "covers": [
         "Tina\u2019s Intuitive Tarot, Runes & Reiki Experience"
       ],
-      "local": null,
-      "url": null,
+      "local": "assets/sg-morning-flyer-2026-09-07-surprise-newspaper-open-today-v2.jpg",
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-social-f-1788631415.jpg",
       "prebranded": true,
       "template": "thursday-style",
       "visual_style": "surprise_newspaper_daily",
       "pride_baked_in": true,
-      "media_id": null,
+      "media_id": 27430,
       "generation_source": "mlimg_sep07_newspaper_open_today_v2_2026-09-05",
-      "note": "Labor Day Monday remake: OPEN TODAY \u00b7 11 AM \u2013 6 PM on plate. \u2014 Founder approved 2026-09-05T13:10-05:00.",
-      "locked_until_founder_review": true,
+      "note": "Founder keeper 2026-09-07 ~10:07am CT \u2014 live FB/IG morning was good. Published ~9:04/9:05am CT (FB 6a9ec48a0d151fee1bc17656 \u00b7 IG 6a9ec4a1fdde921d7671a741). Do not remake. Rest of Sep mornings remain trashed.",
+      "locked_until_founder_review": false,
       "banned_pil_cleared": true,
       "prior_url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-social-f-1788631415.jpg",
       "prior_media_id": 27430,
       "labor_day_hours": "Open today \u00b7 11 AM \u2013 6 PM",
-      "founder_approved": false,
-      "founder_approved_at": "2026-09-05T13:10-05:00",
-      "status": "founder_trashed",
-      "do_not_publish": true,
+      "founder_approved": true,
+      "founder_approved_at": "2026-09-07T10:07:00-05:00",
+      "status": "published_live",
+      "do_not_publish": false,
       "do_not_remake": true,
       "trashed_at": "2026-09-07T15:03:36.389463+00:00",
       "trash_reason": "Founder 2026-09-07: rest-of-Sep surprise mornings rejected \u2014 wrong sun logo, missing Chicagoland #1 / Voted pride, quality regressing with every fix. TRASHED. Do NOT regenerate until Founder asks.",
       "prior_local": "assets/sg-morning-flyer-2026-09-07-surprise-newspaper-open-today-v2.jpg",
-      "archived_local": "assets/_trashed_sep_mornings_2026-09-07/sg-morning-flyer-2026-09-07-surprise-newspaper-open-today-v2.jpg"
+      "archived_local": "assets/_trashed_sep_mornings_2026-09-07/sg-morning-flyer-2026-09-07-surprise-newspaper-open-today-v2.jpg",
+      "live_posts": {
+        "facebook": "6a9ec48a0d151fee1bc17656",
+        "instagram": "6a9ec4a1fdde921d7671a741",
+        "published_at_ct": "2026-09-07T09:04-05:00"
+      }
     },
     "2026-09-08": {
       "label": "Free Community Meditation + Amber | Customized Therapeutic Massage Sessions +",
@@ -1488,6 +1493,32 @@
     "range": "2026-09-07..2026-09-30",
     "count": 24,
     "archive": "assets/_trashed_sep_mornings_2026-09-07/",
-    "instruction": "Do not regenerate. Do not show remakes. Wait for Founder."
+    "instruction": "Do not regenerate. Do not show remakes. Wait for Founder.",
+    "restored_keeper": "2026-09-07",
+    "still_trashed": [
+      "2026-09-08",
+      "2026-09-09",
+      "2026-09-10",
+      "2026-09-11",
+      "2026-09-12",
+      "2026-09-13",
+      "2026-09-14",
+      "2026-09-15",
+      "2026-09-16",
+      "2026-09-17",
+      "2026-09-18",
+      "2026-09-19",
+      "2026-09-20",
+      "2026-09-21",
+      "2026-09-22",
+      "2026-09-23",
+      "2026-09-24",
+      "2026-09-25",
+      "2026-09-26",
+      "2026-09-27",
+      "2026-09-28",
+      "2026-09-29",
+      "2026-09-30"
+    ]
   }
 }
