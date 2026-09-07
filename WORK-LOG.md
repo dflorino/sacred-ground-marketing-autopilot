@@ -1,3 +1,12 @@
+## 2026-09-07 — Founder trashed rest-of-September morning flyers
+
+Founder stop: patching made plates worse (wrong sun logo, missing Chicagoland #1 /
+Voted pride). **No more remakes / credit spend** until Founder asks.
+
+- Marked `2026-09-07`–`2026-09-30` in `config/morning_flyers.json` as `founder_trashed`
+  (`do_not_publish`, `do_not_remake`, URLs cleared)
+- Locals moved to `assets/_trashed_sep_mornings_2026-09-07/` (recoverable)
+
 ## 2026-09-06 — Celestial event titles restored on images
 
 Founder clarified: celestial plates must **keep** event titles on the photo

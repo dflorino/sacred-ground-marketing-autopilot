@@ -314,6 +314,10 @@ def entry_publish_block_reason(entry: Optional[Dict[str, Any]]) -> Optional[str]
     """
     if not isinstance(entry, dict):
         return "missing_flyer_entry"
+    if entry.get("do_not_publish") or entry.get("status") == "founder_trashed":
+        return "founder_trashed"
+    if entry.get("do_not_remake") and not str(entry.get("url") or "").strip():
+        return "founder_trashed_no_url"
     src = entry_generation_source(entry)
     if src in BANNED_GENERATION_SOURCES:
         return f"banned_generation_source:{src}"
@@ -1926,6 +1930,15 @@ def ensure_flyer_for_day(
     is shared on Facebook and Instagram. Separate IG variants are not required
     (opt-in via allow_ig_variant + url_instagram only).
     """
+    existing = flyer_entry_for_day(day)
+    # Founder Sep 7 2026: trashed queue — never regenerate / burn credits.
+    if existing and (
+        existing.get("do_not_remake")
+        or existing.get("do_not_publish")
+        or existing.get("status") == "founder_trashed"
+    ):
+        return existing
+
     day_events = _day_events(day, events)
     copy = build_flyer_copy(day, day_events)
     art_id = choose_visual_style(day, events=day_events)
@@ -1938,8 +1951,6 @@ def ensure_flyer_for_day(
         variant=VARIANT_A,
         visual_style=art_id,
     )
-
-    existing = flyer_entry_for_day(day)
     publish_blockers = (
         entry_fails_publish_blockers(existing)
         if existing and day.isoformat() not in PROTECTED_DAYS
