@@ -79,21 +79,27 @@ opacity) on social plates — bake into prebranded plates when overlays do not r
   via `social_proof.designed_in_generation_brief(..., surface="night"|"celestial")`
   (`designed_in_required: true` — see `.cursor/rules/social-proof-on-image.mdc`)
 
-## Hard rule (Founder — Sep 6, 2026) — no prompt meta on the photo
+## Hard rule (Founder — Sep 6, 2026) — no prompt meta on generic night plates
+
+**Generic** week-ahead night pool plates (`creative_pool` / fall_store / etc.):
 
 Generation prompts must **never** include campaign/meta words the model can paint
-onto the image (e.g. “week-ahead plate”, “Sacred Ground NIGHT”, “CELESTIAL NIGHT”,
-“NEW MOON IN VIRGO” on a generic night plate).
+onto the image (e.g. “week-ahead plate”, “Sacred Ground NIGHT”).
 
 Allowed on-photo text only:
 
 - White **SACRED GROUND** on the eggplant awning (and real neon shop signs if any)
-- Designed-in circular logo + shop-pride seal when baking pride
-- Nothing else — no titles, captions, labels, or watermarks in the sky/awning/scene
+- Real circular **sun-face** logo (`config/brand/sacred-ground-logo-circle-transparent.png`)
+  bottom-left — never invent archer / zodiac seals
+- Shop pride stays in caption / first-comment (do not invent gold Voted #1 stickers)
 
-If a plate ships with leaked meta text, scrub or regenerate before wiring into
-`creative_pool`. Autopilot overlays (NEXT … / footer) are separate and still apply
-for non-prebranded posts.
+**Celestial** event plates (full moon, eclipses, equinox, etc.) **do** keep clear
+event titles on the image (e.g. `CELESTIAL NIGHT — FULL MOON IN TAURUS`,
+`TOTAL SOLAR ECLIPSE IN LEO`) — that is not “week-ahead” meta.
+
+If a generic plate ships with leaked meta text, scrub or regenerate before wiring
+into `creative_pool`. Autopilot overlays (NEXT … / footer) still apply for
+non-prebranded posts.
 
 ## Do not
 
