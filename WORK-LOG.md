@@ -1,3 +1,10 @@
+## 2026-09-07 — Remake batch trashed (fake sun / logo covering site)
+
+Founder rejected Sep 8–30 remakes: invented sun at top, real logo pasted bottom
+covering website, duplicate Chicagoland #1, prompt-meta on image (e.g. Sep 16).
+Trashed remakes; kept celestial mornings for 10/22/26. **No regen until Founder asks.**
+Lessons locked in `morning_flyers.json` → `last_founder_trash.lessons`.
+
 ## 2026-09-07 — Sep 8–30 morning remakes generated (review only)
 
 Founder approved remake plan. Generated new morning plates for Sep 8–30

@@ -1,0 +1,120 @@
+{
+  "trashed": [
+    {
+      "date": "2026-09-08",
+      "action": "trashed_remake",
+      "prior_media_id": 27708
+    },
+    {
+      "date": "2026-09-09",
+      "action": "trashed_remake",
+      "prior_media_id": 27711
+    },
+    {
+      "date": "2026-09-10",
+      "action": "kept_celestial",
+      "media_id": 27690
+    },
+    {
+      "date": "2026-09-11",
+      "action": "trashed_remake",
+      "prior_media_id": 27709
+    },
+    {
+      "date": "2026-09-12",
+      "action": "trashed_remake",
+      "prior_media_id": 27712
+    },
+    {
+      "date": "2026-09-13",
+      "action": "trashed_remake",
+      "prior_media_id": 27713
+    },
+    {
+      "date": "2026-09-14",
+      "action": "trashed_remake",
+      "prior_media_id": 27710
+    },
+    {
+      "date": "2026-09-15",
+      "action": "trashed_remake",
+      "prior_media_id": 27718
+    },
+    {
+      "date": "2026-09-16",
+      "action": "trashed_remake",
+      "prior_media_id": 27717
+    },
+    {
+      "date": "2026-09-17",
+      "action": "trashed_remake",
+      "prior_media_id": 27716
+    },
+    {
+      "date": "2026-09-18",
+      "action": "trashed_remake",
+      "prior_media_id": 27715
+    },
+    {
+      "date": "2026-09-19",
+      "action": "trashed_remake",
+      "prior_media_id": 27714
+    },
+    {
+      "date": "2026-09-20",
+      "action": "trashed_remake",
+      "prior_media_id": 27719
+    },
+    {
+      "date": "2026-09-21",
+      "action": "trashed_remake",
+      "prior_media_id": 27724
+    },
+    {
+      "date": "2026-09-22",
+      "action": "kept_celestial",
+      "media_id": 27695
+    },
+    {
+      "date": "2026-09-23",
+      "action": "trashed_remake",
+      "prior_media_id": 27720
+    },
+    {
+      "date": "2026-09-24",
+      "action": "trashed_remake",
+      "prior_media_id": 27722
+    },
+    {
+      "date": "2026-09-25",
+      "action": "trashed_remake",
+      "prior_media_id": 27721
+    },
+    {
+      "date": "2026-09-26",
+      "action": "kept_celestial",
+      "media_id": 27696
+    },
+    {
+      "date": "2026-09-27",
+      "action": "trashed_remake",
+      "prior_media_id": 27726
+    },
+    {
+      "date": "2026-09-28",
+      "action": "trashed_remake",
+      "prior_media_id": 27723
+    },
+    {
+      "date": "2026-09-29",
+      "action": "trashed_remake",
+      "prior_media_id": 27728
+    },
+    {
+      "date": "2026-09-30",
+      "action": "trashed_remake",
+      "prior_media_id": 27725
+    }
+  ],
+  "at": "2026-09-07T15:46:47.660118+00:00"
+}
