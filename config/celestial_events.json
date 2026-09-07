@@ -340,13 +340,11 @@
         "look": "Former Taurus morning plate now used as evening \u2014 store + moon",
         "sg_anchor": "lit eggplant-awning Sacred Ground storefront",
         "urls": [
-          "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-CELESTIAL-NIGHT-1788738231.jpg"
+          "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-10-25-full-moon-taurus-1.png"
         ],
-        "local": [
-          "assets/celestial-2026/sg-night-celestial-2026-10-25-full-moon-taurus.png"
-        ],
-        "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-CELESTIAL-NIGHT-1788738231.jpg",
-        "wp_media_id": 27530,
+        "local": "assets/celestial-2026/sg-night-celestial-2026-10-25-full-moon-taurus.png",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-10-25-full-moon-taurus-1.png",
+        "wp_media_id": 27663,
         "sg_identity": "pass",
         "logo_baked": true,
         "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-10-25-full-moon-taurus-6.png",
@@ -359,14 +357,12 @@
         "look": "misty prairie harvest dawn under natural Taurus full moon \u2014 Sacred Ground shop along the path (single cohesive scene)",
         "sg_anchor": "Sacred Ground eggplant-awning storefront in misty prairie path (no logo-in-moon)",
         "urls": [
-          "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-CELESTIAL-MORNIN-1788738232.jpg"
+          "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-10-25-full-moon-taurus-1.png"
         ],
-        "local": [
-          "assets/celestial-2026/sg-morning-celestial-2026-10-25-full-moon-taurus.png"
-        ],
+        "local": "assets/celestial-2026/sg-morning-celestial-2026-10-25-full-moon-taurus.png",
         "prebranded": true,
-        "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-CELESTIAL-MORNIN-1788738232.jpg",
-        "wp_media_id": 27529,
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-10-25-full-moon-taurus-1.png",
+        "wp_media_id": 27664,
         "sg_identity": "pass",
         "logo_baked": true,
         "notes": "2026-08-11: Founder rejected -5 (shop cutout + logo jammed in moon). Trashed to assets/celestial-2026/_trash/. Regenerated -6 prairie mist single-generation plate; identity via storefront awning; natural moon.",
