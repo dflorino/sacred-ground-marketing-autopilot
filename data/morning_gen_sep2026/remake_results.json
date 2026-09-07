@@ -1,0 +1,122 @@
+{
+  "ok": [
+    "2026-09-08",
+    "2026-09-09",
+    "2026-09-11",
+    "2026-09-12",
+    "2026-09-13",
+    "2026-09-14",
+    "2026-09-15",
+    "2026-09-16",
+    "2026-09-17",
+    "2026-09-18",
+    "2026-09-19",
+    "2026-09-20",
+    "2026-09-21",
+    "2026-09-23",
+    "2026-09-24",
+    "2026-09-25",
+    "2026-09-27",
+    "2026-09-28",
+    "2026-09-30"
+  ],
+  "fail": [],
+  "results": {
+    "2026-09-08": {
+      "media_id": 27708,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-social-f-1788794491.jpg",
+      "style": "surprise_museum_artifact_3026"
+    },
+    "2026-09-09": {
+      "media_id": 27711,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-social-f-1788794550.jpg",
+      "style": "surprise_tiny_universe"
+    },
+    "2026-09-11": {
+      "media_id": 27709,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-social-f-1788794532.jpg",
+      "style": "surprise_hollywood_poster"
+    },
+    "2026-09-12": {
+      "media_id": 27712,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-social-f-1788794570.jpg",
+      "style": "surprise_cosmic_subway"
+    },
+    "2026-09-13": {
+      "media_id": 27713,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-social-f-1788794588.jpg",
+      "style": "surprise_secret_door"
+    },
+    "2026-09-14": {
+      "media_id": 27710,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-social-f-1788794536.jpg",
+      "style": "surprise_newspaper_daily"
+    },
+    "2026-09-15": {
+      "media_id": 27718,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-social-f-1788794682.jpg",
+      "style": "surprise_museum_artifact_3026"
+    },
+    "2026-09-16": {
+      "media_id": 27717,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-social-f-1788794666.jpg",
+      "style": "surprise_tiny_universe"
+    },
+    "2026-09-17": {
+      "media_id": 27716,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-social-f-1788794659.jpg",
+      "style": "thursday_cards_shop_made"
+    },
+    "2026-09-18": {
+      "media_id": 27715,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-social-f-1788794643.jpg",
+      "style": "surprise_layer_cake"
+    },
+    "2026-09-19": {
+      "media_id": 27714,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-social-f-1788794641.jpg",
+      "style": "surprise_vending_machine"
+    },
+    "2026-09-20": {
+      "media_id": 27719,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-social-f-1788794720.jpg",
+      "style": "surprise_where_landed"
+    },
+    "2026-09-21": {
+      "media_id": 27724,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-social-f-1788794793.jpg",
+      "style": "surprise_newspaper_daily"
+    },
+    "2026-09-23": {
+      "media_id": 27720,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-social-f-1788794727.jpg",
+      "style": "surprise_where_landed"
+    },
+    "2026-09-24": {
+      "media_id": 27722,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-social-f-1788794730-1.jpg",
+      "style": "thursday_cards_shop_made"
+    },
+    "2026-09-25": {
+      "media_id": 27721,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-social-f-1788794730.jpg",
+      "style": "surprise_department_window"
+    },
+    "2026-09-27": {
+      "media_id": 27726,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-social-f-1788794803.jpg",
+      "style": "surprise_where_landed"
+    },
+    "2026-09-28": {
+      "media_id": 27723,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-social-f-1788794787.jpg",
+      "style": "surprise_newspaper_daily"
+    },
+    "2026-09-30": {
+      "media_id": 27725,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-morning-social-f-1788794799.jpg",
+      "style": "surprise_cabinet_curiosities"
+    }
+  },
+  "pending_sep29": true
+}

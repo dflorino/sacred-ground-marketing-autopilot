@@ -1,3 +1,10 @@
+## 2026-09-07 — Sep 8–30 morning remakes generated (review only)
+
+Founder approved remake plan. Generated new morning plates for Sep 8–30
+(celestial mornings for 10/22/26). Real sun logo pasted. Entries marked
+`awaiting_founder_review` + `do_not_publish` until Founder signs off.
+Gallery: `assets/_sep_rest_review/MORNINGS-REMAKE.html`
+
 ## 2026-09-07 — Today’s morning DID publish; keeper restored
 
 Founder asked if trash meant today didn’t go out. It did — FB/IG ~9:04–9:05am CT
