@@ -1,3 +1,13 @@
+## 2026-09-06 — Celestial event titles restored on images
+
+Founder clarified: celestial plates must **keep** event titles on the photo
+(`CELESTIAL NIGHT — …` / `CELESTIAL MORNING — …`). Only generic week-ahead
+pool bans WEEK-AHEAD PLATE meta.
+
+- Restored titles via ML Image edit across all dual-cadence events (Leo → Sag)
+- Wired `config/celestial_events.json` to new media IDs; locals under `assets/celestial-2026/`
+- Real sun-face logo pasted bottom-left on locals; gallery refreshed
+
 ## 2026-09-06 — Celestial calendar dual cadence complete through Dec
 
 Founder calendar (Sep 5 screenshot) verified. Sep–Oct already had night+morning plates. Generated + wired Nov 9 Scorpio, Nov 24 Gemini, Dec 9 Sagittarius (night media 27513/27514/27517 · morning 27512/27515/27516). Gallery: `assets/celestial-2026/CELESTIAL-DUAL-CADENCE.html`. Fall evening batch 10/15 parked in `assets/sg-night-fall-batch-2026-09/meta.json`.
