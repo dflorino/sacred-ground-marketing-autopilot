@@ -79,6 +79,22 @@ opacity) on social plates — bake into prebranded plates when overlays do not r
   via `social_proof.designed_in_generation_brief(..., surface="night"|"celestial")`
   (`designed_in_required: true` — see `.cursor/rules/social-proof-on-image.mdc`)
 
+## Hard rule (Founder — Sep 6, 2026) — no prompt meta on the photo
+
+Generation prompts must **never** include campaign/meta words the model can paint
+onto the image (e.g. “week-ahead plate”, “Sacred Ground NIGHT”, “CELESTIAL NIGHT”,
+“NEW MOON IN VIRGO” on a generic night plate).
+
+Allowed on-photo text only:
+
+- White **SACRED GROUND** on the eggplant awning (and real neon shop signs if any)
+- Designed-in circular logo + shop-pride seal when baking pride
+- Nothing else — no titles, captions, labels, or watermarks in the sky/awning/scene
+
+If a plate ships with leaked meta text, scrub or regenerate before wiring into
+`creative_pool`. Autopilot overlays (NEXT … / footer) are separate and still apply
+for non-prebranded posts.
+
 ## Do not
 
 - Do not republish an already-live tonight post just to swap the creative
