@@ -64,8 +64,8 @@
     ]
   },
   "near_term_slot_plan": {
-    "notes": "Founder locked Peace 28040 + Mabon folk 28042 (2026-09-09 ~12:18am CT). Rejected Mabon Magritte apple + Da Vinci. Libra Season afternoon Sep 22 still needs_creative.",
-    "updated_at": "2026-09-09T05:18:41Z",
+    "notes": "Founder: Peace = folk lanterns 28043 (NOT olive 28040). Mabon folk 28042 locked. Mabon Magritte/Da Vinci makeovers pending review (28046–28049).",
+    "updated_at": "2026-09-09T05:21:17Z",
     "days": {
       "2026-09-09": {
         "label": "9/9 Portal",
@@ -118,8 +118,11 @@
         "morning": {
           "theme": "International Day of Peace",
           "status": "locked",
-          "media_id": 28040,
-          "note": "Founder: Magritte olive looks good"
+          "media_id": 28043,
+          "note": "Founder: folk lanterns — not Magritte olive",
+          "rejected_media_ids": [
+            28040
+          ]
         },
         "afternoon": {
           "theme": "Peace / community compassion (optional)",

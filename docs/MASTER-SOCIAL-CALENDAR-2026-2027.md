@@ -44,7 +44,7 @@ Machine copy: `slotting_rules` + `near_term_slot_plan` in [`config/master_social
 |---|---|---|---|
 | **Sep 9** | 9/9 Portal (28031) | Portal veil (28039) | Virgo night-before |
 | **Sep 10** | New Moon Virgo (kept) | optional / skip | default week-ahead |
-| **Sep 21** | **Peace Magritte olive (28040)** *(held do_not_publish)* | Peace optional | Equinox night-before (kept) |
+| **Sep 21** | **Peace folk lanterns (28043)** *(held do_not_publish)* | Peace optional | Equinox night-before (kept) |
 | **Sep 22** | **Mabon · Equinox folk (28042)** *(Founder love — held until go-live)* | **Libra Season** *(needs creative)* | optional / rest |
 
 Next creatives: Libra Season afternoon (Sep 22). Peace 28040 + Mabon folk 28042 locked (held do_not_publish until Founder go-live).

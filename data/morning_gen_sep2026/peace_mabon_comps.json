@@ -36,13 +36,38 @@
     "local": "assets/_sep_rest_review/peace_mabon/m3-davinci.jpg"
   },
   "locked": {
-    "peace_morning": 28040,
+    "peace_morning": 28043,
     "mabon_morning": 28042,
-    "rejected": [
+    "rejected_peace": [
+      28040
+    ],
+    "rejected_mabon_v1": [
       28041,
-      28044,
       28045
     ],
-    "locked_at": "2026-09-09T05:18:41Z"
+    "note": "Founder: olive Peace rejected; folk lanterns kept. Confirm if 28044 70s was meant instead.",
+    "locked_at": "2026-09-09T05:21:17Z"
+  },
+  "mabon_makeovers": {
+    "m-apple-v2a": {
+      "media_id": 28046,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-square-11-MORNI-1788931229.jpg",
+      "label": "Magritte apple makeover A"
+    },
+    "m-davinci-v2a": {
+      "media_id": 28047,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-square-11-MORNI-1788931237.jpg",
+      "label": "Da Vinci readable makeover A"
+    },
+    "m-apple-v2b": {
+      "media_id": 28048,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-square-11-MORNI-1788931237-1.jpg",
+      "label": "Magritte apple makeover B"
+    },
+    "m-davinci-v2b": {
+      "media_id": 28049,
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-square-11-MORNI-1788931239.jpg",
+      "label": "Da Vinci readable makeover B"
+    }
   }
 }
