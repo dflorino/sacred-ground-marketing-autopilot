@@ -1,5 +1,5 @@
 {
-  "notes": "Sacred Ground MASTER social planning calendar — Founder Sep 8 2026. September 2026 through December 2027. Source of truth for dates to layer onto social posts (morning / afternoon / night). Does NOT auto-publish. Live celestial dual-cadence plates stay in config/celestial_events.json — promote master entries into that file (or specialty campaigns) when Founder locks creatives/cadence. Timezone: America/Chicago. Stars = Founder priority (0–5). do_not_miss = RED-flag planning priority.",
+  "notes": "Sacred Ground MASTER social planning calendar — Founder Sep 8 2026. September 2026 through December 2027. Source of truth for dates to layer onto social posts (morning / afternoon / night). Does NOT auto-publish. Live celestial dual-cadence plates stay in config/celestial_events.json — promote master entries into that file (or specialty campaigns) when Founder locks creatives/cadence. Timezone: America/Chicago. Stars = Founder priority (0–5). do_not_miss = RED-flag planning priority. SLOTTING (Founder Sep 8 2026 ~11:16pm CT): morning = heaviest date of the Chicago day; afternoon = second priority; night = sky / tomorrow / wheel — or night-before for tomorrow’s big celestial. Never reuse images across slots. Equinox+Mabon count as ONE holiday.",
   "timezone": "America/Chicago",
   "range_start": "2026-09-01",
   "range_end": "2027-12-31",
@@ -7,6 +7,158 @@
   "related": {
     "celestial_events": "config/celestial_events.json",
     "human_doc": "docs/MASTER-SOCIAL-CALENDAR-2026-2027.md"
+  },
+  "slotting_rules": {
+    "locked_at": "2026-09-09T04:16:00Z",
+    "founder": "2026-09-08 ~11:16pm America/Chicago",
+    "slots": {
+      "morning": {
+        "time": "09:00",
+        "campaign": "today",
+        "owns": "Heaviest / most Sacred Ground date of that Chicago day"
+      },
+      "afternoon": {
+        "time": "17:00",
+        "campaign": "afternoon_spotlight",
+        "owns": "Second priority — or same theme in a different modality"
+      },
+      "night": {
+        "time": "19:00",
+        "campaign": "week_ahead",
+        "owns": "Sky / tomorrow / wheel energy — or night-before for tomorrow’s big celestial"
+      }
+    },
+    "hard_rules": [
+      "Same Chicago day → different plates per slot (never reuse image URLs)",
+      "Morning gets the highest-star / do_not_miss date",
+      "Afternoon gets the next priority (observance, season open, secondary theme)",
+      "Night-before is best when the ‘third’ thing is celestial/sky",
+      "Afternoon is best when the second thing is an observance (Peace, Yoga, Tarot Day, Sound Healing)",
+      "Equinox + Mabon = ONE holiday (not two separate hero posts)",
+      "Planetary ingresses (Mercury/Venus enter…) rarely own a slot — caption line max",
+      "If two ⭐⭐⭐⭐⭐ need hero treatment: morning + afternoon; night stays week-ahead or night-before for next celestial — no fourth slot"
+    ],
+    "future_pileups_example": [
+      {
+        "date": "2026-12-21",
+        "morning": "Winter Solstice / Yule",
+        "afternoon": "World Meditation Day",
+        "night": "Longest-night sky / week-ahead"
+      },
+      {
+        "date": "2027-03-20",
+        "morning": "Spring Equinox / Ostara",
+        "afternoon": "International Astrology Day",
+        "night_or_night_before": "Astrological New Year / Aries fire"
+      },
+      {
+        "date": "2027-06-21",
+        "morning": "Summer Solstice / Litha",
+        "afternoon": "International Day of Yoga"
+      },
+      {
+        "date": "2027-09-29",
+        "morning": "Michaelmas / Archangels (Angel Week)",
+        "afternoon_or_night": "New Moon in Libra"
+      }
+    ]
+  },
+  "near_term_slot_plan": {
+    "notes": "Founder-approved Sep 8 2026. Next creatives after 9/9: Peace (Sep 21), Libra Season afternoon (Sep 22). Virgo + Equinox mornings already wired.",
+    "updated_at": "2026-09-09T04:17:36Z",
+    "days": {
+      "2026-09-09": {
+        "label": "9/9 Portal",
+        "morning": {
+          "theme": "9/9 Portal",
+          "status": "locked",
+          "media_id": 28031,
+          "config": "config/morning_flyers.json"
+        },
+        "afternoon": {
+          "theme": "9/9 Portal — The Veil Lifts",
+          "status": "locked",
+          "media_id": 28039,
+          "source_pick_media_id": 28038,
+          "config": "config/afternoon_spotlight_plates.json"
+        },
+        "night": {
+          "theme": "New Moon Virgo — night-before (tomorrow…)",
+          "status": "locked",
+          "celestial_key": "new_moon_virgo_2026",
+          "config": "config/celestial_events.json"
+        },
+        "skip_as_own_posts": []
+      },
+      "2026-09-10": {
+        "label": "New Moon in Virgo",
+        "morning": {
+          "theme": "New Moon in Virgo",
+          "status": "locked",
+          "celestial_key": "new_moon_virgo_2026",
+          "note": "Celestial morning kept — do not remake for aesthetic alone"
+        },
+        "afternoon": {
+          "theme": "optional soft Virgo wellness / Uranus-awakening accent",
+          "status": "optional_skip",
+          "note": "Not required — ingresses are not own posts"
+        },
+        "night": {
+          "theme": "week_ahead generic / next days",
+          "status": "default_pool"
+        },
+        "skip_as_own_posts": [
+          "Mercury enters Libra",
+          "Venus enters Scorpio",
+          "Uranus Retrograde Begins (caption line max if at all)"
+        ]
+      },
+      "2026-09-21": {
+        "label": "International Day of Peace",
+        "morning": {
+          "theme": "International Day of Peace",
+          "status": "needs_creative",
+          "priority": 1,
+          "note": "Replace/remake current do_not_publish board-game flyer with Peace hero that still lists Lisa Maria + Karen schedule",
+          "current_flyer": "config/morning_flyers.json → 2026-09-21"
+        },
+        "afternoon": {
+          "theme": "Peace / community compassion (optional second plate)",
+          "status": "optional",
+          "priority": 2
+        },
+        "night": {
+          "theme": "Autumn Equinox — night-before (tomorrow…)",
+          "status": "locked",
+          "celestial_key": "autumn_equinox_2026",
+          "note": "Peace does NOT take the sky slot"
+        }
+      },
+      "2026-09-22": {
+        "label": "Autumn Equinox / Mabon + Libra Season",
+        "morning": {
+          "theme": "Autumn Equinox / Mabon (ONE holiday)",
+          "status": "locked",
+          "celestial_key": "autumn_equinox_2026",
+          "note": "Celestial morning kept — heaviest of the day"
+        },
+        "afternoon": {
+          "theme": "Libra Season Begins",
+          "status": "needs_creative",
+          "priority": 1,
+          "note": "Harmony / beauty / partnership — different plate from equinox morning; wire via afternoon_spotlight_plates.json"
+        },
+        "night": {
+          "theme": "optional harvest/balance week-ahead OR rest",
+          "status": "optional_skip",
+          "note": "Morning already carried the big celestial"
+        },
+        "counts_as_one": [
+          "Autumn Equinox",
+          "Mabon"
+        ]
+      }
+    }
   },
   "series_defs": {
     "wheel_of_year": [

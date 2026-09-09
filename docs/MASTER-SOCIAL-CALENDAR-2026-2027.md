@@ -19,6 +19,36 @@ Stars = Founder priority. RED / `do_not_miss` = never skip in the planning pass.
 | Morning flyers / afternoon plates | Shop schedule days; can *also* carry a portal/observance theme (e.g. 9/9 Portal) |
 | Modality rotation | Around these dates rotate Tarot · Reiki · Akashic · astrology · angels · numerology · crystals · chakras · meditation · massage · sound · drumming · reflexology · energy · past lives · herbs · oils · grounding · intuition · spiritual education |
 
+## Slotting (Founder Sep 8 2026)
+
+When multiple calendar dates land on the same Chicago day:
+
+| Slot | Time | Owns |
+|---|---|---|
+| **Morning** | 9:00 AM | Heaviest / most Sacred Ground date of that day |
+| **Afternoon** | 5:00 PM | Second priority (or same theme, different modality) |
+| **Night** | 7:00 PM | Sky / tomorrow / wheel — or **night-before** for tomorrow’s big celestial |
+
+Hard rules:
+
+- Same day → **different plates** per slot (never reuse image URLs)
+- Equinox + Mabon = **one** holiday (not two hero posts)
+- Planetary ingresses (Mercury/Venus enter…) rarely own a slot — caption line max
+- Two ⭐⭐⭐⭐⭐ that both need hero treatment → morning + afternoon; night stays week-ahead or night-before — no fourth slot
+
+Machine copy: `slotting_rules` + `near_term_slot_plan` in [`config/master_social_calendar.json`](../config/master_social_calendar.json).
+
+### Near-term lock (Sep 9–22, 2026)
+
+| Day | Morning | Afternoon | Night |
+|---|---|---|---|
+| **Sep 9** | 9/9 Portal (28031) | Portal veil (28039) | Virgo night-before |
+| **Sep 10** | New Moon Virgo (kept) | optional / skip | default week-ahead |
+| **Sep 21** | **International Day of Peace** *(needs creative)* | Peace optional | Equinox night-before (kept) |
+| **Sep 22** | Equinox / Mabon (kept) | **Libra Season** *(needs creative)* | optional / rest |
+
+Next creatives after 9/9: Peace morning (Sep 21), then Libra Season afternoon (Sep 22).
+
 ---
 
 ## Wheel of the Year (series of 8)
