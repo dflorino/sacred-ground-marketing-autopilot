@@ -36,22 +36,12 @@
     "local": "assets/_sep_rest_review/peace_mabon/m3-davinci.jpg"
   },
   "locked": {
-    "peace_morning": 28043,
+    "peace_morning": 28052,
+    "peace_afternoon": 28043,
     "mabon_morning": 28042,
-    "rejected_peace": [
-      28040
-    ],
-    "rejected_mabon_v1": [
-      28041,
-      28045
-    ],
-    "note": "Founder: olive Peace rejected; folk lanterns kept. Confirm if 28044 70s was meant instead.",
-    "locked_at": "2026-09-09T05:26:34Z",
-    "mabon_keep_original": true,
-    "declined_clearer_folk": [
-      28050,
-      28051
-    ]
+    "note": "Founder: poster morning, lanterns afternoon; olive rejected; Mabon folk original kept",
+    "locked_at": "2026-09-09T05:32:12Z",
+    "peace_morning_source": 28044
   },
   "mabon_makeovers": {
     "m-apple-v2a": {

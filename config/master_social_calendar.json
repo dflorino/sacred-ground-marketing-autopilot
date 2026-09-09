@@ -65,7 +65,7 @@
   },
   "near_term_slot_plan": {
     "notes": "Founder: Peace = folk lanterns 28043 (NOT olive 28040). Mabon folk 28042 locked. Mabon Magritte/Da Vinci makeovers pending review (28046–28049).",
-    "updated_at": "2026-09-09T05:26:34Z",
+    "updated_at": "2026-09-09T05:32:37Z",
     "days": {
       "2026-09-09": {
         "label": "9/9 Portal",
@@ -116,17 +116,17 @@
       "2026-09-21": {
         "label": "International Day of Peace",
         "morning": {
-          "theme": "International Day of Peace",
+          "theme": "International Day of Peace — 70s poster",
           "status": "locked",
-          "media_id": 28043,
-          "note": "Founder: folk lanterns — not Magritte olive",
-          "rejected_media_ids": [
-            28040
-          ]
+          "media_id": 28052,
+          "note": "Founder swap: poster morning",
+          "source_pick_media_id": 28044
         },
         "afternoon": {
-          "theme": "Peace / community compassion (optional)",
-          "status": "optional"
+          "theme": "International Day of Peace — folk lanterns",
+          "status": "locked",
+          "media_id": 28043,
+          "note": "Founder: lanterns in the afternoon"
         },
         "night": {
           "theme": "Autumn Equinox — night-before",
