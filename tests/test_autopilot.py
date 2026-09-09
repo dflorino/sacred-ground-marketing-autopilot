@@ -2118,6 +2118,65 @@ class AutopilotTests(unittest.TestCase):
                 meta["claim"],
             )
 
+    def test_afternoon_date_plate_overrides_event_featured(self) -> None:
+        """Founder-locked afternoon plate wins over TEC thumbnail."""
+        import json
+        from marketing import images
+        from marketing.models import Event
+
+        images.IMAGE_USAGE_PATH = os.path.join(self._tmpdir, "state", "image_usage.json")
+        images.image_rules.cache_clear()
+        day = date(2026, 9, 9)
+        pin_url = (
+            "https://shopsacredground.com/wp-content/uploads/"
+            "sg-afternoon-spotlight-2026-09-09-99-portal-veil.jpg"
+        )
+        event_url = (
+            "https://shopsacredground.com/wp-content/uploads/"
+            "some-tec-thumb-unused.jpg"
+        )
+        plates_path = os.path.join(self._tmpdir, "afternoon_spotlight_plates.json")
+        with open(plates_path, "w", encoding="utf-8") as fh:
+            json.dump(
+                {
+                    "prebranded_default": True,
+                    "plates": {
+                        "2026-09-09": {
+                            "label": "9/9 Portal veil",
+                            "url": pin_url,
+                            "prebranded": True,
+                            "do_not_publish": False,
+                        }
+                    },
+                },
+                fh,
+            )
+        prev_path = images.AFTERNOON_PLATES_PATH
+        images.AFTERNOON_PLATES_PATH = plates_path
+        images.afternoon_spotlight_plates.cache_clear()
+        try:
+            ev = Event(
+                id=99901,
+                title="Keeper of the Cards: Robert",
+                start_date="2026-09-09 13:00:00",
+                end_date="2026-09-09 19:00:00",
+                url="https://shopsacredground.com/events/robert/",
+                image_url=event_url,
+            )
+            plan = images.plan_image(
+                [ev],
+                "afternoon_spotlight",
+                day=day,
+                platform="facebook",
+            )
+            self.assertEqual(plan.rule, "afternoon_spotlight_plate")
+            self.assertEqual(plan.url, pin_url)
+            self.assertTrue(plan.prebranded)
+            self.assertNotEqual(plan.url, event_url)
+        finally:
+            images.AFTERNOON_PLATES_PATH = prev_path
+            images.afternoon_spotlight_plates.cache_clear()
+
     def test_afternoon_never_reuses_morning_celestial_or_same_url(self) -> None:
         """Founder 2026-08-12: afternoon must not ship the morning plate."""
         from marketing import images

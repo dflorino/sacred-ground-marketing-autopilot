@@ -1,0 +1,19 @@
+{
+  "notes": "Date-keyed Founder-locked afternoon spotlight plates. When present for America/Chicago day, plan_image(afternoon_spotlight) uses this URL before event_featured / pool. Never reuse morning plate URLs. Single-image FB+IG.",
+  "prebranded_default": true,
+  "plates": {
+    "2026-09-09": {
+      "label": "9/9 Portal — The Veil Lifts",
+      "local": "assets/sg-afternoon-spotlight-2026-09-09-99-portal-veil.jpg",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-09-09-99-portal-veil.jpg",
+      "media_id": 28039,
+      "source_pick_media_id": 28038,
+      "prebranded": true,
+      "pride_baked_in": true,
+      "logo_paste": "none_founder_requested_no_logo",
+      "note": "Founder picked media 28038 (cosmic curtain / THE VEIL LIFTS). Scrubbed prompt-meta 'cream footer' from cream band → re-upload 28039. Morning remains 28031. Virgo night-before unchanged.",
+      "do_not_publish": false,
+      "updated_at": "2026-09-09T03:50:00Z"
+    }
+  }
+}

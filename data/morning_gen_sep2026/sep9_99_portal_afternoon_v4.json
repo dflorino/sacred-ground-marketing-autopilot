@@ -1,5 +1,8 @@
 {
   "morning_locked": 28031,
+  "afternoon_locked": 28039,
+  "afternoon_source_pick": 28038,
+  "afternoon_note": "Founder picked 28038 (cosmic curtain / THE VEIL LIFTS). Scrubbed prompt-meta 'cream footer' from cream band; shipped as media 28039.",
   "a4-phonebooth": {
     "media_id": 28035,
     "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-square-11-AFTER-1788924976.jpg",
@@ -18,6 +21,9 @@
   "a4-veil": {
     "media_id": 28038,
     "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-square-11-AFTER-1788925008.jpg",
-    "label": "Cosmic curtain / veil"
+    "label": "Cosmic curtain / veil (Founder pick — source)",
+    "shipped_clean_media_id": 28039,
+    "shipped_clean_url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-09-09-99-portal-veil.jpg",
+    "shipped_local": "assets/sg-afternoon-spotlight-2026-09-09-99-portal-veil.jpg"
   }
 }

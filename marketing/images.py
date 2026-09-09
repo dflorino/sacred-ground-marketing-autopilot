@@ -84,6 +84,28 @@ def morning_flyers() -> Dict[str, Any]:
     return data
 
 
+AFTERNOON_PLATES_PATH = os.path.join(CONFIG_DIR, "afternoon_spotlight_plates.json")
+
+
+@lru_cache(maxsize=1)
+def afternoon_spotlight_plates() -> Dict[str, Any]:
+    data = read_json(
+        AFTERNOON_PLATES_PATH,
+        {"plates": {}, "prebranded_default": True},
+    )
+    if not isinstance(data, dict):
+        return {"plates": {}, "prebranded_default": True}
+    data.setdefault("plates", {})
+    data.setdefault("prebranded_default", True)
+    return data
+
+
+def _afternoon_plate_for_day(day: date) -> Optional[Dict[str, Any]]:
+    plates = afternoon_spotlight_plates().get("plates") or {}
+    entry = plates.get(day.isoformat())
+    return entry if isinstance(entry, dict) else None
+
+
 def skip_brand_overlays(image: Any) -> bool:
     """
     True when the plate is a finished flyer (logo + footer + event text baked in).
@@ -96,12 +118,20 @@ def skip_brand_overlays(image: Any) -> bool:
             return True
         rule = str(image.get("rule") or "")
         url = str(image.get("url") or "")
-        return rule == "morning_flyer" or "sg-morning-flyer-" in url
+        return (
+            rule in ("morning_flyer", "afternoon_spotlight_plate")
+            or "sg-morning-flyer-" in url
+            or "sg-afternoon-spotlight-" in url
+        )
     if getattr(image, "prebranded", False):
         return True
     rule = str(getattr(image, "rule", "") or "")
     url = str(getattr(image, "url", "") or "")
-    return rule == "morning_flyer" or "sg-morning-flyer-" in url
+    return (
+        rule in ("morning_flyer", "afternoon_spotlight_plate")
+        or "sg-morning-flyer-" in url
+        or "sg-afternoon-spotlight-" in url
+    )
 
 
 def _flyer_for_day(day: date) -> Optional[Dict[str, Any]]:
@@ -602,6 +632,25 @@ def plan_image(
             exclude_campaign="afternoon_spotlight",
             extra_exclude=excluded,
         )
+        # Founder-locked date plate wins over TEC thumbs / pool.
+        pinned = _afternoon_plate_for_day(on)
+        if pinned and not pinned.get("do_not_publish"):
+            pin_url = str(pinned.get("url") or "").strip()
+            if pin_url and pin_url not in blocked and pin_url not in excluded:
+                pre = pinned.get("prebranded")
+                if pre is None:
+                    pre = bool(afternoon_spotlight_plates().get("prebranded_default", True))
+                return ImagePlan(
+                    source="afternoon_spotlight_plate",
+                    url=pin_url,
+                    event_id=events[0].id if events else None,
+                    recommendation=(
+                        "Afternoon spotlight — Founder-locked date plate "
+                        f"({pinned.get('label') or on.isoformat()})."
+                    ),
+                    rule="afternoon_spotlight_plate",
+                    prebranded=bool(pre),
+                )
         # Hard refuse morning-owned plate families even if usage ledger lagged.
         morning_owned = {
             "celestial_morning",
