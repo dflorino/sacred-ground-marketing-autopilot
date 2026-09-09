@@ -82,6 +82,15 @@ def zernio_api_key() -> Optional[str]:
     return key or None
 
 
+def _tiktok_photo_title(caption_text: str, *, hook: str = "") -> str:
+    """TikTok photo title is ~90 chars; hashtags/URLs get stripped server-side."""
+    raw = (hook or "").strip() or (caption_text or "").strip().split("\n", 1)[0].strip()
+    raw = " ".join(raw.split())
+    if len(raw) <= 90:
+        return raw
+    return raw[:87].rstrip() + "…"
+
+
 def schedule_payload(draft: Dict[str, Any]) -> Dict[str, Any]:
     """Build Zernio / ML Social create-post body."""
     platform = draft["platform"]
@@ -92,6 +101,7 @@ def schedule_payload(draft: Dict[str, Any]) -> Dict[str, Any]:
     media = []
     img = draft.get("image") or {}
     if img.get("url"):
+        # TikTok photo posts prefer JPEG/WebP; same plate URL as FB+IG when jpg.
         media.append({"url": img["url"], "type": "image"})
     sched = (draft.get("schedule_recommendation") or {}).get("recommended_at")
     tz = draft.get("timezone") or accounts().get("timezone") or "America/Chicago"
@@ -111,12 +121,33 @@ def schedule_payload(draft: Dict[str, Any]) -> Dict[str, Any]:
         first_comment = str(sp.get("claim") or "").strip()
     if first_comment and platform in ("facebook", "instagram"):
         platform_entry["platformSpecificData"] = {"firstComment": first_comment}
+
+    caption_text = str(cap.get("text") or "")
     body: Dict[str, Any] = {
-        "content": cap.get("text") or "",
+        "content": caption_text,
         "platforms": [platform_entry],
         "timezone": tz,
         "publishNow": publish_now,
     }
+    if platform == "tiktok":
+        # Zernio TikTok photo carousel (Founder Sep 9 2026 — flyer stills).
+        # Title ≈ content (90 chars); full schedule copy lives in description.
+        title = _tiktok_photo_title(
+            caption_text, hook=str(cap.get("hook") or "")
+        )
+        body["content"] = title
+        body["tiktokSettings"] = {
+            "media_type": "photo",
+            "photo_cover_index": 0,
+            "description": caption_text[:4000],
+            "auto_add_music": True,
+            "privacy_level": "PUBLIC_TO_EVERYONE",
+            "allow_comment": True,
+            "content_preview_confirmed": True,
+            "express_consent_given": True,
+            # Morning/afternoon/night plates are AI-designed graphics.
+            "video_made_with_ai": True,
+        }
     if media:
         body["mediaItems"] = media
     if sched and not publish_now:

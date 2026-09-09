@@ -26,14 +26,14 @@
       "include_same_day_evening": false,
       "campaign_word": "TOMORROW",
       "campaign_word_same_day": "TODAY",
-      "platforms": ["facebook", "instagram"],
+      "platforms": ["facebook", "instagram", "tiktok"],
       "source": "the_events_calendar",
       "auto_publish": true,
       "empty_day_fallback": true,
       "default_image_url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.15-AM.png",
       "image_policy": "image_rules_library",
       "image_rules_file": "config/image_rules.json",
-      "notes": "Every morning 9:00 AM America/Chicago (settings schedule_local_time=09:00; Cursor Automation must also be 9:00 AM CT — agents cannot edit Automations). Lineup = ALL remaining events on publish day (full day, not evening-only) + ALL events on tomorrow. Caption opener is today-first when today has events; tomorrow-only wording only when today is empty. Flyer prefers today’s date key when today has events, else tomorrow. On-image word TODAY / TOMORROW matches flyer day; prebranded flyers skip overlays. Campaign key stays 'today' for publish-today. Never lead with “tonight” at 9am when daytime sessions exist. Do NOT flip to 10:00 unless Founder explicitly wants 10am."
+      "notes": "Every morning 9:00 AM America/Chicago (settings schedule_local_time=09:00; Cursor Automation must also be 9:00 AM CT — agents cannot edit Automations). Lineup = ALL remaining events on publish day (full day, not evening-only) + ALL events on tomorrow. Caption opener is today-first when today has events; tomorrow-only wording only when today is empty. Flyer prefers today’s date key when today has events, else tomorrow. On-image word TODAY / TOMORROW matches flyer day; prebranded flyers skip overlays. Campaign key stays 'today' for publish-today. Never lead with “tonight” at 9am when daytime sessions exist. Do NOT flip to 10:00 unless Founder explicitly wants 10am. TikTok = Zernio photo post (same plate; short title + description)."
     },
     "week": {
       "enabled": true,
@@ -45,7 +45,7 @@
       "enabled": true,
       "label": "Next 2 Days at Sacred Ground",
       "schedule_local_time": "20:00",
-      "platforms": ["facebook", "instagram"],
+      "platforms": ["facebook", "instagram", "tiktok"],
       "source": "the_events_calendar",
       "auto_publish": true,
       "horizon_days": 2,
@@ -67,7 +67,7 @@
       "enabled": true,
       "label": "Afternoon Spotlight",
       "schedule_local_time": "17:00",
-      "platforms": ["facebook", "instagram"],
+      "platforms": ["facebook", "instagram", "tiktok"],
       "source": "the_events_calendar",
       "auto_publish": true,
       "same_day_evening_start_hour": 17,
@@ -75,7 +75,7 @@
       "skip_tuesday_meditation_duplicate": true,
       "empty_day_fallback": true,
       "image_policy": "image_rules_library",
-      "notes": "Daily 5:00 PM CT (Meta Insights: Lions Gate–style ~5pm promo had strong early traction; leaves a clear gap before 8pm week_ahead). Flip schedule_local_time to 16:00 for 4pm. Single-event spotlight — not a full calendar dump. Prefer tonight's best remaining evening event; else tomorrow's standout; else warm brand/visit. Image: prefer an UNUSED event_featured / TEC thumbnail / Founder-provided flyer — NEVER reuse any previously posted URL including morning celestial, morning_flyer, or today's Eve flyer tomorrow (Founder 2026-08-12 FINAL lifetime never-reuse). When the TEC thumb was already posted, regenerate new afternoon art (designed-in shop pride required). Avoids stacking a third full calendar with morning-tomorrow + week_ahead."
+      "notes": "Daily 5:00 PM CT (Meta Insights: Lions Gate–style ~5pm promo had strong early traction; leaves a clear gap before 8pm week_ahead). Flip schedule_local_time to 16:00 for 4pm. Single-event spotlight — not a full calendar dump. Prefer tonight's best remaining evening event; else tomorrow's standout; else warm brand/visit. Image: prefer an UNUSED event_featured / TEC thumbnail / Founder-provided flyer — NEVER reuse any previously posted URL including morning celestial, morning_flyer, or today's Eve flyer tomorrow (Founder 2026-08-12 FINAL lifetime never-reuse). When the TEC thumb was already posted, regenerate new afternoon art (designed-in shop pride required). Avoids stacking a third full calendar with morning-tomorrow + week_ahead. TikTok = Zernio photo post (same plate)."
     },
     "spotlight": {
       "enabled": true,

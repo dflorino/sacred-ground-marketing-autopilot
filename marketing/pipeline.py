@@ -161,8 +161,13 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
 
     created: List[Dict[str, Any]] = []
     skipped_drafts: List[Dict[str, Any]] = []
-    platforms = list(settings().get("platforms") or ["facebook", "instagram"])
+    default_platforms = list(settings().get("platforms") or ["facebook", "instagram"])
     cfg = settings()
+
+    def campaign_platforms(key: str) -> List[str]:
+        camp = (cfg.get("campaigns") or {}).get(key) or {}
+        plats = list(camp.get("platforms") or [])
+        return plats if plats else list(default_platforms)
 
     notes_base: List[str] = []
     if is_paused():
@@ -267,7 +272,7 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                     }
                 )
             else:
-                for platform in platforms:
+                for platform in campaign_platforms("today"):
                     img = shared_img
                     prebranded = bool(
                         getattr(img, "prebranded", False)
@@ -349,7 +354,7 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
     if week_events and cfg["campaigns"]["week"].get("enabled", True):
         img = images.plan_image(week_events, "week")
         sched = schedule.schedule_week(week_start)
-        for platform in platforms:
+        for platform in campaign_platforms("week"):
             cap = captions.caption_week(week_events, platform, week_start)
             draft = _make_draft(
                 campaign="week",
@@ -404,7 +409,7 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                     }
                 )
             else:
-                for platform in platforms:
+                for platform in campaign_platforms("afternoon_spotlight"):
                     img = shared_af
                     cap = captions.caption_afternoon_spotlight(
                         spotlight_ev, platform, day
@@ -493,7 +498,7 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                     }
                 )
             else:
-                for platform in platforms:
+                for platform in campaign_platforms("week_ahead"):
                     img = shared_wa
                     cap = captions.caption_week_ahead(ahead_events, platform, day)
                     wa_notes = notes_base + [
@@ -629,7 +634,7 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
             img = images.plan_image([ev], "spotlight")
             # initial spotlight (extra=initial)
             sched0 = schedule.schedule_spotlight(ev, days_before=None)
-            for platform in platforms:
+            for platform in campaign_platforms("spotlight"):
                 cap = captions.caption_spotlight(ev, platform, reminder_day=None)
                 draft = _make_draft(
                     campaign="spotlight",
@@ -665,7 +670,7 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                 if rem_day < day:
                     continue
                 sched_r = schedule.schedule_spotlight(ev, days_before=offset)
-                for platform in platforms:
+                for platform in campaign_platforms("spotlight"):
                     cap = captions.caption_spotlight(ev, platform, reminder_day=offset)
                     draft = _make_draft(
                         campaign="spotlight",
