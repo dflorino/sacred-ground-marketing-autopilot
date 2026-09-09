@@ -1,0 +1,38 @@
+{
+  "p1-magritte-olive": {
+    "media_id": 28040,
+    "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-square-11-MORNI-1788928655.jpg",
+    "label": "PEACE \u00b7 Magritte olive branch",
+    "local": "assets/_sep_rest_review/peace_mabon/p1-magritte-olive.jpg"
+  },
+  "p2-folk-lanterns": {
+    "media_id": 28043,
+    "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-square-11-MORNI-1788928666.jpg",
+    "label": "PEACE \u00b7 Folk lantern street",
+    "local": "assets/_sep_rest_review/peace_mabon/p2-folk-lanterns.jpg"
+  },
+  "p3-70s-poster": {
+    "media_id": 28044,
+    "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-square-11-MORNI-1788928666-1.jpg",
+    "label": "PEACE \u00b7 70s crystal peace poster",
+    "local": "assets/_sep_rest_review/peace_mabon/p3-70s-poster.jpg"
+  },
+  "m1-magritte-apple": {
+    "media_id": 28041,
+    "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-square-11-MORNI-1788928663.jpg",
+    "label": "MABON \u00b7 Magritte day/night apple",
+    "local": "assets/_sep_rest_review/peace_mabon/m1-magritte-apple.jpg"
+  },
+  "m2-folk-harvest": {
+    "media_id": 28042,
+    "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-square-11-MORNI-1788928665.jpg",
+    "label": "MABON \u00b7 Folk harvest moon",
+    "local": "assets/_sep_rest_review/peace_mabon/m2-folk-harvest.jpg"
+  },
+  "m3-davinci": {
+    "media_id": 28045,
+    "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-square-11-MORNI-1788928671.jpg",
+    "label": "MABON \u00b7 Da Vinci sketch + color",
+    "local": "assets/_sep_rest_review/peace_mabon/m3-davinci.jpg"
+  }
+}
