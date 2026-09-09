@@ -39,7 +39,8 @@
       "enabled": true,
       "label": "This Week at Sacred Ground",
       "weekday": "monday",
-      "schedule_local_time": "10:00"
+      "schedule_local_time": "10:00",
+      "platforms": ["facebook", "instagram", "tiktok"]
     },
     "week_ahead": {
       "enabled": true,
@@ -61,7 +62,7 @@
       "image_policy": "creative_sky_rotation",
       "image_atmosphere_file": "config/image_atmosphere.json",
       "include_same_day_evening": false,
-      "notes": "Every evening 8pm CT: next 2 days starting tomorrow only (Sat 8pm → Sun+Mon). Do NOT include the publish day's events (morning through night / same-day evening). Morning + afternoon own tonight. Observatory + Library night block. Night creative pool — no morning specialty art."
+      "notes": "Every evening 8pm CT: next 2 days starting tomorrow only (Sat 8pm → Sun+Mon). Do NOT include the publish day's events (morning through night / same-day evening). Morning + afternoon own tonight. Observatory + Library night block. Night creative pool — no morning specialty art. TikTok = Zernio photo post (same plate)."
     },
     "afternoon_spotlight": {
       "enabled": true,
@@ -81,14 +82,15 @@
       "enabled": true,
       "label": "Special Event Spotlight",
       "reminder_days_before": [7, 3, 1],
-      "schedule_local_time": "11:00"
+      "schedule_local_time": "11:00",
+      "platforms": ["facebook", "instagram", "tiktok"]
     },
     "tuesday_meditation": {
       "enabled": true,
       "label": "Tuesday Free Community Meditation",
       "weekday": "tuesday",
       "schedule_local_time": "16:00",
-      "platforms": ["facebook", "instagram"],
+      "platforms": ["facebook", "instagram", "tiktok"],
       "source": "the_events_calendar",
       "auto_publish": true,
       "image_policy": "meditation_pool_rotation",
@@ -104,7 +106,7 @@
         "new_years_eve",
         "new_years_day"
       ],
-      "notes": "Every Tuesday 4:00 PM America/Chicago: dedicated Free Community Meditation FB+IG post. Skip only Christmas Eve, Christmas Day, New Year's Eve, New Year's Day (Chicago local date). Image rotates Om / silhouette / metaphysical journey / sg-morning-meditation with 7-day no-repeat."
+      "notes": "Every Tuesday 4:00 PM America/Chicago: dedicated Free Community Meditation FB+IG+TikTok post. Skip only Christmas Eve, Christmas Day, New Year's Eve, New Year's Day (Chicago local date). Image rotates Om / silhouette / metaphysical journey / sg-morning-meditation with 7-day no-repeat. TikTok = Zernio photo post."
     },
     "daily_reel": {
       "enabled": false,
