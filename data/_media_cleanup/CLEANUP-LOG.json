@@ -1,0 +1,33 @@
+{
+  "completed_at_chicago": "2026-09-09T09:02:08.312445-05:00",
+  "mission": "Delete unused / already-posted social AI flyers from WP media library; keep only actively wired plates",
+  "planned_delete_count": 320,
+  "extra_reject_comps_deleted": [
+    28040,
+    28041,
+    28044,
+    28038,
+    28050,
+    28051
+  ],
+  "approx_total_deleted": 320,
+  "batches": "0-7 via wp post delete --force (MCP pro_wpcli_execute)",
+  "kept_verified_ids": [
+    28031,
+    28039,
+    28042,
+    28043,
+    28052,
+    27690,
+    27695
+  ],
+  "remaining_ai_social_pattern_count": 23,
+  "remaining_note": "All 23 remaining pattern matches are keep-set / morning_flyers.json wired plates (plus firehorse afternoon 26166)",
+  "excluded": [
+    "Tarot deck AI",
+    "WooCommerce products",
+    "TEC fixed thumbs 26165/22436/20041",
+    "active atmosphere/night pool",
+    "brand PNGs"
+  ]
+}

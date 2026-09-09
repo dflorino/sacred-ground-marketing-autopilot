@@ -1,0 +1,15 @@
+{
+  "status": "complete",
+  "remaining_batches": [],
+  "completed_batches": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "note": "Batches 0-7 deleted successfully 2026-09-09"
+}
