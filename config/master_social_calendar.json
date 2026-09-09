@@ -1,0 +1,3146 @@
+{
+  "notes": "Sacred Ground MASTER social planning calendar — Founder Sep 8 2026. September 2026 through December 2027. Source of truth for dates to layer onto social posts (morning / afternoon / night). Does NOT auto-publish. Live celestial dual-cadence plates stay in config/celestial_events.json — promote master entries into that file (or specialty campaigns) when Founder locks creatives/cadence. Timezone: America/Chicago. Stars = Founder priority (0–5). do_not_miss = RED-flag planning priority.",
+  "timezone": "America/Chicago",
+  "range_start": "2026-09-01",
+  "range_end": "2027-12-31",
+  "source": "Founder master calendar paste 2026-09-08 America/Chicago",
+  "related": {
+    "celestial_events": "config/celestial_events.json",
+    "human_doc": "docs/MASTER-SOCIAL-CALENDAR-2026-2027.md"
+  },
+  "series_defs": {
+    "wheel_of_year": [
+      {
+        "name": "Imbolc",
+        "approx": "Feb 1",
+        "emoji": "🕯️"
+      },
+      {
+        "name": "Ostara",
+        "approx": "Mar 20/21",
+        "emoji": "🌱"
+      },
+      {
+        "name": "Beltane",
+        "approx": "May 1",
+        "emoji": "🔥"
+      },
+      {
+        "name": "Litha",
+        "approx": "Jun 20/21",
+        "emoji": "☀️"
+      },
+      {
+        "name": "Lughnasadh / Lammas",
+        "approx": "Aug 1",
+        "emoji": "🌾"
+      },
+      {
+        "name": "Mabon",
+        "approx": "Sep 22/23",
+        "emoji": "🍂"
+      },
+      {
+        "name": "Samhain",
+        "approx": "Oct 31",
+        "emoji": "🎃"
+      },
+      {
+        "name": "Yule",
+        "approx": "Dec 21/22",
+        "emoji": "❄️"
+      }
+    ],
+    "portals": [
+      {
+        "key": "1/1",
+        "theme": "Beginnings"
+      },
+      {
+        "key": "2/2",
+        "theme": "Partnership & balance"
+      },
+      {
+        "key": "3/3",
+        "theme": "Creativity & expression"
+      },
+      {
+        "key": "4/4",
+        "theme": "Grounding & foundations"
+      },
+      {
+        "key": "5/5",
+        "theme": "Change & transformation"
+      },
+      {
+        "key": "6/6",
+        "theme": "Love & healing"
+      },
+      {
+        "key": "7/7",
+        "theme": "Spiritual wisdom & intuition"
+      },
+      {
+        "key": "8/8",
+        "theme": "Lion's Gate / abundance & manifestation"
+      },
+      {
+        "key": "9/9",
+        "theme": "Completion & release"
+      },
+      {
+        "key": "10/10",
+        "theme": "Alignment & forward movement"
+      },
+      {
+        "key": "11/11",
+        "theme": "Awakening, angels & synchronicity"
+      },
+      {
+        "key": "12/12",
+        "theme": "Completion & spiritual integration"
+      }
+    ],
+    "modality_rotation": [
+      "Tarot",
+      "Reiki",
+      "Akashic Records",
+      "astrology",
+      "angels",
+      "numerology",
+      "crystals",
+      "chakras",
+      "meditation",
+      "massage",
+      "sound healing",
+      "drumming",
+      "reflexology",
+      "energy balancing",
+      "past lives",
+      "herbs",
+      "essential oils",
+      "grounding",
+      "intuition",
+      "spiritual education"
+    ]
+  },
+  "do_not_miss_rules": [
+    "Every New Moon",
+    "Every Full Moon",
+    "Every Eclipse",
+    "Every Equinox & Solstice",
+    "Every Wheel-of-the-Year Sabbat",
+    "Every repeating-number Portal",
+    "2/14 World Sound Healing Day",
+    "3/20-ish International Astrology Day",
+    "3/20-ish Astrological New Year",
+    "4/22 Earth Day",
+    "5/25 World Tarot Day",
+    "6/21 International Day of Yoga",
+    "7/24 International Self-Care Day",
+    "8/8 Lion's Gate",
+    "8/15 Mikao Usui / Reiki",
+    "9/21 International Day of Peace",
+    "9/29 Archangels / Michaelmas",
+    "10/2 Guardian Angels Day",
+    "10/31 Samhain",
+    "11/11 Portal",
+    "12/21 World Meditation Day",
+    "Every major Mercury/Venus/Mars retrograde",
+    "Major outer-planet stations",
+    "Major meteor showers"
+  ],
+  "entry_count": 174,
+  "do_not_miss_count": 84,
+  "entries": [
+    {
+      "date": "2026-09-09",
+      "title": "9/9 Portal",
+      "stars": 5,
+      "themes": [
+        "completion",
+        "release",
+        "forgiveness",
+        "karmic closure",
+        "endings",
+        "transformation"
+      ],
+      "series": [
+        "portal",
+        "do_not_miss"
+      ],
+      "emoji": "✨",
+      "do_not_miss": true,
+      "id": "2026-09-09_9-9-portal_001"
+    },
+    {
+      "date": "2026-09-10",
+      "title": "New Moon in Virgo",
+      "stars": 4,
+      "themes": [
+        "healing",
+        "purification",
+        "wellness",
+        "routines",
+        "organization",
+        "practical intentions"
+      ],
+      "series": [
+        "new_moon",
+        "do_not_miss"
+      ],
+      "emoji": "🌑",
+      "do_not_miss": true,
+      "id": "2026-09-10_new-moon-in-virgo_002"
+    },
+    {
+      "date": "2026-09-10",
+      "title": "Uranus Retrograde Begins",
+      "stars": 3,
+      "themes": [
+        "inner awakening",
+        "liberation",
+        "breaking patterns",
+        "unexpected realizations"
+      ],
+      "series": [
+        "planetary_station",
+        "retrograde"
+      ],
+      "emoji": "♅",
+      "do_not_miss": false,
+      "id": "2026-09-10_uranus-retrograde-begins_003"
+    },
+    {
+      "date": "2026-09-10",
+      "title": "Mercury enters Libra",
+      "stars": 0,
+      "themes": [
+        "communication",
+        "diplomacy",
+        "relationships",
+        "balance"
+      ],
+      "series": [
+        "planetary_ingress"
+      ],
+      "emoji": "☿",
+      "do_not_miss": false,
+      "id": "2026-09-10_mercury-enters-libra_004"
+    },
+    {
+      "date": "2026-09-10",
+      "title": "Venus enters Scorpio",
+      "stars": 0,
+      "themes": [
+        "passion",
+        "intimacy",
+        "emotional depth",
+        "shadow work"
+      ],
+      "series": [
+        "planetary_ingress"
+      ],
+      "emoji": "♀",
+      "do_not_miss": false,
+      "id": "2026-09-10_venus-enters-scorpio_005"
+    },
+    {
+      "date": "2026-09-21",
+      "title": "International Day of Peace",
+      "stars": 4,
+      "themes": [
+        "peace meditation",
+        "collective intention",
+        "compassion",
+        "healing"
+      ],
+      "series": [
+        "observance",
+        "do_not_miss"
+      ],
+      "emoji": "🕊️",
+      "do_not_miss": true,
+      "id": "2026-09-21_international-day-of-peace_006"
+    },
+    {
+      "date": "2026-09-22",
+      "title": "Autumn Equinox / Mabon",
+      "stars": 5,
+      "themes": [
+        "harvest",
+        "gratitude",
+        "balance",
+        "equal light and darkness",
+        "turning inward"
+      ],
+      "series": [
+        "equinox",
+        "wheel_of_year",
+        "mabon",
+        "do_not_miss"
+      ],
+      "emoji": "🍂",
+      "do_not_miss": true,
+      "id": "2026-09-22_autumn-equinox-mabon_007"
+    },
+    {
+      "date": "2026-09-22",
+      "title": "Libra Season Begins",
+      "stars": 3,
+      "themes": [
+        "harmony",
+        "beauty",
+        "partnership",
+        "relationships"
+      ],
+      "series": [
+        "zodiac_season"
+      ],
+      "emoji": "♎",
+      "do_not_miss": false,
+      "id": "2026-09-22_libra-season-begins_008"
+    },
+    {
+      "date": "2026-09-26",
+      "title": "Full Moon in Aries",
+      "stars": 4,
+      "themes": [
+        "courage",
+        "independence",
+        "identity",
+        "release",
+        "action"
+      ],
+      "series": [
+        "full_moon",
+        "do_not_miss"
+      ],
+      "emoji": "🌕",
+      "do_not_miss": true,
+      "id": "2026-09-26_full-moon-in-aries_009"
+    },
+    {
+      "date": "2026-09-27",
+      "title": "Mars enters Leo",
+      "stars": 0,
+      "themes": [
+        "confidence",
+        "creativity",
+        "courage",
+        "visibility"
+      ],
+      "series": [
+        "planetary_ingress"
+      ],
+      "emoji": "♂",
+      "do_not_miss": false,
+      "id": "2026-09-27_mars-enters-leo_010"
+    },
+    {
+      "date": "2026-09-29",
+      "title": "Michaelmas / Feast of the Archangels",
+      "stars": 5,
+      "themes": [
+        "Archangel Michael protection & courage",
+        "Archangel Raphael healing",
+        "Archangel Gabriel communication & divine messages"
+      ],
+      "series": [
+        "angel",
+        "michaelmas",
+        "do_not_miss"
+      ],
+      "notes": "Particularly strong Sacred Ground date.",
+      "emoji": "👼",
+      "do_not_miss": true,
+      "id": "2026-09-29_michaelmas-feast-of-the-archangels_011"
+    },
+    {
+      "date": "2026-10-02",
+      "title": "Guardian Angels Day",
+      "stars": 4,
+      "themes": [
+        "guardian angels",
+        "signs",
+        "protection",
+        "guidance",
+        "angel communication"
+      ],
+      "series": [
+        "angel",
+        "do_not_miss"
+      ],
+      "emoji": "👼",
+      "do_not_miss": true,
+      "id": "2026-10-02_guardian-angels-day_012"
+    },
+    {
+      "date": "2026-10-07",
+      "title": "Draconid Meteor Shower",
+      "stars": 2,
+      "themes": [
+        "meteors",
+        "sky watching"
+      ],
+      "series": [
+        "meteor_shower"
+      ],
+      "date_end": "2026-10-08",
+      "emoji": "☄️",
+      "do_not_miss": false,
+      "id": "2026-10-07_draconid-meteor-shower_013"
+    },
+    {
+      "date": "2026-10-10",
+      "title": "10/10 Portal",
+      "stars": 4,
+      "themes": [
+        "alignment",
+        "manifestation",
+        "beginnings",
+        "moving forward"
+      ],
+      "series": [
+        "portal",
+        "do_not_miss"
+      ],
+      "emoji": "✨",
+      "do_not_miss": true,
+      "id": "2026-10-10_10-10-portal_014"
+    },
+    {
+      "date": "2026-10-10",
+      "title": "World Mental Health Day",
+      "stars": 3,
+      "themes": [
+        "compassion",
+        "meditation",
+        "community",
+        "self-care",
+        "connection"
+      ],
+      "series": [
+        "observance"
+      ],
+      "emoji": "💚",
+      "do_not_miss": false,
+      "id": "2026-10-10_world-mental-health-day_015"
+    },
+    {
+      "date": "2026-10-21",
+      "title": "Orionid Meteor Shower",
+      "stars": 3,
+      "themes": [
+        "meteors",
+        "sky watching"
+      ],
+      "series": [
+        "meteor_shower"
+      ],
+      "date_end": "2026-10-22",
+      "emoji": "☄️",
+      "do_not_miss": false,
+      "id": "2026-10-21_orionid-meteor-shower_016"
+    },
+    {
+      "date": "2026-10-23",
+      "title": "Scorpio Season Begins",
+      "stars": 3,
+      "themes": [
+        "transformation",
+        "mystery",
+        "intuition",
+        "shadow",
+        "rebirth"
+      ],
+      "series": [
+        "zodiac_season"
+      ],
+      "emoji": "♏",
+      "do_not_miss": false,
+      "id": "2026-10-23_scorpio-season-begins_017"
+    },
+    {
+      "date": "2026-10-24",
+      "title": "Mercury Retrograde Begins",
+      "stars": 3,
+      "themes": [
+        "mercury retrograde",
+        "review",
+        "communication"
+      ],
+      "series": [
+        "planetary_station",
+        "retrograde"
+      ],
+      "emoji": "☿",
+      "do_not_miss": false,
+      "id": "2026-10-24_mercury-retrograde-begins_018"
+    },
+    {
+      "date": "2026-10-25",
+      "title": "Full Moon in Taurus",
+      "stars": 4,
+      "themes": [
+        "grounding",
+        "abundance",
+        "security",
+        "nature",
+        "body"
+      ],
+      "series": [
+        "full_moon",
+        "do_not_miss"
+      ],
+      "date_end": "2026-10-26",
+      "notes": "Founder listed OCT 25/26 — use Chicago night window; wire exact peak when locking creatives.",
+      "emoji": "🌕",
+      "do_not_miss": true,
+      "id": "2026-10-25_full-moon-in-taurus_019"
+    },
+    {
+      "date": "2026-10-31",
+      "title": "Samhain",
+      "stars": 5,
+      "themes": [
+        "ancestors",
+        "spirit",
+        "divination",
+        "Tarot",
+        "mediumship",
+        "remembrance",
+        "death/rebirth",
+        "veil between worlds"
+      ],
+      "series": [
+        "wheel_of_year",
+        "samhain",
+        "do_not_miss"
+      ],
+      "notes": "One of the year's biggest Sacred Ground dates.",
+      "emoji": "🎃",
+      "do_not_miss": true,
+      "id": "2026-10-31_samhain_020"
+    },
+    {
+      "date": "2026-10-31",
+      "title": "Halloween",
+      "stars": 0,
+      "themes": [
+        "Halloween"
+      ],
+      "series": [
+        "observance"
+      ],
+      "emoji": "🎃",
+      "do_not_miss": false,
+      "id": "2026-10-31_halloween_021"
+    },
+    {
+      "date": "2026-11-01",
+      "title": "All Saints' Day",
+      "stars": 0,
+      "themes": [
+        "saints",
+        "remembrance"
+      ],
+      "series": [
+        "observance"
+      ],
+      "emoji": "🕯️",
+      "do_not_miss": false,
+      "id": "2026-11-01_all-saints-day_022"
+    },
+    {
+      "date": "2026-11-02",
+      "title": "All Souls' Day",
+      "stars": 3,
+      "themes": [
+        "ancestors",
+        "remembrance",
+        "honoring those who have passed"
+      ],
+      "series": [
+        "observance",
+        "ancestors"
+      ],
+      "emoji": "🕯️",
+      "do_not_miss": false,
+      "id": "2026-11-02_all-souls-day_023"
+    },
+    {
+      "date": "2026-11-04",
+      "title": "Taurid Meteor Shower",
+      "stars": 0,
+      "themes": [
+        "meteors"
+      ],
+      "series": [
+        "meteor_shower"
+      ],
+      "date_end": "2026-11-05",
+      "emoji": "☄️",
+      "do_not_miss": false,
+      "id": "2026-11-04_taurid-meteor-shower_024"
+    },
+    {
+      "date": "2026-11-09",
+      "title": "New Moon in Scorpio",
+      "stars": 4,
+      "themes": [
+        "transformation",
+        "intuition",
+        "shadow work",
+        "emotional rebirth"
+      ],
+      "series": [
+        "new_moon",
+        "do_not_miss"
+      ],
+      "emoji": "🌑",
+      "do_not_miss": true,
+      "id": "2026-11-09_new-moon-in-scorpio_025"
+    },
+    {
+      "date": "2026-11-11",
+      "title": "11/11 Portal",
+      "stars": 5,
+      "themes": [
+        "angel numbers",
+        "synchronicity",
+        "awakening",
+        "intuition",
+        "alignment",
+        "manifestation"
+      ],
+      "series": [
+        "portal",
+        "angel",
+        "do_not_miss"
+      ],
+      "emoji": "👼✨",
+      "do_not_miss": true,
+      "id": "2026-11-11_11-11-portal_026"
+    },
+    {
+      "date": "2026-11-13",
+      "title": "World Kindness Day",
+      "stars": 3,
+      "themes": [
+        "kindness",
+        "compassion"
+      ],
+      "series": [
+        "observance"
+      ],
+      "emoji": "💗",
+      "do_not_miss": false,
+      "id": "2026-11-13_world-kindness-day_027"
+    },
+    {
+      "date": "2026-11-13",
+      "title": "Mercury Direct",
+      "stars": 0,
+      "themes": [
+        "mercury direct"
+      ],
+      "series": [
+        "planetary_station"
+      ],
+      "emoji": "☿",
+      "do_not_miss": false,
+      "id": "2026-11-13_mercury-direct_028"
+    },
+    {
+      "date": "2026-11-13",
+      "title": "Venus Direct",
+      "stars": 0,
+      "themes": [
+        "venus direct"
+      ],
+      "series": [
+        "planetary_station"
+      ],
+      "emoji": "♀",
+      "do_not_miss": false,
+      "id": "2026-11-13_venus-direct_029"
+    },
+    {
+      "date": "2026-11-17",
+      "title": "Leonid Meteor Shower",
+      "stars": 0,
+      "themes": [
+        "meteors"
+      ],
+      "series": [
+        "meteor_shower"
+      ],
+      "date_end": "2026-11-18",
+      "emoji": "☄️",
+      "do_not_miss": false,
+      "id": "2026-11-17_leonid-meteor-shower_030"
+    },
+    {
+      "date": "2026-11-22",
+      "title": "Sagittarius Season Begins",
+      "stars": 0,
+      "themes": [
+        "truth",
+        "expansion",
+        "adventure",
+        "spiritual exploration"
+      ],
+      "series": [
+        "zodiac_season"
+      ],
+      "emoji": "♐",
+      "do_not_miss": false,
+      "id": "2026-11-22_sagittarius-season-begins_031"
+    },
+    {
+      "date": "2026-11-24",
+      "title": "Full Moon / Supermoon",
+      "stars": 4,
+      "themes": [
+        "illumination",
+        "release",
+        "heightened lunar energy"
+      ],
+      "series": [
+        "full_moon",
+        "supermoon",
+        "do_not_miss"
+      ],
+      "emoji": "🌕",
+      "do_not_miss": true,
+      "id": "2026-11-24_full-moon-supermoon_032"
+    },
+    {
+      "date": "2026-12-09",
+      "title": "New Moon in Sagittarius",
+      "stars": 3,
+      "themes": [
+        "expansion",
+        "optimism",
+        "adventure",
+        "spiritual exploration"
+      ],
+      "series": [
+        "new_moon",
+        "do_not_miss"
+      ],
+      "emoji": "🌑",
+      "do_not_miss": true,
+      "id": "2026-12-09_new-moon-in-sagittarius_033"
+    },
+    {
+      "date": "2026-12-10",
+      "title": "Saturn Direct",
+      "stars": 0,
+      "themes": [
+        "saturn direct"
+      ],
+      "series": [
+        "planetary_station"
+      ],
+      "emoji": "♄",
+      "do_not_miss": false,
+      "id": "2026-12-10_saturn-direct_034"
+    },
+    {
+      "date": "2026-12-12",
+      "title": "12/12 Portal",
+      "stars": 5,
+      "themes": [
+        "completion",
+        "spiritual growth",
+        "integration",
+        "alignment"
+      ],
+      "series": [
+        "portal",
+        "do_not_miss"
+      ],
+      "emoji": "✨",
+      "do_not_miss": true,
+      "id": "2026-12-12_12-12-portal_035"
+    },
+    {
+      "date": "2026-12-12",
+      "title": "Neptune Direct",
+      "stars": 0,
+      "themes": [
+        "neptune direct"
+      ],
+      "series": [
+        "planetary_station"
+      ],
+      "emoji": "♆",
+      "do_not_miss": false,
+      "id": "2026-12-12_neptune-direct_036"
+    },
+    {
+      "date": "2026-12-12",
+      "title": "Jupiter Retrograde",
+      "stars": 0,
+      "themes": [
+        "jupiter retrograde"
+      ],
+      "series": [
+        "planetary_station",
+        "retrograde"
+      ],
+      "emoji": "♃",
+      "do_not_miss": false,
+      "id": "2026-12-12_jupiter-retrograde_037"
+    },
+    {
+      "date": "2026-12-13",
+      "title": "Geminid Meteor Shower",
+      "stars": 4,
+      "themes": [
+        "meteors",
+        "peak sky watching"
+      ],
+      "series": [
+        "meteor_shower",
+        "do_not_miss"
+      ],
+      "date_end": "2026-12-14",
+      "emoji": "☄️",
+      "do_not_miss": true,
+      "id": "2026-12-13_geminid-meteor-shower_038"
+    },
+    {
+      "date": "2026-12-21",
+      "title": "World Meditation Day",
+      "stars": 5,
+      "themes": [
+        "stillness",
+        "consciousness",
+        "collective meditation",
+        "inner peace"
+      ],
+      "series": [
+        "observance",
+        "meditation",
+        "do_not_miss"
+      ],
+      "emoji": "🧘",
+      "do_not_miss": true,
+      "id": "2026-12-21_world-meditation-day_039"
+    },
+    {
+      "date": "2026-12-21",
+      "title": "Winter Solstice / Yule",
+      "stars": 5,
+      "themes": [
+        "longest night",
+        "return of light",
+        "rebirth",
+        "renewal",
+        "hope",
+        "stillness"
+      ],
+      "series": [
+        "solstice",
+        "wheel_of_year",
+        "yule",
+        "do_not_miss"
+      ],
+      "emoji": "❄️",
+      "do_not_miss": true,
+      "id": "2026-12-21_winter-solstice-yule_040"
+    },
+    {
+      "date": "2026-12-21",
+      "title": "Capricorn Season Begins",
+      "stars": 0,
+      "themes": [
+        "capricorn"
+      ],
+      "series": [
+        "zodiac_season"
+      ],
+      "emoji": "♑",
+      "do_not_miss": false,
+      "id": "2026-12-21_capricorn-season-begins_041"
+    },
+    {
+      "date": "2026-12-21",
+      "title": "Ursid Meteor Shower",
+      "stars": 0,
+      "themes": [
+        "meteors"
+      ],
+      "series": [
+        "meteor_shower"
+      ],
+      "date_end": "2026-12-22",
+      "emoji": "☄️",
+      "do_not_miss": false,
+      "id": "2026-12-21_ursid-meteor-shower_042"
+    },
+    {
+      "date": "2026-12-24",
+      "title": "Full Moon / Supermoon",
+      "stars": 4,
+      "themes": [
+        "illumination",
+        "release",
+        "supermoon"
+      ],
+      "series": [
+        "full_moon",
+        "supermoon",
+        "do_not_miss"
+      ],
+      "emoji": "🌕",
+      "do_not_miss": true,
+      "id": "2026-12-24_full-moon-supermoon_043"
+    },
+    {
+      "date": "2026-12-25",
+      "title": "Christmas",
+      "stars": 0,
+      "themes": [
+        "light",
+        "love",
+        "generosity",
+        "sacred birth"
+      ],
+      "series": [
+        "observance"
+      ],
+      "emoji": "✨",
+      "do_not_miss": false,
+      "id": "2026-12-25_christmas_044"
+    },
+    {
+      "date": "2026-12-31",
+      "title": "Year-End Release",
+      "stars": 4,
+      "themes": [
+        "cleansing",
+        "gratitude",
+        "release",
+        "burning ritual",
+        "Tarot reflection",
+        "intentions"
+      ],
+      "series": [
+        "year_end",
+        "do_not_miss"
+      ],
+      "emoji": "🔥",
+      "do_not_miss": true,
+      "id": "2026-12-31_year-end-release_045"
+    },
+    {
+      "date": "2027-01-01",
+      "title": "1/1 Portal",
+      "stars": 5,
+      "themes": [
+        "beginnings",
+        "manifestation",
+        "intentions",
+        "creating your year"
+      ],
+      "series": [
+        "portal",
+        "do_not_miss"
+      ],
+      "emoji": "✨",
+      "do_not_miss": true,
+      "id": "2027-01-01_1-1-portal_046"
+    },
+    {
+      "date": "2027-01-01",
+      "title": "Garnet / January Birthstone",
+      "stars": 0,
+      "themes": [
+        "grounding",
+        "vitality",
+        "protection"
+      ],
+      "series": [
+        "birthstone"
+      ],
+      "emoji": "💎",
+      "do_not_miss": false,
+      "id": "2027-01-01_garnet-january-birthstone_047"
+    },
+    {
+      "date": "2027-01-03",
+      "title": "Quadrantid Meteor Shower",
+      "stars": 0,
+      "themes": [
+        "meteors"
+      ],
+      "series": [
+        "meteor_shower"
+      ],
+      "date_end": "2027-01-04",
+      "emoji": "☄️",
+      "do_not_miss": false,
+      "id": "2027-01-03_quadrantid-meteor-shower_048"
+    },
+    {
+      "date": "2027-01-07",
+      "title": "New Moon in Capricorn",
+      "stars": 4,
+      "themes": [
+        "goals",
+        "business",
+        "foundations",
+        "discipline",
+        "long-term intentions"
+      ],
+      "series": [
+        "new_moon",
+        "do_not_miss"
+      ],
+      "emoji": "🌑",
+      "do_not_miss": true,
+      "id": "2027-01-07_new-moon-in-capricorn_049"
+    },
+    {
+      "date": "2027-01-10",
+      "title": "Mars Retrograde Begins",
+      "stars": 3,
+      "themes": [
+        "mars retrograde"
+      ],
+      "series": [
+        "planetary_station",
+        "retrograde"
+      ],
+      "emoji": "♂",
+      "do_not_miss": false,
+      "id": "2027-01-10_mars-retrograde-begins_050"
+    },
+    {
+      "date": "2027-01-20",
+      "title": "Aquarius Season Begins",
+      "stars": 0,
+      "themes": [
+        "community",
+        "awakening",
+        "individuality",
+        "innovation"
+      ],
+      "series": [
+        "zodiac_season"
+      ],
+      "emoji": "♒",
+      "do_not_miss": false,
+      "id": "2027-01-20_aquarius-season-begins_051"
+    },
+    {
+      "date": "2027-01-22",
+      "title": "Full Supermoon in Leo",
+      "stars": 4,
+      "themes": [
+        "heart",
+        "confidence",
+        "creativity",
+        "courage",
+        "authentic expression"
+      ],
+      "series": [
+        "full_moon",
+        "supermoon",
+        "do_not_miss"
+      ],
+      "emoji": "🌕",
+      "do_not_miss": true,
+      "id": "2027-01-22_full-supermoon-in-leo_052"
+    },
+    {
+      "date": "2027-01-24",
+      "title": "International Day of Education",
+      "stars": 0,
+      "themes": [
+        "spiritual teachers",
+        "classes",
+        "learning",
+        "Sacred Ground practitioners"
+      ],
+      "series": [
+        "observance"
+      ],
+      "emoji": "📚",
+      "do_not_miss": false,
+      "id": "2027-01-24_international-day-of-education_053"
+    },
+    {
+      "date": "2027-02-01",
+      "title": "Amethyst / February Birthstone",
+      "stars": 3,
+      "themes": [
+        "intuition",
+        "spirituality",
+        "peace"
+      ],
+      "series": [
+        "birthstone"
+      ],
+      "emoji": "💎",
+      "do_not_miss": false,
+      "id": "2027-02-01_amethyst-february-birthstone_054"
+    },
+    {
+      "date": "2027-02-01",
+      "title": "Imbolc",
+      "stars": 5,
+      "themes": [
+        "Brigid",
+        "purification",
+        "returning light",
+        "awakening",
+        "inspiration"
+      ],
+      "series": [
+        "wheel_of_year",
+        "imbolc",
+        "do_not_miss"
+      ],
+      "emoji": "🕯️",
+      "do_not_miss": true,
+      "id": "2027-02-01_imbolc_055"
+    },
+    {
+      "date": "2027-02-02",
+      "title": "2/2 Portal",
+      "stars": 4,
+      "themes": [
+        "partnership",
+        "balance",
+        "relationships",
+        "intuition"
+      ],
+      "series": [
+        "portal",
+        "do_not_miss"
+      ],
+      "emoji": "✨",
+      "do_not_miss": true,
+      "id": "2027-02-02_2-2-portal_056"
+    },
+    {
+      "date": "2027-02-06",
+      "title": "New Moon in Aquarius + Annular Solar Eclipse",
+      "stars": 5,
+      "themes": [
+        "future",
+        "awakening",
+        "community",
+        "liberation",
+        "dramatic beginnings"
+      ],
+      "series": [
+        "new_moon",
+        "eclipse",
+        "do_not_miss"
+      ],
+      "emoji": "🌑☀️",
+      "do_not_miss": true,
+      "id": "2027-02-06_new-moon-in-aquarius-annular-solar-eclipse_057"
+    },
+    {
+      "date": "2027-02-09",
+      "title": "Mercury Retrograde Begins",
+      "stars": 3,
+      "themes": [
+        "mercury retrograde"
+      ],
+      "series": [
+        "planetary_station",
+        "retrograde"
+      ],
+      "emoji": "☿",
+      "do_not_miss": false,
+      "id": "2027-02-09_mercury-retrograde-begins_058"
+    },
+    {
+      "date": "2027-02-14",
+      "title": "World Sound Healing Day",
+      "stars": 5,
+      "themes": [
+        "sound baths",
+        "singing bowls",
+        "gong",
+        "vibration",
+        "frequency",
+        "planetary healing"
+      ],
+      "series": [
+        "observance",
+        "sound_healing",
+        "do_not_miss"
+      ],
+      "emoji": "🔔",
+      "do_not_miss": true,
+      "id": "2027-02-14_world-sound-healing-day_059"
+    },
+    {
+      "date": "2027-02-14",
+      "title": "Valentine's Day / Heart Energy",
+      "stars": 4,
+      "themes": [
+        "rose quartz",
+        "heart chakra",
+        "self-love",
+        "relationships",
+        "compassion"
+      ],
+      "series": [
+        "observance",
+        "do_not_miss"
+      ],
+      "emoji": "💗",
+      "do_not_miss": true,
+      "id": "2027-02-14_valentines-day-heart-energy_060"
+    },
+    {
+      "date": "2027-02-17",
+      "title": "Random Acts of Kindness Day",
+      "stars": 3,
+      "themes": [
+        "kindness"
+      ],
+      "series": [
+        "observance"
+      ],
+      "emoji": "💗",
+      "do_not_miss": false,
+      "id": "2027-02-17_random-acts-of-kindness-day_061"
+    },
+    {
+      "date": "2027-02-18",
+      "title": "Pisces Season Begins",
+      "stars": 0,
+      "themes": [
+        "intuition",
+        "dreams",
+        "compassion",
+        "spirituality"
+      ],
+      "series": [
+        "zodiac_season"
+      ],
+      "emoji": "♓",
+      "do_not_miss": false,
+      "id": "2027-02-18_pisces-season-begins_062"
+    },
+    {
+      "date": "2027-02-20",
+      "title": "Full Moon in Virgo + Lunar Eclipse",
+      "stars": 5,
+      "themes": [
+        "healing",
+        "body",
+        "routines",
+        "purification",
+        "release"
+      ],
+      "series": [
+        "full_moon",
+        "eclipse",
+        "do_not_miss"
+      ],
+      "emoji": "🌕",
+      "do_not_miss": true,
+      "id": "2027-02-20_full-moon-in-virgo-lunar-eclipse_063"
+    },
+    {
+      "date": "2027-03-01",
+      "title": "Aquamarine / March Birthstone",
+      "stars": 0,
+      "themes": [
+        "flow",
+        "courage",
+        "communication"
+      ],
+      "series": [
+        "birthstone"
+      ],
+      "emoji": "💎",
+      "do_not_miss": false,
+      "id": "2027-03-01_aquamarine-march-birthstone_064"
+    },
+    {
+      "date": "2027-03-03",
+      "title": "3/3 Portal",
+      "stars": 4,
+      "themes": [
+        "creativity",
+        "expression",
+        "communication",
+        "mind/body/spirit"
+      ],
+      "series": [
+        "portal",
+        "do_not_miss"
+      ],
+      "emoji": "✨",
+      "do_not_miss": true,
+      "id": "2027-03-03_3-3-portal_065"
+    },
+    {
+      "date": "2027-03-03",
+      "title": "Mercury Direct",
+      "stars": 0,
+      "themes": [
+        "mercury direct"
+      ],
+      "series": [
+        "planetary_station"
+      ],
+      "emoji": "☿",
+      "do_not_miss": false,
+      "id": "2027-03-03_mercury-direct_066"
+    },
+    {
+      "date": "2027-03-08",
+      "title": "International Women's Day",
+      "stars": 4,
+      "themes": [
+        "divine feminine",
+        "women practitioners",
+        "wisdom",
+        "empowerment"
+      ],
+      "series": [
+        "observance",
+        "do_not_miss"
+      ],
+      "emoji": "🌸",
+      "do_not_miss": true,
+      "id": "2027-03-08_international-womens-day_067"
+    },
+    {
+      "date": "2027-03-08",
+      "title": "New Moon in Pisces",
+      "stars": 4,
+      "themes": [
+        "intuition",
+        "dreams",
+        "psychic awareness",
+        "surrender"
+      ],
+      "series": [
+        "new_moon",
+        "do_not_miss"
+      ],
+      "emoji": "🌑",
+      "do_not_miss": true,
+      "id": "2027-03-08_new-moon-in-pisces_068"
+    },
+    {
+      "date": "2027-03-09",
+      "title": "Mikao Usui Remembrance / Anniversary of His Passing",
+      "stars": 3,
+      "themes": [
+        "Reiki history",
+        "honoring the roots of Reiki"
+      ],
+      "series": [
+        "reiki",
+        "observance"
+      ],
+      "emoji": "🙏",
+      "do_not_miss": false,
+      "id": "2027-03-09_mikao-usui-remembrance-anniversary-of-his-passin_069"
+    },
+    {
+      "date": "2027-03-20",
+      "title": "Spring Equinox / Ostara",
+      "stars": 5,
+      "themes": [
+        "rebirth",
+        "fertility",
+        "awakening",
+        "balance",
+        "new life"
+      ],
+      "series": [
+        "equinox",
+        "wheel_of_year",
+        "ostara",
+        "do_not_miss"
+      ],
+      "emoji": "🌱",
+      "do_not_miss": true,
+      "id": "2027-03-20_spring-equinox-ostara_070"
+    },
+    {
+      "date": "2027-03-20",
+      "title": "International Astrology Day",
+      "stars": 5,
+      "themes": [
+        "astrology",
+        "zodiac",
+        "birth charts",
+        "astrologers"
+      ],
+      "series": [
+        "observance",
+        "astrology",
+        "do_not_miss"
+      ],
+      "emoji": "🔮",
+      "do_not_miss": true,
+      "id": "2027-03-20_international-astrology-day_071"
+    },
+    {
+      "date": "2027-03-20",
+      "title": "International Day of Happiness",
+      "stars": 3,
+      "themes": [
+        "happiness",
+        "joy"
+      ],
+      "series": [
+        "observance"
+      ],
+      "emoji": "☀️",
+      "do_not_miss": false,
+      "id": "2027-03-20_international-day-of-happiness_072"
+    },
+    {
+      "date": "2027-03-20",
+      "title": "Aries Season / Astrological New Year",
+      "stars": 5,
+      "themes": [
+        "beginning of the zodiac cycle",
+        "fire",
+        "action",
+        "rebirth"
+      ],
+      "series": [
+        "zodiac_season",
+        "astrological_new_year",
+        "do_not_miss"
+      ],
+      "date_end": "2027-03-21",
+      "emoji": "♈",
+      "do_not_miss": true,
+      "id": "2027-03-20_aries-season-astrological-new-year_073"
+    },
+    {
+      "date": "2027-03-22",
+      "title": "Full Moon in Libra",
+      "stars": 4,
+      "themes": [
+        "relationships",
+        "harmony",
+        "boundaries",
+        "balance"
+      ],
+      "series": [
+        "full_moon",
+        "do_not_miss"
+      ],
+      "emoji": "🌕",
+      "do_not_miss": true,
+      "id": "2027-03-22_full-moon-in-libra_074"
+    },
+    {
+      "date": "2027-04-01",
+      "title": "Diamond / April Birthstone",
+      "stars": 0,
+      "themes": [
+        "clarity",
+        "strength",
+        "clear quartz companion for retail"
+      ],
+      "series": [
+        "birthstone"
+      ],
+      "notes": "For metaphysical retail content, Clear Quartz works beautifully alongside diamond.",
+      "emoji": "💎",
+      "do_not_miss": false,
+      "id": "2027-04-01_diamond-april-birthstone_075"
+    },
+    {
+      "date": "2027-04-01",
+      "title": "Mars Direct",
+      "stars": 0,
+      "themes": [
+        "mars direct"
+      ],
+      "series": [
+        "planetary_station"
+      ],
+      "emoji": "♂",
+      "do_not_miss": false,
+      "id": "2027-04-01_mars-direct_076"
+    },
+    {
+      "date": "2027-04-04",
+      "title": "4/4 Portal",
+      "stars": 4,
+      "themes": [
+        "grounding",
+        "stability",
+        "protection",
+        "foundations"
+      ],
+      "series": [
+        "portal",
+        "do_not_miss"
+      ],
+      "emoji": "✨",
+      "do_not_miss": true,
+      "id": "2027-04-04_4-4-portal_077"
+    },
+    {
+      "date": "2027-04-06",
+      "title": "New Moon in Aries",
+      "stars": 4,
+      "themes": [
+        "courage",
+        "action",
+        "identity",
+        "fresh starts"
+      ],
+      "series": [
+        "new_moon",
+        "do_not_miss"
+      ],
+      "emoji": "🌑",
+      "do_not_miss": true,
+      "id": "2027-04-06_new-moon-in-aries_078"
+    },
+    {
+      "date": "2027-04-07",
+      "title": "World Health Day",
+      "stars": 3,
+      "themes": [
+        "whole-person wellness",
+        "body",
+        "mind",
+        "spirit"
+      ],
+      "series": [
+        "observance"
+      ],
+      "emoji": "🌿",
+      "do_not_miss": false,
+      "id": "2027-04-07_world-health-day_079"
+    },
+    {
+      "date": "2027-04-20",
+      "title": "Taurus Season Begins",
+      "stars": 0,
+      "themes": [
+        "taurus"
+      ],
+      "series": [
+        "zodiac_season"
+      ],
+      "emoji": "♉",
+      "do_not_miss": false,
+      "id": "2027-04-20_taurus-season-begins_080"
+    },
+    {
+      "date": "2027-04-20",
+      "title": "Full Moon in Scorpio",
+      "stars": 4,
+      "themes": [
+        "transformation",
+        "intimacy",
+        "shadow",
+        "release"
+      ],
+      "series": [
+        "full_moon",
+        "do_not_miss"
+      ],
+      "emoji": "🌕",
+      "do_not_miss": true,
+      "id": "2027-04-20_full-moon-in-scorpio_081"
+    },
+    {
+      "date": "2027-04-22",
+      "title": "Earth Day",
+      "stars": 5,
+      "themes": [
+        "Mother Earth",
+        "crystals",
+        "minerals",
+        "grounding",
+        "herbs",
+        "nature",
+        "gratitude",
+        "stewardship"
+      ],
+      "series": [
+        "observance",
+        "earth",
+        "do_not_miss"
+      ],
+      "notes": "One of Sacred Ground's biggest natural fits.",
+      "emoji": "🌎",
+      "do_not_miss": true,
+      "id": "2027-04-22_earth-day_082"
+    },
+    {
+      "date": "2027-04-22",
+      "title": "Lyrid Meteor Shower",
+      "stars": 3,
+      "themes": [
+        "meteors"
+      ],
+      "series": [
+        "meteor_shower"
+      ],
+      "date_end": "2027-04-23",
+      "emoji": "☄️",
+      "do_not_miss": false,
+      "id": "2027-04-22_lyrid-meteor-shower_083"
+    },
+    {
+      "date": "2027-05-01",
+      "title": "Emerald / May Birthstone",
+      "stars": 0,
+      "themes": [
+        "heart",
+        "abundance",
+        "love"
+      ],
+      "series": [
+        "birthstone"
+      ],
+      "emoji": "💎",
+      "do_not_miss": false,
+      "id": "2027-05-01_emerald-may-birthstone_084"
+    },
+    {
+      "date": "2027-05-01",
+      "title": "Beltane",
+      "stars": 5,
+      "themes": [
+        "fire",
+        "fertility",
+        "passion",
+        "abundance",
+        "creativity",
+        "life force"
+      ],
+      "series": [
+        "wheel_of_year",
+        "beltane",
+        "do_not_miss"
+      ],
+      "emoji": "🔥",
+      "do_not_miss": true,
+      "id": "2027-05-01_beltane_085"
+    },
+    {
+      "date": "2027-05-05",
+      "title": "5/5 Portal",
+      "stars": 4,
+      "themes": [
+        "change",
+        "freedom",
+        "movement",
+        "transformation"
+      ],
+      "series": [
+        "portal",
+        "do_not_miss"
+      ],
+      "emoji": "✨",
+      "do_not_miss": true,
+      "id": "2027-05-05_5-5-portal_086"
+    },
+    {
+      "date": "2027-05-05",
+      "title": "Eta Aquariid Meteor Shower",
+      "stars": 0,
+      "themes": [
+        "meteors"
+      ],
+      "series": [
+        "meteor_shower"
+      ],
+      "date_end": "2027-05-06",
+      "emoji": "☄️",
+      "do_not_miss": false,
+      "id": "2027-05-05_eta-aquariid-meteor-shower_087"
+    },
+    {
+      "date": "2027-05-06",
+      "title": "New Moon in Taurus",
+      "stars": 4,
+      "themes": [
+        "abundance",
+        "money",
+        "grounding",
+        "nature",
+        "security"
+      ],
+      "series": [
+        "new_moon",
+        "do_not_miss"
+      ],
+      "emoji": "🌑",
+      "do_not_miss": true,
+      "id": "2027-05-06_new-moon-in-taurus_088"
+    },
+    {
+      "date": "2027-05-08",
+      "title": "Pluto Retrograde Begins",
+      "stars": 0,
+      "themes": [
+        "pluto retrograde"
+      ],
+      "series": [
+        "planetary_station",
+        "retrograde"
+      ],
+      "emoji": "♇",
+      "do_not_miss": false,
+      "id": "2027-05-08_pluto-retrograde-begins_089"
+    },
+    {
+      "date": "2027-05-20",
+      "title": "World Bee Day",
+      "stars": 3,
+      "themes": [
+        "nature",
+        "interconnectedness",
+        "pollination",
+        "Earth"
+      ],
+      "series": [
+        "observance"
+      ],
+      "emoji": "🐝",
+      "do_not_miss": false,
+      "id": "2027-05-20_world-bee-day_090"
+    },
+    {
+      "date": "2027-05-20",
+      "title": "Full Moon in Scorpio",
+      "stars": 4,
+      "themes": [
+        "full moon",
+        "scorpio"
+      ],
+      "series": [
+        "full_moon",
+        "do_not_miss"
+      ],
+      "emoji": "🌕",
+      "do_not_miss": true,
+      "id": "2027-05-20_full-moon-in-scorpio_091"
+    },
+    {
+      "date": "2027-05-21",
+      "title": "Gemini Season Begins",
+      "stars": 0,
+      "themes": [
+        "gemini"
+      ],
+      "series": [
+        "zodiac_season"
+      ],
+      "emoji": "♊",
+      "do_not_miss": false,
+      "id": "2027-05-21_gemini-season-begins_092"
+    },
+    {
+      "date": "2027-05-25",
+      "title": "World Tarot Day",
+      "stars": 5,
+      "themes": [
+        "Tarot readings",
+        "readers",
+        "decks",
+        "Tarot history",
+        "card pulls",
+        "Tarot classes",
+        "intuition"
+      ],
+      "series": [
+        "observance",
+        "tarot",
+        "do_not_miss"
+      ],
+      "notes": "Huge Sacred Ground date. Deserves an entire Tarot weekend.",
+      "emoji": "🔮",
+      "do_not_miss": true,
+      "id": "2027-05-25_world-tarot-day_093"
+    },
+    {
+      "date": "2027-06-01",
+      "title": "Pearl / Moonstone / June Birthstones",
+      "stars": 0,
+      "themes": [
+        "intuition",
+        "feminine energy",
+        "lunar cycles"
+      ],
+      "series": [
+        "birthstone"
+      ],
+      "emoji": "💎",
+      "do_not_miss": false,
+      "id": "2027-06-01_pearl-moonstone-june-birthstones_094"
+    },
+    {
+      "date": "2027-06-04",
+      "title": "New Moon in Gemini",
+      "stars": 3,
+      "themes": [
+        "gemini new moon"
+      ],
+      "series": [
+        "new_moon",
+        "do_not_miss"
+      ],
+      "emoji": "🌑",
+      "do_not_miss": true,
+      "id": "2027-06-04_new-moon-in-gemini_095"
+    },
+    {
+      "date": "2027-06-05",
+      "title": "World Environment Day",
+      "stars": 4,
+      "themes": [
+        "Earth",
+        "sustainability",
+        "plants",
+        "crystals",
+        "nature"
+      ],
+      "series": [
+        "observance",
+        "earth",
+        "do_not_miss"
+      ],
+      "emoji": "🌎",
+      "do_not_miss": true,
+      "id": "2027-06-05_world-environment-day_096"
+    },
+    {
+      "date": "2027-06-06",
+      "title": "6/6 Portal",
+      "stars": 4,
+      "themes": [
+        "love",
+        "healing",
+        "heart",
+        "harmony",
+        "home"
+      ],
+      "series": [
+        "portal",
+        "do_not_miss"
+      ],
+      "emoji": "✨",
+      "do_not_miss": true,
+      "id": "2027-06-06_6-6-portal_097"
+    },
+    {
+      "date": "2027-06-08",
+      "title": "World Oceans Day",
+      "stars": 3,
+      "themes": [
+        "water energy",
+        "cleansing",
+        "flow",
+        "aquamarine",
+        "larimar"
+      ],
+      "series": [
+        "observance"
+      ],
+      "emoji": "🌊",
+      "do_not_miss": false,
+      "id": "2027-06-08_world-oceans-day_098"
+    },
+    {
+      "date": "2027-06-10",
+      "title": "Mercury Retrograde Begins",
+      "stars": 0,
+      "themes": [
+        "mercury retrograde"
+      ],
+      "series": [
+        "planetary_station",
+        "retrograde"
+      ],
+      "emoji": "☿",
+      "do_not_miss": false,
+      "id": "2027-06-10_mercury-retrograde-begins_099"
+    },
+    {
+      "date": "2027-06-18",
+      "title": "Full Moon in Sagittarius",
+      "stars": 4,
+      "themes": [
+        "truth",
+        "freedom",
+        "adventure",
+        "expansion"
+      ],
+      "series": [
+        "full_moon",
+        "do_not_miss"
+      ],
+      "emoji": "🌕",
+      "do_not_miss": true,
+      "id": "2027-06-18_full-moon-in-sagittarius_100"
+    },
+    {
+      "date": "2027-06-21",
+      "title": "Summer Solstice / Litha",
+      "stars": 5,
+      "themes": [
+        "longest day",
+        "Sun",
+        "abundance",
+        "vitality",
+        "fire",
+        "manifestation"
+      ],
+      "series": [
+        "solstice",
+        "wheel_of_year",
+        "litha",
+        "do_not_miss"
+      ],
+      "emoji": "☀️",
+      "do_not_miss": true,
+      "id": "2027-06-21_summer-solstice-litha_101"
+    },
+    {
+      "date": "2027-06-21",
+      "title": "International Day of Yoga",
+      "stars": 5,
+      "themes": [
+        "body",
+        "breath",
+        "consciousness",
+        "meditation",
+        "chakras"
+      ],
+      "series": [
+        "observance",
+        "yoga",
+        "do_not_miss"
+      ],
+      "emoji": "🧘",
+      "do_not_miss": true,
+      "id": "2027-06-21_international-day-of-yoga_102"
+    },
+    {
+      "date": "2027-06-21",
+      "title": "Cancer Season Begins",
+      "stars": 0,
+      "themes": [
+        "cancer"
+      ],
+      "series": [
+        "zodiac_season"
+      ],
+      "emoji": "♋",
+      "do_not_miss": false,
+      "id": "2027-06-21_cancer-season-begins_103"
+    },
+    {
+      "date": "2027-07-01",
+      "title": "Ruby / July Birthstone",
+      "stars": 0,
+      "themes": [
+        "passion",
+        "vitality",
+        "courage"
+      ],
+      "series": [
+        "birthstone"
+      ],
+      "emoji": "💎",
+      "do_not_miss": false,
+      "id": "2027-07-01_ruby-july-birthstone_104"
+    },
+    {
+      "date": "2027-07-03",
+      "title": "New Moon in Cancer",
+      "stars": 4,
+      "themes": [
+        "home",
+        "family",
+        "emotional healing",
+        "nurturing"
+      ],
+      "series": [
+        "new_moon",
+        "do_not_miss"
+      ],
+      "emoji": "🌑",
+      "do_not_miss": true,
+      "id": "2027-07-03_new-moon-in-cancer_105"
+    },
+    {
+      "date": "2027-07-04",
+      "title": "Mercury Direct",
+      "stars": 0,
+      "themes": [
+        "mercury direct"
+      ],
+      "series": [
+        "planetary_station"
+      ],
+      "emoji": "☿",
+      "do_not_miss": false,
+      "id": "2027-07-04_mercury-direct_106"
+    },
+    {
+      "date": "2027-07-07",
+      "title": "7/7 Portal",
+      "stars": 5,
+      "themes": [
+        "mysticism",
+        "intuition",
+        "inner wisdom",
+        "spiritual seeking",
+        "awakening"
+      ],
+      "series": [
+        "portal",
+        "do_not_miss"
+      ],
+      "emoji": "✨",
+      "do_not_miss": true,
+      "id": "2027-07-07_7-7-portal_107"
+    },
+    {
+      "date": "2027-07-09",
+      "title": "Neptune Retrograde Begins",
+      "stars": 0,
+      "themes": [
+        "neptune retrograde"
+      ],
+      "series": [
+        "planetary_station",
+        "retrograde"
+      ],
+      "emoji": "♆",
+      "do_not_miss": false,
+      "id": "2027-07-09_neptune-retrograde-begins_108"
+    },
+    {
+      "date": "2027-07-18",
+      "title": "Full Moon in Capricorn + Lunar Eclipse",
+      "stars": 5,
+      "themes": [
+        "structure",
+        "achievement",
+        "responsibility",
+        "release"
+      ],
+      "series": [
+        "full_moon",
+        "eclipse",
+        "do_not_miss"
+      ],
+      "emoji": "🌕",
+      "do_not_miss": true,
+      "id": "2027-07-18_full-moon-in-capricorn-lunar-eclipse_109"
+    },
+    {
+      "date": "2027-07-22",
+      "title": "Leo Season Begins",
+      "stars": 0,
+      "themes": [
+        "leo"
+      ],
+      "series": [
+        "zodiac_season"
+      ],
+      "date_end": "2027-07-23",
+      "emoji": "♌",
+      "do_not_miss": false,
+      "id": "2027-07-22_leo-season-begins_110"
+    },
+    {
+      "date": "2027-07-24",
+      "title": "International Self-Care Day",
+      "stars": 4,
+      "themes": [
+        "massage",
+        "Reiki",
+        "reflexology",
+        "craniosacral",
+        "energy work",
+        "meditation"
+      ],
+      "series": [
+        "observance",
+        "self_care",
+        "do_not_miss"
+      ],
+      "emoji": "🌿",
+      "do_not_miss": true,
+      "id": "2027-07-24_international-self-care-day_111"
+    },
+    {
+      "date": "2027-07-30",
+      "title": "International Day of Friendship",
+      "stars": 3,
+      "themes": [
+        "soul family",
+        "connection",
+        "Sacred Ground community"
+      ],
+      "series": [
+        "observance"
+      ],
+      "emoji": "💜",
+      "do_not_miss": false,
+      "id": "2027-07-30_international-day-of-friendship_112"
+    },
+    {
+      "date": "2027-07-30",
+      "title": "Delta Aquariid Meteor Shower",
+      "stars": 0,
+      "themes": [
+        "meteors"
+      ],
+      "series": [
+        "meteor_shower"
+      ],
+      "date_end": "2027-07-31",
+      "emoji": "☄️",
+      "do_not_miss": false,
+      "id": "2027-07-30_delta-aquariid-meteor-shower_113"
+    },
+    {
+      "date": "2027-07-30",
+      "title": "Alpha Capricornid Meteor Shower",
+      "stars": 0,
+      "themes": [
+        "meteors"
+      ],
+      "series": [
+        "meteor_shower"
+      ],
+      "date_end": "2027-07-31",
+      "emoji": "☄️",
+      "do_not_miss": false,
+      "id": "2027-07-30_alpha-capricornid-meteor-shower_114"
+    },
+    {
+      "date": "2027-08-01",
+      "title": "Peridot / August Birthstone",
+      "stars": 0,
+      "themes": [
+        "abundance",
+        "clearing",
+        "optimism"
+      ],
+      "series": [
+        "birthstone"
+      ],
+      "emoji": "💎",
+      "do_not_miss": false,
+      "id": "2027-08-01_peridot-august-birthstone_115"
+    },
+    {
+      "date": "2027-08-01",
+      "title": "Lughnasadh / Lammas",
+      "stars": 4,
+      "themes": [
+        "first harvest",
+        "gratitude",
+        "abundance",
+        "celebrating what has grown"
+      ],
+      "series": [
+        "wheel_of_year",
+        "lughnasadh",
+        "do_not_miss"
+      ],
+      "emoji": "🌾",
+      "do_not_miss": true,
+      "id": "2027-08-01_lughnasadh-lammas_116"
+    },
+    {
+      "date": "2027-08-02",
+      "title": "New Moon in Leo + Total Solar Eclipse",
+      "stars": 5,
+      "themes": [
+        "heart",
+        "identity",
+        "creativity",
+        "courage",
+        "dramatic beginnings"
+      ],
+      "series": [
+        "new_moon",
+        "eclipse",
+        "do_not_miss"
+      ],
+      "notes": "One of the biggest celestial dates of 2027.",
+      "emoji": "☀️🌑",
+      "do_not_miss": true,
+      "id": "2027-08-02_new-moon-in-leo-total-solar-eclipse_117"
+    },
+    {
+      "date": "2027-08-08",
+      "title": "8/8 Lion's Gate",
+      "stars": 5,
+      "themes": [
+        "manifestation",
+        "abundance",
+        "heart energy",
+        "empowerment",
+        "awakening"
+      ],
+      "series": [
+        "portal",
+        "lions_gate",
+        "do_not_miss"
+      ],
+      "emoji": "🦁",
+      "do_not_miss": true,
+      "id": "2027-08-08_8-8-lions-gate_118"
+    },
+    {
+      "date": "2027-08-08",
+      "title": "Chiron Retrograde Begins",
+      "stars": 0,
+      "themes": [
+        "chiron retrograde"
+      ],
+      "series": [
+        "planetary_station",
+        "retrograde"
+      ],
+      "do_not_miss": false,
+      "id": "2027-08-08_chiron-retrograde-begins_119"
+    },
+    {
+      "date": "2027-08-09",
+      "title": "Saturn Retrograde Begins",
+      "stars": 0,
+      "themes": [
+        "saturn retrograde"
+      ],
+      "series": [
+        "planetary_station",
+        "retrograde"
+      ],
+      "emoji": "♄",
+      "do_not_miss": false,
+      "id": "2027-08-09_saturn-retrograde-begins_120"
+    },
+    {
+      "date": "2027-08-09",
+      "title": "International Day of the World's Indigenous Peoples",
+      "stars": 0,
+      "themes": [
+        "respect",
+        "preservation",
+        "Indigenous cultures"
+      ],
+      "series": [
+        "observance"
+      ],
+      "notes": "Use respectfully rather than turning Indigenous traditions into generic metaphysical content.",
+      "do_not_miss": false,
+      "id": "2027-08-09_international-day-of-the-worlds-indigenous-peopl_121"
+    },
+    {
+      "date": "2027-08-12",
+      "title": "Perseid Meteor Shower",
+      "stars": 4,
+      "themes": [
+        "meteors"
+      ],
+      "series": [
+        "meteor_shower",
+        "do_not_miss"
+      ],
+      "date_end": "2027-08-13",
+      "emoji": "☄️",
+      "do_not_miss": true,
+      "id": "2027-08-12_perseid-meteor-shower_122"
+    },
+    {
+      "date": "2027-08-15",
+      "title": "Mikao Usui's Birthday / Reiki",
+      "stars": 5,
+      "themes": [
+        "Reiki history",
+        "Reiki principles",
+        "Reiki practitioners",
+        "education"
+      ],
+      "series": [
+        "reiki",
+        "observance",
+        "do_not_miss"
+      ],
+      "emoji": "🙏",
+      "do_not_miss": true,
+      "id": "2027-08-15_mikao-usuis-birthday-reiki_123"
+    },
+    {
+      "date": "2027-08-17",
+      "title": "Full Moon in Aquarius + Lunar Eclipse",
+      "stars": 5,
+      "themes": [
+        "community",
+        "individuality",
+        "freedom",
+        "collective change"
+      ],
+      "series": [
+        "full_moon",
+        "eclipse",
+        "do_not_miss"
+      ],
+      "emoji": "🌕",
+      "do_not_miss": true,
+      "id": "2027-08-17_full-moon-in-aquarius-lunar-eclipse_124"
+    },
+    {
+      "date": "2027-08-23",
+      "title": "Virgo Season Begins",
+      "stars": 0,
+      "themes": [
+        "virgo"
+      ],
+      "series": [
+        "zodiac_season"
+      ],
+      "emoji": "♍",
+      "do_not_miss": false,
+      "id": "2027-08-23_virgo-season-begins_125"
+    },
+    {
+      "date": "2027-08-31",
+      "title": "Second New Moon of August / Virgo (Black Moon)",
+      "stars": 4,
+      "themes": [
+        "purification",
+        "organization",
+        "healing",
+        "wellness",
+        "reset"
+      ],
+      "series": [
+        "new_moon",
+        "black_moon",
+        "do_not_miss"
+      ],
+      "notes": "Popularly called a Black Moon.",
+      "emoji": "🌑",
+      "do_not_miss": true,
+      "id": "2027-08-31_second-new-moon-of-august-virgo-black-moon_126"
+    },
+    {
+      "date": "2027-09-01",
+      "title": "Sapphire / September Birthstone",
+      "stars": 0,
+      "themes": [
+        "wisdom",
+        "truth",
+        "intuition"
+      ],
+      "series": [
+        "birthstone"
+      ],
+      "emoji": "💎",
+      "do_not_miss": false,
+      "id": "2027-09-01_sapphire-september-birthstone_127"
+    },
+    {
+      "date": "2027-09-05",
+      "title": "International Day of Charity",
+      "stars": 3,
+      "themes": [
+        "charity",
+        "giving"
+      ],
+      "series": [
+        "observance"
+      ],
+      "emoji": "❤️",
+      "do_not_miss": false,
+      "id": "2027-09-05_international-day-of-charity_128"
+    },
+    {
+      "date": "2027-09-09",
+      "title": "9/9 Portal",
+      "stars": 5,
+      "themes": [
+        "completion",
+        "endings",
+        "karmic release",
+        "forgiveness",
+        "wisdom"
+      ],
+      "series": [
+        "portal",
+        "do_not_miss"
+      ],
+      "emoji": "✨",
+      "do_not_miss": true,
+      "id": "2027-09-09_9-9-portal_129"
+    },
+    {
+      "date": "2027-09-15",
+      "title": "Full Moon in Pisces",
+      "stars": 4,
+      "themes": [
+        "dreams",
+        "intuition",
+        "psychic awareness",
+        "surrender"
+      ],
+      "series": [
+        "full_moon",
+        "do_not_miss"
+      ],
+      "emoji": "🌕",
+      "do_not_miss": true,
+      "id": "2027-09-15_full-moon-in-pisces_130"
+    },
+    {
+      "date": "2027-09-15",
+      "title": "Uranus Retrograde Begins",
+      "stars": 0,
+      "themes": [
+        "uranus retrograde"
+      ],
+      "series": [
+        "planetary_station",
+        "retrograde"
+      ],
+      "emoji": "♅",
+      "do_not_miss": false,
+      "id": "2027-09-15_uranus-retrograde-begins_131"
+    },
+    {
+      "date": "2027-09-21",
+      "title": "International Day of Peace",
+      "stars": 4,
+      "themes": [
+        "collective meditation",
+        "healing",
+        "peace",
+        "compassion"
+      ],
+      "series": [
+        "observance",
+        "do_not_miss"
+      ],
+      "emoji": "🕊️",
+      "do_not_miss": true,
+      "id": "2027-09-21_international-day-of-peace_132"
+    },
+    {
+      "date": "2027-09-23",
+      "title": "Autumn Equinox / Mabon",
+      "stars": 5,
+      "themes": [
+        "balance",
+        "harvest",
+        "gratitude",
+        "turning inward",
+        "light/dark"
+      ],
+      "series": [
+        "equinox",
+        "wheel_of_year",
+        "mabon",
+        "do_not_miss"
+      ],
+      "emoji": "🍂",
+      "do_not_miss": true,
+      "id": "2027-09-23_autumn-equinox-mabon_133"
+    },
+    {
+      "date": "2027-09-23",
+      "title": "Libra Season Begins",
+      "stars": 0,
+      "themes": [
+        "libra"
+      ],
+      "series": [
+        "zodiac_season"
+      ],
+      "emoji": "♎",
+      "do_not_miss": false,
+      "id": "2027-09-23_libra-season-begins_134"
+    },
+    {
+      "date": "2027-09-29",
+      "title": "New Moon in Libra",
+      "stars": 4,
+      "themes": [
+        "relationships",
+        "harmony",
+        "peace",
+        "beauty"
+      ],
+      "series": [
+        "new_moon",
+        "do_not_miss"
+      ],
+      "emoji": "🌑",
+      "do_not_miss": true,
+      "id": "2027-09-29_new-moon-in-libra_135"
+    },
+    {
+      "date": "2027-09-29",
+      "title": "Michaelmas / Archangels",
+      "stars": 5,
+      "themes": [
+        "Michael protection",
+        "Raphael healing",
+        "Gabriel messages and communication"
+      ],
+      "series": [
+        "angel",
+        "michaelmas",
+        "do_not_miss"
+      ],
+      "notes": "This should be Sacred Ground Angel Week.",
+      "emoji": "👼",
+      "do_not_miss": true,
+      "id": "2027-09-29_michaelmas-archangels_136"
+    },
+    {
+      "date": "2027-10-01",
+      "title": "Opal / Tourmaline / October Birthstones",
+      "stars": 0,
+      "themes": [
+        "creativity",
+        "protection"
+      ],
+      "series": [
+        "birthstone"
+      ],
+      "emoji": "💎",
+      "do_not_miss": false,
+      "id": "2027-10-01_opal-tourmaline-october-birthstones_137"
+    },
+    {
+      "date": "2027-10-02",
+      "title": "Guardian Angels Day",
+      "stars": 5,
+      "themes": [
+        "protection",
+        "guidance",
+        "signs",
+        "angel communication"
+      ],
+      "series": [
+        "angel",
+        "do_not_miss"
+      ],
+      "emoji": "👼",
+      "do_not_miss": true,
+      "id": "2027-10-02_guardian-angels-day_138"
+    },
+    {
+      "date": "2027-10-07",
+      "title": "Mercury Retrograde Begins",
+      "stars": 0,
+      "themes": [
+        "mercury retrograde"
+      ],
+      "series": [
+        "planetary_station",
+        "retrograde"
+      ],
+      "emoji": "☿",
+      "do_not_miss": false,
+      "id": "2027-10-07_mercury-retrograde-begins_139"
+    },
+    {
+      "date": "2027-10-08",
+      "title": "Draconid Meteor Shower",
+      "stars": 0,
+      "themes": [
+        "meteors"
+      ],
+      "series": [
+        "meteor_shower"
+      ],
+      "date_end": "2027-10-09",
+      "emoji": "☄️",
+      "do_not_miss": false,
+      "id": "2027-10-08_draconid-meteor-shower_140"
+    },
+    {
+      "date": "2027-10-10",
+      "title": "10/10 Portal",
+      "stars": 4,
+      "themes": [
+        "alignment",
+        "manifestation",
+        "beginnings"
+      ],
+      "series": [
+        "portal",
+        "do_not_miss"
+      ],
+      "emoji": "✨",
+      "do_not_miss": true,
+      "id": "2027-10-10_10-10-portal_141"
+    },
+    {
+      "date": "2027-10-10",
+      "title": "World Mental Health Day",
+      "stars": 3,
+      "themes": [
+        "compassion",
+        "connection",
+        "meditation",
+        "self-care"
+      ],
+      "series": [
+        "observance"
+      ],
+      "emoji": "💚",
+      "do_not_miss": false,
+      "id": "2027-10-10_world-mental-health-day_142"
+    },
+    {
+      "date": "2027-10-15",
+      "title": "Full Moon in Aries",
+      "stars": 4,
+      "themes": [
+        "full moon",
+        "aries"
+      ],
+      "series": [
+        "full_moon",
+        "do_not_miss"
+      ],
+      "emoji": "🌕",
+      "do_not_miss": true,
+      "id": "2027-10-15_full-moon-in-aries_143"
+    },
+    {
+      "date": "2027-10-18",
+      "title": "Pluto Direct",
+      "stars": 0,
+      "themes": [
+        "pluto direct"
+      ],
+      "series": [
+        "planetary_station"
+      ],
+      "emoji": "♇",
+      "do_not_miss": false,
+      "id": "2027-10-18_pluto-direct_144"
+    },
+    {
+      "date": "2027-10-21",
+      "title": "Orionid Meteor Shower",
+      "stars": 0,
+      "themes": [
+        "meteors"
+      ],
+      "series": [
+        "meteor_shower"
+      ],
+      "date_end": "2027-10-22",
+      "emoji": "☄️",
+      "do_not_miss": false,
+      "id": "2027-10-21_orionid-meteor-shower_145"
+    },
+    {
+      "date": "2027-10-23",
+      "title": "Scorpio Season Begins",
+      "stars": 0,
+      "themes": [
+        "scorpio"
+      ],
+      "series": [
+        "zodiac_season"
+      ],
+      "emoji": "♏",
+      "do_not_miss": false,
+      "id": "2027-10-23_scorpio-season-begins_146"
+    },
+    {
+      "date": "2027-10-28",
+      "title": "Mercury Direct",
+      "stars": 0,
+      "themes": [
+        "mercury direct"
+      ],
+      "series": [
+        "planetary_station"
+      ],
+      "emoji": "☿",
+      "do_not_miss": false,
+      "id": "2027-10-28_mercury-direct_147"
+    },
+    {
+      "date": "2027-10-29",
+      "title": "New Moon in Scorpio",
+      "stars": 4,
+      "themes": [
+        "shadow",
+        "transformation",
+        "intuition",
+        "rebirth"
+      ],
+      "series": [
+        "new_moon",
+        "do_not_miss"
+      ],
+      "emoji": "🌑",
+      "do_not_miss": true,
+      "id": "2027-10-29_new-moon-in-scorpio_148"
+    },
+    {
+      "date": "2027-10-31",
+      "title": "Samhain",
+      "stars": 5,
+      "themes": [
+        "ancestors",
+        "spirit",
+        "divination",
+        "mediumship",
+        "Tarot",
+        "remembrance",
+        "veil",
+        "death/rebirth"
+      ],
+      "series": [
+        "wheel_of_year",
+        "samhain",
+        "do_not_miss"
+      ],
+      "emoji": "🎃",
+      "do_not_miss": true,
+      "id": "2027-10-31_samhain_149"
+    },
+    {
+      "date": "2027-10-31",
+      "title": "Halloween",
+      "stars": 0,
+      "themes": [
+        "Halloween"
+      ],
+      "series": [
+        "observance"
+      ],
+      "emoji": "🎃",
+      "do_not_miss": false,
+      "id": "2027-10-31_halloween_150"
+    },
+    {
+      "date": "2027-11-01",
+      "title": "Citrine / Topaz / November Birthstones",
+      "stars": 0,
+      "themes": [
+        "abundance",
+        "joy",
+        "manifestation"
+      ],
+      "series": [
+        "birthstone"
+      ],
+      "emoji": "💎",
+      "do_not_miss": false,
+      "id": "2027-11-01_citrine-topaz-november-birthstones_151"
+    },
+    {
+      "date": "2027-11-01",
+      "title": "All Saints' Day",
+      "stars": 0,
+      "themes": [
+        "saints"
+      ],
+      "series": [
+        "observance"
+      ],
+      "do_not_miss": false,
+      "id": "2027-11-01_all-saints-day_152"
+    },
+    {
+      "date": "2027-11-02",
+      "title": "All Souls' Day",
+      "stars": 3,
+      "themes": [
+        "ancestors",
+        "remembrance"
+      ],
+      "series": [
+        "observance",
+        "ancestors"
+      ],
+      "emoji": "🕯️",
+      "do_not_miss": false,
+      "id": "2027-11-02_all-souls-day_153"
+    },
+    {
+      "date": "2027-11-04",
+      "title": "Taurid Meteor Shower",
+      "stars": 0,
+      "themes": [
+        "meteors"
+      ],
+      "series": [
+        "meteor_shower"
+      ],
+      "date_end": "2027-11-05",
+      "emoji": "☄️",
+      "do_not_miss": false,
+      "id": "2027-11-04_taurid-meteor-shower_154"
+    },
+    {
+      "date": "2027-11-11",
+      "title": "11/11 Portal",
+      "stars": 5,
+      "themes": [
+        "angel numbers",
+        "synchronicities",
+        "awakening",
+        "intuition",
+        "manifestation",
+        "alignment"
+      ],
+      "series": [
+        "portal",
+        "angel",
+        "do_not_miss"
+      ],
+      "emoji": "👼",
+      "do_not_miss": true,
+      "id": "2027-11-11_11-11-portal_155"
+    },
+    {
+      "date": "2027-11-13",
+      "title": "World Kindness Day",
+      "stars": 4,
+      "themes": [
+        "kindness"
+      ],
+      "series": [
+        "observance",
+        "do_not_miss"
+      ],
+      "emoji": "💗",
+      "do_not_miss": true,
+      "id": "2027-11-13_world-kindness-day_156"
+    },
+    {
+      "date": "2027-11-13",
+      "title": "Full Moon in Taurus",
+      "stars": 4,
+      "themes": [
+        "grounding",
+        "abundance",
+        "body",
+        "nature",
+        "security"
+      ],
+      "series": [
+        "full_moon",
+        "do_not_miss"
+      ],
+      "emoji": "🌕",
+      "do_not_miss": true,
+      "id": "2027-11-13_full-moon-in-taurus_157"
+    },
+    {
+      "date": "2027-11-17",
+      "title": "Leonid Meteor Shower",
+      "stars": 0,
+      "themes": [
+        "meteors"
+      ],
+      "series": [
+        "meteor_shower"
+      ],
+      "date_end": "2027-11-18",
+      "emoji": "☄️",
+      "do_not_miss": false,
+      "id": "2027-11-17_leonid-meteor-shower_158"
+    },
+    {
+      "date": "2027-11-18",
+      "title": "World Philosophy Day",
+      "stars": 2,
+      "themes": [
+        "consciousness",
+        "wisdom",
+        "life's big questions"
+      ],
+      "series": [
+        "observance"
+      ],
+      "emoji": "🧠",
+      "do_not_miss": false,
+      "id": "2027-11-18_world-philosophy-day_159"
+    },
+    {
+      "date": "2027-11-22",
+      "title": "Sagittarius Season Begins",
+      "stars": 0,
+      "themes": [
+        "sagittarius"
+      ],
+      "series": [
+        "zodiac_season"
+      ],
+      "emoji": "♐",
+      "do_not_miss": false,
+      "id": "2027-11-22_sagittarius-season-begins_160"
+    },
+    {
+      "date": "2027-11-27",
+      "title": "New Moon in Sagittarius",
+      "stars": 4,
+      "themes": [
+        "adventure",
+        "expansion",
+        "spiritual exploration",
+        "truth"
+      ],
+      "series": [
+        "new_moon",
+        "do_not_miss"
+      ],
+      "emoji": "🌑",
+      "do_not_miss": true,
+      "id": "2027-11-27_new-moon-in-sagittarius_161"
+    },
+    {
+      "date": "2027-12-01",
+      "title": "Turquoise / Tanzanite / December Birthstones",
+      "stars": 0,
+      "themes": [
+        "protection",
+        "communication",
+        "spiritual awareness"
+      ],
+      "series": [
+        "birthstone"
+      ],
+      "emoji": "💎",
+      "do_not_miss": false,
+      "id": "2027-12-01_turquoise-tanzanite-december-birthstones_162"
+    },
+    {
+      "date": "2027-12-12",
+      "title": "12/12 Portal",
+      "stars": 5,
+      "themes": [
+        "spiritual evolution",
+        "completion",
+        "integration",
+        "alignment"
+      ],
+      "series": [
+        "portal",
+        "do_not_miss"
+      ],
+      "emoji": "✨",
+      "do_not_miss": true,
+      "id": "2027-12-12_12-12-portal_163"
+    },
+    {
+      "date": "2027-12-13",
+      "title": "Full Moon in Gemini",
+      "stars": 4,
+      "themes": [
+        "communication",
+        "truth",
+        "ideas",
+        "release"
+      ],
+      "series": [
+        "full_moon",
+        "do_not_miss"
+      ],
+      "emoji": "🌕",
+      "do_not_miss": true,
+      "id": "2027-12-13_full-moon-in-gemini_164"
+    },
+    {
+      "date": "2027-12-13",
+      "title": "Geminid Meteor Shower",
+      "stars": 4,
+      "themes": [
+        "meteors"
+      ],
+      "series": [
+        "meteor_shower",
+        "do_not_miss"
+      ],
+      "date_end": "2027-12-14",
+      "emoji": "☄️",
+      "do_not_miss": true,
+      "id": "2027-12-13_geminid-meteor-shower_165"
+    },
+    {
+      "date": "2027-12-15",
+      "title": "Neptune Direct",
+      "stars": 0,
+      "themes": [
+        "neptune direct"
+      ],
+      "series": [
+        "planetary_station"
+      ],
+      "emoji": "♆",
+      "do_not_miss": false,
+      "id": "2027-12-15_neptune-direct_166"
+    },
+    {
+      "date": "2027-12-21",
+      "title": "World Meditation Day",
+      "stars": 5,
+      "themes": [
+        "meditation",
+        "stillness",
+        "consciousness",
+        "peace"
+      ],
+      "series": [
+        "observance",
+        "meditation",
+        "do_not_miss"
+      ],
+      "emoji": "🧘",
+      "do_not_miss": true,
+      "id": "2027-12-21_world-meditation-day_167"
+    },
+    {
+      "date": "2027-12-21",
+      "title": "Winter Solstice / Yule",
+      "stars": 5,
+      "themes": [
+        "darkness to light",
+        "return of the Sun",
+        "rebirth",
+        "renewal",
+        "hope"
+      ],
+      "series": [
+        "solstice",
+        "wheel_of_year",
+        "yule",
+        "do_not_miss"
+      ],
+      "date_end": "2027-12-22",
+      "emoji": "❄️",
+      "do_not_miss": true,
+      "id": "2027-12-21_winter-solstice-yule_168"
+    },
+    {
+      "date": "2027-12-22",
+      "title": "Capricorn Season Begins",
+      "stars": 0,
+      "themes": [
+        "capricorn"
+      ],
+      "series": [
+        "zodiac_season"
+      ],
+      "emoji": "♑",
+      "do_not_miss": false,
+      "id": "2027-12-22_capricorn-season-begins_169"
+    },
+    {
+      "date": "2027-12-22",
+      "title": "Ursid Meteor Shower",
+      "stars": 0,
+      "themes": [
+        "meteors"
+      ],
+      "series": [
+        "meteor_shower"
+      ],
+      "date_end": "2027-12-23",
+      "emoji": "☄️",
+      "do_not_miss": false,
+      "id": "2027-12-22_ursid-meteor-shower_170"
+    },
+    {
+      "date": "2027-12-24",
+      "title": "Saturn Direct",
+      "stars": 0,
+      "themes": [
+        "saturn direct"
+      ],
+      "series": [
+        "planetary_station"
+      ],
+      "emoji": "♄",
+      "do_not_miss": false,
+      "id": "2027-12-24_saturn-direct_171"
+    },
+    {
+      "date": "2027-12-25",
+      "title": "Christmas",
+      "stars": 0,
+      "themes": [
+        "christmas",
+        "light",
+        "love"
+      ],
+      "series": [
+        "observance"
+      ],
+      "emoji": "✨",
+      "do_not_miss": false,
+      "id": "2027-12-25_christmas_172"
+    },
+    {
+      "date": "2027-12-27",
+      "title": "New Moon in Capricorn",
+      "stars": 4,
+      "themes": [
+        "goals",
+        "foundations",
+        "discipline",
+        "planning"
+      ],
+      "series": [
+        "new_moon",
+        "do_not_miss"
+      ],
+      "emoji": "🌑",
+      "do_not_miss": true,
+      "id": "2027-12-27_new-moon-in-capricorn_173"
+    },
+    {
+      "date": "2027-12-31",
+      "title": "Year-End Release",
+      "stars": 5,
+      "themes": [
+        "release",
+        "clearing",
+        "gratitude",
+        "cord-cutting",
+        "Tarot reflection",
+        "intention setting"
+      ],
+      "series": [
+        "year_end",
+        "do_not_miss"
+      ],
+      "emoji": "🔥",
+      "do_not_miss": true,
+      "id": "2027-12-31_year-end-release_174"
+    }
+  ]
+}
