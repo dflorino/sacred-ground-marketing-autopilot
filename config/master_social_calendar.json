@@ -65,7 +65,7 @@
   },
   "near_term_slot_plan": {
     "notes": "Founder: Peace = folk lanterns 28043 (NOT olive 28040). Mabon folk 28042 locked. Mabon Magritte/Da Vinci makeovers pending review (28046–28049).",
-    "updated_at": "2026-09-09T05:21:17Z",
+    "updated_at": "2026-09-09T05:26:34Z",
     "days": {
       "2026-09-09": {
         "label": "9/9 Portal",
@@ -140,7 +140,11 @@
           "theme": "Mabon · Equinox folk harvest",
           "status": "locked",
           "media_id": 28042,
-          "note": "Founder: love that / that works. Replaces prior celestial morning URL for this date."
+          "note": "Founder: keep original folk 28042 (clearer remakes declined)",
+          "declined_clearer": [
+            28050,
+            28051
+          ]
         },
         "afternoon": {
           "theme": "Libra Season Begins",
@@ -153,7 +157,11 @@
         },
         "rejected_morning_media_ids": [
           28041,
-          28045
+          28045,
+          28046,
+          28047,
+          28048,
+          28049
         ],
         "counts_as_one": [
           "Autumn Equinox",

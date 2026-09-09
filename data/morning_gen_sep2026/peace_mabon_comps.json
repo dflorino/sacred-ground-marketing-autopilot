@@ -46,7 +46,12 @@
       28045
     ],
     "note": "Founder: olive Peace rejected; folk lanterns kept. Confirm if 28044 70s was meant instead.",
-    "locked_at": "2026-09-09T05:21:17Z"
+    "locked_at": "2026-09-09T05:26:34Z",
+    "mabon_keep_original": true,
+    "declined_clearer_folk": [
+      28050,
+      28051
+    ]
   },
   "mabon_makeovers": {
     "m-apple-v2a": {
@@ -68,6 +73,14 @@
       "media_id": 28049,
       "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-square-11-MORNI-1788931239.jpg",
       "label": "Da Vinci readable makeover B"
+    }
+  },
+  "mabon_folk_clearer": {
+    "current_lock": 28042,
+    "apple_rejected": true,
+    "options": {
+      "28050": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-square-11-MORNI-1788931461.jpg",
+      "28051": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-square-11-MORNI-1788931461-1.jpg"
     }
   }
 }
