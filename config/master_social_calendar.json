@@ -64,8 +64,8 @@
     ]
   },
   "near_term_slot_plan": {
-    "notes": "Founder-approved Sep 8 2026. Next creatives after 9/9: Peace (Sep 21), Libra Season afternoon (Sep 22). Virgo + Equinox mornings already wired.",
-    "updated_at": "2026-09-09T04:17:36Z",
+    "notes": "Founder locked Peace 28040 + Mabon folk 28042 (2026-09-09 ~12:18am CT). Rejected Mabon Magritte apple + Da Vinci. Libra Season afternoon Sep 22 still needs_creative.",
+    "updated_at": "2026-09-09T05:18:41Z",
     "days": {
       "2026-09-09": {
         "label": "9/9 Portal",
@@ -117,42 +117,41 @@
         "label": "International Day of Peace",
         "morning": {
           "theme": "International Day of Peace",
-          "status": "needs_creative",
-          "priority": 1,
-          "note": "Replace/remake current do_not_publish board-game flyer with Peace hero that still lists Lisa Maria + Karen schedule",
-          "current_flyer": "config/morning_flyers.json → 2026-09-21"
+          "status": "locked",
+          "media_id": 28040,
+          "note": "Founder: Magritte olive looks good"
         },
         "afternoon": {
-          "theme": "Peace / community compassion (optional second plate)",
-          "status": "optional",
-          "priority": 2
+          "theme": "Peace / community compassion (optional)",
+          "status": "optional"
         },
         "night": {
-          "theme": "Autumn Equinox — night-before (tomorrow…)",
+          "theme": "Autumn Equinox — night-before",
           "status": "locked",
-          "celestial_key": "autumn_equinox_2026",
-          "note": "Peace does NOT take the sky slot"
+          "celestial_key": "autumn_equinox_2026"
         }
       },
       "2026-09-22": {
-        "label": "Autumn Equinox / Mabon + Libra Season",
+        "label": "Mabon · Equinox + Libra Season",
         "morning": {
-          "theme": "Autumn Equinox / Mabon (ONE holiday)",
+          "theme": "Mabon · Equinox folk harvest",
           "status": "locked",
-          "celestial_key": "autumn_equinox_2026",
-          "note": "Celestial morning kept — heaviest of the day"
+          "media_id": 28042,
+          "note": "Founder: love that / that works. Replaces prior celestial morning URL for this date."
         },
         "afternoon": {
           "theme": "Libra Season Begins",
           "status": "needs_creative",
-          "priority": 1,
-          "note": "Harmony / beauty / partnership — different plate from equinox morning; wire via afternoon_spotlight_plates.json"
+          "priority": 1
         },
         "night": {
-          "theme": "optional harvest/balance week-ahead OR rest",
-          "status": "optional_skip",
-          "note": "Morning already carried the big celestial"
+          "theme": "optional / rest",
+          "status": "optional_skip"
         },
+        "rejected_morning_media_ids": [
+          28041,
+          28045
+        ],
         "counts_as_one": [
           "Autumn Equinox",
           "Mabon"
