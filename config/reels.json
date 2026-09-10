@@ -71,17 +71,20 @@
     "schedule_local_time": "10:30",
     "format": "9:16",
     "media_type": "video",
-    "platforms_primary": ["instagram_reels", "facebook_reels"],
-    "platforms_optional_later": ["tiktok", "youtube_shorts"],
-    "platforms": ["instagram_reels", "facebook_reels"],
+    "platforms_primary": ["instagram_reels", "facebook_reels", "tiktok", "youtube_shorts", "threads"],
+    "platforms_optional_later": [],
+    "platforms": ["instagram_reels", "facebook_reels", "tiktok", "youtube_shorts", "threads"],
     "zernio_account_map": {
       "instagram_reels": "instagram",
       "facebook_reels": "facebook",
-      "note": "Same FB/IG account IDs in config/accounts.json once video/Reels publish is supported"
+      "tiktok": "tiktok",
+      "youtube_shorts": "youtube",
+      "threads": "threads",
+      "note": "Account IDs in config/accounts.json — every episode must hit all five brand platforms"
     },
-    "works_today": "FB+IG still-image posts via Zernio (today / week_ahead / tuesday_meditation)",
-    "not_ready": "HeyGen generate → public video URL → Zernio/ML Social or Meta Reels API with type=video",
-    "note": "Daily IG+FB Reels are the Founder target. Do not silent-publish video until the video path is verified. TikTok/YouTube Shorts optional later."
+    "works_today": "FB+IG+TT+Threads still-image posts via Zernio (today / afternoon / week_ahead / tuesday_meditation). Episode videos scheduled via ML Social/Zernio to FB+IG+TT+YT+Threads.",
+    "not_ready": "HeyGen generate → public video URL → Autopilot cron (episodes remain manually scheduled)",
+    "note": "Brand coverage hard rule: every episode hits Facebook + Instagram + TikTok + YouTube + Threads. Threads captions truncate to 500 chars."
   },
   "isolation": {
     "does_not_touch": [

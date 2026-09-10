@@ -106,14 +106,14 @@
         "new_years_eve",
         "new_years_day"
       ],
-      "notes": "Every Tuesday 4:00 PM America/Chicago: dedicated Free Community Meditation FB+IG+TikTok post. Skip only Christmas Eve, Christmas Day, New Year's Eve, New Year's Day (Chicago local date). Image rotates Om / silhouette / metaphysical journey / sg-morning-meditation with 7-day no-repeat. TikTok = Zernio photo post."
+      "notes": "Every Tuesday 4:00 PM America/Chicago: dedicated Free Community Meditation FB+IG+TikTok+Threads post. Skip only Christmas Eve, Christmas Day, New Year's Eve, New Year's Day (Chicago local date). Image rotates Om / silhouette / metaphysical journey / sg-morning-meditation with 7-day no-repeat. TikTok = Zernio photo post; Threads = 500-char caption."
     },
     "daily_reel": {
       "enabled": false,
       "label": "Daily AI-Deneene Reel (IG + FB Reels)",
       "schedule_local_time": "10:30",
       "platforms": ["instagram_reels", "facebook_reels"],
-      "optional_platforms": ["tiktok", "youtube_shorts"],
+      "optional_platforms": [],
       "format": "9:16",
       "media_type": "video",
       "source": "heygen",

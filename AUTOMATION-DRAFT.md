@@ -10,23 +10,23 @@ Code schedule shipped in `87f5375`. Cursor Cloud Automations **cannot be listed 
 | **SG Tuesday Meditation 4pm Social** | **Tue 4:00 PM** America/Chicago (`0 16 * * 2`) | `run --source live-strict` → `publish-tuesday-meditation` | **Leave intact** — only verify Tuesday 4:00 PM CT |
 | **SG Reel-building Friday Spencer** | Weekly **Friday** America/Chicago | Scrub Spencer’s Friday YouTube video → file notes into `dflorino/sacredground-maintenance` `reel-building/` → report findings to Founder | **MUST stay Active** — knowledge scrub only; **not** episode / S1E1 publish |
 | SG Daily Reels 10:30am | Daily 10:30 AM (scaffold) | none (not wired) | **Inactive** — do not activate |
-| S1E1 / media 26545 / Store Quest republish | — | — | **FORBIDDEN permanent** — COMPLETE / NEVER republish on any platform |
 
 Secret on all live image jobs: **`ZERNIO_API_KEY`**. Repo: `dflorino/sacred-ground-marketing-autopilot` · branch `main`.
 
 ## INCIDENT — Mon Aug 17, 2026 ~9:35 AM CT (also Sun Aug 16 morning miss)
 
+**Tue Aug 18 afternoon + night miss (Founder Wed Aug 19 ~8:15am CT):** Morning Tue **did** publish (~9:05 AM CT, Einstein flyer). But **zero local drafts** and **no Zernio posts** for Tue `afternoon_spotlight` (5pm), `tuesday_meditation` (4pm), or `week_ahead` (7pm). Autopilot was not paused; campaign `auto_publish` still true. Best evidence: **SG Afternoon Spotlight 5pm Social**, **SG Week-Ahead 7pm Social**, and **Tuesday meditation 4pm** Automations did not run (Inactive / wrong TZ / silent fail). Do **not** backfill those Tue posts unless Founder asks. Founder must verify those three jobs are **Active**, timezone **America/Chicago**, Next run correct.
+
 **Morning Autopilot did not fire** Sun Aug 16 (manual catch-up ~11:13 AM CT) or Mon Aug 17 (no drafts / no Zernio morning posts / flyer for Aug 17 was ready / `control.json` not paused / week-ahead Sun 7pm DID fire). Best evidence: **Cursor morning Automation did not run** (Inactive, wrong TZ, weekdays-only excluding weekend then still missed Monday, or silent fail before publish). Agents cannot see or edit Automations — Founder must verify **SG Morning Today 9am Social** is **Active**, **Every day** (not weekdays-only), timezone **America/Chicago**, Next run **9:00 AM CT**.
 
-**S1E1 “again this morning”:** ML Social shows **no new S1E1 publish Mon morning**. All S1E1 / media 26545 posts are Sun Aug 16 evening CT (~6:45–7:35 PM). Recycling is off on every post. Stories stay visible ~24h — that can look like a morning reprint but is not a new Autopilot/Zernio send. **S1E1 is COMPLETE / NEVER republish on any platform.** Keep afternoon 5pm image job Active. Keep **SG Reel-building Friday Spencer Active** (separate knowledge-scrub job — not S1E1).
+**S1E1 “again this morning” (historical):** ML Social showed **no new S1E1 publish Mon morning Aug 17**. Stories staying visible ~24h can look like a reprint — not a new send. Prior agent “never republish” lock **removed Sep 1 2026** per Founder; brand YouTube backfill OK. Image Autopilot still must not auto-publish reels.
 
 ### Hard anti-repost rules (reels / one-shots)
 
-1. **S1E1 Store Quest (media 26545) is COMPLETE / NEVER republish** — published once Sun Aug 16 evening. Permanently blocked on every platform (FB / IG / TikTok / YouTube / Stories / Reels / Shorts). Never recycle, requeue, or brand-YouTube backfill.
-2. Image Autopilot jobs (9am / 5pm / 7pm / Tue 4pm) must **never** call reel publish or re-queue finished video episodes — especially never S1E1 / 26545 / Store Quest.
-3. `SG Daily Reels 10:30am` stays **Inactive**. Live reel/short cadence for **new** episodes is ML Social one-shots per `REEL-POSTING-SCHEDULE.md` — not that HeyGen scaffold.
-4. **SG Reel-building Friday Spencer stays Active** — Founder clarification Mon Aug 17. Separate weekly YouTube scrub of Spencer’s Friday video → file into `sacredground-maintenance` `reel-building/` → report findings. It does **not** publish or republish S1E1 / shop episodes. Do **not** deactivate it when locking S1E1.
-5. If Founder sees a reel “again,” check ML Social `scheduled` queue first; cancel only **future** S1E1 / 26545 / Store Quest duplicates — never cancel live successes, legitimate morning/afternoon/week-ahead image posts, or the Friday Spencer scrub Automation.
+1. Image Autopilot jobs (9am / 5pm / 7pm / Tue 4pm) must **never** call reel publish or re-queue finished video episodes unless Founder explicitly asks.
+2. `SG Daily Reels 10:30am` stays **Inactive**. Live reel/short cadence for **new** episodes is ML Social one-shots per `REEL-POSTING-SCHEDULE.md` — not that HeyGen scaffold.
+3. **SG Reel-building Friday Spencer stays Active** — weekly Spencer YouTube scrub → `reel-building/` filing + report; not shop episode publish.
+4. Do not **recycle** the same episode on FB/IG/TikTok without Founder ask. Brand YouTube backfill (Sep 2026) is a one-time catch-up, not a cron pattern.
 
 ## Founder clicks — morning (rename + 9am) — DO THIS FIRST after a miss
 
@@ -36,7 +36,7 @@ Secret on all live image jobs: **`ZERNIO_API_KEY`**. Repo: `dflorino/sacred-grou
 4. **Schedule** → **Every day · 9:00 AM** · timezone **America/Chicago** (confirm Next run is 9:00 AM CT — not 7:00, not 10:00, not UTC). **Not weekdays-only.**
 5. **Instructions / prompt** → paste the morning Agent instructions block below (today+tomorrow + flyer ensure + `publish-today` only).
 6. Confirm commands are `publish-today` (not week-ahead / afternoon / reel). Campaign key stays `today`.
-7. Disable any second Active automation still on 7:00 AM or 10:00 AM, and any job that would **republish S1E1 / finished episodes daily**. Do **not** disable **SG Reel-building Friday Spencer** (Active knowledge scrub — not S1E1).
+7. Disable any second Active automation still on 7:00 AM or 10:00 AM, and any job that would **republish finished episodes daily**. Do **not** disable **SG Reel-building Friday Spencer** (Active knowledge scrub).
 8. Save · Status **Active**. Checklist: Active · Every day · Next run looks like tomorrow 9:00 AM CT · secret `ZERNIO_API_KEY`.
 
 **Timing note (Aug 9, 2026):** Code + Zernio scheduledFor for Sunday morning were **~9:06 AM CT** (cloud agent lag after a 9:00 trigger). If Facebook looked like 10am, verify the Automation schedule is still 9:00 America/Chicago — agents cannot list/edit Automations from chat.
@@ -115,9 +115,9 @@ Hard rules:
 7. Never overwrite or recreate a draft that is edited, approved, rejected, skipped, locked, or otherwise reviewed.
 8. After a successful live-strict run, publish morning posts:
    python3 -m marketing publish-today
-9. Only Facebook + Instagram morning IMAGE posts. Do not publish afternoon_spotlight / week_ahead / tuesday_meditation / spotlight.
-10. NEVER publish or republish Reels / S1E1 / S1E2 / video episodes from this job. S1E1 Store Quest (media 26545) is COMPLETE / NEVER republish on any platform.
-11. Summarize: today’s events + tomorrow’s events, platforms, image URL/rule, publish results.
+9. Publish morning IMAGE posts to **Facebook + Instagram + TikTok + Threads** (same plate; `config/settings.json` + `config/accounts.json`). TikTok = Zernio photo post; Threads = caption truncated to 500 chars. Confirm all four platforms in publish results — if any missing, publish the missing platform drafts before finishing. Do not publish afternoon_spotlight / week_ahead / tuesday_meditation / spotlight.
+10. NEVER publish or republish Reels / video episodes from this image job unless Founder explicitly asks.
+11. Summarize: today’s events + tomorrow’s events, platforms (must list FB+IG+TT+Threads), image URL/rule, publish results / live URLs.
 ```
 
 ## Editor checklist — morning
@@ -133,7 +133,7 @@ Hard rules:
 
 # Automation draft — SG Afternoon Spotlight 5pm Social (LIVE)
 
-Daily single-event afternoon spotlight (Facebook + Instagram).
+Daily single-event afternoon spotlight (Facebook + Instagram + TikTok + Threads).
 
 **Status: auto_publish ON.** Every afternoon at **5:00 PM America/Chicago**.
 
@@ -160,11 +160,12 @@ Hard rules:
 2. Checkout this repo and run from the project root.
 3. python3 -m marketing run --source live-strict
 4. If TEC refresh fails: create NO drafts, STOP.
-5. Publish only afternoon_spotlight:
+5. Publish only afternoon_spotlight to **Facebook + Instagram + TikTok + Threads** (same plate):
    python3 -m marketing publish-afternoon-spotlight
+   Confirm all four platforms in results — publish any missing platform before finishing.
 6. Do not publish today / week_ahead / tuesday_meditation.
-7. NEVER publish or republish Reels / S1E1 / video episodes from this job. S1E1 Store Quest (media 26545) is COMPLETE / NEVER republish on any platform.
-8. Caption is a single-event spotlight (or brand visit). Summarize event + Zernio links.
+7. NEVER publish or republish Reels / video episodes from this image job unless Founder explicitly asks.
+8. Caption is a single-event spotlight (or brand visit). Summarize event + platforms (FB+IG+TT+Threads) + Zernio links.
 ```
 
 ## Editor checklist — afternoon
@@ -181,7 +182,7 @@ Hard rules:
 
 # Automation draft — SG Week-Ahead 7pm Social (LIVE)
 
-Daily next-2-days evening planner posts (Facebook + Instagram).
+Daily next-2-days evening planner posts (Facebook + Instagram + TikTok + Threads).
 
 **Status: auto_publish ON.** Every evening at **7:00 PM America/Chicago**.
 
@@ -208,13 +209,13 @@ Hard rules:
    python3 -m marketing run --source live-strict
 4. If the WordPress/TEC refresh fails: create NO new drafts, do not use stale cache, report wordpress_refresh_failed, and STOP. Do not publish.
 5. Never overwrite or recreate a draft that is edited, approved, rejected, skipped, locked, or otherwise reviewed.
-6. week_ahead has auto_publish=true. After a successful live-strict run, publish tonight's week-ahead posts only:
+6. week_ahead has auto_publish=true. After a successful live-strict run, publish tonight's week-ahead posts only to **Facebook + Instagram + TikTok + Threads** (same plate):
    python3 -m marketing publish-week-ahead
-   Uses ZERNIO_API_KEY from Cloud Agent secrets. Do not call publish-today.
+   Uses ZERNIO_API_KEY from Cloud Agent secrets. Do not call publish-today. Confirm all four platforms — publish any missing before finishing.
 7. Caption lists the next 2 days starting tomorrow only (Sat → Sun+Mon). Never include the publish day’s events. Image from night atmosphere pool (creative night skies + seasonal/holiday storefronts) — never morning specialty art.
 8. If there are no events in the next 2 days, report skip and do not invent events.
-9. NEVER publish or republish Reels / S1E1 / video episodes from this job. S1E1 Store Quest (media 26545) is COMPLETE / NEVER republish on any platform.
-10. Summarize: event count, platforms, image URL, publish results.
+9. NEVER publish or republish Reels / video episodes from this image job unless Founder explicitly asks.
+10. Summarize: event count, platforms (must list FB+IG+TT+Threads), image URL, publish results.
 ```
 
 ## Editor checklist — evening
@@ -230,7 +231,7 @@ Hard rules:
 
 # Automation draft — SG Tuesday Meditation 4pm Social (LIVE)
 
-Dedicated Free Community Meditation posts every Tuesday (Facebook + Instagram).
+Dedicated Free Community Meditation posts every Tuesday (Facebook + Instagram + TikTok + Threads).
 
 **Status: auto_publish ON.** Every **Tuesday at 4:00 PM America/Chicago**.
 
@@ -261,13 +262,13 @@ Hard rules:
 5. Never overwrite or recreate a draft that is edited, approved, rejected, skipped, locked, or otherwise reviewed.
 6. If the run reports draft_skips with reason holiday_skip for tuesday_meditation: that is expected on Christmas Eve, Christmas Day, New Year's Eve, or New Year's Day — report skip and STOP (do not invent a post).
 7. If today is not Tuesday, report not_tuesday and STOP.
-8. tuesday_meditation has auto_publish=true. After a successful live-strict run on a non-holiday Tuesday, publish today's meditation posts only:
+8. tuesday_meditation has auto_publish=true. After a successful live-strict run on a non-holiday Tuesday, publish today's meditation posts only to **Facebook + Instagram + TikTok + Threads** (same plate):
    python3 -m marketing publish-tuesday-meditation
-   Uses ZERNIO_API_KEY from Cloud Agent secrets. Do not call publish-today or publish-week-ahead.
+   Uses ZERNIO_API_KEY from Cloud Agent secrets. Do not call publish-today or publish-week-ahead. Confirm all four platforms — publish any missing before finishing.
 9. Caption is the dedicated meditation post (anonymous block only — Founder 2026-08-09: never name who leads): Free Community Meditation / Tuesday night 7:00–8:00 PM (`session_display`) / All are welcome / No sign-up needed / Doors close at 7:05pm (`doors_close_display`). `meditation_hosts.json` is ops-only, not for captions. No door/light goodnight closer. No o'clock. Not the morning Today lineup. Do not regenerate or republish an already-published Tuesday (e.g. leave Aug 4 2026 as-is).
 10. Image from the meditation pool only (Om / silhouette / metaphysical journey / sg-morning-meditation).
-11. NEVER publish or republish Reels / S1E1 / video episodes from this job. S1E1 Store Quest (media 26545) is COMPLETE / NEVER republish on any platform.
-12. Summarize: platforms, image URL, scheduledFor (should be 4:00 PM America/Chicago unless already past), Zernio post IDs/links.
+11. NEVER publish or republish Reels / video episodes from this image job unless Founder explicitly asks.
+12. Summarize: platforms (must list FB+IG+TT+Threads), image URL, scheduledFor (should be 4:00 PM America/Chicago unless already past), Zernio post IDs/links.
 ```
 
 ## Editor checklist — Tuesday 4pm
@@ -289,9 +290,9 @@ Daily AI-Deneene short-form video for **Instagram Reels + Facebook Reels**.
 
 Suggested time (scaffold only): **10:30 AM America/Chicago** (late morning — clears 9am morning, 4pm Tuesday meditation, 5pm afternoon, 7pm week-ahead image jobs).
 
-**Founder live reel/short cadence (going forward):** see **`REEL-POSTING-SCHEDULE.md`** — Wed 6pm main episode, Tue/Thu/Fri slots, platform defaults. That cadence is **ML Social scheduled**, not this HeyGen Cloud Agent scaffold. Do not invent Autopilot cron from that doc. **S1E1 is COMPLETE — never republish** (not even if Founder reconnects brand YouTube).
+**Founder live reel/short cadence (going forward):** see **`REEL-POSTING-SCHEDULE.md`** — Wed 6pm main episode, Tue/Thu/Fri slots, platform defaults. That cadence is **ML Social scheduled**, not this HeyGen Cloud Agent scaffold. Do not invent Autopilot cron from that doc.
 
-**ANTI-REPOST FINAL (Founder Mon Aug 17, 2026 America/Chicago):** S1E1 Store Quest (media **26545**) is **COMPLETE / NEVER republish** on any platform — it only went out once and must never go out again. **SG Reel-building Friday Spencer stays Active** — weekly Spencer YouTube scrub → `sacredground-maintenance` `reel-building/` filing + report; it is **not** S1E1 republish and must not be deactivated. `SG Daily Reels 10:30am` (HeyGen scaffold) stays **Inactive**. Image Autopilot (9am/5pm/7pm/Tue4pm) stays separate and must never ship S1E1.
+**Image vs reel separation:** `SG Daily Reels 10:30am` (HeyGen scaffold) stays **Inactive**. Image Autopilot (9am/5pm/7pm/Tue4pm) stays separate and must not auto-ship reels. **SG Reel-building Friday Spencer stays Active** (knowledge scrub only).
 
 TikTok / YouTube Shorts = optional later (same asset).
 

@@ -1,6 +1,6 @@
 # Reel / Short posting schedule (Founder guidelines)
 
-Canonical cadence for Sacred Ground **Reels / Shorts** across Instagram, Facebook, TikTok, and YouTube Shorts.
+Canonical cadence for Sacred Ground **Reels / Shorts** across Instagram, Facebook, TikTok, YouTube Shorts, and Threads.
 
 **Timezone:** America/Chicago (Central) always.  
 **Source:** Founder recommendations reflecting large 2026 platform studies (IG, FB, TikTok, YouTube Shorts).  
@@ -16,7 +16,7 @@ Unusual **metaphysics cartoon** series (Sacred Ground / Team Sacred Ground) — 
 
 | Requirement | Rule |
 |---|---|
-| Platforms | Every episode **must** hit **Facebook + Instagram + TikTok + YouTube** |
+| Platforms | Every episode **must** hit **Facebook + Instagram + TikTok + YouTube + Threads** |
 | Accounts | **Sacred Ground brand only** (`shopsacredground` / Sacred Ground page) |
 | YouTube | **Sacred Ground brand channel** — **never** personal `@deneeneflorino4711` |
 | contentType | Use `reel` or `story` (not plain video alone) |
