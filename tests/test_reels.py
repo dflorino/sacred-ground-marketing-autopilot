@@ -39,15 +39,18 @@ class ReelsScaffoldTests(unittest.TestCase):
         self.assertFalse(camp.get("enabled"))
         self.assertFalse(camp.get("auto_publish"))
         self.assertEqual(camp.get("schedule_local_time"), "10:30")
-        self.assertEqual(
-            set(camp.get("platforms") or []),
-            {"instagram_reels", "facebook_reels"},
-        )
+        expected = {
+            "instagram_reels",
+            "facebook_reels",
+            "tiktok",
+            "youtube_shorts",
+            "threads",
+        }
+        self.assertEqual(set(camp.get("platforms") or []), expected)
         primary = set(reels.primary_platforms())
-        self.assertEqual(primary, {"instagram_reels", "facebook_reels"})
+        self.assertEqual(primary, expected)
         optional = set(reels.optional_platforms())
-        self.assertIn("tiktok", optional)
-        self.assertIn("youtube_shorts", optional)
+        self.assertEqual(optional, set())
 
     def test_schedule_late_morning_chicago(self) -> None:
         from marketing import schedule
@@ -64,7 +67,13 @@ class ReelsScaffoldTests(unittest.TestCase):
         self.assertFalse(plan["auto_publish"])
         self.assertEqual(
             {d["platform"] for d in plan["draft_plans"]},
-            {"instagram_reels", "facebook_reels"},
+            {
+                "instagram_reels",
+                "facebook_reels",
+                "tiktok",
+                "youtube_shorts",
+                "threads",
+            },
         )
         for d in plan["draft_plans"]:
             self.assertEqual(d["media_type"], "video")
@@ -89,6 +98,8 @@ class ReelsScaffoldTests(unittest.TestCase):
 
         self.assertEqual(reels.zernio_account_key("instagram_reels"), "instagram")
         self.assertEqual(reels.zernio_account_key("facebook_reels"), "facebook")
+        self.assertEqual(reels.zernio_account_key("threads"), "threads")
+        self.assertEqual(reels.zernio_account_key("tiktok"), "tiktok")
 
     def test_readiness_does_not_claim_auto_publish(self) -> None:
         from marketing import reels
@@ -99,17 +110,16 @@ class ReelsScaffoldTests(unittest.TestCase):
         self.assertFalse(status["target"]["campaign_enabled"])
         self.assertTrue(any("Video publish" in b for b in status["blocked_for_auto_reels"]))
         self.assertIn("instagram_reels", status["target"]["platforms_primary"])
+        self.assertIn("threads", status["target"]["platforms_primary"])
 
     def test_image_campaigns_untouched(self) -> None:
         from marketing.paths import settings
 
         camps = settings()["campaigns"]
-        for name in ("today", "week_ahead", "tuesday_meditation"):
+        expected = {"facebook", "instagram", "tiktok", "threads"}
+        for name in ("today", "week_ahead", "tuesday_meditation", "afternoon_spotlight"):
             self.assertTrue(camps[name].get("auto_publish"))
-            self.assertEqual(
-                set(camps[name]["platforms"]),
-                {"facebook", "instagram"},
-            )
+            self.assertEqual(set(camps[name]["platforms"]), expected)
 
 
 if __name__ == "__main__":

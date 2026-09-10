@@ -110,9 +110,9 @@
     },
     "daily_reel": {
       "enabled": false,
-      "label": "Daily AI-Deneene Reel (IG + FB Reels)",
+      "label": "Daily AI-Deneene Reel (brand coverage)",
       "schedule_local_time": "10:30",
-      "platforms": ["instagram_reels", "facebook_reels"],
+      "platforms": ["instagram_reels", "facebook_reels", "tiktok", "youtube_shorts", "threads"],
       "optional_platforms": [],
       "format": "9:16",
       "media_type": "video",
@@ -122,7 +122,7 @@
       "reels_config": "config/reels.json",
       "scripts_config": "config/reel_scripts.json",
       "content_rotation": ["welcome_batch", "observatory_beneath_surface"],
-      "notes": "Scaffold only. Target: daily Instagram Reels + Facebook Reels at 10:30 AM America/Chicago. Image FB/IG via Zernio works today; video path needs HeyGen generate + hosted MP4 URL + Zernio/ML Social (or Meta) Reels support. Do not enable or auto_publish until video publish is verified. Does not touch today/week_ahead/tuesday_meditation."
+      "notes": "Scaffold only. Brand coverage: every episode hits FB+IG+TikTok+YouTube+Threads. Image Autopilot already posts FB+IG+TT+Threads; video episodes are scheduled via ML Social/Zernio (not this cron). Do not enable daily_reel auto_publish until Founder asks."
     }
   },
   "special_category_names": [

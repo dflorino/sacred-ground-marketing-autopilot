@@ -139,7 +139,7 @@ class AutopilotTests(unittest.TestCase):
         self.assertIn("week", campaigns)
         self.assertIn("spotlight", campaigns)
         platforms = {d["platform"] for d in result["drafts"]}
-        self.assertEqual(platforms, {"facebook", "instagram"})
+        self.assertEqual(platforms, {"facebook", "instagram", "tiktok", "threads"})
 
         # no duplicates on second run
         result2 = pipeline.generate_batch(source="fixture", as_of=as_of)
@@ -997,14 +997,14 @@ class AutopilotTests(unittest.TestCase):
         )
         self.assertGreaterEqual(len(pool), 3)
 
-        # Ordinary Tuesday → FB + IG drafts at 4pm
+        # Ordinary Tuesday → FB + IG + TikTok + Threads drafts at 4pm
         as_of = datetime(2026, 8, 4, 10, 0, tzinfo=ZoneInfo("America/Chicago"))
         result = pipeline.generate_batch(source="fixture", as_of=as_of)
         self.assertTrue(result["ok"])
         tm = [d for d in result["drafts"] if d["campaign"] == "tuesday_meditation"]
-        self.assertEqual(len(tm), 2)
+        self.assertEqual(len(tm), 4)
         platforms = {d["platform"] for d in tm}
-        self.assertEqual(platforms, {"facebook", "instagram"})
+        self.assertEqual(platforms, {"facebook", "instagram", "tiktok", "threads"})
 
         drafts = store.list_drafts()
         tm_fb = next(
