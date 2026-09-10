@@ -1,3 +1,24 @@
+## 2026-09-09 — Episode backfill: Threads (TikTok already complete)
+
+Audit of S1E1–S1E9 vs Facebook:
+- **TikTok:** already had every FB episode (E1–E7 published; E8–E9 scheduled). No TikTok gap.
+- **Threads:** missing all nine. Backfilled via Zernio.
+
+| Episode | Threads Zernio ID | Status |
+|---|---|---|
+| S1E1 | `6aa20588d4559fbdb3cdf2e9` | live https://www.threads.com/@shopsacredground/post/DdFo_uyjVpz |
+| S1E2 | `6aa205d0b23e861d8ed1d359` | staggered ~8:23pm CT |
+| S1E3 | `6aa205d1b23e861d8ed1d3be` | staggered ~8:26pm CT |
+| S1E4 | `6aa205d1340a738c7321cb8d` | staggered ~8:29pm CT |
+| S1E5 | `6aa205d2c024ff23fa4394f3` | staggered ~8:32pm CT |
+| S1E6 | `6aa205d3340a738c7321cbdd` | staggered ~8:35pm CT |
+| S1E7 | `6aa205d3340a738c7321cbfe` | staggered ~8:38pm CT |
+| S1E8 | `6aa205d4c024ff23fa4395a6` | Thu Sep 10 9:00am CT (matches FB) |
+| S1E9 | `6aa205d4340a738c7321ccaa` | Wed Sep 16 6:00pm CT (matches pack) |
+
+Brand coverage rule now includes Threads. Flyer Autopilot already posts FB+IG+TT+Threads.
+
+
 ## 2026-09-07 — Remake batch trashed (fake sun / logo covering site)
 
 Founder rejected Sep 8–30 remakes: invented sun at top, real logo pasted bottom

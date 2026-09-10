@@ -1,15 +1,16 @@
 {
   "timezone": "America/Chicago",
-  "note": "Founder-confirmed WordPress Media Library IDs for Cursor / ML Social video posts. Use these — never 26546 or lowercase s01e01-store-quest.mp4 for S1E1.",
-  "updated": "2026-09-06",
+  "note": "Founder-confirmed WordPress Media Library IDs for Cursor / ML Social video posts. Use these \u2014 never 26546 or lowercase s01e01-store-quest.mp4 for S1E1.",
+  "updated": "2026-09-09",
   "brand_coverage_hard_rule": {
-    "updated": "2026-08-16",
-    "summary": "Every episode must hit Facebook + Instagram + TikTok + YouTube on Sacred Ground BRAND accounts. YouTube must be the Sacred Ground brand channel — never personal @deneeneflorino4711. Use contentType reel or story. FB Story must use Zernio CDN (media.zernio.com).",
+    "updated": "2026-09-09",
+    "summary": "Every episode must hit Facebook + Instagram + TikTok + YouTube + Threads on Sacred Ground BRAND accounts. YouTube must be the Sacred Ground brand channel \u2014 never personal @deneeneflorino4711. Use contentType reel or story. FB Story must use Zernio CDN (media.zernio.com).",
     "required_platforms": [
       "facebook",
       "instagram",
       "tiktok",
-      "youtube"
+      "youtube",
+      "threads"
     ],
     "youtube_brand_only": true,
     "forbidden_youtube": "deneeneflorino4711",
@@ -19,9 +20,9 @@
   },
   "fb_story_media_hosting": {
     "lesson_date": "2026-08-16",
-    "summary": "Facebook Stories via ML Social/Zernio fail when media is only on shopsacredground.com WP URLs — Cloudflare 403s Meta meta-externalagent. Upload the same video to Zernio CDN (media.zernio.com) and publish Story with that URL + contentType story. Reels/IG Story may work from WP; FB Story needed Zernio CDN tonight.",
-    "content_types": "Use contentType reel or story when scheduling IG/FB shorts — not plain video alone.",
-    "youtube_gap": "Resolved 2026-09-01 — brand @sacredgroundchicagoland connected via Zernio OAuth (ML Social dashboard → orange Zernio settings). Backfill S1E1–S1E5 Shorts to brand channel; S1E6+ on schedule.",
+    "summary": "Facebook Stories via ML Social/Zernio fail when media is only on shopsacredground.com WP URLs \u2014 Cloudflare 403s Meta meta-externalagent. Upload the same video to Zernio CDN (media.zernio.com) and publish Story with that URL + contentType story. Reels/IG Story may work from WP; FB Story needed Zernio CDN tonight.",
+    "content_types": "Use contentType reel or story when scheduling IG/FB shorts \u2014 not plain video alone.",
+    "youtube_gap": "Resolved 2026-09-01 \u2014 brand @sacredgroundchicagoland connected via Zernio OAuth (ML Social dashboard \u2192 orange Zernio settings). Backfill S1E1\u2013S1E5 Shorts to brand channel; S1E6+ on schedule.",
     "see": "REEL-POSTING-SCHEDULE.md#operational-lesson--fb-story-media-hosting-sun-aug-16-2026"
   },
   "episodes": {
@@ -37,12 +38,17 @@
       "published": "2026-08-16_evening_CT",
       "brand_youtube_status": "published_2026-09-01",
       "brand_youtube_url": "https://www.youtube.com/watch?v=aALb_jxjKRY",
-      "note": "Founder Sep 1 2026 — prior never-republish lock removed. OK to post to brand @sacredgroundchicagoland; do not recycle on FB/IG/TikTok.",
+      "note": "Founder Sep 1 2026 \u2014 prior never-republish lock removed. OK to post to brand @sacredgroundchicagoland; do not recycle on FB/IG/TikTok.",
       "do_not_use": {
         "wrong_media_id": 26546,
         "wrong_url": "https://shopsacredground.com/wp-content/uploads/s01e01-store-quest.mp4",
-        "note": "26546 was a mistaken ID / lowercase path — use media 26545 / S1E1-Store-Quest.mp4 only"
-      }
+        "note": "26546 was a mistaken ID / lowercase path \u2014 use media 26545 / S1E1-Store-Quest.mp4 only"
+      },
+      "ml_social_ids": {
+        "threads": "6aa20588d4559fbdb3cdf2e9"
+      },
+      "threads_status": "published_2026-09-09",
+      "threads_url": "https://www.threads.com/@shopsacredground/post/DdFo_uyjVpz"
     },
     "s1e2": {
       "season": 1,
@@ -54,12 +60,16 @@
       "url": "https://shopsacredground.com/wp-content/uploads/s01e02-help-team-sacred-ground.mp4",
       "mime_type": "video/mp4",
       "schedule_status": "KEEP_scheduled_2026-08-19",
-      "note": "KEEP 26738. Supersedes old Lemuria media 26537 — do not use 26537.",
+      "note": "KEEP 26738. Supersedes old Lemuria media 26537 \u2014 do not use 26537.",
       "do_not_use": {
         "wrong_media_id": 26537,
         "wrong_url": "https://shopsacredground.com/wp-content/uploads/S1E2-Lemuria.mp4",
         "note": "26537 superseded by 26738 KEEP"
-      }
+      },
+      "ml_social_ids": {
+        "threads": "6aa205d0b23e861d8ed1d359"
+      },
+      "threads_status": "scheduled_backfill_2026-09-10T01:23:16.000Z"
     },
     "s1e3": {
       "season": 1,
@@ -73,13 +83,17 @@
       "url": "https://shopsacredground.com/wp-content/uploads/s01e03b-first-crystal.mp4",
       "mime_type": "video/mp4",
       "schedule_status": "scheduled_2026-08-22_3pm_CT",
-      "note": "Founder KEEP 2026-08-20 — USE S1E3-B only. Scheduled Sat Aug 22 3pm CT FB/IG/TT/YT.",
+      "note": "Founder KEEP 2026-08-20 \u2014 USE S1E3-B only. Scheduled Sat Aug 22 3pm CT FB/IG/TT/YT.",
       "do_not_use": {
         "wrong_media_id": 26743,
         "wrong_title": "S1E3-A",
         "wrong_url": "https://shopsacredground.com/wp-content/uploads/s01e03-first-crystal.mp4",
-        "note": "26743 = S1E3-A archive — never post"
-      }
+        "note": "26743 = S1E3-A archive \u2014 never post"
+      },
+      "ml_social_ids": {
+        "threads": "6aa205d1b23e861d8ed1d3be"
+      },
+      "threads_status": "scheduled_backfill_2026-09-10T01:26:16.000Z"
     },
     "s1e4": {
       "season": 1,
@@ -92,16 +106,18 @@
       "url": "https://shopsacredground.com/wp-content/uploads/s01e04-first-chamber.mp4",
       "mime_type": "video/mp4",
       "schedule_status": "scheduled_2026-08-27_7pm_CT",
-      "note": "Founder KEEP 2026-08-27 — USE S1E4 / 27008 only. Scheduled Thu Aug 27 ~7pm CT FB/IG/TT/YT.",
+      "note": "Founder KEEP 2026-08-27 \u2014 USE S1E4 / 27008 only. Scheduled Thu Aug 27 ~7pm CT FB/IG/TT/YT.",
       "ml_social_ids": {
         "facebook": "6a907f1e6f801c59dc4fd674",
         "instagram": "6a907f2f6f801c59dc4fdcc3",
         "tiktok": "6a907f316f801c59dc4fddd3",
-        "youtube": "6a907f318b1a4f326c1b92bf"
+        "youtube": "6a907f318b1a4f326c1b92bf",
+        "threads": "6aa205d1340a738c7321cb8d"
       },
       "do_not_use": {
-        "note": "Do not post draft / with-bubble / proof uploads — only title S1E4 media 27008"
-      }
+        "note": "Do not post draft / with-bubble / proof uploads \u2014 only title S1E4 media 27008"
+      },
+      "threads_status": "scheduled_backfill_2026-09-10T01:29:16.000Z"
     },
     "s1e5": {
       "season": 1,
@@ -114,16 +130,18 @@
       "url": "https://shopsacredground.com/wp-content/uploads/s01e05-egypt-touchdown.mp4",
       "mime_type": "video/mp4",
       "schedule_status": "scheduled_2026-08-30_3pm_CT",
-      "note": "Founder KEEP 2026-08-27 — USE S1E5 / 27018 only. Scheduled Sun Aug 30 3pm CT FB/IG/TT/YT.",
+      "note": "Founder KEEP 2026-08-27 \u2014 USE S1E5 / 27018 only. Scheduled Sun Aug 30 3pm CT FB/IG/TT/YT.",
       "ml_social_ids": {
         "facebook": "6a908eadd3bfcae266fd2600",
         "instagram": "6a908eae88095716b594b3d4",
         "tiktok": "6a908eb088095716b594b440",
-        "youtube": "6a908ec0b2ec847bd0479e63"
+        "youtube": "6a908ec0b2ec847bd0479e63",
+        "threads": "6aa205d2c024ff23fa4394f3"
       },
       "do_not_use": {
-        "note": "Do not post draft / with-cta / proof uploads — only title S1E5 media 27018"
-      }
+        "note": "Do not post draft / with-cta / proof uploads \u2014 only title S1E5 media 27018"
+      },
+      "threads_status": "scheduled_backfill_2026-09-10T01:32:16.000Z"
     },
     "s1e6": {
       "season": 1,
@@ -136,16 +154,18 @@
       "url": "https://shopsacredground.com/wp-content/uploads/s01e06-tuts-chamber.mp4",
       "mime_type": "video/mp4",
       "schedule_status": "scheduled_2026-09-02_6pm_CT",
-      "note": "Founder KEEP 2026-08-29 — USE S1E6 / 27101 only. Scheduled Wed Sep 2 6pm CT FB/IG/TT/YT.",
+      "note": "Founder KEEP 2026-08-29 \u2014 USE S1E6 / 27101 only. Scheduled Wed Sep 2 6pm CT FB/IG/TT/YT.",
       "ml_social_ids": {
         "facebook": "6a9303025a41cd869c7fb1b4",
         "instagram": "6a93031067644f2a338086cb",
         "tiktok": "6a93031367644f2a33808809",
-        "youtube": "6a93031598683db6f604dd98"
+        "youtube": "6a93031598683db6f604dd98",
+        "threads": "6aa205d3340a738c7321cbdd"
       },
       "do_not_use": {
-        "note": "Do not post gen 83 / media 27091 / plate 27064 — only title S1E6 media 27101"
-      }
+        "note": "Do not post gen 83 / media 27091 / plate 27064 \u2014 only title S1E6 media 27101"
+      },
+      "threads_status": "scheduled_backfill_2026-09-10T01:35:16.000Z"
     },
     "s1e7": {
       "season": 1,
@@ -158,19 +178,21 @@
       "url": "https://shopsacredground.com/wp-content/uploads/s01e07-27322-480p-draft.mp4",
       "mime_type": "video/mp4",
       "schedule_status": "scheduled_2026-09-07_5pm_CT",
-      "note": "Founder KEEP 2026-09-01 — USE S1E7 / 27323 only. Scheduled Sun Sep 7 5pm CT FB/IG/TT/YT (IG +5m, TT +10m).",
+      "note": "Founder KEEP 2026-09-01 \u2014 USE S1E7 / 27323 only. Scheduled Sun Sep 7 5pm CT FB/IG/TT/YT (IG +5m, TT +10m).",
       "ml_social_ids": {
         "facebook": "6a970555ac83b184a2418232",
         "instagram": "6a970555a65cd666e3de9a84",
         "tiktok": "6a97055679c2525fcb4341e1",
-        "youtube": "6a970555a65cd666e3de9a81"
+        "youtube": "6a970555a65cd666e3de9a81",
+        "threads": "6aa205d3340a738c7321cbfe"
       },
       "do_not_use": {
         "plate_id": 27322,
         "poster_id": 27324,
         "gen": 86,
         "note": "Plate/poster stills only; gid 86 aborted credits_low"
-      }
+      },
+      "threads_status": "scheduled_backfill_2026-09-10T01:38:16.000Z"
     },
     "s1e8": {
       "season": 1,
@@ -183,12 +205,13 @@
       "url": "https://shopsacredground.com/wp-content/uploads/s01e08-27352-480p-draft.mp4",
       "mime_type": "video/mp4",
       "schedule_status": "scheduled_cadence_2026-09-09_through_13",
-      "note": "Founder KEEP wrap 2026-09-04 — USE S1E8 / 27358 only (gen 88). Stagger IG Wed 6pm · FB Thu 9am · YT Fri 4pm · TT Sun 9am CT.",
+      "note": "Founder KEEP wrap 2026-09-04 \u2014 USE S1E8 / 27358 only (gen 88). Stagger IG Wed 6pm \u00b7 FB Thu 9am \u00b7 YT Fri 4pm \u00b7 TT Sun 9am CT.",
       "ml_social_ids": {
         "instagram": "6a9af25aac10f6514c6a590d",
         "facebook": "6a9af0993a2fe811a3588393",
         "youtube": "6a9af09752fc2caa6f54a498",
-        "tiktok": "6a9af0953a2fe811a3588204"
+        "tiktok": "6a9af0953a2fe811a3588204",
+        "threads": "6aa205d4c024ff23fa4395a6"
       },
       "do_not_use": {
         "archive_gen87": 27353,
@@ -198,7 +221,8 @@
         ],
         "plate_only": 27352,
         "note": "No Cheryl splices; plate still only"
-      }
+      },
+      "threads_status": "scheduled_2026-09-10T14:00:00.000Z"
     },
     "s1e9": {
       "season": 1,
@@ -215,19 +239,21 @@
       "mime_type": "video/mp4",
       "schedule_status": "scheduled_2026-09-16_6pm_CT_all_platforms",
       "handed_off": "2026-09-06",
-      "note": "Founder 2026-09-06 — USE S1E9 / 27385 only. All platforms Wed Sep 16 6pm CT (FB/IG/TT/YT brand).",
+      "note": "Founder 2026-09-06 \u2014 USE S1E9 / 27385 only. All platforms Wed Sep 16 6pm CT (FB/IG/TT/YT brand).",
       "do_not_use": {
         "plate_id": 27377,
-        "note": "27377 = S1E9 USE plate still only — never post as the Reel video"
+        "note": "27377 = S1E9 USE plate still only \u2014 never post as the Reel video"
       },
       "ml_social_ids": {
         "facebook": "6a9d9b49655de817d79c0045",
         "instagram": "6a9d9b5a5fe11bec973cf59a",
         "tiktok": "6a9d9b5b6dbd3c283b2fe44e",
-        "youtube": "6a9d9b5d6dbd3c283b2fe4a2"
+        "youtube": "6a9d9b5d6dbd3c283b2fe4a2",
+        "threads": "6aa205d4340a738c7321ccaa"
       },
       "scheduled_for": "2026-09-16T18:00:00-05:00",
-      "updated_at": "2026-09-06T16:58:20Z"
+      "updated_at": "2026-09-06T16:58:20Z",
+      "threads_status": "scheduled_2026-09-16T23:00:00.000Z"
     }
   }
 }

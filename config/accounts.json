@@ -1,5 +1,5 @@
 {
-  "note": "ML Social account IDs for Phase 2+ scheduling. Phase 1 never publishes. Every reel/short episode must hit brand FB+IG+TikTok+YouTube — never personal YouTube.",
+  "note": "ML Social account IDs for Phase 2+ scheduling. Phase 1 never publishes. Every reel/short episode must hit brand FB+IG+TikTok+YouTube+Threads \u2014 never personal YouTube.",
   "timezone": "America/Chicago",
   "facebook": {
     "accountId": "6a49a1f49d9472faae7c274e",
@@ -37,13 +37,19 @@
     "brand": true,
     "status": "connected",
     "connected": "2026-09-01",
-    "note": "Founder connected via ML Social dashboard → orange Zernio settings. Use for all episode Shorts."
+    "note": "Founder connected via ML Social dashboard \u2192 orange Zernio settings. Use for all episode Shorts."
   },
   "hard_rule_brand_coverage": {
-    "updated": "2026-08-16",
-    "every_episode_must_hit": ["facebook", "instagram", "tiktok", "youtube"],
-    "youtube_must_be": "Sacred Ground brand channel — never @deneeneflorino4711",
+    "updated": "2026-09-09",
+    "every_episode_must_hit": [
+      "facebook",
+      "instagram",
+      "tiktok",
+      "youtube",
+      "threads"
+    ],
+    "youtube_must_be": "Sacred Ground brand channel \u2014 never @deneeneflorino4711",
     "content_types": "reel or story (not plain video alone)",
-    "fb_story_hosting": "Zernio CDN (media.zernio.com) — never WP-only for FB Story"
+    "fb_story_hosting": "Zernio CDN (media.zernio.com) \u2014 never WP-only for FB Story"
   }
 }
