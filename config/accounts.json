@@ -19,23 +19,25 @@
     "username": "shopsacredground",
     "brand": true
   },
+  "threads": {
+    "accountId": "6aa203a0726ebfe037d0c74a",
+    "displayName": "shopsacredground",
+    "username": "shopsacredground",
+    "profileUrl": "https://threads.net/@shopsacredground",
+    "brand": true,
+    "status": "connected",
+    "connected": "2026-09-09",
+    "note": "Founder connected via Zernio / ML Social. Same flyer plate as FB+IG; caption truncated to Threads 500-char limit."
+  },
   "youtube": {
-    "brand": false,
-    "status": "missing_brand_channel",
-    "connected_personal_only": {
-      "accountId": "6a4d93a63ecd8aa344590059",
-      "displayName": "Deneene Florino",
-      "username": "deneeneflorino4711",
-      "brand": false,
-      "note": "Do NOT use for Sacred Ground episode traction. Personal Shorts only until brand channel is connected."
-    },
-    "brand_channel": {
-      "accountId": null,
-      "displayName": null,
-      "username": null,
-      "brand": true,
-      "note": "Not connected in ML Social as of 2026-08-16. Founder must OAuth-connect the Sacred Ground YouTube channel before any brand Short republish."
-    }
+    "accountId": "6a4d93a63ecd8aa344590059",
+    "displayName": "Sacred Ground",
+    "username": "sacredgroundchicagoland",
+    "profileUrl": "https://youtube.com/@sacredgroundchicagoland",
+    "brand": true,
+    "status": "connected",
+    "connected": "2026-09-01",
+    "note": "Founder connected via ML Social dashboard → orange Zernio settings. Use for all episode Shorts."
   },
   "hard_rule_brand_coverage": {
     "updated": "2026-08-16",

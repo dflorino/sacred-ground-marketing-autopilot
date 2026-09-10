@@ -91,6 +91,29 @@ def _tiktok_photo_title(caption_text: str, *, hook: str = "") -> str:
     return raw[:87].rstrip() + "…"
 
 
+def _threads_caption(caption_text: str, *, hook: str = "") -> str:
+    """Threads hard-caps text at 500 characters (Meta API)."""
+    raw = (caption_text or "").strip()
+    if not raw:
+        raw = (hook or "").strip()
+    if len(raw) <= 500:
+        return raw
+    # Prefer hook + site CTA when the full schedule won't fit.
+    hook_line = (hook or "").strip() or raw.split("\n", 1)[0].strip()
+    tail = "\n\nMore at shopsacredground.com · 847-749-3922"
+    budget = 500 - len(tail)
+    head = hook_line if len(hook_line) <= budget else (hook_line[: budget - 1].rstrip() + "…")
+    # If hook alone is short, keep more of the body until the limit.
+    if len(head) + len(tail) < 500:
+        rest_budget = 500 - len(tail) - len(head) - 2
+        body = raw[len(hook_line) :].lstrip("\n") if raw.startswith(hook_line) else raw
+        body = " ".join(body.split())
+        if rest_budget > 40 and body:
+            head = f"{head}\n\n{body[: rest_budget - 1].rstrip()}…"
+    out = f"{head}{tail}"
+    return out if len(out) <= 500 else out[:499].rstrip() + "…"
+
+
 def schedule_payload(draft: Dict[str, Any]) -> Dict[str, Any]:
     """Build Zernio / ML Social create-post body."""
     platform = draft["platform"]
@@ -148,6 +171,11 @@ def schedule_payload(draft: Dict[str, Any]) -> Dict[str, Any]:
             # Morning/afternoon/night plates are AI-designed graphics.
             "video_made_with_ai": True,
         }
+    if platform == "threads":
+        # Meta Threads text hard-cap is 500 chars; keep image + short CTA.
+        body["content"] = _threads_caption(
+            caption_text, hook=str(cap.get("hook") or "")
+        )
     if media:
         body["mediaItems"] = media
     if sched and not publish_now:

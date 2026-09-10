@@ -5,7 +5,7 @@
   "site_url": "https://shopsacredground.com",
   "tec_events_url": "https://shopsacredground.com/wp-json/tribe/events/v1/events",
   "default_phase": 1,
-  "platforms": ["facebook", "instagram", "tiktok"],
+  "platforms": ["facebook", "instagram", "tiktok", "threads"],
   "brand_images": {
     "exterior_url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.15-AM.png",
     "exterior_urls": [
@@ -26,7 +26,7 @@
       "include_same_day_evening": false,
       "campaign_word": "TOMORROW",
       "campaign_word_same_day": "TODAY",
-      "platforms": ["facebook", "instagram", "tiktok"],
+      "platforms": ["facebook", "instagram", "tiktok", "threads"],
       "source": "the_events_calendar",
       "auto_publish": true,
       "empty_day_fallback": true,
@@ -40,13 +40,13 @@
       "label": "This Week at Sacred Ground",
       "weekday": "monday",
       "schedule_local_time": "10:00",
-      "platforms": ["facebook", "instagram", "tiktok"]
+      "platforms": ["facebook", "instagram", "tiktok", "threads"]
     },
     "week_ahead": {
       "enabled": true,
       "label": "Next 2 Days at Sacred Ground",
       "schedule_local_time": "20:00",
-      "platforms": ["facebook", "instagram", "tiktok"],
+      "platforms": ["facebook", "instagram", "tiktok", "threads"],
       "source": "the_events_calendar",
       "auto_publish": true,
       "horizon_days": 2,
@@ -68,7 +68,7 @@
       "enabled": true,
       "label": "Afternoon Spotlight",
       "schedule_local_time": "17:00",
-      "platforms": ["facebook", "instagram", "tiktok"],
+      "platforms": ["facebook", "instagram", "tiktok", "threads"],
       "source": "the_events_calendar",
       "auto_publish": true,
       "same_day_evening_start_hour": 17,
@@ -83,14 +83,14 @@
       "label": "Special Event Spotlight",
       "reminder_days_before": [7, 3, 1],
       "schedule_local_time": "11:00",
-      "platforms": ["facebook", "instagram", "tiktok"]
+      "platforms": ["facebook", "instagram", "tiktok", "threads"]
     },
     "tuesday_meditation": {
       "enabled": true,
       "label": "Tuesday Free Community Meditation",
       "weekday": "tuesday",
       "schedule_local_time": "16:00",
-      "platforms": ["facebook", "instagram", "tiktok"],
+      "platforms": ["facebook", "instagram", "tiktok", "threads"],
       "source": "the_events_calendar",
       "auto_publish": true,
       "image_policy": "meditation_pool_rotation",
