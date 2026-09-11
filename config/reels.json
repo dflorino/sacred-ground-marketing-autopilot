@@ -71,20 +71,20 @@
     "schedule_local_time": "10:30",
     "format": "9:16",
     "media_type": "video",
-    "platforms_primary": ["instagram_reels", "facebook_reels", "tiktok", "youtube_shorts", "threads"],
+    "platforms_primary": ["instagram_reels", "facebook_reels", "tiktok", "youtube", "threads"],
     "platforms_optional_later": [],
-    "platforms": ["instagram_reels", "facebook_reels", "tiktok", "youtube_shorts", "threads"],
+    "platforms": ["instagram_reels", "facebook_reels", "tiktok", "youtube", "threads"],
     "zernio_account_map": {
       "instagram_reels": "instagram",
       "facebook_reels": "facebook",
       "tiktok": "tiktok",
-      "youtube_shorts": "youtube",
+      "youtube": "youtube",
       "threads": "threads",
-      "note": "Account IDs in config/accounts.json — every episode must hit all five brand platforms"
+      "note": "Account IDs in config/accounts.json. Team Sacred Ground episodes must hit all five brand platforms."
     },
-    "works_today": "FB+IG+TT+Threads still-image posts via Zernio (today / afternoon / week_ahead / tuesday_meditation). Episode videos scheduled via ML Social/Zernio to FB+IG+TT+YT+Threads.",
-    "not_ready": "HeyGen generate → public video URL → Autopilot cron (episodes remain manually scheduled)",
-    "note": "Brand coverage hard rule: every episode hits Facebook + Instagram + TikTok + YouTube + Threads. Threads captions truncate to 500 chars."
+    "works_today": "FB+IG+TikTok+Threads still-image posts via Zernio (today / afternoon / week_ahead / tuesday_meditation). Episode videos already ship FB+IG+TT+YT+Threads via ML Social/Zernio when scheduled.",
+    "not_ready": "HeyGen generate → public video URL → Zernio/ML Social or Meta Reels API with type=video (daily AI-Deneene scaffold)",
+    "note": "Adventure/reel episodes: Facebook + Instagram + TikTok + YouTube brand + Threads. Do not silent-publish HeyGen daily reels until that video path is verified."
   },
   "isolation": {
     "does_not_touch": [

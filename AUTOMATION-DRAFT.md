@@ -63,7 +63,7 @@ Secret on all live image jobs: **`ZERNIO_API_KEY`**. Repo: `dflorino/sacred-grou
 
 Daily morning posts for Sacred Ground Marketing Autopilot.
 
-**Status: auto_publish ON.** Every morning at **9:00 AM America/Chicago**: generate FB+IG promoting **today’s full TEC slate**, then **tomorrow**, and publish via Zernio.
+**Status: auto_publish ON.** Every morning at **9:00 AM America/Chicago**: generate **Facebook + Instagram + TikTok + Threads** promoting **today’s full TEC slate**, then **tomorrow**, and publish via Zernio.
 
 Campaign key stays `today` / CLI `publish-today` for compatibility. Content: `include_publish_day: true` + `target_offset_days: 1` (not evening-only). On-image word: `TODAY` when the flyer is publish-day dated; `TOMORROW` when tomorrow-only; skip overlays on prebranded flyers. Caption opener is today-first when today has events — never lead with “tonight” at 9am when daytime sessions exist. Keep `schedule_local_time` at `09:00` unless Founder explicitly wants 10am.
 
@@ -115,9 +115,9 @@ Hard rules:
 7. Never overwrite or recreate a draft that is edited, approved, rejected, skipped, locked, or otherwise reviewed.
 8. After a successful live-strict run, publish morning posts:
    python3 -m marketing publish-today
-9. Publish morning IMAGE posts to **Facebook + Instagram + TikTok + Threads** (same plate; `config/settings.json` + `config/accounts.json`). TikTok = Zernio photo post; Threads = caption truncated to 500 chars. Confirm all four platforms in publish results — if any missing, publish the missing platform drafts before finishing. Do not publish afternoon_spotlight / week_ahead / tuesday_meditation / spotlight.
+9. Morning IMAGE posts must hit **Facebook + Instagram + TikTok + Threads** (same plate). `publish-today` uses `config/settings.json` platforms — do NOT manually publish only FB+IG via MCP and skip TikTok/Threads. After publish, confirm all four succeeded (or report which failed). Do not publish afternoon_spotlight / week_ahead / tuesday_meditation / spotlight from this job.
 10. NEVER publish or republish Reels / video episodes from this image job unless Founder explicitly asks.
-11. Summarize: today’s events + tomorrow’s events, platforms (must list FB+IG+TT+Threads), image URL/rule, publish results / live URLs.
+11. Summarize: today’s events + tomorrow’s events, platforms (must list FB+IG+TT+Threads), image URL/rule, publish results.
 ```
 
 ## Editor checklist — morning
@@ -160,12 +160,12 @@ Hard rules:
 2. Checkout this repo and run from the project root.
 3. python3 -m marketing run --source live-strict
 4. If TEC refresh fails: create NO drafts, STOP.
-5. Publish only afternoon_spotlight to **Facebook + Instagram + TikTok + Threads** (same plate):
+5. Publish only afternoon_spotlight:
    python3 -m marketing publish-afternoon-spotlight
-   Confirm all four platforms in results — publish any missing platform before finishing.
 6. Do not publish today / week_ahead / tuesday_meditation.
-7. NEVER publish or republish Reels / video episodes from this image job unless Founder explicitly asks.
-8. Caption is a single-event spotlight (or brand visit). Summarize event + platforms (FB+IG+TT+Threads) + Zernio links.
+7. Platforms must be **Facebook + Instagram + TikTok + Threads** (same plate). Do not MCP-publish FB+IG only.
+8. NEVER publish or republish Reels / video episodes from this image job unless Founder explicitly asks.
+9. Caption is a single-event spotlight (or brand visit). Summarize event + platforms + Zernio links.
 ```
 
 ## Editor checklist — afternoon
@@ -184,9 +184,9 @@ Hard rules:
 
 Daily next-2-days evening planner posts (Facebook + Instagram + TikTok + Threads).
 
-**Status: auto_publish ON.** Every evening at **7:00 PM America/Chicago**.
+**Status: auto_publish ON.** Every evening at **8:00 PM America/Chicago** (`schedule_local_time` 20:00).
 
-Image: rotate the creative night-sky pack (plus sparse in-season storefront / holiday / full-moon overrides). Schedule list lives in the caption — next **2** days starting tomorrow only (Sat 7pm → Sun+Mon). Do **not** include the publish day’s events; morning/afternoon own tonight.
+Image: rotate the creative night-sky pack (plus sparse in-season storefront / holiday / full-moon overrides). Schedule list lives in the caption — next **2** days starting tomorrow only (Sat 8pm → Sun+Mon). Do **not** include the publish day’s events; morning/afternoon own tonight.
 
 ## Daily commands (Cloud Agent)
 
@@ -203,19 +203,20 @@ Do **not** call `publish-today` in this automation (morning job owns that).
 You are running Sacred Ground Marketing Autopilot for the daily week-ahead (evening planner) campaign.
 
 Hard rules:
-1. Timezone context is America/Chicago. Shop-local post time is 7:00 PM America/Chicago.
+1. Timezone context is America/Chicago. Shop-local post time is 8:00 PM America/Chicago.
 2. Checkout this repo and run from the project root.
 3. Refresh live WordPress / The Events Calendar only:
    python3 -m marketing run --source live-strict
 4. If the WordPress/TEC refresh fails: create NO new drafts, do not use stale cache, report wordpress_refresh_failed, and STOP. Do not publish.
 5. Never overwrite or recreate a draft that is edited, approved, rejected, skipped, locked, or otherwise reviewed.
-6. week_ahead has auto_publish=true. After a successful live-strict run, publish tonight's week-ahead posts only to **Facebook + Instagram + TikTok + Threads** (same plate):
+6. week_ahead has auto_publish=true. After a successful live-strict run, publish tonight's week-ahead posts only:
    python3 -m marketing publish-week-ahead
-   Uses ZERNIO_API_KEY from Cloud Agent secrets. Do not call publish-today. Confirm all four platforms — publish any missing before finishing.
-7. Caption lists the next 2 days starting tomorrow only (Sat → Sun+Mon). Never include the publish day’s events. Image from night atmosphere pool (creative night skies + seasonal/holiday storefronts) — never morning specialty art.
-8. If there are no events in the next 2 days, report skip and do not invent events.
-9. NEVER publish or republish Reels / video episodes from this image job unless Founder explicitly asks.
-10. Summarize: event count, platforms (must list FB+IG+TT+Threads), image URL, publish results.
+   Uses ZERNIO_API_KEY from Cloud Agent secrets. Do not call publish-today.
+7. Platforms must be **Facebook + Instagram + TikTok + Threads** (same plate). Do not MCP-publish FB+IG only.
+8. Caption lists the next 2 days starting tomorrow only (Sat → Sun+Mon). Never include the publish day’s events. Image from night atmosphere pool (creative night skies + seasonal/holiday storefronts) — never morning specialty art.
+9. If there are no events in the next 2 days, report skip and do not invent events.
+10. NEVER publish or republish Reels / video episodes from this image job unless Founder explicitly asks.
+11. Summarize: event count, platforms (FB+IG+TT+Threads), image URL, publish results.
 ```
 
 ## Editor checklist — evening
@@ -262,13 +263,14 @@ Hard rules:
 5. Never overwrite or recreate a draft that is edited, approved, rejected, skipped, locked, or otherwise reviewed.
 6. If the run reports draft_skips with reason holiday_skip for tuesday_meditation: that is expected on Christmas Eve, Christmas Day, New Year's Eve, or New Year's Day — report skip and STOP (do not invent a post).
 7. If today is not Tuesday, report not_tuesday and STOP.
-8. tuesday_meditation has auto_publish=true. After a successful live-strict run on a non-holiday Tuesday, publish today's meditation posts only to **Facebook + Instagram + TikTok + Threads** (same plate):
+8. tuesday_meditation has auto_publish=true. After a successful live-strict run on a non-holiday Tuesday, publish today's meditation posts only:
    python3 -m marketing publish-tuesday-meditation
-   Uses ZERNIO_API_KEY from Cloud Agent secrets. Do not call publish-today or publish-week-ahead. Confirm all four platforms — publish any missing before finishing.
+   Uses ZERNIO_API_KEY from Cloud Agent secrets. Do not call publish-today or publish-week-ahead.
 9. Caption is the dedicated meditation post (anonymous block only — Founder 2026-08-09: never name who leads): Free Community Meditation / Tuesday night 7:00–8:00 PM (`session_display`) / All are welcome / No sign-up needed / Doors close at 7:05pm (`doors_close_display`). `meditation_hosts.json` is ops-only, not for captions. No door/light goodnight closer. No o'clock. Not the morning Today lineup. Do not regenerate or republish an already-published Tuesday (e.g. leave Aug 4 2026 as-is).
 10. Image from the meditation pool only (Om / silhouette / metaphysical journey / sg-morning-meditation).
 11. NEVER publish or republish Reels / video episodes from this image job unless Founder explicitly asks.
-12. Summarize: platforms (must list FB+IG+TT+Threads), image URL, scheduledFor (should be 4:00 PM America/Chicago unless already past), Zernio post IDs/links.
+12. Platforms must be **Facebook + Instagram + TikTok + Threads** (same plate). Do not MCP-publish FB+IG only.
+13. Summarize: platforms (FB+IG+TT+Threads), image URL, scheduledFor (should be 4:00 PM America/Chicago unless already past), Zernio post IDs/links.
 ```
 
 ## Editor checklist — Tuesday 4pm

@@ -33,7 +33,7 @@
       "default_image_url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.15-AM.png",
       "image_policy": "image_rules_library",
       "image_rules_file": "config/image_rules.json",
-      "notes": "Every morning 9:00 AM America/Chicago (settings schedule_local_time=09:00; Cursor Automation must also be 9:00 AM CT — agents cannot edit Automations). Lineup = ALL remaining events on publish day (full day, not evening-only) + ALL events on tomorrow. Caption opener is today-first when today has events; tomorrow-only wording only when today is empty. Flyer prefers today’s date key when today has events, else tomorrow. On-image word TODAY / TOMORROW matches flyer day; prebranded flyers skip overlays. Campaign key stays 'today' for publish-today. Never lead with “tonight” at 9am when daytime sessions exist. Do NOT flip to 10:00 unless Founder explicitly wants 10am. TikTok = Zernio photo post (same plate; short title + description)."
+      "notes": "Every morning 9:00 AM America/Chicago (settings schedule_local_time=09:00; Cursor Automation must also be 9:00 AM CT — agents cannot edit Automations). Lineup = ALL remaining events on publish day (full day, not evening-only) + ALL events on tomorrow. Caption opener is today-first when today has events; tomorrow-only wording only when today is empty. Flyer prefers today’s date key when today has events, else tomorrow. On-image word TODAY / TOMORROW matches flyer day; prebranded flyers skip overlays. Campaign key stays 'today' for publish-today. Never lead with “tonight” at 9am when daytime sessions exist. Do NOT flip to 10:00 unless Founder explicitly wants 10am. Platforms = Facebook + Instagram + TikTok photo + Threads (same plate; Threads caption truncated to 500 chars). Cloud Agent instructions in AUTOMATION-DRAFT.md must list all four — never FB+IG only."
     },
     "week": {
       "enabled": true,
@@ -106,13 +106,13 @@
         "new_years_eve",
         "new_years_day"
       ],
-      "notes": "Every Tuesday 4:00 PM America/Chicago: dedicated Free Community Meditation FB+IG+TikTok+Threads post. Skip only Christmas Eve, Christmas Day, New Year's Eve, New Year's Day (Chicago local date). Image rotates Om / silhouette / metaphysical journey / sg-morning-meditation with 7-day no-repeat. TikTok = Zernio photo post; Threads = 500-char caption."
+      "notes": "Every Tuesday 4:00 PM America/Chicago: dedicated Free Community Meditation FB+IG+TikTok post. Skip only Christmas Eve, Christmas Day, New Year's Eve, New Year's Day (Chicago local date). Image rotates Om / silhouette / metaphysical journey / sg-morning-meditation with 7-day no-repeat. TikTok = Zernio photo post."
     },
     "daily_reel": {
       "enabled": false,
-      "label": "Daily AI-Deneene Reel (brand coverage)",
+      "label": "Daily AI-Deneene Reel (IG + FB Reels)",
       "schedule_local_time": "10:30",
-      "platforms": ["instagram_reels", "facebook_reels", "tiktok", "youtube_shorts", "threads"],
+      "platforms": ["instagram_reels", "facebook_reels", "tiktok", "youtube", "threads"],
       "optional_platforms": [],
       "format": "9:16",
       "media_type": "video",
@@ -122,7 +122,7 @@
       "reels_config": "config/reels.json",
       "scripts_config": "config/reel_scripts.json",
       "content_rotation": ["welcome_batch", "observatory_beneath_surface"],
-      "notes": "Scaffold only. Brand coverage: every episode hits FB+IG+TikTok+YouTube+Threads. Image Autopilot already posts FB+IG+TT+Threads; video episodes are scheduled via ML Social/Zernio (not this cron). Do not enable daily_reel auto_publish until Founder asks."
+      "notes": "Scaffold only. Target: daily Instagram Reels + Facebook Reels at 10:30 AM America/Chicago. Image FB/IG via Zernio works today; video path needs HeyGen generate + hosted MP4 URL + Zernio/ML Social (or Meta) Reels support. Do not enable or auto_publish until video publish is verified. Does not touch today/week_ahead/tuesday_meditation."
     }
   },
   "special_category_names": [

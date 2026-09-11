@@ -380,15 +380,43 @@ def publish_campaign_drafts(*, campaign: str) -> Dict[str, Any]:
                 best[plat] = d
         candidates = list(best.values())
 
+    expected = list(
+        ((settings().get("campaigns") or {}).get(campaign) or {}).get("platforms")
+        or settings().get("platforms")
+        or []
+    )
+    have = {str(d.get("platform") or "") for d in candidates}
+    missing_platforms = [p for p in expected if p not in have]
+
     publish_results: List[Dict[str, Any]] = [
         publish_draft(d["id"]) for d in candidates
     ]
     results = publish_results + skipped_stale
-    ok = bool(candidates) and all(r.get("ok") for r in publish_results)
+    if missing_platforms:
+        results.append(
+            {
+                "ok": False,
+                "error": "missing_platform_drafts",
+                "missing_platforms": missing_platforms,
+                "expected_platforms": expected,
+                "hint": (
+                    "Drafts were not created for every campaign platform. "
+                    "Re-run `python3 -m marketing run --source live-strict` "
+                    "then publish again — do not ship FB+IG only."
+                ),
+            }
+        )
+    ok = (
+        bool(candidates)
+        and all(r.get("ok") for r in publish_results)
+        and not missing_platforms
+    )
     return {
         "ok": ok,
         "campaign": campaign,
         "day": day_key,
+        "expected_platforms": expected,
+        "missing_platforms": missing_platforms,
         "published_or_scheduled": sum(1 for r in publish_results if r.get("ok")),
         "failed": sum(1 for r in results if not r.get("ok")),
         "results": results,
