@@ -355,6 +355,24 @@
       "url": "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-08-27-lunar-eclipse.png",
       "rule": "week_ahead_celestial_lunar_eclipse_pisces_2026",
       "campaign": "week_ahead"
+    },
+    {
+      "date": "2026-09-11",
+      "url": "https://shopsacredground.com/wp-content/uploads/5D89500F-D388-47AF-A46C-E08EE1B5EAD0.png",
+      "rule": "tarot",
+      "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-09-11",
+      "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Ethereal-spirit-medium-connect_1763319692.png",
+      "rule": "shaman_medium",
+      "campaign": "today"
+    },
+    {
+      "date": "2026-09-11",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-fall.png",
+      "rule": "week_ahead_storefront_season_fall_storefront",
+      "campaign": "week_ahead"
     }
   ],
   "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-EQUAL-WEIGHT-mul-1787594477.jpg": {

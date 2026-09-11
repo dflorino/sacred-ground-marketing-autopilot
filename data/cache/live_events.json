@@ -3,16 +3,16 @@
   "site": "https://shopsacredground.com",
   "events": [
     {
-      "id": 25389,
+      "id": 25493,
       "title": "Angel & Quick Astrology Readings with Lin Bufelli",
       "description": "Connect with uplifting, heart-centered guidance through Angel Readings and Quick Astrology Readings with Lin Bufelli. Whether you’re seeking clarity, encouragement, or insight into the energies shaping your life, Lin offers supportive messages that are easy to receive and act on. Choose an Angel Card Reading, a Quick Astrology Reading, or blend both to explore your questions from more than one perspective. Each session is warm, intuitive, and tailored to what you need in the moment.",
       "excerpt": "",
       "url": "https://shopsacredground.com/book/linn/",
-      "start_date": "2026-08-16 12:00:00",
-      "end_date": "2026-08-16 17:00:00",
+      "start_date": "2026-09-11 13:00:00",
+      "end_date": "2026-09-11 17:00:00",
       "all_day": false,
       "featured": false,
-      "timezone": "America/New_York",
+      "timezone": "America/Chicago",
       "image": {
         "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_blend-these-angel-card-readin_1765490396.png"
       },
@@ -24,123 +24,18 @@
       }
     },
     {
-      "id": 23838,
-      "title": "Reiki Share Free Community Event",
-      "description": "Reiki Share Join our Reiki Share gathering, a welcoming space for both experienced practitioners and those curious about energy healing. This community-centered event offers an opportunity to give and receive Reiki in a supportive, heart-centered environment while connecting with others on a healing path. Whether you are a Reiki Master, newly certified practitioner, or simply interested in experiencing Reiki energy, all are welcome. Participants will have the chance to practice, exchange healing energy, ask questions, and deepen their understanding of Reiki in a relaxed and nurturing setting. Come recharge, connect, and experience the power of collective healing energy within a compassionate community. Join our Reiki Share gathering, a welcoming space for both experienced practitioners and those curious about energy healing. This community-centered event offers an opportunity to give and receive Reiki in a supportive, heart-centered environment while connecting with others on a healing path. Whether you are a Reiki Master, newly certified practitioner, or simply interested in experiencing Reiki energy, all are welcome. Participants will have the chance to practice, exchange healing energy, ask questions, and deepen their understanding of Reiki in a relaxed and nurturing setting. Come recharge, connect, and experience the power of collective healing energy within a compassionate community.",
+      "id": 25480,
+      "title": "Awaken Your Intuition: Exploring Oracle and Tarot in a Sacred Space With Lisa Maria",
+      "description": "Step into a calm, supportive environment designed to help you reconnect with your intuitive voice. Awaken Your Intuition: Exploring Oracle and Tarot in a Sacred Space is an experiential class where you’ll begin to understand how these tools can guide reflection, insight, and personal clarity. You’ll explore the differences and unique strengths of both oracle and tarot cards, while learning how to interpret messages in a way that feels natural and aligned with you. Through guided exercises, intuitive practice, and shared exploration, you’ll build confidence in your ability to receive and trust the information coming through. This is not about memorizing meanings—it’s about developing your own intuitive connection. Whether you’re brand new or looking to deepen your practice, this class offers a grounded, welcoming space to explore, learn, and expand your awareness.",
       "excerpt": "",
-      "url": "https://shopsacredground.com/event/reiki-share-free-community-event-3/",
-      "start_date": "2026-08-16 15:00:00",
-      "end_date": "2026-08-16 17:00:00",
+      "url": "/book/lisa-maria-class/",
+      "start_date": "2026-09-11 19:00:00",
+      "end_date": "2026-09-11 20:30:00",
       "all_day": false,
       "featured": true,
-      "timezone": "America/New_York",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_mystical-reiki-share-with-a-gl_1767925832.png"
-      },
-      "categories": [],
-      "tags": [],
-      "cost": "Free",
-      "venue": {
-        "venue": "Sacred Ground"
-      }
-    },
-    {
-      "id": 23853,
-      "title": "Lisa Maria Intuitive Tarot",
-      "description": "Step into a calm, intuitive space where the cards help you better understand what you’re moving through. Lisa Maria’s readings bring clarity, reassurance, and meaningful insight. Choose 30 or 60 minutes.",
-      "excerpt": "",
-      "url": "/book/lisa-maria/",
-      "start_date": "2026-08-17 12:00:00",
-      "end_date": "2026-08-17 17:00:00",
-      "all_day": false,
-      "featured": false,
-      "timezone": "America/New_York",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/tarot-9.png"
-      },
-      "categories": [],
-      "tags": [],
-      "cost": "$55 – $99",
-      "venue": {
-        "venue": "Sacred Ground"
-      }
-    },
-    {
-      "id": 24594,
-      "title": "Astrology & Tarot With Lisa",
-      "description": "Astrology & Tarot with Lisa Enjoy a personalized session that blends the wisdom of astrology with the insight of tarot. Choose a full hour and divide your time between both modalities, exploring your birth chart, current planetary influences, and the guidance the cards have to offer. A beautiful way to gain clarity, confirmation, and perspective on your path.",
-      "excerpt": "",
-      "url": "/book/lisa/",
-      "start_date": "2026-08-18 12:00:00",
-      "end_date": "2026-08-18 17:00:00",
-      "all_day": false,
-      "featured": false,
-      "timezone": "UTC-5",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Celestial-astrology-chart-with_1762837314.png"
-      },
-      "categories": [],
-      "tags": [],
-      "cost": "",
-      "venue": {
-        "venue": "Sacred Ground"
-      }
-    },
-    {
-      "id": 24179,
-      "title": "Amber | Customized Therapeutic Massage Sessions",
-      "description": "Give your body the reset it deserves. Amber offers personalized therapeutic massage designed to release tension, restore balance, and support your overall well-being.",
-      "excerpt": "",
-      "url": "/book/amber/",
-      "start_date": "2026-08-18 12:00:00",
-      "end_date": "2026-08-18 17:00:00",
-      "all_day": false,
-      "featured": false,
       "timezone": "America/Chicago",
       "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Restorative-Touch-Abstract-Bo_1766408817.png"
-      },
-      "categories": [],
-      "tags": [],
-      "cost": "$2 – $166",
-      "venue": {
-        "venue": "Sacred Ground"
-      }
-    },
-    {
-      "id": 19980,
-      "title": "Meditation Free Community Event",
-      "description": "Step away from the noise and into shared stillness. Each week, a different skilled practitioner brings a unique tone, intention, and insight to our meditation experience. To honor the peaceful environment, doors close promptly at 7:05 p.m. Please arrive early and allow extra time for parking. Our practitioners graciously take love donations and they are warmly appreciated. If you would like to shop, we invite you to do so before or after the session. Thank you for honoring our shared space.",
-      "excerpt": "",
-      "url": "https://shopsacredground.com/event/meditation-free-community-event-2/",
-      "start_date": "2026-08-18 19:00:00",
-      "end_date": "2026-08-18 20:00:00",
-      "all_day": false,
-      "featured": false,
-      "timezone": "UTC-5",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Close-up-intimate-view-of-a-sm_1762732993.png"
-      },
-      "categories": [],
-      "tags": [],
-      "cost": "Free",
-      "venue": {
-        "venue": "Sacred Ground"
-      }
-    },
-    {
-      "id": 24247,
-      "title": "Tina’s Tarot & Rune Sessions",
-      "description": "Receive guidance through the wisdom of Tarot and the ancient symbols of the Runes. Tina blends intuition with time-honored divination tools to help bring clarity, perspective, and insight to your questions. Available in 30 or 60-minute sessions.",
-      "excerpt": "",
-      "url": "https://shopsacredground.com/tina/",
-      "start_date": "2026-08-19 12:00:00",
-      "end_date": "2026-08-19 18:00:00",
-      "all_day": false,
-      "featured": false,
-      "timezone": "America/New_York",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/d9804f91-3cae-4125-8b3d-39db0437237a.png"
+        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Intuitive-tarot-cards-floating_1762837337.png"
       },
       "categories": [],
       "tags": [],
@@ -150,39 +45,18 @@
       }
     },
     {
-      "id": 24225,
-      "title": "Free Community Educational Night",
-      "description": "Join us for our Free Community Educational Night an evening of learning, connection, and spiritual growth. Each month features a different topic and guide, offering fresh insight into the practices and tools that support your journey. These gatherings are free and open to all. Come with an open heart and a curious mind no experience necessary. This month’s topic will be announced soon check back for details.",
-      "excerpt": "",
-      "url": "https://shopsacredground.com/event/free-community-educational-night-2/",
-      "start_date": "2026-08-19 19:00:00",
-      "end_date": "2026-08-19 20:30:00",
-      "all_day": false,
-      "featured": false,
-      "timezone": "America/New_York",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-educational-night-generic.png"
-      },
-      "categories": [],
-      "tags": [],
-      "cost": "Free",
-      "venue": {
-        "venue": "Sacred Ground"
-      }
-    },
-    {
-      "id": 23983,
+      "id": 24035,
       "title": "Tarot with Adie",
-      "description": "In a Tarot session with Adie, the cards become a mirror—revealing patterns, possibilities, and the deeper truths beneath the surface. Clients often leave with a clearer understanding of what they are feeling and where they are meant to go next.",
+      "description": "Benefit from Adie’s 40+ years of tarot expertise in a personalized reading designed to offer guidance, validation, and meaningful insight into the energies surrounding your journey.",
       "excerpt": "",
       "url": "/book/adie/",
-      "start_date": "2026-08-20 12:00:00",
-      "end_date": "2026-08-20 17:00:00",
+      "start_date": "2026-09-12 11:00:00",
+      "end_date": "2026-09-12 15:00:00",
       "all_day": false,
-      "featured": true,
-      "timezone": "America/New_York",
+      "featured": false,
+      "timezone": "America/Chicago",
       "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Beautiful-tarot-and-oracle-car_1763320027.png"
+        "url": "https://shopsacredground.com/wp-content/uploads/7DCD8058-19B0-473B-88DE-C02DE087E3DF.png"
       },
       "categories": [],
       "tags": [],
@@ -192,142 +66,16 @@
       }
     },
     {
-      "id": 24139,
-      "title": "Tai Chi Gung with Sherry Gurley",
-      "description": "Move, breathe, and reconnect with Tai Chi Gung. Sherry Gurley guides this gentle, flowing practice that builds strength, eases tension, and cultivates a calm, centered mind—no experience needed.",
-      "excerpt": "",
-      "url": "https://shopsacredground.com/sherry/",
-      "start_date": "2026-08-20 12:00:00",
-      "end_date": "2026-08-20 13:00:00",
-      "all_day": false,
-      "featured": false,
-      "timezone": "America/New_York",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/4070F231-3AB2-455E-BD7F-551A261CDF52.png"
-      },
-      "categories": [],
-      "tags": [],
-      "cost": "$20",
-      "venue": {
-        "venue": "Sacred Ground"
-      }
-    },
-    {
-      "id": 22827,
-      "title": "TarotHeads With Andre Free Community Event",
-      "description": "TarotHeads with Andre is a free monthly community night for anyone curious about tarot, intuition, symbolism, and spiritual exploration. Gather with fellow seekers for an engaging evening of conversation, card discussion, shared insight, and deeper connection in a welcoming, judgment-free space.",
-      "excerpt": "",
-      "url": "https://shopsacredground.com/event/tarotheads-with-andre-free-community-event-2/",
-      "start_date": "2026-08-20 19:00:00",
-      "end_date": "2026-08-20 21:00:00",
-      "all_day": false,
-      "featured": true,
-      "timezone": "UTC-5",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-05-17-at-8.22.18-AM.png"
-      },
-      "categories": [],
-      "tags": [],
-      "cost": "Free",
-      "venue": {
-        "venue": "Sacred Ground"
-      }
-    },
-    {
-      "id": 23897,
-      "title": "Keeper of the Cards: Robert",
-      "description": "There’s something captivating about the way Robert works. Using only a traditional deck of playing cards, he draws on a gift that has been passed down through three generations—translating symbols, patterns, and timing into clear, grounded insight.",
-      "excerpt": "",
-      "url": "/book/robert/",
-      "start_date": "2026-08-21 13:00:00",
-      "end_date": "2026-08-21 18:30:00",
-      "all_day": false,
-      "featured": false,
-      "timezone": "America/New_York",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2025-12-20-at-5.00.19-PM.png"
-      },
-      "categories": [],
-      "tags": [],
-      "cost": "$55 – $99",
-      "venue": {
-        "venue": "Sacred Ground"
-      }
-    },
-    {
-      "id": 22000,
-      "title": "Vibrational Chakra Healing With Kate",
-      "description": "Vibrational Chakra Healing with Kate Realign your energy centers in a session that blends sound, vibration, and intuitive energy work. Kate helps clear what’s stagnant so you can feel balanced, grounded, and clear.",
-      "excerpt": "",
-      "url": "/book/kate-chakra/",
-      "start_date": "2026-08-21 14:00:00",
-      "end_date": "2026-08-21 17:00:00",
-      "all_day": false,
-      "featured": true,
-      "timezone": "UTC-5",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Seven-glowing-chakra-energy-ce_1764775438.png"
-      },
-      "categories": [],
-      "tags": [],
-      "cost": "$99.00",
-      "venue": {
-        "venue": "Sacred Ground"
-      }
-    },
-    {
-      "id": 22219,
-      "title": "Sacred Creations – A Monthly Creative & Spiritual Gathering",
-      "description": "Sacred Creations – A Monthly Creative & Spiritual Gathering Come to one event or come to all Join us for Sacred Creations , a heart-centered monthly Friday evening series devoted to creativity, connection, and soulful inspiration. Designed as a peaceful and uplifting experience, each gathering invites you to slow down, reconnect with your inner wisdom, and express your spirit through intentional, hands-on creation. During these special evenings, participants will craft meaningful pieces infused with purpose — whether for personal reflection, energetic support, or simply the joy of creating in a welcoming community space. No experience is necessary. Just bring your curiosity, an open heart, and perhaps a friend to share in the experience. Sacred Creations is more than an art night — it is a gentle ritual of self-care, mindfulness, and spiritual nourishment. Surrounded by the calming energy of Sacred Ground, you’ll enjoy a relaxing atmosphere where creativity flows naturally and inspiration unfolds in beautiful and unexpected ways. First Gathering: Friday, March 27 • 7:00–8:30 PM 2026 Schedule: March 27 April 24 May 22 June 26 July 24 August 21 Come create, connect, and leave feeling renewed, inspired, and energetically aligned.",
-      "excerpt": "",
-      "url": "/book/karen-creations/",
-      "start_date": "2026-08-21 19:00:00",
-      "end_date": "2026-08-21 20:30:00",
-      "all_day": false,
-      "featured": true,
-      "timezone": "UTC-5",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/d42573b8-b256-4564-995a-e9c284b50526.png"
-      },
-      "categories": [],
-      "tags": [],
-      "cost": "$33.00",
-      "venue": {
-        "venue": "Sacred Ground"
-      }
-    },
-    {
-      "id": 24029,
-      "title": "Tarot with Adie",
-      "description": "Tarot with Adie With over 40 years of experience reading tarot, Adie offers thoughtful and intuitive guidance to help bring clarity, insight, and a deeper understanding of life’s questions and possibilities.",
-      "excerpt": "",
-      "url": "/book/adie/",
-      "start_date": "2026-08-22 11:00:00",
-      "end_date": "2026-08-22 15:00:00",
-      "all_day": false,
-      "featured": false,
-      "timezone": "America/New_York",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/tarot-13.png"
-      },
-      "categories": [],
-      "tags": [],
-      "cost": "$55 – $99",
-      "venue": {
-        "venue": "Sacred Ground"
-      }
-    },
-    {
-      "id": 24265,
+      "id": 26085,
       "title": "Shaman Medium Melissa",
-      "description": "Melissa – Shamanic Medium If you’ve been feeling stuck, disconnected, or searching for clarity, Melissa offers a space where things begin to make sense again. Through her work as a shamanic medium, she connects with Spirit and your energy field to bring forward messages, release what’s heavy, and help you feel more balanced and clear. Her sessions are calm, supportive, and deeply insightful—meeting you exactly where you are.",
+      "description": "Melissa walks between worlds, carrying the wisdom of the ancients and the voice of Spirit. As a shaman and medium, she weaves together sacred medicine and divine connection, guiding you into the realms where healing and insight await. Her sessions open the doorway to messages from guides and loved ones, dissolve energetic blockages, and restore balance to the soul.",
       "excerpt": "",
       "url": "/book/melissa/",
-      "start_date": "2026-08-22 11:00:00",
-      "end_date": "2026-08-22 14:00:00",
+      "start_date": "2026-09-12 11:00:00",
+      "end_date": "2026-09-12 14:00:00",
       "all_day": false,
       "featured": false,
-      "timezone": "UTC-5",
+      "timezone": "America/Chicago",
       "image": {
         "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Andean-mountain-peaks-with-con_1764776305.png"
       },
@@ -339,268 +87,16 @@
       }
     },
     {
-      "id": 23941,
+      "id": 23947,
       "title": "Keeper of the Cards: Robert",
-      "description": "Working with a traditional 52-card oracle deck, Robert offers grounded and insightful readings that look ahead to the energies unfolding in your life. His readings explore patterns and possibilities across three distinct timelines — 3 days, 3 weeks, and 3 months",
+      "description": "Keeper of the Cards: Robert You shuffle, Robert speaks. Using a standard deck of cards and family wisdom passed down through three generations, he offers a glimpse into what lies ahead.",
       "excerpt": "",
       "url": "/book/robert/",
-      "start_date": "2026-08-22 15:00:00",
-      "end_date": "2026-08-22 19:30:00",
+      "start_date": "2026-09-12 15:00:00",
+      "end_date": "2026-09-12 19:30:00",
       "all_day": false,
       "featured": false,
-      "timezone": "America/New_York",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Standard-52-card-playing-deck_1764775808.png"
-      },
-      "categories": [],
-      "tags": [],
-      "cost": "$55 – $99",
-      "venue": {
-        "venue": "Sacred Ground"
-      }
-    },
-    {
-      "id": 24612,
-      "title": "Soul Guidance Through Channeled Poetry with Lisa Seyring",
-      "description": "We warmly welcome Lisa Seyring as a new practitioner at Sacred Ground, now offering 30-minute intuitive poem readings. Step into a gentle, heart-centered experience where divine guidance is shared through the healing power of spontaneous poetry. In these 30-minute sessions, Lisa channels insightful messages in the form of a personalized poem, created in the moment just for you. These sacred words carry a unique energetic vibration designed to help you reconnect with your inner truth, align with the wisdom of your heart, and experience a deeper sense of coherence with Love. Each reading offers clarity, comfort, and soulful perspective — a beautiful invitation to listen beyond the mind and receive guidance from within. BIO: Lisa Seyring is devoted to giving voice to the profound wisdom of the heart. With a natural gift for insight, she supports individuals in moving beyond mental noise and into expanded heart awareness. Through intuitive perception and soul-centered guidance, Lisa helps clients shift perspective and see life through a more compassionate and empowered lens. Her sessions often include channeled poetic messages and vocal healing transmissions that gently illuminate emotional patterns and long-held beliefs. Drawing on her studies in metaphysics and various healing modalities, Lisa meets both the analytical mind and the emotional body with sensitivity and depth. By guiding clients through an inner “archeological” exploration of emotions, Lisa helps release stagnant energy and create space for new foundations rooted in truth and self-love. As an intuitive poet, she crafts healing medicine through words — offering insight, freedom, and renewed joy. It is her honor to support others in awakening to the infinite wisdom that lives within their own hearts.",
-      "excerpt": "",
-      "url": "https://shopsacredground.com/lisa-poetry/",
-      "start_date": "2026-08-23 12:00:00",
-      "end_date": "2026-08-23 17:00:00",
-      "all_day": false,
-      "featured": true,
-      "timezone": "UTC-5",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/71b020f7-5503-4e03-8b2a-6a0716510305.png"
-      },
-      "categories": [],
-      "tags": [],
-      "cost": "",
-      "venue": {
-        "venue": "Sacred Ground"
-      }
-    },
-    {
-      "id": 23855,
-      "title": "Lisa Maria Intuitive Tarot",
-      "description": "Need clarity? Lisa Maria’s Tarot readings provide intuitive guidance that helps you see your situation more clearly and move forward with confidence. 30 min = quick insight | 60 min = deeper dive",
-      "excerpt": "",
-      "url": "/book/lisa-maria/",
-      "start_date": "2026-08-24 12:00:00",
-      "end_date": "2026-08-24 17:00:00",
-      "all_day": false,
-      "featured": false,
-      "timezone": "America/New_York",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/tarot-7.png"
-      },
-      "categories": [],
-      "tags": [],
-      "cost": "$55 – $99",
-      "venue": {
-        "venue": "Sacred Ground"
-      }
-    },
-    {
-      "id": 24181,
-      "title": "Amber | Customized Therapeutic Massage Sessions",
-      "description": "Amber offers a deeply restorative, results-driven massage experience tailored to meet your body exactly where it is. Blending Swedish, Thai, Deep Tissue, and Warm Bamboo techniques, each session is intuitively customized—designed to release tension, improve mobility, and bring your body back into balance. Amber offers a range of healing touch therapies within each session, including Deep Tissue for releasing chronic tension and stubborn knots, Thai Massage for assisted stretching, energy flow, and full-body reset, Swedish Massage for gentle relaxation and nervous system support, and restorative bodywork that helps the body unwind on a deeper level. Warm bamboo tools may be incorporated to enhance circulation and deliver more effective muscle release. Her work not only addresses physical tension, but can also support the release of stored stress and trauma held within the body—helping clients feel more grounded, at ease, and reconnected. Each session is created with care, skill, and presence—leaving clients feeling restored, lighter, and profoundly relieved. 30-minute chair sessions ($60) are ideal for quick relief—perfect for neck, shoulders, and upper back tension. 45-minute sessions ($90) allow for more focused therapeutic work, addressing specific areas of tightness or stress. 60-minute sessions ($125) offer a full-body experience, combining relaxation and targeted muscle release. 90-minute sessions ($166) provide the most comprehensive treatment—supporting deeper release, full-body integration, and lasting results. When booking, please select your session length. Your massage style and focus will be customized during your appointment.",
-      "excerpt": "",
-      "url": "/book/amber/",
-      "start_date": "2026-08-25 12:00:00",
-      "end_date": "2026-08-25 17:00:00",
-      "all_day": false,
-      "featured": true,
-      "timezone": "America/New_York",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Restorative-Touch-Abstract-Bo_1766408767.png"
-      },
-      "categories": [],
-      "tags": [],
-      "cost": "$2 – $166",
-      "venue": {
-        "venue": "Sacred Ground"
-      }
-    },
-    {
-      "id": 24596,
-      "title": "Astrology & Tarot With Lisa",
-      "description": "Looking for both cosmic insight and intuitive guidance? In a one-hour session, Lisa can combine astrology and tarot, tailoring the experience to your interests and questions. Spend part of your time exploring astrological themes and part receiving a tarot reading for a well-rounded look at the energies shaping your journey.",
-      "excerpt": "",
-      "url": "/book/lisa/",
-      "start_date": "2026-08-25 12:00:00",
-      "end_date": "2026-08-25 17:00:00",
-      "all_day": false,
-      "featured": false,
-      "timezone": "UTC-5",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Intuitive-tarot-cards-floating_1762837337.png"
-      },
-      "categories": [],
-      "tags": [],
-      "cost": "",
-      "venue": {
-        "venue": "Sacred Ground"
-      }
-    },
-    {
-      "id": 19978,
-      "title": "Meditation Free Community Event",
-      "description": "Step away from the noise and into shared stillness. Each week, a different skilled practitioner brings a unique tone, intention, and insight to our meditation experience. To honor the peaceful environment, doors close promptly at 7:05 p.m. Please arrive early and allow extra time for parking. Our practitioners graciously take love donations and they are warmly appreciated. If you would like to shop, we invite you to do so before or after the session. Thank you for honoring our shared space.",
-      "excerpt": "",
-      "url": "https://shopsacredground.com/event/meditation-free-community-event/",
-      "start_date": "2026-08-25 19:00:00",
-      "end_date": "2026-08-25 20:00:00",
-      "all_day": false,
-      "featured": false,
-      "timezone": "UTC-5",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Close-up-intimate-view-of-a-sm_1762732993.png"
-      },
-      "categories": [],
-      "tags": [],
-      "cost": "Free",
-      "venue": {
-        "venue": "Sacred Ground"
-      }
-    },
-    {
-      "id": 24249,
-      "title": "Tina’s Tarot & Rune Sessions",
-      "description": "Step into the wisdom of the cards and the ancient language of the runes. Tina’s Tarot & Rune Sessions provide a sacred space for reflection, guidance, and deeper understanding. Whether seeking answers, confirmation, or a fresh perspective, these personalized sessions combine intuition and timeless symbolism to help illuminate your path. Available in 30 or 60-minute sessions.",
-      "excerpt": "",
-      "url": "https://shopsacredground.com/tina/",
-      "start_date": "2026-08-26 12:00:00",
-      "end_date": "2026-08-26 18:00:00",
-      "all_day": false,
-      "featured": false,
-      "timezone": "America/New_York",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/7347a0c3-962d-4a9f-b568-4b831db9a7e2.png"
-      },
-      "categories": [],
-      "tags": [],
-      "cost": "$55",
-      "venue": {
-        "venue": "Sacred Ground"
-      }
-    },
-    {
-      "id": 24620,
-      "title": "Soul Alignment w/ Karen: Intuitive Energy Reiki or Akashic Record Reading",
-      "description": "Step into a personalized experience of balance, clarity, and renewal with Soul Alignment. Karen offers a selection of powerful modalities—Reiki for deep energetic restoration, Akashic Record Readings for soul-level insight, and Aura Imaging for a visual reflection of your energy field and chakra balance. There’s no need to decide in advance. Karen intuitively guides each session based on what you need in the moment, creating a deeply customized and aligned experience. If you choose Aura Imaging, you’ll receive a before-and-after comparison that captures your energetic shift, offering both insight and validation. Grounded yet highly intuitive, Karen’s work blends ancient wisdom with modern energy practices—helping you reconnect, realign, and move forward with greater clarity and ease. Please select your session length when booking: 30 or 60 minutes. Your modality will be chosen and tailored during your appointment.",
-      "excerpt": "",
-      "url": "https://shopsacredground.com/karen/",
-      "start_date": "2026-08-26 19:00:00",
-      "end_date": "2026-08-26 22:00:00",
-      "all_day": false,
-      "featured": true,
-      "timezone": "UTC-5",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Mystical-Akashic-Records-libra_1763937124.png"
-      },
-      "categories": [],
-      "tags": [],
-      "cost": "$55 – $99",
-      "venue": {
-        "venue": "Sacred Ground"
-      }
-    },
-    {
-      "id": 23985,
-      "title": "Tarot with Adie",
-      "description": "With over 40 years of experience, Adie offers intuitive Tarot readings that bring clarity, perspective, and meaningful insight. 30 minutes for focused guidance | 60 minutes for deeper exploration.",
-      "excerpt": "",
-      "url": "/book/adie/",
-      "start_date": "2026-08-27 12:00:00",
-      "end_date": "2026-08-27 17:00:00",
-      "all_day": false,
-      "featured": false,
-      "timezone": "America/New_York",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/98e11e87-adaa-4088-ba84-29d26f0069eb.png"
-      },
-      "categories": [],
-      "tags": [],
-      "cost": "$55 – $99",
-      "venue": {
-        "venue": "Sacred Ground"
-      }
-    },
-    {
-      "id": 24141,
-      "title": "Tai Chi Gung with Sherry Gurley",
-      "description": "Join Sherry Gurley for Tai Chi Gung, an accessible energy-movement practice that improves balance, mobility, and inner calm. Come as you are and leave feeling grounded and refreshed.",
-      "excerpt": "",
-      "url": "https://shopsacredground.com/sherry/",
-      "start_date": "2026-08-27 12:00:00",
-      "end_date": "2026-08-27 13:00:00",
-      "all_day": false,
-      "featured": false,
-      "timezone": "America/New_York",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/4070F231-3AB2-455E-BD7F-551A261CDF52.png"
-      },
-      "categories": [],
-      "tags": [],
-      "cost": "$20",
-      "venue": {
-        "venue": "Sacred Ground"
-      }
-    },
-    {
-      "id": 22656,
-      "title": "Quantum Alignment Series With Eve",
-      "description": "8/27 – Quantum Flow: Living in Alignment The final session in the Quantum Alignment Series brings everything together. This class focuses on integration—helping you apply what you’ve learned and move through life with greater ease, clarity, and flow. Whether you’ve attended one session or the full series, this experience supports a deeper sense of alignment and forward movement.",
-      "excerpt": "",
-      "url": "/book/eve-quantum-class/",
-      "start_date": "2026-08-27 19:00:00",
-      "end_date": "2026-08-27 21:00:00",
-      "all_day": false,
-      "featured": true,
-      "timezone": "UTC-5",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/f8b3d068-4500-4950-b8ff-acafaa9904fe.png"
-      },
-      "categories": [],
-      "tags": [],
-      "cost": "$55.00",
-      "venue": {
-        "venue": "Sacred Ground"
-      }
-    },
-    {
-      "id": 24608,
-      "title": "The Reflexology Reset: Restorative Wellness w/ Cheryl",
-      "description": "Restore balance, reduce stress, and support your body’s natural healing through the relaxing practice of reflexology. Cheryl’s nurturing approach helps promote relaxation, improve energy flow, and leave you feeling refreshed, grounded, and renewed.",
-      "excerpt": "",
-      "url": "https://shopsacredground.com/cheryl-2/",
-      "start_date": "2026-08-28 11:00:00",
-      "end_date": "2026-08-28 15:00:00",
-      "all_day": false,
-      "featured": true,
-      "timezone": "UTC-5",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Reflexology-foot-chart-showing_1763319843.png"
-      },
-      "categories": [],
-      "tags": [],
-      "cost": "$99",
-      "venue": {
-        "venue": "Sacred Ground"
-      }
-    },
-    {
-      "id": 23899,
-      "title": "Keeper of the Cards: Robert",
-      "description": "If you’re looking for clarity without having to explain your situation, Robert offers a truly unique approach. Using a regular deck of playing cards, he reads what’s already present in your energy and what’s beginning to unfold.",
-      "excerpt": "",
-      "url": "/book/robert/",
-      "start_date": "2026-08-28 13:00:00",
-      "end_date": "2026-08-28 18:30:00",
-      "all_day": false,
-      "featured": false,
-      "timezone": "America/New_York",
+      "timezone": "America/Chicago",
       "image": {
         "url": "https://shopsacredground.com/wp-content/uploads/832C7C83-B4AA-4EAD-8CD7-8682D0162DEA.png"
       },
@@ -612,223 +108,34 @@
       }
     },
     {
-      "id": 25557,
-      "title": "Tarot With Andre",
-      "description": "Night Tarot with Andre offers a quieter, more intuitive reading experience designed for reflection, clarity, and insight. As the evening settles in, the cards often reveal deeper patterns and perspectives that are easier to access in stillness. Available in 30 or 60 minute sessions.",
+      "id": 26193,
+      "title": "Deep Rest: Return to the Divine Feminine",
+      "description": "Deep Rest: Return to the Divine Feminine is a restorative Reiki and sound bath experience designed to help you release stress, reconnect with your inner wisdom, and receive nurturing healing energy. Join sound healer Kate Kent and Reiki practitioners Tina Santana and Mary Reiser for an evening of deep rest and renewal.",
       "excerpt": "",
-      "url": "/book/andre-tarot/",
-      "start_date": "2026-08-28 18:00:00",
-      "end_date": "2026-08-28 22:00:00",
-      "all_day": false,
-      "featured": false,
-      "timezone": "America/Chicago",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/8D1780CA-4611-4790-90F1-88F161D8A839.png"
-      },
-      "categories": [],
-      "tags": [],
-      "cost": "$55",
-      "venue": {
-        "venue": "Sacred Ground"
-      }
-    },
-    {
-      "id": 24031,
-      "title": "Tarot with Adie",
-      "description": "Tarot with Adie Drawing on more than four decades of tarot experience, Adie provides compassionate readings that can illuminate challenges, confirm feelings, and reveal new perspectives on your path.",
-      "excerpt": "",
-      "url": "/book/adie/",
-      "start_date": "2026-08-29 11:00:00",
-      "end_date": "2026-08-29 15:00:00",
-      "all_day": false,
-      "featured": false,
-      "timezone": "America/New_York",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/0da21043-ae5b-4008-aba0-935762cffb12.png"
-      },
-      "categories": [],
-      "tags": [],
-      "cost": "$55 – $99",
-      "venue": {
-        "venue": "Sacred Ground"
-      }
-    },
-    {
-      "id": 24267,
-      "title": "Shaman Medium Melissa",
-      "description": "Melissa walks between worlds, carrying the wisdom of the ancients and the voice of Spirit. As a shaman and medium, she weaves together sacred medicine and divine connection, guiding you into the realms where healing and insight await. Her sessions open the doorway to messages from guides and loved ones, dissolve energetic blockages, and restore balance to the soul.",
-      "excerpt": "",
-      "url": "/book/melissa/",
-      "start_date": "2026-08-29 11:00:00",
-      "end_date": "2026-08-29 14:00:00",
-      "all_day": false,
-      "featured": false,
-      "timezone": "UTC-5",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Andean-mountain-peaks-with-con_1764776305.png"
-      },
-      "categories": [],
-      "tags": [],
-      "cost": "$99",
-      "venue": {
-        "venue": "Sacred Ground"
-      }
-    },
-    {
-      "id": 23943,
-      "title": "Keeper of the Cards: Robert",
-      "description": "Keeper of the Cards: Robert A third-generation card reader, Robert interprets a traditional deck of playing cards while you shuffle. Explore insights into the next 3 days, 3 weeks, and 3 months.",
-      "excerpt": "",
-      "url": "/book/robert/",
-      "start_date": "2026-08-29 15:00:00",
-      "end_date": "2026-08-29 19:30:00",
-      "all_day": false,
-      "featured": false,
-      "timezone": "America/New_York",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Classic-playing-cards-fanned-o_1764775825.png"
-      },
-      "categories": [],
-      "tags": [],
-      "cost": "$55 – $99",
-      "venue": {
-        "venue": "Sacred Ground"
-      }
-    },
-    {
-      "id": 25482,
-      "title": "Oracle of the Stones: A Reading with Diane",
-      "description": "Diane’s Oracle Stone Readings offer clear, intuitive insight through the use of sacred stones, each chosen to reflect what’s happening beneath the surface. This session helps you gain perspective, direction, and a better understanding of your current situation. 30 minutes – quick, focused clarity 60 minutes – deeper exploration and guidance Select your session length at booking.",
-      "excerpt": "",
-      "url": "/book/diane/",
-      "start_date": "2026-08-30 12:00:00",
-      "end_date": "2026-08-30 17:00:00",
+      "url": "/book/tina-divine-feminine/",
+      "start_date": "2026-09-12 19:00:00",
+      "end_date": "2026-09-12 20:30:00",
       "all_day": false,
       "featured": true,
-      "timezone": "America/New_York",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/77814afa-b3e0-40d9-9f09-6eac1983179d.png"
-      },
-      "categories": [],
-      "tags": [],
-      "cost": "$55 – $99.00",
-      "venue": {
-        "venue": "Sacred Ground"
-      }
-    },
-    {
-      "id": 26068,
-      "title": "Integrated Energy Healing with Mary: Reiki • Cranial Sacral • Intuitive Guidance",
-      "description": "Experience a rare fusion of science, spirit, and subtle energy in Mary’s transformative healing sessions. Blending the restorative flow of Reiki, the gentle precision of Cranial Sacral Therapy, and the clarity of Intuitive Readings, Mary creates a deeply attuned experience that addresses the whole person—body, mind, and soul. Each session begins with energetic calibration and gentle cranial touch to release physical tension and nervous system strain. As balance returns, Mary channels intuitive insight to illuminate patterns and emotions held beneath the surface, offering clarity and direction for your next steps.",
-      "excerpt": "",
-      "url": "https://shopsacredground.com/mary/",
-      "start_date": "2026-08-30 11:00:00",
-      "end_date": "2026-08-30 14:00:00",
-      "all_day": false,
-      "featured": false,
       "timezone": "America/Chicago",
       "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Reiki-healing-hands-hovering-o_1764776353.png"
+        "url": "https://shopsacredground.com/wp-content/uploads/att.2Vd0C_M8CFjuklmnRdtS-ivNOO7Yk0MAkI8qY-I4uB0.jpg"
       },
       "categories": [],
       "tags": [],
-      "cost": "$77.00",
+      "cost": "$44",
       "venue": {
         "venue": "Sacred Ground"
       }
     },
     {
-      "id": 26073,
-      "title": "Tina’s Intuitive Tarot, Runes & Reiki Experience",
-      "description": "Every session with Tina is uniquely guided by your needs, intentions, and the energy of the moment. Whether you are seeking clarity through Tarot, insight from the ancient wisdom of the Runes, healing through Reiki, or a personalized blend of all three, Tina creates a customized experience designed to support your journey. Some clients come with specific questions and receive intuitive guidance through Tarot and Rune readings. Others seek relaxation, energetic balance, and renewal through Reiki. Many choose a combination of modalities, allowing insight and healing to work together in a deeply meaningful way. Available in 30 or 60-minute sessions, each appointment is thoughtfully tailored to provide the guidance, perspective, and energetic support that best serves you. Whether you’re navigating a life transition, seeking answers, or simply looking to reconnect with yourself, Tina offers a welcoming space for exploration, healing, and discovery.",
-      "excerpt": "",
-      "url": "/tina-3/",
-      "start_date": "2026-08-31 12:00:00",
-      "end_date": "2026-08-31 17:00:00",
-      "all_day": false,
-      "featured": false,
-      "timezone": "America/Chicago",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Reiki-healing-energy-visualiza_1762922335.png"
-      },
-      "categories": [],
-      "tags": [],
-      "cost": "$55 – $99.00",
-      "venue": {
-        "venue": "Sacred Ground"
-      }
-    },
-    {
-      "id": 24183,
-      "title": "Amber | Customized Therapeutic Massage Sessions",
-      "description": "Unwind with a customized therapeutic massage from Amber. Each session is tailored to your body’s needs—easing tension, improving circulation, and leaving you deeply relaxed and restored.",
-      "excerpt": "",
-      "url": "/book/amber/",
-      "start_date": "2026-09-01 12:00:00",
-      "end_date": "2026-09-01 17:00:00",
-      "all_day": false,
-      "featured": false,
-      "timezone": "America/New_York",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Professional-massage-table-in_1763322651.png"
-      },
-      "categories": [],
-      "tags": [],
-      "cost": "$2 – $166",
-      "venue": {
-        "venue": "Sacred Ground"
-      }
-    },
-    {
-      "id": 26140,
-      "title": "Divine Insight Sessions with Janel: Akashic Records or Angel Card Readings",
-      "description": "Step beyond logic and into luminous clarity with Janel’s Divine Insight Sessions—your choice of an Akashic Records Reading or an Angel Card Reading, each designed to unlock profound guidance from higher realms. Customize your session based on what you need most. Through the Akashic Records, Janel helps you access the “Book of Your Soul,” revealing patterns, past-life influences, and future potentials shaping your path today. Prefer a gentler, more symbolic connection? Her Angel Card Readings offer direct, heart-centered messages that bring reassurance, direction, and alignment to your daily life. 30-minute sessions are ideal for focused guidance—perfect for a clear question, immediate insight, or a concise Akashic or Angel Card experience. 60-minute sessions allow for a deeper, more expansive exploration, offering greater depth within the Akashic Records, extended intuitive dialogue, or a more layered and immersive reading experience. When booking, please select your session length (30 or 60 minutes). The modality—Akashic Records or Angel Card Reading—can be chosen at the time of your appointment. Whether you’re seeking clarity, confirmation, or a broader perspective, this is where insight meets the soul—and guidance becomes tangible.",
-      "excerpt": "",
-      "url": "/book/janel/",
-      "start_date": "2026-09-01 13:00:00",
-      "end_date": "2026-09-01 17:00:00",
-      "all_day": false,
-      "featured": false,
-      "timezone": "America/Chicago",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Mystical-akashic-records-with_1762837133.png"
-      },
-      "categories": [],
-      "tags": [],
-      "cost": "$55 – $99.00",
-      "venue": {
-        "venue": "Sacred Ground"
-      }
-    },
-    {
-      "id": 14767,
-      "title": "Free Community Meditation",
-      "description": "Step away from the noise and into shared stillness. Each week, a different skilled practitioner brings a unique tone, intention, and insight to our meditation experience. To honor the peaceful environment, doors close promptly at 7:05 p.m. Please arrive early and allow extra time for parking. Our practitioners graciously take love donations and they are warmly appreciated. If you would like to shop, we invite you to do so before or after the session. Thank you for honoring our shared space.",
-      "excerpt": "",
-      "url": "https://shopsacredground.com/event/free-community-meditation-7/",
-      "start_date": "2026-09-01 19:00:00",
-      "end_date": "2026-09-01 20:00:00",
-      "all_day": false,
-      "featured": false,
-      "timezone": "UTC-5",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Close-up-intimate-view-of-a-sm_1762732993.png"
-      },
-      "categories": [],
-      "tags": [],
-      "cost": "Free",
-      "venue": {
-        "venue": "Sacred Ground"
-      }
-    },
-    {
-      "id": 25497,
+      "id": 25501,
       "title": "Ankh Lifeforce Alignment Reiki with Rose",
       "description": "Ankh Life Force Alignment Those who know Rose know that the spaces she creates are unlike any other. There is a quiet reverence, a sense of peace, and a palpable sacredness that begins the moment you enter the room. This next evolution of her practice is an invitation to experience the gifts of her journey—and perhaps awaken something that has always been waiting within you. After a profound journey through Egypt, Rose returned home with a deepened connection to her healing work. Immersed in the energy of ancient temples & pyramids, timeless spiritual traditions, and the enduring symbolism of the Ankh—the Key of Life—she came home carrying something that is difficult to put into words. Some experiences are learned. Others are remembered. The wisdom, presence, and sacredness Rose encountered have naturally woven themselves into the healing practice she has lovingly cultivated for years. Through Reiki, crystals, tuning forks, healing sound, sacred oils, and the symbolism of the Ankh, she creates a deeply intentional space where healing is invited, balance is restored, and the spirit is gently supported.",
       "excerpt": "",
       "url": "https://shopsacredground.com/book/rose/",
-      "start_date": "2026-09-02 12:00:00",
-      "end_date": "2026-09-02 17:00:00",
+      "start_date": "2026-09-13 12:00:00",
+      "end_date": "2026-09-13 17:00:00",
       "all_day": false,
       "featured": false,
       "timezone": "America/Chicago",
@@ -843,19 +150,17 @@
       }
     },
     {
-      "id": 23987,
-      "title": "Tarot with Adie",
-      "description": "Sit down with decades of wisdom. Adie’s Tarot readings offer calm, grounded insight to help you better understand where you are—and where you’re going. 30 or 60-minute sessions available.",
+      "id": 23861,
+      "title": "Lisa Maria Intuitive Tarot",
+      "description": "An intuitive Tarot reading with Lisa Maria at Sacred Ground invites you into a space of reflection, clarity, and deeper understanding. The cards—rich with symbolic wisdom—offer insight into your present moment while illuminating possibilities for what lies ahead. Lisa Maria brings a calm, intuitive presence to each session, creating an environment that feels both grounded and expansive. Her approach allows the messages within the cards to unfold naturally, revealing guidance that is clear, meaningful, and easy to connect with. Whether you arrive with specific questions or simply a sense that something is shifting, each reading meets you where you are. These sessions become a portal for self-discovery—helping you move beyond surface-level concerns and reconnect with your inner knowing. Clients often leave with a renewed sense of direction, validation, and a deeper awareness of their path forward. 30-minute sessions are ideal for focused guidance—perfect for one or two questions or a concise reading that brings immediate clarity. 60-minute sessions allow for a more in-depth experience, offering expanded exploration, multiple areas of focus, and a deeper connection to the messages unfolding within the cards. When booking, please select your session length (30 or 60 minutes). Your questions and areas of focus will be explored during your appointment. Lisa Maria’s readings are especially supportive during times of transition, uncertainty, or when you’re seeking clarity, confirmation, or a fresh perspective.",
       "excerpt": "",
-      "url": "/book/adie/",
-      "start_date": "2026-09-03 12:00:00",
-      "end_date": "2026-09-03 17:00:00",
+      "url": "/book/lisa-maria/",
+      "start_date": "2026-09-14 12:00:00",
+      "end_date": "2026-09-14 17:00:00",
       "all_day": false,
       "featured": false,
-      "timezone": "America/New_York",
-      "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/ecb69035-9fd9-4651-ae06-a95df106465e.png"
-      },
+      "timezone": "America/Chicago",
+      "image": null,
       "categories": [],
       "tags": [],
       "cost": "$55 – $99",
@@ -864,16 +169,140 @@
       }
     },
     {
-      "id": 24143,
+      "id": 24187,
+      "title": "Amber | Customized Therapeutic Massage Sessions",
+      "description": "Give your body the reset it deserves. Amber offers personalized therapeutic massage designed to release tension, restore balance, and support your overall well-being.",
+      "excerpt": "",
+      "url": "/book/amber/",
+      "start_date": "2026-09-15 12:00:00",
+      "end_date": "2026-09-15 17:00:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Chicago",
+      "image": {
+        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Restorative-Touch-Abstract-Bo_1766408767.png"
+      },
+      "categories": [],
+      "tags": [],
+      "cost": "$2 – $166",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
+      "id": 27292,
+      "title": "Divine Insight Sessions with Janel: Akashic Records or Angel Card Readings",
+      "description": "Step beyond logic and into luminous clarity with Janel’s Divine Insight Sessions—your choice of an Akashic Records Reading or an Angel Card Reading, each designed to unlock profound guidance from higher realms. Customize your session based on what you need most. Through the Akashic Records, Janel helps you access the “Book of Your Soul,” revealing patterns, past-life influences, and future potentials shaping your path today. Prefer a gentler, more symbolic connection? Her Angel Card Readings offer direct, heart-centered messages that bring reassurance, direction, and alignment to your daily life. 30-minute sessions are ideal for focused guidance—perfect for a clear question, immediate insight, or a concise Akashic or Angel Card experience. 60-minute sessions allow for a deeper, more expansive exploration, offering greater depth within the Akashic Records, extended intuitive dialogue, or a more layered and immersive reading experience. When booking, please select your session length (30 or 60 minutes). The modality—Akashic Records or Angel Card Reading—can be chosen at the time of your appointment. Whether you’re seeking clarity, confirmation, or a broader perspective, this is where insight meets the soul—and guidance becomes tangible.",
+      "excerpt": "",
+      "url": "/book/janel/",
+      "start_date": "2026-09-15 13:00:00",
+      "end_date": "2026-09-15 18:00:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Chicago",
+      "image": {
+        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Mystical-akashic-records-with_1762837133.png"
+      },
+      "categories": [],
+      "tags": [],
+      "cost": "$55 – $99.00",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
+      "id": 14763,
+      "title": "Free Community Meditation",
+      "description": "Step away from the noise and into shared stillness. Each week, a different skilled practitioner brings a unique tone, intention, and insight to our meditation experience. To honor the peaceful environment, doors close promptly at 7:05 p.m. Please arrive early and allow extra time for parking. Our practitioners graciously take love donations and they are warmly appreciated. If you would like to shop, we invite you to do so before or after the session. Thank you for honoring our shared space.",
+      "excerpt": "",
+      "url": "https://shopsacredground.com/event/free-community-meditation-5/",
+      "start_date": "2026-09-15 19:00:00",
+      "end_date": "2026-09-15 20:00:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Chicago",
+      "image": {
+        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Close-up-intimate-view-of-a-sm_1762732993.png"
+      },
+      "categories": [],
+      "tags": [],
+      "cost": "Free",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
+      "id": 26077,
+      "title": "Tina’s Intuitive Tarot, Runes & Reiki Experience",
+      "description": "Every session with Tina is uniquely guided by your needs, intentions, and the energy of the moment. Whether you are seeking clarity through Tarot, insight from the ancient wisdom of the Runes, healing through Reiki, or a personalized blend of all three, Tina creates a customized experience designed to support your journey. Some clients come with specific questions and receive intuitive guidance through Tarot and Rune readings. Others seek relaxation, energetic balance, and renewal through Reiki. Many choose a combination of modalities, allowing insight and healing to work together in a deeply meaningful way. Available in 30 or 60-minute sessions, each appointment is thoughtfully tailored to provide the guidance, perspective, and energetic support that best serves you. Whether you’re navigating a life transition, seeking answers, or simply looking to reconnect with yourself, Tina offers a welcoming space for exploration, healing, and discovery.",
+      "excerpt": "",
+      "url": "/tina-3/",
+      "start_date": "2026-09-16 12:00:00",
+      "end_date": "2026-09-16 17:00:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Chicago",
+      "image": {
+        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Array-of-mystical-oracle-stone_1763319955.png"
+      },
+      "categories": [],
+      "tags": [],
+      "cost": "$55 – $99.00",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
+      "id": 24227,
+      "title": "Free Community Educational Night",
+      "description": "Kate will present this month's Free Community Educational Night. Join us for our Free Community Educational Night an evening of learning, connection, and spiritual growth. Each month features a different topic and guide, offering fresh insight into the practices and tools that support your journey. These gatherings are free and open to all. Come with an open heart and a curious mind no experience necessary. This month’s topic will be announced soon check back for details.",
+      "excerpt": "",
+      "url": "https://shopsacredground.com/event/free-community-educational-night-3/",
+      "start_date": "2026-09-16 19:00:00",
+      "end_date": "2026-09-16 20:30:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Chicago",
+      "image": {
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-educational-night-generic.png"
+      },
+      "categories": [],
+      "tags": [],
+      "cost": "Free",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
+      "id": 23991,
+      "title": "Tarot with Adie",
+      "description": "Let the cards speak through decades of intuitive mastery. Adie’s readings reveal what’s beneath the surface and bring forward the insight you’re ready to receive. Choose 30 or 60 minutes. A powerful experience of clarity, timing, and deeper understanding.",
+      "excerpt": "",
+      "url": "/book/adie/",
+      "start_date": "2026-09-17 12:00:00",
+      "end_date": "2026-09-17 17:00:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Chicago",
+      "image": null,
+      "categories": [],
+      "tags": [],
+      "cost": "$55 – $99",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
+      "id": 24147,
       "title": "Tai Chi Gung with Sherry Gurley",
-      "description": "Discover a gentle yet powerful practice designed to restore balance, strengthen the body, and quiet the mind. Guided by Sherry Gurley, Certified Tai Chi Gung Instructor and Quantum Biofeedback Practitioner, this class combines slow, flowing movements with intentional breath and energy awareness.",
+      "description": "Move, breathe, and reconnect with Tai Chi Gung. Sherry Gurley guides this gentle, flowing practice that builds strength, eases tension, and cultivates a calm, centered mind—no experience needed.",
       "excerpt": "",
       "url": "https://shopsacredground.com/sherry/",
-      "start_date": "2026-09-03 12:00:00",
-      "end_date": "2026-09-03 13:00:00",
+      "start_date": "2026-09-17 12:00:00",
+      "end_date": "2026-09-17 13:00:00",
       "all_day": false,
-      "featured": true,
-      "timezone": "America/New_York",
+      "featured": false,
+      "timezone": "America/Chicago",
       "image": {
         "url": "https://shopsacredground.com/wp-content/uploads/4070F231-3AB2-455E-BD7F-551A261CDF52.png"
       },
@@ -885,13 +314,13 @@
       }
     },
     {
-      "id": 25517,
+      "id": 25519,
       "title": "Reiki with Renee",
       "description": "Love Donations Only Reiki with Renee Rest, recharge, and reconnect during a gentle Reiki session with Renee, a Reiki Master Teacher trained in Usui Reiki and Holy Fire® Reiki. Renee is offering these sessions for love donations while she gains additional hands-on experience and continues developing her practice. This offering also helps make Reiki accessible to community members regardless of their financial circumstances. No previous Reiki experience is needed. Come as you are, wearing comfortable clothing, and allow yourself time to receive. Location: Sacred Ground Payment: Love donation—give any amount that feels comfortable and meaningful to you.",
       "excerpt": "",
       "url": "https://shopsacredground.com/book/renee/",
-      "start_date": "2026-09-03 17:00:00",
-      "end_date": "2026-09-03 20:00:00",
+      "start_date": "2026-09-17 17:00:00",
+      "end_date": "2026-09-17 19:00:00",
       "all_day": false,
       "featured": true,
       "timezone": "America/Chicago",
@@ -906,13 +335,34 @@
       }
     },
     {
-      "id": 25489,
+      "id": 26994,
+      "title": "TarotHeads With Andre Free Community Event",
+      "description": "TarotHeads with Andre is a free monthly community night for anyone curious about tarot, intuition, symbolism, and spiritual exploration. Gather with fellow seekers for an engaging evening of conversation, card discussion, shared insight, and deeper connection in a welcoming, judgment-free space.",
+      "excerpt": "",
+      "url": "https://shopsacredground.com/event/tarotheads-with-andre-2026-09-17/",
+      "start_date": "2026-09-17 19:00:00",
+      "end_date": "2026-09-17 21:00:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Chicago",
+      "image": {
+        "url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-05-17-at-8.22.18-AM.png"
+      },
+      "categories": [],
+      "tags": [],
+      "cost": "Free",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
+      "id": 25491,
       "title": "The Reflexology Reset: Restorative Wellness w/ Cheryl",
       "description": "Restore balance, reduce stress, and support your body’s natural healing through the relaxing practice of reflexology. Cheryl’s nurturing approach helps promote relaxation, improve energy flow, and leave you feeling refreshed, grounded, and renewed.",
       "excerpt": "",
-      "url": "https://shopsacredground.com/cheryl-2/",
-      "start_date": "2026-09-04 11:00:00",
-      "end_date": "2026-09-04 15:00:00",
+      "url": "/cheryl-2/",
+      "start_date": "2026-09-18 11:00:00",
+      "end_date": "2026-09-18 15:00:00",
       "all_day": false,
       "featured": true,
       "timezone": "America/Chicago",
@@ -927,18 +377,18 @@
       }
     },
     {
-      "id": 23901,
+      "id": 23905,
       "title": "Keeper of the Cards: Robert",
-      "description": "Robert – Intuitive Card Reader (Playing Card Readings) There is nothing complicated about the tools Robert uses—and that’s exactly what makes his work so extraordinary. With nothing more than a traditional deck of playing cards, Robert delivers readings that are clear, direct, and often astonishingly accurate. No elaborate spreads. No mystical theatrics. Just a method passed down through three generations, refined over time into something both simple and profoundly effective. What sets Robert apart is not just what he sees—it’s how he works. He asks no questions. You shuffle the cards. He begins to speak.",
+      "description": "Robert – Intuitive Card Reader (Playing Card Readings) There is nothing complicated about the tools Robert uses—and that’s exactly what makes his work so extraordinary. With nothing more than a traditional deck of playing cards, Robert delivers readings that are clear, direct, and often astonishingly accurate. No elaborate spreads. No mystical theatrics. Just a method passed down through three generations, refined over time into something both simple and profoundly effective. What sets Robert apart is not just what he sees—it’s how he works. He asks no questions. You shuffle the cards. He begins to speak. From the moment the reading starts, information comes through with a natural flow—insight into what’s currently unfolding in your life, what’s shifting beneath the surface, and what is already set into motion. There’s no need to explain your situation or give background. In many ways, that’s part of the experience—watching as he describes details, dynamics, and possibilities with striking clarity, often before you’ve said a single word. Robert’s readings are known for their timing. Again and again, clients find that what he shares aligns with real-life events that unfold over the next 3 days, 3 weeks, and 3 months. It’s not about vague impressions or general advice—it’s about tangible, grounded insight that you can actually recognize as it begins to happen. Some people come in curious. Some come in skeptical. Almost all leave surprised. There’s something deeply compelling about hearing your path reflected back to you in a way that feels both immediate and predictive—where patterns become clear, decisions feel more grounded, and the unknown becomes just a little more understandable. His sessions are focused, efficient, and deeply personal. Whether you’re navigating change, seeking direction, or simply wanting to understand what’s ahead, Robert offers a perspective that is both practical and intuitive—rooted in real-time insight rather than guesswork. Many who sit with him return—not out of habit, but because they’ve seen the accuracy for themselves. This is a reading where you shuffle… and he talks. And what unfolds from there is something you’ll likely be thinking about long after you leave.",
       "excerpt": "",
       "url": "/book/robert/",
-      "start_date": "2026-09-04 13:00:00",
-      "end_date": "2026-09-04 18:30:00",
+      "start_date": "2026-09-18 13:00:00",
+      "end_date": "2026-09-18 18:30:00",
       "all_day": false,
-      "featured": true,
-      "timezone": "America/New_York",
+      "featured": false,
+      "timezone": "America/Chicago",
       "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-06-26-at-9.57.19-AM.png"
+        "url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-06-26-at-10.02.13-AM.png"
       },
       "categories": [],
       "tags": [],
@@ -948,13 +398,55 @@
       }
     },
     {
-      "id": 26083,
+      "id": 26102,
+      "title": "Mabon Wheel of the Year Celebration With Kate",
+      "description": "Celebrate the magic of Mabon, the Autumn Equinox, with Kate Kent in this special Wheel of the Year gathering. As day and night stand in perfect balance, Mabon invites us to honor the harvest, give thanks for what has come to fruition, and gently prepare for the inward turn of the darker half of the year. Through guided meditation, sound healing, chakra work, reflection, ritual, and community connection, we’ll explore the spiritual significance of this sacred threshold — gratitude, balance, release, and the wisdom of nature’s turning wheel. Whether you have walked the Wheel of the Year for many seasons or are discovering these ancient celebrations for the first time, this gathering offers a meaningful opportunity to deepen your connection with the season, honor your own unfolding path, and share in the warmth of a supportive spiritual community. Come celebrate the Autumn Equinox. Honor the harvest. Receive the gratitude, balance, and wisdom that the turning wheel so generously offers.",
+      "excerpt": "",
+      "url": "/book/kate-wheel/",
+      "start_date": "2026-09-18 19:00:00",
+      "end_date": "2026-09-18 21:00:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Chicago",
+      "image": {
+        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_another-Create-a-digital-ar_1765490030.png"
+      },
+      "categories": [],
+      "tags": [],
+      "cost": "$60",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
+      "id": 24037,
+      "title": "Tarot with Adie",
+      "description": "With more than 40 years of experience, Adie creates a welcoming space for exploration and reflection, using tarot to uncover patterns, possibilities, and practical guidance for moving forward.",
+      "excerpt": "",
+      "url": "/book/adie/",
+      "start_date": "2026-09-19 11:00:00",
+      "end_date": "2026-09-19 15:00:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Chicago",
+      "image": {
+        "url": "https://shopsacredground.com/wp-content/uploads/064D6DAA-987A-404D-9759-3E41418E41C8.png"
+      },
+      "categories": [],
+      "tags": [],
+      "cost": "$55 – $99",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
+      "id": 26087,
       "title": "Shaman Medium Melissa",
       "description": "Melissa walks between worlds, carrying the wisdom of the ancients and the voice of Spirit. As a shaman and medium, she weaves together sacred medicine and divine connection, guiding you into the realms where healing and insight await. Her sessions open the doorway to messages from guides and loved ones, dissolve energetic blockages, and restore balance to the soul.",
       "excerpt": "",
       "url": "/book/melissa/",
-      "start_date": "2026-09-05 11:00:00",
-      "end_date": "2026-09-05 14:00:00",
+      "start_date": "2026-09-19 11:00:00",
+      "end_date": "2026-09-19 14:00:00",
       "all_day": false,
       "featured": false,
       "timezone": "America/Chicago",
@@ -969,18 +461,39 @@
       }
     },
     {
-      "id": 23945,
-      "title": "Keeper of the Cards: Robert",
-      "description": "There is nothing complicated about the tools Robert uses—and that’s exactly what makes his work so extraordinary. With nothing more than a traditional deck of playing cards, Robert delivers readings that are clear, direct, and often astonishingly accurate. No elaborate spreads. No mystical theatrics. Just a method passed down through three generations, refined over time into something both simple and profoundly effective. What sets Robert apart is not just what he sees—it’s how he works. He asks no questions. You shuffle the cards. He begins to speak. From the moment the reading starts, information",
+      "id": 25503,
+      "title": "Ankh Lifeforce Alignment Reiki with Rose",
+      "description": "Ankh Life Force Alignment Those who know Rose know that the spaces she creates are unlike any other. There is a quiet reverence, a sense of peace, and a palpable sacredness that begins the moment you enter the room. This next evolution of her practice is an invitation to experience the gifts of her journey—and perhaps awaken something that has always been waiting within you. After a profound journey through Egypt, Rose returned home with a deepened connection to her healing work. Immersed in the energy of ancient temples & pyramids, timeless spiritual traditions, and the enduring symbolism of the Ankh—the Key of Life—she came home carrying something that is difficult to put into words. Some experiences are learned. Others are remembered. The wisdom, presence, and sacredness Rose encountered have naturally woven themselves into the healing practice she has lovingly cultivated for years. Through Reiki, crystals, tuning forks, healing sound, sacred oils, and the symbolism of the Ankh, she creates a deeply intentional space where healing is invited, balance is restored, and the spirit is gently supported.",
       "excerpt": "",
-      "url": "/book/robert/",
-      "start_date": "2026-09-05 15:00:00",
-      "end_date": "2026-09-05 19:30:00",
+      "url": "https://shopsacredground.com/book/rose/",
+      "start_date": "2026-09-19 14:00:00",
+      "end_date": "2026-09-19 18:00:00",
       "all_day": false,
       "featured": false,
-      "timezone": "America/New_York",
+      "timezone": "America/Chicago",
       "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2025-12-20-at-5.00.19-PM.png"
+        "url": "https://shopsacredground.com/wp-content/uploads/rose-egyptian-energy.png"
+      },
+      "categories": [],
+      "tags": [],
+      "cost": "$99",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
+      "id": 23949,
+      "title": "Keeper of the Cards: Robert",
+      "description": "Keeper of the Cards: Robert Experience a unique reading with Robert, a third-generation reader who reveals messages for your near future through ordinary playing cards.",
+      "excerpt": "",
+      "url": "/book/robert/",
+      "start_date": "2026-09-19 15:00:00",
+      "end_date": "2026-09-19 19:30:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Chicago",
+      "image": {
+        "url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-06-26-at-9.57.19-AM.png"
       },
       "categories": [],
       "tags": [],
@@ -990,18 +503,18 @@
       }
     },
     {
-      "id": 24598,
-      "title": "Tarot With Andre",
-      "description": "Step into an evening of insight, symbolism, and possibility with Tarot with Andre . Whether you are seeking clarity around relationships, career, timing, personal growth, or simply feel drawn to explore what is unfolding beneath the surface, Andre’s readings are thoughtful, intuitive, and deeply grounded. Tarot has been used for centuries as a tool for reflection, guidance, and self-discovery. The earliest tarot decks appeared in 15th-century Italy , originally created as elaborate card games for the nobility. Over time, the imagery of the cards evolved into a rich symbolic language connected to archetypes, intuition, and the journey of the human experience. By the 18th and 19th centuries, tarot began to be used as a spiritual and intuitive practice, helping people better understand the energies, choices, and patterns present in their lives. Each card in the tarot deck carries layers of meaning. The Major Arcana explores the deeper themes and turning points of life, while the Minor Arcana often reflects the everyday situations, emotions, relationships, and decisions we encounter. A reading is not about predicting a fixed future—it is about illuminating what is present now, what may be influencing you, and where your path could lead depending on the choices you make. Andre creates a warm, welcoming space where messages can unfold naturally and without judgment. His readings often combine intuition, symbolism, and practical guidance, helping you leave with a clearer understanding of your circumstances and a deeper connection to your own inner knowing. Whether you are new to tarot or have been receiving readings for years, this experience offers the chance to pause, reflect, and reconnect with yourself in a meaningful way.",
+      "id": 26091,
+      "title": "Sound Bath or Shamanic Drum Journey With Andre",
+      "description": "Driven by rhythm, vibration, and immersive sound, this experience gently shifts the brain out of mental overload and into a more expanded, intuitive state. Participants often describe vivid inner journeys, emotional release, heightened clarity, and a sense of deep connection that feels almost impossible to put into words. The energy in the room builds collectively, creating an atmosphere that is both grounding and otherworldly. Arrive early, settle in fully, and allow yourself to experience what unfolds beyond thought.",
       "excerpt": "",
-      "url": "/book/andre-tarot/",
-      "start_date": "2026-09-05 18:00:00",
-      "end_date": "2026-09-05 22:00:00",
+      "url": "/book/andre-sound-healing/",
+      "start_date": "2026-09-19 19:00:00",
+      "end_date": "2026-09-19 20:30:00",
       "all_day": false,
       "featured": false,
-      "timezone": "UTC-5",
+      "timezone": "America/Chicago",
       "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/tarot-8.png"
+        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_A-reclining-human-silhouette-p_1766409041.png"
       },
       "categories": [],
       "tags": [],
@@ -1011,22 +524,520 @@
       }
     },
     {
-      "id": 26142,
-      "title": "Crystal Connections With Janel",
-      "description": "Crystal Connections is an immersive gathering that blends crystal wisdom, intuitive development, and energetic literacy. This session is held during a deep winter threshold, a time traditionally associated with discernment, protection, and strengthening one’s energetic boundaries—especially important for empaths and sensitive souls. Janel weaves together crystal correspondences, subtle energy awareness, and intuitive practice, helping you understand why certain stones call to you and how to work with them intentionally. The experience includes discussion and a guided meditation, inviting clarity, grounding, and a felt sense of alignment that often continues as you explore the crystals afterward.",
+      "id": 23840,
+      "title": "Reiki Share Free Community Event",
+      "description": "Reiki Share Join our Reiki Share gathering, a welcoming space for both experienced practitioners and those curious about energy healing. This community-centered event offers an opportunity to give and receive Reiki in a supportive, heart-centered environment while connecting with others on a healing path. Whether you are a Reiki Master, newly certified practitioner, or simply interested in experiencing Reiki energy, all are welcome. Participants will have the chance to practice, exchange healing energy, ask questions, and deepen their understanding of Reiki in a relaxed and nurturing setting. Come recharge, connect, and experience the power of collective healing energy within a compassionate community. Join our Reiki Share gathering, a welcoming space for both experienced practitioners and those curious about energy healing. This community-centered event offers an opportunity to give and receive Reiki in a supportive, heart-centered environment while connecting with others on a healing path. Whether you are a Reiki Master, newly certified practitioner, or simply interested in experiencing Reiki energy, all are welcome. Participants will have the chance to practice, exchange healing energy, ask questions, and deepen their understanding of Reiki in a relaxed and nurturing setting. Come recharge, connect, and experience the power of collective healing energy within a compassionate community.",
       "excerpt": "",
-      "url": "https://shopsacredground.com/event/crystal-connections-with-janel/",
-      "start_date": "2026-09-06 14:00:00",
-      "end_date": "2026-09-06 15:30:00",
+      "url": "https://shopsacredground.com/event/reiki-share-free-community-event-4/",
+      "start_date": "2026-09-20 15:00:00",
+      "end_date": "2026-09-20 17:00:00",
       "all_day": false,
       "featured": false,
       "timezone": "America/Chicago",
       "image": {
-        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_An-overhead-view-of-a-perfectl_1766407640.png"
+        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_mystical-reiki-share-with-a-gl_1767925832.png"
+      },
+      "categories": [],
+      "tags": [],
+      "cost": "Free",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
+      "id": 23863,
+      "title": "Lisa Maria Intuitive Tarot",
+      "description": "An intuitive Tarot reading with Lisa Maria at Sacred Ground invites you into a space of reflection, clarity, and deeper understanding. The cards—rich with symbolic wisdom—offer insight into your present moment while illuminating possibilities for what lies ahead. Lisa Maria brings a calm, intuitive presence to each session, creating an environment that feels both grounded and expansive. Her approach allows the messages within the cards to unfold naturally, revealing guidance that is clear, meaningful, and easy to connect with. Whether you arrive with specific questions or simply a sense that something is shifting, each reading meets you where you are. These sessions become a portal for self-discovery—helping you move beyond surface-level concerns and reconnect with your inner knowing. Clients often leave with a renewed sense of direction, validation, and a deeper awareness of their path forward. 30-minute sessions are ideal for focused guidance—perfect for one or two questions or a concise reading that brings immediate clarity. 60-minute sessions allow for a more in-depth experience, offering expanded exploration, multiple areas of focus, and a deeper connection to the messages unfolding within the cards.",
+      "excerpt": "",
+      "url": "/book/lisa-maria/",
+      "start_date": "2026-09-21 12:00:00",
+      "end_date": "2026-09-21 17:00:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Chicago",
+      "image": null,
+      "categories": [],
+      "tags": [],
+      "cost": "$55 – $99",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
+      "id": 26093,
+      "title": "Soul Alignment w/ Karen: Intuitive Energy Reiki or Akashic Record Reading",
+      "description": "Step into a personalized experience of balance, clarity, and renewal with Soul Alignment. Karen offers a selection of powerful modalities—Reiki for deep energetic restoration, Akashic Record Readings for soul-level insight, and Aura Imaging for a visual reflection of your energy field and chakra balance. There’s no need to decide in advance. Karen intuitively guides each session based on what you need in the moment, creating a deeply customized and aligned experience. If you choose Aura Imaging, you’ll receive a before-and-after comparison that captures your energetic shift, offering both insight and validation. Grounded yet highly intuitive, Karen’s work blends ancient wisdom with modern energy practices—helping you reconnect, realign, and move forward with greater clarity and ease. Please select your session length when booking: 30 or 60 minutes. Your modality will be chosen and tailored during your appointment.",
+      "excerpt": "",
+      "url": "/karen-akashic/",
+      "start_date": "2026-09-21 19:00:00",
+      "end_date": "2026-09-21 22:00:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Chicago",
+      "image": {
+        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Mystical-Akashic-Records-libra_1763937124.png"
+      },
+      "categories": [],
+      "tags": [],
+      "cost": "$55 – $99",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
+      "id": 24189,
+      "title": "Amber | Customized Therapeutic Massage Sessions",
+      "description": "Amber offers a deeply restorative, results-driven massage experience tailored to meet your body exactly where it is. Blending Swedish, Thai, Deep Tissue, and Warm Bamboo techniques, each session is intuitively customized—designed to release tension, improve mobility, and bring your body back into balance. Amber offers a range of healing touch therapies within each session, including Deep Tissue for releasing chronic tension and stubborn knots, Thai Massage for assisted stretching, energy flow, and full-body reset, Swedish Massage for gentle relaxation and nervous system support, and restorative bodywork that helps the body unwind on a deeper level. Warm bamboo tools may be incorporated to enhance circulation and deliver more effective muscle release. Her work not only addresses physical tension, but can also support the release of stored stress and trauma held within the body—helping clients feel more grounded, at ease, and reconnected. Each session is created with care, skill, and presence—leaving clients feeling restored, lighter, and profoundly relieved. 30-minute chair sessions ($60) are ideal for quick relief—perfect for neck, shoulders, and upper back tension. 45-minute sessions ($90) allow for more focused therapeutic work, addressing specific areas of tightness or stress. 60-minute sessions ($125) offer a full-body experience, combining relaxation and targeted muscle release. 90-minute sessions ($166) provide the most comprehensive treatment—supporting deeper release, full-body integration, and lasting results. When booking, please select your session length. Your massage style and focus will be customized during your appointment.",
+      "excerpt": "",
+      "url": "/book/amber/",
+      "start_date": "2026-09-22 12:00:00",
+      "end_date": "2026-09-22 17:00:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Chicago",
+      "image": {
+        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Professional-massage-table-in_1763322651.png"
+      },
+      "categories": [],
+      "tags": [],
+      "cost": "$2 – $166",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
+      "id": 25495,
+      "title": "Angel & Quick Astrology Readings with Lin Bufelli",
+      "description": "Connect with uplifting, heart-centered guidance through Angel Readings and Quick Astrology Readings with Lin Bufelli. Whether you’re seeking clarity, encouragement, or insight into the energies shaping your life, Lin offers supportive messages that are easy to receive and act on. Choose an Angel Card Reading, a Quick Astrology Reading, or blend both to explore your questions from more than one perspective. Each session is warm, intuitive, and tailored to what you need in the moment.",
+      "excerpt": "",
+      "url": "https://shopsacredground.com/book/linn/",
+      "start_date": "2026-09-22 13:00:00",
+      "end_date": "2026-09-22 17:00:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Chicago",
+      "image": {
+        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_blend-these-angel-card-readin_1765490396.png"
+      },
+      "categories": [],
+      "tags": [],
+      "cost": "$55 – $99",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
+      "id": 27293,
+      "title": "Divine Insight Sessions with Janel: Akashic Records or Angel Card Readings",
+      "description": "Step beyond logic and into luminous clarity with Janel’s Divine Insight Sessions—your choice of an Akashic Records Reading or an Angel Card Reading, each designed to unlock profound guidance from higher realms. Customize your session based on what you need most. Through the Akashic Records, Janel helps you access the “Book of Your Soul,” revealing patterns, past-life influences, and future potentials shaping your path today. Prefer a gentler, more symbolic connection? Her Angel Card Readings offer direct, heart-centered messages that bring reassurance, direction, and alignment to your daily life. 30-minute sessions are ideal for focused guidance—perfect for a clear question, immediate insight, or a concise Akashic or Angel Card experience. 60-minute sessions allow for a deeper, more expansive exploration, offering greater depth within the Akashic Records, extended intuitive dialogue, or a more layered and immersive reading experience. When booking, please select your session length (30 or 60 minutes). The modality—Akashic Records or Angel Card Reading—can be chosen at the time of your appointment. Whether you’re seeking clarity, confirmation, or a broader perspective, this is where insight meets the soul—and guidance becomes tangible.",
+      "excerpt": "",
+      "url": "/book/janel/",
+      "start_date": "2026-09-22 13:00:00",
+      "end_date": "2026-09-22 18:00:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Chicago",
+      "image": {
+        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_blend-these-angel-card-readin_1765490396.png"
+      },
+      "categories": [],
+      "tags": [],
+      "cost": "$55 – $99.00",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
+      "id": 12750,
+      "title": "Equinox Meditation with Melissa – Free Community Event",
+      "description": "We are all in for a treat. This week’s free community meditation is a special Equinox Meditation led by Melissa , Shaman Medium. As the season turns, Melissa will guide us into shared stillness with her unique presence, intention, and insight — a beautiful evening to pause, realign, and welcome the equinox together. To honor the peaceful environment, doors close promptly at 7:05 p.m. Please arrive early and allow extra time for parking. Our practitioners graciously take love donations and they are warmly appreciated. If you would like to shop, we invite you to do so before or after the session. Thank you for honoring our shared space.",
+      "excerpt": "",
+      "url": "https://shopsacredground.com/event/meditation-free-community-event-6/",
+      "start_date": "2026-09-22 19:00:00",
+      "end_date": "2026-09-22 20:00:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Chicago",
+      "image": {
+        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Andean-mountain-peaks-with-con_1764776305.png"
+      },
+      "categories": [],
+      "tags": [],
+      "cost": "Free",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
+      "id": 25505,
+      "title": "Ankh Lifeforce Alignment Reiki with Rose",
+      "description": "Ankh Life Force Alignment Those who know Rose know that the spaces she creates are unlike any other. There is a quiet reverence, a sense of peace, and a palpable sacredness that begins the moment you enter the room. This next evolution of her practice is an invitation to experience the gifts of her journey—and perhaps awaken something that has always been waiting within you. After a profound journey through Egypt, Rose returned home with a deepened connection to her healing work. Immersed in the energy of ancient temples & pyramids, timeless spiritual traditions, and the enduring symbolism of the Ankh—the Key of Life—she came home carrying something that is difficult to put into words. Some experiences are learned. Others are remembered. The wisdom, presence, and sacredness Rose encountered have naturally woven themselves into the healing practice she has lovingly cultivated for years. Through Reiki, crystals, tuning forks, healing sound, sacred oils, and the symbolism of the Ankh, she creates a deeply intentional space where healing is invited, balance is restored, and the spirit is gently supported.",
+      "excerpt": "",
+      "url": "https://shopsacredground.com/book/rose/",
+      "start_date": "2026-09-23 12:00:00",
+      "end_date": "2026-09-23 17:00:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Chicago",
+      "image": {
+        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Reiki-massage-therapy-sanctuar_1762881914.png"
+      },
+      "categories": [],
+      "tags": [],
+      "cost": "$99",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
+      "id": 28082,
+      "title": "Sacred Stillness: A Women’s Circle for Meditation, Reflection & Connection",
+      "description": "Sacred Stillness is a welcoming women’s circle created as a space to slow down, turn inward, and reconnect—with yourself and with a supportive community of women. Each gathering offers an opportunity to step away from the demands and noise of everyday life and simply be. Through guided meditation, intentional reflection, meaningful conversation, and gentle practices for grounding and self-connection, we create space to listen more deeply to ourselves and honor whatever we may be carrying or moving through. Each month explores a different theme, offering a fresh invitation for personal reflection, growth, release, or renewal. While the focus changes from gathering to gathering, the heart of Sacred Stillness remains the same: a safe, supportive space where women can gather without pressure, expectation, or the need to have anything figured out. No meditation experience or spiritual background is necessary. Come exactly as you are. ✨ Sacred Stillness is an invitation to pause, breathe, connect, and remember that sometimes the most meaningful thing we can do is simply make space to listen within. Group session · attendance limit 25",
+      "excerpt": "",
+      "url": "https://shopsacredground.com/book-tina-stillness/",
+      "start_date": "2026-09-23 19:00:00",
+      "end_date": "2026-09-23 20:00:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Chicago",
+      "image": null,
+      "categories": [],
+      "tags": [],
+      "cost": "",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
+      "id": 23993,
+      "title": "Tarot with Adie",
+      "description": "A reading with Adie is not about predicting every detail of the future—it is about understanding the energy surrounding your life right now and discovering the choices and opportunities available to you.",
+      "excerpt": "",
+      "url": "/book/adie/",
+      "start_date": "2026-09-24 12:00:00",
+      "end_date": "2026-09-24 17:00:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Chicago",
+      "image": null,
+      "categories": [],
+      "tags": [],
+      "cost": "$55 – $99",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
+      "id": 24149,
+      "title": "Tai Chi Gung with Sherry Gurley",
+      "description": "Join Sherry Gurley for Tai Chi Gung, an accessible energy-movement practice that improves balance, mobility, and inner calm. Come as you are and leave feeling grounded and refreshed.",
+      "excerpt": "",
+      "url": "https://shopsacredground.com/sherry/",
+      "start_date": "2026-09-24 12:00:00",
+      "end_date": "2026-09-24 13:00:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Chicago",
+      "image": {
+        "url": "https://shopsacredground.com/wp-content/uploads/4070F231-3AB2-455E-BD7F-551A261CDF52.png"
+      },
+      "categories": [],
+      "tags": [],
+      "cost": "$20",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
+      "id": 26759,
+      "title": "Quantum Shift: From Insight to Transformation",
+      "description": "Blurb: “What if you could consciously shift the patterns shaping your reality? Choose something within yourself you’re ready to transform and explore quantum principles, energy practices, and guided techniques designed to help you release old patterns, shift your energy, and align with new possibilities. Led by Eve Muir-Wilson, HTP, RM, Energy Alignment Specialist and Metaphysical Educator, who blends intuitive energy healing, quantum practices, and more than 30 years of experience guiding personal growth and transformation. No previous experience with quantum concepts or practices is needed. All are welcome.” We already have the dates for this, but you need to change it to this title (you currently have other titles as place holders). The dates are 9/24, 10/8, 10/22, 11/5, 11/12, 12/3, 12/10. 7-9 pm, $55 Group session · attendance limit 20",
+      "excerpt": "",
+      "url": "/eve-quantum/",
+      "start_date": "2026-09-24 19:00:00",
+      "end_date": "2026-09-24 21:00:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Chicago",
+      "image": {
+        "url": "https://shopsacredground.com/wp-content/uploads/ChatGPT-Image-Aug-11-2026-09_06_19-PM.png"
       },
       "categories": [],
       "tags": [],
       "cost": "",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
+      "id": 23907,
+      "title": "Keeper of the Cards: Robert",
+      "description": "Working with a traditional 52-card oracle deck, Robert offers grounded and insightful readings that look ahead to the energies unfolding in your life. His readings explore patterns and possibilities across three distinct timelines — 3 days, 3 weeks, and 3 months",
+      "excerpt": "",
+      "url": "/book/robert/",
+      "start_date": "2026-09-25 13:00:00",
+      "end_date": "2026-09-25 18:30:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Chicago",
+      "image": {
+        "url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-06-26-at-10.02.26-AM.png"
+      },
+      "categories": [],
+      "tags": [],
+      "cost": "$55 – $99",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
+      "id": 22002,
+      "title": "Vibrational Chakra Healing With Kate",
+      "description": "Vibrational Chakra Healing with Kate Feeling out of balance? Kate’s chakra healing uses vibrational frequencies to release tension and restore harmony across body, mind, and spirit—leaving you centered and renewed.",
+      "excerpt": "",
+      "url": "/book/kate-chakra/",
+      "start_date": "2026-09-25 14:00:00",
+      "end_date": "2026-09-25 17:00:00",
+      "all_day": false,
+      "featured": true,
+      "timezone": "America/Chicago",
+      "image": {
+        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Seven-glowing-chakra-energy-ce_1764775438.png"
+      },
+      "categories": [],
+      "tags": [],
+      "cost": "$99.00",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
+      "id": 26100,
+      "title": "Sacred Creations – A Monthly Creative & Spiritual Gathering",
+      "description": "Sacred Creations – A Monthly Creative & Spiritual Gathering Come to one event or come to all Join us for Sacred Creations , a heart-centered monthly Friday evening series devoted to creativity, connection, and soulful inspiration. Designed as a peaceful and uplifting experience, each gathering invites you to slow down, reconnect with your inner wisdom, and express your spirit through intentional, hands-on creation. During these special evenings, participants will craft meaningful pieces infused with purpose — whether for personal reflection, energetic support, or simply the joy of creating in a welcoming community space. No experience is necessary. Just bring your curiosity, an open heart, and perhaps a friend to share in the experience. Sacred Creations is more than an art night — it is a gentle ritual of self-care, mindfulness, and spiritual nourishment. Surrounded by the calming energy of Sacred Ground, you’ll enjoy a relaxing atmosphere where creativity flows naturally and inspiration unfolds in beautiful and unexpected ways. First Gathering: Friday, March 27 • 7:00–8:30 PM 2026 Schedule: March 27 April 24 May 22 June 26 July 24 August 21 September 25 Come create, connect, and leave feeling renewed, inspired, and energetically aligned.",
+      "excerpt": "",
+      "url": "/karen-creations/",
+      "start_date": "2026-09-25 19:00:00",
+      "end_date": "2026-09-25 20:30:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Chicago",
+      "image": {
+        "url": "https://shopsacredground.com/wp-content/uploads/d42573b8-b256-4564-995a-e9c284b50526.png"
+      },
+      "categories": [],
+      "tags": [],
+      "cost": "$33",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
+      "id": 26079,
+      "title": "Tina’s Tarot & Rune Sessions",
+      "description": "Receive guidance through the wisdom of Tarot and the ancient symbols of the Runes. Tina blends intuition with time-honored divination tools to help bring clarity, perspective, and insight to your questions. Available in 30 or 60-minute sessions.",
+      "excerpt": "",
+      "url": "/tina/",
+      "start_date": "2026-09-26 11:00:00",
+      "end_date": "2026-09-26 15:00:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Chicago",
+      "image": {
+        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Reiki-healing-energy-visualiza_1762922335.png"
+      },
+      "categories": [],
+      "tags": [],
+      "cost": "$55",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
+      "id": 26089,
+      "title": "Shaman Medium Melissa",
+      "description": "Melissa walks between worlds, carrying the wisdom of the ancients and the voice of Spirit. As a shaman and medium, she weaves together sacred medicine and divine connection, guiding you into the realms where healing and insight await. Her sessions open the doorway to messages from guides and loved ones, dissolve energetic blockages, and restore balance to the soul.",
+      "excerpt": "",
+      "url": "/book/melissa/",
+      "start_date": "2026-09-26 11:00:00",
+      "end_date": "2026-09-26 14:00:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Chicago",
+      "image": {
+        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Andean-mountain-peaks-with-con_1764776305.png"
+      },
+      "categories": [],
+      "tags": [],
+      "cost": "$99",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
+      "id": 26097,
+      "title": "Somatic Intuitive Biofield Tuning Session with Lisa Maria",
+      "description": "This restorative, one-on-one session helps you understand what your body and energy field may be holding while gently guiding it back into balance. Using tuning forks, intuitive awareness, and somatic listening, Lisa Maria works within the biofield to support release, energetic flow, and nervous system regulation. You’ll remain fully clothed and relaxed as the session unfolds intuitively, based on what your system is ready to shift. Clients often leave feeling lighter, calmer, and more connected. 30-minute sessions offer focused support and energetic reset. 60-minute sessions allow for deeper release and fuller integration.",
+      "excerpt": "",
+      "url": "/lisamaria-somatic/",
+      "start_date": "2026-09-26 12:00:00",
+      "end_date": "2026-09-26 17:00:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Chicago",
+      "image": {
+        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_astral-readings-and-healings-w_1766974728.png"
+      },
+      "categories": [],
+      "tags": [],
+      "cost": "$66 – $125",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
+      "id": 23951,
+      "title": "Keeper of the Cards: Robert",
+      "description": "Keeper of the Cards: Robert Robert carries on a three-generation family tradition of reading playing cards. You shuffle, he interprets, offering practical insight into the road ahead.",
+      "excerpt": "",
+      "url": "/book/robert/",
+      "start_date": "2026-09-26 15:00:00",
+      "end_date": "2026-09-26 19:30:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Chicago",
+      "image": {
+        "url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-06-26-at-9.59.59-AM.png"
+      },
+      "categories": [],
+      "tags": [],
+      "cost": "$55 – $99",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
+      "id": 27327,
+      "title": "Integrated Energy Healing with Mary: Reiki • Cranial Sacral • Intuitive Guidance",
+      "description": "Experience a rare fusion of science, spirit, and subtle energy in Mary’s transformative healing sessions. Blending the restorative flow of Reiki, the gentle precision of Cranial Sacral Therapy, and the clarity of Intuitive Readings, Mary creates a deeply attuned experience that addresses the whole person—body, mind, and soul. Each session begins with energetic calibration and gentle cranial touch to release physical tension and nervous system strain. As balance returns, Mary channels intuitive insight to illuminate patterns and emotions held beneath the surface, offering clarity and direction for your next steps.",
+      "excerpt": "",
+      "url": "/mary/",
+      "start_date": "2026-09-27 11:00:00",
+      "end_date": "2026-09-27 14:00:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Chicago",
+      "image": {
+        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Reiki-healing-hands-hovering-o_1764776353.png"
+      },
+      "categories": [],
+      "tags": [],
+      "cost": "$77.00",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
+      "id": 25484,
+      "title": "Oracle of the Stones: A Reading with Diane",
+      "description": "Diane’s Oracle Stone Readings offer clear, intuitive insight through the use of sacred stones, each chosen to reflect what’s happening beneath the surface. This session helps you gain perspective, direction, and a better understanding of your current situation. 30 minutes – quick, focused clarity 60 minutes – deeper exploration and guidance Select your session length at booking.",
+      "excerpt": "",
+      "url": "/book/diane/",
+      "start_date": "2026-09-27 12:00:00",
+      "end_date": "2026-09-27 17:00:00",
+      "all_day": false,
+      "featured": true,
+      "timezone": "America/Chicago",
+      "image": {
+        "url": "https://shopsacredground.com/wp-content/uploads/77814afa-b3e0-40d9-9f09-6eac1983179d.png"
+      },
+      "categories": [],
+      "tags": [],
+      "cost": "$55 – $99.00",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
+      "id": 22813,
+      "title": "Divine Space Manifestation Experience",
+      "description": "Enter the Sacred • Be Witnessed • Receive Step into a deeply nourishing and intentionally guided experience designed to help you reconnect with your inner truth, align with your heart’s desires, and bring greater clarity to what you are calling into your life. The Divine Space Manifestation Experience is a sacred gathering created to hold space for reflection, expression, energetic connection, and collective support. Within this experience, participants are gently invited into a safe and sacred container where they can feel seen, supported, and witnessed without judgment. At the center of the evening is The Divine Space — a powerful and meaningful opportunity where participants may choose to step forward, express their intentions, desires, dreams, or areas of transformation, and receive focused energetic support and encouragement from the collective group. This experience is designed to foster authentic connection, emotional openness, spiritual alignment, and deeper self-awareness. Through guided facilitation, intentional presence, and shared energy, participants may experience moments of clarity, release, activation, inspiration, and renewed connection to themselves and their path. During This Experience, You May: Align more deeply with your heart’s true desires Feel supported within a sacred and welcoming environment Experience real-time energetic connection and activation Be witnessed and heard in an authentic and meaningful way Connect with like-minded individuals in a safe spiritual setting Explore manifestation through intention, presence, and collective energy Open yourself to insight, encouragement, and emotional expansion This Experience Is Ideal For Those Who: Are seeking clarity or direction Desire a supportive spiritual community Feel called to reconnect with themselves on a deeper level Want to explore manifestation in a grounded and intentional way Are navigating transition, growth, or personal transformation Wish to feel seen, supported, and energetically uplifted Come as you are, with an open heart and a willingness to be present. This experience invites you to slow down, connect inward, and remember that your outer world begins within. Event Details Experience: Divine Space Manifestation Experience Facilitator: Mary Gust Location: Sacred Ground Investment: 125.00 Availability: 9",
+      "excerpt": "",
+      "url": "/book/divine-space/",
+      "start_date": "2026-09-27 14:30:00",
+      "end_date": "2026-09-27 17:00:00",
+      "all_day": false,
+      "featured": true,
+      "timezone": "America/Chicago",
+      "image": {
+        "url": "https://shopsacredground.com/wp-content/uploads/fb5852e6-5f92-405f-a1e0-abaab4d8af77.png"
+      },
+      "categories": [],
+      "tags": [],
+      "cost": "$125.00",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
+      "id": 23865,
+      "title": "Lisa Maria Intuitive Tarot",
+      "description": "Lisa Maria Intuitive Tarot Step into a space of wonder and possibility as Lisa Maria uses tarot to explore life’s crossroads, celebrate strengths, and illuminate potential paths ahead.",
+      "excerpt": "",
+      "url": "/book/lisa-maria/",
+      "start_date": "2026-09-28 12:00:00",
+      "end_date": "2026-09-28 17:00:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Chicago",
+      "image": {
+        "url": "https://shopsacredground.com/wp-content/uploads/tarot-a11a-ccdadda355f5.png"
+      },
+      "categories": [],
+      "tags": [],
+      "cost": "$55 – $99",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
+      "id": 24191,
+      "title": "Amber | Customized Therapeutic Massage Sessions",
+      "description": "Unwind with a customized therapeutic massage from Amber. Each session is tailored to your body’s needs—easing tension, improving circulation, and leaving you deeply relaxed and restored.",
+      "excerpt": "",
+      "url": "/book/amber/",
+      "start_date": "2026-09-29 12:00:00",
+      "end_date": "2026-09-29 17:00:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Chicago",
+      "image": {
+        "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Cranial-sacral-therapy-energy_1762922377.png"
+      },
+      "categories": [],
+      "tags": [],
+      "cost": "$2 – $166",
+      "venue": {
+        "venue": "Sacred Ground"
+      }
+    },
+    {
+      "id": 26081,
+      "title": "Tina’s Intuitive Tarot, Runes & Reiki Experience",
+      "description": "Every session with Tina is uniquely guided by your needs, intentions, and the energy of the moment. Whether you are seeking clarity through Tarot, insight from the ancient wisdom of the Runes, healing through Reiki, or a personalized blend of all three, Tina creates a customized experience designed to support your journey. Some clients come with specific questions and receive intuitive guidance through Tarot and Rune readings. Others seek relaxation, energetic balance, and renewal through Reiki. Many choose a combination of modalities, allowing insight and healing to work together in a deeply meaningful way. Available in 30 or 60-minute sessions, each appointment is thoughtfully tailored to provide the guidance, perspective, and energetic support that best serves you. Whether you’re navigating a life transition, seeking answers, or simply looking to reconnect with yourself, Tina offers a welcoming space for exploration, healing, and discovery.",
+      "excerpt": "",
+      "url": "/tina-3/",
+      "start_date": "2026-09-29 12:00:00",
+      "end_date": "2026-09-29 17:00:00",
+      "all_day": false,
+      "featured": false,
+      "timezone": "America/Chicago",
+      "image": {
+        "url": "https://shopsacredground.com/wp-content/uploads/7347a0c3-962d-4a9f-b568-4b831db9a7e2.png"
+      },
+      "categories": [],
+      "tags": [],
+      "cost": "$55 – $99.00",
       "venue": {
         "venue": "Sacred Ground"
       }
