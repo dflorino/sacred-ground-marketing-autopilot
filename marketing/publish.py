@@ -163,7 +163,8 @@ def schedule_payload(draft: Dict[str, Any]) -> Dict[str, Any]:
             "media_type": "photo",
             "photo_cover_index": 0,
             "description": caption_text[:4000],
-            "auto_add_music": True,
+            # Founder Sep 11 2026: ship flyer stills quiet — TikTok song roulette felt off-brand.
+            "auto_add_music": False,
             "privacy_level": "PUBLIC_TO_EVERYONE",
             "allow_comment": True,
             "content_preview_confirmed": True,
