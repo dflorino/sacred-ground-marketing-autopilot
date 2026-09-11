@@ -9,6 +9,7 @@ Catch-up:
 Fixes: rewrite morning/afternoon/week_ahead/tuesday automation prompts to require FB+IG+TT+Threads; `publish_campaign_drafts` fails closed with `missing_platform_drafts` if any expected platform draft is absent; reel brand coverage docs include Threads. **Founder must re-paste** updated Agent instructions into each live Cursor Automation (agents cannot edit Automations).
 
 
+## 2026-09-09 — Episode backfill: Threads (TikTok already complete)
 
 Audit of S1E1–S1E9 vs Facebook:
 - **TikTok:** already had every FB episode (E1–E7 published; E8–E9 scheduled). No TikTok gap.
