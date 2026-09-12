@@ -1,36 +1,40 @@
 ---
-description: Never push the tarot Death card on Sacred Ground social (hard FINAL)
+description: Never show or push the tarot Death card on Sacred Ground social or Observatory
 alwaysApply: true
 ---
 
-# Never push the tarot Death card (HARD FINAL — Founder Sep 12, 2026)
+# Never show the tarot Death card (HARD FINAL — Founder Sep 12, 2026)
 
-**Never ever schedule, publish, or rotate the tarot Death card on Facebook,
-Instagram, TikTok, or Threads.** Founder asked multiple times; it still posted
-Sep 11 afternoon from the Autopilot tarot specialty pool. She deleted the posts.
+**Never ever schedule, publish, rotate, or display the tarot Death card on
+Facebook, Instagram, TikTok, Threads, or the Sacred Ground Observatory.**
+Founder asked multiple times; it still posted Sep 11 afternoon from Autopilot.
+She deleted the posts. Sep 12: also banned from Observatory forever.
 
 ## Banned from social rotation forever
 
-- Media **23493** — `5D89500F-D388-47AF-A46C-E08EE1B5EAD0.png` (Death plate that posted)
+- Media **23493** — `5D89500F-D388-47AF-A46C-E08EE1B5EAD0.png` (plate that posted)
 - Death collages **tarot-6.png** (22517) and **tarot-7.png** (22518)
 - Named Death files: `13-death.png`, `13-death-1.png`, `13-death-2.png`,
   `*Tarot-DEATH*`, any URL whose filename token is `death`
+- Observatory Death card **major-13** / image_ids **23492**, **27069**, **27114**,
+  **27200**, **27997**
 
 ## Code / config enforcement
 
-- `config/image_rules.json` → `banned_social_urls` + `banned_social_url_substrings`
-- `marketing/images.py` → `is_banned_social_image_url` / `filter_social_eligible_urls`
-  (pools, TEC featured, afternoon pins, week_ahead)
-- Death must **not** appear in `rules.tarot.urls`
+- Autopilot: `config/image_rules.json` → `banned_social_*` +
+  `marketing/images.py` → `is_banned_social_image_url`
+- Observatory: `SGOBS_Tarot::load_deck` / `is_banned_card` filters Death out of
+  daily card + tools; tools dropdown must not list Death
+- Death must **not** appear in Autopilot `rules.tarot.urls`
 
 ## Do not
 
 - Re-add Death to any specialty / afternoon / morning / night pool
 - Publish Death because it is a TEC featured thumb — skip and pick another image
-- Treat Observatory / print deck art as a reason to post Death on social
-  (deck may keep Death on WP for the shop deck; Autopilot must never ship it)
+- Let Death appear as Observatory Card of the Day or in Observatory tools
+- Treat print-deck art as a reason to show Death on social or Observatory
 
 ## If it appears again
 
-Stop. Remove the URL from config, confirm the ban helper rejects it, and do not
-publish until Death is gone from the planned media URL.
+Stop. Remove the URL/card from config, confirm the ban helper rejects it, clear
+Observatory tarot transient if needed, and do not publish/display until Death is gone.
