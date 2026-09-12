@@ -145,4 +145,29 @@ Founder review of the next 7 days (`tools/preview_next7.py`) surfaced night plat
 - Verified: all 45 `nighttime.creative_pool` URLs now return 200 (0 dead).
 - Known open items from the same review, not yet fixed: Wed Sep 16 afternoon is
   `reuse_blocked` (no plate), and every September date-keyed morning flyer is
-  `founder_trashed` so mornings fall back to specialty art.
+  blocked so mornings fall back to specialty art.
+
+## 2026-09-12 — Mornings: released the held v5 flyers; 40s poster joins the roster
+
+Founder: “all these you showed me are boring, none of the morning ones are different
+unusual or part of our huge design pool.” Root cause was **not** trashed art — every
+September flyer carried `do_not_publish: true` / `status: awaiting_founder_review`
+(the remake-v5c/v5d batch), so `plan_image` fell through to old specialty stock URLs.
+The design pool was intact the whole time (23 morning styles, 20 Living Worlds).
+
+- Showed her the seven held plates. She rejected **Sep 14** only.
+- Released Sep 13 / 15 / 16 / 17 / 18 → `founder_approved: true`, `do_not_publish: false`.
+  Sep 12 left alone (already posted this morning).
+- Sep 14 marked `founder_rejected`, then remade: generated three pool options
+  (Hollywood poster / cosmic subway / Magritte door) via `mlimg_generate`.
+  OpenRouter checked first per rule — image key uncapped, unlimited remaining.
+  Founder picked **A**, media **28134**, style `surprise_hollywood_poster`.
+- Verified all six upcoming mornings now plan `rule=morning_flyer` with live URLs.
+- Founder: “lets add the 40s poster to the roster with einstein davinci.”
+  `surprise_hollywood_poster` promoted `surprise_campaign` → `approved_art`,
+  inserted into `rotation_order` after Einstein, prompt_brief / pride_placement /
+  readability_fix filled out to roster standard. Style id keeps its `surprise_`
+  prefix so existing history stays valid. Reachable in rotation (2 hits / 120 days,
+  same band as Einstein and Folk).
+- Still open: afternoon plates for Sep 13 / 15 / 16 / 17 (two too tall for Instagram,
+  one storefront she rejected, one with no plate at all).
