@@ -1,0 +1,36 @@
+---
+description: Never push the tarot Death card on Sacred Ground social (hard FINAL)
+alwaysApply: true
+---
+
+# Never push the tarot Death card (HARD FINAL — Founder Sep 12, 2026)
+
+**Never ever schedule, publish, or rotate the tarot Death card on Facebook,
+Instagram, TikTok, or Threads.** Founder asked multiple times; it still posted
+Sep 11 afternoon from the Autopilot tarot specialty pool. She deleted the posts.
+
+## Banned from social rotation forever
+
+- Media **23493** — `5D89500F-D388-47AF-A46C-E08EE1B5EAD0.png` (Death plate that posted)
+- Death collages **tarot-6.png** (22517) and **tarot-7.png** (22518)
+- Named Death files: `13-death.png`, `13-death-1.png`, `13-death-2.png`,
+  `*Tarot-DEATH*`, any URL whose filename token is `death`
+
+## Code / config enforcement
+
+- `config/image_rules.json` → `banned_social_urls` + `banned_social_url_substrings`
+- `marketing/images.py` → `is_banned_social_image_url` / `filter_social_eligible_urls`
+  (pools, TEC featured, afternoon pins, week_ahead)
+- Death must **not** appear in `rules.tarot.urls`
+
+## Do not
+
+- Re-add Death to any specialty / afternoon / morning / night pool
+- Publish Death because it is a TEC featured thumb — skip and pick another image
+- Treat Observatory / print deck art as a reason to post Death on social
+  (deck may keep Death on WP for the shop deck; Autopilot must never ship it)
+
+## If it appears again
+
+Stop. Remove the URL from config, confirm the ban helper rejects it, and do not
+publish until Death is gone from the planned media URL.

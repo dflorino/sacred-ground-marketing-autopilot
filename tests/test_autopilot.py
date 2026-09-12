@@ -139,7 +139,7 @@ class AutopilotTests(unittest.TestCase):
         self.assertIn("week", campaigns)
         self.assertIn("spotlight", campaigns)
         platforms = {d["platform"] for d in result["drafts"]}
-        self.assertEqual(platforms, {"facebook", "instagram", "tiktok", "threads"})
+        self.assertEqual(platforms, {"facebook", "instagram"})
 
         # no duplicates on second run
         result2 = pipeline.generate_batch(source="fixture", as_of=as_of)
@@ -997,14 +997,14 @@ class AutopilotTests(unittest.TestCase):
         )
         self.assertGreaterEqual(len(pool), 3)
 
-        # Ordinary Tuesday → FB + IG + TikTok + Threads drafts at 4pm
+        # Ordinary Tuesday → FB + IG drafts at 4pm
         as_of = datetime(2026, 8, 4, 10, 0, tzinfo=ZoneInfo("America/Chicago"))
         result = pipeline.generate_batch(source="fixture", as_of=as_of)
         self.assertTrue(result["ok"])
         tm = [d for d in result["drafts"] if d["campaign"] == "tuesday_meditation"]
-        self.assertEqual(len(tm), 4)
+        self.assertEqual(len(tm), 2)
         platforms = {d["platform"] for d in tm}
-        self.assertEqual(platforms, {"facebook", "instagram", "tiktok", "threads"})
+        self.assertEqual(platforms, {"facebook", "instagram"})
 
         drafts = store.list_drafts()
         tm_fb = next(
@@ -2264,6 +2264,66 @@ class AutopilotTests(unittest.TestCase):
         else:
             self.assertTrue(plan.url)
             self.assertNotIn(plan.url, blocked)
+
+    def test_tarot_death_card_never_on_social(self) -> None:
+        """Founder FINAL Sep 12 2026: Death card never rotates onto social."""
+        from marketing import images
+        from marketing.models import Event
+
+        images.IMAGE_USAGE_PATH = os.path.join(self._tmpdir, "state", "image_usage.json")
+        images.image_rules.cache_clear()
+
+        death = (
+            "https://shopsacredground.com/wp-content/uploads/"
+            "5D89500F-D388-47AF-A46C-E08EE1B5EAD0.png"
+        )
+        death_collage = "https://shopsacredground.com/wp-content/uploads/tarot-6.png"
+        death_named = (
+            "https://shopsacredground.com/wp-content/uploads/"
+            "ai-generated-Sacred-Ground-Tarot-DEATH-Rom-1788890685.jpg"
+        )
+        self.assertTrue(images.is_banned_social_image_url(death))
+        self.assertTrue(images.is_banned_social_image_url(death_collage))
+        self.assertTrue(images.is_banned_social_image_url(death_named))
+        self.assertTrue(images.is_banned_social_image_url(
+            "https://shopsacredground.com/wp-content/uploads/13-death-2.png"
+        ))
+        self.assertFalse(
+            images.is_banned_social_image_url(
+                "https://shopsacredground.com/wp-content/uploads/tarot-5.png"
+            )
+        )
+
+        tarot_urls = (images.image_rules().get("rules") or {}).get("tarot", {}).get(
+            "urls"
+        ) or []
+        self.assertNotIn(death, tarot_urls)
+
+        blocked = images.cooldown_blocked_urls(date(2026, 9, 12))
+        self.assertIn(death, blocked)
+
+        ev = Event(
+            id=99901,
+            title="Tarot With Adie",
+            start_date="2026-09-12 12:00:00",
+            end_date="2026-09-12 17:00:00",
+            url="https://shopsacredground.com/book/adie/",
+            image_url=death,
+        )
+        plan_am = images.plan_image([ev], "today", day=date(2026, 9, 12))
+        self.assertNotEqual(plan_am.url, death)
+        plan_pm = images.plan_image(
+            [ev], "afternoon_spotlight", day=date(2026, 9, 12), platform="facebook"
+        )
+        self.assertNotEqual(plan_pm.url, death)
+
+        # Specialty pool with only Death must not return Death.
+        picked = images._pick_from_urls(
+            [death, death_collage],
+            day=date(2026, 9, 12),
+            blocked=set(),
+        )
+        self.assertIsNone(picked)
 
     def test_social_proof_no_overlay_on_existing_inventory(self) -> None:
         """Founder cutover: never stamp badges onto finished plates; captions OK."""

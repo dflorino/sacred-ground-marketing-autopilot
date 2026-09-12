@@ -1,12 +1,34 @@
 from __future__ import annotations
 
 import os
+import re
 from datetime import date, timedelta
 from functools import lru_cache
 from typing import Any, Dict, List, Optional, Sequence, Tuple
 
 from .models import Event, ImagePlan
 from .paths import CONFIG_DIR, STATE_DIR, ensure_dirs, read_json, settings, write_json
+
+# Founder FINAL 2026-09-12 — never push the tarot Death card on social.
+# UUID Death plate + named Death files stay out of Autopilot forever.
+_HARD_BANNED_SOCIAL_URLS = (
+    "https://shopsacredground.com/wp-content/uploads/5D89500F-D388-47AF-A46C-E08EE1B5EAD0.png",
+    "https://shopsacredground.com/wp-content/uploads/tarot-6.png",
+    "https://shopsacredground.com/wp-content/uploads/tarot-7.png",
+    "https://shopsacredground.com/wp-content/uploads/13-death.png",
+    "https://shopsacredground.com/wp-content/uploads/13-death-1.png",
+    "https://shopsacredground.com/wp-content/uploads/13-death-2.png",
+    "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-Tarot-DEATH-Rom-1788890685.jpg",
+)
+_HARD_BANNED_SOCIAL_SUBSTRINGS = (
+    "5d89500f-d388-47af-a46c-e08ee1b5ead0",
+    "13-death",
+    "tarot-death",
+    "sacred-ground-tarot-death",
+    "/tarot-6.png",
+    "/tarot-7.png",
+)
+_DEATH_FILENAME_RE = re.compile(r"(^|[/_-])death([/_.-]|$)", re.IGNORECASE)
 
 STORE_EXTERIOR_DEFAULT = (
     "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.15-AM.png"
@@ -70,6 +92,46 @@ def image_rules() -> Dict[str, Any]:
         import json
 
         return json.load(fh)
+
+
+def banned_social_image_urls() -> set[str]:
+    """Exact media URLs that must never ship on FB/IG/TikTok/Threads."""
+    out = {u for u in _HARD_BANNED_SOCIAL_URLS}
+    cfg = image_rules()
+    for u in cfg.get("banned_social_urls") or []:
+        s = str(u).strip()
+        if s:
+            out.add(s)
+    return out
+
+
+def is_banned_social_image_url(url: Optional[str]) -> bool:
+    """Founder FINAL 2026-09-12: never push tarot Death (or Death collages) on social."""
+    if not url:
+        return False
+    u = str(url).strip()
+    if not u:
+        return False
+    if u in banned_social_image_urls():
+        return True
+    low = u.lower()
+    for marker in _HARD_BANNED_SOCIAL_SUBSTRINGS:
+        if marker in low:
+            return True
+    cfg = image_rules()
+    for sub in cfg.get("banned_social_url_substrings") or []:
+        s = str(sub).strip().lower()
+        if s and s in low:
+            return True
+    # Filename / path token "death" (Death card, not unrelated words).
+    if _DEATH_FILENAME_RE.search(low):
+        return True
+    return False
+
+
+def filter_social_eligible_urls(urls: Sequence[str]) -> List[str]:
+    """Drop hard-banned social URLs from a candidate pool."""
+    return [str(u) for u in urls if u and not is_banned_social_image_url(str(u))]
 
 
 @lru_cache(maxsize=1)
@@ -327,6 +389,8 @@ def cooldown_blocked_urls(
     for u in extra_exclude or []:
         if u:
             blocked.add(str(u))
+    # Founder FINAL 2026-09-12 — Death card / Death collages never eligible.
+    blocked |= banned_social_image_urls()
     return blocked
 
 
@@ -419,6 +483,7 @@ def _pick_from_urls(
     caller can try another specialty / general pool instead of duplicating.
     """
     excluded = {str(u) for u in (exclude or []) if u}
+    urls = filter_social_eligible_urls(urls)
     available = [u for u in urls if u not in blocked and u not in excluded]
     if not available:
         # All recently used — rotate among non-excluded pool members
@@ -469,7 +534,7 @@ def select_today_image(
         cel_m = cel_mod.morning_plan(day, platform=platform, exclude_urls=list(blocked))
         if cel_m and cel_m.get("image_url"):
             cel_url = str(cel_m["image_url"])
-            if cel_url not in blocked:
+            if cel_url not in blocked and not is_banned_social_image_url(cel_url):
                 label = cel_m.get("label") or cel_m.get("id") or day.isoformat()
                 return (
                     cel_url,
@@ -487,7 +552,7 @@ def select_today_image(
             from . import morning_flyers as mf
 
             locked = mf.founder_approved_flyer_url(day, platform)
-            if locked and locked not in blocked:
+            if locked and locked not in blocked and not is_banned_social_image_url(locked):
                 label = flyer.get("label") or day.isoformat()
                 return (
                     locked,
@@ -502,7 +567,11 @@ def select_today_image(
             block = mf.entry_publish_block_reason(flyer)
             if not block:
                 chosen, shared = mf.select_flyer_url_for_platform(flyer, platform)
-                if chosen and str(chosen) not in blocked:
+                if (
+                    chosen
+                    and str(chosen) not in blocked
+                    and not is_banned_social_image_url(str(chosen))
+                ):
                     label = flyer.get("label") or day.isoformat()
                     if shared:
                         rec = (
@@ -523,9 +592,11 @@ def select_today_image(
             continue
 
         # Specialty rules may rotate a pool via "urls" (tarot deck, multi-event, etc.).
-        pool = [str(u) for u in (rule.get("urls") or []) if u]
+        pool = filter_social_eligible_urls(
+            [str(u) for u in (rule.get("urls") or []) if u]
+        )
         primary = str(rule.get("url") or "")
-        if primary and primary not in pool:
+        if primary and primary not in pool and not is_banned_social_image_url(primary):
             pool.insert(0, primary)
         if not pool:
             continue
@@ -558,7 +629,11 @@ def select_today_image(
     if len(events) == 1 and events[0].image_url:
         e = events[0]
         featured = str(e.image_url)
-        if featured not in blocked and featured not in excluded:
+        if (
+            featured not in blocked
+            and featured not in excluded
+            and not is_banned_social_image_url(featured)
+        ):
             return (
                 featured,
                 "event_featured",
@@ -568,9 +643,11 @@ def select_today_image(
     # General morning creative pool — empty days / no specialty / no featured.
     # Top-level config key (sibling of "rules"), not inside the specialty map.
     creative = cfg.get("morning_creative") or {}
-    cpool = [str(u) for u in (creative.get("urls") or []) if u]
+    cpool = filter_social_eligible_urls(
+        [str(u) for u in (creative.get("urls") or []) if u]
+    )
     cprimary = str(creative.get("url") or "")
-    if cprimary and cprimary not in cpool:
+    if cprimary and cprimary not in cpool and not is_banned_social_image_url(cprimary):
         cpool.insert(0, cprimary)
     if cpool:
         curl = _pick_from_urls(
@@ -620,7 +697,11 @@ def plan_image(
     and uses the same media URL on Facebook and Instagram for one slot
     (Founder Aug 10 2026 single-image mode — that is one post pair, not reuse).
     """
-    with_images = [e for e in events if e.image_url]
+    with_images = [
+        e
+        for e in events
+        if e.image_url and not is_banned_social_image_url(e.image_url)
+    ]
     excluded = [str(u) for u in (exclude_urls or []) if u]
 
     if campaign == "afternoon_spotlight":
@@ -636,7 +717,12 @@ def plan_image(
         pinned = _afternoon_plate_for_day(on)
         if pinned and not pinned.get("do_not_publish"):
             pin_url = str(pinned.get("url") or "").strip()
-            if pin_url and pin_url not in blocked and pin_url not in excluded:
+            if (
+                pin_url
+                and pin_url not in blocked
+                and pin_url not in excluded
+                and not is_banned_social_image_url(pin_url)
+            ):
                 pre = pinned.get("prebranded")
                 if pre is None:
                     pre = bool(afternoon_spotlight_plates().get("prebranded_default", True))
@@ -659,7 +745,10 @@ def plan_image(
         }
         if events and events[0].image_url:
             featured = str(events[0].image_url)
-            if featured not in blocked:
+            if (
+                featured not in blocked
+                and not is_banned_social_image_url(featured)
+            ):
                 return ImagePlan(
                     source="event_featured",
                     url=featured,
@@ -681,7 +770,7 @@ def plan_image(
             campaign="afternoon_spotlight",
             allow_morning_plates=False,
         )
-        if rule_id == "reuse_blocked" or not url:
+        if rule_id == "reuse_blocked" or not url or is_banned_social_image_url(url):
             return reuse_blocked_plan("afternoon_spotlight")
         if rule_id in morning_owned or url in blocked:
             exterior = store_exterior_url()
@@ -717,7 +806,7 @@ def plan_image(
         url, rule_id, rec = select_today_image(
             events, on, platform=platform, exclude_urls=excluded
         )
-        if rule_id == "reuse_blocked" or not url:
+        if rule_id == "reuse_blocked" or not url or is_banned_social_image_url(url):
             return reuse_blocked_plan("today")
         source = {
             "event_featured": "event_featured",
@@ -778,16 +867,20 @@ def plan_image(
             on, platform=platform, exclude_urls=list(cross_blocked)
         )
         url = str(atm.get("image_url") or "")
-        if url and url in cross_blocked:
+        if url and (url in cross_blocked or is_banned_social_image_url(url)):
             url = ""
         if not url:
             # Last resort: unused season night plate, then unused brand exterior.
             season_url = str(season_meta(on).get("url") or "")
             for candidate in (season_url, store_exterior_url()):
-                if candidate and candidate not in cross_blocked:
+                if (
+                    candidate
+                    and candidate not in cross_blocked
+                    and not is_banned_social_image_url(candidate)
+                ):
                     url = candidate
                     break
-        if not url:
+        if not url or is_banned_social_image_url(url):
             return reuse_blocked_plan("week_ahead")
 
         mode = atm.get("mode") or "creative"

@@ -1,8 +1,26 @@
 {
-  "notes": "Morning campaign (9am CT) image rules — specialty library, no seasons. HARD RULE FINAL (Founder 2026-08-12 ~5:54pm CT): NEVER reuse any media URL that has already been posted or used in a published draft — lifetime block via image_usage history. No exceptions for TEC thumbnails / event_featured / Eve flyers / celestial plates / morning flyers / practitioner images. Same URL on FB+IG for one slot is OK (single-image mode = one post pair). Selecting a used URL must fail (reuse_blocked) and force alternate / regenerate / skip — never silently reuse. Afternoon must NEVER take celestial_morning or morning_flyer plates (Aug 12 eclipse bug) and must not re-ship today's Eve flyer tomorrow. Robert also cannot run two days in a row. MIXED-DAY: rarer modalities always beat tarot and reiki; among tarot vs reiki alone, reiki wins; sound_healing beats tarot; crystal_healing beats reiki. Tarot & Runes is one linked event specialty (runes plate), not a mixed-day pair of competing modalities. Date-keyed flyers in morning_flyers.json win first (prebranded — skip overlays). SINGLE-IMAGE MODE (Founder Aug 10 2026): primary url posts to FB and IG — url_instagram ignored unless allow_ig_variant. Pipeline uses one media URL per campaign on both platforms. Morning flyers NEVER show $, prices, or ticket costs. COLOR ENERGY: colorful, bright, interesting, engaging — unexpected bold color OK. Reject drab/muddy sludge and empty near-black voids (Aug 10 IG Lisa Maria reject). HARD BAN (Founder Aug 14 2026 ~1:35pm CT): generic mystic AI wellness starter pack — floating singing bowls, glowing healing hands, pristine tarot fan, crystals on black velvet, Flower of Life wallpaper, Akashic prop books, ethereal purple fog, and the factory navy equal-card + right mystic collage + gold script when it reads as 'everyone's AI template.' REQUIRE shop-individual art (storefront/interior/photo/poster/handcrafted/original illustration). Do not remake+republish a live morning post for aesthetic alone unless Founder asks (Aug 14: leave live flyer; explore offline concepts in data/composites/flyer-concepts-v1/). Prefer generate-morning-flyers; locals must pass flyer_passes_visual_energy. Atmospheric sg-morning-creative-* plates were deleted — empty / no-specialty days fall through to specialty pools then store exterior. Seasons/holidays live on nighttime only (see image_atmosphere.json). NEW gens: designed-in shop pride required (social_proof.designed_in_required).",
+  "notes": "Morning campaign (9am CT) image rules — specialty library, no seasons. HARD RULE FINAL (Founder 2026-08-12 ~5:54pm CT): NEVER reuse any media URL that has already been posted or used in a published draft — lifetime block via image_usage history. No exceptions for TEC thumbnails / event_featured / Eve flyers / celestial plates / morning flyers / practitioner images. Same URL on FB+IG for one slot is OK (single-image mode = one post pair). Selecting a used URL must fail (reuse_blocked) and force alternate / regenerate / skip — never silently reuse. Afternoon must NEVER take celestial_morning or morning_flyer plates (Aug 12 eclipse bug) and must not re-ship today's Eve flyer tomorrow. Robert also cannot run two days in a row. MIXED-DAY: rarer modalities always beat tarot and reiki; among tarot vs reiki alone, reiki wins; sound_healing beats tarot; crystal_healing beats reiki. Tarot & Runes is one linked event specialty (runes plate), not a mixed-day pair of competing modalities. Date-keyed flyers in morning_flyers.json win first (prebranded — skip overlays). SINGLE-IMAGE MODE (Founder Aug 10 2026): primary url posts to FB and IG — url_instagram ignored unless allow_ig_variant. Pipeline uses one media URL per campaign on both platforms. Morning flyers NEVER show $, prices, or ticket costs. COLOR ENERGY: colorful, bright, interesting, engaging — unexpected bold color OK. Reject drab/muddy sludge and empty near-black voids (Aug 10 IG Lisa Maria reject). HARD BAN (Founder Aug 14 2026 ~1:35pm CT): generic mystic AI wellness starter pack — floating singing bowls, glowing healing hands, pristine tarot fan, crystals on black velvet, Flower of Life wallpaper, Akashic prop books, ethereal purple fog, and the factory navy equal-card + right mystic collage + gold script when it reads as 'everyone's AI template.' REQUIRE shop-individual art (storefront/interior/photo/poster/handcrafted/original illustration). Do not remake+republish a live morning post for aesthetic alone unless Founder asks (Aug 14: leave live flyer; explore offline concepts in data/composites/flyer-concepts-v1/). Prefer generate-morning-flyers; locals must pass flyer_passes_visual_energy. Atmospheric sg-morning-creative-* plates were deleted — empty / no-specialty days fall through to specialty pools then store exterior. Seasons/holidays live on nighttime only (see image_atmosphere.json). NEW gens: designed-in shop pride required (social_proof.designed_in_required). HARD BAN FINAL (Founder Sep 12 2026): NEVER push the tarot Death card on social — media 23493 / 5D89500F…, tarot-6/tarot-7 Death collages, 13-death*, *Tarot-DEATH* — see banned_social_urls / banned_social_url_substrings + images.is_banned_social_image_url.",
   "never_reuse": true,
   "no_repeat_days": null,
   "cross_campaign_no_repeat": true,
+  "banned_social_urls": [
+    "https://shopsacredground.com/wp-content/uploads/5D89500F-D388-47AF-A46C-E08EE1B5EAD0.png",
+    "https://shopsacredground.com/wp-content/uploads/tarot-6.png",
+    "https://shopsacredground.com/wp-content/uploads/tarot-7.png",
+    "https://shopsacredground.com/wp-content/uploads/13-death.png",
+    "https://shopsacredground.com/wp-content/uploads/13-death-1.png",
+    "https://shopsacredground.com/wp-content/uploads/13-death-2.png",
+    "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-Tarot-DEATH-Rom-1788890685.jpg"
+  ],
+  "banned_social_url_substrings": [
+    "5D89500F-D388-47AF-A46C-E08EE1B5EAD0",
+    "13-death",
+    "tarot-death",
+    "tarot-DEATH",
+    "Sacred-Ground-Tarot-DEATH",
+    "/tarot-6.png",
+    "/tarot-7.png"
+  ],
   "common_modalities_defer": [
     "tarot",
     "reiki"
@@ -288,7 +306,6 @@
         "https://shopsacredground.com/wp-content/uploads/E1D69D85-BFBE-48B3-A050-C1C7EBD6261D.png",
         "https://shopsacredground.com/wp-content/uploads/7DCD8058-19B0-473B-88DE-C02DE087E3DF.png",
         "https://shopsacredground.com/wp-content/uploads/D37816E2-4108-4A9D-8DD3-CE54147BCD68-1.png",
-        "https://shopsacredground.com/wp-content/uploads/5D89500F-D388-47AF-A46C-E08EE1B5EAD0.png",
         "https://shopsacredground.com/wp-content/uploads/9C274566-7BC3-49A7-BB01-AE7A9014EC89.png",
         "https://shopsacredground.com/wp-content/uploads/6BF17627-E985-46A3-A842-EABEAA5F68A6.png",
         "https://shopsacredground.com/wp-content/uploads/FA19B392-161B-411F-AA42-208F644DFDFA.png",
@@ -308,7 +325,7 @@
         "https://shopsacredground.com/wp-content/uploads/AF5B5496-1F86-4BBE-B1E0-30D1C47FDB8A.png",
         "https://shopsacredground.com/wp-content/uploads/699CBD3E-8973-4550-ABAC-2ED68D8D7C14.png"
       ],
-      "notes": "Weakest/default specialty — deferred when any rarer modality (including reiki) shares the day."
+      "notes": "Weakest/default specialty — deferred when any rarer modality (including reiki) shares the day. HARD BAN (Founder Sep 12 2026): NEVER include Death card (media 23493 / 5D89500F…), Death collages tarot-6/tarot-7, or any 13-death / Tarot-DEATH filename — code + banned_social_* enforce."
     },
     "reiki": {
       "label": "Reiki event",
