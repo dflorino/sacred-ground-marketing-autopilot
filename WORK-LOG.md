@@ -124,3 +124,25 @@ S1E6 still scheduled Wed Sep 2 ~6pm CT (FB/IG/TT/YT). Personal `@deneeneflorino4
 ## 2026-08-29 — S1E6 scheduled Wed Sep 2 6pm CT (media 27101)
 
 Founder: set S1E6 / 27101 for Wednesday Sep 2. ML Social FB 6:00 · IG 6:05 · TikTok 6:10 · YouTube 6:00 America/Chicago. IDs FB `6a930302…` · IG `6a930310…` · TT `6a930313…` · YT `6a930315…`. Caption locked (royal tomb / crystal two / next destination).
+
+## 2026-09-12 — Autopilot: never push tarot Death on social
+
+- Founder: Death card posted again Sep 11 afternoon (media 23493 / 5D89500F…). She deleted posts.
+- Autopilot fix on `sacred-ground-marketing-autopilot`: removed Death from `image_rules` tarot pool; `banned_social_*` + `is_banned_social_image_url`; cursor rule `never-push-tarot-death.mdc` (also copied to `~/.cursor/rules/`).
+- WP Death media left in place for Observatory/print deck — social ban only.
+
+## 2026-09-12 — Night pool: 7 dead image URLs uploaded + repointed
+
+Founder review of the next 7 days (`tools/preview_next7.py`) surfaced night plates whose
+`creative_pool` URLs 404'd — the `-1.png` uploads never happened. Two hit this week
+(Sat Sep 12 blue hour, Fri Sep 18 fairy lights).
+
+- Uploaded the 7 local PNGs to WP: blue-hour **28117**, fairy-lights **28119**,
+  cozy-upstairs **28120**, oak-sidewalk **28121**, frost-sparkle **28122**,
+  crescent-venus **28123**, neon-fog-alley **28124**.
+- WP stored them without the `-1` suffix, so `config/image_atmosphere.json` was
+  repointed to the real URLs (7 replacements).
+- Verified: all 45 `nighttime.creative_pool` URLs now return 200 (0 dead).
+- Known open items from the same review, not yet fixed: Wed Sep 16 afternoon is
+  `reuse_blocked` (no plate), and every September date-keyed morning flyer is
+  `founder_trashed` so mornings fall back to specialty art.
