@@ -1,0 +1,395 @@
+[
+  {
+    "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-shamanic.png",
+    "rule": "shaman_medium",
+    "source": "rule_library",
+    "prebranded": false,
+    "recommendation": "Matched image rule: Shaman / medium day (rotating pool).",
+    "events": [
+      "Tarot with Adie",
+      "Shaman Medium Melissa",
+      "Keeper of the Cards: Robert",
+      "Deep Rest: Return to the Divine Feminine",
+      "Ankh Lifeforce Alignment Reiki with Rose"
+    ],
+    "schedule": "SchedulePlan(recommended_at='2026-09-12T09:00:00-05:00', rationale='Daily 09:00 America/Chicago \u2014 today\u2019s full slate (2026-09-12) then tomorrow (2026-09-13).', reminder_of=None)",
+    "flyer_day": "2026-09-12",
+    "date": "2026-09-12",
+    "slot": "morning",
+    "file": "assets/_next7_review/2026-09-12-morning.png",
+    "bytes": 398695
+  },
+  {
+    "url": "https://shopsacredground.com/wp-content/uploads/att.2Vd0C_M8CFjuklmnRdtS-ivNOO7Yk0MAkI8qY-I4uB0.jpg",
+    "rule": "event_featured",
+    "source": "event_featured",
+    "prebranded": false,
+    "recommendation": "Afternoon spotlight \u2014 unused event featured / TEC thumbnail (never a previously posted URL; never the morning plate).",
+    "events": [
+      "Deep Rest: Return to the Divine Feminine"
+    ],
+    "schedule": "SchedulePlan(recommended_at='2026-09-12T17:00:00-05:00', rationale=\"Daily 17:00 Central afternoon spotlight \u2014 one engaging event (prefer tonight's evening gathering; else tomorrow's standout). 5pm chosen for Meta Insights traction headroom before 8pm week_ahead; set schedule_local_time to 16:00 for 4pm.\", reminder_of=None)",
+    "date": "2026-09-12",
+    "slot": "afternoon",
+    "file": "assets/_next7_review/2026-09-12-afternoon.jpg",
+    "bytes": 74207
+  },
+  {
+    "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-fall-store-blue-hour-1.png",
+    "rule": "week_ahead_creative_fall_store_blue_hour",
+    "source": "brand_week_ahead",
+    "prebranded": false,
+    "recommendation": "Night image (creative/fall_store_blue_hour): Blue hour behind locked SG storefront. Cart: n/a. Events stay in caption only. No post-hoc shop-pride overlay on pool/celestial inventory (designed-in only when generating NEW night art).",
+    "events": [
+      "Ankh Lifeforce Alignment Reiki with Rose",
+      "Lisa Maria Intuitive Tarot"
+    ],
+    "schedule": "SchedulePlan(recommended_at='2026-09-12T20:00:00-05:00', rationale='Daily evening planner so people can book the next 2 days.', reminder_of=None)",
+    "window": "2026-09-13 +2d",
+    "date": "2026-09-12",
+    "slot": "night",
+    "file": "assets/_next7_review/2026-09-12-night.png",
+    "error": "HTTP Error 404: Not Found",
+    "bytes": 790083,
+    "local_only": true
+  },
+  {
+    "url": "https://shopsacredground.com/wp-content/uploads/8B0B705D-F5BA-44B8-BAD3-6E3E8875901A.png",
+    "rule": "reiki",
+    "source": "rule_library",
+    "prebranded": false,
+    "recommendation": "Matched image rule: Reiki event (rotating pool).",
+    "events": [
+      "Ankh Lifeforce Alignment Reiki with Rose",
+      "Lisa Maria Intuitive Tarot"
+    ],
+    "schedule": "SchedulePlan(recommended_at='2026-09-13T09:00:00-05:00', rationale='Daily 09:00 America/Chicago \u2014 today\u2019s full slate (2026-09-13) then tomorrow (2026-09-14).', reminder_of=None)",
+    "flyer_day": "2026-09-13",
+    "date": "2026-09-13",
+    "slot": "morning",
+    "file": "assets/_next7_review/2026-09-13-morning.png",
+    "bytes": 2219554
+  },
+  {
+    "url": "https://shopsacredground.com/wp-content/uploads/73094F05-FA72-4FDC-A26C-7B67F30280BD.png",
+    "rule": "tarot",
+    "source": "rule_library",
+    "prebranded": false,
+    "recommendation": "Matched image rule: Tarot \u2014 Sacred Ground deck (FileBird: Tarot Deck SG) (rotating pool).",
+    "events": [
+      "Lisa Maria Intuitive Tarot"
+    ],
+    "schedule": "SchedulePlan(recommended_at='2026-09-13T17:00:00-05:00', rationale=\"Daily 17:00 Central afternoon spotlight \u2014 one engaging event (prefer tonight's evening gathering; else tomorrow's standout). 5pm chosen for Meta Insights traction headroom before 8pm week_ahead; set schedule_local_time to 16:00 for 4pm.\", reminder_of=None)",
+    "date": "2026-09-13",
+    "slot": "afternoon",
+    "file": "assets/_next7_review/2026-09-13-afternoon.png",
+    "bytes": 3250540
+  },
+  {
+    "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-bat-signal-1.png",
+    "rule": "week_ahead_creative_bat_signal",
+    "source": "brand_week_ahead",
+    "prebranded": false,
+    "recommendation": "Night image (creative/bat_signal): Searchlights spelling Sacred Ground (bat-signal style). Cart: n/a. Events stay in caption only. No post-hoc shop-pride overlay on pool/celestial inventory (designed-in only when generating NEW night art).",
+    "events": [
+      "Lisa Maria Intuitive Tarot",
+      "Amber | Customized Therapeutic Massage Sessions",
+      "Divine Insight Sessions with Janel: Akashic Records or Angel Card Readings",
+      "Free Community Meditation"
+    ],
+    "schedule": "SchedulePlan(recommended_at='2026-09-13T20:00:00-05:00', rationale='Daily evening planner so people can book the next 2 days.', reminder_of=None)",
+    "window": "2026-09-14 +2d",
+    "date": "2026-09-13",
+    "slot": "night",
+    "file": "assets/_next7_review/2026-09-13-night.png",
+    "bytes": 225798
+  },
+  {
+    "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Ethereal-angel-wings-made-of-g_1764775330.png",
+    "rule": "angel",
+    "source": "rule_library",
+    "prebranded": false,
+    "recommendation": "Matched image rule: Angel events (rotating pool).",
+    "events": [
+      "Lisa Maria Intuitive Tarot",
+      "Amber | Customized Therapeutic Massage Sessions",
+      "Divine Insight Sessions with Janel: Akashic Records or Angel Card Readings",
+      "Free Community Meditation"
+    ],
+    "schedule": "SchedulePlan(recommended_at='2026-09-14T09:00:00-05:00', rationale='Daily 09:00 America/Chicago \u2014 today\u2019s full slate (2026-09-14) then tomorrow (2026-09-15).', reminder_of=None)",
+    "flyer_day": "2026-09-14",
+    "date": "2026-09-14",
+    "slot": "morning",
+    "file": "assets/_next7_review/2026-09-14-morning.png",
+    "bytes": 502025
+  },
+  {
+    "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-meditation.png",
+    "rule": "meditation",
+    "source": "rule_library",
+    "prebranded": false,
+    "recommendation": "Matched image rule: Meditation (rotating pool).",
+    "events": [
+      "Free Community Meditation"
+    ],
+    "schedule": "SchedulePlan(recommended_at='2026-09-14T17:00:00-05:00', rationale=\"Daily 17:00 Central afternoon spotlight \u2014 one engaging event (prefer tonight's evening gathering; else tomorrow's standout). 5pm chosen for Meta Insights traction headroom before 8pm week_ahead; set schedule_local_time to 16:00 for 4pm.\", reminder_of=None)",
+    "date": "2026-09-14",
+    "slot": "afternoon",
+    "file": "assets/_next7_review/2026-09-14-afternoon.png",
+    "bytes": 374470
+  },
+  {
+    "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-fall-store-bonfire-street-1.png",
+    "rule": "week_ahead_creative_fall_store_bonfire_street",
+    "source": "brand_week_ahead",
+    "prebranded": false,
+    "recommendation": "Night image (creative/fall_store_bonfire_street): Bonfire glow with locked SG storefront. Cart: n/a. Events stay in caption only. No post-hoc shop-pride overlay on pool/celestial inventory (designed-in only when generating NEW night art).",
+    "events": [
+      "Amber | Customized Therapeutic Massage Sessions",
+      "Divine Insight Sessions with Janel: Akashic Records or Angel Card Readings",
+      "Free Community Meditation",
+      "Tina\u2019s Intuitive Tarot, Runes & Reiki Experience",
+      "Free Community Educational Night"
+    ],
+    "schedule": "SchedulePlan(recommended_at='2026-09-14T20:00:00-05:00', rationale='Daily evening planner so people can book the next 2 days.', reminder_of=None)",
+    "window": "2026-09-15 +2d",
+    "date": "2026-09-14",
+    "slot": "night",
+    "file": "assets/_next7_review/2026-09-14-night.png",
+    "bytes": 347658
+  },
+  {
+    "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-akashic.png",
+    "rule": "akashic_records",
+    "source": "rule_library",
+    "prebranded": false,
+    "recommendation": "Matched image rule: Akashic Records (rotating pool).",
+    "events": [
+      "Amber | Customized Therapeutic Massage Sessions",
+      "Divine Insight Sessions with Janel: Akashic Records or Angel Card Readings",
+      "Free Community Meditation",
+      "Tina\u2019s Intuitive Tarot, Runes & Reiki Experience",
+      "Free Community Educational Night"
+    ],
+    "schedule": "SchedulePlan(recommended_at='2026-09-15T09:00:00-05:00', rationale='Daily 09:00 America/Chicago \u2014 today\u2019s full slate (2026-09-15) then tomorrow (2026-09-16).', reminder_of=None)",
+    "flyer_day": "2026-09-15",
+    "date": "2026-09-15",
+    "slot": "morning",
+    "file": "assets/_next7_review/2026-09-15-morning.png",
+    "bytes": 458243
+  },
+  {
+    "url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.15-AM.png",
+    "rule": "store_exterior",
+    "source": "store_photo",
+    "prebranded": false,
+    "recommendation": "Store exterior fallback (empty day or no matching rule).",
+    "events": [
+      "Free Community Educational Night"
+    ],
+    "schedule": "SchedulePlan(recommended_at='2026-09-15T17:00:00-05:00', rationale=\"Daily 17:00 Central afternoon spotlight \u2014 one engaging event (prefer tonight's evening gathering; else tomorrow's standout). 5pm chosen for Meta Insights traction headroom before 8pm week_ahead; set schedule_local_time to 16:00 for 4pm.\", reminder_of=None)",
+    "date": "2026-09-15",
+    "slot": "afternoon",
+    "file": "assets/_next7_review/2026-09-15-afternoon.png",
+    "bytes": 1099407
+  },
+  {
+    "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-fall-store-pumpkin-porch-1.png",
+    "rule": "week_ahead_creative_fall_store_pumpkin_porch",
+    "source": "brand_week_ahead",
+    "prebranded": false,
+    "recommendation": "Night image (creative/fall_store_pumpkin_porch): Soft pumpkin porch at locked SG storefront. Cart: n/a. Events stay in caption only. No post-hoc shop-pride overlay on pool/celestial inventory (designed-in only when generating NEW night art).",
+    "events": [
+      "Tina\u2019s Intuitive Tarot, Runes & Reiki Experience",
+      "Free Community Educational Night",
+      "Tarot with Adie",
+      "Tai Chi Gung with Sherry Gurley",
+      "Reiki with Renee",
+      "TarotHeads With Andre Free Community Event"
+    ],
+    "schedule": "SchedulePlan(recommended_at='2026-09-15T20:00:00-05:00', rationale='Daily evening planner so people can book the next 2 days.', reminder_of=None)",
+    "window": "2026-09-16 +2d",
+    "date": "2026-09-15",
+    "slot": "night",
+    "file": "assets/_next7_review/2026-09-15-night.png",
+    "bytes": 314984
+  },
+  {
+    "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-energy-waves.png",
+    "rule": "tai_chi",
+    "source": "rule_library",
+    "prebranded": false,
+    "recommendation": "Matched image rule: Tai Chi / Tai Chi Gung (rotating pool).",
+    "events": [
+      "Tina\u2019s Intuitive Tarot, Runes & Reiki Experience",
+      "Free Community Educational Night",
+      "Tarot with Adie",
+      "Tai Chi Gung with Sherry Gurley",
+      "Reiki with Renee",
+      "TarotHeads With Andre Free Community Event"
+    ],
+    "schedule": "SchedulePlan(recommended_at='2026-09-16T09:00:00-05:00', rationale='Daily 09:00 America/Chicago \u2014 today\u2019s full slate (2026-09-16) then tomorrow (2026-09-17).', reminder_of=None)",
+    "flyer_day": "2026-09-16",
+    "date": "2026-09-16",
+    "slot": "morning",
+    "file": "assets/_next7_review/2026-09-16-morning.png",
+    "bytes": 244453
+  },
+  {
+    "url": "",
+    "rule": "reuse_blocked",
+    "source": "reuse_blocked",
+    "prebranded": false,
+    "recommendation": "NEVER-REUSE: every candidate media URL was already posted or used in a published draft. Regenerate a new plate, pick an unused alternate, or skip \u2014 do not ship a repeat. Same-slot FB+IG single-image mode (one URL to both platforms in one publish) is OK; cross-campaign / cross-day reuse is not. (campaign=afternoon_spotlight)",
+    "events": [
+      "Free Community Educational Night"
+    ],
+    "schedule": "SchedulePlan(recommended_at='2026-09-16T17:00:00-05:00', rationale=\"Daily 17:00 Central afternoon spotlight \u2014 one engaging event (prefer tonight's evening gathering; else tomorrow's standout). 5pm chosen for Meta Insights traction headroom before 8pm week_ahead; set schedule_local_time to 16:00 for 4pm.\", reminder_of=None)",
+    "date": "2026-09-16",
+    "slot": "afternoon",
+    "file": null
+  },
+  {
+    "url": "https://shopsacredground.com/wp-content/uploads/sg-night-fall.png",
+    "rule": "week_ahead_storefront_season_fall_storefront",
+    "source": "brand_week_ahead",
+    "prebranded": false,
+    "recommendation": "Night image (creative/season_fall_storefront): Fall storefront (season mix). Cart: chrysanthemums, autumn foliage, small gourds/apples. Events stay in caption only. No post-hoc shop-pride overlay on pool/celestial inventory (designed-in only when generating NEW night art).",
+    "events": [
+      "Tarot with Adie",
+      "Tai Chi Gung with Sherry Gurley",
+      "Reiki with Renee",
+      "TarotHeads With Andre Free Community Event",
+      "The Reflexology Reset: Restorative Wellness w/ Cheryl",
+      "Keeper of the Cards: Robert",
+      "Mabon Wheel of the Year Celebration With Kate"
+    ],
+    "schedule": "SchedulePlan(recommended_at='2026-09-16T20:00:00-05:00', rationale='Daily evening planner so people can book the next 2 days.', reminder_of=None)",
+    "window": "2026-09-17 +2d",
+    "date": "2026-09-16",
+    "slot": "night",
+    "file": "assets/_next7_review/2026-09-16-night.png",
+    "bytes": 465664
+  },
+  {
+    "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-cards.png",
+    "rule": "robert",
+    "source": "rule_library",
+    "prebranded": false,
+    "recommendation": "Matched image rule: Robert (cards) \u2014 not two days in a row (rotating pool).",
+    "events": [
+      "Tarot with Adie",
+      "Tai Chi Gung with Sherry Gurley",
+      "Reiki with Renee",
+      "TarotHeads With Andre Free Community Event",
+      "The Reflexology Reset: Restorative Wellness w/ Cheryl",
+      "Keeper of the Cards: Robert",
+      "Mabon Wheel of the Year Celebration With Kate"
+    ],
+    "schedule": "SchedulePlan(recommended_at='2026-09-17T09:00:00-05:00', rationale='Daily 09:00 America/Chicago \u2014 today\u2019s full slate (2026-09-17) then tomorrow (2026-09-18).', reminder_of=None)",
+    "flyer_day": "2026-09-17",
+    "date": "2026-09-17",
+    "slot": "morning",
+    "file": "assets/_next7_review/2026-09-17-morning.png",
+    "bytes": 310320
+  },
+  {
+    "url": "https://shopsacredground.com/wp-content/uploads/0199F264-B595-401E-9F01-5B2E2BF6DE63.png",
+    "rule": "tarot",
+    "source": "rule_library",
+    "prebranded": false,
+    "recommendation": "Matched image rule: Tarot \u2014 Sacred Ground deck (FileBird: Tarot Deck SG) (rotating pool).",
+    "events": [
+      "TarotHeads With Andre Free Community Event"
+    ],
+    "schedule": "SchedulePlan(recommended_at='2026-09-17T17:00:00-05:00', rationale=\"Daily 17:00 Central afternoon spotlight \u2014 one engaging event (prefer tonight's evening gathering; else tomorrow's standout). 5pm chosen for Meta Insights traction headroom before 8pm week_ahead; set schedule_local_time to 16:00 for 4pm.\", reminder_of=None)",
+    "date": "2026-09-17",
+    "slot": "afternoon",
+    "file": "assets/_next7_review/2026-09-17-afternoon.png",
+    "bytes": 2867271
+  },
+  {
+    "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-fall-store-maple-leaves-1.png",
+    "rule": "week_ahead_creative_fall_store_maple_leaves",
+    "source": "brand_week_ahead",
+    "prebranded": false,
+    "recommendation": "Night image (creative/fall_store_maple_leaves): Maple leaves around locked SG storefront. Cart: n/a. Events stay in caption only. No post-hoc shop-pride overlay on pool/celestial inventory (designed-in only when generating NEW night art).",
+    "events": [
+      "The Reflexology Reset: Restorative Wellness w/ Cheryl",
+      "Keeper of the Cards: Robert",
+      "Mabon Wheel of the Year Celebration With Kate",
+      "Tarot with Adie",
+      "Shaman Medium Melissa",
+      "Ankh Lifeforce Alignment Reiki with Rose",
+      "Keeper of the Cards: Robert",
+      "Sound Bath or Shamanic Drum Journey With Andre"
+    ],
+    "schedule": "SchedulePlan(recommended_at='2026-09-17T20:00:00-05:00', rationale='Daily evening planner so people can book the next 2 days.', reminder_of=None)",
+    "window": "2026-09-18 +2d",
+    "date": "2026-09-17",
+    "slot": "night",
+    "file": "assets/_next7_review/2026-09-17-night.png",
+    "bytes": 330186
+  },
+  {
+    "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Ethereal-spirit-medium-connect_1763319692.png",
+    "rule": "shaman_medium",
+    "source": "rule_library",
+    "prebranded": false,
+    "recommendation": "Matched image rule: Shaman / medium day (rotating pool).",
+    "events": [
+      "The Reflexology Reset: Restorative Wellness w/ Cheryl",
+      "Keeper of the Cards: Robert",
+      "Mabon Wheel of the Year Celebration With Kate",
+      "Tarot with Adie",
+      "Shaman Medium Melissa",
+      "Ankh Lifeforce Alignment Reiki with Rose",
+      "Keeper of the Cards: Robert",
+      "Sound Bath or Shamanic Drum Journey With Andre"
+    ],
+    "schedule": "SchedulePlan(recommended_at='2026-09-18T09:00:00-05:00', rationale='Daily 09:00 America/Chicago \u2014 today\u2019s full slate (2026-09-18) then tomorrow (2026-09-19).', reminder_of=None)",
+    "flyer_day": "2026-09-18",
+    "date": "2026-09-18",
+    "slot": "morning",
+    "file": "assets/_next7_review/2026-09-18-morning.png",
+    "bytes": 344042
+  },
+  {
+    "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_another-Create-a-digital-ar_1765490030.png",
+    "rule": "event_featured",
+    "source": "event_featured",
+    "prebranded": false,
+    "recommendation": "Afternoon spotlight \u2014 unused event featured / TEC thumbnail (never a previously posted URL; never the morning plate).",
+    "events": [
+      "Mabon Wheel of the Year Celebration With Kate"
+    ],
+    "schedule": "SchedulePlan(recommended_at='2026-09-18T17:00:00-05:00', rationale=\"Daily 17:00 Central afternoon spotlight \u2014 one engaging event (prefer tonight's evening gathering; else tomorrow's standout). 5pm chosen for Meta Insights traction headroom before 8pm week_ahead; set schedule_local_time to 16:00 for 4pm.\", reminder_of=None)",
+    "date": "2026-09-18",
+    "slot": "afternoon",
+    "file": "assets/_next7_review/2026-09-18-afternoon.png",
+    "bytes": 528662
+  },
+  {
+    "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-fall-store-fairy-lights-1.png",
+    "rule": "week_ahead_creative_fall_store_fairy_lights",
+    "source": "brand_week_ahead",
+    "prebranded": false,
+    "recommendation": "Night image (creative/fall_store_fairy_lights): Fairy lights path to locked SG storefront. Cart: n/a. Events stay in caption only. No post-hoc shop-pride overlay on pool/celestial inventory (designed-in only when generating NEW night art).",
+    "events": [
+      "Tarot with Adie",
+      "Shaman Medium Melissa",
+      "Ankh Lifeforce Alignment Reiki with Rose",
+      "Keeper of the Cards: Robert",
+      "Sound Bath or Shamanic Drum Journey With Andre",
+      "Reiki Share Free Community Event"
+    ],
+    "schedule": "SchedulePlan(recommended_at='2026-09-18T20:00:00-05:00', rationale='Daily evening planner so people can book the next 2 days.', reminder_of=None)",
+    "window": "2026-09-19 +2d",
+    "date": "2026-09-18",
+    "slot": "night",
+    "file": "assets/_next7_review/2026-09-18-night.png",
+    "error": "HTTP Error 404: Not Found",
+    "bytes": 812336,
+    "local_only": true
+  }
+]
