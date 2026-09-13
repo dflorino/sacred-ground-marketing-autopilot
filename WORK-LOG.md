@@ -1,3 +1,8 @@
+## 2026-09-13 — S1E11 scheduled (media 28153)
+
+Founder handoff Title **S1E11** / media **28153** / `s01e11-gen102-KEEP.mp4` only. After S1E9 (Wed Sep 16 6pm all platforms): IG Wed Sep 23 6pm · Threads Wed Sep 23 6:05pm · FB Thu Sep 24 9am · YT Fri Sep 25 4pm · TT Sun Sep 27 9am America/Chicago. IDs IG `6aa6c0cec1cf0e1b58c4e177` · TH `6aa6c0d4ab4fbf0ad84e8cf6` · FB `6aa6c0cfc1cf0e1b58c4e1a4` · YT `6aa6c0d0651458e0fff9e34f` · TT `6aa6c0d4ab4fbf0ad84e8ce0`. Brand YouTube `@sacredgroundchicagoland`. Caption from S1E11-SOCIAL-GRAB. Do not post plate 28137 / gen 101 / captioned archive.
+
+
 ## 2026-09-11 — Morning missed Threads/TikTok; automation prompt fixed
 
 Today’s Magritte morning (`1789135931977…magritte-v1`) shipped FB+IG only. Root cause: `AUTOMATION-DRAFT.md` morning Agent hard rule still said **“Only Facebook + Instagram”** — Cloud Agents followed that and skipped TikTok/Threads even though `settings.json` already listed all four.

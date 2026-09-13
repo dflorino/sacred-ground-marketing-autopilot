@@ -254,6 +254,46 @@
       "scheduled_for": "2026-09-16T18:00:00-05:00",
       "updated_at": "2026-09-06T16:58:20Z",
       "threads_status": "scheduled_2026-09-16T23:00:00.000Z"
+    },
+    "s1e11": {
+      "season": 1,
+      "episode": 11,
+      "library_name": "S1E11",
+      "title": "Center of the Moon / Galactic Federation Command Post",
+      "media_id": 28153,
+      "plate_id": 28137,
+      "plate_library_name": "S1E11 USE plate take 2",
+      "file": "s01e11-gen102-KEEP.mp4",
+      "url": "https://shopsacredground.com/wp-content/uploads/s01e11-gen102-KEEP.mp4",
+      "admin": "https://shopsacredground.com/wp-admin/upload.php?item=28153",
+      "filebird_folder": "SG Reels (54)",
+      "mime_type": "video/mp4",
+      "schedule_status": "scheduled_cadence_2026-09-23_through_27",
+      "handed_off": "2026-09-13",
+      "note": "Founder KEEP 2026-09-13 \u2014 USE S1E11 / 28153 only (gen 102). No burned captions. Stagger IG Wed 6pm \u00b7 FB Thu 9am \u00b7 YT Fri 4pm \u00b7 TT Sun 9am CT; Threads with IG.",
+      "do_not_use": {
+        "plate_id": 28137,
+        "archive_gen101": 28126,
+        "archive_gen101_take": 28113,
+        "archive_captioned": 28125,
+        "note": "28137 plate still only. Never post gen 101 or captioned archive."
+      },
+      "ml_social_ids": {
+        "instagram": "6aa6c0cec1cf0e1b58c4e177",
+        "facebook": "6aa6c0cfc1cf0e1b58c4e1a4",
+        "youtube": "6aa6c0d0651458e0fff9e34f",
+        "tiktok": "6aa6c0d4ab4fbf0ad84e8ce0",
+        "threads": "6aa6c0d4ab4fbf0ad84e8cf6"
+      },
+      "scheduled_for": {
+        "instagram": "2026-09-23T18:00:00-05:00",
+        "threads": "2026-09-23T18:05:00-05:00",
+        "facebook": "2026-09-24T09:00:00-05:00",
+        "youtube": "2026-09-25T16:00:00-05:00",
+        "tiktok": "2026-09-27T09:00:00-05:00"
+      },
+      "updated_at": "2026-09-13T15:27:16Z",
+      "threads_status": "scheduled_2026-09-23T23:05:00.000Z"
     }
   }
 }
