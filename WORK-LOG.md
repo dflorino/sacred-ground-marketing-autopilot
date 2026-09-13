@@ -185,3 +185,15 @@ Thu Sep 17 Wheel of Fortune 0.57). Generated square 1:1 afternoon plates via
 Also listed those two tall tarot URLs in `instagram_unsafe_urls` so
 `plan_image` / `_pick_from_urls` cannot select them again for the shared FB+IG
 plate. Planner now returns `afternoon_spotlight_plate` for both days.
+
+## 2026-09-12 — Cosmic remakes for Sun/Thu 5pm (Founder rejected cabinet/folk)
+
+Founder: those remakes were “unacceptable boring and ridiculous” — wants cosmic,
+original, not like anything else. Image key was $0 on a $12 cap; wallet unlimited
+→ repointed Image + override to wallet (do-not-ask rule). Generated:
+
+- Sun Sep 13 Lisa Maria: first pass 28150 rendered as a souvenir dish (prompt said
+  “plate”). Replaced with full-bleed nebula L-train **28152**.
+- Thu Sep 17 TarotHeads: constellation chairs around a planet-table **28151**.
+
+Both 1:1. Pinned in `afternoon_spotlight_plates.json`.
