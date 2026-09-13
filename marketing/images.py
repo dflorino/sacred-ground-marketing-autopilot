@@ -129,9 +129,29 @@ def is_banned_social_image_url(url: Optional[str]) -> bool:
     return False
 
 
+def is_instagram_unsafe_url(url: Optional[str]) -> bool:
+    """True for plates Instagram will reject (taller than 0.75 or known tall files)."""
+    if not url:
+        return False
+    u = str(url).strip()
+    if not u:
+        return False
+    cfg = image_rules()
+    blocked = {str(x).strip() for x in (cfg.get("instagram_unsafe_urls") or []) if str(x).strip()}
+    return u in blocked
+
+
 def filter_social_eligible_urls(urls: Sequence[str]) -> List[str]:
-    """Drop hard-banned social URLs from a candidate pool."""
-    return [str(u) for u in urls if u and not is_banned_social_image_url(str(u))]
+    """Drop hard-banned social URLs and Instagram-unsafe portraits from a pool."""
+    out: List[str] = []
+    for raw in urls:
+        if not raw:
+            continue
+        u = str(raw)
+        if is_banned_social_image_url(u) or is_instagram_unsafe_url(u):
+            continue
+        out.append(u)
+    return out
 
 
 @lru_cache(maxsize=1)
@@ -391,6 +411,9 @@ def cooldown_blocked_urls(
             blocked.add(str(u))
     # Founder FINAL 2026-09-12 — Death card / Death collages never eligible.
     blocked |= banned_social_image_urls()
+    # Shared FB+IG plates must stay Instagram feed-safe (0.75–1.91).
+    cfg = image_rules()
+    blocked |= {str(x).strip() for x in (cfg.get("instagram_unsafe_urls") or []) if str(x).strip()}
     return blocked
 
 

@@ -21,6 +21,11 @@
     "/tarot-6.png",
     "/tarot-7.png"
   ],
+  "instagram_unsafe_urls": [
+    "https://shopsacredground.com/wp-content/uploads/73094F05-FA72-4FDC-A26C-7B67F30280BD.png",
+    "https://shopsacredground.com/wp-content/uploads/0199F264-B595-401E-9F01-5B2E2BF6DE63.png"
+  ],
+  "instagram_unsafe_note": "Founder Sep 12 2026: shared FB+IG plates must be feed-safe (0.75–1.91). These two tarot portraits (Seven of Pentacles 0.67, Wheel of Fortune 0.57) failed Instagram. Remade as square afternoon plates for Sep 13 and Sep 17.",
   "common_modalities_defer": [
     "tarot",
     "reiki"

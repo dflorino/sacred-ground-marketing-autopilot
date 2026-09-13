@@ -171,3 +171,17 @@ The design pool was intact the whole time (23 morning styles, 20 Living Worlds).
   same band as Einstein and Folk).
 - Still open: afternoon plates for Sep 13 / 15 / 16 / 17 (two too tall for Instagram,
   one storefront she rejected, one with no plate at all).
+
+## 2026-09-12 — Remake Sunday + Thursday 5pm plates that Instagram rejected
+
+Founder: remake the ones too tall for Instagram (Sun Sep 13 Seven of Pentacles 0.67,
+Thu Sep 17 Wheel of Fortune 0.57). Generated square 1:1 afternoon plates via
+`mlimg_generate` after OpenRouter check (unlimited remaining). Pinned in
+`afternoon_spotlight_plates.json`:
+
+- Sep 13 Lisa Maria — media **28145**
+- Sep 17 TarotHeads with Andre — media **28146**
+
+Also listed those two tall tarot URLs in `instagram_unsafe_urls` so
+`plan_image` / `_pick_from_urls` cannot select them again for the shared FB+IG
+plate. Planner now returns `afternoon_spotlight_plate` for both days.

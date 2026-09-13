@@ -2325,6 +2325,18 @@ class AutopilotTests(unittest.TestCase):
         )
         self.assertIsNone(picked)
 
+        tall_seven = (
+            "https://shopsacredground.com/wp-content/uploads/"
+            "73094F05-FA72-4FDC-A26C-7B67F30280BD.png"
+        )
+        tall_wheel = (
+            "https://shopsacredground.com/wp-content/uploads/"
+            "0199F264-B595-401E-9F01-5B2E2BF6DE63.png"
+        )
+        self.assertTrue(images.is_instagram_unsafe_url(tall_seven))
+        self.assertTrue(images.is_instagram_unsafe_url(tall_wheel))
+        self.assertNotIn(tall_seven, images.filter_social_eligible_urls([tall_seven, tall_wheel]))
+
     def test_social_proof_no_overlay_on_existing_inventory(self) -> None:
         """Founder cutover: never stamp badges onto finished plates; captions OK."""
         from marketing import morning_flyers as mf
