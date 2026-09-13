@@ -202,3 +202,9 @@ Both 1:1. Pinned in `afternoon_spotlight_plates.json`.
 
 Founder: “lisa maria and tarot heads are super cool, now thats what im talking about.”
 Sep 13 (**28152**) and Sep 17 (**28151**) marked `founder_approved`. Do not remake.
+
+## 2026-09-13 — Founder: week of Sep 13–19 “looks good”
+
+Reviewed all three slots (morning / afternoon / night) for Sun 13 through Sat 19.
+Saturday Sep 12 is over and out of the review. Cosmic Lisa Maria (Sun 5pm) and
+TarotHeads (Thu 5pm) stay locked. Do not remake this week unless she names a slot.
