@@ -197,3 +197,8 @@ original, not like anything else. Image key was $0 on a $12 cap; wallet unlimite
 - Thu Sep 17 TarotHeads: constellation chairs around a planet-table **28151**.
 
 Both 1:1. Pinned in `afternoon_spotlight_plates.json`.
+
+## 2026-09-12 — Founder LOCK: cosmic Lisa Maria + TarotHeads afternoons
+
+Founder: “lisa maria and tarot heads are super cool, now thats what im talking about.”
+Sep 13 (**28152**) and Sep 17 (**28151**) marked `founder_approved`. Do not remake.
