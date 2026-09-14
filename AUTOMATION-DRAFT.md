@@ -8,7 +8,7 @@ Code schedule shipped in `87f5375`. Cursor Cloud Automations **cannot be listed 
 | **SG Afternoon Spotlight 5pm Social** | Daily **5:00 PM** America/Chicago (`0 17 * * *`) | `run --source live-strict` → `publish-afternoon-spotlight` | **Active** — do not disable unless Founder asks |
 | **SG Week-Ahead 7pm Social** | Daily **7:00 PM** America/Chicago (`0 19 * * *`) | `run --source live-strict` → `publish-week-ahead` | **Leave intact** — only verify Next run shows 7:00 PM CT |
 | **SG Tuesday Meditation 4pm Social** | **Tue 4:00 PM** America/Chicago (`0 16 * * 2`) | `run --source live-strict` → `publish-tuesday-meditation` | **Leave intact** — only verify Tuesday 4:00 PM CT |
-| **SG Reel-building Friday Spencer** | Weekly **Friday** America/Chicago | Scrub Spencer’s Friday YouTube video → file notes into `dflorino/sacredground-maintenance` `reel-building/` → report findings to Founder | **MUST stay Active** — knowledge scrub only; **not** episode / S1E1 publish |
+| **SG Reel-building Friday Spencer** | Weekly **Friday** America/Chicago | Scrub Spencer’s Friday YouTube video → file notes into `dflorino/sacredground-maintenance` `reel-building/` → write a short **Founder recap** at the top of `reel-building/STATUS.md` (6 bullets: title, link, keep, skip, reel-spine yes/no) so she can see it without opening the full scour | **MUST stay Active** — knowledge scrub only; **not** episode / S1E1 publish |
 | SG Daily Reels 10:30am | Daily 10:30 AM (scaffold) | none (not wired) | **Inactive** — do not activate |
 
 Secret on all live image jobs: **`ZERNIO_API_KEY`**. Repo: `dflorino/sacred-ground-marketing-autopilot` · branch `main`.
