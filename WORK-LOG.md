@@ -1,3 +1,15 @@
+## 2026-09-15 — Morning remake sent (amber landed)
+
+Founder deleted the 9am Magritte (garbled type). Museum preview rejected. She approved `sg-morning-flyer-2026-09-15-amber-landed.jpg` (media **28217**) and said send. Same plate FB+IG+TT+Threads via `publish-today` only.
+
+- Facebook published `6aa980daa50c2eb0572f8793` — https://www.facebook.com/101428372368870_1114625384412699
+- Instagram published `6aa980e79ba24086e3ad70c9` — https://www.instagram.com/p/DdUQL8xiL4A/
+- Threads published `6aa980f4a50c2eb0572f9218` — https://www.threads.com/@shopsacredground/post/DdUQNdNkZqR
+- TikTok published `6aa98108fecd0f7299b72864` — https://www.tiktok.com/@shopsacredground/video/7685815952314813709
+
+Caption today-first (Amber / Janel / Meditation) then Wednesday Tina + Educational Night. Did not publish afternoon / week_ahead / tuesday_meditation.
+
+
 ## 2026-09-13 — S1E11 scheduled (media 28153)
 
 Founder handoff Title **S1E11** / media **28153** / `s01e11-gen102-KEEP.mp4` only. After S1E9 (Wed Sep 16 6pm all platforms): IG Wed Sep 23 6pm · Threads Wed Sep 23 6:05pm · FB Thu Sep 24 9am · YT Fri Sep 25 4pm · TT Sun Sep 27 9am America/Chicago. IDs IG `6aa6c0cec1cf0e1b58c4e177` · TH `6aa6c0d4ab4fbf0ad84e8cf6` · FB `6aa6c0cfc1cf0e1b58c4e1a4` · YT `6aa6c0d0651458e0fff9e34f` · TT `6aa6c0d4ab4fbf0ad84e8ce0`. Brand YouTube `@sacredgroundchicagoland`. Caption from S1E11-SOCIAL-GRAB. Do not post plate 28137 / gen 101 / captioned archive.
