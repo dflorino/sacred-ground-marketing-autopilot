@@ -1862,8 +1862,50 @@ class AutopilotTests(unittest.TestCase):
 
         # Existing day is not regenerated without --force
         again = mf.ensure_flyer_for_day(empty_day, [], force=False)
-        self.assertEqual(again["action"], "exists")
+        self.assertIn(again["action"], ("exists", "scheduled_skip"))
         self.assertFalse(again["needs_upload"])
+
+    def test_ensure_skips_invent_when_day_already_scheduled(self) -> None:
+        from marketing import morning_flyers as mf
+
+        day = date(2026, 10, 3)
+        mf.register_flyer(
+            day,
+            local="assets/queued.jpg",
+            url="https://shopsacredground.com/wp-content/uploads/queued-morning.jpg",
+            media_id=1,
+            copy={"label": "Queued", "covers": ["Tarot with Adie"], "lines": []},
+            events=[],
+        )
+        data = mf.load_flyers_config()
+        data["flyers"][day.isoformat()]["visual_style"] = "surprise_where_landed"
+        data["flyers"][day.isoformat()]["founder_approved"] = True
+        mf.save_flyers_config(data)
+
+        info = mf.ensure_flyer_for_day(day, [], force=False)
+        self.assertEqual(info["action"], "scheduled_skip")
+        self.assertEqual(info.get("reason"), "already_scheduled")
+        self.assertFalse(info.get("needs_ai_generation"))
+        self.assertEqual(info["entry"].get("visual_style"), "surprise_where_landed")
+        self.assertTrue(mf.today_auto_publish_allowed(day))
+
+        held = date(2026, 10, 4)
+        mf.register_flyer(
+            held,
+            local="assets/held.jpg",
+            url="https://shopsacredground.com/wp-content/uploads/held-morning.jpg",
+            media_id=2,
+            copy={"label": "Held", "covers": ["Tarot with Adie"], "lines": []},
+            events=[],
+        )
+        data = mf.load_flyers_config()
+        data["flyers"][held.isoformat()]["awaiting_founder_review"] = True
+        data["flyers"][held.isoformat()]["founder_approved"] = True
+        mf.save_flyers_config(data)
+        held_info = mf.ensure_flyer_for_day(held, [], force=False)
+        self.assertEqual(held_info["action"], "scheduled_skip")
+        self.assertEqual(held_info.get("reason"), "held")
+        self.assertFalse(mf.today_auto_publish_allowed(held))
 
     def test_config_morning_flyers_price_free(self) -> None:
         """Repo morning_flyers.json labels/covers must never carry $ prices."""

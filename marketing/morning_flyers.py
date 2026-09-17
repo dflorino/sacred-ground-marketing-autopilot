@@ -452,6 +452,7 @@ def load_flyers_config() -> Dict[str, Any]:
         return {"notes": NOTES, "prebranded_default": True, "flyers": {}}
     data.setdefault("flyers", {})
     data.setdefault("prebranded_default", True)
+    data.setdefault("invent_new_plate_only_when_unscheduled", True)
     data["notes"] = NOTES
     return data
 
@@ -460,6 +461,7 @@ def save_flyers_config(data: Dict[str, Any]) -> None:
     data = dict(data)
     data["notes"] = NOTES
     data.setdefault("prebranded_default", True)
+    data.setdefault("invent_new_plate_only_when_unscheduled", True)
     data.setdefault("flyers", {})
     # Validate all text fields are price-free before write.
     for day_key, entry in (data.get("flyers") or {}).items():
@@ -483,6 +485,82 @@ def flyer_entry_for_day(day: date) -> Optional[Dict[str, Any]]:
     flyers = load_flyers_config().get("flyers") or {}
     entry = flyers.get(day.isoformat())
     return entry if isinstance(entry, dict) else None
+
+
+def invent_new_plate_only_when_unscheduled() -> bool:
+    """Founder Sep 17 2026: 9am may invent Magritte/Einstein only if no flyer is scheduled."""
+    data = load_flyers_config()
+    if data.get("invent_new_plate_only_when_unscheduled") is False:
+        return False
+    try:
+        from .paths import settings
+
+        camp = (settings().get("campaigns") or {}).get("today") or {}
+        if camp.get("invent_new_plate_only_when_unscheduled") is False:
+            return False
+    except Exception:
+        pass
+    return True
+
+
+def flyer_day_is_scheduled(entry: Optional[Dict[str, Any]]) -> bool:
+    """Any date-keyed morning_flyers row counts as already scheduled."""
+    return isinstance(entry, dict) and bool(entry)
+
+
+def flyer_entry_is_held(entry: Optional[Dict[str, Any]]) -> bool:
+    if not isinstance(entry, dict):
+        return False
+    return bool(
+        entry.get("do_not_remake")
+        or entry.get("do_not_publish")
+        or entry.get("awaiting_founder_review")
+        or entry.get("status") == "founder_trashed"
+        or entry.get("founder_trashed")
+    )
+
+
+def today_auto_publish_allowed(day: date) -> bool:
+    """Send at 9am only for a scheduled, Founder-approved plate that is not on hold."""
+    try:
+        from .paths import settings
+
+        camp = (settings().get("campaigns") or {}).get("today") or {}
+    except Exception:
+        camp = {}
+    if not camp.get("auto_publish"):
+        return False
+    if camp.get("auto_publish_only_scheduled_approved", True):
+        entry = flyer_entry_for_day(day)
+        if not flyer_day_is_scheduled(entry) or flyer_entry_is_held(entry):
+            return False
+        if not entry.get("founder_approved"):
+            return False
+    return True
+
+
+def _scheduled_skip_result(
+    day: date,
+    existing: Dict[str, Any],
+    *,
+    reason: str,
+) -> Dict[str, Any]:
+    url = str(existing.get("url") or "").strip()
+    return {
+        "day": day.isoformat(),
+        "action": "scheduled_skip",
+        "reason": reason,
+        "needs_upload": False,
+        "needs_ai_generation": False,
+        "needs_upload_platforms": [],
+        "entry": existing,
+        "local": existing.get("local"),
+        "url": url,
+        "visual_style": existing.get("visual_style"),
+        "single_image_mode": True,
+        "pride_baked_in": existing.get("pride_baked_in"),
+        "invent_new_plate_only_when_unscheduled": True,
+    }
 
 
 def resolve_flyer_urls(entry: Dict[str, Any]) -> Tuple[str, str]:
@@ -1935,14 +2013,17 @@ def ensure_flyer_for_day(
     (opt-in via allow_ig_variant + url_instagram only).
     """
     existing = flyer_entry_for_day(day)
-    # Founder Sep 7 2026: trashed queue — never regenerate / burn credits.
-    if existing and (
-        existing.get("do_not_remake")
-        or existing.get("do_not_publish")
-        or existing.get("awaiting_founder_review")
-        or existing.get("status") == "founder_trashed"
+    # Founder Sep 7 2026: trashed / held queue — never regenerate / burn credits.
+    if existing and flyer_entry_is_held(existing):
+        return _scheduled_skip_result(day, existing, reason="held")
+    # Founder Sep 17 2026: invent Magritte/Folk/Da Vinci/Einstein only when
+    # that Chicago day has no date-keyed flyer. 9am must not overwrite a queue.
+    if (
+        existing
+        and invent_new_plate_only_when_unscheduled()
+        and not force
     ):
-        return existing
+        return _scheduled_skip_result(day, existing, reason="already_scheduled")
 
     day_events = _day_events(day, events)
     copy = build_flyer_copy(day, day_events)

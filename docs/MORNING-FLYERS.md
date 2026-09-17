@@ -136,7 +136,7 @@ The shared plate must look **colorful, bright, interesting, engaging** — unexp
    python3 -m marketing generate-morning-flyers --days 7 --source live-strict
    ```
 
-2. **Morning job @ 9am** — ensure today + tomorrow flyers:
+2. **Morning job @ 9am** — use a queued flyer if that date already has a row. Invent Magritte/Folk/Da Vinci/Einstein **only when that Chicago day has nothing scheduled** (`invent_new_plate_only_when_unscheduled`). Never `--force` at 9am. `auto_publish` sends only a scheduled Founder-approved plate (`auto_publish_only_scheduled_approved`).
 
    ```bash
    python3 -m marketing generate-morning-flyers --start-offset 0 --days 2 --source live-strict

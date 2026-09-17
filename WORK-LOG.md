@@ -1,3 +1,11 @@
+## 2026-09-17 — Invent only when nothing is scheduled
+
+Founder: turn the 9am invent/auto-send switches off, or only use them when nothing is scheduled.
+
+- `invent_new_plate_only_when_unscheduled: true` — generate Magritte/Folk/Da Vinci/Einstein only if that Chicago day has no `morning_flyers.json` row
+- `auto_publish_only_scheduled_approved: true` — 9am sends only a scheduled Founder-approved plate that is not on hold
+- `generate-morning-flyers` returns `scheduled_skip` and must not `--force` at 9am
+
 ## 2026-09-17 — Unapproved Einstein morning; Friday held
 
 9am published `sg-morning-flyer-2026-09-17-einstein-v1.png` (chalkboard, garbled type). Founder: boring, not approved. Same path as Sep 15 Magritte — `founder_approved` was still true while `awaiting_founder_review` said held (Sep 14 remake hold). Automation generated Einstein instead of waiting.

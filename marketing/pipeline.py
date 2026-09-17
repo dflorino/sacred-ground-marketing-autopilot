@@ -322,7 +322,11 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                         notes=day_notes,
                     )
                     if draft:
-                        if today_cfg.get("auto_publish") and not is_paused():
+                        if (
+                            today_cfg.get("auto_publish")
+                            and not is_paused()
+                            and mf.today_auto_publish_allowed(flyer_day)
+                        ):
                             draft = _auto_ready_for_publish(draft["id"])
                         created.append(draft)
                     else:

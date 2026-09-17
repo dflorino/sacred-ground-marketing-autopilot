@@ -29,11 +29,13 @@
       "platforms": ["facebook", "instagram", "tiktok", "threads"],
       "source": "the_events_calendar",
       "auto_publish": true,
+      "invent_new_plate_only_when_unscheduled": true,
+      "auto_publish_only_scheduled_approved": true,
       "empty_day_fallback": true,
       "default_image_url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.15-AM.png",
       "image_policy": "image_rules_library",
       "image_rules_file": "config/image_rules.json",
-      "notes": "Every morning 9:00 AM America/Chicago (settings schedule_local_time=09:00; Cursor Automation must also be 9:00 AM CT — agents cannot edit Automations). Lineup = ALL remaining events on publish day (full day, not evening-only) + ALL events on tomorrow. Caption opener is today-first when today has events; tomorrow-only wording only when today is empty. Flyer prefers today’s date key when today has events, else tomorrow. On-image word TODAY / TOMORROW matches flyer day; prebranded flyers skip overlays. Campaign key stays 'today' for publish-today. Never lead with “tonight” at 9am when daytime sessions exist. Do NOT flip to 10:00 unless Founder explicitly wants 10am. Platforms = Facebook + Instagram + TikTok photo + Threads (same plate; Threads caption truncated to 500 chars). Cloud Agent instructions in AUTOMATION-DRAFT.md must list all four — never FB+IG only."
+      "notes": "Every morning 9:00 AM America/Chicago (settings schedule_local_time=09:00; Cursor Automation must also be 9:00 AM CT — agents cannot edit Automations). invent_new_plate_only_when_unscheduled: 9am may invent Magritte/Folk/Da Vinci/Einstein ONLY if that Chicago day has no date-keyed flyer in morning_flyers.json. auto_publish_only_scheduled_approved: send only a scheduled Founder-approved plate that is not awaiting_founder_review / do_not_publish. Never --force at 9am. Lineup = ALL remaining events on publish day (full day, not evening-only) + ALL events on tomorrow. Caption opener is today-first when today has events; tomorrow-only wording only when today is empty. Flyer prefers today’s date key when today has events, else tomorrow. On-image word TODAY / TOMORROW matches flyer day; prebranded flyers skip overlays. Campaign key stays 'today' for publish-today. Never lead with “tonight” at 9am when daytime sessions exist. Do NOT flip to 10:00 unless Founder explicitly wants 10am. Platforms = Facebook + Instagram + TikTok + Threads (same plate; Threads caption truncated to 500 chars). Cloud Agent instructions in AUTOMATION-DRAFT.md must list all four — never FB+IG only."
     },
     "week": {
       "enabled": true,
