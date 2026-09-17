@@ -229,31 +229,48 @@
       "episode": 9,
       "library_name": "S1E9",
       "title": "S1E9",
-      "media_id": 27385,
+      "media_id": 28256,
+      "prior_media_id": 27385,
       "plate_id": 27377,
       "plate_library_name": "S1E9 USE plate",
-      "file": "s01e09-27377-720p-draft.mp4",
-      "url": "https://shopsacredground.com/wp-content/uploads/s01e09-27377-720p-draft.mp4",
-      "admin": "https://shopsacredground.com/wp-admin/upload.php?item=27385",
+      "file": "S1E9.mp4",
+      "url": "https://shopsacredground.com/wp-content/uploads/S1E9.mp4",
+      "admin": "https://shopsacredground.com/wp-admin/upload.php?item=28256",
       "filebird_folder": "SG Reels (54)",
       "mime_type": "video/mp4",
-      "schedule_status": "scheduled_2026-09-16_6pm_CT_all_platforms",
+      "schedule_status": "published_2026-09-16_evening_CT_all_platforms",
       "handed_off": "2026-09-06",
-      "note": "Founder 2026-09-06 \u2014 USE S1E9 / 27385 only. All platforms Wed Sep 16 6pm CT (FB/IG/TT/YT brand).",
+      "note": "Founder 2026-09-16: 6pm queue failed (27385 URL 404). Restored Desktop KEEP as media 28256 / S1E9.mp4 and published now all brand platforms. Same ship as 27385 / gen 95. Do not remake.",
       "do_not_use": {
         "plate_id": 27377,
-        "note": "27377 = S1E9 USE plate still only \u2014 never post as the Reel video"
+        "missing_url": "https://shopsacredground.com/wp-content/uploads/s01e09-27377-720p-draft.mp4",
+        "failed_6pm_ids": {
+          "facebook": "6a9d9b49655de817d79c0045",
+          "instagram": "6a9d9b5a5fe11bec973cf59a",
+          "tiktok": "6a9d9b5b6dbd3c283b2fe44e",
+          "youtube": "6a9d9b5d6dbd3c283b2fe4a2",
+          "threads": "6aa205d4340a738c7321ccaa"
+        },
+        "note": "27377 = S1E9 USE plate still only \u2014 never post as the Reel video. Old 27385 path 404 as of 2026-09-16."
       },
       "ml_social_ids": {
-        "facebook": "6a9d9b49655de817d79c0045",
-        "instagram": "6a9d9b5a5fe11bec973cf59a",
-        "tiktok": "6a9d9b5b6dbd3c283b2fe44e",
-        "youtube": "6a9d9b5d6dbd3c283b2fe4a2",
-        "threads": "6aa205d4340a738c7321ccaa"
+        "facebook": "6aab3aaf7258ed6a0a8851a1",
+        "instagram": "6aab3aaf7258ed6a0a8851a1",
+        "tiktok": "6aab3aaf7258ed6a0a8851a1",
+        "youtube": "6aab3a685a1e91234b002c99",
+        "threads": "6aab3a6945d900b8ae43e327"
+      },
+      "published_urls": {
+        "facebook": "https://www.facebook.com/watch/?v=1625982546208735",
+        "instagram": "https://www.instagram.com/reel/DdXn50yiU9Y/",
+        "tiktok": "https://www.tiktok.com/@shopsacredground/video/7686301693662760206",
+        "youtube": "https://www.youtube.com/watch?v=AfPQsYEKma4",
+        "threads": "https://www.threads.com/@shopsacredground/post/DdXnzjZlRDZ"
       },
       "scheduled_for": "2026-09-16T18:00:00-05:00",
-      "updated_at": "2026-09-06T16:58:20Z",
-      "threads_status": "scheduled_2026-09-16T23:00:00.000Z"
+      "published_at": "2026-09-16T19:55:00-05:00",
+      "updated_at": "2026-09-17T00:57:00Z",
+      "threads_status": "published_2026-09-17T00:56:02.970Z"
     },
     "s1e11": {
       "season": 1,

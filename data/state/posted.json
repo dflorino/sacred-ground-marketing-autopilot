@@ -2341,32 +2341,42 @@
       "id": "sg-reel-s1e9-2026-09-16",
       "kind": "reel",
       "episode": "s1e9",
-      "media_id": 27385,
-      "media_url": "https://shopsacredground.com/wp-content/uploads/s01e09-27377-720p-draft.mp4",
+      "media_id": 28256,
+      "media_url": "https://shopsacredground.com/wp-content/uploads/S1E9.mp4",
       "scheduled_for_ct": "2026-09-16T18:00:00",
+      "published_at_ct": "2026-09-16T19:55:00",
       "timezone": "America/Chicago",
-      "status": "scheduled",
+      "status": "published",
       "platforms": {
         "facebook": {
-          "post_id": "6a9d9b49655de817d79c0045",
+          "post_id": "6aab3aaf7258ed6a0a8851a1",
+          "url": "https://www.facebook.com/watch/?v=1625982546208735",
           "via": "ml_mcp_social_publish"
         },
         "instagram": {
-          "post_id": "6a9d9b5a5fe11bec973cf59a",
+          "post_id": "6aab3aaf7258ed6a0a8851a1",
+          "url": "https://www.instagram.com/reel/DdXn50yiU9Y/",
           "via": "ml_mcp_social_publish"
         },
         "tiktok": {
-          "post_id": "6a9d9b5b6dbd3c283b2fe44e",
+          "post_id": "6aab3aaf7258ed6a0a8851a1",
+          "url": "https://www.tiktok.com/@shopsacredground/video/7686301693662760206",
           "via": "ml_mcp_social_publish"
         },
         "youtube": {
-          "post_id": "6a9d9b5d6dbd3c283b2fe4a2",
+          "post_id": "6aab3a685a1e91234b002c99",
+          "url": "https://www.youtube.com/watch?v=AfPQsYEKma4",
           "via": "ml_mcp_social_publish",
           "account": "@sacredgroundchicagoland"
+        },
+        "threads": {
+          "post_id": "6aab3a6945d900b8ae43e327",
+          "url": "https://www.threads.com/@shopsacredground/post/DdXnzjZlRDZ",
+          "via": "ml_mcp_social_publish"
         }
       },
       "caption": "Far side of the Moon… and we might have parked a little wrong.",
-      "recorded_at": "2026-09-06T16:58:20Z"
+      "recorded_at": "2026-09-17T00:57:00Z"
     }
   ]
 }

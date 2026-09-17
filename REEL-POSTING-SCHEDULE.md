@@ -86,13 +86,13 @@ Canonical file: **`config/reels_media.json`**. Agents must use these IDs / URLs 
 | Season 1 Episode 1 — Store Quest | **S1E1** | **26545** | `https://shopsacredground.com/wp-content/uploads/S1E1-Store-Quest.mp4` |
 | Season 1 Episode 2 — Help Team Sacred Ground | **S1E2** | **26738** (plate **26736**) | `https://shopsacredground.com/wp-content/uploads/s01e02-help-team-sacred-ground.mp4` |
 | Season 1 Episode 3 — First Crystal | **S1E3-B** | **26795** (plate **26790**) | `https://shopsacredground.com/wp-content/uploads/s01e03b-first-crystal.mp4` |
-| Season 1 Episode 9 | **S1E9** | **27385** (plate **27377**) | `https://shopsacredground.com/wp-content/uploads/s01e09-27377-720p-draft.mp4` |
+| Season 1 Episode 9 | **S1E9** | **28256** (was **27385**; plate **27377**) | `https://shopsacredground.com/wp-content/uploads/S1E9.mp4` |
 | Season 1 Episode 11 | **S1E11** | **28153** (plate **28137**) | `https://shopsacredground.com/wp-content/uploads/s01e11-gen102-KEEP.mp4` |
 
 **Do not use** media ID **26546** or `…/s01e01-store-quest.mp4` for S1E1 — use **26545** / `S1E1-Store-Quest.mp4`.  
 **S1E2** — KEEP **26738** (not old Lemuria **26537**).  
 **S1E3** — KEEP **S1E3-B** media **26795** (not S1E3-A **26743**).  
-**S1E9** — USE video **27385** only. Plate **27377** (“S1E9 USE plate”) is still-only — never post as the Reel.  
+**S1E9** — USE video **28256** / `S1E9.mp4` (restored KEEP; old **27385** path 404). Plate **27377** (“S1E9 USE plate”) is still-only — never post as the Reel.  
 **S1E11** — USE video **28153** only (gen 102). Plate **28137** still-only. Never post gen 101 (**28126** / **28113**) or captioned archive **28125**.
 
 ## S1E1 Store Quest (media 26545)

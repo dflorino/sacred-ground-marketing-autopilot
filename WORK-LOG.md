@@ -1,3 +1,15 @@
+## 2026-09-16 — S1E9 published after 6pm 404 miss
+
+6pm queue failed on all five: `s01e09-27377-720p-draft.mp4` (media **27385**) returned 404. Founder: publish nine across the board. Restored Desktop KEEP as media **28256** / `S1E9.mp4` (same ship, gen 95). Published ~7:55 PM CT:
+
+- Facebook https://www.facebook.com/watch/?v=1625982546208735
+- Instagram https://www.instagram.com/reel/DdXn50yiU9Y/
+- TikTok https://www.tiktok.com/@shopsacredground/video/7686301693662760206
+- YouTube https://www.youtube.com/watch?v=AfPQsYEKma4
+- Threads https://www.threads.com/@shopsacredground/post/DdXnzjZlRDZ
+
+Do not remake. S1E10 still unscheduled; S1E11 still next week.
+
 ## 2026-09-15 — Morning remake sent (amber landed)
 
 Founder deleted the 9am Magritte (garbled type). Museum preview rejected. She approved `sg-morning-flyer-2026-09-15-amber-landed.jpg` (media **28217**) and said send. Same plate FB+IG+TT+Threads via `publish-today` only.
