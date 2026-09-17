@@ -1,3 +1,7 @@
+## 2026-09-17 — Sunday birthday morning locked
+
+Founder approved the fall-sun plate: HAPPY BIRTHDAY top, DENEENE bottom, no Reiki on the graphic. Media **28295** / `sg-morning-flyer-2026-09-20-birthday-store.jpg`. Reiki Share 3–5 FREE goes in the first comment. `do_not_remake`. Sunday 9am ships it — not today.
+
 ## 2026-09-17 — Invent only when nothing is scheduled
 
 Founder: turn the 9am invent/auto-send switches off, or only use them when nothing is scheduled.

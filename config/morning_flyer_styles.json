@@ -9,7 +9,7 @@
   "series_limits_set_at": "2026-08-14T14:29:00-05:00",
   "timezone": "America/Chicago",
   "selection_mode": "random_mixed",
-  "selection_note": "Prefer morning_surprise_campaign date_plan when set for a Chicago day. Else day-seeded shuffle among series-eligible pool ids. Do NOT run Magritte→Folk→Da Vinci→Einstein as a rigid two-week block then dump old Thursday plates afterward — interleave ALL eligible approaches.",
+  "selection_note": "Founder Sep 17 2026: NEW dailies must start from one surprising visual idea (bar: Sep 20 birthday sun / another rotation around the sun). Do NOT default 9am to Magritte/Einstein chalkboard. Prefer morning_surprise_campaign date_plan when set. Else day-seeded shuffle among series-eligible pool ids that can still hold a real idea. Do NOT run Magritte→Folk→Da Vinci→Einstein as a rigid two-week block.",
   "queue_and_reuse": {
     "keep_approaches": "Existing morning approaches and unused date-keyed queued plates stay in the mix alongside the four approved styles.",
     "never_reuse_urls": "Lifetime never-reuse via image_usage is absolute. Keeping an approach does NOT mean re-posting a used URL. Unused queued flyer URLs may be chosen; used URLs must fail closed (reuse_blocked) and force alternate / regenerate.",

@@ -25,10 +25,17 @@ look Sacred Ground’s using the AI. Completely individual, out of the box, noth
   when it reads as a template, not a shop-made plate
 
 ### REQUIRE instead
+- **Idea first, not a style slot** (Founder Sep 17 2026, birthday sun plate):
+  every NEW daily starts from one out-of-the-ordinary visual thought
+  (a sun you can orbit, a shop that landed somewhere unexpected) — the picture
+  *is* the idea. That energy is the bar. Do **not** default 9am to Magritte /
+  Einstein chalkboard / factory rotation. Bar plate:
+  `assets/sg-morning-flyer-2026-09-20-birthday-store.jpg`
 - **Shop-made / individual** via the **Founder-approved mixed pool** (Aug 14 ~2:14–2:31pm CT):
   Magritte · Folk · Da Vinci · Einstein **plus** existing Thursday equal-card shop-made
   + artistic hero — see `config/morning_flyer_styles.json` (`random_mixed`, not
-  “new styles only for two weeks”)
+  “new styles only for two weeks”) — only when they still feel like a new idea,
+  not a template dump
 - **Unused queued** date-keyed flyers stay in the mix; never-reuse URLs still absolute
 - **Series limits:** max **1 consecutive** day per style id; max **2** in any rolling **7**
   Chicago days — banned mystic template `series_limit` 0

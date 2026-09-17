@@ -551,6 +551,22 @@ def should_badge_night(*, mode: str = "", creative_id: str = "", seed: str = "")
     return _pick_index(5, f"sp-night-badge|{seed}") in (0, 1, 2)
 
 
+def _flyer_first_comment(day_key: str) -> str:
+    """Optional first-comment copy locked on a morning_flyers date (e.g. Reiki Share)."""
+    raw = str(day_key or "").strip()[:10]
+    if len(raw) < 10:
+        return ""
+    try:
+        from datetime import date as date_cls
+
+        from . import morning_flyers as mf
+
+        entry = mf.flyer_entry_for_day(date_cls.fromisoformat(raw))
+    except Exception:
+        return ""
+    return str((entry or {}).get("first_comment") or "").strip()
+
+
 def first_comment_supported(platform: str) -> bool:
     plats = {
         str(p).lower()
@@ -601,6 +617,19 @@ def plan_for_post(
         effective_mode = MODE_BOTH
     elif in_comment and not in_caption:
         effective_mode = MODE_FIRST_COMMENT
+    first_comment = claim if in_comment else ""
+    flyer_comment = _flyer_first_comment(day_key)
+    if flyer_comment:
+        first_comment = (
+            f"{flyer_comment}\n\n{first_comment}".strip()
+            if first_comment
+            else flyer_comment
+        )
+        in_comment = True
+        if in_caption:
+            effective_mode = MODE_BOTH
+        else:
+            effective_mode = MODE_FIRST_COMMENT
     return {
         "enabled": enabled() and mode != MODE_SKIP,
         "mode": effective_mode,
@@ -608,7 +637,7 @@ def plan_for_post(
         "claim": claim,
         "in_caption": in_caption,
         "in_first_comment": in_comment,
-        "first_comment": claim if in_comment else "",
+        "first_comment": first_comment,
         "badge_style": badge_style,
         "badge_text": badge_text,
     }

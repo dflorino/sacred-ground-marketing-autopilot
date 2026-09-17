@@ -512,8 +512,7 @@ def flyer_entry_is_held(entry: Optional[Dict[str, Any]]) -> bool:
     if not isinstance(entry, dict):
         return False
     return bool(
-        entry.get("do_not_remake")
-        or entry.get("do_not_publish")
+        entry.get("do_not_publish")
         or entry.get("awaiting_founder_review")
         or entry.get("status") == "founder_trashed"
         or entry.get("founder_trashed")
@@ -2014,6 +2013,8 @@ def ensure_flyer_for_day(
     """
     existing = flyer_entry_for_day(day)
     # Founder Sep 7 2026: trashed / held queue — never regenerate / burn credits.
+    if existing and existing.get("do_not_remake"):
+        return _scheduled_skip_result(day, existing, reason="already_scheduled")
     if existing and flyer_entry_is_held(existing):
         return _scheduled_skip_result(day, existing, reason="held")
     # Founder Sep 17 2026: invent Magritte/Folk/Da Vinci/Einstein only when
