@@ -47,6 +47,31 @@ def font_to_width(name: str, text: str, target_w: int, start: int = 56) -> Image
     return chosen
 
 
+def draw_span(draw, y, text, fnt, fill, *, width: int, pad: int = 22):
+    """One smaller line from the left edge to the right edge."""
+    chars = list(text)
+    if not chars:
+        return
+    inner = width - pad * 2
+    if len(chars) == 1:
+        draw.text((pad, y), text, font=fnt, fill=fill)
+        return
+    total = 0
+    widths = []
+    for ch in chars:
+        w, _ = text_size(ch, fnt)
+        widths.append(w)
+        total += w
+    extra = max(0, inner - total)
+    gap = extra / (len(chars) - 1)
+    x = pad
+    bbox = draw.textbbox((0, 0), "Ag", font=fnt)
+    py = y - bbox[1]
+    for ch, w in zip(chars, widths):
+        draw.text((x, py), ch, font=fnt, fill=fill)
+        x += w + gap
+
+
 def center_text(draw, xy, text, fnt, fill, nudge=None):
     x, y = xy
     bbox = draw.textbbox((0, 0), text, font=fnt)
@@ -73,13 +98,13 @@ def main() -> None:
     # Same face as HAPPY BIRTHDAY; two sizes bigger than the 42pt light pass.
     f_happy = font("Arial Rounded Bold.ttf", 90)
     f_name = font("Arial Rounded Bold.ttf", 90)
-    f_reiki = font("Arial Rounded Bold.ttf", 80)
+    f_reiki = font("Arial Rounded Bold.ttf", 66)
     f_foot = font("Arial Bold.ttf", 26)
 
     cx = SIZE / 2
-    # HAPPY BIRTHDAY only at the top, a little lower. DENEENE sits where Reiki was.
     center_text(draw, (cx, 88), "HAPPY BIRTHDAY", f_happy, white)
-    center_text(draw, (cx, 838), "DENEENE", f_name, white)
+    center_text(draw, (cx, 800), "DENEENE", f_name, white)
+    center_text(draw, (cx, 900), "Reiki Share Free 3 to 5 PM", f_reiki, white)
 
     logo = Image.open(LOGO).convert("RGBA")
     logo_w = 118
