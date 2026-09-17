@@ -106,9 +106,9 @@ Hard rules:
 1. Timezone context is America/Chicago. Shop-local post time is 9:00 AM America/Chicago.
 2. Checkout this repo and run from the project root.
 3. Content promotes TODAY’s full day (all remaining events — not evening-only), then TOMORROW. Caption opener is today-first when today has events; tomorrow-only wording only if today is empty. Never open with “tonight” at 9am when daytime sessions exist.
-4. Ensure morning flyer(s) before drafts — Magritte/Folk/Da Vinci/Einstein style rotation + equal schedule weight (never prices/$; never hero+tiny secondary; never Bauhaus/Victorian):
+4. Ensure morning flyer(s) before drafts. **Do NOT invent a new Magritte / Folk / Da Vinci / Einstein plate at 9am** when `config/morning_flyers.json` already has a date-keyed flyer, or when that day is `awaiting_founder_review`, `do_not_publish`, or `do_not_remake`. Those flags mean stop — do not generate, do not publish.
    python3 -m marketing generate-morning-flyers --start-offset 0 --days 2 --source live-strict
-   Prefer a weekly --days 7 prebuild so 9am is not inventing art cold. Prefer today’s date flyer when today has events.
+   Prefer a weekly --days 7 prebuild so 9am is not inventing art cold. Prefer today’s date flyer when today has events. If generate reports held / awaiting review: STOP. Do not mlimg a new chalkboard/Magritte and send it.
 5. Refresh live WordPress / The Events Calendar only:
    python3 -m marketing run --source live-strict
 6. If the WordPress/TEC refresh fails: create NO new drafts, do not use stale cache, report wordpress_refresh_failed, and STOP. Do not publish.

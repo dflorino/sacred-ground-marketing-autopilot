@@ -316,6 +316,10 @@ def entry_publish_block_reason(entry: Optional[Dict[str, Any]]) -> Optional[str]
         return "missing_flyer_entry"
     if entry.get("do_not_publish") or entry.get("status") == "founder_trashed":
         return "founder_trashed"
+    # Founder Sep 15–17 2026: lying flags (founder_approved + awaiting_founder_review)
+    # let 9am invent Magritte / Da Vinci / Einstein. Review hold always wins.
+    if entry.get("awaiting_founder_review"):
+        return "awaiting_founder_review"
     if entry.get("do_not_remake") and not str(entry.get("url") or "").strip():
         return "founder_trashed_no_url"
     src = entry_generation_source(entry)
@@ -1935,6 +1939,7 @@ def ensure_flyer_for_day(
     if existing and (
         existing.get("do_not_remake")
         or existing.get("do_not_publish")
+        or existing.get("awaiting_founder_review")
         or existing.get("status") == "founder_trashed"
     ):
         return existing

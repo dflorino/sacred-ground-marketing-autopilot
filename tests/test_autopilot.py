@@ -2503,6 +2503,17 @@ class TestBannedNavyPilNeverShips(unittest.TestCase):
         }
         self.assertIsNotNone(self.mf.entry_publish_block_reason(entry))
         self.assertEqual(
+            self.mf.entry_publish_block_reason(
+                {
+                    "url": "https://example.com/held.jpg",
+                    "founder_approved": True,
+                    "awaiting_founder_review": True,
+                    "do_not_publish": False,
+                }
+            ),
+            "awaiting_founder_review",
+        )
+        self.assertEqual(
             self.mf.select_flyer_url_for_platform(entry, "facebook"), ("", False)
         )
         self.assertIsNone(

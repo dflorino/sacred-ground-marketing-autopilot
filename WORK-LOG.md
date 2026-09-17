@@ -1,3 +1,11 @@
+## 2026-09-17 — Unapproved Einstein morning; Friday held
+
+9am published `sg-morning-flyer-2026-09-17-einstein-v1.png` (chalkboard, garbled type). Founder: boring, not approved. Same path as Sep 15 Magritte — `founder_approved` was still true while `awaiting_founder_review` said held (Sep 14 remake hold). Automation generated Einstein instead of waiting.
+
+Root setting: `campaigns.today.auto_publish: true` + 9am Automation always runs generate (Magritte/Folk/Da Vinci/Einstein rotation) then `publish-today`. `awaiting_founder_review` was ignored; only `do_not_publish` stopped a send. Sep 12 week sign-off left `founder_approved: true` + `do_not_publish: false` on held remakes.
+
+`awaiting_founder_review` now hard-blocks generate + publish. Sep 17 + Sep 18 `do_not_publish`. AUTOMATION-DRAFT: do not invent a new style at 9am when a date-keyed flyer exists or is held. Do not remake/send until Founder sees a plate.
+
 ## 2026-09-16 — S1E9 published after 6pm 404 miss
 
 6pm queue failed on all five: `s01e09-27377-720p-draft.mp4` (media **27385**) returned 404. Founder: publish nine across the board. Restored Desktop KEEP as media **28256** / `S1E9.mp4` (same ship, gen 95). Published ~7:55 PM CT:
