@@ -1907,6 +1907,34 @@ class AutopilotTests(unittest.TestCase):
         self.assertEqual(held_info.get("reason"), "held")
         self.assertFalse(mf.today_auto_publish_allowed(held))
 
+    def test_publish_can_schedule_blocks_held_morning_flyer(self) -> None:
+        """auto_publish must not send a 9am post when the flyer day is held."""
+        from unittest.mock import patch
+
+        from marketing import publish
+
+        draft = {
+            "campaign": "today",
+            "platform": "facebook",
+            "approval_status": "approved",
+            "status": "approved",
+            "fingerprint": "today|2026-10-04|facebook|1",
+            "notes": ["flyer_day:2026-10-04"],
+            "image": {
+                "url": "https://shopsacredground.com/wp-content/uploads/held-morning.jpg",
+                "rule": "morning_flyer",
+            },
+        }
+        with patch("marketing.publish.control.phase", return_value=2), patch(
+            "marketing.publish.control.is_paused", return_value=False
+        ), patch(
+            "marketing.morning_flyers.today_auto_publish_allowed",
+            return_value=False,
+        ):
+            ok, reason = publish.can_schedule(draft)
+        self.assertFalse(ok)
+        self.assertEqual(reason, "morning_flyer_not_founder_approved")
+
     def test_config_morning_flyers_price_free(self) -> None:
         """Repo morning_flyers.json labels/covers must never carry $ prices."""
         from marketing import morning_flyers as mf

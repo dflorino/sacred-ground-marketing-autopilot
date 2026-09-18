@@ -328,6 +328,19 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                             and mf.today_auto_publish_allowed(flyer_day)
                         ):
                             draft = _auto_ready_for_publish(draft["id"])
+                        else:
+                            hold_notes = list(draft.get("notes") or [])
+                            if not mf.today_auto_publish_allowed(flyer_day):
+                                hold_notes.append(
+                                    "9am send blocked: flyer held / not Founder-approved"
+                                )
+                                draft = store.update_draft(
+                                    draft["id"],
+                                    publish_blocked_reason=(
+                                        "morning_flyer_not_founder_approved"
+                                    ),
+                                    notes=hold_notes,
+                                )
                         created.append(draft)
                     else:
                         skipped_drafts.append(
@@ -337,7 +350,8 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                                 "reason": "duplicate_or_override",
                             }
                         )
-                if shared_img.url:
+                # Do not burn never-reuse URLs when the 9am plate is held.
+                if shared_img.url and mf.today_auto_publish_allowed(flyer_day):
                     images.record_image_use(
                         day=flyer_day,
                         url=shared_img.url,
