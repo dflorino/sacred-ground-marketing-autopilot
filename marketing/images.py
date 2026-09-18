@@ -188,6 +188,12 @@ def _afternoon_plate_for_day(day: date) -> Optional[Dict[str, Any]]:
     return entry if isinstance(entry, dict) else None
 
 
+def skip_afternoon_publish(day: date) -> bool:
+    """True when a cinematic short (or other Founder slot) owns 5pm that day."""
+    skips = afternoon_spotlight_plates().get("skip_publish_dates") or []
+    return day.isoformat() in {str(x) for x in skips}
+
+
 def skip_brand_overlays(image: Any) -> bool:
     """
     True when the plate is a finished flyer (logo + footer + event text baked in).

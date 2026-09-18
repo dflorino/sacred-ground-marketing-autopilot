@@ -1,5 +1,8 @@
 {
-  "notes": "Date-keyed Founder-locked afternoon spotlight plates. When present for America/Chicago day, plan_image(afternoon_spotlight) uses this URL before event_featured / pool. Never reuse morning plate URLs. Single-image FB+IG.",
+  "notes": "Date-keyed Founder-locked afternoon spotlight plates. When present for America/Chicago day, plan_image(afternoon_spotlight) uses this URL before event_featured / pool. Never reuse morning plate URLs. Single-image FB+IG. skip_publish_dates = 5pm still does not go out (a cinematic short owns that slot).",
+  "skip_publish_dates": [
+    "2026-09-19"
+  ],
   "prebranded_default": true,
   "plates": {
     "2026-09-09": {

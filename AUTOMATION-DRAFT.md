@@ -160,12 +160,13 @@ Hard rules:
 2. Checkout this repo and run from the project root.
 3. python3 -m marketing run --source live-strict
 4. If TEC refresh fails: create NO drafts, STOP.
-5. Publish only afternoon_spotlight:
+5. If `publish-afternoon-spotlight` returns `cinematic_short_owns_slot` (or today is in `afternoon_spotlight_plates.json` → `skip_publish_dates`): STOP. Do not invent a still. Sat Sep 19 2026 is the connected cinematic short.
+6. Otherwise publish only afternoon_spotlight:
    python3 -m marketing publish-afternoon-spotlight
-6. Do not publish today / week_ahead / tuesday_meditation.
-7. Platforms must be **Facebook + Instagram + TikTok + Threads** (same plate). Do not MCP-publish FB+IG only.
-8. NEVER publish or republish Reels / video episodes from this image job unless Founder explicitly asks.
-9. Caption is a single-event spotlight (or brand visit). Summarize event + platforms + Zernio links.
+7. Do not publish today / week_ahead / tuesday_meditation.
+8. Platforms must be **Facebook + Instagram + TikTok + Threads** (same plate). Do not MCP-publish FB+IG only.
+9. NEVER publish or republish Reels / video episodes from this image job unless Founder explicitly asks.
+10. Caption is a single-event spotlight (or brand visit). Summarize event + platforms + Zernio links.
 ```
 
 ## Editor checklist — afternoon

@@ -37,7 +37,7 @@ Do **not** use v1 (frozen still) or v2 (weaker mannequin). v3 had leaves — ret
 | **Start still** | media **28365** `sg-cinematic-v6-start-3d-thread.jpg` |
 | **End still** | media **28366** `sg-cinematic-v6-end-one-field.jpg` |
 | **Local play** | `assets/_week_show/sg-cinematic-short-connected-v6.mp4` + `PLAY-V6.html` |
-| **Status** | In the library. **Not published.** Founder watches on this Mac first. |
+| **Status** | Scheduled **Sat Sep 19 5:00 PM** America/Chicago across FB+IG+TT+Threads+YouTube. Regular 5pm still skipped. |
 
 Motion check Fri Sep 18: 10.04s, start / mid / end are three different pictures.
 

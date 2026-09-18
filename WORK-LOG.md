@@ -1,3 +1,7 @@
+## 2026-09-18 — Connected short scheduled Saturday 5pm
+
+Founder: keep the interconnected short; run it tomorrow afternoon with Saturday’s store schedule. Zernio **6aad74ac2e95fa5f2dc8a253** · Sat Sep 19 **5:00 PM** America/Chicago · FB+IG+TT+Threads+YouTube. Caption: Adie 11–3, Melissa 11–2, Rose 2–6, Robert 3–7:30, Andre sound bath 7–8:30. Regular 5pm still is skipped (`skip_publish_dates`: 2026-09-19). Morning Sep 19 still goes at 9am.
+
 ## 2026-09-18 — Connected short ready; night storefront series next
 
 Founder: after “we are all connected,” start night shorts of the real store — sky changes each night (fall, Orion, aurora, rain, lightning, sky opens).

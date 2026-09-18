@@ -385,7 +385,15 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
 
     # --- Afternoon spotlight (daily 5pm: one engaging event) ---
     af_cfg = (cfg.get("campaigns") or {}).get("afternoon_spotlight") or {}
-    if af_cfg.get("enabled", True):
+    if af_cfg.get("enabled", True) and images.skip_afternoon_publish(day):
+        skipped_drafts.append(
+            {
+                "campaign": "afternoon_spotlight",
+                "reason": "cinematic_short_owns_slot",
+                "detail": day.isoformat(),
+            }
+        )
+    elif af_cfg.get("enabled", True):
         spotlight_ev = classify.pick_afternoon_spotlight(
             events, day, after=as_of_dt
         )

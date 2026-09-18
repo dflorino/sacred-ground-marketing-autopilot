@@ -22,7 +22,9 @@
     {
       "id": "connected-v6",
       "title": "We are all connected",
-      "status": "ready_founder_watch_not_published",
+      "status": "scheduled_sat_sep19_5pm",
+      "run_at": "2026-09-19T17:00:00-05:00",
+      "run_slot": "afternoon_spotlight",
       "idea": "Ordinary 3D street → gold thread of connection → people and Earth as one field",
       "mp4_media": 28367,
       "mp4_url": "https://shopsacredground.com/wp-content/uploads/sg-cinematic-short-connected-v6-1.mp4",
@@ -31,6 +33,7 @@
       "local_mp4": "assets/_week_show/sg-cinematic-short-connected-v6.mp4",
       "play_html": "assets/_week_show/PLAY-V6.html",
       "kling_job": "gen-vid-1789751575-LK39KOpuF9d0ujWDrSJF",
+      "zernio_post_id": "6aad74ac2e95fa5f2dc8a253",
       "duration_s": 10.04,
       "motion_check": "start/mid/end hashes distinct"
     }
