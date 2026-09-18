@@ -59,6 +59,10 @@ def can_schedule(draft: Dict[str, Any]) -> tuple[bool, str]:
             flyer_day = date.fromisoformat(flyer_day_s or publish_day)
         except ValueError:
             flyer_day = today_local()
+        # Founder Sep 17 2026: 9am may send only a scheduled Founder-approved
+        # plate. auto_publish=true must not bypass a held / unapproved flyer.
+        if not mf.today_auto_publish_allowed(flyer_day):
+            return False, "morning_flyer_not_founder_approved"
         platform = str(draft.get("platform") or "facebook")
         if url and not mf.morning_image_url_is_authorized(
             flyer_day, url, platform=platform
@@ -333,6 +337,24 @@ def publish_campaign_drafts(*, campaign: str) -> Dict[str, Any]:
 
     skipped_stale: List[Dict[str, Any]] = []
     if campaign == "today":
+        from . import morning_flyers as mf
+
+        # Fail closed before any Zernio create — held / unapproved date-keyed
+        # flyers must not ship a fallback TEC thumb or store exterior.
+        if not mf.today_auto_publish_allowed(today_local()):
+            return {
+                "ok": False,
+                "error": "morning_flyer_not_founder_approved",
+                "campaign": campaign,
+                "day": day_key,
+                "message": (
+                    "9am send blocked: scheduled morning plate is held or "
+                    "not Founder-approved (auto_publish_only_scheduled_approved)."
+                ),
+                "results": [],
+                "published_or_scheduled": 0,
+                "failed": 1,
+            }
         skipped_stale.extend(store.retire_stale_morning_drafts(day_key=day_key))
     elif campaign == "week_ahead":
         skipped_stale.extend(
