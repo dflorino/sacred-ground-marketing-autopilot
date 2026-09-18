@@ -1,0 +1,106 @@
+{
+  "notes": "Cinematic Threads/Reels/Shorts/TikTok. Not Galactic Explorers, not HeyGen, not TopView. Founder watches local MP4 via macOS open/QuickTime before anything posts.",
+  "machine": {
+    "still": "idea-first 9:16 start + end",
+    "i2v": "kwaivgi/kling-v3.0-pro 10s 720p 9:16 first_frame+last_frame data URI from shop disk",
+    "show": "open /absolute/path.mp4 on this Mac — never Cursor browser only",
+    "publish": "only when Founder says"
+  },
+  "keep": [
+    {
+      "id": "sun-inside-v4",
+      "title": "Sun inside",
+      "status": "keep_live_friday_morning",
+      "mp4_media": 28363,
+      "mp4_url": "https://shopsacredground.com/wp-content/uploads/sg-cinematic-short-sun-inside-v4.mp4",
+      "start_media": 28361,
+      "end_media": 28360,
+      "local_mp4": "assets/_week_show/sg-cinematic-short-sun-inside-v4.mp4"
+    }
+  ],
+  "ready_founder_watch": [
+    {
+      "id": "connected-v6",
+      "title": "We are all connected",
+      "status": "ready_founder_watch_not_published",
+      "idea": "Ordinary 3D street → gold thread of connection → people and Earth as one field",
+      "mp4_media": 28367,
+      "mp4_url": "https://shopsacredground.com/wp-content/uploads/sg-cinematic-short-connected-v6-1.mp4",
+      "start_media": 28365,
+      "end_media": 28366,
+      "local_mp4": "assets/_week_show/sg-cinematic-short-connected-v6.mp4",
+      "play_html": "assets/_week_show/PLAY-V6.html",
+      "kling_job": "gen-vid-1789751575-LK39KOpuF9d0ujWDrSJF",
+      "duration_s": 10.04,
+      "motion_check": "start/mid/end hashes distinct"
+    }
+  ],
+  "night_storefront_series": {
+    "notes": "Founder Fri Sep 18: after the connected short, night shorts of the REAL store. Same facade every night. The SKY changes. Real eggplant awning, tan stone, white SACRED GROUND with a space (no hyphen/swoosh). Circular sun logo bottom-left. No campaign meta on the photo. No invented fantasy shop.",
+    "locked_store": {
+      "awning": "eggplant purple",
+      "facade": "tan stone",
+      "lettering": "SACRED GROUND with blank space — never SACRED-GROUND",
+      "refs": [
+        "assets/sg-night-fall.png",
+        "assets/sg-night-creative-fall-store-orion-rising.png",
+        "assets/refs/exterior-*.png"
+      ]
+    },
+    "have_still_in_week_ahead_pool": {
+      "orion": "fall_store_orion_rising — yes, still exists; not a moving short yet",
+      "aurora": "aurora_neon / fall_store_teal_copper_aurora — yes, stills",
+      "rain": "fall_store_rain_puddles / late_summer_warm_rain_puddles — yes, stills",
+      "fall": "sg-night-fall.png + fall_store_* — yes, stills",
+      "lightning": "no dedicated plate yet — new for shorts",
+      "sky_opens": "new for shorts"
+    },
+    "queue": [
+      {
+        "id": "night-sky-opens",
+        "sky": "quiet star field tears open into gold/emerald/amethyst galaxies",
+        "status": "stills_ready",
+        "start_local": "assets/_week_show/sg-cinematic-v7-night-start-quiet-sky.jpg",
+        "end_local": "assets/_week_show/sg-cinematic-v7-night-end-sky-opens.jpg",
+        "start_media": 28369,
+        "end_media": null,
+        "mp4_media": null,
+        "kling_job": "gen-vid-1789752301-xkJ2t94DoUhVGW4XgEhK"
+      },
+      {
+        "id": "night-orion",
+        "sky": "Orion’s belt and the hunter rise behind the shop",
+        "status": "queued",
+        "still_ref": "assets/sg-night-creative-fall-store-orion-rising.png"
+      },
+      {
+        "id": "night-aurora",
+        "sky": "northern lights over the real storefront",
+        "status": "queued",
+        "still_ref": "assets/sg-night-creative-fall-store-teal-copper-aurora.png"
+      },
+      {
+        "id": "night-fall",
+        "sky": "amber harvest-fall night, not daytime sun",
+        "status": "queued",
+        "still_ref": "assets/sg-night-fall.png"
+      },
+      {
+        "id": "night-rain",
+        "sky": "rain and neon puddle reflections, shop stays put",
+        "status": "queued",
+        "still_ref": "assets/sg-night-creative-fall-store-rain-puddles.png"
+      },
+      {
+        "id": "night-lightning",
+        "sky": "storm / lightning opens the sky",
+        "status": "queued"
+      },
+      {
+        "id": "night-deep-sky",
+        "sky": "Milky Way / deep night field, SG still the anchor",
+        "status": "queued"
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+---
+description: Cinematic social shorts — still pair then Kling, show on this Mac
+alwaysApply: false
+globs: docs/CINEMATIC-SHORTS.md,config/cinematic_shorts.json,assets/_week_show/sg-cinematic*
+---
+
+# Cinematic shorts (HARD)
+
+Not Galactic Explorers. Not HeyGen. Not TopView cartoon. Not Magritte/Einstein morning invent.
+
+## Machine
+
+1. Idea-first **9:16 start still** + **end still**.
+2. Stills onto the **shop disk**. OpenRouter 403s shop URLs — use a **data URI**.
+3. Kling `kwaivgi/kling-v3.0-pro` 10s 720p 9:16, first_frame + last_frame.
+4. Download MP4 → `wp media import` → **`open` the local file in QuickTime**.
+5. Nothing posts until the Founder says.
+
+## Show her
+
+`open /absolute/path/to.mp4` on this Mac. Cursor / Glass browser tabs do not count.
+
+## Night storefront series (after connected)
+
+Same **real** Sacred Ground shop every night. Only the **sky** changes.
+
+- Eggplant-purple awning, tan stone
+- White **SACRED GROUND** with a space — never a hyphen / swoosh
+- Circular sun logo bottom-left of the photo
+- No campaign words on the picture (`week-ahead`, `NIGHT`, URL, phone)
+- Queue: sky opens · Orion · aurora · fall · rain · lightning · deep night
+
+Playbook: `docs/CINEMATIC-SHORTS.md` · IDs: `config/cinematic_shorts.json`

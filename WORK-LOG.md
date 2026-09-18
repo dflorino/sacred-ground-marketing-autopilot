@@ -1,3 +1,12 @@
+## 2026-09-18 — Connected short ready; night storefront series next
+
+Founder: after “we are all connected,” start night shorts of the real store — sky changes each night (fall, Orion, aurora, rain, lightning, sky opens).
+
+- Connected v6 MP4 in library as media **28367**. Local QuickTime: `assets/_week_show/sg-cinematic-short-connected-v6.mp4`. **Not published.**
+- Night series queued in `config/cinematic_shorts.json`. First pair: quiet-sky start **28369** + sky-opens end still. Kling job `gen-vid-1789752301-xkJ2t94DoUhVGW4XgEhK` pending.
+- We already have stills for Orion (`fall_store_orion_rising`), aurora, rain, fall. Lightning and sky-opens are new moving shorts.
+- Playbook: `docs/CINEMATIC-SHORTS.md` · rule `.cursor/rules/cinematic-shorts.mdc`
+
 ## 2026-09-17 — Sunday birthday morning locked
 
 Founder approved the fall-sun plate: HAPPY BIRTHDAY top, DENEENE bottom, no Reiki on the graphic. Media **28295** / `sg-morning-flyer-2026-09-20-birthday-store.jpg`. Reiki Share 3–5 FREE goes in the first comment. `do_not_remake`. Sunday 9am ships it — not today.
