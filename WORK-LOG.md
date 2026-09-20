@@ -1,3 +1,11 @@
+## 2026-09-20 — Sunday 9am remake: Robert top, Reiki bottom, type 2×
+
+Founder: take Happy Birthday / DENEENE off; same sun; Robert on top, Reiki Share on bottom; type twice as big; lower Reiki a little. **Perfect.** Media **28460** / `sg-morning-flyer-2026-09-20-robert-reiki-v3.jpg`. Sunday 9am uses this URL. `do_not_remake`. No new Robert TEC.
+
+## 2026-09-19 — What If You Could See It list saved; quartz KEEP
+
+Founder likes the crystal short (v11, media **28430**). Full 30-reel + earlier 20-concept bank written to `docs/WHAT-IF-YOU-COULD-SEE-IT.md` so later chats cannot drop it. Rule: `.cursor/rules/what-if-you-could-see-it.mdc`. Not scheduled. Do not remake the quartz unless she asks.
+
 ## 2026-09-19 — Sunday birthday plate locked with Reiki + Robert
 
 Founder: leave the birthday sun; shrink Reiki Share; put Robert under it; then make both lines bigger. Approved. Media **28427** / `sg-morning-flyer-2026-09-20-birthday-reiki-robert.jpg`. Sunday 9am uses this URL. `do_not_remake`. No new Robert TEC.
