@@ -10,7 +10,7 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont
 ROOT = Path(__file__).resolve().parents[2]
 BG = Path(__file__).resolve().parent / "2026-09-20-art-fallfest-28292.jpg"
 LOGO = ROOT / "config/brand/sacred-ground-logo-circle-transparent.png"
-OUT = ROOT / "assets/sg-morning-flyer-2026-09-20-birthday-store.jpg"
+OUT = ROOT / "assets/sg-morning-flyer-2026-09-20-birthday-reiki.jpg"
 SIZE = 1080
 FOOTER = 92
 FONT_DIR = Path("/System/Library/Fonts/Supplemental")
@@ -98,13 +98,14 @@ def main() -> None:
     # Same face as HAPPY BIRTHDAY; two sizes bigger than the 42pt light pass.
     f_happy = font("Arial Rounded Bold.ttf", 90)
     f_name = font("Arial Rounded Bold.ttf", 90)
-    f_reiki = font("Arial Rounded Bold.ttf", 66)
+    f_reiki = font("Arial Rounded Bold.ttf", 44)
     f_foot = font("Arial Bold.ttf", 26)
 
     cx = SIZE / 2
     center_text(draw, (cx, 88), "HAPPY BIRTHDAY", f_happy, white)
     center_text(draw, (cx, 800), "DENEENE", f_name, white)
-    center_text(draw, (cx, 900), "Reiki Share Free 3 to 5 PM", f_reiki, white)
+    center_text(draw, (cx, 886), "Reiki Share Free 3 to 5 PM", f_reiki, white)
+    center_text(draw, (cx, 938), "Robert 12 to 5 PM", f_reiki, white)
 
     logo = Image.open(LOGO).convert("RGBA")
     logo_w = 118

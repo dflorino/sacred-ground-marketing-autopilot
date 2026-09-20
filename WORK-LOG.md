@@ -1,3 +1,22 @@
+## 2026-09-19 — Sunday birthday plate locked with Reiki + Robert
+
+Founder: leave the birthday sun; shrink Reiki Share; put Robert under it; then make both lines bigger. Approved. Media **28427** / `sg-morning-flyer-2026-09-20-birthday-reiki-robert.jpg`. Sunday 9am uses this URL. `do_not_remake`. No new Robert TEC.
+
+## 2026-09-19 — Saturday morning rebuilt with Robert (all five)
+
+Founder: 9am plate missed Robert. She deleted the live posts. New equal-card plate with Adie, Melissa, Rose, Robert, Andre. Media **28408**. Zernio **6aaea3cafc559ce0adcceb0b** published FB+IG+TT+Threads.
+
+## 2026-09-18 — Night person-from-window short (v9) ready to watch
+
+Founder: keep the person coming out of the window; the clip has to move, and we need to know where they go. Connected-web look stays on Saturday 5pm — do not remake it for the night series.
+
+Journey: gold-light person is in the left window → steps out in front of the shop → rises into a torn-open gold/green/violet sky.
+
+- Start still media **28370** · end **28371** · MP4 **28372**
+- Local QuickTime: `assets/_week_show/sg-cinematic-short-night-person-v9.mp4` + `PLAY-V9.html`
+- Kling `gen-vid-1789756675-JUmNQlULLGZgOxhFvM9a` · 10.04s · start/mid/end hashes distinct
+- **Not scheduled.** Other night shorts (Orion, aurora, rain, lightning) stay queued as different cosmic events.
+
 ## 2026-09-18 — Connected short scheduled Saturday 5pm
 
 Founder: keep the interconnected short; run it tomorrow afternoon with Saturday’s store schedule. Zernio **6aad74ac2e95fa5f2dc8a253** · Sat Sep 19 **5:00 PM** America/Chicago · FB+IG+TT+Threads+YouTube. Caption: Adie 11–3, Melissa 11–2, Rose 2–6, Robert 3–7:30, Andre sound bath 7–8:30. Regular 5pm still is skipped (`skip_publish_dates`: 2026-09-19). Morning Sep 19 still goes at 9am.
