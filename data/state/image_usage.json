@@ -415,6 +415,12 @@
       "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-searchlights-hills.png",
       "rule": "week_ahead_creative_searchlights_hills",
       "campaign": "week_ahead"
+    },
+    {
+      "date": "2026-09-21",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-09-21-peace-poster.jpg",
+      "rule": "morning_flyer",
+      "campaign": "today"
     }
   ],
   "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-EQUAL-WEIGHT-mul-1787594477.jpg": {

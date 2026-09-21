@@ -2288,9 +2288,298 @@
           "message": "Post published successfully"
         }
       }
+    },
+    "today|2026-09-21|facebook|0,12750,23863,24189,25495,26093": {
+      "draft_id": "sgma-2026-09-21-today-fb-d041a16d",
+      "posted_at": "2026-09-21T09:21:50.411135-05:00",
+      "external": {
+        "zernio": {
+          "post": {
+            "recycling": {
+              "enabled": false,
+              "gapFreq": "month",
+              "recycleCount": 0,
+              "contentVariations": [],
+              "contentVariationIndex": 0
+            },
+            "_id": "6ab13d73723a49848d2c7635",
+            "userId": "6a49a0ca1f5ee39905d0dc6f",
+            "title": "",
+            "content": "Here’s today at Sacred Ground, then what’s coming tomorrow.\n\nToday at Sacred Ground\n\n• Lisa Maria Intuitive Tarot and Somatic Healing\n  Monday, September 21 · 12:30 PM–5:00 PM\n  https://shopsacredground.com/book/lisa-maria/\n\n• Soul Alignment w/ Karen: Intuitive Energy Reiki or Akashic Record Reading\n  Monday, September 21 · 7:00 PM–10:00 PM\n  https://shopsacredground.com/karen-akashic/\n\nTomorrow at Sacred Ground\n\n• Amber | Customized Therapeutic Massage Sessions\n  Tuesday, September 22 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/book/amber/\n\n• Angel & Quick Astrology Readings with Lin Bufelli\n  Tuesday, September 22 · 1:00 PM–5:00 PM\n  https://shopsacredground.com/book/linn/\n\n• Equinox Meditation with Melissa – Free Community Event\n  Tuesday, September 22 · 7:00 PM–8:00 PM\n  https://shopsacredground.com/event/meditation-free-community-event-6/\n  Free community gathering — all are welcome.\n\n• Free Community Meditation\nTuesday night 7:00–8:00 PM\nAll are welcome\nNo sign-up needed\nDoors close at 7:05pm\n\nDetails & signup on each event page.\n\nCome as you are.\n\nSacred Ground — Chicagoland’s Premier Crystal Store & Holistic Destination.\n\n#SacredGround #ArlingtonHeights #ShopSacredGround #ChicagoEvents #CrystalShop #EnergyHealing #HolisticCenter #RockShop #Kindness",
+            "mediaItems": [
+              {
+                "type": "image",
+                "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-09-21-peace-poster.jpg",
+                "_id": "6ab13d73723a49848d2c7636"
+              }
+            ],
+            "platforms": [
+              {
+                "platform": "facebook",
+                "accountId": {
+                  "_id": "6a49a1f49d9472faae7c274e",
+                  "platform": "facebook",
+                  "profileId": "6a49a0ca1f5ee39905d0dc87",
+                  "displayName": "Sacred Ground",
+                  "isActive": true,
+                  "profilePicture": "https://scontent-lhr11-1.xx.fbcdn.net/v/t39.30808-1/525520556_778113704730537_8989064612556217432_n.jpg?stp=c412.0.720.720a_cp0_dst-jpg_s50x50_tt6&_nc_cat=106&ccb=1-7&_nc_sid=f907e8&_nc_ohc=MNxy6BBgh6MQ7kNvwEtviEs&_nc_oc=AdoRIw5JAM9c2V-VrJYsYY86WujaeCIVxskScr2zUwrEFVmlIBayrgESWyTbp2N5mWU&_nc_zt=24&_nc_ht=scontent-lhr11-1.xx&edm=AJdBtusEAAAA&_nc_gid=lmJu2WZVNpdy6iBrwQN3dw&_nc_tpa=Q5bMBQKUPye3vChNZG4q0RX0yu9_X67tasVzZxL74lBlUmeuhTB6yRWwd7UsBgTPQF7DxQ7XgP0ssNfP&oh=00_AQIdpjILxQOR4ABHIQvIhCnjbWcYuLyHVcDdDYCQUpWY6Q&oe=6AB68ABC",
+                  "username": "shopsacredground"
+                },
+                "profileId": "6a49a0ca1f5ee39905d0dc87",
+                "customMedia": [],
+                "scheduledFor": "2026-09-21T14:21:39.721Z",
+                "platformSpecificData": {
+                  "firstComment": "Sacred Ground — Chicagoland’s Premier Crystal Store & Holistic Destination."
+                },
+                "status": "published",
+                "publishAttempts": 0,
+                "contentHash": "4b6b3553cb8eb3df844e6b285449938c",
+                "_id": "6ab13d73723a49848d2c7637",
+                "platformPostId": "101428372368870_1119711560570748",
+                "platformPostUrl": "https://www.facebook.com/101428372368870_1119711560570748",
+                "publishedAt": "2026-09-21T14:21:49.735Z"
+              }
+            ],
+            "scheduledFor": "2026-09-21T14:21:39.721Z",
+            "timezone": "America/Chicago",
+            "status": "published",
+            "tags": [],
+            "hashtags": [],
+            "mentions": [],
+            "visibility": "public",
+            "crosspostingEnabled": true,
+            "metadata": {
+              "usageCounted": true
+            },
+            "publishAttempts": 0,
+            "createdAt": "2026-09-21T14:21:39.878Z",
+            "updatedAt": "2026-09-21T14:21:50.117Z",
+            "__v": 0,
+            "publishingClaimedAt": "2026-09-21T14:21:39.931Z"
+          },
+          "message": "Post published successfully"
+        }
+      }
+    },
+    "today|2026-09-21|instagram|0,12750,23863,24189,25495,26093": {
+      "draft_id": "sgma-2026-09-21-today-ig-8258572d",
+      "posted_at": "2026-09-21T09:21:56.629948-05:00",
+      "external": {
+        "zernio": {
+          "post": {
+            "recycling": {
+              "enabled": false,
+              "gapFreq": "month",
+              "recycleCount": 0,
+              "contentVariations": [],
+              "contentVariationIndex": 0
+            },
+            "_id": "6ab13d7e931f5b4359e56698",
+            "userId": "6a49a0ca1f5ee39905d0dc6f",
+            "title": "",
+            "content": "Today at Sacred Ground first — then a look at Tuesday, September 22.\n\nToday at Sacred Ground\n\n• Lisa Maria Intuitive Tarot and Somatic Healing\n  Monday, September 21 · 12:30 PM–5:00 PM\n  https://shopsacredground.com/book/lisa-maria/\n\n• Soul Alignment w/ Karen: Intuitive Energy Reiki or Akashic Record Reading\n  Monday, September 21 · 7:00 PM–10:00 PM\n  https://shopsacredground.com/karen-akashic/\n\nTomorrow at Sacred Ground\n\n• Amber | Customized Therapeutic Massage Sessions\n  Tuesday, September 22 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/book/amber/\n\n• Angel & Quick Astrology Readings with Lin Bufelli\n  Tuesday, September 22 · 1:00 PM–5:00 PM\n  https://shopsacredground.com/book/linn/\n\n• Equinox Meditation with Melissa – Free Community Event\n  Tuesday, September 22 · 7:00 PM–8:00 PM\n  https://shopsacredground.com/event/meditation-free-community-event-6/\n  Free community gathering — all are welcome.\n\n• Free Community Meditation\nTuesday night 7:00–8:00 PM\nAll are welcome\nNo sign-up needed\nDoors close at 7:05pm\n\nDetails & signup on each event page.\n\nCome as you are.\n\nSacred Ground — Chicagoland’s Premier Crystal Store & Holistic Destination.\n\n#SacredGround #ArlingtonHeights #ShopSacredGround #ChicagoEvents #CrystalShop #EnergyHealing #HolisticCenter #RockShop #Kindness #Chicagoland #HolisticChicago",
+            "mediaItems": [
+              {
+                "type": "image",
+                "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-09-21-peace-poster.jpg",
+                "_id": "6ab13d7e931f5b4359e56699"
+              }
+            ],
+            "platforms": [
+              {
+                "platform": "instagram",
+                "accountId": {
+                  "_id": "6a49a12e9d9472faae7c2220",
+                  "profileId": "6a49a0ca1f5ee39905d0dc87",
+                  "platform": "instagram",
+                  "displayName": "Sacred Ground",
+                  "isActive": true,
+                  "profilePicture": "https://scontent-lhr11-1.cdninstagram.com/v/t51.2885-19/313932603_854045628963650_758437280360514790_n.jpg?stp=dst-jpg_s206x206_tt6&_nc_cat=107&ccb=7-5&_nc_sid=bf7eb4&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=HcpdLDP4AVkQ7kNvwH_Qam-&_nc_oc=AdpGQF8aeFpz7461exs7ymxhd0LJhENmZzLN6lI5TyY0XZkK9aTunUwh82WoQKuJqXc&_nc_zt=24&_nc_ht=scontent-lhr11-1.cdninstagram.com&edm=AP4hL3IEAAAA&_nc_tpa=Q5bMBQJtko5-jnJvdf9OPoSAzr0IhQf8xVNiofGGsBndgl4FsLhw8NmuWUWALK_daL2kASn7D45xIo3wSg&oh=00_AQJYUJvbe35ES70cOhBmAXD0Kbs_uBtb6s3QruxtHhIEaA&oe=6AB66BCA",
+                  "username": "shopsacredground"
+                },
+                "profileId": "6a49a0ca1f5ee39905d0dc87",
+                "customMedia": [],
+                "scheduledFor": "2026-09-21T14:21:50.733Z",
+                "platformSpecificData": {
+                  "firstComment": "Sacred Ground — Chicagoland’s Premier Crystal Store & Holistic Destination."
+                },
+                "status": "processing",
+                "publishAttempts": 0,
+                "contentHash": "d5f0fbbc803417dbcf282c94b3767472",
+                "_id": "6ab13d7e931f5b4359e5669a"
+              }
+            ],
+            "scheduledFor": "2026-09-21T14:21:50.733Z",
+            "timezone": "America/Chicago",
+            "status": "publishing",
+            "tags": [],
+            "hashtags": [],
+            "mentions": [],
+            "visibility": "public",
+            "crosspostingEnabled": true,
+            "metadata": {
+              "usageCounted": true
+            },
+            "publishAttempts": 0,
+            "createdAt": "2026-09-21T14:21:50.971Z",
+            "updatedAt": "2026-09-21T14:21:56.279Z",
+            "__v": 0,
+            "publishingClaimedAt": "2026-09-21T14:21:51.021Z"
+          },
+          "message": "Post published successfully"
+        }
+      }
+    },
+    "today|2026-09-21|threads|0,12750,23863,24189,25495,26093": {
+      "draft_id": "sgma-2026-09-21-today-th-49bd6391",
+      "posted_at": "2026-09-21T09:22:20.912550-05:00",
+      "external": {
+        "zernio": {
+          "post": {
+            "recycling": {
+              "enabled": false,
+              "gapFreq": "month",
+              "recycleCount": 0,
+              "contentVariations": [],
+              "contentVariationIndex": 0
+            },
+            "_id": "6ab13d85cf4d3abc22ed10a6",
+            "userId": "6a49a0ca1f5ee39905d0dc6f",
+            "title": "",
+            "content": "Here’s today at Sacred Ground, then what’s coming tomorrow.\n\nToday at Sacred Ground • Lisa Maria Intuitive Tarot and Somatic Healing Monday, September 21 · 12:30 PM–5:00 PM https://shopsacredground.com/book/lisa-maria/ • Soul Alignment w/ Karen: Intuitive Energy Reiki or Akashic Record Reading Monday, September 21 · 7:00 PM–10:00 PM https://shopsacredground.com/karen-akashic/ Tomorrow at Sacred Ground • Amber | Customized Therapeutic Massage Sessions…\n\nMore at shopsacredground.com · 847-749-3922",
+            "mediaItems": [
+              {
+                "type": "image",
+                "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-09-21-peace-poster.jpg",
+                "_id": "6ab13d85cf4d3abc22ed10a7"
+              }
+            ],
+            "platforms": [
+              {
+                "platform": "threads",
+                "accountId": {
+                  "_id": "6aa203a0726ebfe037d0c74a",
+                  "platform": "threads",
+                  "profileId": "6a49a0ca1f5ee39905d0dc87",
+                  "displayName": "shopsacredground",
+                  "isActive": true,
+                  "profilePicture": "https://scontent-lhr6-1.cdninstagram.com/v/t51.82787-19/802333872_18097134170181350_1846167356547019034_n.jpg?_nc_cat=108&ccb=7-5&_nc_sid=30ff31&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xNTAuQzMifQ%3D%3D&_nc_ohc=eg_15vqqvL0Q7kNvwEVnoc0&_nc_oc=AdqaxUQZGS5N6h8iAQ-xC56jJq5i6wUMbRZ3HAPI3RmRLMvC55NCDwUL8yJwbE-moIU&_nc_zt=24&_nc_ht=scontent-lhr6-1.cdninstagram.com&edm=AP4hL3IEAAAA&_nc_gid=7crklMDVaXs8Zm6JjTPkgw&_nc_tpa=Q5bMBQLEvM_e3NY6QcAOS3oS6GQ09VH1tNsshp_C3j4U-nLARheNYsCu9mpYqMJn7xvt1UDCEiEtPKPyIw&oh=00_AQJXMZ8qhMlvNcv6APTcitvjI4jzwSmzo0J4kCF-vQ-HOQ&oe=6AB6A328",
+                  "username": "shopsacredground"
+                },
+                "profileId": "6a49a0ca1f5ee39905d0dc87",
+                "customMedia": [],
+                "scheduledFor": "2026-09-21T14:21:56.980Z",
+                "status": "published",
+                "publishAttempts": 0,
+                "contentHash": "531525f8a8d2b71ad7f9bf6256e88430",
+                "_id": "6ab13d85cf4d3abc22ed10a8",
+                "platformPostId": "18105390359210105",
+                "platformPostUrl": "https://www.threads.com/@shopsacredground/post/DdjXSK8iHCL",
+                "publishedAt": "2026-09-21T14:22:20.511Z"
+              }
+            ],
+            "scheduledFor": "2026-09-21T14:21:56.980Z",
+            "timezone": "America/Chicago",
+            "status": "published",
+            "tags": [],
+            "hashtags": [],
+            "mentions": [],
+            "visibility": "public",
+            "crosspostingEnabled": true,
+            "metadata": {
+              "usageCounted": true
+            },
+            "publishAttempts": 0,
+            "createdAt": "2026-09-21T14:21:57.130Z",
+            "updatedAt": "2026-09-21T14:22:20.644Z",
+            "__v": 0,
+            "publishingClaimedAt": "2026-09-21T14:21:57.199Z"
+          },
+          "message": "Post published successfully"
+        }
+      }
+    },
+    "today|2026-09-21|tiktok|0,12750,23863,24189,25495,26093": {
+      "draft_id": "sgma-2026-09-21-today-ti-b3863a20",
+      "posted_at": "2026-09-21T09:22:26.317790-05:00",
+      "external": {
+        "zernio": {
+          "post": {
+            "recycling": {
+              "enabled": false,
+              "gapFreq": "month",
+              "recycleCount": 0,
+              "contentVariations": [],
+              "contentVariationIndex": 0
+            },
+            "_id": "6ab13d9d0ef3321970c6b0ad",
+            "userId": "6a49a0ca1f5ee39905d0dc6f",
+            "title": "",
+            "content": "See what’s happening today at Sacred Ground, then what’s coming tomorrow.",
+            "mediaItems": [
+              {
+                "type": "image",
+                "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-09-21-peace-poster.jpg",
+                "_id": "6ab13d9d0ef3321970c6b0ae"
+              }
+            ],
+            "platforms": [
+              {
+                "platform": "tiktok",
+                "accountId": {
+                  "_id": "6a49a6e79d9472faae7c4b52",
+                  "platform": "tiktok",
+                  "profileId": "6a49a0ca1f5ee39905d0dc87",
+                  "displayName": "Sacred Ground",
+                  "isActive": true,
+                  "profilePicture": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/dfec5194bb37e5461ca60a538b998c67~tplv-tiktokx-cropcenter:168:168.jpeg?dr=9638&refresh_token=77ac306f&x-expires=1790132400&x-signature=fFOepYMdnpCQ5Womx%2F84pIcvkSA%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=8aecc5ac&idc=useast5",
+                  "username": "shopsacredground"
+                },
+                "profileId": "6a49a0ca1f5ee39905d0dc87",
+                "customMedia": [],
+                "scheduledFor": "2026-09-21T14:22:21.266Z",
+                "platformSpecificData": {
+                  "tiktokSettings": {
+                    "media_type": "photo",
+                    "photo_cover_index": 0,
+                    "description": "See what’s happening today at Sacred Ground, then what’s coming tomorrow.\n\nToday at Sacred Ground\n\n• Lisa Maria Intuitive Tarot and Somatic Healing\n  Monday, September 21 · 12:30 PM–5:00 PM\n  https://shopsacredground.com/book/lisa-maria/\n\n• Soul Alignment w/ Karen: Intuitive Energy Reiki or Akashic Record Reading\n  Monday, September 21 · 7:00 PM–10:00 PM\n  https://shopsacredground.com/karen-akashic/\n\nTomorrow at Sacred Ground\n\n• Amber | Customized Therapeutic Massage Sessions\n  Tuesday, September 22 · 12:00 PM–5:00 PM\n  https://shopsacredground.com/book/amber/\n\n• Angel & Quick Astrology Readings with Lin Bufelli\n  Tuesday, September 22 · 1:00 PM–5:00 PM\n  https://shopsacredground.com/book/linn/\n\n• Equinox Meditation with Melissa – Free Community Event\n  Tuesday, September 22 · 7:00 PM–8:00 PM\n  https://shopsacredground.com/event/meditation-free-community-event-6/\n  Free community gathering — all are welcome.\n\n• Free Community Meditation\nTuesday night 7:00–8:00 PM\nAll are welcome\nNo sign-up needed\nDoors close at 7:05pm\n\nDetails & signup on each event page.\n\nWe'll keep a seat warm.\n\nSacred Ground — Chicagoland’s Premier Crystal Store & Holistic Destination.\n\n#SacredGround #ArlingtonHeights #ShopSacredGround #ChicagoEvents #CrystalShop #EnergyHealing #HolisticCenter #RockShop #Kindness",
+                    "auto_add_music": false,
+                    "privacy_level": "PUBLIC_TO_EVERYONE",
+                    "allow_comment": true,
+                    "content_preview_confirmed": true,
+                    "express_consent_given": true,
+                    "video_made_with_ai": true
+                  }
+                },
+                "status": "processing",
+                "publishAttempts": 0,
+                "contentHash": "7e57e0be446bcc8e7a72d951513c87a7",
+                "_id": "6ab13d9d0ef3321970c6b0af"
+              }
+            ],
+            "scheduledFor": "2026-09-21T14:22:21.266Z",
+            "timezone": "America/Chicago",
+            "status": "publishing",
+            "tags": [],
+            "hashtags": [],
+            "mentions": [],
+            "visibility": "public",
+            "crosspostingEnabled": true,
+            "metadata": {
+              "usageCounted": true
+            },
+            "publishAttempts": 0,
+            "createdAt": "2026-09-21T14:22:21.516Z",
+            "updatedAt": "2026-09-21T14:22:25.653Z",
+            "__v": 0,
+            "publishingClaimedAt": "2026-09-21T14:22:21.545Z"
+          },
+          "message": "Post published successfully"
+        }
+      }
     }
   },
-  "updated_at": "2026-09-15T12:31:55.297461-05:00",
+  "updated_at": "2026-09-21T09:22:26.317801-05:00",
   "sgma-2026-08-28-today-fb-magritte-repost": {
     "campaign": "today",
     "platform": "facebook",
