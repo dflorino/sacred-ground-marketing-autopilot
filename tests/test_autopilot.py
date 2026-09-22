@@ -127,6 +127,47 @@ class AutopilotTests(unittest.TestCase):
         self.assertTrue(classify.is_community_meditation(ahead[0]))
         self.assertEqual(ahead[0].start_date, "2026-08-04 19:00:00")
 
+    def test_equinox_tuesday_meditation_is_community_not_afternoon(self) -> None:
+        """Themed Tuesday slot still belongs to 4pm, not 5pm spotlight."""
+        from marketing import classify
+        from marketing.models import Event
+
+        tuesday = date(2026, 9, 22)
+        equinox = Event(
+            id=12750,
+            title="Equinox Meditation with Melissa – Free Community Event",
+            start_date="2026-09-22 19:00:00",
+            end_date="2026-09-22 20:00:00",
+            url="https://shopsacredground.com/event/meditation-free-community-event-6/",
+            cost="Free",
+        )
+        rose = Event(
+            id=25505,
+            title="Ankh Lifeforce Alignment Reiki with Rose",
+            start_date="2026-09-23 12:00:00",
+            end_date="2026-09-23 17:00:00",
+            url="https://shopsacredground.com/book/rose/",
+            cost="$99",
+        )
+        stillness = Event(
+            id=28082,
+            title="Sacred Stillness: A Women’s Circle for Meditation, Reflection & Connection",
+            start_date="2026-09-23 19:00:00",
+            end_date="2026-09-23 20:00:00",
+            url="https://shopsacredground.com/book-tina-stillness/",
+            cost="Love Donation",
+        )
+        self.assertTrue(classify.is_community_meditation(equinox))
+        self.assertFalse(classify.is_community_meditation(stillness))
+        self.assertFalse(classify.is_community_meditation(rose))
+        pick = classify.pick_afternoon_spotlight(
+            [equinox, rose, stillness],
+            tuesday,
+            after=datetime(2026, 9, 22, 17, 0, tzinfo=ZoneInfo("America/Chicago")),
+        )
+        self.assertIsNotNone(pick)
+        self.assertEqual(pick.id, 28082)
+
     def test_generate_batch_creates_today_week_spotlight(self) -> None:
         from marketing import pipeline, store
 

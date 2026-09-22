@@ -131,13 +131,25 @@ def _meditation_cfg() -> Dict:
 
 
 def is_community_meditation(event: Event) -> bool:
-    """True for Free Community Meditation / Meditation Free Community Event titles."""
+    """True for Free Community Meditation and themed Tuesday-slot titles.
+
+    TEC sometimes titles the standing Tuesday 7–8pm as
+    "Equinox Meditation with Melissa – Free Community Event" (slug still
+    meditation-free-community-event-*). Those are the 4pm campaign's post,
+    not a second afternoon spotlight. Do not match paid circles that only
+    mention meditation (e.g. Sacred Stillness).
+    """
     low = (event.title or "").lower()
+    url = (event.url or "").lower()
     needles = _meditation_cfg().get("title_match_any") or [
         "community meditation",
         "meditation free community",
     ]
-    return any(str(n).lower() in low for n in needles)
+    if any(str(n).lower() in low for n in needles):
+        return True
+    if "meditation-free-community" in url or "free-community-meditation" in url:
+        return True
+    return "meditation" in low and "free community" in low
 
 
 def _meditation_stub_for_day(day: date) -> Event:
