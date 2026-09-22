@@ -160,7 +160,7 @@ Hard rules:
 2. Checkout this repo and run from the project root.
 3. python3 -m marketing run --source live-strict
 4. If TEC refresh fails: create NO drafts, STOP.
-5. If `publish-afternoon-spotlight` returns `cinematic_short_owns_slot` (or today is in `afternoon_spotlight_plates.json` → `skip_publish_dates`): STOP. Do not invent a still. Sat Sep 19 2026 is the connected cinematic short.
+5. If `publish-afternoon-spotlight` returns `cinematic_short_owns_slot` (or today is in `afternoon_spotlight_plates.json` → `skip_publish_dates`): STOP. Do not invent a still. Weekly threshold clips (Founder Sep 22): Thu Sep 24 = media **28505**, Thu Oct 1 = **28508**, Thu Oct 8 = **28482**. Those dates need the assigned MP4 on Zernio at 5pm, not a still.
 6. Otherwise publish only afternoon_spotlight:
    python3 -m marketing publish-afternoon-spotlight
 7. Do not publish today / week_ahead / tuesday_meditation.

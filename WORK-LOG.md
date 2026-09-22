@@ -1,3 +1,17 @@
+## 2026-09-22 — Website clip + weekly afternoon walks
+
+Founder: first sidewalk clip (do not follow her in) is the website file. All 3 movement clips go to afternoon social, one a week, not consecutive days.
+
+- **Website:** media **28505** `sg-about-threshold-walk-1.mp4` — https://shopsacredground.com/wp-content/uploads/sg-about-threshold-walk-1.mp4 — admin `upload.php?item=28505`
+- **Thu Sep 24 5pm:** **28505** stay outside
+- **Thu Oct 1 5pm:** **28508** follow her in
+- **Thu Oct 8 5pm:** **28482** hallway door then light
+- Regular 5pm stills skipped those dates (`afternoon_spotlight_plates.json`). Do not trash 28505.
+
+## 2026-09-20 — Sunday morning posted (same locked plate)
+
+Founder: post the approved sun today. Same image **28460** — Robert once on top, Reiki below. No remake. Caption lists Robert 12–5 (no TEC card) + Reiki Share. Zernio FB **6aafbb2ed2e8af1a8acf3574** / IG **6aafbb3ed2e8af1a8acf3857** / TT **6aafbb59116a0b6150ffeb8f** / Threads **6aafbb49a996e6d68617ce0e**. 9am should skip as already posted. No new Robert TEC.
+
 ## 2026-09-20 — Sunday 9am remake: Robert top, Reiki bottom, type 2×
 
 Founder: take Happy Birthday / DENEENE off; same sun; Robert on top, Reiki Share on bottom; type twice as big; lower Reiki a little. **Perfect.** Media **28460** / `sg-morning-flyer-2026-09-20-robert-reiki-v3.jpg`. Sunday 9am uses this URL. `do_not_remake`. No new Robert TEC.

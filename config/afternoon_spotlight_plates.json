@@ -1,8 +1,36 @@
 {
   "notes": "Date-keyed Founder-locked afternoon spotlight plates. When present for America/Chicago day, plan_image(afternoon_spotlight) uses this URL before event_featured / pool. Never reuse morning plate URLs. Single-image FB+IG. skip_publish_dates = 5pm still does not go out (a cinematic short owns that slot).",
   "skip_publish_dates": [
-    "2026-09-19"
+    "2026-09-19",
+    "2026-09-20",
+    "2026-09-24",
+    "2026-10-01",
+    "2026-10-08"
   ],
+  "cinematic_weekly_threshold": {
+    "notes": "Founder Sep 22: use all 3 movement clips for afternoon, one a week, not consecutive days. Regular 5pm still is skipped those dates. Schedule the assigned MP4 at 5:00 PM America/Chicago (FB+IG+TT+Threads) with that day's store hours. Do not invent a still.",
+    "cadence": "weekly_thursdays_5pm",
+    "slots": {
+      "2026-09-24": {
+        "clip": "about_threshold_stay_outside",
+        "mp4_media": 28505,
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-about-threshold-walk-1.mp4",
+        "label": "About threshold — stay on the sidewalk (also the website clip)"
+      },
+      "2026-10-01": {
+        "clip": "about_threshold_enter_with_her",
+        "mp4_media": 28508,
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-about-threshold-walk-v2-1.mp4",
+        "label": "About threshold v2 — camera follows her in"
+      },
+      "2026-10-08": {
+        "clip": "hero_door_then_light",
+        "mp4_media": 28482,
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-hero-door-then-light-locked-1.mp4",
+        "label": "Hallway — door opens, then the light (locked walls)"
+      }
+    }
+  },
   "prebranded_default": true,
   "plates": {
     "2026-09-09": {

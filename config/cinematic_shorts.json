@@ -1,5 +1,38 @@
 {
   "notes": "Cinematic Threads/Reels/Shorts/TikTok. Not Galactic Explorers, not HeyGen, not TopView. Founder watches local MP4 via macOS open/QuickTime before anything posts.",
+  "website_and_weekly_afternoon": {
+    "notes": "Founder Sep 22: first sidewalk clip is the website About/hero loop. All 3 movement clips go to afternoon social, one a week, not consecutive days.",
+    "website": {
+      "mp4_media": 28505,
+      "mp4_url": "https://shopsacredground.com/wp-content/uploads/sg-about-threshold-walk-1.mp4",
+      "admin": "https://shopsacredground.com/wp-admin/upload.php?item=28505",
+      "file": "sg-about-threshold-walk-1.mp4",
+      "story": "Stay on the sidewalk. Doors open. River of light. Do not follow her in."
+    },
+    "afternoon_weekly": [
+      {
+        "run_at": "2026-09-24T17:00:00-05:00",
+        "run_slot": "afternoon_spotlight",
+        "mp4_media": 28505,
+        "mp4_url": "https://shopsacredground.com/wp-content/uploads/sg-about-threshold-walk-1.mp4",
+        "clip": "about_threshold_stay_outside"
+      },
+      {
+        "run_at": "2026-10-01T17:00:00-05:00",
+        "run_slot": "afternoon_spotlight",
+        "mp4_media": 28508,
+        "mp4_url": "https://shopsacredground.com/wp-content/uploads/sg-about-threshold-walk-v2-1.mp4",
+        "clip": "about_threshold_enter_with_her"
+      },
+      {
+        "run_at": "2026-10-08T17:00:00-05:00",
+        "run_slot": "afternoon_spotlight",
+        "mp4_media": 28482,
+        "mp4_url": "https://shopsacredground.com/wp-content/uploads/sg-hero-door-then-light-locked-1.mp4",
+        "clip": "hero_door_then_light"
+      }
+    ]
+  },
   "machine": {
     "still": "idea-first 9:16 start + end",
     "i2v": "kwaivgi/kling-v3.0-pro 10s 720p 9:16 first_frame+last_frame data URI from shop disk",
@@ -39,7 +72,7 @@
     }
   ],
   "night_storefront_series": {
-    "notes": "Founder Fri Sep 18: after the connected short, night shorts of the REAL store. Same facade every night. The SKY changes. Real eggplant awning, tan stone, white SACRED GROUND with a space (no hyphen/swoosh). Circular sun logo bottom-left. No campaign meta on the photo. No invented fantasy shop.",
+    "notes": "Founder Fri Sep 18: after the connected short, night shorts of the REAL store. Same facade every night. The SKY does something cosmic and different each night — not another connected-web remake. Real eggplant awning, tan stone, white SACRED GROUND with a space (no hyphen/swoosh). Circular sun logo bottom-left. No campaign meta on the photo. No invented fantasy shop.",
     "locked_store": {
       "awning": "eggplant purple",
       "facade": "tan stone",
@@ -60,9 +93,26 @@
     },
     "queue": [
       {
+        "id": "night-person-from-window",
+        "sky": "gold-light person steps out of the left window, walks a star-path, enters a torn-open sky",
+        "idea": "They leave the shop through the glass, rise on gold light, and go through the tear in the night. Not the connected-web short.",
+        "status": "founder_watch",
+        "start_local": "assets/_week_show/sg-cinematic-v9-night-start-person-from-window.jpg",
+        "end_local": "assets/_week_show/sg-cinematic-v9-night-end-person-enters-sky.jpg",
+        "start_media": 28370,
+        "end_media": 28371,
+        "mp4_media": 28372,
+        "mp4_url": "https://shopsacredground.com/wp-content/uploads/sg-cinematic-short-night-person-v9.mp4",
+        "local_mp4": "assets/_week_show/sg-cinematic-short-night-person-v9.mp4",
+        "play_html": "assets/_week_show/PLAY-V9.html",
+        "kling_job": "gen-vid-1789756675-JUmNQlULLGZgOxhFvM9a",
+        "duration_s": 10.04,
+        "motion_check": "start/mid/end hashes distinct"
+      },
+      {
         "id": "night-sky-opens",
-        "sky": "quiet star field tears open into gold/emerald/amethyst galaxies",
-        "status": "stills_ready",
+        "sky": "quiet star field tears open into gold/emerald/amethyst galaxies — no person, no connected web",
+        "status": "queued_after_person",
         "start_local": "assets/_week_show/sg-cinematic-v7-night-start-quiet-sky.jpg",
         "end_local": "assets/_week_show/sg-cinematic-v7-night-end-sky-opens.jpg",
         "start_media": 28369,
@@ -103,6 +153,49 @@
         "id": "night-deep-sky",
         "sky": "Milky Way / deep night field, SG still the anchor",
         "status": "queued"
+      }
+    ]
+  },
+  "what_if_you_could_see_it": {
+    "list": "docs/WHAT-IF-YOU-COULD-SEE-IT.md",
+    "notes": "Founder Sat Sep 19: 6–10s moving visual reels, not ads. Whoa first. Tiny Sacred Ground logo at the end. Photoreal magical realism — not cartoon, not generic purple spiritual AI. Mix profound + metaphysical humor. Families: What If You Could See It / Cosmic Questions / Metaphysical Problems / 10 Seconds of Magic. First KEEP: quartz dive — she likes the crystal. Full 30 + earlier 20 live in docs/WHAT-IF-YOU-COULD-SEE-IT.md.",
+    "queue": [
+      {
+        "id": "quartz-just-a-rock-v11",
+        "family": "10_seconds_of_magic",
+        "title": "You thought it was just a rock",
+        "idea": "Black void. Tiny quartz. Camera closer, closer, then plunges inside into a crystalline universe.",
+        "on_screen": "You thought it was just a rock.",
+        "status": "founder_likes_crystal",
+        "start_local": "assets/_week_show/sg-cinematic-v11-quartz-start.jpg",
+        "end_local": "assets/_week_show/sg-cinematic-v11-quartz-end.jpg",
+        "start_media": 28428,
+        "end_media": 28429,
+        "kling_job": "gen-vid-1789874139-2biY8R7f3WGy3sBk6aRt",
+        "mp4_media": 28430,
+        "mp4_url": "https://shopsacredground.com/wp-content/uploads/sg-cinematic-short-quartz-v11.mp4",
+        "local_mp4": "assets/_week_show/sg-cinematic-short-quartz-v11.mp4",
+        "play_html": "assets/_week_show/PLAY-V11.html",
+        "duration_s": 10.04,
+        "motion_check": "start/mid/end hashes distinct"
+      },
+      {
+        "id": "inside-the-crystal-v12",
+        "family": "10_seconds_of_magic",
+        "title": "You thought it was just a crystal",
+        "idea": "3-beat: real macro quartz → pass through rainbow refraction → soar through crystal cathedral. Thought + SACRED GROUND.",
+        "on_screen": "You thought it was just a crystal.",
+        "status": "founder_watch",
+        "start_local": "assets/_week_show/sg-cinematic-v12-quartz-start.jpg",
+        "end_local": "assets/_week_show/sg-cinematic-v12-quartz-end.jpg",
+        "start_media": 28432,
+        "end_media": 28433,
+        "kling_job": "gen-vid-1789875271-8XGxrhU2ysDxuAMuDa3Q",
+        "mp4_media": 28448,
+        "mp4_url": "https://shopsacredground.com/wp-content/uploads/sg-cinematic-short-quartz-v12.mp4",
+        "local_mp4": "assets/_week_show/sg-cinematic-short-quartz-v12.mp4",
+        "duration_s": 10.04,
+        "motion_check": "start/mid/end hashes distinct"
       }
     ]
   }
