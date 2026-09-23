@@ -1,3 +1,22 @@
+## 2026-09-23 — Afternoon themes fail closed (Libra miss)
+
+Libra Season was planned for Sep 22 5pm as `needs_creative` and never made. The job posted a regular still because the master calendar was inventory only.
+
+Same class of lock as morning flyers and `skip_publish_dates`:
+
+- `python3 -m marketing check-slot-readiness --days 7` (9am prints the next week)
+- 5pm runs `--days 1` first; `required_plate_missing` = STOP, do not invent a still
+- Gates: near-term `needs_creative` / `locked`, morning `afternoon_companion`, `zodiac_season` dates
+- Regular days without a theme still post
+
+## 2026-09-23 — Janel / Libra / pride / wallet
+
+- **Wallet:** Image key was $12 cap at $0. Copied wallet onto `ml_image_editor_openrouter_api_key` + `ml_override_openrouter`. Recheck: all three SET, no cap, usage ~$153.
+- **Janel Sep 22:** Morning graphic still had Janel (Divine Insight). Live TEC that day was Amber 12–5, Lin 1–5, Melissa Equinox Meditation 7–8. No published Janel card (only trash 25386 from Sep 20). Caption was correct; the plate was stale from the Sep 9 Mabon gen. Do not remake yesterday’s live post.
+- **Libra:** Planned as Sep 22 afternoon (`needs_creative`) and never made. Socials were Equinox/Mabon + the store list. Catch-up plate in progress for today 5pm with designed-in #1.
+- **Virgo wall:** Observatory sun table keeps Virgo through Sep 22 (`max` 922). Last night the shop wall still said Virgo. Today’s daily is **Libra season**.
+- **Pride:** Left the plates in the Sep 7 `v5c_scrub_all_pride` remake (duplicate #1 rejected). Unlocked Sep 18. Captions + first comments kept the claim; on-image became a tiny unreadible pill or nothing. NEW gens bake #1 / Premier / Voted back into the picture. Do not stamp old URLs.
+
 ## 2026-09-22 — Website clip + weekly afternoon walks
 
 Founder: first sidewalk clip (do not follow her in) is the website file. All 3 movement clips go to afternoon social, one a week, not consecutive days.

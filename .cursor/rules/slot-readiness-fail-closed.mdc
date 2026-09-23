@@ -1,0 +1,30 @@
+---
+description: Planned afternoon themes fail closed — no plate, no 5pm still
+alwaysApply: true
+---
+
+# Afternoon slot readiness (HARD — Founder Sep 23, 2026)
+
+Libra Season was on the master calendar as `needs_creative` and never got a plate. 5pm still posted a store still. That is the bug.
+
+## How we know
+
+`python3 -m marketing check-slot-readiness --days 7`
+
+9am job prints this. 5pm job runs `--days 1` first.
+
+## Fail closed (same class as morning flyers / skip_publish_dates)
+
+5pm **STOPS** (`required_plate_missing`) when any of these is true and `afternoon_spotlight_plates.json` has no URL for that Chicago day:
+
+- near-term afternoon `needs_creative` / `required` / `missing` / `locked`
+- morning flyer `afternoon_companion`
+- master `zodiac_season` date (unless afternoon is explicitly `optional_skip`)
+
+Regular days with no theme still post. Cinematic skip dates still skip (`cinematic_short_owns_slot`).
+
+## Do not
+
+- Invent a generic event still to “fill” a missing theme
+- Treat the master calendar as decoration — `needs_creative` is a gate
+- Mark a theme done until the URL is in `afternoon_spotlight_plates.json`

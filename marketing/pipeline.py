@@ -384,13 +384,25 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
         skipped_drafts.append({"campaign": "week", "reason": "no_events_this_week"})
 
     # --- Afternoon spotlight (daily 5pm: one engaging event) ---
+    from . import slot_readiness
+
     af_cfg = (cfg.get("campaigns") or {}).get("afternoon_spotlight") or {}
-    if af_cfg.get("enabled", True) and images.skip_afternoon_publish(day):
+    af_block = slot_readiness.afternoon_block(day) if af_cfg.get("enabled", True) else None
+    if af_cfg.get("enabled", True) and af_block and af_block.get("reason") == "cinematic_short_owns_slot":
         skipped_drafts.append(
             {
                 "campaign": "afternoon_spotlight",
                 "reason": "cinematic_short_owns_slot",
                 "detail": day.isoformat(),
+            }
+        )
+    elif af_cfg.get("enabled", True) and af_block and af_block.get("reason") == "required_plate_missing":
+        skipped_drafts.append(
+            {
+                "campaign": "afternoon_spotlight",
+                "reason": "required_plate_missing",
+                "detail": af_block.get("detail") or af_block.get("theme"),
+                "theme": af_block.get("theme"),
             }
         )
     elif af_cfg.get("enabled", True):
@@ -412,7 +424,15 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                 platform="facebook",
                 exclude_urls=af_exclude,
             )
-            if _image_never_reuse_blocked(shared_af):
+            if getattr(shared_af, "rule", None) == "required_plate_missing":
+                skipped_drafts.append(
+                    {
+                        "campaign": "afternoon_spotlight",
+                        "reason": "required_plate_missing",
+                        "detail": getattr(shared_af, "recommendation", "") or "",
+                    }
+                )
+            elif _image_never_reuse_blocked(shared_af):
                 skipped_drafts.append(
                     {
                         "campaign": "afternoon_spotlight",

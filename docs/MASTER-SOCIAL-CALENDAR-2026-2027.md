@@ -4,7 +4,9 @@
 **Source of truth (machine):** [`config/master_social_calendar.json`](../config/master_social_calendar.json)  
 **Live celestial dual-cadence plates:** [`config/celestial_events.json`](../config/celestial_events.json) (night-before 7pm + morning-of 9am when locked)
 
-Founder planning calendar (pasted 2026-09-08). Use this to decide which dates need social art / captions. It does **not** auto-publish. Promote a date into `celestial_events.json` or a specialty campaign when creatives and cadence are locked.
+Founder planning calendar (pasted 2026-09-08). Use this to decide which dates need social art / captions. It does **not** auto-publish the art. Promote a date into `celestial_events.json` or `afternoon_spotlight_plates.json` when the creative is locked.
+
+**Fail-closed (Founder Sep 23 2026):** `needs_creative` / `locked` afternoon rows, morning `afternoon_companion`, and `zodiac_season` dates **do** stop 5pm if there is no plate. Regular days without a theme still post. Check: `python3 -m marketing check-slot-readiness --days 7`.
 
 Stars = Founder priority. RED / `do_not_miss` = never skip in the planning pass.
 
@@ -45,7 +47,7 @@ Machine copy: `slotting_rules` + `near_term_slot_plan` in [`config/master_social
 | **Sep 9** | 9/9 Portal (28031) | Portal veil (28039) | Virgo night-before |
 | **Sep 10** | New Moon Virgo (kept) | optional / skip | default week-ahead |
 | **Sep 21** | **Peace poster (28052)** *(from 28044, scrubbed)* | **Peace lanterns (28043)** | Equinox night-before (kept) |
-| **Sep 22** | **Mabon · Equinox folk (28042)** *(Founder love — held until go-live)* | **Libra Season** *(needs creative)* | optional / rest |
+| **Sep 22** | **Mabon · Equinox folk (28042)** | **Libra Season** *(needs creative — 5pm now fails closed until a plate exists)* | optional / rest |
 
 Next creatives: Libra Season afternoon (Sep 22). Peace 28040 + Mabon folk 28042 locked (held do_not_publish until Founder go-live).
 

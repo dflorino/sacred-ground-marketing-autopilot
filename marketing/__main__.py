@@ -144,6 +144,22 @@ def main(argv: Optional[List[str]] = None) -> int:
     p_lw_reg.add_argument("style_id")
     p_lw_reg.add_argument("source_path")
 
+    p_ready = sub.add_parser(
+        "check-slot-readiness",
+        help="Fail-closed: next N days of planned afternoon themes must have plates",
+    )
+    p_ready.add_argument(
+        "--days",
+        type=int,
+        default=7,
+        help="Chicago days to scan (default 7)",
+    )
+    p_ready.add_argument(
+        "--start",
+        default=None,
+        help="YYYY-MM-DD start (default today America/Chicago)",
+    )
+
     sub.add_parser("status", help="Show pause/phase/counts")
     sub.add_parser("review", help="Human-readable review queue for Phase 1")
     sub.add_parser("version", help="Print version")
@@ -153,6 +169,16 @@ def main(argv: Optional[List[str]] = None) -> int:
     if args.cmd == "version":
         _print({"service": "sacred-ground-marketing-autopilot", "version": __version__})
         return 0
+
+    if args.cmd == "check-slot-readiness":
+        from datetime import date as date_cls
+
+        from . import slot_readiness
+
+        start = date_cls.fromisoformat(args.start) if args.start else None
+        result = slot_readiness.check_range(days=args.days, start=start)
+        _print(result)
+        return 0 if result.get("ok") else 1
 
     if args.cmd == "status":
         drafts = store.list_drafts()

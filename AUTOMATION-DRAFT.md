@@ -109,6 +109,9 @@ Hard rules:
 4. Ensure morning flyer(s) before drafts. Setting `invent_new_plate_only_when_unscheduled` is ON. **Invent a new plate ONLY if that Chicago day has no row in `config/morning_flyers.json`.** If you must invent: start from one surprising visual idea (Founder Sep 17 bar: birthday sun / orbit — `assets/sg-morning-flyer-2026-09-20-birthday-store.jpg`), not Magritte/Einstein chalkboard. If generate reports `scheduled_skip` / `already_scheduled` / `held`: use the queued URL, do not mlimg, do not `--force`. `awaiting_founder_review` / `do_not_publish` = do not publish. `do_not_remake` means do not remake the plate — still publish if it is Founder-approved and not held. Founder Sep 18 2026: Sep 19–28 morning plates are unlocked and **do go out** on their own 9am.
    python3 -m marketing generate-morning-flyers --start-offset 0 --days 2 --source live-strict
    Prefer a weekly --days 7 prebuild so 9am is not inventing art cold. Prefer today’s date flyer when today has events. Never pass `--force` from this 9am job.
+4b. After flyers, print the next 7 days of afternoon theme readiness (Libra-class miss):
+   python3 -m marketing check-slot-readiness --days 7
+   If `missing` > 0: say which day/theme has no plate in the 9am summary. Do **not** invent a still from this job. Morning still publishes. The 5pm job will STOP until the plate is wired.
 5. Refresh live WordPress / The Events Calendar only:
    python3 -m marketing run --source live-strict
 6. If the WordPress/TEC refresh fails: create NO new drafts, do not use stale cache, report wordpress_refresh_failed, and STOP. Do not publish.
@@ -117,7 +120,7 @@ Hard rules:
    python3 -m marketing publish-today
 9. Morning IMAGE posts must hit **Facebook + Instagram + TikTok + Threads** (same plate). `publish-today` uses `config/settings.json` platforms — do NOT manually publish only FB+IG via MCP and skip TikTok/Threads. After publish, confirm all four succeeded (or report which failed). Do not publish afternoon_spotlight / week_ahead / tuesday_meditation / spotlight from this job.
 10. NEVER publish or republish Reels / video episodes from this image job unless Founder explicitly asks.
-11. Summarize: today’s events + tomorrow’s events, platforms (must list FB+IG+TT+Threads), image URL/rule, publish results.
+11. Summarize: today’s events + tomorrow’s events, platforms (must list FB+IG+TT+Threads), image URL/rule, publish results, plus any `check-slot-readiness` missing afternoon themes in the next 7 days.
 ```
 
 ## Editor checklist — morning
@@ -144,6 +147,7 @@ Daily single-event afternoon spotlight (Facebook + Instagram + TikTok + Threads)
 ## Daily commands (Cloud Agent)
 
 ```bash
+python3 -m marketing check-slot-readiness --days 1
 python3 -m marketing run --source live-strict
 python3 -m marketing publish-afternoon-spotlight
 ```
@@ -158,15 +162,19 @@ You are running Sacred Ground Marketing Autopilot for the daily afternoon_spotli
 Hard rules:
 1. Timezone America/Chicago. Post time 5:00 PM America/Chicago.
 2. Checkout this repo and run from the project root.
-3. python3 -m marketing run --source live-strict
-4. If TEC refresh fails: create NO drafts, STOP.
-5. If `publish-afternoon-spotlight` returns `cinematic_short_owns_slot` (or today is in `afternoon_spotlight_plates.json` → `skip_publish_dates`): STOP. Do not invent a still. Weekly threshold clips (Founder Sep 22): Thu Sep 24 = media **28505**, Thu Oct 1 = **28508**, Thu Oct 8 = **28482**. Those dates need the assigned MP4 on Zernio at 5pm, not a still.
-6. Otherwise publish only afternoon_spotlight:
+3. First fail-closed check (Founder Sep 23 2026 — Libra never got made):
+   python3 -m marketing check-slot-readiness --days 1
+   If it exits 1 / `required_plate_missing`: STOP. Do **not** run. Do **not** invent a generic event still. Report the theme and wait for a plate in `afternoon_spotlight_plates.json`.
+4. python3 -m marketing run --source live-strict
+5. If TEC refresh fails: create NO drafts, STOP.
+6. If `publish-afternoon-spotlight` returns `cinematic_short_owns_slot` (or today is in `afternoon_spotlight_plates.json` → `skip_publish_dates`): STOP. Do not invent a still. Weekly threshold clips (Founder Sep 22): Thu Sep 24 = media **28505**, Thu Oct 1 = **28508**, Thu Oct 8 = **28482**. Those dates need the assigned MP4 on Zernio at 5pm, not a still.
+6b. If it returns `required_plate_missing`: STOP the same way. Same class of lock as morning flyers / skip_publish_dates.
+7. Otherwise publish only afternoon_spotlight:
    python3 -m marketing publish-afternoon-spotlight
-7. Do not publish today / week_ahead / tuesday_meditation.
-8. Platforms must be **Facebook + Instagram + TikTok + Threads** (same plate). Do not MCP-publish FB+IG only.
-9. NEVER publish or republish Reels / video episodes from this image job unless Founder explicitly asks.
-10. Caption is a single-event spotlight (or brand visit). Summarize event + platforms + Zernio links.
+8. Do not publish today / week_ahead / tuesday_meditation.
+9. Platforms must be **Facebook + Instagram + TikTok + Threads** (same plate). Do not MCP-publish FB+IG only.
+10. NEVER publish or republish Reels / video episodes from this image job unless Founder explicitly asks.
+11. Caption is a single-event spotlight (or brand visit). Summarize event + platforms + Zernio links.
 ```
 
 ## Editor checklist — afternoon

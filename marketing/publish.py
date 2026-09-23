@@ -444,17 +444,30 @@ def publish_tuesday_meditation_drafts() -> Dict[str, Any]:
 
 def publish_afternoon_spotlight_drafts() -> Dict[str, Any]:
     """Publish/schedule today's afternoon spotlight drafts (default 5pm CT)."""
-    from . import images
+    from . import slot_readiness
     from .ingest import today_local
 
     day = today_local()
-    if images.skip_afternoon_publish(day):
+
+    block = slot_readiness.afternoon_block(day)
+    if block and block.get("reason") == "cinematic_short_owns_slot":
         return {
             "ok": True,
             "campaign": "afternoon_spotlight",
             "day": day.isoformat(),
             "action": "skipped",
             "reason": "cinematic_short_owns_slot",
+            "results": [],
+        }
+    if block and block.get("reason") == "required_plate_missing":
+        return {
+            "ok": False,
+            "campaign": "afternoon_spotlight",
+            "day": day.isoformat(),
+            "action": "skipped",
+            "reason": "required_plate_missing",
+            "theme": block.get("theme"),
+            "detail": block.get("detail"),
             "results": [],
         }
     return publish_campaign_drafts(campaign="afternoon_spotlight")

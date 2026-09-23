@@ -735,8 +735,18 @@ def plan_image(
 
     if campaign == "afternoon_spotlight":
         from .ingest import today_local
+        from . import slot_readiness
 
         on = day or today_local()
+        theme_block = slot_readiness.afternoon_block(on)
+        if theme_block and theme_block.get("reason") == "required_plate_missing":
+            return ImagePlan(
+                source="required_plate_missing",
+                url=None,
+                recommendation=str(theme_block.get("detail") or theme_block),
+                rule="required_plate_missing",
+                prebranded=False,
+            )
         blocked = cooldown_blocked_urls(
             on,
             exclude_campaign="afternoon_spotlight",
