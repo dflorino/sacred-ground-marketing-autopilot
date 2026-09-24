@@ -1,3 +1,29 @@
+## 2026-09-24 — Sound v13 shipped; bowl2 held for later
+
+Founder: post the old exciting Sound. Keep the new close-bowl, make it more cosmic, call it **bowl2**, use later.
+
+- **Posted** v13 (media **28583**) all five same minute — TikTok / IG / Threads / FB / YouTube.
+- Close-bowl v14 stays on disk; not posted.
+- **bowl2** start **28577** + cosmic end **28582**; MP4 **28585** `sg-cinematic-short-bowl2.mp4`. Desktop `Sacred-Ground-bowl2.mp4`. Do not post until she says.
+
+## 2026-09-23 — Follow the jeweler: 3-beat is the engine
+
+Founder: follow Skibell (one format, then repeat). Crystal **28430** shipped all five same minute. Next = Sound after she watches. No new look. No week stagger on these.
+
+## 2026-09-23 — S1E12 queued after S1E11 (same stagger)
+
+Founder: add Galactic Reel S1E12 after S1E11 delivers. Media **28556** / `s01e12-gen106-kobi-try.mp4` titled **S1E12**. Library https://shopsacredground.com/library-adventures/
+
+| Platform | America/Chicago | Zernio |
+|---|---|---|
+| Instagram | Wed Sep 30 6:00 PM | `6ab41d8663cba1adbcb51122` |
+| Threads | Wed Sep 30 6:05 PM | `6ab41d867154b3bc3976394b` |
+| Facebook | Thu Oct 1 9:00 AM | `6ab41d87a3d701d51b21af99` |
+| YouTube | Fri Oct 2 4:00 PM | `6ab41d877154b3bc3976397a` |
+| TikTok | Sun Oct 4 9:00 AM | `6ab41d88a3d701d51b21b01a` |
+
+Do not remake. Do not post plate **28515** or archive **28552**. S1E11 this week is unchanged.
+
 ## 2026-09-23 — Afternoon themes fail closed (Libra miss)
 
 Libra Season was planned for Sep 22 5pm as `needs_creative` and never made. The job posted a regular still because the master calendar was inventory only.

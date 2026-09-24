@@ -166,7 +166,14 @@
         "title": "You thought it was just a rock",
         "idea": "Black void. Tiny quartz. Camera closer, closer, then plunges inside into a crystalline universe.",
         "on_screen": "You thought it was just a rock.",
-        "status": "founder_likes_crystal",
+        "status": "shipped_2026-09-23_all_five",
+        "shipped": {
+          "tiktok": "https://www.tiktok.com/@shopsacredground/video/7688806366386949390",
+          "instagram": "https://www.instagram.com/reel/DdpAOX8FfTf/",
+          "threads": "https://www.threads.com/@shopsacredground/post/DdpAQTClECb",
+          "facebook": "https://www.facebook.com/reel/2712431042530204",
+          "youtube": "https://www.youtube.com/watch?v=t1COQCQSWr4"
+        },
         "start_local": "assets/_week_show/sg-cinematic-v11-quartz-start.jpg",
         "end_local": "assets/_week_show/sg-cinematic-v11-quartz-end.jpg",
         "start_media": 28428,
@@ -196,6 +203,48 @@
         "local_mp4": "assets/_week_show/sg-cinematic-short-quartz-v12.mp4",
         "duration_s": 10.04,
         "motion_check": "start/mid/end hashes distinct"
+      },
+      {
+        "id": "sound-v13",
+        "family": "what_if_you_could_see_it",
+        "title": "What if you could see what sound does?",
+        "idea": "Wide room + bowl → gold sound-wave → cosmic torus doorway. The exciting cut.",
+        "on_screen": "What if you could see what sound does?",
+        "status": "shipped_2026-09-24_all_five",
+        "kling_job": "gen-vid-1789876603-QyjcYV3NsR4AZWGRR6rQ",
+        "start_media": 28451,
+        "end_media": 28453,
+        "mp4_media": 28583,
+        "mp4_url": "https://shopsacredground.com/wp-content/uploads/sg-cinematic-short-sound-v13-ship.mp4",
+        "local_mp4": "assets/_week_show/sg-cinematic-short-sound-v13-ship.mp4",
+        "shipped": {
+          "tiktok": "https://www.tiktok.com/@shopsacredground/video/7689122832474705166",
+          "instagram": "https://www.instagram.com/reel/DdrM2lEiehn/",
+          "threads": "https://www.threads.com/@shopsacredground/post/DdrMxEOFd5s",
+          "facebook": "https://www.facebook.com/watch/?v=1608514530812586",
+          "youtube": "https://www.youtube.com/watch?v=3VV9P9Gc8kU"
+        }
+      },
+      {
+        "id": "bowl2",
+        "family": "what_if_you_could_see_it",
+        "title": "bowl2 — close bowl becomes cosmic",
+        "idea": "Keep her close-bowl start (28577). Camera enters the sound into a gold torus + star field; bowl stays a small real object in space. Later — do not post.",
+        "on_screen": "What if you could see what sound does?",
+        "status": "ready_later_do_not_post",
+        "do_not_post": true,
+        "start_media": 28577,
+        "end_media": 28582,
+        "end_local": "assets/_week_show/sg-cinematic-bowl2-end.jpg",
+        "kling_job": "gen-vid-1790263576-DfGRhqs46SjpwtYcI00u",
+        "mp4_media": 28585,
+        "mp4_url": "https://shopsacredground.com/wp-content/uploads/sg-cinematic-short-bowl2.mp4",
+        "local_mp4": "assets/_week_show/sg-cinematic-short-bowl2.mp4",
+        "desktop": "Sacred-Ground-bowl2.mp4",
+        "v14_rejected_as_boring": {
+          "kling_job": "gen-vid-1790262679-1noCZtBnCZJzCNe5j32N",
+          "mp4_media": 28580
+        }
       }
     ]
   }

@@ -1,0 +1,172 @@
+{
+  "name": "Sacred Ground Reel Engine",
+  "locked_at": "2026-09-19T22:32:00-05:00",
+  "purpose": "WHAT IF THE INVISIBLE BECAME VISIBLE? — 3-beat micro-stories, not ads.",
+  "benchmark_mp4": "assets/_week_show/sg-cinematic-short-quartz-v11.mp4",
+  "benchmark_media": 28430,
+  "docs": [
+    "docs/SACRED-GROUND-REEL-ENGINE.md",
+    "docs/WHAT-IF-YOU-COULD-SEE-IT.md",
+    "docs/CINEMATIC-SHORTS.md"
+  ],
+  "format": {
+    "aspect": "9:16",
+    "width": 1080,
+    "height": 1920,
+    "fps": 24,
+    "duration_target_s": 8,
+    "duration_min_s": 7,
+    "duration_max_s": 10
+  },
+  "beats": ["reality", "reveal", "thought"],
+  "brand_end": "SACRED GROUND",
+  "overlay_script": "marketing/reel_engine.py",
+  "jeweler_lock": {
+    "locked_at": "2026-09-23",
+    "follow": "Skibell Fine Jewelry — one format becomes the engine (100K then 4.9M)",
+    "engine": "3-beat What If. Crystal 28430 is video 1.",
+    "test_1": {
+      "media_id": 28430,
+      "file": "sg-cinematic-short-quartz-v11-1.mp4",
+      "shipped": "2026-09-23"
+    },
+    "test_2": {
+      "id": "what-if-you-could-see-sound",
+      "media_id": 28583,
+      "file": "sg-cinematic-short-sound-v13-ship.mp4",
+      "shipped": "2026-09-24",
+      "note": "Old exciting Sound (v13). Not the close-bowl v14."
+    },
+    "bowl2": "close-bowl kept for later — more cosmic; do not post until Founder says",
+    "publish": "same_minute_all_five",
+    "do_not_remake_shipped": true
+  },
+  "families": [
+    "what_if_you_could_see_it",
+    "cosmic_questions",
+    "metaphysical_problems",
+    "ten_seconds_of_magic"
+  ],
+  "reels": [
+    {
+      "n": 1,
+      "id": "inside-the-crystal",
+      "family": "ten_seconds_of_magic",
+      "line": "You thought it was just a crystal.",
+      "status": "locked_type_tweaked",
+      "local_mp4": "assets/_week_show/sg-cinematic-short-quartz-v12.mp4",
+      "desktop": "Sacred-Ground-crystal-short.mp4",
+      "do_not_remake_except_type": true
+    },
+    {
+      "n": 2,
+      "id": "what-if-you-could-see-sound",
+      "family": "what_if_you_could_see_it",
+      "line": "What if you could see what sound does?",
+      "status": "shipped_2026-09-24_all_five",
+      "kling_job": "gen-vid-1789876603-QyjcYV3NsR4AZWGRR6rQ",
+      "start_media": 28451,
+      "end_media": 28453,
+      "mp4_media": 28583,
+      "mp4_url": "https://shopsacredground.com/wp-content/uploads/sg-cinematic-short-sound-v13-ship.mp4",
+      "local_mp4": "assets/_week_show/sg-cinematic-short-sound-v13-ship.mp4",
+      "note": "The exciting room→wave→torus cut. Clean overlay on raw.",
+      "shipped": {
+        "tiktok": "https://www.tiktok.com/@shopsacredground/video/7689122832474705166",
+        "instagram": "https://www.instagram.com/reel/DdrM2lEiehn/",
+        "threads": "https://www.threads.com/@shopsacredground/post/DdrMxEOFd5s",
+        "facebook": "https://www.facebook.com/watch/?v=1608514530812586",
+        "youtube": "https://www.youtube.com/watch?v=3VV9P9Gc8kU"
+      },
+      "zernio": {
+        "tiktok": "6ab5407bc4e868f53a1e6a3c",
+        "instagram": "6ab5407fe9868e041de38d7b",
+        "threads": "6ab54082bb55077fcd767d64",
+        "facebook": "6ab540b0bb55077fcd768164",
+        "youtube": "6ab540b7e9868e041de39c2c"
+      }
+    },
+    {
+      "n": "2b",
+      "id": "bowl2",
+      "family": "what_if_you_could_see_it",
+      "line": "What if you could see what sound does?",
+      "status": "ready_later_do_not_post",
+      "do_not_post": true,
+      "note": "Keep the close-bowl she liked; make it more cosmic. Use later.",
+      "kling_job": "gen-vid-1790263576-DfGRhqs46SjpwtYcI00u",
+      "start_media": 28577,
+      "end_media": 28582,
+      "mp4_media": 28585,
+      "mp4_url": "https://shopsacredground.com/wp-content/uploads/sg-cinematic-short-bowl2.mp4",
+      "local_mp4": "assets/_week_show/sg-cinematic-short-bowl2.mp4",
+      "desktop": "Sacred-Ground-bowl2.mp4",
+      "end_local": "assets/_week_show/sg-cinematic-bowl2-end.jpg"
+    },
+    {
+      "n": 3,
+      "id": "tarot-portal",
+      "family": "ten_seconds_of_magic",
+      "line": "You thought it was just a card.",
+      "status": "queued",
+      "never_death_card": true
+    },
+    {
+      "n": 4,
+      "id": "energy-enters-first",
+      "family": "what_if_you_could_see_it",
+      "line": "Your energy entered before you did.",
+      "status": "queued"
+    },
+    {
+      "n": 5,
+      "id": "akashic-library",
+      "family": "cosmic_questions",
+      "line": "What if your soul remembers?",
+      "status": "queued"
+    },
+    {
+      "n": 6,
+      "id": "ancestors",
+      "family": "what_if_you_could_see_it",
+      "line": "You may not be walking alone.",
+      "status": "queued"
+    },
+    {
+      "n": 7,
+      "id": "intuition",
+      "family": "cosmic_questions",
+      "line": "What did you know before you knew why?",
+      "status": "queued"
+    },
+    {
+      "n": 8,
+      "id": "energy-release",
+      "family": "what_if_you_could_see_it",
+      "line": "Not everything is meant to be carried forever.",
+      "status": "queued"
+    },
+    {
+      "n": 9,
+      "id": "guides-sign-14",
+      "family": "metaphysical_problems",
+      "line": "Your guides after sending sign #14.",
+      "beat": "PLEASE.",
+      "status": "queued"
+    },
+    {
+      "n": 10,
+      "id": "just-one-crystal",
+      "family": "metaphysical_problems",
+      "line": "Every. Single. Time.",
+      "status": "queued"
+    },
+    {
+      "n": 11,
+      "id": "past-life-mirror",
+      "family": "cosmic_questions",
+      "line": "Have you ever remembered somewhere you've never been?",
+      "status": "queued"
+    }
+  ]
+}
