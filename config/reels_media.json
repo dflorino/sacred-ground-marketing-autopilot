@@ -285,9 +285,9 @@
       "admin": "https://shopsacredground.com/wp-admin/upload.php?item=28153",
       "filebird_folder": "SG Reels (54)",
       "mime_type": "video/mp4",
-      "schedule_status": "scheduled_cadence_2026-09-23_through_27",
+      "schedule_status": "youtube_published_now_2026-09-24_friday_4pm_cancelled",
       "handed_off": "2026-09-13",
-      "note": "Founder KEEP 2026-09-13 \u2014 USE S1E11 / 28153 only (gen 102). No burned captions. Stagger IG Wed 6pm \u00b7 FB Thu 9am \u00b7 YT Fri 4pm \u00b7 TT Sun 9am CT; Threads with IG.",
+      "note": "Founder KEEP 2026-09-13 \u2014 USE S1E11 / 28153 only (gen 102). No burned captions. YT posted now Sep 24 (Friday 4pm cancelled). TT still Sun Sep 27 9am CT.",
       "do_not_use": {
         "plate_id": 28137,
         "archive_gen101": 28126,
@@ -306,11 +306,54 @@
         "instagram": "2026-09-23T18:00:00-05:00",
         "threads": "2026-09-23T18:05:00-05:00",
         "facebook": "2026-09-24T09:00:00-05:00",
-        "youtube": "2026-09-25T16:00:00-05:00",
+        "youtube": "2026-09-24T12:03:00-05:00",
         "tiktok": "2026-09-27T09:00:00-05:00"
       },
-      "updated_at": "2026-09-13T15:27:16Z",
+      "published": {
+        "youtube": "https://www.youtube.com/watch?v=1w0a2JWtu7g"
+      },
+      "updated_at": "2026-09-24T17:03:18Z",
       "threads_status": "scheduled_2026-09-23T23:05:00.000Z"
+    },
+    "s1e12": {
+      "season": 1,
+      "episode": 12,
+      "library_name": "S1E12",
+      "title": "Everybody Act Normal",
+      "media_id": 28556,
+      "plate_id": 28515,
+      "plate_library_name": "S1E12 plate",
+      "file": "s01e12-gen106-kobi-try.mp4",
+      "url": "https://shopsacredground.com/wp-content/uploads/s01e12-gen106-kobi-try.mp4",
+      "admin": "https://shopsacredground.com/wp-admin/upload.php?item=28556",
+      "filebird_folder": "SG Reels (54)",
+      "library_player": "https://shopsacredground.com/library-adventures/",
+      "mime_type": "video/mp4",
+      "schedule_status": "scheduled_cadence_2026-09-30_through_10-04",
+      "handed_off": "2026-09-23",
+      "note": "Founder KEEP 2026-09-23 — USE S1E12 / 28556 only (gen 106 + surgical Kobi K2). No burned captions. After S1E11. Stagger IG Wed 6pm · FB Thu 9am · YT Fri 4pm · TT Sun 9am CT; Threads with IG.",
+      "do_not_use": {
+        "plate_id": 28515,
+        "archive_engine_mix": 28552,
+        "take2": 28541,
+        "take1": [28406, 28402],
+        "note": "28515 plate still only. Never post 28552 engine mix or earlier takes."
+      },
+      "ml_social_ids": {
+        "instagram": "6ab41d8663cba1adbcb51122",
+        "threads": "6ab41d867154b3bc3976394b",
+        "facebook": "6ab41d87a3d701d51b21af99",
+        "youtube": "6ab41d877154b3bc3976397a",
+        "tiktok": "6ab41d88a3d701d51b21b01a"
+      },
+      "scheduled_for": {
+        "instagram": "2026-09-30T18:00:00-05:00",
+        "threads": "2026-09-30T18:05:00-05:00",
+        "facebook": "2026-10-01T09:00:00-05:00",
+        "youtube": "2026-10-02T16:00:00-05:00",
+        "tiktok": "2026-10-04T09:00:00-05:00"
+      },
+      "updated_at": "2026-09-23T18:45:00Z"
     }
   }
 }

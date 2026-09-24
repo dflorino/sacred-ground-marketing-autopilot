@@ -1,3 +1,7 @@
+## 2026-09-24 — S1E11 YouTube now; Friday 4pm cancelled
+
+Founder: post S1E11 to YouTube now and cancel Friday 4pm. Same Zernio job `6aa6c0d0651458e0fff9e34f` published immediately. Live: https://www.youtube.com/watch?v=1w0a2JWtu7g — brand `@sacredgroundchicagoland`. KEEP **28153**. TikTok Sunday 9am still scheduled.
+
 ## 2026-09-24 — Star card reel scheduled Fri 1pm all five
 
 Founder approved the Star-as-a-door short (Reel 03). Not another Sound. Line: **You thought it was just a card.**
