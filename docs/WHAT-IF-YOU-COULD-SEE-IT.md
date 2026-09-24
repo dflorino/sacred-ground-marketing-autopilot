@@ -57,7 +57,13 @@ Founder Sep 24: the **old exciting** Sound is the one — room → gold wave →
 - Facebook https://www.facebook.com/watch/?v=1608514530812586
 - YouTube https://www.youtube.com/watch?v=3VV9P9Gc8kU
 
-**bowl2** (later, do not post): keep the close-bowl she liked (start **28577**) and make it more cosmic (end **28582**). MP4 media **28585** · `sg-cinematic-short-bowl2.mp4` · Desktop `Sacred-Ground-bowl2.mp4`. Kling `gen-vid-1790263576-DfGRhqs46SjpwtYcI00u`.
+**bowl2** — also shipped Sep 24 (caption: What if you could see sound?): close-bowl **28577** → cosmic **28582**. MP4 **28585**.
+
+- TikTok https://www.tiktok.com/@shopsacredground/video/7689126307594063118
+- Instagram https://www.instagram.com/reel/DdrOV-5E5Fu/
+- Threads https://www.threads.com/@shopsacredground/post/DdrOU--lMgW
+- Facebook https://www.facebook.com/watch/?v=2268327793959792
+- YouTube https://www.youtube.com/watch?v=f2R65AdpcqA
 
 ---
 

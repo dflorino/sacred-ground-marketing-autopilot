@@ -1,10 +1,9 @@
-## 2026-09-24 — Sound v13 shipped; bowl2 held for later
+## 2026-09-24 — Sound v13 + bowl2 both shipped
 
-Founder: post the old exciting Sound. Keep the new close-bowl, make it more cosmic, call it **bowl2**, use later.
+Founder: post the old exciting Sound; keep the close-bowl as cosmic **bowl2**; then post bowl2 as “What if you could see sound?”
 
-- **Posted** v13 (media **28583**) all five same minute — TikTok / IG / Threads / FB / YouTube.
-- Close-bowl v14 stays on disk; not posted.
-- **bowl2** start **28577** + cosmic end **28582**; MP4 **28585** `sg-cinematic-short-bowl2.mp4`. Desktop `Sacred-Ground-bowl2.mp4`. Do not post until she says.
+- **v13** media **28583** — all five same minute.
+- **bowl2** media **28585** — all five same minute. Caption: What if you could see sound?
 
 ## 2026-09-23 — Follow the jeweler: 3-beat is the engine
 

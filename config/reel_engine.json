@@ -37,7 +37,7 @@
       "shipped": "2026-09-24",
       "note": "Old exciting Sound (v13). Not the close-bowl v14."
     },
-    "bowl2": "close-bowl kept for later — more cosmic; do not post until Founder says",
+    "bowl2": "close-bowl cosmic cut — shipped Sep 24 after v13, caption What if you could see sound?",
     "publish": "same_minute_all_five",
     "do_not_remake_shipped": true
   },
@@ -90,10 +90,9 @@
       "n": "2b",
       "id": "bowl2",
       "family": "what_if_you_could_see_it",
-      "line": "What if you could see what sound does?",
-      "status": "ready_later_do_not_post",
-      "do_not_post": true,
-      "note": "Keep the close-bowl she liked; make it more cosmic. Use later.",
+      "line": "What if you could see sound?",
+      "status": "shipped_2026-09-24_all_five",
+      "note": "Close-bowl she liked, made cosmic. Posted after v13 same morning.",
       "kling_job": "gen-vid-1790263576-DfGRhqs46SjpwtYcI00u",
       "start_media": 28577,
       "end_media": 28582,
@@ -101,7 +100,21 @@
       "mp4_url": "https://shopsacredground.com/wp-content/uploads/sg-cinematic-short-bowl2.mp4",
       "local_mp4": "assets/_week_show/sg-cinematic-short-bowl2.mp4",
       "desktop": "Sacred-Ground-bowl2.mp4",
-      "end_local": "assets/_week_show/sg-cinematic-bowl2-end.jpg"
+      "end_local": "assets/_week_show/sg-cinematic-bowl2-end.jpg",
+      "shipped": {
+        "tiktok": "https://www.tiktok.com/@shopsacredground/video/7689126307594063118",
+        "instagram": "https://www.instagram.com/reel/DdrOV-5E5Fu/",
+        "threads": "https://www.threads.com/@shopsacredground/post/DdrOU--lMgW",
+        "facebook": "https://www.facebook.com/watch/?v=2268327793959792",
+        "youtube": "https://www.youtube.com/watch?v=f2R65AdpcqA"
+      },
+      "zernio": {
+        "tiktok": "6ab543ab5969bf29652c823c",
+        "instagram": "6ab543ae28dce372a549f4a6",
+        "threads": "6ab543b128dce372a549f51f",
+        "facebook": "6ab543e15c294807d0b9b46d",
+        "youtube": "6ab543e728dce372a549fc59"
+      }
     },
     {
       "n": 3,

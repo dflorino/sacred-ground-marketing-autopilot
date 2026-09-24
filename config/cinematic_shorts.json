@@ -229,10 +229,9 @@
         "id": "bowl2",
         "family": "what_if_you_could_see_it",
         "title": "bowl2 — close bowl becomes cosmic",
-        "idea": "Keep her close-bowl start (28577). Camera enters the sound into a gold torus + star field; bowl stays a small real object in space. Later — do not post.",
-        "on_screen": "What if you could see what sound does?",
-        "status": "ready_later_do_not_post",
-        "do_not_post": true,
+        "idea": "Keep her close-bowl start (28577). Camera enters the sound into a gold torus + star field; bowl stays a small real object in space.",
+        "on_screen": "What if you could see sound?",
+        "status": "shipped_2026-09-24_all_five",
         "start_media": 28577,
         "end_media": 28582,
         "end_local": "assets/_week_show/sg-cinematic-bowl2-end.jpg",
@@ -241,6 +240,13 @@
         "mp4_url": "https://shopsacredground.com/wp-content/uploads/sg-cinematic-short-bowl2.mp4",
         "local_mp4": "assets/_week_show/sg-cinematic-short-bowl2.mp4",
         "desktop": "Sacred-Ground-bowl2.mp4",
+        "shipped": {
+          "tiktok": "https://www.tiktok.com/@shopsacredground/video/7689126307594063118",
+          "instagram": "https://www.instagram.com/reel/DdrOV-5E5Fu/",
+          "threads": "https://www.threads.com/@shopsacredground/post/DdrOU--lMgW",
+          "facebook": "https://www.facebook.com/watch/?v=2268327793959792",
+          "youtube": "https://www.youtube.com/watch?v=f2R65AdpcqA"
+        },
         "v14_rejected_as_boring": {
           "kling_job": "gen-vid-1790262679-1noCZtBnCZJzCNe5j32N",
           "mp4_media": 28580

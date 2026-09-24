@@ -18,7 +18,7 @@ Sacred Ground’s engine is this 3-beat, not a new style every day.
 | Video | Status |
 |---|---|
 | 01 Crystal · media **28430** | Shipped Sep 23 2026 — all five apps, same minute |
-| 02 Sound · media **28583** | Shipped Sep 24 2026 — exciting v13, all five same minute. bowl2 held for later. |
+| 02 Sound · media **28583** + bowl2 **28585** | Both shipped Sep 24 2026 — all five, same minute each |
 | 03+ | Same construction. Different invisible thing. |
 
 Publish **same minute** on Facebook, Instagram, TikTok, YouTube, Threads. Do not drip one video across a week. Do not remake 01.
@@ -146,12 +146,12 @@ For Sacred Ground the repeating machine is this Reel Engine — not a new style 
 
 - **Test 1 shipped:** quartz v11 media **28430** — all five apps, same minute (Sep 23).
 - **Do not** remake 28430 or wait for a million before making #2.
-- **#2 Sound shipped:** v13 media **28583** — all five apps, same minute (Sep 24). bowl2 (**28585**) is the close-bowl cosmic cut — later, do not post.
+- **#2 Sound shipped:** v13 media **28583**, then bowl2 **28585** (“What if you could see sound?”) — both all five, same minute (Sep 24).
 - Daily flyers stay the shop signs. They are not this engine.
 
 ### Reel 02 — What If You Could See Sound? · What If You Could See It?
 
-**Shipped Sep 24 (v13).** Dark room + bowl → gold sound-wave → cosmic torus doorway. The close-bowl cut is **bowl2** for later.
+**Shipped Sep 24.** v13 is the exciting room→wave→torus. bowl2 is the close-bowl that becomes cosmic. Caption on bowl2: What if you could see sound?
 
 **Line:** What if you could see what sound does?
 
