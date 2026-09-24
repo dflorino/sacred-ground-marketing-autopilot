@@ -1,6 +1,9 @@
-## 2026-09-24 — S1E11 YouTube now; Friday 4pm cancelled
+## 2026-09-24 — S1E11 YouTube + TikTok now
 
-Founder: post S1E11 to YouTube now and cancel Friday 4pm. Same Zernio job `6aa6c0d0651458e0fff9e34f` published immediately. Live: https://www.youtube.com/watch?v=1w0a2JWtu7g — brand `@sacredgroundchicagoland`. KEEP **28153**. TikTok Sunday 9am still scheduled.
+Founder: YouTube now (cancel Friday 4pm), then TikTok too (cancel Sunday 9am). Same KEEP **28153**. Same Zernio jobs published immediately.
+
+- YT https://www.youtube.com/watch?v=1w0a2JWtu7g · `6aa6c0d0651458e0fff9e34f`
+- TT https://www.tiktok.com/@shopsacredground/video/7689149186226294029 · `6aa6c0d4ab4fbf0ad84e8ce0`
 
 ## 2026-09-24 — Star card reel scheduled Fri 1pm all five
 

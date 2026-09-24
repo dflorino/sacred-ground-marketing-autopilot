@@ -285,9 +285,9 @@
       "admin": "https://shopsacredground.com/wp-admin/upload.php?item=28153",
       "filebird_folder": "SG Reels (54)",
       "mime_type": "video/mp4",
-      "schedule_status": "youtube_published_now_2026-09-24_friday_4pm_cancelled",
+      "schedule_status": "yt_tt_published_now_2026-09-24",
       "handed_off": "2026-09-13",
-      "note": "Founder KEEP 2026-09-13 \u2014 USE S1E11 / 28153 only (gen 102). No burned captions. YT posted now Sep 24 (Friday 4pm cancelled). TT still Sun Sep 27 9am CT.",
+      "note": "Founder KEEP 2026-09-13 \u2014 USE S1E11 / 28153 only (gen 102). No burned captions. YT + TT posted now Sep 24 (Friday 4pm and Sunday 9am cancelled).",
       "do_not_use": {
         "plate_id": 28137,
         "archive_gen101": 28126,
@@ -307,10 +307,11 @@
         "threads": "2026-09-23T18:05:00-05:00",
         "facebook": "2026-09-24T09:00:00-05:00",
         "youtube": "2026-09-24T12:03:00-05:00",
-        "tiktok": "2026-09-27T09:00:00-05:00"
+        "tiktok": "2026-09-24T12:06:00-05:00"
       },
       "published": {
-        "youtube": "https://www.youtube.com/watch?v=1w0a2JWtu7g"
+        "youtube": "https://www.youtube.com/watch?v=1w0a2JWtu7g",
+        "tiktok": "https://www.tiktok.com/@shopsacredground/video/7689149186226294029"
       },
       "updated_at": "2026-09-24T17:03:18Z",
       "threads_status": "scheduled_2026-09-23T23:05:00.000Z"
