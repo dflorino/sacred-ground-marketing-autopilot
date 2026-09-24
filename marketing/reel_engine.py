@@ -3,6 +3,8 @@
 
 from __future__ import annotations
 
+import shutil
+import subprocess
 from pathlib import Path
 
 import cv2
@@ -43,20 +45,33 @@ def _center_tracked(draw: ImageDraw.ImageDraw, y: int, text: str, fnt, fill, wid
 
 
 def _wrap(text: str, fnt, max_w: int) -> list[str]:
-    words = text.split()
     lines: list[str] = []
-    cur = ""
-    for w in words:
-        trial = (cur + " " + w).strip()
-        bbox = ImageDraw.Draw(Image.new("RGB", (1, 1))).textbbox((0, 0), trial, font=fnt)
-        if bbox[2] - bbox[0] <= max_w or not cur:
-            cur = trial
-        else:
+    for block in text.replace("\\n", "\n").split("\n"):
+        words = block.split()
+        cur = ""
+        for w in words:
+            trial = (cur + " " + w).strip()
+            bbox = ImageDraw.Draw(Image.new("RGB", (1, 1))).textbbox((0, 0), trial, font=fnt)
+            if bbox[2] - bbox[0] <= max_w or not cur:
+                cur = trial
+            else:
+                lines.append(cur)
+                cur = w
+        if cur:
             lines.append(cur)
-            cur = w
-    if cur:
-        lines.append(cur)
     return lines
+
+
+def _ffmpeg() -> str:
+    try:
+        import imageio_ffmpeg
+
+        return imageio_ffmpeg.get_ffmpeg_exe()
+    except Exception:
+        found = shutil.which("ffmpeg")
+        if not found:
+            raise RuntimeError("ffmpeg required for reel overlay encode")
+        return found
 
 
 def overlay_thought(
@@ -75,9 +90,39 @@ def overlay_thought(
     cap = cv2.VideoCapture(str(src))
     fps = cap.get(cv2.CAP_PROP_FPS) or 24.0
     n = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
-    fourcc = cv2.VideoWriter_fourcc(*"mp4v")
     dest.parent.mkdir(parents=True, exist_ok=True)
-    out = cv2.VideoWriter(str(dest), fourcc, fps, (width, height))
+    proc = subprocess.Popen(
+        [
+            _ffmpeg(),
+            "-y",
+            "-loglevel",
+            "error",
+            "-f",
+            "rawvideo",
+            "-pix_fmt",
+            "bgr24",
+            "-s",
+            f"{width}x{height}",
+            "-r",
+            str(fps),
+            "-i",
+            "-",
+            "-c:v",
+            "h264_videotoolbox",
+            "-b:v",
+            "18M",
+            "-profile:v",
+            "main",
+            "-pix_fmt",
+            "yuv420p",
+            "-tag:v",
+            "avc1",
+            "-movflags",
+            "+faststart",
+            str(dest),
+        ],
+        stdin=subprocess.PIPE,
+    )
 
     f_line = _font(line_size, index=5)
     f_brand = _font(brand_size, index=7)
@@ -120,11 +165,15 @@ def overlay_thought(
             layer.paste(stamped, (lx, ly), stamped)
 
         im = Image.alpha_composite(im, layer).convert("RGB")
-        out.write(cv2.cvtColor(np.array(im), cv2.COLOR_RGB2BGR))
+        bgr = cv2.cvtColor(np.array(im), cv2.COLOR_RGB2BGR)
+        proc.stdin.write(bgr.tobytes())
         i += 1
 
     cap.release()
-    out.release()
+    proc.stdin.close()
+    code = proc.wait()
+    if code != 0:
+        raise RuntimeError(f"ffmpeg overlay encode failed ({code})")
     print(f"{dest} frames={i} n={n} fps={fps:.2f}")
     return dest
 

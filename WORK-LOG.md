@@ -1,3 +1,12 @@
+## 2026-09-24 — Star card reel scheduled Fri 1pm all five
+
+Founder approved the Star-as-a-door short (Reel 03). Not another Sound. Line: **You thought it was just a card.**
+
+- Media **28592** `sg-cinematic-short-star.mp4`
+- All five **Fri Sep 25 2026 1:00 PM America/Chicago** (Zernio `2026-09-25T18:00:00.000Z`)
+- TT `6ab54ef9e2ee459b8151906d` · IG `6ab54efa219114cacb84c340` · Threads `6ab54efae2ee459b815190c4` · FB `6ab54efbe2ee459b81519102` · YT `6ab54efb219114cacb84c37d`
+- Never Death. Do not remake after it posts unless she asks.
+
 ## 2026-09-24 — Sound v13 + bowl2 both shipped
 
 Founder: post the old exciting Sound; keep the close-bowl as cosmic **bowl2**; then post bowl2 as “What if you could see sound?”

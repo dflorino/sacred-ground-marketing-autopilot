@@ -38,6 +38,13 @@
       "note": "Old exciting Sound (v13). Not the close-bowl v14."
     },
     "bowl2": "close-bowl cosmic cut — shipped Sep 24 after v13, caption What if you could see sound?",
+    "test_3": {
+      "id": "tarot-portal",
+      "media_id": 28592,
+      "file": "sg-cinematic-short-star.mp4",
+      "scheduled": "2026-09-25T13:00:00-05:00",
+      "note": "The Star as a door. Never Death. Founder approved the QT-safe cut."
+    },
     "publish": "same_minute_all_five",
     "do_not_remake_shipped": true
   },
@@ -121,8 +128,23 @@
       "id": "tarot-portal",
       "family": "ten_seconds_of_magic",
       "line": "You thought it was just a card.",
-      "status": "queued",
-      "never_death_card": true
+      "status": "scheduled_2026-09-25_1pm_all_five",
+      "never_death_card": true,
+      "kling_job": "gen-vid-1790266005-OYFcTuRton9UsolIX1Vb",
+      "start_media": 28590,
+      "end_media": 28591,
+      "mp4_media": 28592,
+      "mp4_url": "https://shopsacredground.com/wp-content/uploads/sg-cinematic-short-star.mp4",
+      "local_mp4": "assets/_week_show/sg-cinematic-short-star.mp4",
+      "desktop": "Sacred-Ground-star-card-qt.mp4",
+      "scheduled_for": "2026-09-25T13:00:00-05:00",
+      "zernio": {
+        "tiktok": "6ab54ef9e2ee459b8151906d",
+        "instagram": "6ab54efa219114cacb84c340",
+        "threads": "6ab54efae2ee459b815190c4",
+        "facebook": "6ab54efbe2ee459b81519102",
+        "youtube": "6ab54efb219114cacb84c37d"
+      }
     },
     {
       "n": 4,

@@ -19,7 +19,7 @@ Sacred Ground’s engine is this 3-beat, not a new style every day.
 |---|---|
 | 01 Crystal · media **28430** | Shipped Sep 23 2026 — all five apps, same minute |
 | 02 Sound · media **28583** + bowl2 **28585** | Both shipped Sep 24 2026 — all five, same minute each |
-| 03+ | Same construction. Different invisible thing. |
+| 03 Star card · media **28592** | Scheduled Fri Sep 25 2026 **1:00 PM** CT — all five, same minute |
 
 Publish **same minute** on Facebook, Instagram, TikTok, YouTube, Threads. Do not drip one video across a week. Do not remake 01.
 
@@ -147,6 +147,7 @@ For Sacred Ground the repeating machine is this Reel Engine — not a new style 
 - **Test 1 shipped:** quartz v11 media **28430** — all five apps, same minute (Sep 23).
 - **Do not** remake 28430 or wait for a million before making #2.
 - **#2 Sound shipped:** v13 media **28583**, then bowl2 **28585** (“What if you could see sound?”) — both all five, same minute (Sep 24).
+- **#3 Star scheduled:** media **28592** — Fri Sep 25 2026 1:00 PM CT, all five, same minute.
 - Daily flyers stay the shop signs. They are not this engine.
 
 ### Reel 02 — What If You Could See Sound? · What If You Could See It?
@@ -157,9 +158,11 @@ For Sacred Ground the repeating machine is this Reel Engine — not a new style 
 
 ### Reel 03 — The Tarot Portal · 10 Seconds of Magic
 
-Card on dark velvet. Illustration starts to move. Camera passes through into the living world of that card. Never Death.
+**Scheduled Fri Sep 25 2026 1:00 PM America/Chicago — all five, same minute.** The Star as a door. Card on wood; the star is already a hole of light; camera goes through; gold 8-point star over black water. Never Death. No nude Star woman.
 
 **Line:** You thought it was just a card.
+
+MP4 media **28592** · `sg-cinematic-short-star.mp4`
 
 ### Reel 04 — Your Energy Enters First · What If You Could See It?
 

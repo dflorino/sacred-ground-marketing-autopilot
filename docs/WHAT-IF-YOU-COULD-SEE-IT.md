@@ -67,6 +67,21 @@ Founder Sep 24: the **old exciting** Sound is the one — room → gold wave →
 
 ---
 
+## Reel 03 — The Star (card as a door) SCHEDULED
+
+Founder Sep 24: not another Sound. The Star tarot as a door. First frame already leaking light. Approved the QT-safe cut.
+
+| | |
+|---|---|
+| **MP4** | media **28592** · `sg-cinematic-short-star.mp4` |
+| **Line** | You thought it was just a card. |
+| **When** | Fri Sep 25 2026 **1:00 PM** America/Chicago — all five, same minute |
+| **Never** | Death card. Nude Star woman. Lotus / chakras. |
+
+Zernio: TT `6ab54ef9e2ee459b8151906d` · IG `6ab54efa219114cacb84c340` · Threads `6ab54efae2ee459b815190c4` · FB `6ab54efbe2ee459b81519102` · YT `6ab54efb219114cacb84c37d`
+
+---
+
 ## Four repeating families
 
 Do not post randomly. Rotate so people recognize the series.
