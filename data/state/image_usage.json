@@ -375,6 +375,20 @@
       "campaign": "afternoon_spotlight"
     },
     {
+      "date": "2026-09-11",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-fall.png",
+      "rule": "week_ahead_storefront_season_fall_storefront",
+      "campaign": "week_ahead",
+      "note": "backfill from live week-ahead publish (ledger lag)"
+    },
+    {
+      "date": "2026-09-12",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-fall-store-blue-hour.png",
+      "rule": "week_ahead_creative_fall_store_blue_hour",
+      "campaign": "week_ahead",
+      "note": "backfill from live week-ahead publish (ledger lag)"
+    },
+    {
       "date": "2026-09-13",
       "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Full-bleed-cosmic-photograph-p-1789263114.jpg",
       "rule": "afternoon_spotlight_plate",
@@ -391,6 +405,13 @@
       "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-fall-store-fairy-lights.png",
       "rule": "week_ahead_creative_fall_store_fairy_lights",
       "campaign": "week_ahead"
+    },
+    {
+      "date": "2026-09-14",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-fall-store-frost-sparkle.png",
+      "rule": "week_ahead_creative_fall_store_frost_sparkle",
+      "campaign": "week_ahead",
+      "note": "backfill from live week-ahead publish (ledger lag)"
     },
     {
       "date": "2026-09-15",
@@ -414,6 +435,74 @@
       "date": "2026-09-15",
       "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-searchlights-hills.png",
       "rule": "week_ahead_creative_searchlights_hills",
+      "campaign": "week_ahead"
+    },
+    {
+      "date": "2026-09-16",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-neon-puddles-1.png",
+      "rule": "week_ahead_creative_neon_puddles",
+      "campaign": "week_ahead",
+      "note": "backfill from live week-ahead publish (ledger lag)"
+    },
+    {
+      "date": "2026-09-17",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-fall-store-star-trails-1.png",
+      "rule": "week_ahead_creative_fall_store_star_trails",
+      "campaign": "week_ahead",
+      "note": "backfill from live week-ahead publish (ledger lag)"
+    },
+    {
+      "date": "2026-09-18",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-fall-store-oak-sidewalk.png",
+      "rule": "week_ahead_creative_fall_store_oak_sidewalk",
+      "campaign": "week_ahead",
+      "note": "backfill from live week-ahead publish (ledger lag)"
+    },
+    {
+      "date": "2026-09-19",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-fall-store-crystal-window-1.png",
+      "rule": "week_ahead_creative_fall_store_crystal_window",
+      "campaign": "week_ahead",
+      "note": "backfill from live week-ahead publish (ledger lag)"
+    },
+    {
+      "date": "2026-09-20",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-fall-store-amber-lanterns-1.png",
+      "rule": "week_ahead_creative_fall_store_amber_lanterns",
+      "campaign": "week_ahead",
+      "note": "backfill from live week-ahead publish (ledger lag)"
+    },
+    {
+      "date": "2026-09-21",
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Add-elegant-gold-serif-title-a-1788751487.jpg",
+      "rule": "week_ahead_celestial_autumn_equinox",
+      "campaign": "week_ahead",
+      "note": "backfill from live week-ahead publish (ledger lag)"
+    },
+    {
+      "date": "2026-09-22",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-fall-store-rain-puddles-1.png",
+      "rule": "week_ahead_creative_fall_store_rain_puddles",
+      "campaign": "week_ahead",
+      "note": "backfill from live week-ahead publish (ledger lag)"
+    },
+    {
+      "date": "2026-09-23",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-fall-store-crow-awning-1.png",
+      "rule": "week_ahead_creative_fall_store_crow_awning",
+      "campaign": "week_ahead",
+      "note": "backfill from live week-ahead publish (ledger lag)"
+    },
+    {
+      "date": "2026-09-24",
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-square-11-shop-1788806437.jpg",
+      "rule": "morning_flyer",
+      "campaign": "today"
+    },
+    {
+      "date": "2026-09-24",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-fall-store-teal-copper-aurora-1.png",
+      "rule": "week_ahead_creative_fall_store_teal_copper_aurora",
       "campaign": "week_ahead"
     }
   ],

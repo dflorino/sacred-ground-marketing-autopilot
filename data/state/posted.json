@@ -2288,9 +2288,298 @@
           "message": "Post published successfully"
         }
       }
+    },
+    "week_ahead|2026-09-24|facebook|22002,23907,23951,26079,26089,28593": {
+      "draft_id": "sgma-2026-09-24-week_ahead-fb-888575db",
+      "posted_at": "2026-09-24T20:10:48.372387-05:00",
+      "external": {
+        "zernio": {
+          "post": {
+            "recycling": {
+              "enabled": false,
+              "gapFreq": "month",
+              "recycleCount": 0,
+              "contentVariations": [],
+              "contentVariationIndex": 0
+            },
+            "_id": "6ab5ca06dd61b690f3c2711f",
+            "userId": "6a49a0ca1f5ee39905d0dc6f",
+            "title": "",
+            "content": "As evening settles over the shop, we’re reminded tomorrow is another day—and there’s much more to come.\n\nFriday, September 25\n\n• Keeper of the Cards: Robert\n  1:00 PM–6:30 PM\n  https://shopsacredground.com/book/robert/\n\n• Vibrational Chakra Healing With Kate\n  2:00 PM–5:00 PM\n  https://shopsacredground.com/book/kate-chakra/\n\n• Lisa Maria Intuitive Tarot and Somatic Healing\n  5:00 PM–8:00 PM\n  https://shopsacredground.com/book/lisa-maria/\n\nSaturday, September 26\n\n• Tina’s Tarot & Rune Sessions\n  11:00 AM–3:00 PM\n  https://shopsacredground.com/tina/\n\n• Shaman Medium Melissa\n  11:00 AM–2:00 PM\n  https://shopsacredground.com/book/melissa/\n\n• Keeper of the Cards: Robert\n  3:00 PM–7:30 PM\n  https://shopsacredground.com/book/robert/\n\nTonight doesn’t have to end at the door.\nPeek at the Observatory — fresh each day.\nhttps://shopsacredground.com/sacred-ground-observatory/\n\nDon’t forget the Library either: download a meditation or playlist, find something to watch or listen to, or explore sacred chanting and music.\nhttps://shopsacredground.com/library/\n\nCall to book a session or grab your spot online.\n847-749-3922\nhttps://shopsacredground.com/events/\n\nWherever the night takes you, carry a little Sacred Ground calm with you.\n\n#SacredGround #ArlingtonHeights #ShopSacredGround #ChicagoEvents #CrystalShop #EnergyHealing #HolisticCenter #RockShop #Kindness",
+            "mediaItems": [
+              {
+                "type": "image",
+                "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-fall-store-teal-copper-aurora-1.png",
+                "_id": "6ab5ca06dd61b690f3c27120"
+              }
+            ],
+            "platforms": [
+              {
+                "platform": "facebook",
+                "accountId": {
+                  "_id": "6a49a1f49d9472faae7c274e",
+                  "platform": "facebook",
+                  "username": "shopsacredground",
+                  "displayName": "Sacred Ground",
+                  "profilePicture": "https://scontent-lhr11-1.xx.fbcdn.net/v/t39.30808-1/525520556_778113704730537_8989064612556217432_n.jpg?stp=c412.0.720.720a_cp0_dst-jpg_s50x50_tt6&_nc_cat=106&ccb=1-7&_nc_sid=f907e8&_nc_ohc=cgoBIWwsiL0Q7kNvwEqcXNt&_nc_oc=Adoil0jER3aE-dXhiqNVHpGZZqC9kSL2BSnOLsedJDTIXEvMKz9di3HGYjlt_07HBe0&_nc_zt=24&_nc_ht=scontent-lhr11-1.xx&edm=AJdBtusEAAAA&_nc_gid=Gu9kCq8AgmP5JDu95nj8Yg&_nc_tpa=Q5bMBQI0RMm_Hw0gdpeJsiTiYe1GXaNtApP4wOzuVnhzPeCzZF_5YLivdvcaZhG8B3jTZzfMgfBwB1AD&oh=00_AQLEZpdMXH1a7rDGan3myNVGciMyL4botxYPdMafJtGjXQ&oe=6ABA7F3C",
+                  "isActive": true,
+                  "profileId": "6a49a0ca1f5ee39905d0dc87"
+                },
+                "profileId": "6a49a0ca1f5ee39905d0dc87",
+                "customMedia": [],
+                "scheduledFor": "2026-09-25T01:10:30.475Z",
+                "platformSpecificData": {
+                  "firstComment": "Sacred Ground — Voted #1 Chicagoland’s Crystal Store & Holistic Destination."
+                },
+                "status": "published",
+                "publishAttempts": 0,
+                "contentHash": "d7a7f9cc45751f846de251664832a341",
+                "_id": "6ab5ca06dd61b690f3c27121",
+                "platformPostId": "101428372368870_1122850453590192",
+                "platformPostUrl": "https://www.facebook.com/101428372368870_1122850453590192",
+                "publishedAt": "2026-09-25T01:10:48.060Z"
+              }
+            ],
+            "scheduledFor": "2026-09-25T01:10:30.475Z",
+            "timezone": "America/Chicago",
+            "status": "published",
+            "tags": [],
+            "hashtags": [],
+            "mentions": [],
+            "visibility": "public",
+            "crosspostingEnabled": true,
+            "metadata": {
+              "usageCounted": true
+            },
+            "publishAttempts": 0,
+            "createdAt": "2026-09-25T01:10:30.554Z",
+            "updatedAt": "2026-09-25T01:10:48.134Z",
+            "__v": 0,
+            "publishingClaimedAt": "2026-09-25T01:10:30.611Z"
+          },
+          "message": "Post published successfully"
+        }
+      }
+    },
+    "week_ahead|2026-09-24|instagram|22002,23907,23951,26079,26089,28593": {
+      "draft_id": "sgma-2026-09-24-week_ahead-ig-2d2e203d",
+      "posted_at": "2026-09-24T20:11:02.032624-05:00",
+      "external": {
+        "zernio": {
+          "post": {
+            "recycling": {
+              "enabled": false,
+              "gapFreq": "month",
+              "recycleCount": 0,
+              "contentVariations": [],
+              "contentVariationIndex": 0
+            },
+            "_id": "6ab5ca189ea450b8fb0edd22",
+            "userId": "6a49a0ca1f5ee39905d0dc6f",
+            "title": "",
+            "content": "As evening settles over the shop, we’re reminded tomorrow is another day—and there’s much more to come.\n\nFriday, September 25\n\n• Keeper of the Cards: Robert\n  1:00 PM–6:30 PM\n  https://shopsacredground.com/book/robert/\n\n• Vibrational Chakra Healing With Kate\n  2:00 PM–5:00 PM\n  https://shopsacredground.com/book/kate-chakra/\n\n• Lisa Maria Intuitive Tarot and Somatic Healing\n  5:00 PM–8:00 PM\n  https://shopsacredground.com/book/lisa-maria/\n\nSaturday, September 26\n\n• Tina’s Tarot & Rune Sessions\n  11:00 AM–3:00 PM\n  https://shopsacredground.com/tina/\n\n• Shaman Medium Melissa\n  11:00 AM–2:00 PM\n  https://shopsacredground.com/book/melissa/\n\n• Keeper of the Cards: Robert\n  3:00 PM–7:30 PM\n  https://shopsacredground.com/book/robert/\n\nIf you’re not done for the night yet…\nPeek at the Observatory — it changes every day.\nhttps://shopsacredground.com/sacred-ground-observatory/\n\nAnd don’t forget the Library: download a meditation or playlist, find something to watch or listen to, or explore sacred chanting and music.\nhttps://shopsacredground.com/library/\n\nCall to book a session or grab your spot online.\n847-749-3922\nhttps://shopsacredground.com/events/\n\nWherever the night takes you, carry a little Sacred Ground calm with you.\n\nSacred Ground — Voted #1 Chicagoland’s Crystal Store & Holistic Destination.\n\n#SacredGround #ArlingtonHeights #ShopSacredGround #ChicagoEvents #CrystalShop #EnergyHealing #HolisticCenter #RockShop #Kindness #Chicagoland #HolisticChicago",
+            "mediaItems": [
+              {
+                "type": "image",
+                "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-fall-store-teal-copper-aurora-1.png",
+                "_id": "6ab5ca189ea450b8fb0edd23"
+              }
+            ],
+            "platforms": [
+              {
+                "platform": "instagram",
+                "accountId": {
+                  "_id": "6a49a12e9d9472faae7c2220",
+                  "platform": "instagram",
+                  "username": "shopsacredground",
+                  "displayName": "Sacred Ground",
+                  "profilePicture": "https://scontent-lhr11-1.cdninstagram.com/v/t51.2885-19/313932603_854045628963650_758437280360514790_n.jpg?stp=dst-jpg_s206x206_tt6&_nc_cat=107&ccb=7-5&_nc_sid=bf7eb4&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=tMnxXsLuZYgQ7kNvwGjYvAv&_nc_oc=AdqcNbRKNUottrtGn4AR1NVQqyik0RKhUUYHq2szXS0Hg6NOSZDC2f2NuUHWLnpEuSA&_nc_zt=24&_nc_ht=scontent-lhr11-1.cdninstagram.com&edm=AP4hL3IEAAAA&_nc_tpa=Q5bMBQLHa2a3Aeezde7tluwDhd-CaLy2JwRFKP1X2uQ5Upoy5BuSyGBCJqTYyMpifOEwW6tv6fs0Mgbp-Q&oh=00_AQIwMYAn3Huv0Nq4lOFSh173S9u98dlHUJSrKJcRkKZM9A&oe=6ABA604A",
+                  "isActive": true,
+                  "profileId": "6a49a0ca1f5ee39905d0dc87"
+                },
+                "profileId": "6a49a0ca1f5ee39905d0dc87",
+                "customMedia": [],
+                "scheduledFor": "2026-09-25T01:10:48.558Z",
+                "platformSpecificData": {
+                  "firstComment": "Sacred Ground — Voted #1 Chicagoland’s Crystal Store & Holistic Destination."
+                },
+                "status": "processing",
+                "publishAttempts": 0,
+                "contentHash": "04ac68dd9141b787a4a15b1732c41fb7",
+                "_id": "6ab5ca189ea450b8fb0edd24"
+              }
+            ],
+            "scheduledFor": "2026-09-25T01:10:48.558Z",
+            "timezone": "America/Chicago",
+            "status": "publishing",
+            "tags": [],
+            "hashtags": [],
+            "mentions": [],
+            "visibility": "public",
+            "crosspostingEnabled": true,
+            "metadata": {
+              "usageCounted": true
+            },
+            "publishAttempts": 0,
+            "createdAt": "2026-09-25T01:10:48.702Z",
+            "updatedAt": "2026-09-25T01:11:01.432Z",
+            "__v": 0,
+            "publishingClaimedAt": "2026-09-25T01:10:48.760Z"
+          },
+          "message": "Post published successfully"
+        }
+      }
+    },
+    "week_ahead|2026-09-24|threads|22002,23907,23951,26079,26089,28593": {
+      "draft_id": "sgma-2026-09-24-week_ahead-th-da7551ee",
+      "posted_at": "2026-09-24T20:11:28.093380-05:00",
+      "external": {
+        "zernio": {
+          "post": {
+            "recycling": {
+              "enabled": false,
+              "gapFreq": "month",
+              "recycleCount": 0,
+              "contentVariations": [],
+              "contentVariationIndex": 0
+            },
+            "_id": "6ab5ca26ee9bff20b0c2b8e7",
+            "userId": "6a49a0ca1f5ee39905d0dc6f",
+            "title": "",
+            "content": "As evening settles over the shop, we’re reminded tomorrow is another day—and there’s much more to come.\n\nFriday, September 25 • Keeper of the Cards: Robert 1:00 PM–6:30 PM https://shopsacredground.com/book/robert/ • Vibrational Chakra Healing With Kate 2:00 PM–5:00 PM https://shopsacredground.com/book/kate-chakra/ • Lisa Maria Intuitive Tarot and Somatic Healing 5:00 PM–8:00 PM https://shopsacredground.com/book/lisa-maria/ Saturday, September 26 • Ti…\n\nMore at shopsacredground.com · 847-749-3922",
+            "mediaItems": [
+              {
+                "type": "image",
+                "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-fall-store-teal-copper-aurora-1.png",
+                "_id": "6ab5ca26ee9bff20b0c2b8e8"
+              }
+            ],
+            "platforms": [
+              {
+                "platform": "threads",
+                "accountId": {
+                  "_id": "6aa203a0726ebfe037d0c74a",
+                  "platform": "threads",
+                  "username": "shopsacredground",
+                  "displayName": "shopsacredground",
+                  "profilePicture": "https://scontent-lhr6-1.cdninstagram.com/v/t51.82787-19/802333872_18097134170181350_1846167356547019034_n.jpg?_nc_cat=108&ccb=7-5&_nc_sid=30ff31&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xNTAuQzMifQ%3D%3D&_nc_ohc=brK2S22awPUQ7kNvwHxE2cF&_nc_oc=AdqwPlZ2Eyxlh1NiVZ3Tt4qV34243LjiYrc0xysQv9H9LwJ2U08fkFzGSD5gKLxWzl4&_nc_zt=24&_nc_ht=scontent-lhr6-1.cdninstagram.com&edm=AP4hL3IEAAAA&_nc_gid=ql7kDoAVZ3DedD64V1slvw&_nc_tpa=Q5bMBQImecVhJDDufSAwm5X1oDnycuVRdq9ZTVIr6dI-v4mZx3LWzC4DJkHAbE5KXhUOuS9XjGBoAp27cg&oh=00_AQIYF_Ro7WrqERg2t9cklpHeT98WNncKfBrzuaZPe6xtsA&oe=6ABA97A8",
+                  "isActive": true,
+                  "profileId": "6a49a0ca1f5ee39905d0dc87"
+                },
+                "profileId": "6a49a0ca1f5ee39905d0dc87",
+                "customMedia": [],
+                "scheduledFor": "2026-09-25T01:11:02.178Z",
+                "status": "published",
+                "publishAttempts": 0,
+                "contentHash": "e949726a62d6b5be528dd7d755ff735e",
+                "_id": "6ab5ca26ee9bff20b0c2b8e9",
+                "platformPostId": "17976769535915921",
+                "platformPostUrl": "https://www.threads.com/@shopsacredground/post/17976769535915921",
+                "publishedAt": "2026-09-25T01:11:27.681Z"
+              }
+            ],
+            "scheduledFor": "2026-09-25T01:11:02.178Z",
+            "timezone": "America/Chicago",
+            "status": "published",
+            "tags": [],
+            "hashtags": [],
+            "mentions": [],
+            "visibility": "public",
+            "crosspostingEnabled": true,
+            "metadata": {
+              "usageCounted": true
+            },
+            "publishAttempts": 0,
+            "createdAt": "2026-09-25T01:11:02.260Z",
+            "updatedAt": "2026-09-25T01:11:27.757Z",
+            "__v": 0,
+            "publishingClaimedAt": "2026-09-25T01:11:02.326Z"
+          },
+          "message": "Post published successfully"
+        }
+      }
+    },
+    "week_ahead|2026-09-24|tiktok|22002,23907,23951,26079,26089,28593": {
+      "draft_id": "sgma-2026-09-24-week_ahead-ti-6f0c9d05",
+      "posted_at": "2026-09-24T20:11:31.103713-05:00",
+      "external": {
+        "zernio": {
+          "post": {
+            "recycling": {
+              "enabled": false,
+              "gapFreq": "month",
+              "recycleCount": 0,
+              "contentVariations": [],
+              "contentVariationIndex": 0
+            },
+            "_id": "6ab5ca4027a4c96c6e253749",
+            "userId": "6a49a0ca1f5ee39905d0dc6f",
+            "title": "",
+            "content": "As evening settles over the shop, we’re reminded tomorrow is another day—and there’s mu…",
+            "mediaItems": [
+              {
+                "type": "image",
+                "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-fall-store-teal-copper-aurora-1.png",
+                "_id": "6ab5ca4027a4c96c6e25374a"
+              }
+            ],
+            "platforms": [
+              {
+                "platform": "tiktok",
+                "accountId": {
+                  "_id": "6a49a6e79d9472faae7c4b52",
+                  "platform": "tiktok",
+                  "username": "shopsacredground",
+                  "displayName": "Sacred Ground",
+                  "profilePicture": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/dfec5194bb37e5461ca60a538b998c67~tplv-tiktokx-cropcenter:168:168.jpeg?dr=9638&refresh_token=f6575f56&x-expires=1790391600&x-signature=tn0894V0ST7n5NwWRgp9CZY%2F4kU%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=8aecc5ac&idc=useast5",
+                  "isActive": true,
+                  "profileId": "6a49a0ca1f5ee39905d0dc87"
+                },
+                "profileId": "6a49a0ca1f5ee39905d0dc87",
+                "customMedia": [],
+                "scheduledFor": "2026-09-25T01:11:28.344Z",
+                "platformSpecificData": {
+                  "tiktokSettings": {
+                    "media_type": "photo",
+                    "photo_cover_index": 0,
+                    "description": "As evening settles over the shop, we’re reminded tomorrow is another day—and there’s much more to come.\n\nFriday, September 25\n\n• Keeper of the Cards: Robert\n  1:00 PM–6:30 PM\n  https://shopsacredground.com/book/robert/\n\n• Vibrational Chakra Healing With Kate\n  2:00 PM–5:00 PM\n  https://shopsacredground.com/book/kate-chakra/\n\n• Lisa Maria Intuitive Tarot and Somatic Healing\n  5:00 PM–8:00 PM\n  https://shopsacredground.com/book/lisa-maria/\n\nSaturday, September 26\n\n• Tina’s Tarot & Rune Sessions\n  11:00 AM–3:00 PM\n  https://shopsacredground.com/tina/\n\n• Shaman Medium Melissa\n  11:00 AM–2:00 PM\n  https://shopsacredground.com/book/melissa/\n\n• Keeper of the Cards: Robert\n  3:00 PM–7:30 PM\n  https://shopsacredground.com/book/robert/\n\nNot ready to call it a night?\nThe Observatory is still open for a quiet look — it changes every day.\nhttps://shopsacredground.com/sacred-ground-observatory/\n\nOr settle into the Library: meditations, playlists, something to watch or listen to, sacred chanting and music.\nhttps://shopsacredground.com/library/\n\nCall to book a session or grab your spot online.\n847-749-3922\nhttps://shopsacredground.com/events/\n\nWherever the night takes you, carry a little Sacred Ground calm with you.\n\nSacred Ground — Voted #1 Chicagoland’s Crystal Store & Holistic Destination.\n\n#SacredGround #ArlingtonHeights #ShopSacredGround #ChicagoEvents #CrystalShop #EnergyHealing #HolisticCenter #RockShop #Kindness",
+                    "auto_add_music": false,
+                    "privacy_level": "PUBLIC_TO_EVERYONE",
+                    "allow_comment": true,
+                    "content_preview_confirmed": true,
+                    "express_consent_given": true,
+                    "video_made_with_ai": true
+                  }
+                },
+                "status": "processing",
+                "publishAttempts": 0,
+                "contentHash": "13a40e4cd8a5557a46097c2c71125fad",
+                "_id": "6ab5ca4027a4c96c6e25374b"
+              }
+            ],
+            "scheduledFor": "2026-09-25T01:11:28.344Z",
+            "timezone": "America/Chicago",
+            "status": "publishing",
+            "tags": [],
+            "hashtags": [],
+            "mentions": [],
+            "visibility": "public",
+            "crosspostingEnabled": true,
+            "metadata": {
+              "usageCounted": true
+            },
+            "publishAttempts": 0,
+            "createdAt": "2026-09-25T01:11:28.493Z",
+            "updatedAt": "2026-09-25T01:11:30.875Z",
+            "__v": 0,
+            "publishingClaimedAt": "2026-09-25T01:11:28.552Z"
+          },
+          "message": "Post published successfully"
+        }
+      }
     }
   },
-  "updated_at": "2026-09-15T12:31:55.297461-05:00",
+  "updated_at": "2026-09-24T20:11:31.103725-05:00",
   "sgma-2026-08-28-today-fb-magritte-repost": {
     "campaign": "today",
     "platform": "facebook",
