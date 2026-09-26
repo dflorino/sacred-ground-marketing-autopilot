@@ -325,6 +325,11 @@ def entry_publish_block_reason(entry: Optional[Dict[str, Any]]) -> Optional[str]
     src = entry_generation_source(entry)
     if src in BANNED_GENERATION_SOURCES:
         return f"banned_generation_source:{src}"
+    # Founder-approved live URL: skip the navy-PIL pixel heuristic. Oct 6
+    # dollhouse + galaxy hits the old equal-card color probe (false positive).
+    skip_local_navy = bool(entry.get("founder_approved")) and bool(
+        str(entry.get("url") or "").strip()
+    )
     for key in ("local", "local_instagram", "local_path", "path"):
         local = str(entry.get(key) or "").strip()
         if not local:
@@ -332,13 +337,25 @@ def entry_publish_block_reason(entry: Optional[Dict[str, Any]]) -> Optional[str]
         if "-pride-" in local.replace("\\", "/").lower():
             return f"banned_compositor_pride_local:{local}"
         abs_path = _abs_asset(local)
-        if abs_path and os.path.isfile(abs_path) and flyer_is_banned_mystic_navy_pil(
-            abs_path
+        if (
+            not skip_local_navy
+            and abs_path
+            and os.path.isfile(abs_path)
+            and flyer_is_banned_mystic_navy_pil(abs_path)
         ):
             return f"banned_mystic_navy_pil_local:{local}"
     for key in ("url", "url_instagram"):
         url = str(entry.get(key) or "").strip()
-        if url and image_url_looks_like_banned_compositor_upload(url):
+        if not url:
+            continue
+        low = url.lower()
+        if "sg-morning-flyer-" in low and "-pride-" in low:
+            return f"banned_mystic_navy_pil_url:{key}"
+        if "pil_compositor" in low or "navy-equal-card" in low:
+            return f"banned_mystic_navy_pil_url:{key}"
+        if skip_local_navy:
+            continue
+        if image_url_looks_like_banned_compositor_upload(url):
             return f"banned_mystic_navy_pil_url:{key}"
     return None
 

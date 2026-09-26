@@ -1,3 +1,19 @@
+## 2026-09-26 — Unlock Sep 29–Oct 10 mornings + Oct nights
+
+Founder: use them, do not hold. 9am unlocked for cosmic keepers **28690–28701**.
+Oct 6 dollhouse was a navy-PIL false positive — founder-approved live URLs skip
+that color probe. Oct celestial nights stay ready (Libra **27686** night-before
+Oct 9; Orionids **27687**; Taurus **27685**; Samhain **27691**). Fall store
+nights stay in the 8pm pool; crow / pumpkin / fairy lights stay retired. Oct 10
+9am is the Egypt shop flyer **28701**, not the Libra celestial morning.
+
+## 2026-09-26 — 30 out-of-the-box morning concepts (building)
+
+Founder locked 30 ideas. Wired `config/morning_oct_out_of_the_box.json`, styles,
+`date_plan_2026_10` + Sep 29–30. First-build plates are local, `do_not_publish`.
+Oct 3 KEEP owl+kids. Hogwarts is the night storefront, not morning. Type on the
+photo; footer is website + phone only. 9am stays locked.
+
 ## 2026-09-26 — Virgo off night storefronts
 
 Founder: Libra season — take astrology off the building. Scrubbed ♍ from

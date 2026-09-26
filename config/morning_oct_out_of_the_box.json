@@ -1,0 +1,290 @@
+{
+  "title": "30 out-of-the-box Sacred Ground morning post concepts",
+  "approved_by": "Founder",
+  "approved_at": "2026-09-26T10:00:00-05:00",
+  "timezone": "America/Chicago",
+  "status": "founder_unlocked",
+  "do_not_publish_until_founder_says": false,
+  "hard_law": "If another metaphysical store would logically use this image, REJECT.",
+  "follow_morning_rules": [
+    "Idea first — the picture IS the idea (bar: Sep 20 birthday sun). Not a style slot. Not the same cream-pane factory every day.",
+    "Schedule type lives ON the photo — large, thick, mixed fonts. Soft cream wash OK. Never skinny colored bars under the photo.",
+    "Footer under the photo is ONLY shopsacredground.com + 847-749-3922 + circular logo.",
+    "Equal visual weight for 2–3 events. No hero + tiny secondary. No dollar prices. FREE ok.",
+    "Designed-in Chicagoland #1 / Premier / Voted pride baked into every NEW plate.",
+    "Colorful jewel / unexpected bold color. Ban drab, mystic AI wellness starter pack, Bauhaus, Victorian ledger.",
+    "Never reuse a used URL. One plate for FB+IG. Hold do_not_publish until Founder unlocks 9am.",
+    "Never the tarot Death card."
+  ],
+  "founder_highest_potential": [
+    4,
+    5,
+    17,
+    19,
+    24,
+    27,
+    29,
+    30
+  ],
+  "founder_note_30": "Normal Is Closed Today feels the most Sacred Ground — virtually no rules. Picture she already has: enormous amethyst geode in downtown Arlington Heights, tiny people around it, Sacred Ground glowing behind, morning sunlight, photoreal, absurd and beautiful.",
+  "oct3_keep": {
+    "date": "2026-10-03",
+    "note": "Founder keep: Harry Potter kids + barn owl shop. Do not replace. Castle is for the NIGHT storefront plate, not this morning. Date lives under the names so the owl stays visible."
+  },
+  "concepts": [
+    {
+      "n": 1,
+      "id": "oct_cosmic_newspaper",
+      "label": "Sacred Ground Cosmic Newspaper",
+      "maps_to": "surprise_newspaper_daily",
+      "idea": "Old-fashioned newspaper delivered from another dimension. Giant headline TODAY AT SACRED GROUND. Smaller stories are today's readers, healers, classes. 1940s paper meets galactic news."
+    },
+    {
+      "n": 2,
+      "id": "oct_price_is_right",
+      "label": "The Metaphysical Price Is Right",
+      "idea": "Wildly colorful 1970s game-show set. Crystal podiums reveal who's at Sacred Ground today. Campy, bright, deliberately over-the-top. No dollar prices on the graphic."
+    },
+    {
+      "n": 3,
+      "id": "oct_tarot_billboard",
+      "label": "Sacred Ground Tarot Billboard",
+      "idea": "Enormous tarot card on a real Chicagoland highway billboard. The card changes every morning and represents the day. NEVER Death. Max 2 tarot-card plates per calendar month."
+    },
+    {
+      "n": 4,
+      "id": "surprise_universe_morning_meeting",
+      "label": "The Universe's Morning Meeting",
+      "high_potential": true,
+      "idea": "Aliens, angels, Bigfoot, a monk, an Egyptian deity and a Victorian ghost around a corporate conference table discussing today's Sacred Ground schedule. Hysterical; change the cast every use."
+    },
+    {
+      "n": 5,
+      "id": "oct_dollhouse",
+      "label": "Sacred Ground Dollhouse",
+      "high_potential": true,
+      "idea": "The entire store as an intricate miniature dollhouse. Tiny rooms: massage, Tarot, Reiki, crystals, meditation, classes. Rooms light up for what's happening that day."
+    },
+    {
+      "n": 6,
+      "id": "oct_airline_ad",
+      "label": "1970s Airline Advertisement",
+      "idea": "Your Destination Today: Sacred Ground. Retro stewardess-era travel poster. Destinations are Reiki, Tarot, Sound Healing, crystals, meditation — not cities."
+    },
+    {
+      "n": 7,
+      "id": "oct_cosmic_convenience",
+      "label": "The Cosmic Convenience Store",
+      "idea": "Sacred Ground as a strange late-night convenience store between Earth and the Pleiades. Instead of Slurpees: intuition, healing, crystals, Tarot, enlightenment."
+    },
+    {
+      "n": 8,
+      "id": "oct_museum_exhibit",
+      "label": "Sacred Ground Museum Exhibit",
+      "maps_to": "surprise_museum_artifact_3026",
+      "idea": "Grand museum gallery. Tarot, crystals, bowls displayed as priceless antiquities. Velvet rope around TODAY'S EVENTS. Bright museum light — not Blade Runner mud."
+    },
+    {
+      "n": 9,
+      "id": "surprise_vending_machine",
+      "label": "The Metaphysical Vending Machine",
+      "idea": "Giant gorgeous vintage vending machine. Buttons for Tarot, Reiki, Massage, Astrology, Sound Healing, Akashic. Today's offerings glow."
+    },
+    {
+      "n": 10,
+      "id": "oct_universe_calling",
+      "label": "The Universe Is Calling",
+      "idea": "Incredible vintage rotary telephone in a surreal landscape. Receiver floating. Cord into the stars. A different message from the Universe every day."
+    },
+    {
+      "n": 11,
+      "id": "oct_after_dark_morning",
+      "label": "Sacred Ground After Dark — Morning Edition",
+      "idea": "Film-noir detective scene. A Tarot card, crystal, or pendulum is the clue. 1940s B&W with ONE supernatural color element. Never Death."
+    },
+    {
+      "n": 12,
+      "id": "surprise_cabinet_curiosities",
+      "label": "Victorian Curiosity Cabinet",
+      "idea": "Elaborate cabinet, dozens of drawers. Impossible contents: tiny galaxy, crystal cave, reader table, miniature moon. Today's drawers are open. Equal drawer size."
+    },
+    {
+      "n": 13,
+      "id": "oct_trading_cards",
+      "label": "Sacred Ground Trading Cards",
+      "idea": "Practitioners as elaborate fantasy collector cards — not cheesy baseball. Special Ability / Power lines. Equal card size when 2–3 people share the day."
+    },
+    {
+      "n": 14,
+      "id": "oct_catalog_1960s",
+      "label": "The Metaphysical Department Store Catalog",
+      "idea": "1960s Sears catalog gone metaphysical. Page 111: Things Your Soul Apparently Needs Today."
+    },
+    {
+      "n": 15,
+      "id": "oct_cosmic_diner",
+      "label": "The Cosmic Diner",
+      "idea": "Chrome 1950s diner floating in space. Menu board lists today's specials. Crystals instead of sugar dispensers."
+    },
+    {
+      "n": 16,
+      "id": "oct_viewmaster",
+      "label": "Sacred Ground View-Master",
+      "idea": "Giant vintage View-Master with the circular reel. Each frame is one thing happening today. Immediately recognizable."
+    },
+    {
+      "n": 17,
+      "id": "oct_lost_and_found",
+      "label": "The Universe's Lost & Found",
+      "high_potential": true,
+      "idea": "Surreal lost-and-found counter. Lost items: intuition, peace, direction, confidence, sleep, connection, wonder. Sacred Ground is where they came to retrieve them. Lost item can be funny, poignant, or spiritual — change it every morning."
+    },
+    {
+      "n": 18,
+      "id": "oct_metaphysical_mugshots",
+      "label": "Metaphysical Mugshots",
+      "idea": "NOT practitioners as criminals. Crystals, decks, pendulums, bowls as cheeky vintage police mugshots. CHARGE: Disturbing the Ordinary."
+    },
+    {
+      "n": 19,
+      "id": "oct_train_station",
+      "label": "Sacred Ground Train Station",
+      "high_potential": true,
+      "idea": "Grand old European train terminal. Departure board: INTUITION, HEALING, CLARITY, REST, CONNECTION. Today's offerings appear as departures — schedule without looking like a calendar."
+    },
+    {
+      "n": 20,
+      "id": "oct_spiritual_er",
+      "label": "The Spiritual Emergency Room",
+      "idea": "Whimsical, not medical. Crystal on a little hospital bed. Deck getting examined. Headline energy: Feeling energetically questionable?"
+    },
+    {
+      "n": 21,
+      "id": "oct_record_album",
+      "label": "Sacred Ground Record Album",
+      "idea": "Every morning a different vintage album cover: psychedelic 60s, disco 70s, punk 80s, grunge 90s. Today's practitioners are the track list."
+    },
+    {
+      "n": 22,
+      "id": "oct_cosmic_laundromat",
+      "label": "The Cosmic Laundromat",
+      "idea": "Gorgeous retro laundromat at midnight. Galaxies spinning in washing machines. Sometimes your energy needs a wash cycle too."
+    },
+    {
+      "n": 23,
+      "id": "oct_pawn_shop",
+      "label": "The Metaphysical Pawn Shop",
+      "idea": "Strange mystical storefront packed with impossible artifacts. Sign energy: We don't buy your stuff. We help you find yourself."
+    },
+    {
+      "n": 24,
+      "id": "oct_action_figures",
+      "label": "Sacred Ground Action Figures",
+      "high_potential": true,
+      "idea": "Each practitioner a boxed collectible figure with accessories (deck, bowl, chart, table). Could become a whole practitioner campaign. Equal boxes."
+    },
+    {
+      "n": 25,
+      "id": "oct_waiting_room",
+      "label": "The Universe's Waiting Room",
+      "idea": "Angels, aliens, fairies, ghosts, monks, ordinary humans waiting for their Sacred Ground appointment. Number board: NOW SERVING 111."
+    },
+    {
+      "n": 26,
+      "id": "oct_grocery",
+      "label": "Metaphysical Grocery Store",
+      "idea": "Vintage grocery aisle. Jars labeled Courage, Intuition, Peace, Boundaries, Rest, Abundance, WTF Am I Doing With My Life."
+    },
+    {
+      "n": 27,
+      "id": "oct_through_the_ages",
+      "label": "Sacred Ground Through the Ages",
+      "high_potential": true,
+      "idea": "Every morning the shop exists in a different era: Ancient Egypt, Renaissance Florence, Victorian London, 1920s Paris, 1950s America, 1969 Woodstock, 1980s mall, year 3026. Real eggplant-awning storefront when a building appears."
+    },
+    {
+      "n": 28,
+      "id": "oct_time_machine",
+      "label": "The Sacred Ground Time Machine",
+      "idea": "Giant elaborate Jules Verne-style machine. Destination dial points to TODAY. Through the portal: today's classes and practitioners."
+    },
+    {
+      "n": 29,
+      "id": "oct_tiny_people_crystals",
+      "label": "Tiny People, Giant Crystals",
+      "high_potential": true,
+      "idea": "Photoreal miniature people climbing enormous amethyst cathedrals, polishing giant quartz, carrying Tarot like construction materials. Scale makes you stop."
+    },
+    {
+      "n": 30,
+      "id": "oct_normal_is_closed",
+      "label": "Sacred Ground: Normal Is Closed Today",
+      "high_potential": true,
+      "idea": "Wildcard series. Deliberately impossible: crystal through a CTA train, Tarot raining over downtown Arlington Heights, gigantic singing bowl in the street, the Moon parked outside the shop, an angel at a crosswalk, a UFO dropping someone for an 11:00 Tarot. First build: amethyst geode in downtown AH."
+    }
+  ],
+  "first_build_dates": {
+    "2026-09-29": {
+      "n": 17,
+      "style": "oct_lost_and_found",
+      "episode": "Lost: the quiet. Claim tickets equal for Amber, Tina, Kate Sound Bath FREE 7–8."
+    },
+    "2026-09-30": {
+      "n": 4,
+      "style": "surprise_universe_morning_meeting",
+      "episode": "Agenda: Janel + Frequency Reset. New cast around the table."
+    },
+    "2026-10-01": {
+      "n": 6,
+      "style": "oct_airline_ad",
+      "episode": "Destinations: Adie Tarot, Sherry Tai Chi, Candle Making."
+    },
+    "2026-10-02": {
+      "n": 21,
+      "style": "oct_record_album",
+      "episode": "Disco/psych sleeve. Track list: Lisa Maria, Frequency Reset, Oracle class."
+    },
+    "2026-10-03": {
+      "n": null,
+      "style": "oct3_hp_owl_keep",
+      "episode": "KEEP Founder Harry Potter owl + kids shop. Not a remake."
+    },
+    "2026-10-04": {
+      "n": 10,
+      "style": "oct_universe_calling",
+      "episode": "Rotary phone. Message for Linn (Astrology or Angel Communication 12–5)."
+    },
+    "2026-10-05": {
+      "n": 13,
+      "style": "oct_trading_cards",
+      "episode": "Equal collector cards: Lisa Maria + Karen mediumship."
+    },
+    "2026-10-06": {
+      "n": 5,
+      "style": "oct_dollhouse",
+      "episode": "Rooms lit: Amber massage, Robert cards, Meditation FREE."
+    },
+    "2026-10-07": {
+      "n": 12,
+      "style": "surprise_cabinet_curiosities",
+      "episode": "Two drawers open equal: Tina + Karen Soul Alignment."
+    },
+    "2026-10-08": {
+      "n": 19,
+      "style": "oct_train_station",
+      "episode": "Departures: Adie, Rose, Eve — equal board rows."
+    },
+    "2026-10-09": {
+      "n": 30,
+      "style": "oct_normal_is_closed",
+      "episode": "Enormous amethyst geode in downtown Arlington Heights. Tiny people. Sacred Ground glowing behind. Cheryl / Renee / Andre Full Moon."
+    },
+    "2026-10-10": {
+      "n": 28,
+      "style": "oct_time_machine",
+      "episode": "Dial: TODAY. Portal glimpse: Melissa, Adie, Rose. New Moon in Libra in the machine, not a glyph on a building."
+    }
+  },
+  "unlocked_at": "2026-09-26T11:41:00-05:00",
+  "unlock_note": "Founder Sep 26: use Sep 29–Oct 10 keepers. Do not hold."
+}
