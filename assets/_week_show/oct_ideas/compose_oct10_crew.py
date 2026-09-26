@@ -6,7 +6,7 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parents[3]
-ART = ROOT / "assets/_week_show/oct_nights/oct10-crew-boxes-v5.jpg"
+ART = ROOT / "assets/_week_show/oct_nights/oct10-crew-boxes-v7-face.jpg"
 OUT = ROOT / "assets/sg-morning-flyer-2026-10-10.jpg"
 DESK = Path.home() / "Desktop" / "sg-civilization-nights" / "sg-morning-flyer-2026-10-10.jpg"
 LOGO = ROOT / "config/brand/sacred-ground-logo-circle-transparent.png"

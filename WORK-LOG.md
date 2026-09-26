@@ -1,3 +1,10 @@
+## 2026-09-26 — Oct 10 official face + Marvel spoof
+
+Founder: stay with Galactic Adventurers face; do the first boxes again;
+also try a Marvel action-hero spoof. Face lock from crew **28520**.
+First-boxes remake **28730**. Marvel blister-card spoof **28733** (no
+smeared type, no prices). Both local, still `do_not_publish`.
+
 ## 2026-09-26 — Oct 10 crew: smile, beauty mark, Kobi name
 
 Founder: beauty mark back on her right cheek, smile, reposition Kobi.
