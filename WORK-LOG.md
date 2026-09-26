@@ -1,3 +1,8 @@
+## 2026-09-26 — Oct 10 Deneene + Kobi names on the lips
+
+Founder: those two names still sat wrong. DENEENE centered and down on
+the purple lip; KOBI up onto the gold (it had fallen onto the shelf).
+
 ## 2026-09-26 — Oct 10 use Adventurers still again
 
 Founder sent the crew still again. Remade collector boxes from **28520**

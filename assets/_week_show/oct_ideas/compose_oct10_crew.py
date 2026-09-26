@@ -14,9 +14,9 @@ SIZE, FOOTER_H = 1080, 168
 CREAM, INK, GOLD = (245, 236, 214), (12, 10, 8), (120, 70, 16)
 # Names sit on the box lip under the window (22pt). Kobi lower on gold.
 BOX_NAMES = [
-    ("DENEENE", 188, 732, (245, 236, 214)),
+    ("DENEENE", 215, 758, (245, 236, 214)),
     ("LUCA", 540, 748, (245, 236, 214)),
-    ("KOBI", 888, 748, (20, 16, 12)),
+    ("KOBI", 870, 722, (20, 16, 12)),
 ]
 
 
