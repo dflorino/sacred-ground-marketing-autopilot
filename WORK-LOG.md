@@ -1,3 +1,9 @@
+## 2026-09-26 — Oct 10 use Adventurers still again
+
+Founder sent the crew still again. Remade collector boxes from **28520**
+so Deneene / Luca / Kobi match that photo (art **28739**). No Marvel.
+Still held.
+
 ## 2026-09-26 — Oct 10 back to boxes; official Luca
 
 Founder: keep the first collector boxes, no action figures, use the same
