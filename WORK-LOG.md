@@ -1,3 +1,9 @@
+## 2026-09-26 — Oct 10 back to boxes; official Luca
+
+Founder: keep the first collector boxes, no action figures, use the same
+Luca from Galactic Adventurers. Art **28737**. Official Deneene face +
+white Luca (wide eyes, buckle collar). Still `do_not_publish`.
+
 ## 2026-09-26 — Oct 10 official face + Marvel spoof
 
 Founder: stay with Galactic Adventurers face; do the first boxes again;
