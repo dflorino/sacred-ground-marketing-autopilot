@@ -576,9 +576,11 @@
       {
         "id": "fall_store_bonfire_street",
         "label": "Bonfire glow with locked SG storefront",
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-fall-store-bonfire-street-1.png",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-fall-store-bonfire-street-noglyph.png",
         "local": "assets/sg-night-creative-fall-store-bonfire-street.png",
-        "wp_media_id": 27649,
+        "wp_media_id": 28633,
+        "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-fall-store-bonfire-street-1.png",
+        "prior_wp_media_id": 27649,
         "sg_identity": "pass",
         "sg_anchor": "lit Sacred Ground storefront (eggplant awning) \u2014 continuity lock",
         "storefront_continuity": true,
@@ -589,7 +591,7 @@
         "pride_baked_in": false,
         "active": true,
         "batch": "fall_store_continuity_2026-09-06",
-        "note": "Founder 2026-09-06 \u2014 same real SG store look as celestial keepers; sky/props vary only | 2026-09-06 real sun logo; no week-ahead meta; no AI archer/Voted sticker"
+        "note": "Founder 2026-09-26 \u2014 Virgo wall glyph removed for Libra season (no replacement sign) | 2026-09-06 real sun logo; no week-ahead meta"
       },
       {
         "id": "fall_store_crow_awning",
@@ -630,9 +632,11 @@
       {
         "id": "fall_store_rain_puddles",
         "label": "Rain puddles leading to locked SG storefront",
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-fall-store-rain-puddles-1.png",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-fall-store-rain-puddles-noglyph.png",
         "local": "assets/sg-night-creative-fall-store-rain-puddles.png",
-        "wp_media_id": 27651,
+        "wp_media_id": 28635,
+        "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-fall-store-rain-puddles-1.png",
+        "prior_wp_media_id": 27651,
         "sg_identity": "pass",
         "sg_anchor": "lit Sacred Ground storefront (eggplant awning) \u2014 continuity lock",
         "storefront_continuity": true,
@@ -643,7 +647,7 @@
         "pride_baked_in": false,
         "active": true,
         "batch": "fall_store_continuity_2026-09-06",
-        "note": "Founder 2026-09-06 \u2014 same real SG store look as celestial keepers; sky/props vary only | 2026-09-06 real sun logo; no week-ahead meta; no AI archer/Voted sticker"
+        "note": "Founder 2026-09-26 \u2014 Virgo wall glyph removed for Libra season (no replacement sign) | 2026-09-06 real sun logo; no week-ahead meta"
       },
       {
         "id": "fall_store_candle_spill",
@@ -720,9 +724,11 @@
       {
         "id": "fall_store_star_trails",
         "label": "Star trails over locked SG storefront",
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-fall-store-star-trails-1.png",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-fall-store-star-trails-noglyph.png",
         "local": "assets/sg-night-creative-fall-store-star-trails.png",
-        "wp_media_id": 27655,
+        "wp_media_id": 28634,
+        "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-fall-store-star-trails-1.png",
+        "prior_wp_media_id": 27655,
         "sg_identity": "pass",
         "sg_anchor": "lit Sacred Ground storefront (eggplant awning) \u2014 continuity lock",
         "storefront_continuity": true,
@@ -733,7 +739,7 @@
         "pride_baked_in": false,
         "active": true,
         "batch": "fall_store_continuity_2026-09-06",
-        "note": "Founder 2026-09-06 \u2014 same real SG store look as celestial keepers; sky/props vary only | 2026-09-06 real sun logo; no week-ahead meta; no AI archer/Voted sticker"
+        "note": "Founder 2026-09-26 \u2014 Virgo wall glyph removed for Libra season (no replacement sign) | 2026-09-06 real sun logo; no week-ahead meta"
       },
       {
         "id": "fall_store_cozy_upstairs",

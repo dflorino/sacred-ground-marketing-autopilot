@@ -1,3 +1,9 @@
+## 2026-09-26 — Virgo off night storefronts
+
+Founder: Libra season — take astrology off the building. Scrubbed ♍ from
+rain-puddles, bonfire-street, and star-trails (new URLs 28635 / 28633 / 28634).
+Did not add Libra. Rest of the fall_store family still being cleaned.
+
 ## 2026-09-24 — S1E11 YouTube + TikTok now
 
 Founder: YouTube now (cancel Friday 4pm), then TikTok too (cancel Sunday 9am). Same KEEP **28153**. Same Zernio jobs published immediately.
