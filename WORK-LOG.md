@@ -1,3 +1,10 @@
+## 2026-09-26 — Oct 10 crew: smile, beauty mark, Kobi name
+
+Founder: beauty mark back on her right cheek, smile, reposition Kobi.
+Art **28725** (`oct10-crew-boxes-v5.jpg`) — closed-lip smile, mole on her
+right cheek (viewer left), long scarf, no fringe. PIL 22pt names on the
+box lips: DENEENE / LUCA / KOBI. Still `do_not_publish` until she unlocks.
+
 ## 2026-09-26 — Civilization nights pinned; Oct 10 crew boxes
 
 Founder: nights are great — mix through October, not back-to-back, never on
