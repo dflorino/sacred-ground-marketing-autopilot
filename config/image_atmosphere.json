@@ -504,9 +504,11 @@
       {
         "id": "fall_store_harvest_moonlight",
         "label": "Harvest moonlight on locked SG storefront",
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-fall-store-harvest-moonlight-1.png",
+        "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Keep-this-exact-Sacred-Ground-1790437944.jpg",
         "local": "assets/sg-night-creative-fall-store-harvest-moonlight.png",
-        "wp_media_id": 27646,
+        "wp_media_id": 28687,
+        "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-fall-store-harvest-moonlight-1.png",
+        "prior_wp_media_id": 27646,
         "sg_identity": "pass",
         "sg_anchor": "lit Sacred Ground storefront (eggplant awning) \u2014 continuity lock",
         "storefront_continuity": true,
@@ -517,7 +519,7 @@
         "pride_baked_in": false,
         "active": true,
         "batch": "fall_store_continuity_2026-09-06",
-        "note": "Founder 2026-09-06 \u2014 same real SG store look as celestial keepers; sky/props vary only | 2026-09-06 real sun logo; no week-ahead meta; no AI archer/Voted sticker"
+        "note": "Founder 2026-09-26 \u2014 Virgo wall glyph removed for Libra season (no replacement sign) | 2026-09-06 real sun logo; no week-ahead meta"
       },
       {
         "id": "fall_store_amber_lanterns",
@@ -607,9 +609,10 @@
         ],
         "logo_baked": true,
         "pride_baked_in": false,
-        "active": true,
+        "active": false,
+        "retired_reason": "Founder 2026-09-26 \u2014 just had a crow this month; stale for October",
         "batch": "fall_store_continuity_2026-09-06",
-        "note": "Founder 2026-09-06 \u2014 same real SG store look as celestial keepers; sky/props vary only | 2026-09-06 real sun logo; no week-ahead meta; no AI archer/Voted sticker"
+        "note": "Founder 2026-09-26 \u2014 retired after September crow night | 2026-09-06 real sun logo; no week-ahead meta"
       },
       {
         "id": "fall_store_leaf_confetti",
@@ -699,9 +702,10 @@
         ],
         "logo_baked": true,
         "pride_baked_in": false,
-        "active": true,
+        "active": false,
+        "retired_reason": "Founder 2026-09-26 \u2014 already posted this month (Sep 19 week_ahead); stale",
         "batch": "fall_store_continuity_2026-09-06",
-        "note": "Founder 2026-09-06 \u2014 same real SG store look as celestial keepers; sky/props vary only | 2026-09-06 real sun logo; no week-ahead meta; no AI archer/Voted sticker"
+        "note": "Founder 2026-09-26 \u2014 retired after September pumpkin porch night | 2026-09-06 real sun logo; no week-ahead meta"
       },
       {
         "id": "fall_store_teal_copper_aurora",
@@ -809,9 +813,10 @@
         ],
         "logo_baked": true,
         "pride_baked_in": false,
-        "active": true,
+        "active": false,
+        "retired_reason": "Founder 2026-09-26 \u2014 already posted this month (Sep 9 week_ahead); stale",
         "batch": "fall_store_continuity_2026-09-06",
-        "note": " | 2026-09-06 real sun logo; no week-ahead meta; no AI archer/Voted sticker"
+        "note": "Founder 2026-09-26 \u2014 retired after September fairy-lights night | 2026-09-06 real sun logo; no week-ahead meta"
       },
       {
         "id": "fall_store_frost_sparkle",
