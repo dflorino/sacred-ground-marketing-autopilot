@@ -1,3 +1,8 @@
+## 2026-09-26 — S1E12 same minute, no stagger
+
+Founder: Galactic Reels do not stagger. Moved S1E12 **28556** so all five
+post **Wed Sep 30 2026 6:00 PM America/Chicago**. Same Zernio IDs.
+
 ## 2026-09-26 — Oct 10 Deneene + Kobi names on the lips
 
 Founder: those two names still sat wrong. DENEENE centered and down on

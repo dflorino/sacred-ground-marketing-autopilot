@@ -330,9 +330,9 @@
       "filebird_folder": "SG Reels (54)",
       "library_player": "https://shopsacredground.com/library-adventures/",
       "mime_type": "video/mp4",
-      "schedule_status": "scheduled_cadence_2026-09-30_through_10-04",
+      "schedule_status": "scheduled_same_minute_2026-09-30_6pm",
       "handed_off": "2026-09-23",
-      "note": "Founder KEEP 2026-09-23 — USE S1E12 / 28556 only (gen 106 + surgical Kobi K2). No burned captions. After S1E11. Stagger IG Wed 6pm · FB Thu 9am · YT Fri 4pm · TT Sun 9am CT; Threads with IG.",
+      "note": "Founder KEEP 2026-09-23 — USE S1E12 / 28556 only (gen 106 + surgical Kobi K2). No burned captions. Same minute all five (jeweler lock) — no week stagger.",
       "do_not_use": {
         "plate_id": 28515,
         "archive_engine_mix": 28552,
@@ -349,12 +349,12 @@
       },
       "scheduled_for": {
         "instagram": "2026-09-30T18:00:00-05:00",
-        "threads": "2026-09-30T18:05:00-05:00",
-        "facebook": "2026-10-01T09:00:00-05:00",
-        "youtube": "2026-10-02T16:00:00-05:00",
-        "tiktok": "2026-10-04T09:00:00-05:00"
+        "threads": "2026-09-30T18:00:00-05:00",
+        "facebook": "2026-09-30T18:00:00-05:00",
+        "youtube": "2026-09-30T18:00:00-05:00",
+        "tiktok": "2026-09-30T18:00:00-05:00"
       },
-      "updated_at": "2026-09-23T18:45:00Z"
+      "updated_at": "2026-09-26T20:22:00Z"
     }
   }
 }
