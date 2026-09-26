@@ -1,3 +1,10 @@
+## 2026-09-26 — Egypt is night; civilization night set; Oct 10 morning remake
+
+Founder: Egypt shop is a night plate, not 9am. Held Oct 10 morning. New morning
+idea = action figures #24 (local only). Night set for Preview: Hogwarts (Oct 3),
+Egypt (Oct 10), Mayan, Rome, Machu Picchu, Petra. Not unlocked for 8pm yet.
+Oct 3 owl morning KEEP stays.
+
 ## 2026-09-26 — Unlock Sep 29–Oct 10 mornings + Oct nights
 
 Founder: use them, do not hold. 9am unlocked for cosmic keepers **28690–28701**.
