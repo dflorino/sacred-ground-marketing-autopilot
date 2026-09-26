@@ -853,6 +853,126 @@
         "active": true,
         "batch": "fall_store_continuity_2026-09-06",
         "note": " | 2026-09-06 real sun logo; no week-ahead meta; no AI archer/Voted sticker"
+      },
+      {
+        "id": "civ_hogwarts_castle",
+        "label": "Hogwarts castle behind SG storefront",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-hogwarts-castle.jpg",
+        "local": "assets/sg-night-creative-hogwarts-castle.jpg",
+        "wp_media_id": 28712,
+        "sg_identity": "pass",
+        "sg_anchor": "lit Sacred Ground storefront (eggplant awning) — Hogwarts behind",
+        "storefront_continuity": true,
+        "seasons_allowed": [
+          "fall"
+        ],
+        "logo_baked": true,
+        "pride_baked_in": false,
+        "active": true,
+        "family": "civilization_nights",
+        "batch": "civilization_nights_2026-09-26",
+        "note": "Founder Sep 26 — shop in impossible place; Oct 3 pin. No zodiac. No week-ahead meta.",
+        "pin_only": true
+      },
+      {
+        "id": "civ_mayan_pyramids",
+        "label": "Mayan pyramids behind SG storefront",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-mayan-pyramids.jpg",
+        "local": "assets/sg-night-creative-mayan-pyramids.jpg",
+        "wp_media_id": 28714,
+        "sg_identity": "pass",
+        "sg_anchor": "lit Sacred Ground storefront (eggplant awning) — Mayan pyramids behind",
+        "storefront_continuity": true,
+        "seasons_allowed": [
+          "fall"
+        ],
+        "logo_baked": true,
+        "pride_baked_in": false,
+        "active": true,
+        "family": "civilization_nights",
+        "batch": "civilization_nights_2026-09-26",
+        "note": "Founder Sep 26 — Oct 5 pin. No zodiac. No week-ahead meta.",
+        "pin_only": true
+      },
+      {
+        "id": "civ_rome_colosseum",
+        "label": "Rome Colosseum behind SG storefront",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-rome-colosseum.jpg",
+        "local": "assets/sg-night-creative-rome-colosseum.jpg",
+        "wp_media_id": 28715,
+        "sg_identity": "pass",
+        "sg_anchor": "lit Sacred Ground storefront (eggplant awning) — Colosseum behind",
+        "storefront_continuity": true,
+        "seasons_allowed": [
+          "fall"
+        ],
+        "logo_baked": true,
+        "pride_baked_in": false,
+        "active": true,
+        "family": "civilization_nights",
+        "batch": "civilization_nights_2026-09-26",
+        "note": "Founder Sep 26 — Oct 7 pin. No zodiac. No week-ahead meta.",
+        "pin_only": true
+      },
+      {
+        "id": "civ_egypt_pyramid",
+        "label": "Egypt pyramid behind SG storefront",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-egypt-pyramid.jpg",
+        "local": "assets/sg-night-creative-egypt-pyramid.jpg",
+        "wp_media_id": 28713,
+        "sg_identity": "pass",
+        "sg_anchor": "lit Sacred Ground storefront (eggplant awning) — pyramid + new-moon sky",
+        "storefront_continuity": true,
+        "seasons_allowed": [
+          "fall"
+        ],
+        "logo_baked": true,
+        "pride_baked_in": false,
+        "active": true,
+        "family": "civilization_nights",
+        "batch": "civilization_nights_2026-09-26",
+        "note": "Founder Sep 26 — Oct 10 pin (not morning). No zodiac. No week-ahead meta.",
+        "pin_only": true
+      },
+      {
+        "id": "civ_machu_picchu",
+        "label": "Machu Picchu behind SG storefront",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-machu-picchu.jpg",
+        "local": "assets/sg-night-creative-machu-picchu.jpg",
+        "wp_media_id": 28716,
+        "sg_identity": "pass",
+        "sg_anchor": "lit Sacred Ground storefront (eggplant awning) — Andes behind",
+        "storefront_continuity": true,
+        "seasons_allowed": [
+          "fall"
+        ],
+        "logo_baked": true,
+        "pride_baked_in": false,
+        "active": true,
+        "family": "civilization_nights",
+        "batch": "civilization_nights_2026-09-26",
+        "note": "Founder Sep 26 — Oct 12 pin. No zodiac. No week-ahead meta.",
+        "pin_only": true
+      },
+      {
+        "id": "civ_petra_treasury",
+        "label": "Petra Treasury behind SG storefront",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-petra-treasury.jpg",
+        "local": "assets/sg-night-creative-petra-treasury.jpg",
+        "wp_media_id": 28717,
+        "sg_identity": "pass",
+        "sg_anchor": "lit Sacred Ground storefront (eggplant awning) — Petra behind",
+        "storefront_continuity": true,
+        "seasons_allowed": [
+          "fall"
+        ],
+        "logo_baked": true,
+        "pride_baked_in": false,
+        "active": true,
+        "family": "civilization_nights",
+        "batch": "civilization_nights_2026-09-26",
+        "note": "Founder Sep 26 — Oct 14 pin. Before Halloween window. No zodiac.",
+        "pin_only": true
       }
     ],
     "events_in_image": false,
@@ -1029,9 +1149,15 @@
       "2026-08-21": "late_summer_warm_rain_puddles",
       "2026-08-22": "late_summer_crystal_window",
       "2026-08-23": "late_summer_candlelit_windows",
-      "2026-08-24": "late_summer_milkyway_storefront"
+      "2026-08-24": "late_summer_milkyway_storefront",
+      "2026-10-03": "civ_hogwarts_castle",
+      "2026-10-05": "civ_mayan_pyramids",
+      "2026-10-07": "civ_rome_colosseum",
+      "2026-10-10": "civ_egypt_pyramid",
+      "2026-10-12": "civ_machu_picchu",
+      "2026-10-14": "civ_petra_treasury"
     },
-    "founder_night_pins_note": "Aug 18 2026 Founder: rejected late_summer_store_porch (Fri) + late_summer_cicada_porch (Sun). Pinned rest of week to prior review lineup; Fri→warm_rain_puddles, Sun→candlelit_windows.",
+    "founder_night_pins_note": "Aug 18 2026 Founder: rejected late_summer_store_porch (Fri) + late_summer_cicada_porch (Sun). Pinned rest of week to prior review lineup; Fri→warm_rain_puddles, Sun→candlelit_windows. Founder Sep 26: civilization nights spaced through early October (3 Hogwarts, 5 Mayan, 7 Rome, 10 Egypt, 12 Machu, 14 Petra). Never on celestial night-before (9 Libra, 20 Orionids, 24 Taurus, 30 Samhain). Halloween window 10/15–31 still owns those nights. Do not run back-to-back.",
     "fall_storefront_continuity": {
       "updated": "2026-09-06T23:47:56Z",
       "rule": "Sep/Oct week_ahead prefer fall_store_* plates with locked real Sacred Ground storefront; late_summer_* summer-only.",
@@ -1046,6 +1172,23 @@
         "fall_store_pumpkin_porch",
         "fall_store_fairy_lights"
       ]
+    },
+    "civilization_nights_2026_10": {
+      "spaced_pins": {
+        "2026-10-03": "civ_hogwarts_castle",
+        "2026-10-05": "civ_mayan_pyramids",
+        "2026-10-07": "civ_rome_colosseum",
+        "2026-10-10": "civ_egypt_pyramid",
+        "2026-10-12": "civ_machu_picchu",
+        "2026-10-14": "civ_petra_treasury"
+      },
+      "skip_celestial": [
+        "2026-10-09",
+        "2026-10-20",
+        "2026-10-24",
+        "2026-10-30"
+      ],
+      "halloween_owns": "2026-10-15 through 2026-10-31"
     }
   },
   "_meta_remake_v4": {

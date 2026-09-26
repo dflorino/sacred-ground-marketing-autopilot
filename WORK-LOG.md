@@ -1,3 +1,10 @@
+## 2026-09-26 — Civilization nights pinned; Oct 10 crew boxes
+
+Founder: nights are great — mix through October, not back-to-back, never on
+celestial nights. Pins: Oct 3 Hogwarts, 5 Mayan, 7 Rome, 10 Egypt, 12 Machu,
+14 Petra. `pin_only` so rotation cannot stack them. Halloween 10/15–31 unchanged.
+Oct 10 morning remade as Deneene / Luca / Kobi Galactic Adventurers boxes. Held.
+
 ## 2026-09-26 — Egypt is night; civilization night set; Oct 10 morning remake
 
 Founder: Egypt shop is a night plate, not 9am. Held Oct 10 morning. New morning

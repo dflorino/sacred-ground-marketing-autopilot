@@ -181,6 +181,8 @@ def _plate_allowed_in_season(plate: Dict[str, Any], season: str) -> bool:
 
 def _is_night_pool_eligible(plate: Dict[str, Any], season: Optional[str] = None) -> bool:
     """Active + SG identity pass + not daytime-sun + season-appropriate."""
+    if plate.get("pin_only"):
+        return False
     if not (
         bool(plate.get("url"))
         and _has_sg_identity(plate)
