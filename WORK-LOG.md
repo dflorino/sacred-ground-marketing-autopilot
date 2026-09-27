@@ -1,3 +1,7 @@
+## 2026-09-27 — Fair comments add Call Now To Book
+
+Founder: under the $5-off line, add Call Now To Book 847-749-3922.
+
 ## 2026-09-27 — Fair copy: no Oct 10 afternoon/night; $5 off 12–2
 
 Founder: Oct 10 afternoon and night do not list the Fair at all. Every

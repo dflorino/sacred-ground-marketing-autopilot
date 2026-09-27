@@ -1699,6 +1699,7 @@ class AutopilotTests(unittest.TestCase):
             url="https://shopsacredground.com/book/adie/",
         )
         deal = "$5 off"
+        call_now = "Call Now To Book 847-749-3922"
         night = captions.caption_week_ahead(
             [event], "facebook", date(2026, 10, 1)
         )
@@ -1707,8 +1708,10 @@ class AutopilotTests(unittest.TestCase):
         self.assertIn("Holistic Fair", night["text"])
         self.assertIn("12–6pm", night["text"])
         self.assertIn(deal, night["text"])
+        self.assertIn(call_now, night["text"])
         self.assertIn("Holistic Fair", night["social_proof"].get("first_comment") or "")
         self.assertIn(deal, night["social_proof"].get("first_comment") or "")
+        self.assertIn(call_now, night["social_proof"].get("first_comment") or "")
 
         morning = captions.caption_today(
             [event],
@@ -1723,12 +1726,14 @@ class AutopilotTests(unittest.TestCase):
         for cap in (morning, afternoon):
             self.assertIn("Holistic Fair", cap["text"])
             self.assertIn(deal, cap["text"])
+            self.assertIn(call_now, cap["text"])
             self.assertIn(
                 "Holistic Fair", cap["social_proof"].get("first_comment") or ""
             )
             self.assertIn("October 10", cap["social_proof"].get("first_comment") or "")
             self.assertIn("12–6pm", cap["social_proof"].get("first_comment") or "")
             self.assertIn(deal, cap["social_proof"].get("first_comment") or "")
+            self.assertIn(call_now, cap["social_proof"].get("first_comment") or "")
 
         fair_morning = captions.caption_today(
             [],
@@ -1739,6 +1744,7 @@ class AutopilotTests(unittest.TestCase):
         )
         self.assertIn("Holistic Fair", fair_morning["text"])
         self.assertIn(deal, fair_morning["social_proof"].get("first_comment") or "")
+        self.assertIn(call_now, fair_morning["social_proof"].get("first_comment") or "")
 
         fair_day_event = Event(
             id=2,
@@ -1756,10 +1762,12 @@ class AutopilotTests(unittest.TestCase):
         for cap in (oct10_afternoon, oct10_night):
             self.assertNotIn("Holistic Fair", cap["text"])
             self.assertNotIn(deal, cap["text"])
+            self.assertNotIn(call_now, cap["text"])
             self.assertNotIn(
                 "Holistic Fair", cap["social_proof"].get("first_comment") or ""
             )
             self.assertNotIn(deal, cap["social_proof"].get("first_comment") or "")
+            self.assertNotIn(call_now, cap["social_proof"].get("first_comment") or "")
         self.assertIn("Observatory", oct10_night["text"])
         self.assertIn("Library", oct10_night["text"])
 
