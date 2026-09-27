@@ -1404,8 +1404,9 @@
         "facebook",
         "instagram"
       ],
-      "local": "assets/sg-morning-flyer-2026-09-28-remake-v5c.jpg",
+      "local": "assets/sg-morning-flyer-2026-09-28-fair-line.jpg",
       "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-square-11-shop-1788804274.jpg",
+      "prior_live_local": "assets/sg-morning-flyer-2026-09-28-remake-v5c.jpg",
       "prebranded": true,
       "template": "thursday-style",
       "visual_style": "surprise_hollywood_poster",
@@ -1414,12 +1415,12 @@
       "generation_source": "mlimg_remake_v5c_2026-09-07",
       "banned_pil_cleared": true,
       "media_id": 27944,
-      "note": "Remake v5c: full Pride scrub. Canonical media aligned after parallel-gen race. Claim only Chicagoland's #1. No logo. Held do_not_publish. Founder Sep 18 2026: unlocked after next-10 review — send at 9am.",
+      "note": "Founder Sep 27: no pennant — flag sat on the website. Cream line is HOLISTIC FAIR · OCT 10 · 12–6 + phone. New URL not wired until Founder okays this local.",
       "locked_until_founder_review": false,
       "prior_url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-square-11-shop-1788802083.jpg",
       "prior_media_id": 27875,
       "founder_approved": true,
-      "updated_at": "2026-09-18T16:56:00Z",
+      "updated_at": "2026-09-27T14:35:00Z",
       "do_not_remake": false,
       "status": "founder_approved",
       "do_not_publish": false,
@@ -1710,12 +1711,37 @@
       "founder_trashed": false
     },
     "2026-10-10": {
-      "label": "Melissa + Adie + Rose",
+      "label": "Holistic Fair 12–6",
       "covers": [
         "facebook",
         "instagram"
       ],
-      "local": "assets/sg-morning-flyer-2026-10-10.jpg",
+      "local": "assets/sg-morning-flyer-2026-10-10-holistic-fair-today.jpg",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-10-10-holistic-fair-today.jpg",
+      "prebranded": true,
+      "visual_style": "oct_holistic_fair_cosmic_shop",
+      "pride_baked_in": true,
+      "status": "founder_approved",
+      "founder_approved": true,
+      "do_not_publish": false,
+      "awaiting_founder_review": false,
+      "locked_until_founder_review": false,
+      "note": "Founder Sep 27: unlock and use. Holistic Fair TODAY 12–6. No practitioners on the plate — everyone is at the fair. Crew boxes moved to Oct 11.",
+      "updated_at": "2026-09-27T14:46:00Z",
+      "media_id": 28785,
+      "source_art_media_id": 28784,
+      "do_not_remake": true,
+      "founder_approved_at": "2026-09-27T09:45:00-05:00",
+      "founder_trashed": false,
+      "night_candidate_local": "assets/sg-night-creative-egypt-pyramid.jpg"
+    },
+    "2026-10-11": {
+      "label": "Lita Sacred Besom + Galactic crew boxes",
+      "covers": [
+        "facebook",
+        "instagram"
+      ],
+      "local": "assets/sg-morning-flyer-2026-10-11.jpg",
       "url": "",
       "prebranded": true,
       "visual_style": "oct_action_figures_galactic_crew",
@@ -1725,13 +1751,11 @@
       "do_not_publish": true,
       "awaiting_founder_review": true,
       "locked_until_founder_review": true,
-      "note": "Founder Sep 26: first collector boxes only — official Deneene face + official Luca. No Marvel / action-figure cards. Held until Founder unlocks 9am.",
-      "updated_at": "2026-09-26T16:45:32Z",
+      "note": "Founder Sep 27: crew boxes moved off Oct 10 (fair day) to first empty morning. Official Deneene / Luca / Kobi. Held.",
+      "updated_at": "2026-09-27T14:35:00Z",
       "media_id": null,
-      "founder_approved_at": "2026-09-26T11:41:00-05:00",
       "do_not_remake": false,
-      "founder_trashed": false,
-      "night_candidate_local": "assets/sg-night-creative-egypt-pyramid.jpg"
+      "founder_trashed": false
     }
   },
   "template": {
