@@ -345,6 +345,64 @@ def pick_badge_style(seed: str) -> str:
     return styles[_pick_index(len(styles), f"sp-badge-style|{seed}")]
 
 
+def _parse_day_key(day_key: str) -> Optional[date]:
+    raw = str(day_key or "").strip()[:10]
+    if len(raw) < 10:
+        return None
+    try:
+        return date.fromisoformat(raw)
+    except ValueError:
+        return None
+
+
+def house_invite_for(
+    day: Optional[date],
+    *,
+    campaign: str = "",
+    field: str = "first_comment",
+) -> str:
+    """Dated house invite (Observatory/Library-style) while a campaign window is open."""
+    if day is None:
+        return ""
+    from .paths import voice
+
+    camp = (campaign or "").strip().lower()
+    key = (field or "first_comment").strip() or "first_comment"
+    for raw in voice().get("campaign_house_invites") or []:
+        if not isinstance(raw, dict):
+            continue
+        start_s = str(raw.get("start") or "").strip()[:10]
+        end_s = str(raw.get("end") or "").strip()[:10]
+        try:
+            start = date.fromisoformat(start_s)
+            end = date.fromisoformat(end_s)
+        except ValueError:
+            continue
+        if day < start or day > end:
+            continue
+        camps = [
+            str(c).strip().lower()
+            for c in (raw.get("campaigns") or [])
+            if str(c).strip()
+        ]
+        if camps and camp and camp not in camps:
+            continue
+        text = str(raw.get(key) or "").strip()
+        if text:
+            return text
+    return ""
+
+
+def house_invite_first_comment(day_key: str, campaign: str) -> str:
+    return house_invite_for(
+        _parse_day_key(day_key), campaign=campaign, field="first_comment"
+    )
+
+
+def house_invite_night_block(day: Optional[date]) -> str:
+    return house_invite_for(day, campaign="week_ahead", field="night_block")
+
+
 def always_first_comment() -> bool:
     """Founder Aug 14 2026: every FB/IG publish gets one Zernio firstComment."""
     cfg = social_proof_config()
@@ -624,6 +682,18 @@ def plan_for_post(
             f"{flyer_comment}\n\n{first_comment}".strip()
             if first_comment
             else flyer_comment
+        )
+        in_comment = True
+        if in_caption:
+            effective_mode = MODE_BOTH
+        else:
+            effective_mode = MODE_FIRST_COMMENT
+    house_invite = house_invite_first_comment(day_key, campaign)
+    if house_invite:
+        first_comment = (
+            f"{house_invite}\n\n{first_comment}".strip()
+            if first_comment
+            else house_invite
         )
         in_comment = True
         if in_caption:

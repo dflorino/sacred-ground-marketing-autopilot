@@ -1,3 +1,10 @@
+## 2026-09-27 — Holistic Fair in night + AM + afternoon comments
+
+Founder: list Holistic Fair the same way as Observatory and Library at
+night, and put it in morning and afternoon comments too. Window Sep 27–
+Oct 10. Caption + first comment. Link is shopsacredground.com (no TEC
+card yet).
+
 ## 2026-09-26 — S1E12 same minute, no stagger
 
 Founder: Galactic Reels do not stagger. Moved S1E12 **28556** so all five

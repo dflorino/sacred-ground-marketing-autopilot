@@ -1681,6 +1681,60 @@ class AutopilotTests(unittest.TestCase):
         self.assertTrue(text.startswith(tagline + "\n\n"))
         self.assertNotIn("plenty coming up", text)
         self.assertNotIn("plenty to look forward to", text)
+        self.assertIn("Observatory", text)
+        self.assertIn("Library", text)
+        self.assertNotIn("Holistic Fair", text)
+
+    def test_holistic_fair_lists_with_observatory_library_and_comments(self) -> None:
+        """Founder Sep 27: Holistic Fair sits with Observatory/Library at night,
+        and in first comments for morning + afternoon through Oct 10."""
+        from marketing import captions
+        from marketing import social_proof as sp
+        from marketing.models import Event
+
+        event = Event(
+            id=1,
+            title="Tarot with Adie",
+            start_date="2026-10-02 12:00:00",
+            end_date="2026-10-02 17:00:00",
+            url="https://shopsacredground.com/book/adie/",
+        )
+        night = captions.caption_week_ahead(
+            [event], "facebook", date(2026, 10, 1)
+        )
+        self.assertIn("Observatory", night["text"])
+        self.assertIn("Library", night["text"])
+        self.assertIn("Holistic Fair", night["text"])
+        self.assertIn("12–6pm", night["text"])
+        self.assertIn("Holistic Fair", night["social_proof"].get("first_comment") or "")
+
+        morning = captions.caption_today(
+            [event],
+            "facebook",
+            date(2026, 10, 6),
+            today_events=[event],
+            publish_day=date(2026, 10, 5),
+        )
+        afternoon = captions.caption_afternoon_spotlight(
+            event, "instagram", date(2026, 10, 5)
+        )
+        for cap in (morning, afternoon):
+            self.assertIn("Holistic Fair", cap["text"])
+            self.assertIn(
+                "Holistic Fair", cap["social_proof"].get("first_comment") or ""
+            )
+            self.assertIn("October 10", cap["social_proof"].get("first_comment") or "")
+            self.assertIn("12–6pm", cap["social_proof"].get("first_comment") or "")
+
+        after = captions.caption_week_ahead(
+            [event], "facebook", date(2026, 10, 11)
+        )
+        self.assertIn("Observatory", after["text"])
+        self.assertIn("Library", after["text"])
+        self.assertNotIn("Holistic Fair", after["text"])
+        self.assertNotIn(
+            "Holistic Fair", after["social_proof"].get("first_comment") or ""
+        )
 
     def test_week_ahead_closers_pool_and_day_rotation(self) -> None:
         from marketing import captions

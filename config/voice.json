@@ -20,6 +20,16 @@
     "If the night still feels open…\nThe Observatory is waiting — it changes every day.\nhttps://shopsacredground.com/sacred-ground-observatory/\n\nAnd the Library is there when you want something soft to land in: meditations, playlists, video, chanting, and music.\nhttps://shopsacredground.com/library/"
   ],
   "week_ahead_night_block": "If you’re not done for the night yet…\nPeek at the Observatory — it changes every day.\nhttps://shopsacredground.com/sacred-ground-observatory/\n\nAnd don’t forget the Library: download a meditation or playlist, find something to watch or listen to, or explore sacred chanting and music.\nhttps://shopsacredground.com/library/",
+  "campaign_house_invites": [
+    {
+      "id": "holistic_fair_2026_10_10",
+      "start": "2026-09-27",
+      "end": "2026-10-10",
+      "campaigns": ["today", "visit", "afternoon_spotlight", "week_ahead"],
+      "night_block": "And Saturday, October 10 — Holistic Fair, 12–6pm. Come wander the shop and stay a while.\nhttps://shopsacredground.com/",
+      "first_comment": "Holistic Fair — Saturday, October 10 · 12–6pm\nhttps://shopsacredground.com/"
+    }
+  ],
   "tomorrow_openers": [
     "See what you can do tomorrow at Sacred Ground — {day_label}.",
     "Look at what you can book tomorrow at Sacred Ground — {day_label}.",

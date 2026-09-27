@@ -359,6 +359,8 @@ def caption_today(
         hook = _tomorrow_hook(f"{seed}|multi", day_label=day_label, kind="multi")
         body = hook + "\n\n" + _tomorrow_multi_section()
 
+    invite_day = publish_day or flyer_day or day
+    body = _with_house_invite(body, invite_day, "today")
     body += "\n\n" + _signoff(seed, platform)
     tags = _hashtags(platform)
     text = body + "\n\n" + " ".join(tags)
@@ -367,7 +369,7 @@ def caption_today(
         {"text": text, "hashtags": tags, "hook": hook},
         campaign="today",
         platform=platform,
-        day_key=(publish_day or flyer_day or day).isoformat(),
+        day_key=invite_day.isoformat(),
     )
 
 
@@ -382,9 +384,10 @@ def caption_today_visit(platform: str, day: date) -> Dict:
         "Arlington Heights.\n\n"
         "Come for cool and unusual things whenever you need a little sparkle.\n"
         "847-749-3922\n"
-        "https://shopsacredground.com/\n\n"
-        + _signoff(f"today-visit|{day.isoformat()}|{platform}", platform)
+        "https://shopsacredground.com/"
     )
+    body = _with_house_invite(body, day, "visit")
+    body += "\n\n" + _signoff(f"today-visit|{day.isoformat()}|{platform}", platform)
     tags = _hashtags(platform)
     text = body + "\n\n" + " ".join(tags)
     _assert_not_generic(text)
@@ -444,12 +447,21 @@ def _week_ahead_opener(seed: str) -> str:
     )
 
 
-def _week_ahead_night_block(seed: str) -> str:
+def _with_house_invite(body: str, day: date | None, campaign: str) -> str:
+    extra = social_proof.house_invite_for(
+        day, campaign=campaign, field="night_block"
+    )
+    if extra and extra.lower() not in (body or "").lower():
+        return f"{body.rstrip()}\n\n{extra}"
+    return body
+
+
+def _week_ahead_night_block(seed: str, day: date | None = None) -> str:
     cfg = voice()
     opts = list(cfg.get("week_ahead_night_blocks") or [])
     if not opts and cfg.get("week_ahead_night_block"):
         opts = [str(cfg["week_ahead_night_block"])]
-    return _pick_rotating(
+    block = _pick_rotating(
         opts,
         seed,
         "If you’re not done for the night yet…\n"
@@ -459,6 +471,10 @@ def _week_ahead_night_block(seed: str) -> str:
         "find something to watch or listen to, or explore sacred chanting and music.\n"
         "https://shopsacredground.com/library/",
     )
+    extra = social_proof.house_invite_night_block(day)
+    if extra:
+        block = f"{block.rstrip()}\n\n{extra}"
+    return block
 
 
 def _week_ahead_closer(seed: str, day: date | None = None) -> str:
@@ -504,7 +520,7 @@ def caption_week_ahead(events: List[Event], platform: str, day: date) -> Dict:
             + "\n\n"
             + "Come as you are — Sacred Ground is here for the sky and for you."
         )
-    night = _week_ahead_night_block(f"{seed}|night")
+    night = _week_ahead_night_block(f"{seed}|night", day=day)
     if night:
         body += "\n\n" + night
     if events:
@@ -565,9 +581,10 @@ def caption_afternoon_spotlight(event: Event | None, platform: str, day: date) -
             "Crystals, curious finds, and a soft place to land in Arlington Heights.\n"
             "Come browse when the day needs a spark.\n"
             "847-749-3922\n"
-            "https://shopsacredground.com/\n\n"
-            + _signoff(seed, platform)
+            "https://shopsacredground.com/"
         )
+        body = _with_house_invite(body, day, "afternoon_spotlight")
+        body += "\n\n" + _signoff(seed, platform)
         tags = _hashtags(platform)
         text = body + "\n\n" + " ".join(tags)
         _assert_not_generic(text)
@@ -601,8 +618,8 @@ def caption_afternoon_spotlight(event: Event | None, platform: str, day: date) -
         parts.append(blurb)
     parts.append(event.url)
     parts.append("847-749-3922")
-    parts.append(_signoff(seed, platform))
-    body = "\n\n".join(parts)
+    body = _with_house_invite("\n\n".join(parts), day, "afternoon_spotlight")
+    body += "\n\n" + _signoff(seed, platform)
     tags = _hashtags(platform)
     text = body + "\n\n" + " ".join(tags)
     _assert_not_generic(text)
