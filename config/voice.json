@@ -22,12 +22,20 @@
   "week_ahead_night_block": "If you’re not done for the night yet…\nPeek at the Observatory — it changes every day.\nhttps://shopsacredground.com/sacred-ground-observatory/\n\nAnd don’t forget the Library: download a meditation or playlist, find something to watch or listen to, or explore sacred chanting and music.\nhttps://shopsacredground.com/library/",
   "campaign_house_invites": [
     {
-      "id": "holistic_fair_2026_10_10",
+      "id": "holistic_fair_2026_10_10_morning",
       "start": "2026-09-27",
       "end": "2026-10-10",
-      "campaigns": ["today", "visit", "afternoon_spotlight", "week_ahead"],
-      "night_block": "And Saturday, October 10 — Holistic Fair, 12–6pm. Come wander the shop and stay a while.\nhttps://shopsacredground.com/",
-      "first_comment": "Holistic Fair — Saturday, October 10 · 12–6pm\nhttps://shopsacredground.com/"
+      "campaigns": ["today", "visit"],
+      "night_block": "And Saturday, October 10 — Holistic Fair, 12–6pm. Come wander the shop and stay a while.\nBook any 12–2pm slot ahead of time and get $5 off.\nhttps://shopsacredground.com/",
+      "first_comment": "Holistic Fair — Saturday, October 10 · 12–6pm\nBook any 12–2pm slot ahead of time and get $5 off.\nhttps://shopsacredground.com/"
+    },
+    {
+      "id": "holistic_fair_2026_10_10_afternoon_night",
+      "start": "2026-09-27",
+      "end": "2026-10-09",
+      "campaigns": ["afternoon_spotlight", "week_ahead"],
+      "night_block": "And Saturday, October 10 — Holistic Fair, 12–6pm. Come wander the shop and stay a while.\nBook any 12–2pm slot ahead of time and get $5 off.\nhttps://shopsacredground.com/",
+      "first_comment": "Holistic Fair — Saturday, October 10 · 12–6pm\nBook any 12–2pm slot ahead of time and get $5 off.\nhttps://shopsacredground.com/"
     }
   ],
   "tomorrow_openers": [

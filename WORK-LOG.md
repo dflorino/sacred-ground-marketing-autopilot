@@ -1,3 +1,10 @@
+## 2026-09-27 — Fair copy: no Oct 10 afternoon/night; $5 off 12–2
+
+Founder: Oct 10 afternoon and night do not list the Fair at all. Every
+other Fair mention (mornings through the 10th, afternoon + night through
+the 9th) also says book any 12–2pm slot ahead of time and get $5 off.
+Not on the graphic.
+
 ## 2026-09-27 — Holistic Fair in night + AM + afternoon comments
 
 Founder: list Holistic Fair the same way as Observatory and Library at

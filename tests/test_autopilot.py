@@ -1687,9 +1687,8 @@ class AutopilotTests(unittest.TestCase):
 
     def test_holistic_fair_lists_with_observatory_library_and_comments(self) -> None:
         """Founder Sep 27: Holistic Fair sits with Observatory/Library at night,
-        and in first comments for morning + afternoon through Oct 10."""
+        and in first comments for morning + afternoon — not Oct 10 afternoon/night."""
         from marketing import captions
-        from marketing import social_proof as sp
         from marketing.models import Event
 
         event = Event(
@@ -1699,6 +1698,7 @@ class AutopilotTests(unittest.TestCase):
             end_date="2026-10-02 17:00:00",
             url="https://shopsacredground.com/book/adie/",
         )
+        deal = "$5 off"
         night = captions.caption_week_ahead(
             [event], "facebook", date(2026, 10, 1)
         )
@@ -1706,7 +1706,9 @@ class AutopilotTests(unittest.TestCase):
         self.assertIn("Library", night["text"])
         self.assertIn("Holistic Fair", night["text"])
         self.assertIn("12–6pm", night["text"])
+        self.assertIn(deal, night["text"])
         self.assertIn("Holistic Fair", night["social_proof"].get("first_comment") or "")
+        self.assertIn(deal, night["social_proof"].get("first_comment") or "")
 
         morning = captions.caption_today(
             [event],
@@ -1720,11 +1722,46 @@ class AutopilotTests(unittest.TestCase):
         )
         for cap in (morning, afternoon):
             self.assertIn("Holistic Fair", cap["text"])
+            self.assertIn(deal, cap["text"])
             self.assertIn(
                 "Holistic Fair", cap["social_proof"].get("first_comment") or ""
             )
             self.assertIn("October 10", cap["social_proof"].get("first_comment") or "")
             self.assertIn("12–6pm", cap["social_proof"].get("first_comment") or "")
+            self.assertIn(deal, cap["social_proof"].get("first_comment") or "")
+
+        fair_morning = captions.caption_today(
+            [],
+            "facebook",
+            date(2026, 10, 11),
+            today_events=[event],
+            publish_day=date(2026, 10, 10),
+        )
+        self.assertIn("Holistic Fair", fair_morning["text"])
+        self.assertIn(deal, fair_morning["social_proof"].get("first_comment") or "")
+
+        fair_day_event = Event(
+            id=2,
+            title="Lita Sacred Besom",
+            start_date="2026-10-11 15:00:00",
+            end_date="2026-10-11 16:30:00",
+            url="https://shopsacredground.com/book/lita/",
+        )
+        oct10_afternoon = captions.caption_afternoon_spotlight(
+            fair_day_event, "instagram", date(2026, 10, 10)
+        )
+        oct10_night = captions.caption_week_ahead(
+            [fair_day_event], "facebook", date(2026, 10, 10)
+        )
+        for cap in (oct10_afternoon, oct10_night):
+            self.assertNotIn("Holistic Fair", cap["text"])
+            self.assertNotIn(deal, cap["text"])
+            self.assertNotIn(
+                "Holistic Fair", cap["social_proof"].get("first_comment") or ""
+            )
+            self.assertNotIn(deal, cap["social_proof"].get("first_comment") or "")
+        self.assertIn("Observatory", oct10_night["text"])
+        self.assertIn("Library", oct10_night["text"])
 
         after = captions.caption_week_ahead(
             [event], "facebook", date(2026, 10, 11)
