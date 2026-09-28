@@ -355,6 +355,43 @@
         "tiktok": "2026-09-30T18:00:00-05:00"
       },
       "updated_at": "2026-09-26T20:22:00Z"
+    },
+    "s1e13": {
+      "season": 1,
+      "episode": 13,
+      "library_name": "S1E13",
+      "title": "S1E13",
+      "media_id": 28802,
+      "plate_id": 28721,
+      "plate_library_name": "S1E13 plate",
+      "file": "ml-persona-20260927-162033-yd4V4U-6134628958.mp4",
+      "url": "https://shopsacredground.com/wp-content/uploads/ml-persona-20260927-162033-yd4V4U-6134628958.mp4",
+      "admin": "https://shopsacredground.com/wp-admin/upload.php?item=28802",
+      "filebird_folder": "SG Reels (54)",
+      "library_player": "https://shopsacredground.com/library-adventures/",
+      "mime_type": "video/mp4",
+      "schedule_status": "scheduled_same_minute_2026-10-07_6pm",
+      "handed_off": "2026-09-28",
+      "note": "Founder Sep 28: schedule 28802 S1E13. Same minute all five (jeweler lock). Do not post plate 28721.",
+      "do_not_use": {
+        "plate_id": 28721,
+        "note": "28721 plate still only. USE video 28802 only."
+      },
+      "ml_social_ids": {
+        "instagram": "6aba6a0df468f73279ad3b8d",
+        "facebook": "6aba6a0dcc2c66ae6e890f70",
+        "tiktok": "6aba6a0fcc2c66ae6e890f84",
+        "threads": "6aba6a1115db6682cf0e44ba",
+        "youtube": "6aba6acb288c055e83fc822f"
+      },
+      "scheduled_for": {
+        "instagram": "2026-10-07T18:00:00-05:00",
+        "facebook": "2026-10-07T18:00:00-05:00",
+        "tiktok": "2026-10-07T18:00:00-05:00",
+        "threads": "2026-10-07T18:00:00-05:00",
+        "youtube": "2026-10-07T18:00:00-05:00"
+      },
+      "updated_at": "2026-09-28T08:25:00-05:00"
     }
   }
 }

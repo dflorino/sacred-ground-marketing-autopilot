@@ -1,3 +1,9 @@
+## 2026-09-28 — S1E13 scheduled same minute
+
+Founder: schedule media **28802** / S1E13. All five **Wed Oct 7 2026 6:00 PM**
+America/Chicago (after S1E12 on Sep 30). Brand YouTube
+`@sacredgroundchicagoland`. Do not post plate **28721**.
+
 ## 2026-09-28 — Fair at the top of the day’s list
 
 Founder: Holistic Fair was buried. Put it at the top of morning,
