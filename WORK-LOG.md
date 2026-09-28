@@ -1,3 +1,10 @@
+## 2026-09-28 — Media library: remove our old social leftovers
+
+Founder: clear past / unused Autopilot morning-afternoon-night plates
+from Social Media and Uncategorized. Do not touch her uploads, Galactic
+Adventures, or SG Reels. Left Amber TEC thumb **25820**, upcoming
+Sep 28–Oct 11 flyers, night flags **28806–28817**, and active night pool.
+
 ## 2026-09-28 — S1E13 scheduled same minute
 
 Founder: schedule media **28802** / S1E13. All five **Wed Oct 7 2026 6:00 PM**
