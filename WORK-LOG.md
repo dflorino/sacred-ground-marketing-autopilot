@@ -1,3 +1,9 @@
+## 2026-09-28 — Unlock fair-flag nights for 7pm
+
+Founder: Sep 27 live night was not the reviewed plate — leave it.
+Unlock Sep 28–Oct 9 flagged nights so they start tonight. Oct 10 night
+stays Egypt with no Fair flag. New URLs 28806–28817.
+
 ## 2026-09-27 — Fair comments add Call Now To Book
 
 Founder: under the $5-off line, add Call Now To Book 847-749-3922.

@@ -1386,6 +1386,25 @@ class AutopilotTests(unittest.TestCase):
         # Not stuck on one plate
         self.assertGreaterEqual(len(set(ids)), 8)
 
+    def test_fair_flag_night_date_plates_unlock_from_sep_28(self) -> None:
+        """Founder Sep 28: reviewed fair-flag nights go out; skip Sep 27 + Oct 10."""
+        from marketing.atmosphere import atmosphere_config, nighttime_plan
+
+        atmosphere_config.cache_clear()
+        tonight = nighttime_plan(date(2026, 9, 28))
+        self.assertIn("sg-night-fair-flag-2026-09-28", str(tonight.get("image_url") or ""))
+        self.assertTrue(tonight.get("prebranded"))
+
+        libra = nighttime_plan(date(2026, 10, 9))
+        self.assertIn("sg-night-fair-flag-2026-10-09", str(libra.get("image_url") or ""))
+
+        sep27 = nighttime_plan(date(2026, 9, 27))
+        self.assertNotIn("sg-night-fair-flag-", str(sep27.get("image_url") or ""))
+
+        oct10 = nighttime_plan(date(2026, 10, 10))
+        self.assertNotIn("sg-night-fair-flag-", str(oct10.get("image_url") or ""))
+        self.assertEqual(oct10.get("creative_id"), "civ_egypt_pyramid")
+
     def test_night_pool_excludes_daytime_sun_and_repeats(self) -> None:
         """Founder 2026-08-09: no sun-in-sky plates; no same URL two nights in a row."""
         import json

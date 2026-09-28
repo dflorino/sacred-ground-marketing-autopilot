@@ -1189,7 +1189,119 @@
         "2026-10-30"
       ],
       "halloween_owns": "2026-10-15 through 2026-10-31"
-    }
+    },
+    "date_plates": {
+      "2026-09-28": {
+        "id": "fall_store_star_trails",
+        "label": "Fall storefront star trails",
+        "mode": "creative",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-fair-flag-2026-09-28.jpg",
+        "local": "assets/sg-night-fair-flag-2026-09-28.jpg",
+        "media_id": 28806,
+        "prebranded": true
+      },
+      "2026-09-29": {
+        "id": "fall_store_cozy_upstairs",
+        "label": "Fall storefront cozy upstairs",
+        "mode": "creative",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-fair-flag-2026-09-29.jpg",
+        "local": "assets/sg-night-fair-flag-2026-09-29.jpg",
+        "media_id": 28807,
+        "prebranded": true
+      },
+      "2026-09-30": {
+        "id": "fall_store_oak_sidewalk",
+        "label": "Fall storefront oak sidewalk",
+        "mode": "creative",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-fair-flag-2026-09-30.jpg",
+        "local": "assets/sg-night-fair-flag-2026-09-30.jpg",
+        "media_id": 28808,
+        "prebranded": true
+      },
+      "2026-10-01": {
+        "id": "season_fall_storefront",
+        "label": "Season fall storefront",
+        "mode": "creative",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-fair-flag-2026-10-01.jpg",
+        "local": "assets/sg-night-fair-flag-2026-10-01.jpg",
+        "media_id": 28809,
+        "prebranded": true
+      },
+      "2026-10-02": {
+        "id": "fall_store_frost_sparkle",
+        "label": "Fall storefront frost sparkle",
+        "mode": "creative",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-fair-flag-2026-10-02.jpg",
+        "local": "assets/sg-night-fair-flag-2026-10-02.jpg",
+        "media_id": 28810,
+        "prebranded": true
+      },
+      "2026-10-03": {
+        "id": "civ_hogwarts_castle",
+        "label": "Hogwarts castle night",
+        "mode": "creative",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-fair-flag-2026-10-03.jpg",
+        "local": "assets/sg-night-fair-flag-2026-10-03.jpg",
+        "media_id": 28811,
+        "prebranded": true
+      },
+      "2026-10-04": {
+        "id": "bat_signal",
+        "label": "Bat signal night",
+        "mode": "creative",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-fair-flag-2026-10-04.jpg",
+        "local": "assets/sg-night-fair-flag-2026-10-04.jpg",
+        "media_id": 28812,
+        "prebranded": true
+      },
+      "2026-10-05": {
+        "id": "civ_mayan_pyramids",
+        "label": "Mayan pyramids night",
+        "mode": "creative",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-fair-flag-2026-10-05.jpg",
+        "local": "assets/sg-night-fair-flag-2026-10-05.jpg",
+        "media_id": 28813,
+        "prebranded": true
+      },
+      "2026-10-06": {
+        "id": "season_fall_storefront",
+        "label": "Season fall storefront",
+        "mode": "creative",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-fair-flag-2026-10-06.jpg",
+        "local": "assets/sg-night-fair-flag-2026-10-06.jpg",
+        "media_id": 28814,
+        "prebranded": true
+      },
+      "2026-10-07": {
+        "id": "civ_rome_colosseum",
+        "label": "Rome colosseum night",
+        "mode": "creative",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-fair-flag-2026-10-07.jpg",
+        "local": "assets/sg-night-fair-flag-2026-10-07.jpg",
+        "media_id": 28815,
+        "prebranded": true
+      },
+      "2026-10-08": {
+        "id": "fall_store_maple_leaves",
+        "label": "Fall storefront maple leaves",
+        "mode": "creative",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-fair-flag-2026-10-08.jpg",
+        "local": "assets/sg-night-fair-flag-2026-10-08.jpg",
+        "media_id": 28816,
+        "prebranded": true
+      },
+      "2026-10-09": {
+        "id": "new_moon_libra_2026",
+        "label": "Libra celestial night",
+        "mode": "celestial",
+        "celestial": "new_moon_libra_2026",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-fair-flag-2026-10-09.jpg",
+        "local": "assets/sg-night-fair-flag-2026-10-09.jpg",
+        "media_id": 28817,
+        "prebranded": true
+      }
+    },
+    "date_plates_note": "Founder Sep 28 2026: unlock reviewed fair-flag nights for 7pm starting tonight. Sep 27 already posted a different live night — do not remake. Oct 10 afternoon/night have no Fair flag (Egypt pin stays unflagged)."
   },
   "_meta_remake_v4": {
     "at": "2026-08-16T23:32:00-05:00",

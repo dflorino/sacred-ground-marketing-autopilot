@@ -458,6 +458,29 @@ def nighttime_plan(
     excluded = {str(u) for u in (exclude_urls or []) if u}
     from .images import platform_salt
 
+    # Priority 0: Founder date plates (fair-flag nights, reviewed lineup)
+    date_plate = (night.get("date_plates") or {}).get(day.isoformat())
+    if isinstance(date_plate, dict):
+        plate_url = str(date_plate.get("url") or "").strip()
+        if plate_url and plate_url not in excluded:
+            return {
+                "campaign": "week_ahead",
+                "mode": str(date_plate.get("mode") or "creative"),
+                "season": season,
+                "holiday": date_plate.get("holiday"),
+                "celestial": date_plate.get("celestial") or "",
+                "full_moon": bool(date_plate.get("full_moon")),
+                "creative_id": str(date_plate.get("id") or "date_plate"),
+                "image_url": plate_url,
+                "season_look": str(date_plate.get("label") or "founder night plate"),
+                "cart": "",
+                "prebranded": bool(date_plate.get("prebranded", True)),
+                "prompt_hint": (
+                    f"Sacred Ground nighttime founder date plate ({day.isoformat()}). "
+                    f"Base note: {base} Events stay in caption."
+                ),
+            }
+
     # Priority 1: celestial night-before (config/celestial_events.json)
     from . import celestial as cel_mod
 

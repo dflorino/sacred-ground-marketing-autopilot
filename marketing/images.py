@@ -207,18 +207,20 @@ def skip_brand_overlays(image: Any) -> bool:
         rule = str(image.get("rule") or "")
         url = str(image.get("url") or "")
         return (
-            rule in ("morning_flyer", "afternoon_spotlight_plate")
+            rule in ("morning_flyer", "afternoon_spotlight_plate", "week_ahead_date_plate")
             or "sg-morning-flyer-" in url
             or "sg-afternoon-spotlight-" in url
+            or "sg-night-fair-flag-" in url
         )
     if getattr(image, "prebranded", False):
         return True
     rule = str(getattr(image, "rule", "") or "")
     url = str(getattr(image, "url", "") or "")
     return (
-        rule in ("morning_flyer", "afternoon_spotlight_plate")
+        rule in ("morning_flyer", "afternoon_spotlight_plate", "week_ahead_date_plate")
         or "sg-morning-flyer-" in url
         or "sg-afternoon-spotlight-" in url
+        or "sg-night-fair-flag-" in url
     )
 
 
@@ -947,6 +949,10 @@ def plan_image(
         else:
             rule = f"week_ahead_season_{season}"
             label = season
+        if atm.get("creative_id") == "date_plate" or "sg-night-fair-flag-" in str(
+            atm.get("image_url") or ""
+        ):
+            rule = "week_ahead_date_plate"
         return ImagePlan(
             source="brand_week_ahead",
             url=url,
@@ -958,6 +964,7 @@ def plan_image(
                 "(designed-in only when generating NEW night art)."
             ),
             rule=rule,
+            prebranded=bool(atm.get("prebranded")),
         )
 
     if campaign == "visit":
