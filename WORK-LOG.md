@@ -1,3 +1,8 @@
+## 2026-09-28 — File upcoming mornings/nights into Social Media
+
+Founder: move the live Sep 28–Oct 11 morning plates, night flags, and
+civilization nights out of Uncategorized into FileBird Social Media (55).
+
 ## 2026-09-28 — Media library: remove our old social leftovers
 
 Founder: clear past / unused Autopilot morning-afternoon-night plates
