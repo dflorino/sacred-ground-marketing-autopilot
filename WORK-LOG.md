@@ -1,3 +1,9 @@
+## 2026-09-28 — Kill S1E12; S1E13 takes Wednesday
+
+Founder: S1E12 never goes to social. Deleted WP **28556** + plate + takes.
+Cancelled all five Sep 30 posts. Moved S1E13 **28802** to **Wed Sep 30
+2026 6:00 PM** America/Chicago all five.
+
 ## 2026-09-28 — File upcoming mornings/nights into Social Media
 
 Founder: move the live Sep 28–Oct 11 morning plates, night flags, and
