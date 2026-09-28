@@ -1,3 +1,9 @@
+## 2026-09-28 — Fair at the top of the day’s list
+
+Founder: Holistic Fair was buried. Put it at the top of morning,
+afternoon, and night captions — night goes opener (“tomorrow is another
+day”) then Fair, then the event list.
+
 ## 2026-09-28 — Unlock fair-flag nights for 7pm
 
 Founder: Sep 27 live night was not the reviewed plate — leave it.

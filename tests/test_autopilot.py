@@ -1728,6 +1728,18 @@ class AutopilotTests(unittest.TestCase):
         self.assertIn("12–6pm", night["text"])
         self.assertIn(deal, night["text"])
         self.assertIn(call_now, night["text"])
+        self.assertLess(
+            night["text"].find("another day"),
+            night["text"].find("Holistic Fair"),
+        )
+        self.assertLess(
+            night["text"].find("Holistic Fair"),
+            night["text"].find("Tarot with Adie"),
+        )
+        self.assertLess(
+            night["text"].find("Holistic Fair"),
+            night["text"].find("Observatory"),
+        )
         self.assertIn("Holistic Fair", night["social_proof"].get("first_comment") or "")
         self.assertIn(deal, night["social_proof"].get("first_comment") or "")
         self.assertIn(call_now, night["social_proof"].get("first_comment") or "")
@@ -1753,6 +1765,14 @@ class AutopilotTests(unittest.TestCase):
             self.assertIn("12–6pm", cap["social_proof"].get("first_comment") or "")
             self.assertIn(deal, cap["social_proof"].get("first_comment") or "")
             self.assertIn(call_now, cap["social_proof"].get("first_comment") or "")
+        self.assertLess(
+            morning["text"].find("Holistic Fair"),
+            morning["text"].find("Today at Sacred Ground"),
+        )
+        self.assertLess(
+            afternoon["text"].find("Holistic Fair"),
+            afternoon["text"].find("shopsacredground.com/book/adie"),
+        )
 
         fair_morning = captions.caption_today(
             [],

@@ -266,6 +266,9 @@ def caption_today(
                 + "https://shopsacredground.com/events/\n"
                 + "847-749-3922"
             )
+            body = _with_house_invite(
+                body, pub or day, "today", after_hook=hook
+            )
             tags = _hashtags(platform)
             text = body + "\n\n" + " ".join(tags) + "\n\n" + _signoff(seed, platform)
             _assert_not_generic(text)
@@ -360,7 +363,7 @@ def caption_today(
         body = hook + "\n\n" + _tomorrow_multi_section()
 
     invite_day = publish_day or flyer_day or day
-    body = _with_house_invite(body, invite_day, "today")
+    body = _with_house_invite(body, invite_day, "today", after_hook=hook)
     body += "\n\n" + _signoff(seed, platform)
     tags = _hashtags(platform)
     text = body + "\n\n" + " ".join(tags)
@@ -386,7 +389,7 @@ def caption_today_visit(platform: str, day: date) -> Dict:
         "847-749-3922\n"
         "https://shopsacredground.com/"
     )
-    body = _with_house_invite(body, day, "visit")
+    body = _with_house_invite(body, day, "visit", after_hook=hook)
     body += "\n\n" + _signoff(f"today-visit|{day.isoformat()}|{platform}", platform)
     tags = _hashtags(platform)
     text = body + "\n\n" + " ".join(tags)
@@ -447,13 +450,24 @@ def _week_ahead_opener(seed: str) -> str:
     )
 
 
-def _with_house_invite(body: str, day: date | None, campaign: str) -> str:
+def _with_house_invite(
+    body: str,
+    day: date | None,
+    campaign: str,
+    *,
+    after_hook: str = "",
+) -> str:
+    """Put the house invite at the top of the list — right after the opener."""
     extra = social_proof.house_invite_for(
         day, campaign=campaign, field="night_block"
     )
-    if extra and extra.lower() not in (body or "").lower():
-        return f"{body.rstrip()}\n\n{extra}"
-    return body
+    if not extra or extra.lower() in (body or "").lower():
+        return body
+    hook = (after_hook or "").rstrip()
+    if hook and (body or "").startswith(hook):
+        tail = (body[len(hook) :]).lstrip("\n")
+        return hook + "\n\n" + extra + ("\n\n" + tail if tail else "")
+    return extra + "\n\n" + (body or "").lstrip()
 
 
 def _week_ahead_night_block(seed: str, day: date | None = None) -> str:
@@ -461,7 +475,7 @@ def _week_ahead_night_block(seed: str, day: date | None = None) -> str:
     opts = list(cfg.get("week_ahead_night_blocks") or [])
     if not opts and cfg.get("week_ahead_night_block"):
         opts = [str(cfg["week_ahead_night_block"])]
-    block = _pick_rotating(
+    return _pick_rotating(
         opts,
         seed,
         "If you’re not done for the night yet…\n"
@@ -471,10 +485,6 @@ def _week_ahead_night_block(seed: str, day: date | None = None) -> str:
         "find something to watch or listen to, or explore sacred chanting and music.\n"
         "https://shopsacredground.com/library/",
     )
-    extra = social_proof.house_invite_night_block(day)
-    if extra:
-        block = f"{block.rstrip()}\n\n{extra}"
-    return block
 
 
 def _week_ahead_closer(seed: str, day: date | None = None) -> str:
@@ -513,13 +523,12 @@ def caption_week_ahead(events: List[Event], platform: str, day: date) -> Dict:
     # Separate seeds so opener / night block / closer don't lock to the same index.
     hook = cel_opener or _week_ahead_opener(f"{seed}|opener")
     if events:
-        body = hook + "\n\n" + _join_event_blocks_by_day(events, True)
+        rest = _join_event_blocks_by_day(events, True)
     else:
-        body = (
-            hook
-            + "\n\n"
-            + "Come as you are — Sacred Ground is here for the sky and for you."
-        )
+        rest = "Come as you are — Sacred Ground is here for the sky and for you."
+    body = _with_house_invite(
+        hook + "\n\n" + rest, day, "week_ahead", after_hook=hook
+    )
     night = _week_ahead_night_block(f"{seed}|night", day=day)
     if night:
         body += "\n\n" + night
@@ -583,7 +592,9 @@ def caption_afternoon_spotlight(event: Event | None, platform: str, day: date) -
             "847-749-3922\n"
             "https://shopsacredground.com/"
         )
-        body = _with_house_invite(body, day, "afternoon_spotlight")
+        body = _with_house_invite(
+            body, day, "afternoon_spotlight", after_hook=hook
+        )
         body += "\n\n" + _signoff(seed, platform)
         tags = _hashtags(platform)
         text = body + "\n\n" + " ".join(tags)
@@ -618,7 +629,9 @@ def caption_afternoon_spotlight(event: Event | None, platform: str, day: date) -
         parts.append(blurb)
     parts.append(event.url)
     parts.append("847-749-3922")
-    body = _with_house_invite("\n\n".join(parts), day, "afternoon_spotlight")
+    body = _with_house_invite(
+        "\n\n".join(parts), day, "afternoon_spotlight", after_hook=hook
+    )
     body += "\n\n" + _signoff(seed, platform)
     tags = _hashtags(platform)
     text = body + "\n\n" + " ".join(tags)
