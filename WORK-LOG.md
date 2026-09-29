@@ -1,8 +1,9 @@
 ## 2026-09-28 — Sep 29 morning is Archangel Day
 
 Founder: swap tomorrow 9am off the Fair-flag plate for a spectacular
-Michaelmas / Archangel Day flyer. Media **28861**. Fair stays in the
-caption and first comment only. Equal Amber / Tina / Kate.
+Michaelmas / Archangel Day flyer. v2 media **28862** — gold ARCHANGEL
+DAY on the glass, names in the footer, no website/phone on the plate.
+Fair stays in the caption and first comment only.
 
 ## 2026-09-28 — Kill S1E12; S1E13 takes Wednesday
 
