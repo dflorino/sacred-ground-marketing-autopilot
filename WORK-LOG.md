@@ -1,3 +1,10 @@
+## 2026-09-29 — Ten Holistic Fair 5pm plates for yay/nay
+
+Founder: 5pm posts about the Fair from now through Oct 9; Oct 10 morning
+already owns Fair-today. Ten distinct review graphics **28889–28898**.
+Not wired to dates yet. Today 5pm still Kate **28871**. Oct 1 + Oct 8
+5pm still cinematic unless she says swap.
+
 ## 2026-09-28 — Sep 29 5pm is Kate Sound Bath (Fair-flag shop)
 
 Founder: take the unused Tuesday Fair-flag cosmic shop off 9am and run

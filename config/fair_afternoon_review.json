@@ -1,0 +1,93 @@
+{
+  "notes": "Founder Sep 29: 10 Holistic Fair 5pm graphics for yay/nay. Last 5pm Fair day is Oct 9. Oct 10 morning already owns the Fair-today plate. Do not wire dates until she picks. Oct 1 and Oct 8 5pm are cinematic shorts unless she says swap. Today 5pm is still Kate Sound Bath 28871 until she says replace it.",
+  "campaign": "afternoon_spotlight",
+  "theme": "Holistic Fair",
+  "fair_date": "2026-10-10",
+  "fair_hours": "12–6",
+  "last_afternoon_fair_day": "2026-10-09",
+  "status": "awaiting_founder_yay_nay",
+  "cinematic_owns_5pm": ["2026-10-01", "2026-10-08"],
+  "still_5pm_days": [
+    "2026-09-29",
+    "2026-09-30",
+    "2026-10-02",
+    "2026-10-03",
+    "2026-10-04",
+    "2026-10-05",
+    "2026-10-06",
+    "2026-10-07",
+    "2026-10-09"
+  ],
+  "plates": [
+    {
+      "n": 1,
+      "idea": "Giant blank carnival ticket over the shop",
+      "media_id": 28889,
+      "url": "https://shopsacredground.com/wp-content/uploads/01-ticket.jpg",
+      "local": "assets/_week_show/oct_ideas/fair_pm_review/01-ticket.jpg"
+    },
+    {
+      "n": 2,
+      "idea": "Crystal carousel on the sidewalk",
+      "media_id": 28890,
+      "url": "https://shopsacredground.com/wp-content/uploads/02-carousel.jpg",
+      "local": "assets/_week_show/oct_ideas/fair_pm_review/02-carousel.jpg"
+    },
+    {
+      "n": 3,
+      "idea": "Folk-art parade walking to the shop",
+      "media_id": 28893,
+      "url": "https://shopsacredground.com/wp-content/uploads/03-folk.jpg",
+      "local": "assets/_week_show/oct_ideas/fair_pm_review/03-folk.jpg"
+    },
+    {
+      "n": 4,
+      "idea": "Lantern river into the door",
+      "media_id": 28891,
+      "url": "https://shopsacredground.com/wp-content/uploads/04-lanterns.jpg",
+      "local": "assets/_week_show/oct_ideas/fair_pm_review/04-lanterns.jpg"
+    },
+    {
+      "n": 5,
+      "idea": "Travel-poster shop in a sunflower field",
+      "media_id": 28892,
+      "url": "https://shopsacredground.com/wp-content/uploads/05-travel.jpg",
+      "local": "assets/_week_show/oct_ideas/fair_pm_review/05-travel.jpg"
+    },
+    {
+      "n": 6,
+      "idea": "Harvest table — crystals, apples, mums",
+      "media_id": 28894,
+      "url": "https://shopsacredground.com/wp-content/uploads/06-harvest.jpg",
+      "local": "assets/_week_show/oct_ideas/fair_pm_review/06-harvest.jpg"
+    },
+    {
+      "n": 7,
+      "idea": "Bird’s-eye tents around the purple roof",
+      "media_id": 28895,
+      "url": "https://shopsacredground.com/wp-content/uploads/07-birdseye.jpg",
+      "local": "assets/_week_show/oct_ideas/fair_pm_review/07-birdseye.jpg"
+    },
+    {
+      "n": 8,
+      "idea": "Night midway + sun-face searchlight",
+      "media_id": 28896,
+      "url": "https://shopsacredground.com/wp-content/uploads/08-night.jpg",
+      "local": "assets/_week_show/oct_ideas/fair_pm_review/08-night.jpg"
+    },
+    {
+      "n": 9,
+      "idea": "One tent floating over a tiny shop",
+      "media_id": 28897,
+      "url": "https://shopsacredground.com/wp-content/uploads/09-magritte.jpg",
+      "local": "assets/_week_show/oct_ideas/fair_pm_review/09-magritte.jpg"
+    },
+    {
+      "n": 10,
+      "idea": "Kids running through maple leaves",
+      "media_id": 28898,
+      "url": "https://shopsacredground.com/wp-content/uploads/10-kids.jpg",
+      "local": "assets/_week_show/oct_ideas/fair_pm_review/10-kids.jpg"
+    }
+  ]
+}
