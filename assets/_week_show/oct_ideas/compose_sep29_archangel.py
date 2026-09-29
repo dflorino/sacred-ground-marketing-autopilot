@@ -7,11 +7,11 @@ from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parents[3]
 SRC = Path("/tmp/sg-archangel-28860.jpg")
-OUT = ROOT / "assets" / "sg-morning-flyer-2026-09-29-archangel-day-v2.jpg"
+OUT = ROOT / "assets" / "sg-morning-flyer-2026-09-29-archangel-day-v3.jpg"
 LOGO = ROOT / "config/brand/sacred-ground-logo-circle-transparent.png"
 FONT_DIR = Path("/System/Library/Fonts/Supplemental")
 SIZE = 1080
-FOOTER_H = 200
+FOOTER_H = 186
 
 
 def font(name: str, size: int) -> ImageFont.FreeTypeFont:
@@ -24,9 +24,19 @@ def center(draw, y, text, fnt, fill, width, x0=0):
     draw.text((x0 + (width - tw) / 2, y), text, font=fnt, fill=fill)
 
 
+def fit_cover(im: Image.Image, w: int, h: int) -> Image.Image:
+    im = im.convert("RGB")
+    scale = max(w / im.width, h / im.height)
+    nw, nh = int(im.width * scale + 0.5), int(im.height * scale + 0.5)
+    im = im.resize((nw, nh), Image.Resampling.LANCZOS)
+    left = (nw - w) // 2
+    top = max(0, (nh - h) // 2 - 20)
+    return im.crop((left, top, left + w, top + h))
+
+
 def compose() -> Path:
     photo_h = SIZE - FOOTER_H
-    photo = Image.open(SRC).convert("RGB").resize((SIZE, photo_h), Image.Resampling.LANCZOS)
+    photo = fit_cover(Image.open(SRC), SIZE, photo_h)
     canvas = Image.new("RGB", (SIZE, SIZE), (245, 236, 214))
     canvas.paste(photo, (0, 0))
     draw = ImageDraw.Draw(canvas)
