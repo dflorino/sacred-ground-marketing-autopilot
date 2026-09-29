@@ -7,7 +7,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parents[3]
 SRC = Path("/tmp/sg-archangel-28860.jpg")
-OUT = ROOT / "assets" / "sg-morning-flyer-2026-09-29-archangel-day-v3.jpg"
+OUT = ROOT / "assets" / "sg-morning-flyer-2026-09-29-archangel-day-v4.jpg"
 LOGO = ROOT / "config/brand/sacred-ground-logo-circle-transparent.png"
 FONT_DIR = Path("/System/Library/Fonts/Supplemental")
 SIZE = 1080
@@ -41,13 +41,13 @@ def compose() -> Path:
     canvas.paste(photo, (0, 0))
     draw = ImageDraw.Draw(canvas)
 
-    gold = (212, 168, 58)
+    cream = (255, 248, 230)
     ink = (18, 14, 8)
-    title = font("Impact.ttf", 72)
-    # Gold on the glass — no cream banner. Soft dark shadow for read.
-    for dx, dy in ((2, 2), (0, 2), (2, 0)):
-        center(draw, 36 + dy, "ARCHANGEL DAY", title, (20, 12, 4), SIZE)
-    center(draw, 36, "ARCHANGEL DAY", title, gold, SIZE)
+    title = font("Impact.ttf", 80)
+    # Cream on the glass — gold disappeared into the gold rays. No banner.
+    for dx, dy in ((3, 3), (-2, 2), (2, -1), (0, 3), (3, 0)):
+        center(draw, 34 + dy, "ARCHANGEL DAY", title, (12, 8, 4), SIZE)
+    center(draw, 34, "ARCHANGEL DAY", title, cream, SIZE)
 
     events = [
         ("AMBER", "Massage  ·  12–5"),
