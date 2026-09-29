@@ -1,3 +1,10 @@
+## 2026-09-28 — Sep 29 5pm is Kate Sound Bath (Fair-flag shop)
+
+Founder: take the unused Tuesday Fair-flag cosmic shop off 9am and run
+it at 5pm with Amber/Tina removed. Plate says FREE Meditation Sound
+Bath W/ Kate 7–8pm. Media **28871**. Morning stays Archangel v4
+**28864**. 4pm Tuesday meditation campaign still runs as usual.
+
 ## 2026-09-28 — Sep 29 morning is Archangel Day
 
 Founder: swap tomorrow 9am off the Fair-flag plate for a spectacular
