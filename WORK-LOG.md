@@ -1,3 +1,11 @@
+## 2026-09-29 — Strip Virgo off every leftover night storefront
+
+Founder deleted tonight's 7pm because Virgo was still on the wall.
+Stripped the sign from all remaining dirty plates (no replacement glyph):
+Sep 29 / 30 / Oct 2 Fair-flag nights plus cozy upstairs, oak sidewalk,
+frost sparkle, blue hour, crescent Venus, fairy lights, harvest moonlight.
+Reposted tonight on FB+IG+TT+Threads with **28901**.
+
 ## 2026-09-29 — Ten Holistic Fair 5pm plates for yay/nay
 
 Founder: 5pm posts about the Fair from now through Oct 9; Oct 10 morning
