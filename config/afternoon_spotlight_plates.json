@@ -4,8 +4,7 @@
     "2026-09-19",
     "2026-09-20",
     "2026-09-24",
-    "2026-10-01",
-    "2026-10-08"
+    "2026-10-01"
   ],
   "cinematic_weekly_threshold": {
     "notes": "Founder Sep 22: use all 3 movement clips for afternoon, one a week, not consecutive days. Regular 5pm still is skipped those dates. Schedule the assigned MP4 at 5:00 PM America/Chicago (FB+IG+TT+Threads) with that day's store hours. Do not invent a still.",
@@ -27,7 +26,9 @@
         "clip": "hero_door_then_light",
         "mp4_media": 28482,
         "url": "https://shopsacredground.com/wp-content/uploads/sg-hero-door-then-light-locked-1.mp4",
-        "label": "Hallway — door opens, then the light (locked walls)"
+        "label": "Hallway — door opens, then the light (locked walls)",
+        "status": "deferred",
+        "note": "Founder Oct 2: not sure what cinematic short means — 5pm is a Fair still instead. Clip 28482 stays unused until she asks."
       }
     }
   },
@@ -171,18 +172,35 @@
       "status": "founder_approved",
       "updated_at": "2026-10-02T10:10:00-05:00"
     },
-    "2026-10-09": {
-      "label": "Holistic Fair — kids in maple leaves",
-      "local": "assets/sg-afternoon-spotlight-2026-10-09-fair-kids.jpg",
-      "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-10-09-fair-kids.jpg",
-      "media_id": 28924,
+    "2026-10-08": {
+      "label": "Holistic Fair — crystal prize wheel",
+      "local": "assets/sg-afternoon-spotlight-2026-10-08-fair-wheel.jpg",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-10-08-fair-wheel.jpg",
+      "media_id": 28936,
+      "source_gen_media_id": 28931,
       "prebranded": true,
       "pride_baked_in": true,
       "do_not_publish": false,
       "founder_approved": true,
       "status": "founder_approved",
-      "note": "Last Fair 5pm still. Oct 8 is cinematic. Oct 10 morning owns Fair-today.",
-      "updated_at": "2026-10-02T10:10:00-05:00"
+      "note": "Founder Oct 2: remake Oct 8. Cinematic hallway clip deferred.",
+      "updated_at": "2026-10-02T11:00:00-05:00"
+    },
+    "2026-10-09": {
+      "label": "Holistic Fair — gold lantern",
+      "local": "assets/sg-afternoon-spotlight-2026-10-09-fair-lantern.jpg",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-10-09-fair-lantern.jpg",
+      "media_id": 28935,
+      "source_gen_media_id": 28934,
+      "prebranded": true,
+      "pride_baked_in": true,
+      "do_not_publish": false,
+      "founder_approved": true,
+      "status": "founder_approved",
+      "note": "Founder Oct 2: remake Oct 9 kids plate. Get-ready 10/10 lives on the night plate.",
+      "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-10-09-fair-kids.jpg",
+      "prior_media_id": 28924,
+      "updated_at": "2026-10-02T11:00:00-05:00"
     },
     "2026-10-10": {
       "label": "10/10 Portal",
@@ -195,8 +213,8 @@
       "do_not_publish": false,
       "founder_approved": true,
       "status": "founder_approved",
-      "note": "Morning owns Holistic Fair today. Afternoon is 10/10 Portal — different plate.",
-      "updated_at": "2026-10-02T10:10:00-05:00"
+      "note": "Morning is Fair + 10/10 together. Night is 10/10 Portal. This 5pm plate stays a separate URL.",
+      "updated_at": "2026-10-02T11:00:00-05:00"
     },
     "2026-10-11": {
       "label": "Sunday at the shop",

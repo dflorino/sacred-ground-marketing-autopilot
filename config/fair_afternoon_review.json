@@ -1,12 +1,12 @@
 {
-  "notes": "Founder Oct 2: lock the Fair 5pm set. Wired carousel/folk/lanterns/travel/harvest/birdseye/kids to Oct 2–7 + 9. Ticket/night/magritte unused. Oct 8 cinematic. Oct 10–11 are new non-Fair afternoon plates.",
+  "notes": "Founder Oct 2 later: remake Oct 8 + 9. Oct 8 is prize-wheel still (cinematic deferred). Oct 9 5pm is gold lantern. Oct 9 night is get-ready 10/10. Oct 10 morning is Fair + portal together.",
   "campaign": "afternoon_spotlight",
   "theme": "Holistic Fair",
   "fair_date": "2026-10-10",
   "fair_hours": "12–6",
   "last_afternoon_fair_day": "2026-10-09",
   "status": "wired_2026-10-02",
-  "cinematic_owns_5pm": ["2026-10-01", "2026-10-08"],
+  "cinematic_owns_5pm": ["2026-10-01"],
   "still_5pm_days": [
     "2026-09-29",
     "2026-09-30",
@@ -16,6 +16,7 @@
     "2026-10-05",
     "2026-10-06",
     "2026-10-07",
+    "2026-10-08",
     "2026-10-09"
   ],
   "plates": [

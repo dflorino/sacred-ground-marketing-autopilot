@@ -1,3 +1,11 @@
+## 2026-10-02 — Remake Oct 8–9; 10/10 on night + Fair morning
+
+Founder: Oct 8 + 9 5pm were bad. Cinematic short on Oct 8 was a hallway
+video — replaced with Fair prize-wheel **28936**. Oct 9 5pm gold lantern
+**28935**. Oct 9 night says GET READY / 10/10 PORTAL **28937**. Oct 10
+morning is Holistic Fair + 10/10 Portal together **28938**. Oct 10 night
+is 10/10 Portal **28939**.
+
 ## 2026-10-02 — Afternoon plates locked through Oct 11
 
 Founder: make 5pm plates through Oct 11. Wired Fair stills **28918–28924**

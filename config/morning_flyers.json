@@ -1729,31 +1729,30 @@
       "prior_media_id": 28700
     },
     "2026-10-10": {
-      "label": "Holistic Fair 12\u20136",
+      "label": "Holistic Fair + 10/10 Portal",
       "covers": [
         "facebook",
         "instagram"
       ],
-      "local": "assets/sg-morning-flyer-2026-10-10-holistic-fair-today-v4.jpg",
-      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-10-10-holistic-fair-today-v4.jpg",
-      "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-10-10-holistic-fair-today-v3.jpg",
-      "prior_media_id": 28787,
+      "local": "assets/sg-morning-flyer-2026-10-10-fair-portal.jpg",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-10-10-fair-portal.jpg",
+      "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-10-10-holistic-fair-today-v4.jpg",
+      "prior_media_id": 28788,
       "prebranded": true,
-      "visual_style": "oct_holistic_fair_cosmic_shop",
+      "visual_style": "oct_fair_plus_1010_portal",
       "pride_baked_in": true,
       "status": "founder_approved",
       "founder_approved": true,
       "do_not_publish": false,
       "awaiting_founder_review": false,
       "locked_until_founder_review": false,
-      "note": "Founder Sep 27: unlock and use. HOLISTIC FAIR: TODAY same size. No practitioners. Crew boxes on Oct 11.",
-      "updated_at": "2026-09-27T15:33:00Z",
-      "media_id": 28788,
-      "source_art_media_id": 28784,
+      "note": "Founder Oct 2: Fair TODAY and 10/10 Portal on the same morning plate. Night Oct 9 is get-ready. Night Oct 10 is the portal.",
+      "updated_at": "2026-10-02T11:00:00-05:00",
+      "media_id": 28938,
+      "source_art_media_id": 28932,
       "do_not_remake": true,
-      "founder_approved_at": "2026-09-27T09:45:00-05:00",
-      "founder_trashed": false,
-      "night_candidate_local": "assets/sg-night-creative-egypt-pyramid.jpg"
+      "founder_approved_at": "2026-10-02T11:00:00-05:00",
+      "founder_trashed": false
     },
     "2026-10-11": {
       "label": "Lita Sacred Besom + Galactic crew boxes",
