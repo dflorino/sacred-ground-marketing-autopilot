@@ -1,3 +1,10 @@
+## 2026-10-02 — Afternoon plates locked through Oct 11
+
+Founder: make 5pm plates through Oct 11. Wired Fair stills **28918–28924**
+for Oct 2–7 + 9. Oct 8 stays cinematic **28482**. Oct 10 is 10/10 Portal
+**28925** (morning already owns Fair-today). Oct 11 is Sunday at the shop
+**28926**.
+
 ## 2026-09-29 — Strip Virgo off every leftover night storefront
 
 Founder deleted tonight's 7pm because Virgo was still on the wall.

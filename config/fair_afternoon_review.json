@@ -1,11 +1,11 @@
 {
-  "notes": "Founder Sep 29: 10 Holistic Fair 5pm graphics for yay/nay. Last 5pm Fair day is Oct 9. Oct 10 morning already owns the Fair-today plate. Do not wire dates until she picks. Oct 1 and Oct 8 5pm are cinematic shorts unless she says swap. Today 5pm is still Kate Sound Bath 28871 until she says replace it.",
+  "notes": "Founder Oct 2: lock the Fair 5pm set. Wired carousel/folk/lanterns/travel/harvest/birdseye/kids to Oct 2–7 + 9. Ticket/night/magritte unused. Oct 8 cinematic. Oct 10–11 are new non-Fair afternoon plates.",
   "campaign": "afternoon_spotlight",
   "theme": "Holistic Fair",
   "fair_date": "2026-10-10",
   "fair_hours": "12–6",
   "last_afternoon_fair_day": "2026-10-09",
-  "status": "awaiting_founder_yay_nay",
+  "status": "wired_2026-10-02",
   "cinematic_owns_5pm": ["2026-10-01", "2026-10-08"],
   "still_5pm_days": [
     "2026-09-29",
