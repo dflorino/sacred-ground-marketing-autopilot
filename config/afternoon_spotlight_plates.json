@@ -173,18 +173,20 @@
       "updated_at": "2026-10-02T10:10:00-05:00"
     },
     "2026-10-08": {
-      "label": "Holistic Fair — crystal prize wheel",
-      "local": "assets/sg-afternoon-spotlight-2026-10-08-fair-wheel.jpg",
-      "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-10-08-fair-wheel.jpg",
-      "media_id": 28936,
-      "source_gen_media_id": 28931,
+      "label": "Holistic Fair — real storefront + cart",
+      "local": "assets/sg-afternoon-spotlight-2026-10-08-fair-cart.jpg",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-10-08-fair-cart.jpg",
+      "media_id": 28943,
+      "source_gen_media_id": 28942,
       "prebranded": true,
       "pride_baked_in": true,
       "do_not_publish": false,
       "founder_approved": true,
       "status": "founder_approved",
-      "note": "Founder Oct 2: remake Oct 8. Cinematic hallway clip deferred.",
-      "updated_at": "2026-10-02T11:00:00-05:00"
+      "note": "Founder Oct 2: prize wheel was terrible. Remade from real left-window / right-doors store.",
+      "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-10-08-fair-wheel.jpg",
+      "prior_media_id": 28936,
+      "updated_at": "2026-10-02T12:20:00-05:00"
     },
     "2026-10-09": {
       "label": "Holistic Fair — gold lantern",

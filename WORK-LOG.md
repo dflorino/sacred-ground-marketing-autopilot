@@ -1,3 +1,11 @@
+## 2026-10-02 — Remake Oct 8 5pm + Oct 10 morning/night from the real shop
+
+Founder: Oct 8 prize wheel terrible; Oct 10 9am bad; Oct 10 7pm not our
+store. Regenerated from exterior-1 / sg-night-fall (left window, right
+double doors, eggplant awning, cart). Oct 8 cart **28943**. Oct 10
+morning Fair + glowing door **28944**. Oct 10 night portal **28945**.
+Oct 9 lantern stays.
+
 ## 2026-10-02 — Remake Oct 8–9; 10/10 on night + Fair morning
 
 Founder: Oct 8 + 9 5pm were bad. Cinematic short on Oct 8 was a hallway
