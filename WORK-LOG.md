@@ -1,3 +1,9 @@
+## 2026-10-02 — Lock Oct 8 cart + Oct 10 Fair/portal morning + night
+
+Founder: these are great, lock them in. Afternoon **28943** / morning
+**28944** / night **28945**. Morning + afternoon plates are done through
+Oct 11. Oct 12+ is not made yet.
+
 ## 2026-10-02 — Remake Oct 8 5pm + Oct 10 morning/night from the real shop
 
 Founder: Oct 8 prize wheel terrible; Oct 10 9am bad; Oct 10 7pm not our

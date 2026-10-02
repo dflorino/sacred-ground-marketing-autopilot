@@ -183,10 +183,12 @@
       "do_not_publish": false,
       "founder_approved": true,
       "status": "founder_approved",
-      "note": "Founder Oct 2: prize wheel was terrible. Remade from real left-window / right-doors store.",
+      "note": "Founder Oct 2 1:18pm: these are great, lock them in.",
+      "do_not_remake": true,
+      "founder_approved_at": "2026-10-02T13:18:00-05:00",
       "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-10-08-fair-wheel.jpg",
       "prior_media_id": 28936,
-      "updated_at": "2026-10-02T12:20:00-05:00"
+      "updated_at": "2026-10-02T13:18:00-05:00"
     },
     "2026-10-09": {
       "label": "Holistic Fair — gold lantern",
@@ -199,10 +201,12 @@
       "do_not_publish": false,
       "founder_approved": true,
       "status": "founder_approved",
-      "note": "Founder Oct 2: remake Oct 9 kids plate. Get-ready 10/10 lives on the night plate.",
+      "note": "Founder Oct 2: lantern is okay. Locked.",
+      "do_not_remake": true,
+      "founder_approved_at": "2026-10-02T13:18:00-05:00",
       "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-10-09-fair-kids.jpg",
       "prior_media_id": 28924,
-      "updated_at": "2026-10-02T11:00:00-05:00"
+      "updated_at": "2026-10-02T13:18:00-05:00"
     },
     "2026-10-10": {
       "label": "10/10 Portal",
