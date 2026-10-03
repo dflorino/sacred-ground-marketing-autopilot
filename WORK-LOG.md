@@ -1,3 +1,8 @@
+## 2026-10-03 — Phone Cursor reads GitHub, not Mac pins
+
+Founder asked for one phone agent current on social, staff, Bookie,
+Pixar Reels. Map: `docs/PHONE-CURSOR-DESK.md` (full text on maintenance).
+
 ## 2026-10-03 — Phone name is Phoenix, not Junior
 
 Founder: she named him Phoenix on the phone, not Jr. Agents must say
