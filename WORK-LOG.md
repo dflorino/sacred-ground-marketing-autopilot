@@ -1,3 +1,10 @@
+## 2026-10-03 — Fernando on the Founder’s phone
+
+Founder: Friday Spencer notes were missing; she wanted agents on her
+phone only. Path is Phoenix (big M) → My Dash → Ask Fernando. Rule
+`.cursor/rules/fernando-phone-my-dash.mdc`. Do not make a public Junior
+shared dash. Connect Your Agent keys only if she says go.
+
 ## 2026-10-02 — Lock Oct 8 cart + Oct 10 Fair/portal morning + night
 
 Founder: these are great, lock them in. Afternoon **28943** / morning
