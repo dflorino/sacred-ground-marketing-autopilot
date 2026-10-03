@@ -1,3 +1,9 @@
+## 2026-10-03 — Phone name is Phoenix, not Junior
+
+Founder: she named him Phoenix on the phone, not Jr. Agents must say
+Phoenix. Junior was only an unsaved shared-dash draft — do not use it
+as his phone name.
+
 ## 2026-10-03 — Fernando on the Founder’s phone
 
 Founder: Friday Spencer notes were missing; she wanted agents on her
