@@ -80,6 +80,8 @@ Config: **`config/morning_surprise_campaign.json`** · styles in `morning_flyer_
 
 Flagship recurring: **Where Did Sacred Ground Land Today?** (recognizable eggplant-awning storefront in impossible places; people act normal). Weekly architecture preference: newspaper Mon · artifact Tue · tiny universe Wed (max 2/month) · unpredictable rest. Tarot-card oversized plates max **2/month**. Sep 3 colorful Thursday equal-cards = fall color gold standard for multi-event readable days.
 
+**Oct 2026 bank (Founder Sep 26):** 30 out-of-the-box concepts in `config/morning_oct_out_of_the_box.json` + `docs/MORNING-OCT-OUT-OF-THE-BOX.md`. Date plan in `morning_surprise_campaign.json` (`date_plan_2026_10` + Sep 29–30). Follow morning rules with these ideas — do not flatten to one template.
+
 ## Sacred Ground daily flyer system
 
 Readability reference: `assets/sg-morning-flyer-2026-08-06-today-collage.png`. Art language is a day-seeded random mix from the full pool above (series-limited).

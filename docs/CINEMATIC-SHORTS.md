@@ -43,21 +43,45 @@ Motion check Fri Sep 18: 10.04s, start / mid / end are three different pictures.
 
 ## Next series — night storefront (Founder Fri Sep 18)
 
-After connected: **the real shop at night**, a new sky each short.
+After connected: **the real shop at night**. Same locked facade. Each short is a **different cosmic event**, not another connected-web remake.
 
-Same locked facade every time (eggplant awning, tan stone, white `SACRED GROUND` with a space — never a hyphen). Only the sky changes.
-
-| Short | Sky | Still we already have? |
-|---|---|---|
-| **sky opens** (first) | Quiet stars tear open into galaxies | New stills `v7` start **28369** + end local |
-| Orion | Orion’s belt / hunter | Yes — `fall_store_orion_rising` (still only) |
-| Northern lights | Aurora over the shop | Yes — aurora / teal-copper stills |
-| Fall night | Amber harvest night, not daytime sun | Yes — `sg-night-fall.png` |
-| Rain | Rain + neon puddles | Yes — rain puddle stills |
-| Lightning | Storm opens the sky | No — new |
-| Deep night | Milky Way field, shop still the anchor | Partial |
+| Short | What happens |
+|---|---|
+| **person from window** (first — watch now) | Gold-light person **steps out of the left window**, walks a rising gold path, **enters a torn-open sky**. |
+| sky opens | Night itself tears — no person, no web |
+| Orion | Hunter / belt rises and *moves* |
+| aurora | Northern lights dance over the shop |
+| fall | Amber harvest night (not daytime sun) |
+| rain | Rain + neon puddles, sky doing weather |
+| lightning | Storm writes / opens the sky |
+| deep night | Milky Way pours, shop still the anchor |
 
 These are **moving shorts**, not the 7pm week-ahead still. Do not steal a used `image_usage` URL. Do not invent a fantasy shop.
+
+### Ready to watch — v9 (person from the window)
+
+| | |
+|---|---|
+| **Journey** | Out of the glass → up the gold path → through the tear in the night |
+| **MP4 media** | **28372** |
+| **Start** | **28370** `sg-cinematic-v9-night-start-person-from-window.jpg` |
+| **End** | **28371** `sg-cinematic-v9-night-end-person-enters-sky.jpg` |
+| **Local play** | `assets/_week_show/sg-cinematic-short-night-person-v9.mp4` + `PLAY-V9.html` |
+| **Status** | Founder watch. Not scheduled. |
+
+## Ready to watch — v11 (You thought it was just a rock)
+
+Founder Sat Sep 19: first **What If You Could See It / 10 Seconds of Magic** reel. Not an ad. Whoa first.
+
+| | |
+|---|---|
+| **Journey** | Tiny quartz in black → camera closer → plunges inside → crystalline universe |
+| **MP4 media** | **28430** |
+| **Start** | **28428** `sg-cinematic-v11-quartz-start.jpg` |
+| **End** | **28429** `sg-cinematic-v11-quartz-end.jpg` |
+| **Local play** | `assets/_week_show/sg-cinematic-short-quartz-v11.mp4` + `PLAY-V11.html` |
+| **On-screen (after she likes motion)** | `You thought it was just a rock.` + tiny circular logo |
+| **Status** | Founder likes the crystal. Not scheduled. Full series list: `docs/WHAT-IF-YOU-COULD-SEE-IT.md`. |
 
 ## How to make the next one
 

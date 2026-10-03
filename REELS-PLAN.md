@@ -14,7 +14,7 @@ Metaphysics is getting big — Sacred Ground / Team Sacred Ground wants an **unu
 | Pillar | Rule |
 |---|---|
 | **Series** | Unusual metaphysics cartoon — distinctive, series-driven |
-| **S1E1** | Store Quest shipped once — **never republish** (see schedule) |
+| **S1E1** | Store Quest shipped Aug 16 — brand YouTube backfill OK (Sep 1); do not re-spam FB/IG/TikTok |
 | **Reach** | Organic + optional legitimate boosts only — **never** bots / fake engagement |
 | **Path to bigger** | Consistency + brand channels + hooks; discovery by people, not promised outcomes |
 | **vs 5pm image** | Reels may eventually replace **some** afternoon spotlight posts when production keeps up — **not daily yet** |

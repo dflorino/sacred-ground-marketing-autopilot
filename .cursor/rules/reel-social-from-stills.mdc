@@ -70,10 +70,9 @@ The old world: different face in the **video**, the **FB still**, and the **emai
 ### Before publish
 
 1. **Correct KEEP file** — e.g. **S1E3-B** media **26795** / `s01e03b-first-crystal.mp4` — never ambiguous **S1E3-A** or archive IDs.
-2. **S1E1 (26545) NEVER republish** — COMPLETE on all platforms forever.
-3. **Brand coverage:** FB + IG + TikTok + **brand** YouTube. If only personal YT is connected, **stop** and tell Founder — do not substitute personal for brand.
-4. **Caption:** warm hook + comment CTA; spell **Deneene** correctly (never Denise / Deneen).
-5. **Media URL must 404-check** — Facebook must fetch the MP4 (broken WP URL = failed publish).
+2. **Brand coverage:** FB + IG + TikTok + **brand** YouTube (`@sacredgroundchicagoland`). Personal `@deneeneflorino4711` retired — do not use.
+3. **Caption:** warm hook + comment CTA; spell **Deneene** correctly (never Denise / Deneen).
+4. **Media URL must 404-check** — Facebook must fetch the MP4 (broken WP URL = failed publish).
 
 ### Per platform (same video, tuned copy)
 
@@ -125,5 +124,5 @@ When a reel or reel-derived still post goes live and performs:
 
 - Stop at Social with no CRM/email plan for strong episodes.
 - Pull a **different** character still than the reel viewers just saw.
-- Republish **S1E1** or any `image_usage` / lifetime-blocked URL.
+- **Recycle** the same episode on FB/IG/TikTok without Founder ask, or any `image_usage` / lifetime-blocked URL.
 - Schedule duplicate FB posts from parallel agent runs — **check `social_posts` scheduled queue first**.

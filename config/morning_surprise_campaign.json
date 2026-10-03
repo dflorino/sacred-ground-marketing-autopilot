@@ -245,12 +245,55 @@
       "episode": "Monday paper"
     },
     "2026-09-29": {
-      "style": "surprise_board_game",
-      "episode": "Tuesday board game — Free Community Meditation"
+      "style": "oct_lost_and_found",
+      "episode": "Universe Lost & Found — lost quiet / Sound Bath. Amber + Tina + Kate FREE 7–8. Founder Sep 26 bank #17."
     },
     "2026-09-30": {
+      "style": "surprise_universe_morning_meeting",
+      "episode": "Universe morning meeting — Janel + Frequency Reset. Founder Sep 26 bank #4."
+    }
+  },
+  "oct_out_of_the_box_config": "config/morning_oct_out_of_the_box.json",
+  "date_plan_2026_10": {
+    "2026-10-01": {
+      "style": "oct_airline_ad",
+      "episode": "1970s airline poster — Adie / Sherry / Candle Making. Bank #6."
+    },
+    "2026-10-02": {
+      "style": "oct_record_album",
+      "episode": "Disco/psych album — Lisa Maria / Frequency / Oracle class. Bank #21."
+    },
+    "2026-10-03": {
+      "style": "oct3_hp_owl_keep",
+      "episode": "KEEP Founder Harry Potter owl + kids. Castle is night storefront, not this morning."
+    },
+    "2026-10-04": {
+      "style": "oct_universe_calling",
+      "episode": "Rotary phone — Linn Astrology or Angel Communication. Bank #10."
+    },
+    "2026-10-05": {
+      "style": "oct_trading_cards",
+      "episode": "Equal collector cards — Lisa Maria + Karen. Bank #13."
+    },
+    "2026-10-06": {
+      "style": "oct_dollhouse",
+      "episode": "Dollhouse rooms lit — Amber / Robert / Meditation FREE. Bank #5."
+    },
+    "2026-10-07": {
       "style": "surprise_cabinet_curiosities",
-      "episode": "Wednesday cabinet — visit day"
+      "episode": "Two drawers open equal — Tina + Karen Soul. Bank #12."
+    },
+    "2026-10-08": {
+      "style": "oct_train_station",
+      "episode": "Departure board — Adie / Rose / Eve. Bank #19."
+    },
+    "2026-10-09": {
+      "style": "oct_normal_is_closed",
+      "episode": "Amethyst geode downtown Arlington Heights — Cheryl / Renee / Andre Full Moon. Bank #30."
+    },
+    "2026-10-10": {
+      "style": "oct_time_machine",
+      "episode": "Jules Verne machine dial TODAY — Melissa / Adie / Rose. Bank #28."
     }
   }
 }

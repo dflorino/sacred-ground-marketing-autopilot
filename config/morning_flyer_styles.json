@@ -1,5 +1,5 @@
 {
-  "notes": "Founder Fri Aug 14 2026 America/Chicago. Morning visual MIXED POOL — not 'new styles only for two weeks.' Include: (1) four approved art languages Magritte/Folk/Da Vinci/Einstein, (2) existing shop-made Thursday equal-card + artistic hero, (3) date-keyed queued flyers. Founder Aug 23 2026: Living Worlds series APPROVED — 20 imaginative morning worlds mix in phased rollout; see config/morning_living_worlds.json + docs/MORNING-LIVING-WORLDS.md. Founder Sep 5 2026: surprise creative campaign (Where Did Sacred Ground Land / newspaper / artifact / tiny universe / etc.) — see config/morning_surprise_campaign.json; date_plan overrides day-seeded pick when present. Hard law: if another metaphysical store would logically use this image, REJECT. TRUE RANDOM mix among eligible pool members each day (day-seeded) when no date_plan. EVERY morning plate must have Chicagoland #1 / Premier / Voted pride BAKED INTO the image.",
+  "notes": "Founder Fri Aug 14 2026 America/Chicago. Morning visual MIXED POOL \u2014 not 'new styles only for two weeks.' Include: (1) four approved art languages Magritte/Folk/Da Vinci/Einstein, (2) existing shop-made Thursday equal-card + artistic hero, (3) date-keyed queued flyers. Founder Aug 23 2026: Living Worlds series APPROVED \u2014 20 imaginative morning worlds mix in phased rollout; see config/morning_living_worlds.json + docs/MORNING-LIVING-WORLDS.md. Founder Sep 5 2026: surprise creative campaign (Where Did Sacred Ground Land / newspaper / artifact / tiny universe / etc.) \u2014 see config/morning_surprise_campaign.json; date_plan overrides day-seeded pick when present. Hard law: if another metaphysical store would logically use this image, REJECT. TRUE RANDOM mix among eligible pool members each day (day-seeded) when no date_plan. EVERY morning plate must have Chicagoland #1 / Premier / Voted pride BAKED INTO the image. Founder Sep 26 2026: 30 out-of-the-box morning concepts (config/morning_oct_out_of_the_box.json). Use as the IDEA. Still obey idea-first, on-photo type, footer-only contact, designed-in pride, no factory cream-pane.",
   "living_worlds_config": "config/morning_living_worlds.json",
   "surprise_campaign_config": "config/morning_surprise_campaign.json",
   "living_worlds_approved_at": "2026-08-23T18:52:00-05:00",
@@ -9,7 +9,7 @@
   "series_limits_set_at": "2026-08-14T14:29:00-05:00",
   "timezone": "America/Chicago",
   "selection_mode": "random_mixed",
-  "selection_note": "Founder Sep 17 2026: NEW dailies must start from one surprising visual idea (bar: Sep 20 birthday sun / another rotation around the sun). Do NOT default 9am to Magritte/Einstein chalkboard. Prefer morning_surprise_campaign date_plan when set. Else day-seeded shuffle among series-eligible pool ids that can still hold a real idea. Do NOT run Magritte→Folk→Da Vinci→Einstein as a rigid two-week block.",
+  "selection_note": "Founder Sep 17 2026: NEW dailies must start from one surprising visual idea (bar: Sep 20 birthday sun / another rotation around the sun). Do NOT default 9am to Magritte/Einstein chalkboard. Prefer morning_surprise_campaign date_plan when set. Else day-seeded shuffle among series-eligible pool ids that can still hold a real idea. Do NOT run Magritte\u2192Folk\u2192Da Vinci\u2192Einstein as a rigid two-week block.",
   "queue_and_reuse": {
     "keep_approaches": "Existing morning approaches and unused date-keyed queued plates stay in the mix alongside the four approved styles.",
     "never_reuse_urls": "Lifetime never-reuse via image_usage is absolute. Keeping an approach does NOT mean re-posting a used URL. Unused queued flyer URLs may be chosen; used URLs must fail closed (reuse_blocked) and force alternate / regenerate.",
@@ -29,19 +29,19 @@
       "surprise_tarot_oracle_card": 2,
       "surprise_tiny_universe": 2
     },
-    "notes": "Founder Aug 14 ~2:29–2:31pm CT: no single style id more than 1 consecutive Chicago day; at most ~2 uses of the same style id (family) in any rolling 7 Chicago days. Founder Aug 25 2026: folk_outsider_night max 1 in any rolling 7 Chicago days (never two folk days in the same week). Applies across the whole mixed pool.",
+    "notes": "Founder Aug 14 ~2:29\u20132:31pm CT: no single style id more than 1 consecutive Chicago day; at most ~2 uses of the same style id (family) in any rolling 7 Chicago days. Founder Aug 25 2026: folk_outsider_night max 1 in any rolling 7 Chicago days (never two folk days in the same week). Applies across the whole mixed pool.",
     "banned_series_limit_0": {
       "generic_mystic_ai_navy_template": {
         "series_limit": 0,
-        "reason": "Founder hated the Fri Aug 14 live navy equal-card mystic AI wellness starter pack — never generate again"
+        "reason": "Founder hated the Fri Aug 14 live navy equal-card mystic AI wellness starter pack \u2014 never generate again"
       },
       "bauhaus_swiss_goldleaf": {
         "series_limit": 0,
-        "reason": "Founder OUT — archived"
+        "reason": "Founder OUT \u2014 archived"
       },
       "victorian_botanical_ledger": {
         "series_limit": 0,
-        "reason": "Founder OUT — archived"
+        "reason": "Founder OUT \u2014 archived"
       }
     }
   },
@@ -67,7 +67,34 @@
     "surprise_department_window",
     "surprise_cabinet_curiosities",
     "surprise_tarot_oracle_card",
-    "surprise_crystal_city"
+    "surprise_crystal_city",
+    "oct_lost_and_found",
+    "oct_airline_ad",
+    "oct_record_album",
+    "oct_universe_calling",
+    "oct_trading_cards",
+    "oct_dollhouse",
+    "oct_train_station",
+    "oct_normal_is_closed",
+    "oct_time_machine",
+    "oct_price_is_right",
+    "oct_tarot_billboard",
+    "oct_cosmic_convenience",
+    "oct_museum_exhibit",
+    "oct_after_dark_morning",
+    "oct_catalog_1960s",
+    "oct_cosmic_diner",
+    "oct_viewmaster",
+    "oct_metaphysical_mugshots",
+    "oct_spiritual_er",
+    "oct_cosmic_laundromat",
+    "oct_pawn_shop",
+    "oct_action_figures",
+    "oct_waiting_room",
+    "oct_grocery",
+    "oct_through_the_ages",
+    "oct_tiny_people_crystals",
+    "oct_cosmic_newspaper"
   ],
   "rotation_order": [
     "magritte_floating_door",
@@ -83,11 +110,11 @@
     "surprise_tiny_universe",
     "surprise_universe_morning_meeting"
   ],
-  "rotation_note": "Legacy key — same as mixed_pool. Selection is random_mixed among series-eligible ids, not day-ordinal lockstep.",
+  "rotation_note": "Legacy key \u2014 same as mixed_pool. Selection is random_mixed among series-eligible ids, not day-ordinal lockstep.",
   "pride_on_morning": {
     "required": true,
     "every_plate": true,
-    "founder_emphasis": "EVERY single morning image must show Chicagoland #1 / Premier / Voted #1 baked into the picture — not caption-only.",
+    "founder_emphasis": "EVERY single morning image must show Chicagoland #1 / Premier / Voted #1 baked into the picture \u2014 not caption-only.",
     "slot_caption_option": "A",
     "on_image_preference": "Prefer visible #1 Chicagoland / Premier / Voted #1 on every plate. Style map below varies the Option letter so mornings are not identical.",
     "bake_missing_into_new_url": true,
@@ -105,118 +132,118 @@
       "id": "magritte_floating_door",
       "label": "Magritte floating door",
       "family": "magritte_floating_door",
-      "verdict": "LOVED — IN",
+      "verdict": "LOVED \u2014 IN",
       "status": "active",
       "pool": "approved_art",
       "concept_file": "05-magritte-floating-door.png",
-      "prompt_brief": "René Magritte surrealism: Sacred Ground eggplant-awning storefront (or shop door) floating in a bright cloudy blue sky over water; optional bowler-hatted figure on the roof facing away. Equal-weight clean cream modernist schedule panels (not mystic collage). Soft painterly sky, precise architecture, gold SACRED GROUND on awning. Whimsical, individual, never generic wellness AI.",
+      "prompt_brief": "Ren\u00e9 Magritte surrealism: Sacred Ground eggplant-awning storefront (or shop door) floating in a bright cloudy blue sky over water; optional bowler-hatted figure on the roof facing away. Equal-weight clean cream modernist schedule panels (not mystic collage). Soft painterly sky, precise architecture, gold SACRED GROUND on awning. Whimsical, individual, never generic wellness AI.",
       "pride_placement": "Cream pride band under the sky scene with clear #1 Chicagoland claim; circular sun logo bottom of photo area; website + phone in footer band."
     },
     "folk_outsider_night": {
       "id": "folk_outsider_night",
       "label": "Folk outsider night",
       "family": "folk_outsider_night",
-      "verdict": "YES — IN",
+      "verdict": "YES \u2014 IN",
       "status": "active",
       "pool": "approved_art",
       "concept_file": "06-folk-outsider-night.png",
-      "prompt_brief": "Hand-painted folk / outsider-art night: thick oil-pastel or acrylic texture, starry deep-blue sky, sun-face + moon-face, glowing Sacred Ground storefront with eggplant purple frame and warm crystal-shop interior light. Equal colorful schedule blocks on a wooden board (same visual weight). Naive joyful energy — shop-made, never polished Canva mystic template.",
+      "prompt_brief": "Hand-painted folk / outsider-art night: thick oil-pastel or acrylic texture, starry deep-blue sky, sun-face + moon-face, glowing Sacred Ground storefront with eggplant purple frame and warm crystal-shop interior light. Equal colorful schedule blocks on a wooden board (same visual weight). Naive joyful energy \u2014 shop-made, never polished Canva mystic template.",
       "pride_placement": "Bold warm banner with Voted #1 / Chicagoland pride; website + phone along the bottom ground; hearts / folk accents OK."
     },
     "davinci_storefront_sketch": {
       "id": "davinci_storefront_sketch",
       "label": "Leonardo da Vinci storefront sketch",
       "family": "davinci_storefront_sketch",
-      "verdict": "LIKE — IN",
+      "verdict": "LIKE \u2014 IN",
       "status": "active",
       "pool": "approved_art",
       "concept_file": "01-davinci-storefront-sketch.png",
-      "prompt_brief": "Leonardo da Vinci notebook: aged parchment / sepia wash, fine ink storefront elevation of Sacred Ground (eggplant awning, Campbell St energy), Vitruvian / geometry / anatomical margin sketches as decoration only. Equal-weight event columns under the shop drawing in dark ink or eggplant. Readable serif schedule — not tiny script. Shop-made invention, not stock mystic AI.",
+      "prompt_brief": "Leonardo da Vinci notebook: aged parchment / sepia wash, fine ink storefront elevation of Sacred Ground (eggplant awning, Campbell St energy), Vitruvian / geometry / anatomical margin sketches as decoration only. Equal-weight event columns under the shop drawing in dark ink or eggplant. Readable serif schedule \u2014 not tiny script. Shop-made invention, not stock mystic AI.",
       "pride_placement": "Hand-drawn scroll / ribbon with Premier or #1 Chicagoland pride; circular sun logo; website + phone in ink footer."
     },
     "einstein_chalkboard_map": {
       "id": "einstein_chalkboard_map",
       "label": "Einstein chalkboard map",
       "family": "einstein_chalkboard_map",
-      "verdict": "LIKE — IN (production must fix readability)",
+      "verdict": "LIKE \u2014 IN (production must fix readability)",
       "status": "active",
       "pool": "approved_art",
       "concept_file": "02-einstein-chalkboard-map.png",
       "readability_fix": "Founder Aug 14 ~2:14pm CT: concept was hard to read. Production MUST use larger thick chalk/white type, high contrast, calm dark slate behind schedule text (no dense equation noise under titles/times). Equations and relativity curves stay in margins only. Schedule columns equal weight, bold host + modality + time.",
-      "prompt_brief": "Einstein chalkboard / relativity energy map on dark slate. Chalk sketches of curves, E=mc², spirals ONLY in margins or above a clear schedule zone. READABILITY HARD RULE: primary schedule text is LARGE, thick white or bright chalk (min ~28–36pt feel), high contrast; leave a quieter chalkboard band behind event titles so chalk dust / formulas do NOT compete with names and times. Equal columns for each practitioner. Small Sacred Ground storefront chalk sketch OK in a corner. Never thin faint scribbles for the schedule.",
-      "pride_placement": "Large high-contrast chalk or colored pride line with Chicagoland’s #1 claim; website + phone in thick white chalk at bottom."
+      "prompt_brief": "Einstein chalkboard / relativity energy map on dark slate. Chalk sketches of curves, E=mc\u00b2, spirals ONLY in margins or above a clear schedule zone. READABILITY HARD RULE: primary schedule text is LARGE, thick white or bright chalk (min ~28\u201336pt feel), high contrast; leave a quieter chalkboard band behind event titles so chalk dust / formulas do NOT compete with names and times. Equal columns for each practitioner. Small Sacred Ground storefront chalk sketch OK in a corner. Never thin faint scribbles for the schedule.",
+      "pride_placement": "Large high-contrast chalk or colored pride line with Chicagoland\u2019s #1 claim; website + phone in thick white chalk at bottom."
     },
     "thursday_cards_shop_made": {
       "id": "thursday_cards_shop_made",
       "label": "Thursday equal-card shop-made",
       "family": "thursday_cards_shop_made",
-      "verdict": "IN — existing morning approach (keep in mix)",
+      "verdict": "IN \u2014 existing morning approach (keep in mix)",
       "status": "active",
       "pool": "legacy_shop_made",
       "layout": "thursday_cards",
-      "prompt_brief": "Sacred Ground shop-made Thursday-style morning flyer: colorful equal-weight stacked event cards, clear host + modality + time, rich jewel-tone or unexpected bold color field, circular sun logo, cream contact footer. Individual / hand-finished energy — NOT the banned navy mystic AI wellness collage (no floating singing bowls, glowing healing hands, Akashic prop books, Flower of Life wallpaper). Reference readability: Aug 6 gold-standard equal cards.",
-      "pride_placement": "Designed-in cream or gold pride band with clear #1 / Premier / Voted Chicagoland claim — baked into the plate, not a post-hoc sticker on an old URL."
+      "prompt_brief": "Sacred Ground shop-made Thursday-style morning flyer: colorful equal-weight stacked event cards, clear host + modality + time, rich jewel-tone or unexpected bold color field, circular sun logo, cream contact footer. Individual / hand-finished energy \u2014 NOT the banned navy mystic AI wellness collage (no floating singing bowls, glowing healing hands, Akashic prop books, Flower of Life wallpaper). Reference readability: Aug 6 gold-standard equal cards.",
+      "pride_placement": "Designed-in cream or gold pride band with clear #1 / Premier / Voted Chicagoland claim \u2014 baked into the plate, not a post-hoc sticker on an old URL."
     },
     "artistic_hero_shop_made": {
       "id": "artistic_hero_shop_made",
       "label": "Artistic single-event hero (shop-made)",
       "family": "artistic_hero_shop_made",
-      "verdict": "IN — existing morning approach (single-event only)",
+      "verdict": "IN \u2014 existing morning approach (single-event only)",
       "status": "active",
       "pool": "legacy_shop_made",
       "layout": "artistic_hero",
       "single_event_only": true,
-      "prompt_brief": "Sacred Ground artistic single-event hero morning flyer — one strong original illustration or photography-led composition with highly readable event title + time. Shop-individual color energy. FORBIDDEN when 2+ events share the day (equal cards required). Never the banned mystic AI navy template.",
+      "prompt_brief": "Sacred Ground artistic single-event hero morning flyer \u2014 one strong original illustration or photography-led composition with highly readable event title + time. Shop-individual color energy. FORBIDDEN when 2+ events share the day (equal cards required). Never the banned mystic AI navy template.",
       "pride_placement": "Premier / #1 Chicagoland pride baked into hero field or cream band; circular logo; website + phone footer."
     },
     "matisse_cut_paper_garden": {
       "id": "matisse_cut_paper_garden",
       "label": "Matisse cut-paper garden",
       "family": "matisse_cut_paper_garden",
-      "verdict": "CANDIDATE — awaiting Founder review (executed Aug 16 night on Aug 24 plate)",
+      "verdict": "CANDIDATE \u2014 awaiting Founder review (executed Aug 16 night on Aug 24 plate)",
       "status": "candidate",
       "pool": "candidate_art",
-      "prompt_brief": "Henri Matisse late cut-paper / gouache découpé: bold flat jewel-tone paper shapes (coral, teal, sunflower, eggplant, leaf green), organic leaf/flower silhouettes, Sacred Ground eggplant-awning storefront as flat colorful cut-paper collage. Equal-weight cream cut-paper schedule panels with thick dark readable type. Shop-made, never Victorian lace, never mystic AI dump.",
+      "prompt_brief": "Henri Matisse late cut-paper / gouache d\u00e9coup\u00e9: bold flat jewel-tone paper shapes (coral, teal, sunflower, eggplant, leaf green), organic leaf/flower silhouettes, Sacred Ground eggplant-awning storefront as flat colorful cut-paper collage. Equal-weight cream cut-paper schedule panels with thick dark readable type. Shop-made, never Victorian lace, never mystic AI dump.",
       "pride_placement": "Bold cut-paper banner with Premier / #1 Chicagoland; circular sun logo; cream footer website + phone."
     },
     "surprise_where_landed": {
       "id": "surprise_where_landed",
       "label": "Where Did Sacred Ground Land Today?",
       "family": "surprise_where_landed",
-      "verdict": "IN — Founder Sep 5 2026 surprise campaign",
+      "verdict": "IN \u2014 Founder Sep 5 2026 surprise campaign",
       "status": "active",
       "pool": "surprise_campaign",
       "layout": "thursday_cards",
-      "prompt_brief": "Surreal editorial photograph: the REAL Sacred Ground storefront (eggplant-purple awning, tan stone, white SACRED GROUND lettering) mysteriously relocated somewhere that makes no sense — refrigerator, peony, seashell, typewriter key, walnut, bird nest, autumn leaf, lighthouse, etc. Everyone in-frame acts like this is normal. LOOK WHERE SACRED GROUND LANDED TODAY / SOMEHOW WE'RE OPEN. Equal readable TODAY AT SACRED GROUND schedule. Photoreal. Hard law: if another metaphysical store would use this image, reject. No purple galaxy sludge.",
+      "prompt_brief": "Surreal editorial photograph: the REAL Sacred Ground storefront (eggplant-purple awning, tan stone, white SACRED GROUND lettering) mysteriously relocated somewhere that makes no sense \u2014 refrigerator, peony, seashell, typewriter key, walnut, bird nest, autumn leaf, lighthouse, etc. Everyone in-frame acts like this is normal. LOOK WHERE SACRED GROUND LANDED TODAY / SOMEHOW WE'RE OPEN. Equal readable TODAY AT SACRED GROUND schedule. Photoreal. Hard law: if another metaphysical store would use this image, reject. No purple galaxy sludge.",
       "pride_placement": "Boutique pride band + circular logo + shopsacredground.com + 847-749-3922"
     },
     "surprise_newspaper_daily": {
       "id": "surprise_newspaper_daily",
       "label": "The Sacred Ground Daily newspaper",
       "family": "surprise_newspaper_daily",
-      "verdict": "IN — Founder Sep 5 (prefer Mondays)",
+      "verdict": "IN \u2014 Founder Sep 5 (prefer Mondays)",
       "status": "active",
       "pool": "surprise_campaign",
       "layout": "thursday_cards",
-      "prompt_brief": "Absurdly beautiful old-world newspaper: THE SACRED GROUND DAILY. Huge playful headline. Today's practitioners as equal breaking-news columns with times. Cream paper, bold ink, unexpected color — not Canva mystic template.",
+      "prompt_brief": "Absurdly beautiful old-world newspaper: THE SACRED GROUND DAILY. Huge playful headline. Today's practitioners as equal breaking-news columns with times. Cream paper, bold ink, unexpected color \u2014 not Canva mystic template.",
       "pride_placement": "Masthead pride claim; footer website + phone"
     },
     "surprise_museum_artifact_3026": {
       "id": "surprise_museum_artifact_3026",
       "label": "Museum Artifact From the Future",
       "family": "surprise_museum_artifact_3026",
-      "verdict": "IN — Founder Sep 5 (prefer Tuesdays)",
+      "verdict": "IN \u2014 Founder Sep 5 (prefer Tuesdays)",
       "status": "active",
       "pool": "surprise_campaign",
       "layout": "thursday_cards",
-      "prompt_brief": "Year 3026 museum: glowing ancient artifact plaque Sacred Ground — [date]. Practitioners listed as archaeological labels for Reiki/Tarot/Akashic. Bright museum accents, not dark Blade Runner mud. Equal readable schedule.",
+      "prompt_brief": "Year 3026 museum: glowing ancient artifact plaque Sacred Ground \u2014 [date]. Practitioners listed as archaeological labels for Reiki/Tarot/Akashic. Bright museum accents, not dark Blade Runner mud. Equal readable schedule.",
       "pride_placement": "Exhibit label pride + footer contact"
     },
     "surprise_tiny_universe": {
       "id": "surprise_tiny_universe",
       "label": "Tiny Sacred Ground Universe",
       "family": "surprise_tiny_universe",
-      "verdict": "IN — Founder Sep 5 (max 2/month)",
+      "verdict": "IN \u2014 Founder Sep 5 (max 2/month)",
       "status": "active",
       "pool": "surprise_campaign",
       "layout": "thursday_cards",
@@ -227,52 +254,52 @@
       "id": "surprise_universe_morning_meeting",
       "label": "Universe's Morning Meeting",
       "family": "surprise_universe_morning_meeting",
-      "verdict": "IN — Founder Sep 5 loved",
+      "verdict": "IN \u2014 Founder Sep 5 loved",
       "status": "active",
       "pool": "surprise_campaign",
       "layout": "thursday_cards",
-      "prompt_brief": "Sun, Moon, Earth, Saturn, angels, stars around a conference table. Screen: TODAY'S AGENDA Sacred Ground [date] + equal practitioners. Bright colorful boardroom comedy — not purple void.",
+      "prompt_brief": "Ridiculously wonderful conference table: aliens, angels, Bigfoot, a monk, an Egyptian deity and a Victorian ghost (change the cast each use) reviewing today's agenda. Bright colorful boardroom, coral/teal/gold \u2014 not purple void. Presentation screen is a CLEAN blank agenda board for later type. Equal rows. Photoreal editorial comedy. No letters, no logo.",
       "pride_placement": "Screen corner pride + footer"
     },
     "surprise_hollywood_poster": {
       "id": "surprise_hollywood_poster",
       "label": "1940s Hollywood Movie Poster",
       "family": "surprise_hollywood_poster",
-      "verdict": "LIKE — IN (Founder Sep 12 2026: promoted to the approved roster with Einstein / Da Vinci / Magritte / Folk)",
+      "verdict": "LIKE \u2014 IN (Founder Sep 12 2026: promoted to the approved roster with Einstein / Da Vinci / Magritte / Folk)",
       "status": "active",
       "pool": "approved_art",
       "layout": "thursday_cards",
-      "prompt_brief": "1940s Hollywood one-sheet: grand painted movie poster, SACRED GROUND PRESENTS… [weekday] in marquee lettering. Practitioners billed as equal starring credits with real names and times — never a hero star plus tiny secondary credit. Glamorous, tongue-in-cheek painted poster color: coral, teal, sunflower gold, deep eggplant, strong contrast. Real Sacred Ground storefront or interior cues when they fit the poster. Shop-made invention, never stock mystic AI.",
+      "prompt_brief": "1940s Hollywood one-sheet: grand painted movie poster, SACRED GROUND PRESENTS\u2026 [weekday] in marquee lettering. Practitioners billed as equal starring credits with real names and times \u2014 never a hero star plus tiny secondary credit. Glamorous, tongue-in-cheek painted poster color: coral, teal, sunflower gold, deep eggplant, strong contrast. Real Sacred Ground storefront or interior cues when they fit the poster. Shop-made invention, never stock mystic AI.",
       "pride_placement": "Pride in the poster billing block or top banner (#1 / Premier / Voted Chicagoland); circular sun logo plus website + phone in the cream footer band.",
-      "readability_fix": "Poster type must stay large and high contrast — credits legible at thumbnail size. Decorative distressing and film-grain never over the schedule text."
+      "readability_fix": "Poster type must stay large and high contrast \u2014 credits legible at thumbnail size. Decorative distressing and film-grain never over the schedule text."
     },
     "surprise_layer_cake": {
       "id": "surprise_layer_cake",
       "label": "Elaborate Layer Cake",
       "family": "surprise_layer_cake",
-      "verdict": "IN — Founder Sep 5",
+      "verdict": "IN \u2014 Founder Sep 5",
       "status": "active",
       "pool": "surprise_campaign",
       "layout": "thursday_cards",
-      "prompt_brief": "Enormous ornate cake; each layer a miniature Sacred Ground scene. Schedule piped as icing equal bands. Editorial fashion photography — stop-scroll absurdity.",
+      "prompt_brief": "Enormous ornate cake; each layer a miniature Sacred Ground scene. Schedule piped as icing equal bands. Editorial fashion photography \u2014 stop-scroll absurdity.",
       "pride_placement": "Cake stand band pride + footer"
     },
     "surprise_secret_door": {
       "id": "surprise_secret_door",
       "label": "The Secret Door",
       "family": "surprise_secret_door",
-      "verdict": "IN — Founder Sep 5",
+      "verdict": "IN \u2014 Founder Sep 5",
       "status": "active",
       "pool": "surprise_campaign",
       "layout": "thursday_cards",
-      "prompt_brief": "Ornate door somewhere impossible; golden light. Plaque: TODAY, BEHIND THE DOOR… equal practitioners. Simple powerful photoreal.",
+      "prompt_brief": "Ornate door somewhere impossible; golden light. Plaque: TODAY, BEHIND THE DOOR\u2026 equal practitioners. Simple powerful photoreal.",
       "pride_placement": "Plaque pride line + footer"
     },
     "surprise_cosmic_subway": {
       "id": "surprise_cosmic_subway",
       "label": "Cosmic Subway Map",
       "family": "surprise_cosmic_subway",
-      "verdict": "IN — Founder Sep 5",
+      "verdict": "IN \u2014 Founder Sep 5",
       "status": "active",
       "pool": "surprise_campaign",
       "layout": "thursday_cards",
@@ -283,7 +310,7 @@
       "id": "surprise_vending_machine",
       "label": "Mystical Vending Machine",
       "family": "surprise_vending_machine",
-      "verdict": "IN — Founder Sep 5",
+      "verdict": "IN \u2014 Founder Sep 5",
       "status": "active",
       "pool": "surprise_campaign",
       "layout": "thursday_cards",
@@ -294,18 +321,18 @@
       "id": "surprise_fortune_cookie",
       "label": "Fortune Cookie",
       "family": "surprise_fortune_cookie",
-      "verdict": "IN — Founder Sep 5",
+      "verdict": "IN \u2014 Founder Sep 5",
       "status": "active",
       "pool": "surprise_campaign",
       "layout": "thursday_cards",
-      "prompt_brief": "Extreme close-up enormous fortune cookie; paper fortune YOUR [weekday] HOLDS… equal practitioner lines. Simple Vogue product ad.",
+      "prompt_brief": "Extreme close-up enormous fortune cookie; paper fortune YOUR [weekday] HOLDS\u2026 equal practitioner lines. Simple Vogue product ad.",
       "pride_placement": "Fortune strip pride + footer"
     },
     "surprise_board_game": {
       "id": "surprise_board_game",
       "label": "Sacred Ground Board Game",
       "family": "surprise_board_game",
-      "verdict": "IN — Founder Sep 5",
+      "verdict": "IN \u2014 Founder Sep 5",
       "status": "active",
       "pool": "surprise_campaign",
       "layout": "thursday_cards",
@@ -316,7 +343,7 @@
       "id": "surprise_department_window",
       "label": "Department Store Window",
       "family": "surprise_department_window",
-      "verdict": "IN — Founder Sep 5",
+      "verdict": "IN \u2014 Founder Sep 5",
       "status": "active",
       "pool": "surprise_campaign",
       "layout": "thursday_cards",
@@ -327,7 +354,7 @@
       "id": "surprise_cabinet_curiosities",
       "label": "Cabinet of Curiosities",
       "family": "surprise_cabinet_curiosities",
-      "verdict": "IN — Founder Sep 5",
+      "verdict": "IN \u2014 Founder Sep 5",
       "status": "active",
       "pool": "surprise_campaign",
       "layout": "thursday_cards",
@@ -338,7 +365,7 @@
       "id": "surprise_tarot_oracle_card",
       "label": "Sacred Ground Tarot Card",
       "family": "surprise_tarot_oracle_card",
-      "verdict": "IN — Founder Sep 5 (max 2/month; colorful Media Library refs only)",
+      "verdict": "IN \u2014 Founder Sep 5 (max 2/month; colorful Media Library refs only)",
       "status": "active",
       "pool": "surprise_campaign",
       "layout": "thursday_cards",
@@ -349,12 +376,321 @@
       "id": "surprise_crystal_city",
       "label": "Giant Crystal City",
       "family": "surprise_crystal_city",
-      "verdict": "IN — Founder Sep 5",
+      "verdict": "IN \u2014 Founder Sep 5",
       "status": "active",
       "pool": "surprise_campaign",
       "layout": "thursday_cards",
       "prompt_brief": "Bright quartz skyscraper city (NOT dark Blade Runner). Sacred Ground glowing between towers; equal luminous practitioner signs.",
       "pride_placement": "Neon pride sign + footer"
+    },
+    "oct_lost_and_found": {
+      "id": "oct_lost_and_found",
+      "label": "The Universe's Lost & Found",
+      "family": "oct_lost_and_found",
+      "verdict": "IN \u2014 Founder Sep 26 2026 bank #17",
+      "status": "active",
+      "pool": "oct_out_of_the_box",
+      "layout": "on_photo_schedule",
+      "prompt_brief": "Photoreal editorial: a surreal Lost & Found counter that is clearly a shop counter, warm wood and jewel light (teal, amber, coral). Handwritten claim tickets and curious lost objects (a jar labeled quiet, a compass, a small singing bowl as ONE object among others \u2014 not a wellness collage). Nobody shocked. Leave a clean counter run of equal blank claim tickets for later type. Colorful, bright. No letters, no numbers, no logo, no Death. If another crystal shop would post this, reject.",
+      "pride_placement": "Gold shop-award seal on the counter glass, empty of text for later type; cream footer website + phone."
+    },
+    "oct_airline_ad": {
+      "id": "oct_airline_ad",
+      "label": "1970s Airline Advertisement",
+      "family": "oct_airline_ad",
+      "verdict": "IN \u2014 Founder Sep 26 bank #6",
+      "status": "active",
+      "pool": "oct_out_of_the_box",
+      "layout": "on_photo_schedule",
+      "prompt_brief": "1970s airline travel poster painted, not Canva mystic. Stewardess-era color: sunflower, teal, coral, eggplant. A painted Sacred Ground eggplant-awning shop as the destination instead of Paris. Giant blank destination board with three equal clean panels for later type. Bright, stop-scroll. No letters, no prices, no logo.",
+      "pride_placement": "Airline wing-seal pride baked in; cream footer contact."
+    },
+    "oct_record_album": {
+      "id": "oct_record_album",
+      "label": "Sacred Ground Record Album",
+      "family": "oct_record_album",
+      "verdict": "IN \u2014 Founder Sep 26 bank #21",
+      "status": "active",
+      "pool": "oct_out_of_the_box",
+      "layout": "on_photo_schedule",
+      "prompt_brief": "Square vintage album sleeve, disco-psych 1970s: chrome, magenta, gold, teal. A glowing shop doorway as the cover art. Lower third is a clean track-list field (blank) for later type. Colorful, individual. No letters, no logo, no mystic navy template.",
+      "pride_placement": "Record-label seal with pride; cream footer."
+    },
+    "oct3_hp_owl_keep": {
+      "id": "oct3_hp_owl_keep",
+      "label": "Oct 3 KEEP \u2014 owl + kids shop",
+      "family": "oct3_hp_owl_keep",
+      "verdict": "KEEP \u2014 Founder Sep 26",
+      "status": "locked_keep",
+      "pool": "founder_keep",
+      "layout": "on_photo_schedule",
+      "prompt_brief": "Do not regenerate. Founder keep: barn owl on eggplant awning, kids with wands, shop windows. Castle is the NIGHT plate.",
+      "pride_placement": "Existing plate; do not remake for pride."
+    },
+    "oct_universe_calling": {
+      "id": "oct_universe_calling",
+      "label": "The Universe Is Calling",
+      "family": "oct_universe_calling",
+      "verdict": "IN \u2014 Founder Sep 26 bank #10",
+      "status": "active",
+      "pool": "oct_out_of_the_box",
+      "layout": "on_photo_schedule",
+      "single_event_ok": true,
+      "prompt_brief": "Photoreal: magnificent vintage rotary telephone in a surreal jewel-tone landscape (coral dunes, teal sky). Receiver floating, cord disappearing into stars. One clean blank note card beside the phone for later type. Bright, not purple void. No letters, no logo.",
+      "pride_placement": "Small gold seal on the phone base; cream footer."
+    },
+    "oct_trading_cards": {
+      "id": "oct_trading_cards",
+      "label": "Sacred Ground Trading Cards",
+      "family": "oct_trading_cards",
+      "verdict": "IN \u2014 Founder Sep 26 bank #13",
+      "status": "active",
+      "pool": "oct_out_of_the_box",
+      "layout": "on_photo_schedule",
+      "prompt_brief": "Two elaborate fantasy collector cards side by side, IDENTICAL size, laid on a colorful velvet-free table (sunflower cloth, teal ink). Ornate borders, jewel illustration fields, blank nameplates for later type. Not baseball cheese. Not mystic navy. No letters, no Death, no logo.",
+      "pride_placement": "Holographic pride stamp on each card; cream footer."
+    },
+    "oct_dollhouse": {
+      "id": "oct_dollhouse",
+      "label": "Sacred Ground Dollhouse",
+      "family": "oct_dollhouse",
+      "verdict": "IN \u2014 Founder Sep 26 bank #5",
+      "status": "active",
+      "pool": "oct_out_of_the_box",
+      "layout": "on_photo_schedule",
+      "prompt_brief": "Wes Anderson miniature: the Sacred Ground shop as an intricate open dollhouse, eggplant awning on the facade. Three rooms equally lit (massage table, tarot table, meditation cushions). Leave a clean equal plaque under each room for later type. Colorful, precise, shop-made. No letters, no logo.",
+      "pride_placement": "Tiny gold pride plaque on the dollhouse roof; cream footer."
+    },
+    "oct_train_station": {
+      "id": "oct_train_station",
+      "label": "Sacred Ground Train Station",
+      "family": "oct_train_station",
+      "verdict": "IN \u2014 Founder Sep 26 bank #19",
+      "status": "active",
+      "pool": "oct_out_of_the_box",
+      "layout": "on_photo_schedule",
+      "prompt_brief": "Grand European train terminal, morning gold light, teal glass roof, coral banners. A huge departure board with three equal blank rows for later type. Sacred Ground eggplant-awning kiosk on the platform. Photoreal, colorful. No letters, no logo.",
+      "pride_placement": "Station seal pride; cream footer."
+    },
+    "oct_normal_is_closed": {
+      "id": "oct_normal_is_closed",
+      "label": "Normal Is Closed Today",
+      "family": "oct_normal_is_closed",
+      "verdict": "IN \u2014 Founder Sep 26 bank #30",
+      "status": "active",
+      "pool": "oct_out_of_the_box",
+      "layout": "on_photo_schedule",
+      "prompt_brief": "Photoreal morning sunlight: an enormous amethyst geode sitting in the middle of downtown Arlington Heights as if it fell from the sky. Tiny people gathered around it. In the background the REAL Sacred Ground storefront (tan stone, eggplant-purple awning, white SACRED GROUND lettering). Absurd and beautiful. Leave a clean sidewalk plaque for later type. No letters except the awning name. No zodiac on the building. No logo invented.",
+      "pride_placement": "Pride on the sidewalk plaque; cream footer."
+    },
+    "oct_time_machine": {
+      "id": "oct_time_machine",
+      "label": "The Sacred Ground Time Machine",
+      "family": "oct_time_machine",
+      "verdict": "IN \u2014 Founder Sep 26 bank #28",
+      "status": "active",
+      "pool": "oct_out_of_the_box",
+      "layout": "on_photo_schedule",
+      "prompt_brief": "Giant Jules Verne brass-and-glass time machine, coral velvet, teal gauges, gold morning light. Destination dial blank for later type. Through the portal, three equal glimpses of shop rooms. Colorful steampunk wonder, not brown sludge. No letters, no logo, no zodiac glyph on a building.",
+      "pride_placement": "Machine nameplate pride; cream footer."
+    },
+    "oct_price_is_right": {
+      "id": "oct_price_is_right",
+      "label": "The Metaphysical Price Is Right",
+      "family": "oct_price_is_right",
+      "verdict": "IN \u2014 Founder Sep 26 bank #2",
+      "status": "active",
+      "pool": "oct_out_of_the_box",
+      "layout": "on_photo_schedule",
+      "prompt_brief": "1970s game-show set, wildly colorful. Crystal podiums of equal size. No dollar amounts anywhere. Campy, bright. No letters, no logo.",
+      "pride_placement": "Show-seal pride; cream footer."
+    },
+    "oct_tarot_billboard": {
+      "id": "oct_tarot_billboard",
+      "label": "Sacred Ground Tarot Billboard",
+      "family": "oct_tarot_billboard",
+      "verdict": "IN \u2014 Founder Sep 26 bank #3 (never Death; max 2/month with other tarot styles)",
+      "status": "active",
+      "pool": "oct_out_of_the_box",
+      "layout": "on_photo_schedule",
+      "prompt_brief": "Enormous colorful tarot card on a real Chicagoland highway billboard. NEVER the Death card. Leave blank title band for later type. Bright, not purple sludge.",
+      "pride_placement": "Billboard corner pride; cream footer."
+    },
+    "oct_cosmic_convenience": {
+      "id": "oct_cosmic_convenience",
+      "label": "The Cosmic Convenience Store",
+      "family": "oct_cosmic_convenience",
+      "verdict": "IN \u2014 Founder Sep 26 bank #7",
+      "status": "active",
+      "pool": "oct_out_of_the_box",
+      "layout": "on_photo_schedule",
+      "prompt_brief": "Late-night convenience store between Earth and the Pleiades, neon coral/teal, eggplant awning. Coolers of intuition not Slurpees. Leave equal blank cooler labels. No letters, no logo.",
+      "pride_placement": "Window seal pride; cream footer."
+    },
+    "oct_museum_exhibit": {
+      "id": "oct_museum_exhibit",
+      "label": "Sacred Ground Museum Exhibit",
+      "family": "oct_museum_exhibit",
+      "verdict": "IN \u2014 Founder Sep 26 bank #8",
+      "status": "active",
+      "pool": "oct_out_of_the_box",
+      "layout": "on_photo_schedule",
+      "prompt_brief": "Grand bright museum gallery, velvet rope around a blank TODAY'S EVENTS plinth. Antiquities colorful not muddy. No letters, no logo.",
+      "pride_placement": "Exhibit label pride; cream footer."
+    },
+    "oct_after_dark_morning": {
+      "id": "oct_after_dark_morning",
+      "label": "After Dark \u2014 Morning Edition",
+      "family": "oct_after_dark_morning",
+      "verdict": "IN \u2014 Founder Sep 26 bank #11",
+      "status": "active",
+      "pool": "oct_out_of_the_box",
+      "layout": "on_photo_schedule",
+      "prompt_brief": "1940s film-noir photograph with ONE jewel-color supernatural clue. Blank case-file cards equal size. Never Death. No letters, no logo.",
+      "pride_placement": "File-stamp pride; cream footer."
+    },
+    "oct_catalog_1960s": {
+      "id": "oct_catalog_1960s",
+      "label": "Metaphysical Department Store Catalog",
+      "family": "oct_catalog_1960s",
+      "verdict": "IN \u2014 Founder Sep 26 bank #14",
+      "status": "active",
+      "pool": "oct_out_of_the_box",
+      "layout": "on_photo_schedule",
+      "prompt_brief": "1960s Sears catalog page gone metaphysical, coral/teal print. Equal blank product blocks. No letters, no prices, no logo.",
+      "pride_placement": "Catalog masthead pride; cream footer."
+    },
+    "oct_cosmic_diner": {
+      "id": "oct_cosmic_diner",
+      "label": "The Cosmic Diner",
+      "family": "oct_cosmic_diner",
+      "verdict": "IN \u2014 Founder Sep 26 bank #15",
+      "status": "active",
+      "pool": "oct_out_of_the_box",
+      "layout": "on_photo_schedule",
+      "prompt_brief": "Chrome 1950s diner floating in a bright jewel sky. Blank menu board with equal specials. Crystals as sugar. No letters, no logo.",
+      "pride_placement": "Menu-header pride; cream footer."
+    },
+    "oct_viewmaster": {
+      "id": "oct_viewmaster",
+      "label": "Sacred Ground View-Master",
+      "family": "oct_viewmaster",
+      "verdict": "IN \u2014 Founder Sep 26 bank #16",
+      "status": "active",
+      "pool": "oct_out_of_the_box",
+      "layout": "on_photo_schedule",
+      "prompt_brief": "Giant vintage View-Master, circular reel frames blank for later type. Nostalgic coral/teal. No letters, no logo.",
+      "pride_placement": "Viewer badge pride; cream footer."
+    },
+    "oct_metaphysical_mugshots": {
+      "id": "oct_metaphysical_mugshots",
+      "label": "Metaphysical Mugshots",
+      "family": "oct_metaphysical_mugshots",
+      "verdict": "IN \u2014 Founder Sep 26 bank #18",
+      "status": "active",
+      "pool": "oct_out_of_the_box",
+      "layout": "on_photo_schedule",
+      "prompt_brief": "Cheeky vintage police mugshots of objects only (crystal, deck, pendulum) \u2014 NEVER people as criminals. Equal frames. No letters, no Death, no logo.",
+      "pride_placement": "Booking-card pride; cream footer."
+    },
+    "oct_spiritual_er": {
+      "id": "oct_spiritual_er",
+      "label": "The Spiritual Emergency Room",
+      "family": "oct_spiritual_er",
+      "verdict": "IN \u2014 Founder Sep 26 bank #20",
+      "status": "active",
+      "pool": "oct_out_of_the_box",
+      "layout": "on_photo_schedule",
+      "prompt_brief": "Whimsical not medical: crystal on a tiny hospital bed, jewel-tone ward. Blank chart boards equal. No letters, no logo, no gore.",
+      "pride_placement": "Chart-stamp pride; cream footer."
+    },
+    "oct_cosmic_laundromat": {
+      "id": "oct_cosmic_laundromat",
+      "label": "The Cosmic Laundromat",
+      "family": "oct_cosmic_laundromat",
+      "verdict": "IN \u2014 Founder Sep 26 bank #22",
+      "status": "active",
+      "pool": "oct_out_of_the_box",
+      "layout": "on_photo_schedule",
+      "prompt_brief": "Retro midnight laundromat, galaxies in machines, coral/teal neon. Blank machine doors for type. No letters, no logo.",
+      "pride_placement": "Change-machine pride; cream footer."
+    },
+    "oct_pawn_shop": {
+      "id": "oct_pawn_shop",
+      "label": "The Metaphysical Pawn Shop",
+      "family": "oct_pawn_shop",
+      "verdict": "IN \u2014 Founder Sep 26 bank #23",
+      "status": "active",
+      "pool": "oct_out_of_the_box",
+      "layout": "on_photo_schedule",
+      "prompt_brief": "Packed impossible-artifact storefront, eggplant awning. Blank price-of-the-soul tags. No dollar prices. No letters, no logo.",
+      "pride_placement": "Window seal pride; cream footer."
+    },
+    "oct_action_figures": {
+      "id": "oct_action_figures",
+      "label": "Sacred Ground Action Figures",
+      "family": "oct_action_figures",
+      "verdict": "IN \u2014 Founder Sep 26 bank #24",
+      "status": "active",
+      "pool": "oct_out_of_the_box",
+      "layout": "on_photo_schedule",
+      "prompt_brief": "Equal boxed collectible figures with accessories, colorful packaging. Blank nameplates. Not cheesy. No letters, no logo.",
+      "pride_placement": "Box-badge pride; cream footer."
+    },
+    "oct_waiting_room": {
+      "id": "oct_waiting_room",
+      "label": "The Universe's Waiting Room",
+      "family": "oct_waiting_room",
+      "verdict": "IN \u2014 Founder Sep 26 bank #25",
+      "status": "active",
+      "pool": "oct_out_of_the_box",
+      "layout": "on_photo_schedule",
+      "prompt_brief": "Angels, aliens, fairies, ghosts, monks, humans waiting together. Bright, funny. Blank NOW SERVING board. No letters, no logo.",
+      "pride_placement": "Clinic seal pride; cream footer."
+    },
+    "oct_grocery": {
+      "id": "oct_grocery",
+      "label": "Metaphysical Grocery Store",
+      "family": "oct_grocery",
+      "verdict": "IN \u2014 Founder Sep 26 bank #26",
+      "status": "active",
+      "pool": "oct_out_of_the_box",
+      "layout": "on_photo_schedule",
+      "prompt_brief": "Vintage grocery aisle, jewel jars, blank labels for later type. Colorful. No letters, no prices, no logo.",
+      "pride_placement": "Aisle-sign pride; cream footer."
+    },
+    "oct_through_the_ages": {
+      "id": "oct_through_the_ages",
+      "label": "Sacred Ground Through the Ages",
+      "family": "oct_through_the_ages",
+      "verdict": "IN \u2014 Founder Sep 26 bank #27",
+      "status": "active",
+      "pool": "oct_out_of_the_box",
+      "layout": "on_photo_schedule",
+      "prompt_brief": "The REAL Sacred Ground eggplant-awning shop existing in a different historical era each use. Blank era plaque. Colorful, photoreal. No letters except awning name. No logo invented.",
+      "pride_placement": "Era-plaque pride; cream footer."
+    },
+    "oct_tiny_people_crystals": {
+      "id": "oct_tiny_people_crystals",
+      "label": "Tiny People, Giant Crystals",
+      "family": "oct_tiny_people_crystals",
+      "verdict": "IN \u2014 Founder Sep 26 bank #29",
+      "status": "active",
+      "pool": "oct_out_of_the_box",
+      "layout": "on_photo_schedule",
+      "prompt_brief": "Photoreal miniature people climbing enormous bright amethyst/quartz. Leave clean crystal faces for type. Spectacular scale. No letters, no logo, no purple sludge.",
+      "pride_placement": "Tiny banner pride; cream footer."
+    },
+    "oct_cosmic_newspaper": {
+      "id": "oct_cosmic_newspaper",
+      "label": "Sacred Ground Cosmic Newspaper",
+      "family": "oct_cosmic_newspaper",
+      "verdict": "IN \u2014 Founder Sep 26 bank #1",
+      "status": "active",
+      "pool": "oct_out_of_the_box",
+      "layout": "on_photo_schedule",
+      "prompt_brief": "1940s newspaper from another dimension, cream paper, galactic ink accents. Blank equal columns. No letters painted (PIL later). No logo.",
+      "pride_placement": "Masthead pride; cream footer."
     }
   },
   "archived_out": {
@@ -364,7 +700,7 @@
       "verdict": "OUT",
       "status": "archived",
       "concept_file": "03-bauhaus-swiss-goldleaf.png",
-      "reason": "Founder did not like — banned from morning rotation"
+      "reason": "Founder did not like \u2014 banned from morning rotation"
     },
     "victorian_botanical_ledger": {
       "id": "victorian_botanical_ledger",
@@ -372,7 +708,7 @@
       "verdict": "OUT",
       "status": "archived",
       "concept_file": "04-victorian-botanical-ledger.png",
-      "reason": "Founder OUT — banned from morning rotation"
+      "reason": "Founder OUT \u2014 banned from morning rotation"
     }
   },
   "banned_forever": [
@@ -388,7 +724,9 @@
     "surprise_hollywood_poster": {
       "promoted_at": "2026-09-12T22:49:46Z",
       "by": "Founder",
-      "note": "Founder Sep 12 2026: “lets add the 40s poster to the roster with einstein davinci”. Promoted from surprise_campaign to approved_art after she picked it for Mon Sep 14. Style id keeps its surprise_ prefix so existing history stays valid."
+      "note": "Founder Sep 12 2026: \u201clets add the 40s poster to the roster with einstein davinci\u201d. Promoted from surprise_campaign to approved_art after she picked it for Mon Sep 14. Style id keeps its surprise_ prefix so existing history stays valid."
     }
-  }
+  },
+  "oct_out_of_the_box_config": "config/morning_oct_out_of_the_box.json",
+  "oct_out_of_the_box_approved_at": "2026-09-26T10:00:00-05:00"
 }
