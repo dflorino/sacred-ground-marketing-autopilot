@@ -1,3 +1,7 @@
+## 2026-10-04 — Fernando site lock pack
+
+Founder: load the shop locks into Fernando. Live slug `sg-founder-locks` on Plugin Manager (required rule, no keys). Copy lives on maintenance `reel-building/FERNANDO-SKILLS.md`. Fernando looks up; Bookie writes dates.
+
 ## 2026-10-03 — Phone Cursor reads GitHub, not Mac pins
 
 Founder asked for one phone agent current on social, staff, Bookie,
