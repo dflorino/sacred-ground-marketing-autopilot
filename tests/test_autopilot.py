@@ -1051,7 +1051,7 @@ class AutopilotTests(unittest.TestCase):
 
     def test_meditation_host_iso_week_rotation_and_shared_block(self) -> None:
         """Roster still rotates for ops; public captions stay anonymous + shared."""
-        from marketing import captions
+        from marketing import captions, classify
         from marketing.meditation import (
             MeditationHost,
             host_for_day,
@@ -1134,6 +1134,36 @@ class AutopilotTests(unittest.TestCase):
         self.assertIn(anonymous, week_text)
         self.assertNotIn("Amber", week_text)
         self.assertNotIn("With ", week_text)
+
+        # TEC themed title + series slug still counts as community meditation
+        themed = Event(
+            id=23812,
+            title="Meditation with Lisa Maria – Free Community Event",
+            start_date="2026-10-06 19:00:00",
+            end_date="2026-10-06 20:00:00",
+            url="https://shopsacredground.com/event/meditation-free-community-event-8/",
+            description="Step away from the noise and into shared stillness.",
+            cost="Free",
+        )
+        self.assertTrue(classify.is_community_meditation(themed))
+        afternoon_med = captions.caption_afternoon_spotlight(
+            themed, "facebook", date(2026, 10, 5)
+        )["text"]
+        self.assertIn("Free Community Meditation", afternoon_med)
+        self.assertIn("Doors close at 7:05pm", afternoon_med)
+        self.assertIn("All are welcome", afternoon_med)
+        self.assertIn("No sign-up needed", afternoon_med)
+        self.assertNotIn("Lisa Maria", afternoon_med)
+        self.assertNotIn("Lisa", afternoon_med)
+        lions_named = Event(
+            id=25926,
+            title="Lions Gate Meditation with Eve Free Community Event",
+            start_date="2026-08-08 20:00:00",
+            end_date="2026-08-08 21:00:00",
+            url="https://shopsacredground.com/event/lions-gate-meditation-with-eve/",
+            cost="Free",
+        )
+        self.assertFalse(classify.is_community_meditation(lions_named))
 
     def test_morning_lineup_is_full_today_plus_tomorrow(self) -> None:
         """Sun 9am: Janel + Randa/Richard + Quantum, then Monday — today-first."""
