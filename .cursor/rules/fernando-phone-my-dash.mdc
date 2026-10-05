@@ -1,40 +1,43 @@
 ---
-description: HARD — Founder phone agents are My Dash + Ask Fernando only; never a public shared dash
+description: HARD — Founder agent names (Oct 4, 2026). Jr is all of Cursor. Phoenix is retired.
 alwaysApply: true
 ---
 
-# Fernando on the Founder’s phone (HARD — Oct 3, 2026)
+# Founder agent names (HARD — Oct 4, 2026)
 
-On her phone he is **Phoenix**, not Junior / Jr. Phone path is **her WordPress login**, not a guest board.
+Say these names. Do not invent new ones. Do not call Cursor Phoenix. Never say “shop.”
 
-## What is live
+| She says | What it is |
+|---|---|
+| **Jr** | All Cursor agents (Mac + phone). Mini-me. Dates, GitHub, this desk. |
+| **Chat** | ChatGPT |
+| **Claude** | Claude |
+| **Instinct** | Instinct (iMessage + WordPress key + GitHub) |
+| **Fernando** | Ask Fernando on My Dash. Optional. She may skip him. |
+| **Coach** | Coach (the plugin / product). Not Fernando’s nickname. |
 
-- Home-screen icon: big **M** named **Phoenix** — that is his name on the phone
-- Opens **her** My Dash (`wp-admin` → **ML Plugin MGR** → **My Dash** → **View My Dash**)
-- Agent tile: **Ask Fernando** (suit / orange chat)
-- Plugin Manager, ML Desktop, Canvas, Coach, FluentMCP already active on shopsacredground
-- Friday Oct 2 video: [Something Wonderful Is Happening...](https://www.youtube.com/watch?v=ER3Y1eplG48) — ops, not a Galactic Reel
+## The site (two words)
 
-## Do
+| Say | What it is |
+|---|---|
+| **WordPress** | The back end. wp-admin, My Dash, Plugin Manager, keys, calendar tools. |
+| **The live website** | The customer-facing side. shopsacredground.com as a guest sees it. |
 
-- Point her to **View My Dash** → **Ask Fernando**
-- Add to Home Screen is **Safari Share**, not a dash button
-- Leave People / Screen / Site / Drops / Logout / See as alone unless she asks
+## Retired
 
-## Do not
+- **Phoenix** — old name she used for ChatGPT at the start of AI. She does not use it now. Not the phone icon.
+- The big **M** home-screen icon — she took it off. Do not send her there.
 
-- Create a **New shared dash** (Junior / slug `junior` / no password) — that is a public URL
-- Select all apps on a shared board
-- Use the WordPress / Jetpack App Store app for this
-- Generate **Connect Your Agent** keys unless she says go
-- Buy Solo / Publisher / vault plans
-- Tell her Meet Fernando is on the public shop
+## Still forbidden
 
-## Site skill (Oct 4, 2026)
+- A public **shared dash** with slug `junior` and no password. That URL is not Jr the person.
 
-Live Plugin Manager rule **`sg-founder-locks`** is required reading for Fernando. He is not Bookie. Date writes stay with Cursor Bookie or the Mac.
+## Jobs (not extra people)
 
-## If she asks where Meet Fernando is
+- Date / Fluent / TEC / coupon writes: **Jr** (the Bookie job). One named date. Chicago only.
+- WordPress look-ups by text: **Instinct**.
+- Fernando does not write Fluent or TEC.
 
-`https://shopsacredground.com/wp-admin/admin.php?page=ml-plugin-docs#concierge`  
-or My Dash → **Ask Fernando**. Same agent.
+## Site skill
+
+`sg-founder-locks` lives in WordPress (Plugin Manager). Use these names, not Phoenix.

@@ -1,3 +1,7 @@
+## 2026-10-04 — Agent names lock
+
+Founder: Jr is all of Cursor. Chat / Claude / Instinct / Fernando / Coach. WordPress = back end. The live website = customer face. Never say shop. Phoenix retired. Instinct already has the Plugin Manager key.
+
 ## 2026-10-04 — Fernando site lock pack
 
 Founder: load the shop locks into Fernando. Live slug `sg-founder-locks` on Plugin Manager (required rule, no keys). Copy lives on maintenance `reel-building/FERNANDO-SKILLS.md`. Fernando looks up; Bookie writes dates.
