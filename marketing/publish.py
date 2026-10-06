@@ -39,6 +39,11 @@ def can_schedule(draft: Dict[str, Any]) -> tuple[bool, str]:
     # (Founder Aug 25 2026 — pride-baked compositor reached Zernio/FB/IG).
     campaign = str(draft.get("campaign") or "")
     rule = str(img.get("rule") or img.get("source") or "")
+    if campaign == "tuesday_meditation":
+        from . import images as images_mod
+
+        if images_mod.remote_image_is_missing(str(img.get("url") or "")):
+            return False, "image_url_unreachable"
     if campaign in ("today", "morning") or rule in ("morning_flyer", "morning"):
         from . import morning_flyers as mf
         from .ingest import today_local
@@ -270,6 +275,26 @@ def create_zernio_post(payload: Dict[str, Any]) -> Dict[str, Any]:
         if k not in ("draft_id", "fingerprint") and v is not None
     }
     return _http_json("POST", "posts", body=body)
+
+
+def update_zernio_media(post_id: str, image_url: str) -> Dict[str, Any]:
+    """PATCH /posts/{id} media when a scheduled still's URL 404s."""
+    pid = str(post_id or "").strip()
+    if not pid:
+        raise ValueError("missing_zernio_post_id")
+    return _http_json(
+        "PATCH",
+        f"posts/{pid}",
+        body={"mediaItems": [{"url": image_url, "type": "image"}]},
+    )
+
+
+def delete_zernio_post(post_id: str) -> Dict[str, Any]:
+    """DELETE /posts/{id} — cancel a scheduled post that must not go out."""
+    pid = str(post_id or "").strip()
+    if not pid:
+        raise ValueError("missing_zernio_post_id")
+    return _http_json("DELETE", f"posts/{pid}")
 
 
 def publish_draft(draft_id: str) -> Dict[str, Any]:

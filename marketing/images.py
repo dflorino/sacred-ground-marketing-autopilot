@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import os
 import re
+import urllib.error
+import urllib.request
 from datetime import date, timedelta
 from functools import lru_cache
 from typing import Any, Dict, List, Optional, Sequence, Tuple
@@ -37,6 +39,13 @@ STORE_INTERIOR_DEFAULT = (
     "https://shopsacredground.com/wp-content/uploads/CD3C3C2E-620B-4933-BC24-11ED63552132-1.png"
 )
 STORE_IMAGE_DEFAULT = STORE_EXTERIOR_DEFAULT
+
+# Live pool plates that WordPress no longer serves (404 as of 2026-10-06).
+# Keep listed in tuesday_meditation.image_urls so the rotation name stays, but
+# never schedule them until the file is restored.
+_KNOWN_MISSING_SOCIAL_URLS = (
+    "https://shopsacredground.com/wp-content/uploads/sg-morning-meditation.png",
+)
 
 IMAGE_USAGE_PATH = os.path.join(STATE_DIR, "image_usage.json")
 WEEKDAY_INDEX = {
@@ -152,6 +161,37 @@ def filter_social_eligible_urls(urls: Sequence[str]) -> List[str]:
             continue
         out.append(u)
     return out
+
+
+def remote_image_is_missing(url: str, *, timeout: float = 8.0) -> bool:
+    """True when WordPress/Zernio cannot fetch the plate (404/410 or known-dead).
+
+    Network errors return False so offline tests and transient WP blips do not
+    empty the meditation pool.
+    """
+    raw = str(url or "").strip()
+    if not raw:
+        return True
+    if raw in _KNOWN_MISSING_SOCIAL_URLS:
+        return True
+    req = urllib.request.Request(
+        raw,
+        method="HEAD",
+        headers={"User-Agent": "SacredGroundAutopilot/1.0"},
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            code = int(getattr(resp, "status", 200) or 200)
+            return code in (404, 410)
+    except urllib.error.HTTPError as exc:
+        return exc.code in (404, 410)
+    except Exception:
+        return False
+
+
+def drop_missing_social_urls(urls: Sequence[str]) -> List[str]:
+    """Keep pool members that are not known/confirmed missing."""
+    return [u for u in urls if u and not remote_image_is_missing(u)]
 
 
 @lru_cache(maxsize=1)
@@ -996,6 +1036,9 @@ def plan_image(
                 pool.append(journey)
         if not pool:
             pool = [store_exterior_url()]
+        pool = drop_missing_social_urls(pool)
+        if not pool:
+            return reuse_blocked_plan("tuesday_meditation")
         blocked = cooldown_blocked_urls(
             on,
             exclude_campaign="tuesday_meditation",
