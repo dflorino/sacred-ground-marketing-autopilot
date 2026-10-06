@@ -170,6 +170,40 @@ def list_drafts(status: Optional[str] = None) -> List[Dict[str, Any]]:
     return out
 
 
+def replace_missing_image_url(draft_id_str: str, new_url: str) -> Dict[str, Any]:
+    """Swap a 404/missing plate on a reviewed draft. Caption and events stay put.
+
+    Used when tuesday_meditation auto-approved a pool URL WordPress no longer
+    serves. Does not recreate the draft or change copy.
+    """
+    from . import images as images_mod
+
+    d = get_draft(draft_id_str)
+    if not d:
+        raise KeyError(f"Unknown draft: {draft_id_str}")
+    img = dict(d.get("image") or {})
+    old = str(img.get("url") or "").strip()
+    nxt = str(new_url or "").strip()
+    if not nxt:
+        raise ValueError("missing_replacement_image_url")
+    if old == nxt:
+        return d
+    if old and not images_mod.remote_image_is_missing(old):
+        raise PermissionError(
+            f"Refusing to replace a reachable image on draft {draft_id_str}"
+        )
+    if images_mod.remote_image_is_missing(nxt):
+        raise ValueError("replacement_image_url_unreachable")
+    img["url"] = nxt
+    d["image"] = img
+    notes = list(d.get("notes") or [])
+    notes.append(f"repaired_missing_image:{old or 'empty'}->{nxt}")
+    d["notes"] = notes
+    d["updated_at"] = datetime.now(tzinfo()).isoformat()
+    save_draft(d, allow_overwrite=True)
+    return d
+
+
 def update_draft(draft_id_str: str, **fields: Any) -> Dict[str, Any]:
     """Status / approval updates only — never regenerates caption/image content here."""
     d = get_draft(draft_id_str)

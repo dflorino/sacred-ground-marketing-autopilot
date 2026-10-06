@@ -997,14 +997,14 @@ class AutopilotTests(unittest.TestCase):
         )
         self.assertGreaterEqual(len(pool), 3)
 
-        # Ordinary Tuesday → FB + IG drafts at 4pm
+        # Ordinary Tuesday → FB + IG + TikTok + Threads drafts at 4pm
         as_of = datetime(2026, 8, 4, 10, 0, tzinfo=ZoneInfo("America/Chicago"))
         result = pipeline.generate_batch(source="fixture", as_of=as_of)
         self.assertTrue(result["ok"])
         tm = [d for d in result["drafts"] if d["campaign"] == "tuesday_meditation"]
-        self.assertEqual(len(tm), 2)
+        self.assertEqual(len(tm), 4)
         platforms = {d["platform"] for d in tm}
-        self.assertEqual(platforms, {"facebook", "instagram"})
+        self.assertEqual(platforms, {"facebook", "instagram", "tiktok", "threads"})
 
         drafts = store.list_drafts()
         tm_fb = next(
@@ -1048,6 +1048,34 @@ class AutopilotTests(unittest.TestCase):
             if s.get("campaign") == "tuesday_meditation"
         }
         self.assertIn("not_tuesday", skip_w)
+
+    def test_tuesday_meditation_skips_missing_pool_url(self) -> None:
+        from marketing import images, publish
+
+        dead = (
+            "https://shopsacredground.com/wp-content/uploads/sg-morning-meditation.png"
+        )
+        self.assertTrue(images.remote_image_is_missing(dead))
+        # 2026-10-06 would have rotated onto the 404 plate; skip it.
+        plan = images.plan_image([], "tuesday_meditation", day=date(2026, 10, 6))
+        self.assertTrue(plan.url)
+        self.assertNotEqual(plan.url, dead)
+        self.assertEqual(plan.rule, "tuesday_meditation_pool")
+
+        draft = {
+            "campaign": "tuesday_meditation",
+            "approval_status": "approved",
+            "status": "approved",
+            "image": {"url": dead, "rule": "tuesday_meditation_pool"},
+        }
+        from unittest.mock import patch
+
+        with patch("marketing.publish.control.phase", return_value=2), patch(
+            "marketing.publish.control.is_paused", return_value=False
+        ):
+            ok, reason = publish.can_schedule(draft)
+        self.assertFalse(ok)
+        self.assertEqual(reason, "image_url_unreachable")
 
     def test_meditation_host_iso_week_rotation_and_shared_block(self) -> None:
         """Roster still rotates for ops; public captions stay anonymous + shared."""
