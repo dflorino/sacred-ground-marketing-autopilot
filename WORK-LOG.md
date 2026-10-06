@@ -1,3 +1,11 @@
+## 2026-10-05 — S1E14 scheduled same minute
+
+Founder: S1E14 is ready to schedule next. KEEP gen **114** / media **29023**.
+All five **Wed Oct 7 2026 6:00 PM** America/Chicago. Brand YouTube
+`@sacredgroundchicagoland`. Parent `6ac4534f4f0bb05a5a8935ae`.
+Do not post plate **28854** or archive **29036**. Do not remake **29023**
+or S1E13 **28802**.
+
 ## 2026-10-04 — Agent names lock
 
 Founder: Jr is all of Cursor. Chat / Claude / Instinct / Fernando / Coach. WordPress = back end. The live website = customer face. Never say shop. Phoenix retired. Instinct already has the Plugin Manager key.

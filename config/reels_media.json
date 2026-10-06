@@ -1,7 +1,7 @@
 {
   "timezone": "America/Chicago",
   "note": "Founder-confirmed WordPress Media Library IDs for Cursor / ML Social video posts. Use these \u2014 never 26546 or lowercase s01e01-store-quest.mp4 for S1E1.",
-  "updated": "2026-09-09",
+  "updated": "2026-10-05",
   "brand_coverage_hard_rule": {
     "updated": "2026-09-09",
     "summary": "Every episode must hit Facebook + Instagram + TikTok + YouTube + Threads on Sacred Ground BRAND accounts. YouTube must be the Sacred Ground brand channel \u2014 never personal @deneeneflorino4711. Use contentType reel or story. FB Story must use Zernio CDN (media.zernio.com).",
@@ -353,9 +353,9 @@
       "filebird_folder": "SG Reels (54)",
       "library_player": "https://shopsacredground.com/library-adventures/",
       "mime_type": "video/mp4",
-      "schedule_status": "scheduled_same_minute_2026-09-30_6pm",
+      "schedule_status": "published_2026-09-30_6pm_all_five",
       "handed_off": "2026-09-28",
-      "note": "Founder Sep 28: S1E12 killed. Move 28802 S1E13 into this Wednesday Sep 30 6pm CT all five. Do not post plate 28721.",
+      "note": "Published Wed Sep 30 2026 6:00 PM America/Chicago all five. Do not remake 28802. Do not post plate 28721.",
       "do_not_use": {
         "plate_id": 28721,
         "note": "28721 plate still only. USE video 28802 only."
@@ -374,7 +374,47 @@
         "threads": "2026-09-30T18:00:00-05:00",
         "youtube": "2026-09-30T18:00:00-05:00"
       },
-      "updated_at": "2026-09-28T13:15:00-05:00"
+      "updated_at": "2026-10-05T20:48:00-05:00"
+    },
+    "s1e14": {
+      "season": 1,
+      "episode": 14,
+      "library_name": "S1E14",
+      "title": "Moon Crystal",
+      "media_id": 29023,
+      "plate_id": 28854,
+      "plate_library_name": "S1E14 plate 28854",
+      "file": "ml-persona-20261005-155051-BV1oFo-6449382549.mp4",
+      "url": "https://shopsacredground.com/wp-content/uploads/ml-persona-20261005-155051-BV1oFo-6449382549.mp4",
+      "admin": "https://shopsacredground.com/wp-admin/upload.php?item=29023",
+      "filebird_folder": "SG Reels (54)",
+      "library_player": "https://shopsacredground.com/library-adventures/",
+      "mime_type": "video/mp4",
+      "schedule_status": "scheduled_same_minute_2026-10-07_6pm",
+      "handed_off": "2026-10-05",
+      "note": "Founder Oct 5: schedule KEEP gen 114 / 29023. All five Wed Oct 7 2026 6:00 PM America/Chicago. Do not post plate 28854. Do not post archive 29036 / gen 115. Do not remake 29023, S1E13 28802, S1E12, or S1E11 28153.",
+      "do_not_use": {
+        "plate_id": 28854,
+        "archive_gen115": 29036,
+        "withdrawn_plates": [28846, 28847],
+        "note": "28854 plate still only. 29036 archive only. USE video 29023 only."
+      },
+      "ml_social_ids": {
+        "parent": "6ac4534f4f0bb05a5a8935ae",
+        "instagram": "6ac4534f4f0bb05a5a8935a9",
+        "facebook": "6ac4534f4f0bb05a5a8935aa",
+        "tiktok": "6ac4534f4f0bb05a5a8935ab",
+        "youtube": "6ac4534f4f0bb05a5a8935ac",
+        "threads": "6ac4534f4f0bb05a5a8935ad"
+      },
+      "scheduled_for": {
+        "instagram": "2026-10-07T18:00:00-05:00",
+        "facebook": "2026-10-07T18:00:00-05:00",
+        "tiktok": "2026-10-07T18:00:00-05:00",
+        "youtube": "2026-10-07T18:00:00-05:00",
+        "threads": "2026-10-07T18:00:00-05:00"
+      },
+      "updated_at": "2026-10-05T20:48:00-05:00"
     }
   }
 }

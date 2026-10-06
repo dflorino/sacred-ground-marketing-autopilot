@@ -90,6 +90,7 @@ Canonical file: **`config/reels_media.json`**. Agents must use these IDs / URLs 
 | Season 1 Episode 11 | **S1E11** | **28153** (plate **28137**) | `https://shopsacredground.com/wp-content/uploads/s01e11-gen102-KEEP.mp4` |
 | Season 1 Episode 12 — Everybody Act Normal | **S1E12** | **DELETED — never post** | killed Sep 28 2026; do not re-upload |
 | Season 1 Episode 13 | **S1E13** | **28802** (plate **28721**) | `https://shopsacredground.com/wp-content/uploads/ml-persona-20260927-162033-yd4V4U-6134628958.mp4` |
+| Season 1 Episode 14 — Moon Crystal | **S1E14** | **29023** (plate **28854**) | `https://shopsacredground.com/wp-content/uploads/ml-persona-20261005-155051-BV1oFo-6449382549.mp4` |
 
 **Do not use** media ID **26546** or `…/s01e01-store-quest.mp4` for S1E1 — use **26545** / `S1E1-Store-Quest.mp4`.  
 **S1E2** — KEEP **26738** (not old Lemuria **26537**).  
@@ -97,7 +98,8 @@ Canonical file: **`config/reels_media.json`**. Agents must use these IDs / URLs 
 **S1E9** — USE video **28256** / `S1E9.mp4` (restored KEEP; old **27385** path 404). Plate **27377** (“S1E9 USE plate”) is still-only — never post as the Reel.  
 **S1E11** — USE video **28153** only (gen 102). Plate **28137** still-only. Never post gen 101 (**28126** / **28113**) or captioned archive **28125**.  
 **S1E12** — **NEVER POST.** Founder Sep 28: killed, deleted from WP library (28556 / 28515 / takes). Do not re-upload or schedule.  
-**S1E13** — USE video **28802** only. Plate **28721** still-only. All five **Wed Sep 30 2026 6:00 PM** America/Chicago (moved up after S1E12 kill).
+**S1E13** — USE video **28802** only. Plate **28721** still-only. Published all five **Wed Sep 30 2026 6:00 PM** America/Chicago.  
+**S1E14** — USE video **29023** only (gen 114). Plate **28854** still-only. Never post archive **29036** / gen 115 or withdrawn plates **28846 / 28847**. All five **Wed Oct 7 2026 6:00 PM** America/Chicago.
 
 ## S1E1 Store Quest (media 26545)
 
