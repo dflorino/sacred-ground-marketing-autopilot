@@ -65,6 +65,20 @@ def is_reviewed(draft: Dict[str, Any]) -> bool:
     return False
 
 
+def _is_recoverable_stale_morning_skip(draft: Dict[str, Any]) -> bool:
+    """Skipped today drafts that the stale-flyer gate may replace after a false positive."""
+    if draft.get("status") != "skipped":
+        return False
+    if (
+        draft.get("publish_blocked_reason")
+        == "stale_morning_flyer_banned_or_unlocked"
+    ):
+        return True
+    return any(
+        "stale_morning_flyer" in str(n) for n in (draft.get("notes") or [])
+    )
+
+
 def is_blocked(fp: str) -> Optional[str]:
     """Return reason if fingerprint should not create a new draft.
 
@@ -81,14 +95,7 @@ def is_blocked(fp: str) -> Optional[str]:
         if d.get("fingerprint") != fp:
             continue
         if is_reviewed(d):
-            if d.get("status") == "skipped" and (
-                d.get("publish_blocked_reason")
-                == "stale_morning_flyer_banned_or_unlocked"
-                or any(
-                    "stale_morning_flyer" in str(n)
-                    for n in (d.get("notes") or [])
-                )
-            ):
+            if _is_recoverable_stale_morning_skip(d):
                 continue
             return "reviewed_draft_exists"
         return "draft_exists"
@@ -133,6 +140,8 @@ def save_draft(draft: Dict[str, Any], *, allow_overwrite: bool = False) -> str:
             if d.get("id") == draft.get("id"):
                 continue
             if d.get("fingerprint") == fp and is_reviewed(d):
+                if _is_recoverable_stale_morning_skip(d):
+                    continue
                 raise PermissionError(
                     f"Refusing to write draft for reviewed fingerprint {fp}"
                 )

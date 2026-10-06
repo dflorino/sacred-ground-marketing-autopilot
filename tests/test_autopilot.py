@@ -2780,6 +2780,37 @@ class TestBannedNavyPilNeverShips(unittest.TestCase):
             ("stale_morning_flyer_image", "banned_mystic_navy_pil_image"),
         )
 
+    def test_oct6_founder_dollhouse_skips_navy_pil_false_positive(self):
+        from unittest.mock import patch
+
+        from marketing import publish, store
+
+        day = date(2026, 10, 6)
+        locked = self.mf.founder_approved_flyer_url(day, "facebook")
+        self.assertTrue(locked.endswith("sg-morning-flyer-2026-10-06-fair-flag.jpg"))
+        self.assertTrue(self.mf.url_matches_founder_approved_flyer(locked))
+        with patch.object(self.mf, "image_url_is_banned_mystic_navy_pil", return_value=True):
+            self.assertFalse(self.mf.image_url_looks_like_banned_compositor_upload(locked))
+            self.assertTrue(
+                self.mf.morning_image_url_is_authorized(day, locked, platform="facebook")
+            )
+        draft = {
+            "campaign": "today",
+            "platform": "facebook",
+            "fingerprint": "today|2026-10-06|facebook|1,2",
+            "status": "approved",
+            "approval_status": "approved",
+            "image": {"url": locked, "rule": "morning_flyer"},
+            "notes": ["flyer_day:2026-10-06"],
+        }
+        self.assertFalse(store.is_stale_morning_draft(draft, "2026-10-06"))
+        with patch("marketing.publish.control.phase", return_value=2), patch(
+            "marketing.publish.control.is_paused", return_value=False
+        ):
+            ok, reason = publish.can_schedule(draft)
+        self.assertTrue(ok)
+        self.assertEqual(reason, "ok")
+
     def test_ensure_flyer_skips_pride_bake_on_founder_locked_url(self):
         day = date(2026, 8, 26)
         entry = self.mf.flyer_entry_for_day(day)

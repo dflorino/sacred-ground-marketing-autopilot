@@ -253,17 +253,36 @@ def entry_generation_source(entry: Optional[Dict[str, Any]]) -> str:
     ).strip()
 
 
+def url_matches_founder_approved_flyer(url: str) -> bool:
+    """True when this exact URL is a Founder-approved morning_flyers.json plate."""
+    u = str(url or "").strip()
+    if not u:
+        return False
+    flyers = load_flyers_config().get("flyers") or {}
+    for entry in flyers.values():
+        if not isinstance(entry, dict) or not entry.get("founder_approved"):
+            continue
+        for key in ("url", "url_instagram"):
+            if str(entry.get(key) or "").strip() == u:
+                return True
+    return False
+
+
 def image_url_looks_like_banned_compositor_upload(url: str) -> bool:
     """True for Zernio/CDN/WP URLs that name or carry the banned navy PIL factory."""
     u = (url or "").strip()
     if not u:
         return False
-    if image_url_is_banned_mystic_navy_pil(u):
-        return True
     low = u.lower()
     if "sg-morning-flyer-" in low and "-pride-" in low:
         return True
     if "pil_compositor" in low or "navy-equal-card" in low:
+        return True
+    # Founder-approved live URL: skip the navy-PIL pixel heuristic.
+    # Oct 6 dollhouse + galaxy hits the old equal-card color probe (false positive).
+    if url_matches_founder_approved_flyer(u):
+        return False
+    if image_url_is_banned_mystic_navy_pil(u):
         return True
     return False
 
@@ -287,11 +306,20 @@ def morning_image_url_is_authorized(
 ) -> bool:
     """Publish-time check: banned compositor uploads never ship; locked days must match config URL."""
     u = str(url or "").strip()
-    if not u or image_url_looks_like_banned_compositor_upload(u):
+    if not u:
         return False
     locked = founder_approved_flyer_url(day, platform)
     if locked:
+        # Locked Founder URL is the plate to send. Filename compositor bans still
+        # apply; the navy-PIL pixel probe does not (Oct 6 dollhouse false positive).
+        low = u.lower()
+        if "sg-morning-flyer-" in low and "-pride-" in low:
+            return False
+        if "pil_compositor" in low or "navy-equal-card" in low:
+            return False
         return u == locked
+    if image_url_looks_like_banned_compositor_upload(u):
+        return False
     entry = flyer_entry_for_day(day)
     if not entry:
         return True
