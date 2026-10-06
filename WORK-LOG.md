@@ -1,3 +1,12 @@
+## 2026-10-06 — Lock Oct 10–19 night plates
+
+Founder: lock nights after reviewing LOOK-NIGHTS-10-19. Oct 10 stays
+Portal **28945**. New date plates: 11 rain **29465**, 12 Machu **29466**,
+13 moon sun-mark **29467**, 14 Petra **29468**, 15 lantern path **29469**,
+16 black cats **29470**, 17 harvest moon **29471**, 18 lantern walk **29472**,
+19 crystal windows **29473**. Wired in `image_atmosphere.json` date_plates.
+Do not remake.
+
 ## 2026-10-05 — S1E14 scheduled same minute
 
 Founder: S1E14 is ready to schedule next. KEEP gen **114** / media **29023**.
