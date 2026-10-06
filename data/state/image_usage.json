@@ -483,6 +483,24 @@
       "rule": "week_ahead_date_plate",
       "campaign": "week_ahead",
       "platform": "tiktok"
+    },
+    {
+      "date": "2026-10-06",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-10-06-fair-harvest.jpg",
+      "rule": "afternoon_spotlight_plate",
+      "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-10-06",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-10-06-fair-flag.jpg",
+      "rule": "morning_flyer",
+      "campaign": "today"
+    },
+    {
+      "date": "2026-10-06",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-meditation.png",
+      "rule": "tuesday_meditation_pool",
+      "campaign": "tuesday_meditation"
     }
   ],
   "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-EQUAL-WEIGHT-mul-1787594477.jpg": {
