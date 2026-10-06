@@ -2288,9 +2288,294 @@
           "message": "Post published successfully"
         }
       }
+    },
+    "afternoon_spotlight|2026-10-06|facebook|28282": {
+      "draft_id": "sgma-2026-10-06-afternoon_spotlight-fb-d41ef5bd",
+      "posted_at": "2026-10-06T17:06:21.215898-05:00",
+      "external": {
+        "zernio": {
+          "post": {
+            "_id": "6ac570cc75fa0fa4bc4ae03f",
+            "userId": "6a49a0ca1f5ee39905d0dc6f",
+            "title": "",
+            "content": "Something beautiful coming up: Soul Alignment w/ Karen: Intuitive Energy Reiki or Akashic Record Reading •.\n\nAnd Saturday, October 10 — Holistic Fair, 12–6pm. Come wander the shop and stay a while.\nBook any 12–2pm slot ahead of time and get $5 off.\nCall Now To Book 847-749-3922\nhttps://shopsacredground.com/\n\nWednesday, October 7 · 5:00 PM–7:00 PM\n\nStep into a personalized experience of balance, clarity, and renewal with Soul Alignment. Karen offers a selection of powerful modalities—Reiki for deep energetic restoration, Akashic Record…\n\nhttps://shopsacredground.com/karen-akashic/\n\n847-749-3922\n\nWe'll keep a seat warm.\n\nSacred Ground — Chicagoland’s #1 Crystal Shop & Holistic Center.\n\n#SacredGround #ArlingtonHeights #ShopSacredGround #ChicagoEvents #CrystalShop #EnergyHealing #HolisticCenter #RockShop #Kindness",
+            "mediaItems": [
+              {
+                "_id": "6ac570cc75fa0fa4bc4ae041",
+                "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-10-06-fair-harvest.jpg",
+                "type": "image"
+              }
+            ],
+            "scheduledFor": "2026-10-06T22:06:04.420Z",
+            "timezone": "America/Chicago",
+            "status": "published",
+            "tags": [],
+            "hashtags": [],
+            "mentions": [],
+            "visibility": "public",
+            "crosspostingEnabled": true,
+            "metadata": {
+              "usageCounted": true
+            },
+            "publishingClaimedAt": "2026-10-06T22:06:04.588Z",
+            "publishAttempts": 0,
+            "recycling": {
+              "enabled": false,
+              "gapFreq": "month",
+              "recycleCount": 0,
+              "contentVariations": [],
+              "contentVariationIndex": 0
+            },
+            "createdAt": "2026-10-06T22:06:04.486Z",
+            "updatedAt": "2026-10-06T22:06:21.046Z",
+            "platforms": [
+              {
+                "_id": "6ac570cc75fa0fa4bc4ae03e",
+                "platform": "facebook",
+                "accountId": {
+                  "_id": "6a49a1f49d9472faae7c274e",
+                  "platform": "facebook",
+                  "username": "shopsacredground",
+                  "displayName": "Sacred Ground",
+                  "profilePicture": "https://scontent-lhr11-1.xx.fbcdn.net/v/t39.30808-1/525520556_778113704730537_8989064612556217432_n.jpg?stp=c412.0.720.720a_cp0_dst-jpg_s50x50_tt6&_nc_cat=106&ccb=1-7&_nc_sid=f907e8&_nc_ohc=Ik3RMU06efQQ7kNvwFov0V8&_nc_oc=AdoIdmLMeoUj-X4ADk8U47maAO0H_lWnySom7IqNnkrwRaXQ8L5c7batQnepqOcG-f0&_nc_zt=24&_nc_ht=scontent-lhr11-1.xx&edm=AJdBtusEAAAA&_nc_gid=EGE2QSEMW2zFbaKS2Rb5uQ&_nc_tpa=Q5bMBQLTyqnyvqlz3TEwwdy3nRH5B5vA9GamETtIk5rb302syR7QzFlPW2A3YJCytWVOZbEFiA2pAj_A&oh=00_AQMgk7Ji4e_kQ64ihKByYPya4huPx9iRCyRo_AP2uz1sJQ&oe=6ACA513C",
+                  "isActive": true,
+                  "profileId": "6a49a0ca1f5ee39905d0dc87"
+                },
+                "profileId": "6a49a0ca1f5ee39905d0dc87",
+                "customMedia": [],
+                "scheduledFor": "2026-10-06T22:06:04.420Z",
+                "platformSpecificData": {
+                  "firstComment": "Holistic Fair — Saturday, October 10 · 12–6pm\nBook any 12–2pm slot ahead of time and get $5 off.\nCall Now To Book 847-749-3922\nhttps://shopsacredground.com/\n\nSacred Ground — Chicagoland’s #1 Crystal Shop & Holistic Center."
+                },
+                "status": "published",
+                "publishedAt": "2026-10-06T22:06:20.963Z",
+                "platformPostId": "101428372368870_1134391832436054",
+                "platformPostUrl": "https://www.facebook.com/101428372368870_1134391832436054",
+                "publishAttempts": 1,
+                "contentHash": "4fc68a2b041aa1db26260b98291d0d27"
+              }
+            ]
+          },
+          "message": "Post published successfully"
+        }
+      }
+    },
+    "afternoon_spotlight|2026-10-06|instagram|28282": {
+      "draft_id": "sgma-2026-10-06-afternoon_spotlight-ig-3a2b09d8",
+      "posted_at": "2026-10-06T17:06:27.492356-05:00",
+      "external": {
+        "zernio": {
+          "post": {
+            "_id": "6ac570ddc5a2898b2f928c80",
+            "userId": "6a49a0ca1f5ee39905d0dc6f",
+            "title": "",
+            "content": "A gentle afternoon peek at tomorrow — Soul Alignment w/ Karen: Intuitive Energy Reiki or Akashic Record Reading •.\n\nAnd Saturday, October 10 — Holistic Fair, 12–6pm. Come wander the shop and stay a while.\nBook any 12–2pm slot ahead of time and get $5 off.\nCall Now To Book 847-749-3922\nhttps://shopsacredground.com/\n\nWednesday, October 7 · 5:00 PM–7:00 PM\n\nStep into a personalized experience of balance, clarity, and renewal with Soul Alignment. Karen offers a selection of powerful modalities—Reiki for deep energetic restoration, Akashic Record…\n\nhttps://shopsacredground.com/karen-akashic/\n\n847-749-3922\n\nThe door is open.\n\nSacred Ground — Chicagoland’s #1 Crystal Shop & Holistic Center.\n\n#SacredGround #ArlingtonHeights #ShopSacredGround #ChicagoEvents #CrystalShop #EnergyHealing #HolisticCenter #RockShop #Kindness #Chicagoland #HolisticChicago",
+            "mediaItems": [
+              {
+                "_id": "6ac570ddc5a2898b2f928c82",
+                "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-10-06-fair-harvest.jpg",
+                "type": "image"
+              }
+            ],
+            "scheduledFor": "2026-10-06T22:06:21.686Z",
+            "timezone": "America/Chicago",
+            "status": "publishing",
+            "tags": [],
+            "hashtags": [],
+            "mentions": [],
+            "visibility": "public",
+            "crosspostingEnabled": true,
+            "metadata": {
+              "usageCounted": true
+            },
+            "publishingClaimedAt": "2026-10-06T22:06:21.955Z",
+            "publishAttempts": 0,
+            "recycling": {
+              "enabled": false,
+              "gapFreq": "month",
+              "recycleCount": 0,
+              "contentVariations": [],
+              "contentVariationIndex": 0
+            },
+            "createdAt": "2026-10-06T22:06:21.868Z",
+            "updatedAt": "2026-10-06T22:06:27.324Z",
+            "platforms": [
+              {
+                "_id": "6ac570ddc5a2898b2f928c7f",
+                "platform": "instagram",
+                "accountId": {
+                  "_id": "6a49a12e9d9472faae7c2220",
+                  "platform": "instagram",
+                  "username": "shopsacredground",
+                  "displayName": "Sacred Ground",
+                  "profilePicture": "https://scontent-lhr11-1.cdninstagram.com/v/t51.2885-19/313932603_854045628963650_758437280360514790_n.jpg?stp=dst-jpg_s206x206_tt6&_nc_cat=107&ccb=7-5&_nc_sid=bf7eb4&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=QrHkGAWxLgoQ7kNvwGWoesx&_nc_oc=AdrnxN8p_rD1oJ_0uDuwMraZcafN-EtW-XcVAMcULWFR0QZKfxA6pYS4AapyMbQlCJs&_nc_zt=24&_nc_ht=scontent-lhr11-1.cdninstagram.com&edm=AP4hL3IEAAAA&_nc_tpa=Q5bMBQJBhIIJTM65HGJmKNYD_eHnsy8-kYV8YBHC_RG6u3HJGkcBKEJPD6cD9h5mGfjFVyZCjlTtFbR_JQ&oh=00_AQPAJgt6GpjzyCBT5t0VD3tkNa9gWghQNwp4XMRpbLejAQ&oe=6ACA324A",
+                  "isActive": true,
+                  "profileId": "6a49a0ca1f5ee39905d0dc87"
+                },
+                "profileId": "6a49a0ca1f5ee39905d0dc87",
+                "customMedia": [],
+                "scheduledFor": "2026-10-06T22:06:21.686Z",
+                "platformSpecificData": {
+                  "firstComment": "Holistic Fair — Saturday, October 10 · 12–6pm\nBook any 12–2pm slot ahead of time and get $5 off.\nCall Now To Book 847-749-3922\nhttps://shopsacredground.com/\n\nSacred Ground — Chicagoland’s #1 Crystal Shop & Holistic Center."
+                },
+                "status": "processing",
+                "publishAttempts": 1,
+                "contentHash": "82dc07feb1111f9fe4130db7ec2f6060"
+              }
+            ]
+          },
+          "message": "Post published successfully"
+        }
+      }
+    },
+    "afternoon_spotlight|2026-10-06|threads|28282": {
+      "draft_id": "sgma-2026-10-06-afternoon_spotlight-th-e53e850b",
+      "posted_at": "2026-10-06T17:06:43.036971-05:00",
+      "external": {
+        "zernio": {
+          "post": {
+            "_id": "6ac570e3c5a2898b2f928c9d",
+            "userId": "6a49a0ca1f5ee39905d0dc6f",
+            "title": "",
+            "content": "A gentle afternoon peek at tomorrow — Soul Alignment w/ Karen: Intuitive Energy Reiki or Akashic Record Reading •.\n\nAnd Saturday, October 10 — Holistic Fair, 12–6pm. Come wander the shop and stay a while. Book any 12–2pm slot ahead of time and get $5 off. Call Now To Book 847-749-3922 https://shopsacredground.com/ Wednesday, October 7 · 5:00 PM–7:00 PM Step into a personalized experience of balance, clarity, and renewal with Soul Alignment. Karen off…\n\nMore at shopsacredground.com · 847-749-3922",
+            "mediaItems": [
+              {
+                "_id": "6ac570e3c5a2898b2f928c9f",
+                "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-10-06-fair-harvest.jpg",
+                "type": "image"
+              }
+            ],
+            "scheduledFor": "2026-10-06T22:06:27.693Z",
+            "timezone": "America/Chicago",
+            "status": "published",
+            "tags": [],
+            "hashtags": [],
+            "mentions": [],
+            "visibility": "public",
+            "crosspostingEnabled": true,
+            "metadata": {
+              "usageCounted": true
+            },
+            "publishingClaimedAt": "2026-10-06T22:06:27.810Z",
+            "publishAttempts": 0,
+            "recycling": {
+              "enabled": false,
+              "gapFreq": "month",
+              "recycleCount": 0,
+              "contentVariations": [],
+              "contentVariationIndex": 0
+            },
+            "createdAt": "2026-10-06T22:06:27.748Z",
+            "updatedAt": "2026-10-06T22:06:42.643Z",
+            "platforms": [
+              {
+                "_id": "6ac570e3c5a2898b2f928c9c",
+                "platform": "threads",
+                "accountId": {
+                  "_id": "6aa203a0726ebfe037d0c74a",
+                  "platform": "threads",
+                  "username": "shopsacredground",
+                  "displayName": "shopsacredground",
+                  "profilePicture": "https://scontent-lhr6-1.cdninstagram.com/v/t51.82787-19/802333872_18097134170181350_1846167356547019034_n.jpg?_nc_cat=108&ccb=7-5&_nc_sid=30ff31&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xNTAuQzMifQ%3D%3D&_nc_ohc=StSDTWm8zsIQ7kNvwEw7ovT&_nc_oc=Adrybyv1dzcY12XNEpqQR2gOXuL48kGyh2_xNJFjAqI7G0XnQmAYKeHaoRvcZErBkM0&_nc_zt=24&_nc_ht=scontent-lhr6-1.cdninstagram.com&edm=AP4hL3IEAAAA&_nc_gid=-ro3lQeTnh6UxEy0nKNSeQ&_nc_tpa=Q5bMBQKyE1XiyLzayZOy1kn9Qz0t4alyBO0MVS_c902Dx01AVzctlZhn9c1-yWw0ZqHW7AD9FZPlBTm3CQ&oh=00_AQMZJ8Grkc2VsZwzB4y-8fO_htnfzFJDQSGMHRA5EvPv4g&oe=6ACA69A8",
+                  "isActive": true,
+                  "profileId": "6a49a0ca1f5ee39905d0dc87"
+                },
+                "profileId": "6a49a0ca1f5ee39905d0dc87",
+                "customMedia": [],
+                "scheduledFor": "2026-10-06T22:06:27.693Z",
+                "status": "published",
+                "publishedAt": "2026-10-06T22:06:42.584Z",
+                "platformPostId": "18111338801150593",
+                "platformPostUrl": "https://www.threads.com/@shopsacredground/post/DeK0XoljXMe",
+                "publishAttempts": 1,
+                "contentHash": "1053d34232e47c2db9814e37099fca9c"
+              }
+            ]
+          },
+          "message": "Post published successfully"
+        }
+      }
+    },
+    "afternoon_spotlight|2026-10-06|tiktok|28282": {
+      "draft_id": "sgma-2026-10-06-afternoon_spotlight-ti-1c30fd2b",
+      "posted_at": "2026-10-06T17:06:47.389583-05:00",
+      "external": {
+        "zernio": {
+          "post": {
+            "_id": "6ac570f3c5a2898b2f928ccd",
+            "userId": "6a49a0ca1f5ee39905d0dc6f",
+            "title": "",
+            "content": "Looking ahead — Soul Alignment w/ Karen: Intuitive Energy Reiki or Akashic Record Readi…",
+            "mediaItems": [
+              {
+                "_id": "6ac570f3c5a2898b2f928ccf",
+                "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-10-06-fair-harvest.jpg",
+                "type": "image"
+              }
+            ],
+            "scheduledFor": "2026-10-06T22:06:43.212Z",
+            "timezone": "America/Chicago",
+            "status": "publishing",
+            "tags": [],
+            "hashtags": [],
+            "mentions": [],
+            "visibility": "public",
+            "crosspostingEnabled": true,
+            "metadata": {
+              "usageCounted": true
+            },
+            "publishingClaimedAt": "2026-10-06T22:06:43.493Z",
+            "publishAttempts": 0,
+            "recycling": {
+              "enabled": false,
+              "gapFreq": "month",
+              "recycleCount": 0,
+              "contentVariations": [],
+              "contentVariationIndex": 0
+            },
+            "createdAt": "2026-10-06T22:06:43.435Z",
+            "updatedAt": "2026-10-06T22:06:47.137Z",
+            "platforms": [
+              {
+                "_id": "6ac570f3c5a2898b2f928ccc",
+                "platform": "tiktok",
+                "accountId": {
+                  "_id": "6a49a6e79d9472faae7c4b52",
+                  "platform": "tiktok",
+                  "username": "shopsacredground",
+                  "displayName": "Sacred Ground",
+                  "profilePicture": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/dfec5194bb37e5461ca60a538b998c67~tplv-tiktokx-cropcenter:168:168.jpeg?dr=9638&refresh_token=3732f4ce&x-expires=1791428400&x-signature=GumqDpqaEHmCK%2BUfiYDg1NfcKTk%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=8aecc5ac&idc=useast5",
+                  "isActive": true,
+                  "profileId": "6a49a0ca1f5ee39905d0dc87"
+                },
+                "profileId": "6a49a0ca1f5ee39905d0dc87",
+                "customMedia": [],
+                "scheduledFor": "2026-10-06T22:06:43.212Z",
+                "platformSpecificData": {
+                  "tiktokSettings": {
+                    "media_type": "photo",
+                    "description": "Looking ahead — Soul Alignment w/ Karen: Intuitive Energy Reiki or Akashic Record Reading • at Sacred Ground.\n\nAnd Saturday, October 10 — Holistic Fair, 12–6pm. Come wander the shop and stay a while.\nBook any 12–2pm slot ahead of time and get $5 off.\nCall Now To Book 847-749-3922\nhttps://shopsacredground.com/\n\nWednesday, October 7 · 5:00 PM–7:00 PM\n\nStep into a personalized experience of balance, clarity, and renewal with Soul Alignment. Karen offers a selection of powerful modalities—Reiki for deep energetic restoration, Akashic Record…\n\nhttps://shopsacredground.com/karen-akashic/\n\n847-749-3922\n\nWe'll keep a seat warm.\n\nSacred Ground — Chicagoland’s #1 Crystal Shop & Holistic Center.\n\n#SacredGround #ArlingtonHeights #ShopSacredGround #ChicagoEvents #CrystalShop #EnergyHealing #HolisticCenter #RockShop #Kindness",
+                    "allow_comment": true,
+                    "privacy_level": "PUBLIC_TO_EVERYONE",
+                    "auto_add_music": false,
+                    "photo_cover_index": 0,
+                    "video_made_with_ai": true,
+                    "express_consent_given": true,
+                    "content_preview_confirmed": true
+                  }
+                },
+                "status": "processing",
+                "publishAttempts": 1,
+                "contentHash": "c9e3a37c9711fdd1a05d01c0f8032a4d"
+              }
+            ]
+          },
+          "message": "Post published successfully"
+        }
+      }
     }
   },
-  "updated_at": "2026-09-15T12:31:55.297461-05:00",
+  "updated_at": "2026-10-06T17:06:47.389594-05:00",
   "sgma-2026-08-28-today-fb-magritte-repost": {
     "campaign": "today",
     "platform": "facebook",
