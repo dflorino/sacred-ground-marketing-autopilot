@@ -4,7 +4,8 @@
     "2026-09-19",
     "2026-09-20",
     "2026-09-24",
-    "2026-10-01"
+    "2026-10-01",
+    "2026-10-20"
   ],
   "cinematic_weekly_threshold": {
     "notes": "Founder Sep 22: use all 3 movement clips for afternoon, one a week, not consecutive days. Regular 5pm still is skipped those dates. Schedule the assigned MP4 at 5:00 PM America/Chicago (FB+IG+TT+Threads) with that day's store hours. Do not invent a still.",
@@ -29,6 +30,19 @@
         "label": "Hallway — door opens, then the light (locked walls)",
         "status": "deferred",
         "note": "Founder Oct 2: not sure what cinematic short means — 5pm is a Fair still instead. Clip 28482 stays unused until she asks."
+      },
+      "2026-10-20": {
+        "clip": "abbey_road_dance",
+        "mp4_media": 29738,
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-abbey-road-dance-v2-1.mp4",
+        "local": "assets/sg-afternoon-spotlight-2026-10-20-abbey-dance.mp4",
+        "label": "Abbey Road dance-walk — no type on the picture",
+        "prebranded": true,
+        "no_writing_on_image": true,
+        "do_not_remake": true,
+        "founder_approved": true,
+        "founder_approved_at": "2026-10-07T10:54:00-05:00",
+        "note": "Founder Oct 7: KEEP the dance. Afternoon only, write nothing on it. Not the same week as Oct 13 Abbey Road morning still 29410. 5pm still is skipped."
       }
     }
   },

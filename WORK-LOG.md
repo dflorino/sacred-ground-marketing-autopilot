@@ -1,3 +1,11 @@
+## 2026-10-07 — Abbey Road walk is morning; dance is later afternoon
+
+Founder: the original crossing still stays a morning — Oct 13
+`morning_flyers.json` **29410**. The dance MP4 is KEEP for an afternoon
+with no writing on it, not the same week. Parked **Tue Oct 20** 5pm
+(media **29738**). `skip_publish_dates` + cinematic slot so 5pm does
+not invent a still or stamp type.
+
 ## 2026-10-06 — Lock Oct 10–19 night plates
 
 Founder: lock nights after reviewing LOOK-NIGHTS-10-19. Oct 10 stays
