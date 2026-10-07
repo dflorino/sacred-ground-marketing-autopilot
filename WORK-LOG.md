@@ -1,3 +1,10 @@
+## 2026-10-07 — Oct 13 night is the moon-rise clip
+
+Founder: KEEP the moon-rise Kling for the night it was scheduled
+(Oct 13). Media **29817**. Still **29467** stays as backup. All other
+night date plates stay locked unless remade in this motion pass — then
+replace that date only. Next motion test: Oct 11 rain + wind.
+
 ## 2026-10-07 — Abbey Road walk is morning; dance is later afternoon
 
 Founder: the original crossing still stays a morning — Oct 13

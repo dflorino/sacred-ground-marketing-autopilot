@@ -212,6 +212,7 @@ def skip_brand_overlays(image: Any) -> bool:
             or "sg-afternoon-spotlight-" in url
             or "sg-night-fair-flag-" in url
             or "sg-night-2026-" in url
+            or url.lower().split("?", 1)[0].endswith(".mp4")
         )
     if getattr(image, "prebranded", False):
         return True
@@ -222,6 +223,8 @@ def skip_brand_overlays(image: Any) -> bool:
         or "sg-morning-flyer-" in url
         or "sg-afternoon-spotlight-" in url
         or "sg-night-fair-flag-" in url
+        or "sg-night-2026-" in url
+        or url.lower().split("?", 1)[0].endswith(".mp4")
     )
 
 

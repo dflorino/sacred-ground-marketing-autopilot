@@ -1300,7 +1300,10 @@
         "url": "https://shopsacredground.com/wp-content/uploads/sg-night-fair-flag-2026-10-07.jpg",
         "local": "assets/sg-night-fair-flag-2026-10-07.jpg",
         "media_id": 28815,
-        "prebranded": true
+        "prebranded": true,
+        "do_not_remake": true,
+        "founder_approved": true,
+        "founder_approved_at": "2026-10-07T11:53:00-05:00"
       },
       "2026-10-08": {
         "id": "fall_store_maple_leaves",
@@ -1309,11 +1312,15 @@
         "url": "https://shopsacredground.com/wp-content/uploads/sg-night-fair-flag-2026-10-08.jpg",
         "local": "assets/sg-night-fair-flag-2026-10-08.jpg",
         "media_id": 28816,
-        "prebranded": true
+        "prebranded": true,
+        "do_not_remake": true,
+        "founder_approved": true,
+        "founder_approved_at": "2026-10-07T11:53:00-05:00"
       },
       "2026-10-09": {
         "id": "get_ready_1010_portal",
-        "label": "Get ready — 10/10 Portal",
+        "label": "Get ready — 10/10 Portal + New Moon in Libra",
+        "caption_opener": "Tomorrow is the 10/10 Portal — and the new moon in Libra…",
         "mode": "celestial",
         "url": "https://shopsacredground.com/wp-content/uploads/sg-night-2026-10-09-get-ready-1010.jpg",
         "local": "assets/sg-night-2026-10-09-get-ready-1010.jpg",
@@ -1321,11 +1328,15 @@
         "source_gen_media_id": 28930,
         "prebranded": true,
         "pride_baked_in": true,
-        "note": "Founder Oct 2: Oct 9 night says get ready for the 10/10 portal. Replaces fair-flag Libra night 28817."
+        "do_not_remake": true,
+        "founder_approved": true,
+        "founder_approved_at": "2026-10-07T11:53:00-05:00",
+        "note": "Founder Oct 2: Oct 9 night says get ready for the 10/10 portal. Replaces fair-flag Libra night 28817. Founder Oct 7: stay locked unless remade here."
       },
       "2026-10-10": {
         "id": "1010_portal_night",
-        "label": "10/10 Portal night",
+        "label": "10/10 Portal + New Moon in Libra night",
+        "caption_opener": "Tonight is the 10/10 Portal — and today’s new moon in Libra…",
         "mode": "celestial",
         "url": "https://shopsacredground.com/wp-content/uploads/sg-night-2026-10-10-1010-portal-1.jpg",
         "local": "assets/sg-night-2026-10-10-1010-portal.jpg",
@@ -1366,16 +1377,22 @@
       },
       "2026-10-13": {
         "id": "moon_sun_mark",
-        "label": "Full moon with logo sun mark",
+        "label": "Moon rise behind the shop",
         "mode": "creative",
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-2026-10-13.jpg",
-        "local": "assets/sg-night-2026-10-13.jpg",
-        "media_id": 29467,
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-moonrise-test-2026-10-13-1.mp4",
+        "local": "assets/sg-night-2026-10-13-moonrise.mp4",
+        "media_id": 29817,
+        "still_url": "https://shopsacredground.com/wp-content/uploads/sg-night-2026-10-13.jpg",
+        "still_local": "assets/sg-night-2026-10-13.jpg",
+        "still_media_id": 29467,
+        "start_still_media_id": 29801,
         "prebranded": true,
         "pride_baked_in": true,
         "do_not_remake": true,
         "founder_approved": true,
-        "founder_approved_at": "2026-10-06T15:20:00-05:00"
+        "founder_approved_at": "2026-10-07T11:53:00-05:00",
+        "motion": "moon_rise",
+        "note": "Founder Oct 7: KEEP moon-rise clip for Oct 13 7pm. Still 29467 stays as backup. Other nights stay locked stills until remade here."
       },
       "2026-10-14": {
         "id": "civ_petra_treasury",
@@ -1461,7 +1478,7 @@
         "founder_approved_at": "2026-10-06T15:20:00-05:00"
       }
     },
-    "date_plates_note": "Founder Sep 28 2026: unlock reviewed fair-flag nights for 7pm starting tonight. Sep 27 already posted a different live night — do not remake. Founder Oct 2: Oct 9 night is get-ready 10/10; Oct 10 night is 10/10 Portal (date plate wins over Egypt pin). Founder Oct 6: lock Oct 11–19 nights after review (rain shop, Machu, moon sun-mark, Petra, Halloween 15–19). Date plates win over civ pins and the Halloween pool."
+    "date_plates_note": "Founder Sep 28 2026: unlock reviewed fair-flag nights for 7pm starting tonight. Sep 27 already posted a different live night — do not remake. Founder Oct 2: Oct 9 night is get-ready 10/10; Oct 10 night is 10/10 Portal (date plate wins over Egypt pin). Founder Oct 6: lock Oct 11–19 nights after review (rain shop, Machu, moon sun-mark, Petra, Halloween 15–19). Founder Oct 7: all night plates stay locked unless remade in this motion pass — then replace that date only. Oct 13 is the moon-rise MP4 29817. Date plates win over civ pins and the Halloween pool."
   },
   "_meta_remake_v4": {
     "at": "2026-08-16T23:32:00-05:00",

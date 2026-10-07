@@ -125,7 +125,11 @@ def schedule_payload(draft: Dict[str, Any]) -> Dict[str, Any]:
     img = draft.get("image") or {}
     if img.get("url"):
         # TikTok photo posts prefer JPEG/WebP; same plate URL as FB+IG when jpg.
-        media.append({"url": img["url"], "type": "image"})
+        # Founder Oct 7: locked night motion clips publish as video, not photo.
+        raw_url = str(img["url"])
+        path_only = raw_url.split("?", 1)[0].lower()
+        media_kind = "video" if path_only.endswith(".mp4") else "image"
+        media.append({"url": img["url"], "type": media_kind})
     sched = (draft.get("schedule_recommendation") or {}).get("recommended_at")
     tz = draft.get("timezone") or accounts().get("timezone") or "America/Chicago"
     publish_now = _should_publish_now(sched, tz)
@@ -159,8 +163,9 @@ def schedule_payload(draft: Dict[str, Any]) -> Dict[str, Any]:
             caption_text, hook=str(cap.get("hook") or "")
         )
         body["content"] = title
+        is_video = any(m.get("type") == "video" for m in media)
         body["tiktokSettings"] = {
-            "media_type": "photo",
+            "media_type": "video" if is_video else "photo",
             "photo_cover_index": 0,
             "description": caption_text[:4000],
             # Founder Sep 11 2026: ship flyer stills quiet — TikTok song roulette felt off-brand.
