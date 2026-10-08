@@ -1351,16 +1351,23 @@
       },
       "2026-10-11": {
         "id": "rain_night_shop",
-        "label": "Rain night shop reflections",
+        "label": "Rain falling on the shop",
         "mode": "creative",
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-2026-10-11.jpg",
-        "local": "assets/sg-night-2026-10-11.jpg",
-        "media_id": 29465,
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-rain-test-2026-10-11-v3-1.mp4",
+        "local": "assets/sg-night-2026-10-11-rain.mp4",
+        "media_id": 30087,
+        "still_url": "https://shopsacredground.com/wp-content/uploads/sg-night-2026-10-11.jpg",
+        "still_local": "assets/sg-night-2026-10-11.jpg",
+        "still_media_id": 29465,
+        "start_still_media_id": 29932,
+        "end_still_media_id": 29933,
         "prebranded": true,
         "pride_baked_in": true,
         "do_not_remake": true,
         "founder_approved": true,
-        "founder_approved_at": "2026-10-06T15:20:00-05:00"
+        "founder_approved_at": "2026-10-08T08:31:00-05:00",
+        "motion": "rain_from_first_frame",
+        "note": "Founder Oct 8: KEEP rain v3 for Oct 11 7pm. Rain falls from second 0. Still 29465 stays as backup. Other nights stay locked stills until remade here."
       },
       "2026-10-12": {
         "id": "civ_machu_picchu",
@@ -1478,7 +1485,7 @@
         "founder_approved_at": "2026-10-06T15:20:00-05:00"
       }
     },
-    "date_plates_note": "Founder Sep 28 2026: unlock reviewed fair-flag nights for 7pm starting tonight. Sep 27 already posted a different live night — do not remake. Founder Oct 2: Oct 9 night is get-ready 10/10; Oct 10 night is 10/10 Portal (date plate wins over Egypt pin). Founder Oct 6: lock Oct 11–19 nights after review (rain shop, Machu, moon sun-mark, Petra, Halloween 15–19). Founder Oct 7: all night plates stay locked unless remade in this motion pass — then replace that date only. Oct 13 is the moon-rise MP4 29817. Date plates win over civ pins and the Halloween pool."
+    "date_plates_note": "Founder Sep 28 2026: unlock reviewed fair-flag nights for 7pm starting tonight. Sep 27 already posted a different live night — do not remake. Founder Oct 2: Oct 9 night is get-ready 10/10; Oct 10 night is 10/10 Portal (date plate wins over Egypt pin). Founder Oct 6: lock Oct 11–19 nights after review (rain shop, Machu, moon sun-mark, Petra, Halloween 15–19). Founder Oct 7–8: all night plates stay locked unless remade in this motion pass — then replace that date only. Oct 13 is moon-rise MP4 29817. Oct 11 is rain-from-first-frame MP4 30087. Date plates win over civ pins and the Halloween pool."
   },
   "_meta_remake_v4": {
     "at": "2026-08-16T23:32:00-05:00",

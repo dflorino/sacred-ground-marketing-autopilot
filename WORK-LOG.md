@@ -1,3 +1,9 @@
+## 2026-10-08 — Oct 11 night is the rain clip
+
+Founder: KEEP rain v3 for Oct 11 7pm. Media **30087**. Rain falls from
+the first second. Still **29465** stays as backup. Other nights stay
+locked until remade in this motion pass.
+
 ## 2026-10-07 — Oct 13 night is the moon-rise clip
 
 Founder: KEEP the moon-rise Kling for the night it was scheduled
