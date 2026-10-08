@@ -1,3 +1,8 @@
+## 2026-10-08 — Oct 15 night is the pumpkin spin clip
+
+Founder: KEEP pumpkin spin for Oct 15 7pm. Media **30122**. Jack-o-lanterns
+rise, spin, and whirl from the first second. Still **29469** stays as backup.
+
 ## 2026-10-08 — Oct 12 night is the galaxy clip
 
 Founder: KEEP Machu galaxy for Oct 12 7pm. Media **30093**. Galaxy

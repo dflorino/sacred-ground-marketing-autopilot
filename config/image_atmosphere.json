@@ -1423,17 +1423,24 @@
       },
       "2026-10-15": {
         "id": "halloween_lantern_path",
-        "label": "Halloween lantern path",
+        "label": "Jack-o-lanterns spin and whirl",
         "mode": "creative",
         "holiday": "halloween",
-        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-2026-10-15.jpg",
-        "local": "assets/sg-night-2026-10-15.jpg",
-        "media_id": 29469,
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-pumpkins-spin-2026-10-15-1.mp4",
+        "local": "assets/sg-night-2026-10-15-pumpkins.mp4",
+        "media_id": 30122,
+        "still_url": "https://shopsacredground.com/wp-content/uploads/sg-night-2026-10-15.jpg",
+        "still_local": "assets/sg-night-2026-10-15.jpg",
+        "still_media_id": 29469,
+        "start_still_media_id": 30113,
+        "end_still_media_id": 30114,
         "prebranded": true,
         "pride_baked_in": true,
         "do_not_remake": true,
         "founder_approved": true,
-        "founder_approved_at": "2026-10-06T15:20:00-05:00"
+        "founder_approved_at": "2026-10-08T09:20:00-05:00",
+        "motion": "pumpkins_spin_whirl",
+        "note": "Founder Oct 8: KEEP pumpkin spin clip for Oct 15 7pm. Rise, spin, whirl from second 0. Still 29469 stays as backup."
       },
       "2026-10-16": {
         "id": "halloween_black_cats",
@@ -1492,7 +1499,7 @@
         "founder_approved_at": "2026-10-06T15:20:00-05:00"
       }
     },
-    "date_plates_note": "Founder Sep 28 2026: unlock reviewed fair-flag nights for 7pm starting tonight. Sep 27 already posted a different live night — do not remake. Founder Oct 2: Oct 9 night is get-ready 10/10; Oct 10 night is 10/10 Portal (date plate wins over Egypt pin). Founder Oct 6: lock Oct 11–19 nights after review (rain shop, Machu, moon sun-mark, Petra, Halloween 15–19). Founder Oct 7–8: all night plates stay locked unless remade in this motion pass — then replace that date only. Oct 13 moon-rise 29817. Oct 11 rain 30087. Oct 12 galaxy 30093. Date plates win over civ pins and the Halloween pool."
+    "date_plates_note": "Founder Sep 28 2026: unlock reviewed fair-flag nights for 7pm starting tonight. Sep 27 already posted a different live night — do not remake. Founder Oct 2: Oct 9 night is get-ready 10/10; Oct 10 night is 10/10 Portal (date plate wins over Egypt pin). Founder Oct 6: lock Oct 11–19 nights after review (rain shop, Machu, moon sun-mark, Petra, Halloween 15–19). Founder Oct 7–8: all night plates stay locked unless remade in this motion pass — then replace that date only. Oct 13 moon-rise 29817. Oct 11 rain 30087. Oct 12 galaxy 30093. Oct 15 pumpkin spin 30122. Date plates win over civ pins and the Halloween pool."
   },
   "_meta_remake_v4": {
     "at": "2026-08-16T23:32:00-05:00",
