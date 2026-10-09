@@ -1,3 +1,9 @@
+## 2026-10-08 — Christmas + New Year 9am are the motion clips
+
+Founder: KEEP Santa flying for Dec 25 9am (media **30312**) and fireworks
+for Jan 1 9am (media **30313**). Motion from the first second. Stills
+**30296** / **30295** stay as TEC thumbs + backup. Thanksgiving stays the still.
+
 ## 2026-10-08 — Closed holiday plates locked (Thanksgiving / Holidays / New Year)
 
 Founder locked three real-storefront closed plates for TEC + 9am social:
