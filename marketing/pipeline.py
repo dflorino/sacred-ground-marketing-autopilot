@@ -490,7 +490,15 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
 
     # --- Week ahead (daily 7pm planner: next 2 days starting tomorrow) ---
     wa_cfg = (cfg.get("campaigns") or {}).get("week_ahead") or {}
-    if wa_cfg.get("enabled", True):
+    if wa_cfg.get("enabled", True) and images.skip_week_ahead_publish(day):
+        skipped_drafts.append(
+            {
+                "campaign": "week_ahead",
+                "reason": "awaiting_evening_plate",
+                "detail": day.isoformat(),
+            }
+        )
+    elif wa_cfg.get("enabled", True):
         # Sat 7pm → Sun+Mon only. Never include the publish day's calendar
         # (morning through night / same-day evening). Morning campaign owns tonight.
         ahead_events, window_start, horizon = classify.week_ahead_lineup_events(

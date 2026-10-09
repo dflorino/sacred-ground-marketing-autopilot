@@ -9,6 +9,12 @@
   },
   "nighttime": {
     "campaign": "week_ahead",
+    "skip_publish_dates": [
+      "2026-11-26",
+      "2026-12-25",
+      "2027-01-01"
+    ],
+    "skip_publish_dates_note": "Founder Oct 8: holiday closed 9am is locked. Afternoon + evening plates later. Do not invent a 7pm still those nights.",
     "mode": "creative_sky_rotation",
     "priority": [
       "celestial",

@@ -194,6 +194,15 @@ def skip_afternoon_publish(day: date) -> bool:
     return day.isoformat() in {str(x) for x in skips}
 
 
+def skip_week_ahead_publish(day: date) -> bool:
+    """True when Founder is holding 7pm until a special evening plate exists."""
+    from .atmosphere import atmosphere_config
+
+    night = atmosphere_config().get("nighttime") or {}
+    skips = night.get("skip_publish_dates") or []
+    return day.isoformat() in {str(x) for x in skips}
+
+
 def skip_brand_overlays(image: Any) -> bool:
     """
     True when the plate is a finished flyer (logo + footer + event text baked in).
@@ -903,6 +912,17 @@ def plan_image(
         from .ingest import today_local
 
         on = day or today_local()
+        if skip_week_ahead_publish(on):
+            return ImagePlan(
+                source="awaiting_evening_plate",
+                url=None,
+                recommendation=(
+                    f"Week-ahead {on.isoformat()} is held — Founder will make "
+                    "the evening plate. Do not invent a night still."
+                ),
+                rule="awaiting_evening_plate",
+                prebranded=False,
+            )
         cross_blocked = cooldown_blocked_urls(
             on,
             exclude_campaign="week_ahead",

@@ -1,3 +1,10 @@
+## 2026-10-08 — Holiday closed stays 9am only for now
+
+Founder: leave Thanksgiving / Christmas / New Year on the morning slot.
+Afternoon already skipped. 7pm those three nights is held
+(`nighttime.skip_publish_dates`) until she makes special evening plates.
+Do not invent 5pm or 7pm.
+
 ## 2026-10-08 — Christmas + New Year 9am are the motion clips
 
 Founder: KEEP Santa flying for Dec 25 9am (media **30312**) and fireworks
