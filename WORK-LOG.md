@@ -1,3 +1,8 @@
+## 2026-10-08 — Christmas TEC still now has Santa in the sky
+
+Founder: put Santa flying on the Christmas still. TEC **30304** thumb is
+**30333**. 9am clip **30312** unchanged. Sep 11–13 cards unchanged.
+
 ## 2026-10-08 — Holiday closed stays 9am only for now
 
 Founder: leave Thanksgiving / Christmas / New Year on the morning slot.
