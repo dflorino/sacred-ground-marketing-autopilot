@@ -1,3 +1,13 @@
+## 2026-10-08 — Closed holiday plates locked (Thanksgiving / Holidays / New Year)
+
+Founder locked three real-storefront closed plates for TEC + 9am social:
+
+- Thu Nov 26 2026 Thanksgiving — TEC **30292**, morning **30291**
+- Fri Dec 25 2026 Happy Holidays (Christmas + Hanukkah) — TEC **30304**, morning **30296**
+- Fri Jan 1 2027 Happy New Year — TEC **30297**, morning **30295**
+
+Afternoon 5pm skipped those three Chicago days. Christmas/Hanukkah plate: trees, menorahs on the cart, snow, no pumpkins.
+
 ## 2026-10-08 — Oct 15 night is the pumpkin spin clip
 
 Founder: KEEP pumpkin spin for Oct 15 7pm. Media **30122**. Jack-o-lanterns

@@ -1729,7 +1729,7 @@
       "prior_media_id": 28700
     },
     "2026-10-10": {
-      "label": "Holistic Fair + 10/10 Portal",
+      "label": "Holistic Fair + 10/10 Portal + New Moon in Libra",
       "covers": [
         "facebook",
         "instagram"
@@ -1746,7 +1746,7 @@
       "do_not_publish": false,
       "awaiting_founder_review": false,
       "locked_until_founder_review": false,
-      "note": "Founder Oct 2: neon-arch remake rejected. This is the unlocked Fair-today shop with portal light in the real doors. Fair + 10/10 on one morning plate.",
+      "note": "Founder Oct 2: neon-arch remake rejected. This is the unlocked Fair-today shop with portal light in the real doors. Fair + 10/10 Portal + New Moon in Libra on one morning plate.",
       "updated_at": "2026-10-02T12:20:00-05:00",
       "media_id": 28944,
       "source_art_media_id": 28941,
@@ -1961,6 +1961,78 @@
       "do_not_remake": true,
       "founder_trashed": false,
       "founder_approved_at": "2026-10-06T14:10:00-05:00"
+    },
+    "2026-11-26": {
+      "label": "We're Closed — Happy Thanksgiving",
+      "covers": [
+        "facebook",
+        "instagram"
+      ],
+      "local": "assets/sg-morning-flyer-2026-11-26-thanksgiving-closed.jpg",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-11-26-thanksgiving-closed.jpg",
+      "prebranded": true,
+      "visual_style": "holiday_closed_storefront",
+      "pride_baked_in": true,
+      "status": "founder_approved",
+      "founder_approved": true,
+      "do_not_publish": false,
+      "awaiting_founder_review": false,
+      "locked_until_founder_review": false,
+      "note": "Founder Oct 8: lock. Real Sacred Ground storefront. TEC 30292. 9am closed plate.",
+      "updated_at": "2026-10-08T20:15:00-05:00",
+      "media_id": 30291,
+      "tec_event_id": 30292,
+      "do_not_remake": true,
+      "founder_trashed": false,
+      "founder_approved_at": "2026-10-08T20:08:00-05:00"
+    },
+    "2026-12-25": {
+      "label": "We're Closed — Happy Holidays",
+      "covers": [
+        "facebook",
+        "instagram"
+      ],
+      "local": "assets/sg-morning-flyer-2026-12-25-holidays-closed.jpg",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-12-25-holidays-closed.jpg",
+      "prebranded": true,
+      "visual_style": "holiday_closed_storefront",
+      "pride_baked_in": true,
+      "status": "founder_approved",
+      "founder_approved": true,
+      "do_not_publish": false,
+      "awaiting_founder_review": false,
+      "locked_until_founder_review": false,
+      "note": "Founder Oct 8: lock. Christmas + Hanukkah storefront, trees, menorahs, snow. TEC 30304. 9am closed plate.",
+      "updated_at": "2026-10-08T20:15:00-05:00",
+      "media_id": 30296,
+      "tec_event_id": 30304,
+      "do_not_remake": true,
+      "founder_trashed": false,
+      "founder_approved_at": "2026-10-08T20:15:00-05:00"
+    },
+    "2027-01-01": {
+      "label": "We're Closed — Happy New Year",
+      "covers": [
+        "facebook",
+        "instagram"
+      ],
+      "local": "assets/sg-morning-flyer-2027-01-01-newyear-closed.jpg",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2027-01-01-newyear-closed.jpg",
+      "prebranded": true,
+      "visual_style": "holiday_closed_storefront",
+      "pride_baked_in": true,
+      "status": "founder_approved",
+      "founder_approved": true,
+      "do_not_publish": false,
+      "awaiting_founder_review": false,
+      "locked_until_founder_review": false,
+      "note": "Founder Oct 8: lock. Fireworks + loaded cart. TEC 30297. 9am closed plate.",
+      "updated_at": "2026-10-08T20:15:00-05:00",
+      "media_id": 30295,
+      "tec_event_id": 30297,
+      "do_not_remake": true,
+      "founder_trashed": false,
+      "founder_approved_at": "2026-10-08T20:13:00-05:00"
     }
   },
   "template": {

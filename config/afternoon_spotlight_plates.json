@@ -5,7 +5,10 @@
     "2026-09-20",
     "2026-09-24",
     "2026-10-01",
-    "2026-10-20"
+    "2026-10-20",
+    "2026-11-26",
+    "2026-12-25",
+    "2027-01-01"
   ],
   "cinematic_weekly_threshold": {
     "notes": "Founder Sep 22: use all 3 movement clips for afternoon, one a week, not consecutive days. Regular 5pm still is skipped those dates. Schedule the assigned MP4 at 5:00 PM America/Chicago (FB+IG+TT+Threads) with that day's store hours. Do not invent a still.",
@@ -223,7 +226,8 @@
       "updated_at": "2026-10-02T13:18:00-05:00"
     },
     "2026-10-10": {
-      "label": "10/10 Portal",
+      "label": "10/10 Portal + New Moon in Libra",
+      "caption_opener": "This afternoon is the 10/10 Portal — and the new moon in Libra.",
       "local": "assets/sg-afternoon-spotlight-2026-10-10-1010-portal.jpg",
       "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-10-10-1010-portal.jpg",
       "media_id": 28925,
