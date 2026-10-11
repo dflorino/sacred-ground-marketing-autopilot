@@ -46,9 +46,33 @@ Contact in the menu. Hours are also at the bottom of the homepage.
 
 ## The shop, in person and online
 
-Yes, you can buy online, and yes, you can come in. Crystals, jewelry, sage, decks, and gifts are the idea. I won't guess what's in stock. The shop page will show you, or call 847-749-3922. On the shop page, add what you want to your cart and check out. Then it will be delivered straight to the address you provide to us. That simple. You're buying from Sacred Ground. We genuinely appreciate your purchase. All of this helps us remain a strong brick and mortar in the community. As the owner, I appreciate it.
+Yes, you can buy online, and yes, you can come in. Crystals, jewelry, sage, decks, and gifts are the idea. I won't guess what's in stock. The shop page will show you, or call 847-749-3922. On the shop page, add what you want to your cart and check out. Then it will be delivered straight to the address you provide to us. That simple. You're buying from Sacred Ground. We genuinely appreciate your purchase. All of this helps us remain a strong brick and mortar in the community. As the owner, I appreciate it. We text a couple of times a week, and most of our sales go out on those texts. Benz and Lauren Andrews do the wire wrapping. Benz can make anything with wire.
 
 Shop in the top menu.
+
+## Text messages and sales
+
+Yes. We text a couple of times a week, and most of our sales go out on those texts. Ask at the shop or call 847-749-3922 and we'll get you on the list.
+
+Ask at the shop, or call.
+
+## Wire wrapping
+
+Benz and Lauren Andrews do the wire wrapping. Benz can make anything with wire. Ask at the shop, or call 847-749-3922.
+
+Ask at the shop. Benz has a Transcendence page.
+
+## Benz
+
+Benz does wire wrapping, and he can make anything with wire. Ask at the shop or call 847-749-3922.
+
+Ask at the shop. Benz has a Transcendence page.
+
+## Lauren Andrews
+
+Lauren Andrews does wire wrapping. Benz does too — he can make anything with wire. Ask at the shop or call 847-749-3922.
+
+Ask at the shop, or call.
 
 ## Holistic fairs
 
@@ -472,7 +496,7 @@ Observatory in the top menu.
 
 ## Shop online
 
-Shop is in the menu at the top. Browse what's there, add what you want to your cart, and check out from the page. Then it will be delivered straight to the address you provide to us. That simple. You're buying from Sacred Ground. We genuinely appreciate your purchase. All of this helps us remain a strong brick and mortar in the community. As the owner, I appreciate it.
+Shop is in the menu at the top. Browse what's there, add what you want to your cart, and check out from the page. Then it will be delivered straight to the address you provide to us. That simple. You're buying from Sacred Ground. We genuinely appreciate your purchase. All of this helps us remain a strong brick and mortar in the community. As the owner, I appreciate it. We text a couple of times a week, and most of our sales go out on those texts.
 
 Shop in the top menu. Add to cart, then checkout. It is delivered to the address they give us.
 

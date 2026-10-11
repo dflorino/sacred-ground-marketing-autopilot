@@ -351,6 +351,8 @@ function sg_ask_lisa_maria_footer() {
 #sg-ask-lisa-maria-form{display:flex;gap:8px;padding:12px 16px 16px;border-top:1px solid #eadfce;flex-shrink:0;}
 #sg-ask-lisa-maria-form input{flex:1;border:1px solid #d5c6b2;border-radius:12px;padding:10px 12px;font:inherit;}
 #sg-ask-lisa-maria-form button{border:0;border-radius:12px;background:#4a2c5a;color:#fff;padding:10px 14px;font:inherit;cursor:pointer;}
+#sg-ask-lisa-maria-form button.mic{background:#efe6d8;color:#1a1410;}
+#sg-ask-lisa-maria-form button.mic.on{background:#c4a35a;}
 #sg-ask-lisa-maria-log .hear{margin-top:8px;}
 #sg-ask-lisa-maria-log .hear span{display:block;font-size:13px;color:#6a5648;margin-bottom:4px;}
 #sg-ask-lisa-maria-log .hear audio{width:100%;height:36px;}
@@ -368,7 +370,7 @@ function sg_ask_lisa_maria_footer() {
     <div class="sg-who"><strong>Chat with Lisa Maria</strong><em>Not the live reading. Ask how a session feels.</em></div>
     <div id="sg-ask-lisa-maria-log"></div>
     <a class="sg-book" id="sg-ask-lisa-maria-book" href="<?php echo $book; ?>">Book a time</a>
-    <form id="sg-ask-lisa-maria-form"><input id="sg-ask-lisa-maria-q" type="text" placeholder="Type a question…" autocomplete="off"/><button type="submit">Send</button></form>
+    <form id="sg-ask-lisa-maria-form"><input id="sg-ask-lisa-maria-q" type="text" placeholder="Type or speak a question…" autocomplete="off"/><button type="button" class="mic" id="sg-ask-lisa-maria-mic" aria-label="Speak">Speak</button><button type="submit">Send</button></form>
   </div>
 </div>
 <script>
@@ -421,6 +423,28 @@ function sg_ask_lisa_maria_footer() {
   })();
   document.getElementById("sg-ask-lisa-maria-close").onclick=function(){ document.getElementById("sg-ask-lisa-maria-back").classList.remove("open"); };
   document.getElementById("sg-ask-lisa-maria-back").addEventListener("click",function(e){ if(e.target.id==="sg-ask-lisa-maria-back") e.currentTarget.classList.remove("open"); });
+  (function(){
+    var btn=document.getElementById("sg-ask-lisa-maria-mic");
+    var form=document.getElementById("sg-ask-lisa-maria-form");
+    var SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+    if(!SR||!btn){ if(btn) btn.hidden=true; return; }
+    var rec=new SR(); rec.lang="en-US"; rec.interimResults=true; rec.continuous=false; var on=false;
+    rec.onresult=function(e){
+      var t=""; for(var i=0;i<e.results.length;i++) t+=e.results[i][0].transcript;
+      q.value=t;
+      if(e.results[e.results.length-1].isFinal){
+        on=false; btn.classList.remove("on"); btn.setAttribute("aria-pressed","false");
+        if(t.trim()){ if(form.requestSubmit) form.requestSubmit(); else form.dispatchEvent(new Event("submit",{cancelable:true,bubbles:true})); }
+      }
+    };
+    rec.onend=function(){ on=false; btn.classList.remove("on"); btn.setAttribute("aria-pressed","false"); };
+    rec.onerror=function(){ on=false; btn.classList.remove("on"); btn.setAttribute("aria-pressed","false"); };
+    btn.onclick=function(){
+      if(on){ try{rec.stop();}catch(err){} return; }
+      on=true; btn.classList.add("on"); btn.setAttribute("aria-pressed","true");
+      try{rec.start();}catch(err){ on=false; btn.classList.remove("on"); }
+    };
+  })();
   document.getElementById("sg-ask-lisa-maria-form").onsubmit=async function(e){
     e.preventDefault(); var text=q.value.trim(); if(!text) return; q.value=""; add(text,"me"); history.push({role:"user",content:text});
     var thinking=document.createElement("div"); thinking.className="sg-b them"; thinking.textContent="…"; log.appendChild(thinking);

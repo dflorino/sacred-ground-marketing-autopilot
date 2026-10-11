@@ -349,12 +349,15 @@ add(
         "Do you have books?",
         "What if something is out of stock?",
         "How do I use the shop page to buy things?",
+        "Do you have sales?",
     ],
     answer=(
         "You can shop in the store and on the website. The online shop is ordinary checkout: cart, then secure checkout. "
         "Then it will be delivered straight to the address you provide to us. That simple. "
         "You are buying from Sacred Ground. We genuinely appreciate your purchase. "
         "All of this helps us remain a strong brick and mortar in the community. As the owner, I appreciate it. "
+        "We send text messages a couple of times a week, and most of our sales are posted on those texts. "
+        "Benz and Lauren Andrews do wire wrapping. Benz can make anything with wire. "
         "On October 11 the published shelves with products were zodiac bags, wellness bags, sacred waters and sprays, tumbles, freeforms, "
         "sage, palo santo and incense, jewelry, tarot and oracle decks, ritual items, and mystery boxes. "
         "Crystals and minerals are the heart of the physical shop, including pieces that may not all be listed online. "
@@ -366,14 +369,128 @@ add(
         "On the shop page, add what you want to your cart and check out. "
         "Then it will be delivered straight to the address you provide to us. That simple. "
         "You're buying from Sacred Ground. We genuinely appreciate your purchase. "
-        "All of this helps us remain a strong brick and mortar in the community. As the owner, I appreciate it."
+        "All of this helps us remain a strong brick and mortar in the community. As the owner, I appreciate it. "
+        "We text a couple of times a week, and most of our sales go out on those texts. "
+        "Benz and Lauren Andrews do the wire wrapping. Benz can make anything with wire."
     ),
     navigation=nav("Shop in the top menu.", "Shop in the phone menu.", BASE + "/shop/"),
-    related_cards=["SG-KNOW-VISIT", "SG-ART-SMUDGING", "SG-NAV-SHOP"],
-        keywords=["shop", "buy", "crystals", "jewelry", "sage", "online", "woocommerce", "gifts", "shop page", "checkout", "delivered"],
+    related_cards=["SG-KNOW-VISIT", "SG-KNOW-TEXTS", "SG-KNOW-WIREWRAP", "SG-NAV-SHOP"],
+        keywords=["shop", "buy", "crystals", "jewelry", "sage", "online", "woocommerce", "gifts", "shop page", "checkout", "delivered", "sale", "sales"],
     source="WooCommerce categories with products, October 11, 2026. Homepage shop story.",
     update_frequency="live_only",
     live_source="WooCommerce shop and product pages.",
+)
+
+add(
+    card_id="SG-KNOW-TEXTS",
+    category="Shop",
+    title="Text messages and sales",
+    purpose="Say we text a couple of times a week and most sales go out on those texts.",
+    visitor_questions=[
+        "Do you send text messages?",
+        "Do you text about sales?",
+        "Are the sales on the texts?",
+        "How do I hear about sales?",
+        "Do you have a text list?",
+        "How do I get the texts?",
+    ],
+    answer=(
+        "Yes. We send text messages a couple of times a week, and most of our sales are posted on those texts. "
+        "If you want to get them, ask at the shop or call 847-749-3922 and we will get you on the list. "
+        "Monthly in the menu is different — that is the written Monthly, not the texts. "
+        "Do not read a website address."
+    ),
+    voice_response=(
+        "Yes. We text a couple of times a week, and most of our sales go out on those texts. "
+        "Ask at the shop or call 847-749-3922 and we'll get you on the list."
+    ),
+    navigation=nav("Ask at the shop, or call.", "Ask at the shop, or call.", BASE + "/contact/"),
+    related_cards=["SG-KNOW-SHOP", "SG-KNOW-VISIT"],
+    keywords=["text", "texts", "text message", "text messages", "sms", "sale", "sales", "on sale", "specials", "text list"],
+    source="Founder, October 11, 2026. No public signup page. Call or ask in the store.",
+)
+
+add(
+    card_id="SG-KNOW-WIREWRAP",
+    category="Shop",
+    title="Wire wrapping",
+    purpose="Name who wraps wire at Sacred Ground.",
+    visitor_questions=[
+        "Who does wire wrapping?",
+        "Do you do wire wrapping?",
+        "Can someone wrap my crystal?",
+        "Who makes jewelry here?",
+        "Can I get a custom wire wrap?",
+    ],
+    answer=(
+        "Yes. Benz and Lauren Andrews do wire wrapping. "
+        "Benz can make anything with wire. "
+        "Ask at the shop or call 847-749-3922. "
+        "Benz also has a Transcendence page. Do not read a website address. "
+        "Do not invent a price or a finish date."
+    ),
+    voice_response=(
+        "Benz and Lauren Andrews do the wire wrapping. "
+        "Benz can make anything with wire. Ask at the shop, or call 847-749-3922."
+    ),
+    navigation=nav("Ask at the shop. Benz has a Transcendence page.", "Ask at the shop, or call.", BASE + "/transcendence/"),
+    related_cards=["SG-SHOP-BENZ", "SG-SHOP-LAUREN", "SG-KNOW-SHOP"],
+    keywords=["wire", "wire wrap", "wire wrapping", "wrap", "wrapped", "custom jewelry", "pendant"],
+    source="Founder, October 11, 2026. Benz Transcendence page 23379.",
+)
+
+add(
+    card_id="SG-SHOP-BENZ",
+    category="Shop",
+    title="Benz",
+    purpose="Benz wraps wire and can make anything with wire.",
+    visitor_questions=[
+        "Who is Benz?",
+        "Does Benz do wire wrapping?",
+        "Can Benz wrap my stone?",
+        "What is Transcendence?",
+        "Tell me about Benz",
+    ],
+    answer=(
+        "Benz does wire wrapping. He can make anything with wire. "
+        "His work is Transcendence — one-of-one wire-wrapped jewelry, and you can also find him at Sacred Ground. "
+        "Lauren Andrews also does wire wrapping. "
+        "Ask at the shop or call 847-749-3922. Do not invent a price. Do not read a website address."
+    ),
+    voice_response=(
+        "Benz does wire wrapping, and he can make anything with wire. "
+        "Ask at the shop or call 847-749-3922."
+    ),
+    navigation=nav("Ask at the shop. Benz has a Transcendence page.", "Ask at the shop, or call.", BASE + "/transcendence/"),
+    related_cards=["SG-KNOW-WIREWRAP", "SG-SHOP-LAUREN", "SG-KNOW-SHOP"],
+    keywords=["benz", "transcendence", "wire wrap", "wire wrapping"],
+    source="Founder, October 11, 2026. Transcendence page 23379.",
+)
+
+add(
+    card_id="SG-SHOP-LAUREN",
+    category="Shop",
+    title="Lauren Andrews",
+    purpose="Lauren Andrews does wire wrapping at Sacred Ground.",
+    visitor_questions=[
+        "Who is Lauren Andrews?",
+        "Does Lauren do wire wrapping?",
+        "Tell me about Lauren Andrews",
+        "Is Lauren a jeweler?",
+    ],
+    answer=(
+        "Lauren Andrews does wire wrapping. Benz does too, and Benz can make anything with wire. "
+        "Ask at the shop or call 847-749-3922. "
+        "Do not invent a booking page or a price for Lauren. Do not read a website address."
+    ),
+    voice_response=(
+        "Lauren Andrews does wire wrapping. Benz does too — he can make anything with wire. "
+        "Ask at the shop or call 847-749-3922."
+    ),
+    navigation=nav("Ask at the shop, or call.", "Ask at the shop, or call.", BASE + "/shop/"),
+    related_cards=["SG-KNOW-WIREWRAP", "SG-SHOP-BENZ", "SG-KNOW-SHOP"],
+    keywords=["lauren", "lauren andrews", "andrews", "wire wrap", "wire wrapping"],
+    source="Founder, October 11, 2026. No public Lauren page.",
 )
 
 add(
@@ -999,13 +1116,15 @@ for c in cards:
         "Then it will be delivered straight to the address you provide to us. That simple. "
         "You are buying from Sacred Ground. We genuinely appreciate your purchase. "
         "All of this helps us remain a strong brick and mortar in the community. As the owner, I appreciate it. "
+        "We send text messages a couple of times a week, and most of our sales are posted on those texts. "
         "On a phone: open the menu and tap Shop. Do not read a website address. Name the menu item."
     )
     c["voice_response"] = (
         "Shop is in the menu at the top. Browse what's there, add what you want to your cart, and check out from the page. "
         "Then it will be delivered straight to the address you provide to us. That simple. "
         "You're buying from Sacred Ground. We genuinely appreciate your purchase. "
-        "All of this helps us remain a strong brick and mortar in the community. As the owner, I appreciate it."
+        "All of this helps us remain a strong brick and mortar in the community. As the owner, I appreciate it. "
+        "We text a couple of times a week, and most of our sales go out on those texts."
     )
     c["navigation"] = nav(
         "Shop in the top menu. Add to cart, then checkout. It is delivered to the address they give us.",

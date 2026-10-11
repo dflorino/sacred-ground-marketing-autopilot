@@ -126,7 +126,8 @@
     "live_source": "WooCommerce shop and product pages.",
     "related_cards": [
       "SG-KNOW-VISIT",
-      "SG-ART-SMUDGING",
+      "SG-KNOW-TEXTS",
+      "SG-KNOW-WIREWRAP",
       "SG-NAV-SHOP"
     ],
     "keywords": [
@@ -140,7 +141,9 @@
       "gifts",
       "shop page",
       "checkout",
-      "delivered"
+      "delivered",
+      "sale",
+      "sales"
     ],
     "card_id": "SG-KNOW-SHOP",
     "category": "Shop",
@@ -154,16 +157,174 @@
       "Can I shop in the store?",
       "Do you have books?",
       "What if something is out of stock?",
-      "How do I use the shop page to buy things?"
+      "How do I use the shop page to buy things?",
+      "Do you have sales?"
     ],
-    "answer": "You can shop in the store and on the website. The online shop is ordinary checkout: cart, then secure checkout. Then it will be delivered straight to the address you provide to us. That simple. You are buying from Sacred Ground. We genuinely appreciate your purchase. All of this helps us remain a strong brick and mortar in the community. As the owner, I appreciate it. On October 11 the published shelves with products were zodiac bags, wellness bags, sacred waters and sprays, tumbles, freeforms, sage, palo santo and incense, jewelry, tarot and oracle decks, ritual items, and mystery boxes. Crystals and minerals are the heart of the physical shop, including pieces that may not all be listed online. This guide does not know what is on the shelf today. The product page does. If it is not listed, call the shop.",
-    "voice_response": "Yes, you can buy online, and yes, you can come in. Crystals, jewelry, sage, decks, and gifts are the idea. I won't guess what's in stock. The shop page will show you, or call 847-749-3922. On the shop page, add what you want to your cart and check out. Then it will be delivered straight to the address you provide to us. That simple. You're buying from Sacred Ground. We genuinely appreciate your purchase. All of this helps us remain a strong brick and mortar in the community. As the owner, I appreciate it.",
+    "answer": "You can shop in the store and on the website. The online shop is ordinary checkout: cart, then secure checkout. Then it will be delivered straight to the address you provide to us. That simple. You are buying from Sacred Ground. We genuinely appreciate your purchase. All of this helps us remain a strong brick and mortar in the community. As the owner, I appreciate it. We send text messages a couple of times a week, and most of our sales are posted on those texts. Benz and Lauren Andrews do wire wrapping. Benz can make anything with wire. On October 11 the published shelves with products were zodiac bags, wellness bags, sacred waters and sprays, tumbles, freeforms, sage, palo santo and incense, jewelry, tarot and oracle decks, ritual items, and mystery boxes. Crystals and minerals are the heart of the physical shop, including pieces that may not all be listed online. This guide does not know what is on the shelf today. The product page does. If it is not listed, call the shop.",
+    "voice_response": "Yes, you can buy online, and yes, you can come in. Crystals, jewelry, sage, decks, and gifts are the idea. I won't guess what's in stock. The shop page will show you, or call 847-749-3922. On the shop page, add what you want to your cart and check out. Then it will be delivered straight to the address you provide to us. That simple. You're buying from Sacred Ground. We genuinely appreciate your purchase. All of this helps us remain a strong brick and mortar in the community. As the owner, I appreciate it. We text a couple of times a week, and most of our sales go out on those texts. Benz and Lauren Andrews do the wire wrapping. Benz can make anything with wire.",
     "navigation": {
       "desktop": "Shop in the top menu.",
       "mobile": "Shop in the phone menu.",
       "direct_url": "https://shopsacredground.com/shop/"
     },
     "source": "WooCommerce categories with products, October 11, 2026. Homepage shop story."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [
+      "SG-KNOW-SHOP",
+      "SG-KNOW-VISIT"
+    ],
+    "keywords": [
+      "text",
+      "texts",
+      "text message",
+      "text messages",
+      "sms",
+      "sale",
+      "sales",
+      "on sale",
+      "specials",
+      "text list"
+    ],
+    "card_id": "SG-KNOW-TEXTS",
+    "category": "Shop",
+    "title": "Text messages and sales",
+    "purpose": "Say we text a couple of times a week and most sales go out on those texts.",
+    "visitor_questions": [
+      "Do you send text messages?",
+      "Do you text about sales?",
+      "Are the sales on the texts?",
+      "How do I hear about sales?",
+      "Do you have a text list?",
+      "How do I get the texts?"
+    ],
+    "answer": "Yes. We send text messages a couple of times a week, and most of our sales are posted on those texts. If you want to get them, ask at the shop or call 847-749-3922 and we will get you on the list. Monthly in the menu is different — that is the written Monthly, not the texts. Do not read a website address.",
+    "voice_response": "Yes. We text a couple of times a week, and most of our sales go out on those texts. Ask at the shop or call 847-749-3922 and we'll get you on the list.",
+    "navigation": {
+      "desktop": "Ask at the shop, or call.",
+      "mobile": "Ask at the shop, or call.",
+      "direct_url": "https://shopsacredground.com/contact/"
+    },
+    "source": "Founder, October 11, 2026. No public signup page. Call or ask in the store."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [
+      "SG-SHOP-BENZ",
+      "SG-SHOP-LAUREN",
+      "SG-KNOW-SHOP"
+    ],
+    "keywords": [
+      "wire",
+      "wire wrap",
+      "wire wrapping",
+      "wrap",
+      "wrapped",
+      "custom jewelry",
+      "pendant"
+    ],
+    "card_id": "SG-KNOW-WIREWRAP",
+    "category": "Shop",
+    "title": "Wire wrapping",
+    "purpose": "Name who wraps wire at Sacred Ground.",
+    "visitor_questions": [
+      "Who does wire wrapping?",
+      "Do you do wire wrapping?",
+      "Can someone wrap my crystal?",
+      "Who makes jewelry here?",
+      "Can I get a custom wire wrap?"
+    ],
+    "answer": "Yes. Benz and Lauren Andrews do wire wrapping. Benz can make anything with wire. Ask at the shop or call 847-749-3922. Benz also has a Transcendence page. Do not read a website address. Do not invent a price or a finish date.",
+    "voice_response": "Benz and Lauren Andrews do the wire wrapping. Benz can make anything with wire. Ask at the shop, or call 847-749-3922.",
+    "navigation": {
+      "desktop": "Ask at the shop. Benz has a Transcendence page.",
+      "mobile": "Ask at the shop, or call.",
+      "direct_url": "https://shopsacredground.com/transcendence/"
+    },
+    "source": "Founder, October 11, 2026. Benz Transcendence page 23379."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [
+      "SG-KNOW-WIREWRAP",
+      "SG-SHOP-LAUREN",
+      "SG-KNOW-SHOP"
+    ],
+    "keywords": [
+      "benz",
+      "transcendence",
+      "wire wrap",
+      "wire wrapping"
+    ],
+    "card_id": "SG-SHOP-BENZ",
+    "category": "Shop",
+    "title": "Benz",
+    "purpose": "Benz wraps wire and can make anything with wire.",
+    "visitor_questions": [
+      "Who is Benz?",
+      "Does Benz do wire wrapping?",
+      "Can Benz wrap my stone?",
+      "What is Transcendence?",
+      "Tell me about Benz"
+    ],
+    "answer": "Benz does wire wrapping. He can make anything with wire. His work is Transcendence — one-of-one wire-wrapped jewelry, and you can also find him at Sacred Ground. Lauren Andrews also does wire wrapping. Ask at the shop or call 847-749-3922. Do not invent a price. Do not read a website address.",
+    "voice_response": "Benz does wire wrapping, and he can make anything with wire. Ask at the shop or call 847-749-3922.",
+    "navigation": {
+      "desktop": "Ask at the shop. Benz has a Transcendence page.",
+      "mobile": "Ask at the shop, or call.",
+      "direct_url": "https://shopsacredground.com/transcendence/"
+    },
+    "source": "Founder, October 11, 2026. Transcendence page 23379."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [
+      "SG-KNOW-WIREWRAP",
+      "SG-SHOP-BENZ",
+      "SG-KNOW-SHOP"
+    ],
+    "keywords": [
+      "lauren",
+      "lauren andrews",
+      "andrews",
+      "wire wrap",
+      "wire wrapping"
+    ],
+    "card_id": "SG-SHOP-LAUREN",
+    "category": "Shop",
+    "title": "Lauren Andrews",
+    "purpose": "Lauren Andrews does wire wrapping at Sacred Ground.",
+    "visitor_questions": [
+      "Who is Lauren Andrews?",
+      "Does Lauren do wire wrapping?",
+      "Tell me about Lauren Andrews",
+      "Is Lauren a jeweler?"
+    ],
+    "answer": "Lauren Andrews does wire wrapping. Benz does too, and Benz can make anything with wire. Ask at the shop or call 847-749-3922. Do not invent a booking page or a price for Lauren. Do not read a website address.",
+    "voice_response": "Lauren Andrews does wire wrapping. Benz does too — he can make anything with wire. Ask at the shop or call 847-749-3922.",
+    "navigation": {
+      "desktop": "Ask at the shop, or call.",
+      "mobile": "Ask at the shop, or call.",
+      "direct_url": "https://shopsacredground.com/shop/"
+    },
+    "source": "Founder, October 11, 2026. No public Lauren page."
   },
   {
     "layer": "knowledge",

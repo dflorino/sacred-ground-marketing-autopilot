@@ -1,6 +1,6 @@
 # Sacred Ground AI Knowledge Library
 
-Verified 2026-10-11. 86 cards. 417 visitor questions.
+Verified 2026-10-11. 90 cards. 438 visitor questions.
 Draft for Deneene to read. The guide is not switched on.
 
 Start with `voice/VOICE-BIBLE.md` and `01-DECISIONS.md`.
@@ -18,6 +18,10 @@ Start with `voice/VOICE-BIBLE.md` and `01-DECISIONS.md`.
 - **SG-KNOW-ABOUT** — What Sacred Ground is — https://shopsacredground.com/about/
 - **SG-KNOW-VISIT** — Visit the store — https://shopsacredground.com/contact/
 - **SG-KNOW-SHOP** — The shop, in person and online — https://shopsacredground.com/shop/
+- **SG-KNOW-TEXTS** — Text messages and sales — https://shopsacredground.com/contact/
+- **SG-KNOW-WIREWRAP** — Wire wrapping — https://shopsacredground.com/transcendence/
+- **SG-SHOP-BENZ** — Benz — https://shopsacredground.com/transcendence/
+- **SG-SHOP-LAUREN** — Lauren Andrews — https://shopsacredground.com/shop/
 - **SG-KNOW-FAIR** — Holistic fairs — https://shopsacredground.com/library/guides/holistic-fair/
 - **SG-KNOW-COMMUNITY** — Free community gatherings — https://shopsacredground.com/events/list/
 - **SG-RULE-NO-DEATH** — A card we do not use — https://shopsacredground.com/sacred-ground-observatory/

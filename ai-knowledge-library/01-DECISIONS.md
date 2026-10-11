@@ -10,3 +10,5 @@ These override the open questions in the audit.
 6. Holistic fairs are about four a year, one each season. No dated banner goes in a card. The October 10 line on the homepage is stale. Another agent will remove it. This library does not edit the website.
 7. The address is always 160 West Campbell Street, Arlington Heights, IL 60005. Another agent will fix the map search. This library does not edit the website.
 8. “Book Now” on the homepage opens the events calendar. If the visitor is asking about a specific practitioner, the guide goes to that person’s profile, and to that person’s booking page when they want a time.
+9. We send text messages a couple of times a week. Most sales are posted on those texts. Do not invent a signup URL. Send them to the shop or 847-749-3922 to get on the list. Monthly in the menu is not the text list.
+10. Benz and Lauren Andrews do wire wrapping. Benz can make anything with wire. Benz has a Transcendence page. Do not invent a Lauren page or a price.

@@ -294,6 +294,132 @@
     "direct_url": "https://shopsacredground.com/shop/"
   },
   {
+    "question": "Do you have sales?",
+    "card_id": "SG-KNOW-SHOP",
+    "category": "Shop",
+    "direct_url": "https://shopsacredground.com/shop/"
+  },
+  {
+    "question": "Do you send text messages?",
+    "card_id": "SG-KNOW-TEXTS",
+    "category": "Shop",
+    "direct_url": "https://shopsacredground.com/contact/"
+  },
+  {
+    "question": "Do you text about sales?",
+    "card_id": "SG-KNOW-TEXTS",
+    "category": "Shop",
+    "direct_url": "https://shopsacredground.com/contact/"
+  },
+  {
+    "question": "Are the sales on the texts?",
+    "card_id": "SG-KNOW-TEXTS",
+    "category": "Shop",
+    "direct_url": "https://shopsacredground.com/contact/"
+  },
+  {
+    "question": "How do I hear about sales?",
+    "card_id": "SG-KNOW-TEXTS",
+    "category": "Shop",
+    "direct_url": "https://shopsacredground.com/contact/"
+  },
+  {
+    "question": "Do you have a text list?",
+    "card_id": "SG-KNOW-TEXTS",
+    "category": "Shop",
+    "direct_url": "https://shopsacredground.com/contact/"
+  },
+  {
+    "question": "How do I get the texts?",
+    "card_id": "SG-KNOW-TEXTS",
+    "category": "Shop",
+    "direct_url": "https://shopsacredground.com/contact/"
+  },
+  {
+    "question": "Who does wire wrapping?",
+    "card_id": "SG-KNOW-WIREWRAP",
+    "category": "Shop",
+    "direct_url": "https://shopsacredground.com/transcendence/"
+  },
+  {
+    "question": "Do you do wire wrapping?",
+    "card_id": "SG-KNOW-WIREWRAP",
+    "category": "Shop",
+    "direct_url": "https://shopsacredground.com/transcendence/"
+  },
+  {
+    "question": "Can someone wrap my crystal?",
+    "card_id": "SG-KNOW-WIREWRAP",
+    "category": "Shop",
+    "direct_url": "https://shopsacredground.com/transcendence/"
+  },
+  {
+    "question": "Who makes jewelry here?",
+    "card_id": "SG-KNOW-WIREWRAP",
+    "category": "Shop",
+    "direct_url": "https://shopsacredground.com/transcendence/"
+  },
+  {
+    "question": "Can I get a custom wire wrap?",
+    "card_id": "SG-KNOW-WIREWRAP",
+    "category": "Shop",
+    "direct_url": "https://shopsacredground.com/transcendence/"
+  },
+  {
+    "question": "Who is Benz?",
+    "card_id": "SG-SHOP-BENZ",
+    "category": "Shop",
+    "direct_url": "https://shopsacredground.com/transcendence/"
+  },
+  {
+    "question": "Does Benz do wire wrapping?",
+    "card_id": "SG-SHOP-BENZ",
+    "category": "Shop",
+    "direct_url": "https://shopsacredground.com/transcendence/"
+  },
+  {
+    "question": "Can Benz wrap my stone?",
+    "card_id": "SG-SHOP-BENZ",
+    "category": "Shop",
+    "direct_url": "https://shopsacredground.com/transcendence/"
+  },
+  {
+    "question": "What is Transcendence?",
+    "card_id": "SG-SHOP-BENZ",
+    "category": "Shop",
+    "direct_url": "https://shopsacredground.com/transcendence/"
+  },
+  {
+    "question": "Tell me about Benz",
+    "card_id": "SG-SHOP-BENZ",
+    "category": "Shop",
+    "direct_url": "https://shopsacredground.com/transcendence/"
+  },
+  {
+    "question": "Who is Lauren Andrews?",
+    "card_id": "SG-SHOP-LAUREN",
+    "category": "Shop",
+    "direct_url": "https://shopsacredground.com/shop/"
+  },
+  {
+    "question": "Does Lauren do wire wrapping?",
+    "card_id": "SG-SHOP-LAUREN",
+    "category": "Shop",
+    "direct_url": "https://shopsacredground.com/shop/"
+  },
+  {
+    "question": "Tell me about Lauren Andrews",
+    "card_id": "SG-SHOP-LAUREN",
+    "category": "Shop",
+    "direct_url": "https://shopsacredground.com/shop/"
+  },
+  {
+    "question": "Is Lauren a jeweler?",
+    "card_id": "SG-SHOP-LAUREN",
+    "category": "Shop",
+    "direct_url": "https://shopsacredground.com/shop/"
+  },
+  {
     "question": "When is the holistic fair?",
     "card_id": "SG-KNOW-FAIR",
     "category": "Events",

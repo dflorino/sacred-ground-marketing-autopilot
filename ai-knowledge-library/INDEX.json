@@ -1,7 +1,7 @@
 {
   "generated": "2026-10-11",
-  "card_count": 86,
-  "question_count": 417,
+  "card_count": 90,
+  "question_count": 438,
   "by_category": {
     "Voice": [
       "SG-VOICE-IDENTITY",
@@ -19,7 +19,11 @@
       "SG-KNOW-VISIT"
     ],
     "Shop": [
-      "SG-KNOW-SHOP"
+      "SG-KNOW-SHOP",
+      "SG-KNOW-TEXTS",
+      "SG-KNOW-WIREWRAP",
+      "SG-SHOP-BENZ",
+      "SG-SHOP-LAUREN"
     ],
     "Events": [
       "SG-KNOW-FAIR",
@@ -286,6 +290,78 @@
     "delivered": [
       "SG-KNOW-SHOP",
       "SG-NAV-SHOP"
+    ],
+    "sale": [
+      "SG-KNOW-SHOP",
+      "SG-KNOW-TEXTS"
+    ],
+    "sales": [
+      "SG-KNOW-SHOP",
+      "SG-KNOW-TEXTS"
+    ],
+    "text": [
+      "SG-KNOW-TEXTS"
+    ],
+    "texts": [
+      "SG-KNOW-TEXTS"
+    ],
+    "text message": [
+      "SG-KNOW-TEXTS"
+    ],
+    "text messages": [
+      "SG-KNOW-TEXTS"
+    ],
+    "sms": [
+      "SG-KNOW-TEXTS"
+    ],
+    "on sale": [
+      "SG-KNOW-TEXTS"
+    ],
+    "specials": [
+      "SG-KNOW-TEXTS"
+    ],
+    "text list": [
+      "SG-KNOW-TEXTS"
+    ],
+    "wire": [
+      "SG-KNOW-WIREWRAP"
+    ],
+    "wire wrap": [
+      "SG-KNOW-WIREWRAP",
+      "SG-SHOP-BENZ",
+      "SG-SHOP-LAUREN"
+    ],
+    "wire wrapping": [
+      "SG-KNOW-WIREWRAP",
+      "SG-SHOP-BENZ",
+      "SG-SHOP-LAUREN"
+    ],
+    "wrap": [
+      "SG-KNOW-WIREWRAP"
+    ],
+    "wrapped": [
+      "SG-KNOW-WIREWRAP"
+    ],
+    "custom jewelry": [
+      "SG-KNOW-WIREWRAP"
+    ],
+    "pendant": [
+      "SG-KNOW-WIREWRAP"
+    ],
+    "benz": [
+      "SG-SHOP-BENZ"
+    ],
+    "transcendence": [
+      "SG-SHOP-BENZ"
+    ],
+    "lauren": [
+      "SG-SHOP-LAUREN"
+    ],
+    "lauren andrews": [
+      "SG-SHOP-LAUREN"
+    ],
+    "andrews": [
+      "SG-SHOP-LAUREN"
     ],
     "fair": [
       "SG-KNOW-FAIR"
@@ -972,12 +1048,18 @@
     ],
     "https://shopsacredground.com/contact/": [
       "SG-KNOW-VISIT",
+      "SG-KNOW-TEXTS",
       "SG-NAV-HOURS"
     ],
     "https://shopsacredground.com/shop/": [
       "SG-KNOW-SHOP",
+      "SG-SHOP-LAUREN",
       "SG-NAV-SHOP",
       "SG-LIVE-STOCK"
+    ],
+    "https://shopsacredground.com/transcendence/": [
+      "SG-KNOW-WIREWRAP",
+      "SG-SHOP-BENZ"
     ],
     "https://shopsacredground.com/library/guides/holistic-fair/": [
       "SG-KNOW-FAIR"
