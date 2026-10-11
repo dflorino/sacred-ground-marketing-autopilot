@@ -1,6 +1,6 @@
 # Sacred Ground AI Knowledge Library
 
-Verified 2026-10-11. 83 cards. 390 visitor questions.
+Verified 2026-10-11. 84 cards. 394 visitor questions.
 Draft for Deneene to read. The guide is not switched on.
 
 Start with `voice/VOICE-BIBLE.md` and `01-DECISIONS.md`.
@@ -19,7 +19,7 @@ Start with `voice/VOICE-BIBLE.md` and `01-DECISIONS.md`.
 - **SG-KNOW-SHOP** — The shop, in person and online — https://shopsacredground.com/shop/
 - **SG-KNOW-FAIR** — Holistic fairs — https://shopsacredground.com/library/guides/holistic-fair/
 - **SG-KNOW-COMMUNITY** — Free community gatherings — https://shopsacredground.com/events/list/
-- **SG-RULE-NO-DEATH** — Never the Death card — https://shopsacredground.com/sacred-ground-observatory/
+- **SG-RULE-NO-DEATH** — A card we do not use — https://shopsacredground.com/sacred-ground-observatory/
 - **SG-KNOW-LIBRARY** — The Sacred Ground Library — https://shopsacredground.com/library/
 - **SG-KNOW-OBSERVATORY** — The Sacred Ground Observatory — https://shopsacredground.com/sacred-ground-observatory/
 - **SG-MOD-REIKI** — Reiki — https://shopsacredground.com/practitioners-modalities-2/
@@ -93,6 +93,7 @@ Start with `voice/VOICE-BIBLE.md` and `01-DECISIONS.md`.
 - **SG-NAV-HOURS** — Hours, address, and the phone — https://shopsacredground.com/contact/
 - **SG-NAV-FREE** — Find a free event — https://shopsacredground.com/events/list/
 - **SG-NAV-START** — Not sure where to start — https://shopsacredground.com/
+- **SG-NAV-MONTHLY** — Open Monthly — https://shopsacredground.com/earth-ether/
 
 ## Live
 

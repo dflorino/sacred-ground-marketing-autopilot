@@ -20,8 +20,8 @@
       "How do I find a practitioner?",
       "Where is that on my phone?"
     ],
-    "answer": "Open Holistic Center, then Practitioners and Modalities. Portraits are on that page. Each name goes to the newer profile. On a phone: The phone menu does not list every person. Use the practitioners link directly. Direct link: https://shopsacredground.com/practitioners-modalities-2/.",
-    "voice_response": "I'll take you straight there. https://shopsacredground.com/practitioners-modalities-2/.",
+    "answer": "Open Holistic Center, then Practitioners and Modalities. Portraits are on that page. Each name goes to the newer profile. On a phone: The phone menu does not list every person. Use the practitioners link directly. Do not read a website address. Name the menu item.",
+    "voice_response": "That's on our nav — Holistic Center, then Practitioners.",
     "navigation": {
       "desktop": "Open Holistic Center, then Practitioners and Modalities. Portraits are on that page. Each name goes to the newer profile.",
       "mobile": "The phone menu does not list every person. Use the practitioners link directly.",
@@ -50,8 +50,8 @@
       "How do I book a specific person?",
       "Where is that on my phone?"
     ],
-    "answer": "Open that person's profile from the practitioners page, then their booking link. Do not use homepage Book Now for a named person. Homepage Book Now opens the events calendar. On a phone: Same. Use their direct profile and booking links. Direct link: https://shopsacredground.com/practitioners-modalities-2/.",
-    "voice_response": "I'll take you straight there. https://shopsacredground.com/practitioners-modalities-2/.",
+    "answer": "Open that person's profile from the practitioners page, then their booking link. Do not use homepage Book Now for a named person. Homepage Book Now opens the events calendar. On a phone: Same. Use their direct profile and booking links. Do not read a website address. Name the menu item.",
+    "voice_response": "That's on our nav — Holistic Center, then Practitioners.",
     "navigation": {
       "desktop": "Open that person's profile from the practitioners page, then their booking link. Do not use homepage Book Now for a named person. Homepage Book Now opens the events calendar.",
       "mobile": "Same. Use their direct profile and booking links.",
@@ -81,8 +81,8 @@
       "How do I see what is happening?",
       "Where is that on my phone?"
     ],
-    "answer": "Calendar in the top menu opens the events list. You can switch months in The Events Calendar. Open a title for the description. Registering is the booking or ticket link on that event, or a call to the shop. On a phone: Calendar in the phone menu. Your Calendar under it is for bookings you already made, after you sign in. Direct link: https://shopsacredground.com/events/list/.",
-    "voice_response": "I'll take you straight there. https://shopsacredground.com/events/list/.",
+    "answer": "Calendar in the top menu opens the events list. You can switch months in The Events Calendar. Open a title for the description. Registering is the booking or ticket link on that event, or a call to the shop. On a phone: Calendar in the phone menu. Your Calendar under it is for bookings you already made, after you sign in. Do not read a website address. Name the menu item.",
+    "voice_response": "That's on our nav — Calendar in the menu.",
     "navigation": {
       "desktop": "Calendar in the top menu opens the events list. You can switch months in The Events Calendar. Open a title for the description. Registering is the booking or ticket link on that event, or a call to the shop.",
       "mobile": "Calendar in the phone menu. Your Calendar under it is for bookings you already made, after you sign in.",
@@ -112,8 +112,8 @@
       "How do I see bookings you already made?",
       "Where is that on my phone?"
     ],
-    "answer": "Calendar, then Your Calendar. Sign in with the same email you booked with. Upcoming and past are the two tabs. Reschedule or cancel as early as you can. Less than 24 hours' notice is not eligible for a refund. Questions: 847-749-3922. On a phone: Calendar, then Your Calendar. Same sign-in. Direct link: https://shopsacredground.com/your-calendar/.",
-    "voice_response": "I'll take you straight there. https://shopsacredground.com/your-calendar/.",
+    "answer": "Calendar, then Your Calendar. Sign in with the same email you booked with. Upcoming and past are the two tabs. Reschedule or cancel as early as you can. Less than 24 hours' notice is not eligible for a refund. Questions: 847-749-3922. On a phone: Calendar, then Your Calendar. Same sign-in. Do not read a website address. Name the menu item.",
+    "voice_response": "That's on our nav — Calendar, then Your Calendar.",
     "navigation": {
       "desktop": "Calendar, then Your Calendar. Sign in with the same email you booked with. Upcoming and past are the two tabs. Reschedule or cancel as early as you can. Less than 24 hours' notice is not eligible for a refund. Questions: 847-749-3922.",
       "mobile": "Calendar, then Your Calendar. Same sign-in.",
@@ -142,8 +142,8 @@
       "How do I browse the library?",
       "Where is that on my phone?"
     ],
-    "answer": "Library in the top menu, then Articles, Books, Movies, Music, Podcasts, or Guides. On a phone: Library in the phone menu shows Guides in the submenu. The Library page has all six shelves. Direct link: https://shopsacredground.com/library/.",
-    "voice_response": "I'll take you straight there. https://shopsacredground.com/library/.",
+    "answer": "Library in the top menu, then Articles, Books, Movies, Music, Podcasts, or Guides. On a phone: Library in the phone menu shows Guides in the submenu. The Library page has all six shelves. Do not read a website address. Name the menu item.",
+    "voice_response": "That's on our nav — Library in the menu.",
     "navigation": {
       "desktop": "Library in the top menu, then Articles, Books, Movies, Music, Podcasts, or Guides.",
       "mobile": "Library in the phone menu shows Guides in the submenu. The Library page has all six shelves.",
@@ -172,8 +172,8 @@
       "How do I open the observatory?",
       "Where is that on my phone?"
     ],
-    "answer": "Observatory in the top menu. On a phone: Observatory in the phone menu. Direct link: https://shopsacredground.com/sacred-ground-observatory/.",
-    "voice_response": "I'll take you straight there. https://shopsacredground.com/sacred-ground-observatory/.",
+    "answer": "Observatory in the top menu. On a phone: Observatory in the phone menu. Do not read a website address. Name the menu item.",
+    "voice_response": "That's on our nav — Observatory in the menu.",
     "navigation": {
       "desktop": "Observatory in the top menu.",
       "mobile": "Observatory in the phone menu.",
@@ -202,8 +202,8 @@
       "How do I shop online?",
       "Where is that on my phone?"
     ],
-    "answer": "Shop in the top menu. Add to cart, then checkout. On a phone: Shop in the phone menu. Direct link: https://shopsacredground.com/shop/.",
-    "voice_response": "I'll take you straight there. https://shopsacredground.com/shop/.",
+    "answer": "Shop in the top menu. Add to cart, then checkout. On a phone: Shop in the phone menu. Do not read a website address. Name the menu item.",
+    "voice_response": "That's on our nav — Shop in the menu.",
     "navigation": {
       "desktop": "Shop in the top menu. Add to cart, then checkout.",
       "mobile": "Shop in the phone menu.",
@@ -233,8 +233,8 @@
       "How do I hours, address, and the phone?",
       "Where is that on my phone?"
     ],
-    "answer": "Contact in the menu. Address is 160 W Campbell Street, Arlington Heights, IL 60005. On a phone: Contact in the phone menu. Direct link: https://shopsacredground.com/contact/.",
-    "voice_response": "I'll take you straight there. https://shopsacredground.com/contact/.",
+    "answer": "Contact in the menu. Address is 160 W Campbell Street, Arlington Heights, IL 60005. On a phone: Contact in the phone menu. Do not read a website address. Name the menu item.",
+    "voice_response": "That's on our nav — Contact in the menu.",
     "navigation": {
       "desktop": "Contact in the menu. Address is 160 W Campbell Street, Arlington Heights, IL 60005.",
       "mobile": "Contact in the phone menu.",
@@ -262,8 +262,8 @@
       "How do I find a free event?",
       "Where is that on my phone?"
     ],
-    "answer": "Open the events list and look for Free in the title, or ask for meditation, educational night, or reiki share. Confirm the date on the calendar. On a phone: Same calendar link. Direct link: https://shopsacredground.com/events/list/.",
-    "voice_response": "I'll take you straight there. https://shopsacredground.com/events/list/.",
+    "answer": "Open the events list and look for Free in the title, or ask for meditation, educational night, or reiki share. Confirm the date on the calendar. On a phone: Same calendar link. Do not read a website address. Name the menu item.",
+    "voice_response": "That's on our nav — Calendar in the menu.",
     "navigation": {
       "desktop": "Open the events list and look for Free in the title, or ask for meditation, educational night, or reiki share. Confirm the date on the calendar.",
       "mobile": "Same calendar link.",
@@ -293,12 +293,43 @@
       "How do I not sure where to start?",
       "Where is that on my phone?"
     ],
-    "answer": "Ask what they are carrying, or what they are curious about. Shop if they want to wander. Practitioners if they want a person. Library if they want to read. Observatory if they want the moon, a stone, or a number. Calendar if they want to see the week. Phone if they want a human: 847-749-3922. On a phone: Same destinations. Give the direct link. Direct link: https://shopsacredground.com/.",
-    "voice_response": "I'll take you straight there. https://shopsacredground.com/.",
+    "answer": "Ask what they are carrying, or what they are curious about. Shop if they want to wander. Practitioners if they want a person. Library if they want to read. Observatory if they want the moon, a stone, or a number. Calendar if they want to see the week. Phone if they want a human: 847-749-3922. On a phone: Same destinations. Name the menu item. Do not read a website. Do not read a website address. Name the menu item.",
+    "voice_response": "That's on our nav — the homepage.",
     "navigation": {
       "desktop": "Ask what they are carrying, or what they are curious about. Shop if they want to wander. Practitioners if they want a person. Library if they want to read. Observatory if they want the moon, a stone, or a number. Calendar if they want to see the week. Phone if they want a human: 847-749-3922.",
-      "mobile": "Same destinations. Give the direct link.",
+      "mobile": "Same destinations. Name the menu item. Do not read a website.",
       "direct_url": "https://shopsacredground.com/"
+    },
+    "source": "Primary menu, mobile menu, and homepage buttons, October 11, 2026. Founder decision 8."
+  },
+  {
+    "layer": "navigation",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [],
+    "keywords": [
+      "monthly",
+      "newsletter",
+      "earth and ether",
+      "earth & ether"
+    ],
+    "card_id": "SG-NAV-MONTHLY",
+    "category": "Navigation",
+    "title": "Open Monthly",
+    "purpose": "Walk a visitor through: Open Monthly.",
+    "visitor_questions": [
+      "Open Monthly?",
+      "How do I open monthly?",
+      "Where is that on my phone?"
+    ],
+    "answer": "Monthly in the top menu. That is the name on the nav. Some people still call it the newsletter. Do not call the menu item the newsletter. On a phone: Monthly in the phone menu. Do not read a website address. Name the menu item.",
+    "voice_response": "That's on our nav — Monthly in the menu.",
+    "navigation": {
+      "desktop": "Monthly in the top menu. That is the name on the nav. Some people still call it the newsletter. Do not call the menu item the newsletter.",
+      "mobile": "Monthly in the phone menu.",
+      "direct_url": "https://shopsacredground.com/earth-ether/"
     },
     "source": "Primary menu, mobile menu, and homepage buttons, October 11, 2026. Founder decision 8."
   }

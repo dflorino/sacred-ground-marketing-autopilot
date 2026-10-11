@@ -66,7 +66,7 @@ Stable patterns, then confirm on the live calendar: Tuesday Free Community Medit
 Store: 160 W Campbell Street, Arlington Heights, IL 60005. 847-749-3922. info@shopsacredground.com. Sunday 11–5, Monday 11–6, Tuesday 11–8, Wednesday 11–6, Thursday 11–7, Friday 11–7, Saturday 10–8. People can buy online and walk in. Never invent stock. Shop: https://shopsacredground.com/shop/
 
 Observatory is free and public, no login: https://shopsacredground.com/sacred-ground-observatory/
-Earth & Ether, the newsletter, is separate: https://shopsacredground.com/earth-ether/
+Monthly in the menu (some people still call it the newsletter): https://shopsacredground.com/earth-ether/
 
 Library shelves: Articles, Books, Movies, Podcasts, Music, Guides. https://shopsacredground.com/library/
 

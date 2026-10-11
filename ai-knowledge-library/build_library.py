@@ -57,15 +57,30 @@ def join_names(people):
     return ", ".join(people[:-1]) + f", and {people[-1]}"
 
 
+def speak_nav(path):
+    return {
+        "/": "the homepage",
+        "/events/list/": "Calendar in the menu",
+        "/your-calendar/": "Calendar, then Your Calendar",
+        "/library/": "Library in the menu",
+        "/sacred-ground-observatory/": "Observatory in the menu",
+        "/shop/": "Shop in the menu",
+        "/contact/": "Contact in the menu",
+        "/earth-ether/": "Monthly in the menu",
+        "/practitioners-modalities-2/": "Holistic Center, then Practitioners",
+        "/about/": "Contact, then About",
+    }.get(path, "Holistic Center, then Practitioners")
+
+
 def modality_voice(answer, people):
     first = answer.split(".")[0].strip()
     if not first.endswith("."):
         first += "."
     if not people:
-        return first + " If you're not sure which, I can open the practitioners page, or you can call 847-749-3922."
+        return first + " If you're not sure which, that's Holistic Center, then Practitioners, or you can call 847-749-3922."
     if first.lower().startswith(people[0].lower()):
-        return first + " I can open their page."
-    return first + f" Here that's {join_names(people)}. I can open their page."
+        return first + " You'll find them under Holistic Center, then Practitioners."
+    return first + f" Here that's {join_names(people)}. You'll find them under Holistic Center, then Practitioners."
 
 
 # --- Voice -----------------------------------------------------------------
@@ -86,12 +101,12 @@ add(
     answer=(
         "I'm Sacred Ground's guide. The way I explain things is inspired by Deneene, who founded this place, "
         "and by the philosophy she built it on. I am not Deneene, and I don't invent her memories. "
-        "I can walk you to the right page, the right practitioner, and the right way to book. "
+        "I can walk you to the right place on the menu, the right practitioner, and the right way to book. "
         "I have not booked, charged, or registered anything unless a booking page or the shop checkout has actually finished it."
     ),
     voice_response=(
         "I'm Sacred Ground's guide, and the way I talk is inspired by Deneene. "
-        "I can point you to the right person and the right page. I can't hold the session for her, "
+        "I can point you to the right person, and you'll find them on our nav. I can't hold the session for her, "
         "and I won't tell you something is booked until the booking page says it is."
     ),
     navigation=nav("Any page.", "Any page.", BASE + "/"),
@@ -120,11 +135,11 @@ add(
         "Deneene's published profile lists her as a spiritual guide, grief counselor, and meditation teacher, "
         "and the site says she studied with Elisabeth Kübler-Ross. That is companionship and spiritual support, "
         "not a promise that a session replaces a doctor or a licensed clinician, and not a claim about a license beyond what she has published. "
-        "If you want her page, it is here. If you are in immediate danger, call 911. If you need to talk to someone right now, call or text 988."
+        "If you want her, that's Holistic Center, then Practitioners, then Deneene. If you are in immediate danger, call 911. If you need to talk to someone right now, call or text 988."
     ),
     voice_response=(
         "I'm glad you said it out loud. Grief doesn't run on a schedule, and you don't owe anyone a silver lining. "
-        "If you want a quiet place and a person who understands that, Deneene's page is on the site, and the shop number is 847-749-3922. "
+        "If you want a quiet place and a person who understands that, she's under Holistic Center, then Practitioners, and the shop number is 847-749-3922. "
         "If you need someone right now, you can call or text 988."
     ),
     navigation=nav(
@@ -388,21 +403,22 @@ add(
 add(
     card_id="SG-RULE-NO-DEATH",
     category="Rules",
-    title="Never the Death card",
-    purpose="Keep the tarot Death card out of every answer.",
+    title="A card we do not use",
+    purpose="If a visitor asks for a card Sacred Ground does not display, redirect without naming it.",
     visitor_questions=[
-        "What does the Death card mean?",
-        "Can I see the Death card?",
-        "Show me tarot Death",
+        "What about that one tarot card you don't use?",
+        "Can I see every card?",
+        "Is every card in the Observatory tool?",
     ],
     answer=(
-        "Sacred Ground does not show the tarot Death card on the website, in the Observatory, or in this guide. "
-        "If someone asks for it, say it is not part of what we display, and offer another card or the Observatory tarot tool, which does not include it."
+        "Some cards are not part of what Sacred Ground displays. "
+        "Do not name a card that is not on the public Observatory tool. "
+        "Say it is not a card we use here, and offer another card or the Observatory tarot tool."
     ),
-    voice_response="We don't display the Death card. I can help you with another card, or with the Observatory's tarot tool.",
+    voice_response="That's not a card we use here. I can help you with another card, or the Observatory tarot tool.",
     navigation=nav("Observatory, then the tarot tool.", "Observatory in the phone menu.", BASE + "/sacred-ground-observatory/"),
     keywords=["death card", "tarot death", "major 13"],
-    source="Founder, September 12, 2026, confirmed October 11, 2026.",
+    source="Founder, September 12, 2026, confirmed October 11, 2026. Spoken lines never name it.",
 )
 
 # --- Library and Observatory ------------------------------------------------
@@ -453,6 +469,7 @@ add(
         "Where do I find information about the moon?",
         "Can I look up a stone?",
         "Is the Observatory free?",
+        "What's the difference between the Observatory and Monthly?",
         "What's the difference between the Observatory and the newsletter?",
         "Can I look up my number?",
         "Where is the tarot tool?",
@@ -461,12 +478,12 @@ add(
         "The Observatory is a free public daily page. No membership and no login. "
         "It holds today's moon, a numerology note, cosmic weather, a NASA feature, a science-and-spirit note, a mineral focus, and Beneath the Surface. "
         "Tools on the page: an astrology snapshot, a number lookup, a stone lookup, and a tarot lookup. "
-        "A stone note keeps the geology separate from the traditional meaning. The Death card is not in the tool. "
-        "Earth and Ether, under Monthly in the menu, is the newsletter. It is a different place from the Observatory."
+        "A stone note keeps the geology separate from the traditional meaning. "
+        "Monthly, in the menu, is a different place from the Observatory."
     ),
     voice_response=(
         "The Observatory is free, and you don't need an account. Moon, numbers, a stone lookup, a NASA note, and a tarot tool live there. "
-        "The newsletter is separate. It's under Monthly."
+        "Monthly is a different place. It's in the menu as Monthly."
     ),
     navigation=nav(
         "Observatory in the top menu.",
@@ -491,8 +508,8 @@ MODS = [
      ["Andre", "Kate", "Karen"], ["sound bath", "gong", "singing bowls", "vibration"]),
     ("SG-MOD-MEDITATION", "Meditation", "Sitting, breathing, and a little quiet. Tuesday nights at 7 are the free community hour, 7:00 to 8:00 Central. Deneene is listed as a meditation teacher. You can also come with no experience at all.",
      ["Deneene"], ["meditation", "tuesday", "mindfulness"]),
-    ("SG-MOD-TAROT", "Tarot", "A tarot deck has 78 cards with old images for ordinary human situations. A reading is a conversation with those images, not a locked future. Adie, Andre, and Lisa Maria are on the practitioners page for tarot. Lita's booking page also offers tarot and pendulum. The Death card is not shown.",
-     ["Adie", "Andre", "Lisa Maria"], ["tarot", "cards", "reading"]),
+    ("SG-MOD-TAROT", "Tarot", "A tarot deck has 78 cards with old images for ordinary human situations. A reading is a conversation with those images, not a locked future. Adie, Andre, and Lisa Maria are on the practitioners page for tarot. Lita now offers tarot with pendulums.",
+     ["Adie", "Andre", "Lisa Maria", "Lita"], ["tarot", "cards", "reading", "pendulum"]),
     ("SG-MOD-ANGEL", "Angel readings", "Angel cards and angel communication are a gentler symbolic reading. People ask for comfort, a nudge, or a name for a feeling. Janel and Linn are listed for angel readings. Jill teaches angels and intuition. Melissa has a published Whispers of Angelic Guidance booking page.",
      ["Janel", "Linn", "Jill"], ["angel", "angels", "oracle", "archangel"]),
     ("SG-MOD-AKASHIC", "Akashic Records", "A traditional idea of a record of the soul, read in session as a way to look at patterns and questions. It is a spiritual practice, not a file cabinet science can audit. Janel and Karen both offer it. Janel's booking lets you choose Akashic or angel cards.",
@@ -506,7 +523,7 @@ MODS = [
     ("SG-MOD-CRANIAL", "Cranial sacral", "A very light hands-on session around the head, spine, and the body's own rhythm. Mary and Richard offer it. Mary pairs it with Reiki and intuitive guidance. It is gentle bodywork, not a promise to fix a condition.",
      ["Mary", "Richard"], ["cranial sacral", "craniosacral", "cst"]),
     ("SG-MOD-RUNES", "Runes and numerology", "Tina teaches runes, including the Elder Futhark, and also offers numerology, tarot, and Reiki on her booking pages. Numerology uses numbers from a name or a birth date as a reflective language. The Observatory has a separate number lookup you can try with no appointment.",
-     ["Tina"], ["runes", "numerology", "futhark", "pendulum"]),
+     ["Tina"], ["runes", "numerology", "futhark"]),
     ("SG-MOD-YOGA", "Yoga", "Cheryl offers yoga for healthy aging, plus reflexology and stretchology. You do not need to be flexible to start. Her yoga has its own booking page.",
      ["Cheryl"], ["yoga", "stretch"]),
     ("SG-MOD-CRYSTAL-HEAL", "Crystal sessions", "Janel offers crystal connections, crystal energy sessions, and a class on crystal grids. This is a guided way to work with stones, different from buying a stone in the shop. The shop is for taking one home. The session is time with her.",
@@ -534,7 +551,7 @@ for cid, title, answer, people, keys in MODS:
             f"Is {title} religious?",
             f"How do I book {title}?",
         ],
-        answer=answer + f" People published for this: {names}. Open their profile to read more, and their booking page for a time and a price. The guide does not invent either.",
+        answer=answer + f" People published for this: {names}. Holistic Center, then Practitioners, then their name. A time and a price stay on their booking page. Do not read a website address. The guide does not invent either.",
         voice_response=modality_voice(answer, people),
         navigation=nav(
             "Holistic Center, then Practitioners and Modalities. Choose the practice, then the person's name.",
@@ -562,7 +579,7 @@ PEOPLE = [
     ("SG-PRAC-KAREN", "Karen", "/karen-11/", "Akashic Records, Reiki, aura imaging, soul portraits, and ancestral clearings. Also past-life sessions and classes on her booking pages.", "Several times a month, as the directory says.", [("Akashic", "/karen-akashic/")], True),
     ("SG-PRAC-KATE", "Kate Kent", "/kate-11/", "Chakra balancing, sound healing, and shamanic healing. Also paint nights and wheel-of-the-year gatherings on her booking pages.", "One day a month, as the directory says.", [("Chakra", "/book/kate-chakra/"), ("Wheel", "/book/kate-wheel/")], True),
     ("SG-PRAC-LINN", "Linn", "/linn-11/", "Astrology and angel readings. The public name on the directory is Linn. Older pages say Lin Boffeli.", "The directory says call to book. A booking page is also published.", [("Astrology or angel communication", "/book/linn/")], True),
-    ("SG-PRAC-LITA", "Lita Keller", "/lita-11/", "Tarot, pendulum, and sacred crafting workshops. New on the directory.", "Open times are on her booking pages.", [("Tarot and pendulum", "/book/lita-tarot/"), ("Besom", "/book/lita-besom/"), ("Crafting", "/book/lita-crafting/")], True),
+    ("SG-PRAC-LITA", "Lita Keller", "/lita-11/", "Tarot with pendulums, and sacred crafting workshops. New on the directory.", "Open times are on her booking pages.", [("Tarot with pendulums", "/book/lita-tarot/"), ("Besom", "/book/lita-besom/"), ("Crafting", "/book/lita-crafting/")], True),
     ("SG-PRAC-LISA", "Lisa", "/lisa-astrology-v5-final/", "Astrology. This is Lisa the astrologer, not Lisa Maria and not Lisa Seyring.", "A few times a month, as the directory says.", [("Astrology and tarot", "/book/lisa/")], True),
     ("SG-PRAC-LISAMARIA", "Lisa Maria", "/lisa-maria-11/", "Intuitive tarot and teaching. Also somatic healing on her booking pages. The directory says she is in high demand.", "Book on her pages. Do not send her tarot clients to Lisa the astrologer.", [("Tarot", "/book/lisa-maria-tarot/"), ("Sessions", "/book/lisa-maria/"), ("Class", "/book/lisa-maria-class/")], True),
     ("SG-PRAC-LISAS", "Lisa Seyring", "/lisa-seyring-11/", "Poem readings. A poem made in the moment, not a tarot spread.", "New on the directory.", [("Poem reading", "/book/lisa-s/")], True),
@@ -580,26 +597,29 @@ PEOPLE = [
 ]
 
 for cid, name, profile, blurb, avail, bookings, on_dir in PEOPLE:
-    book_lines = "; ".join(f"{label}: {BASE}{path}" for label, path in bookings) or "No public booking URL yet."
     book_urls = [BASE + path for _, path in bookings]
     where = "on the practitioners page" if on_dir else "by a published booking page, and not yet on the portrait grid"
     if cid == "SG-PRAC-DENEENE":
         voice = (
             "Deneene is the founder. Her page lists her as a spiritual guide, grief counselor, and meditation teacher. "
-            "She is putting her own appointment times up. Until that booking page is public, call 847-749-3922 or open her profile. I can't see a time that isn't published."
+            "She is putting her own appointment times up. Until that booking page is public, call 847-749-3922, or find her under Holistic Center, then Practitioners. I can't see a time that isn't published."
         )
         answer = (
             f"{name} is {where}. {blurb} {avail} "
-            "When her booking page is public, send people there for a time. Until then, her profile and the phone are the honest path. "
-            "Do not send grief questions to a sales pitch. Do not claim a license beyond the words on her page."
+            "When her booking page is public, send people there for a time. Until then, Holistic Center then Practitioners, or the phone. "
+            "Do not read a website address. Do not send grief questions to a sales pitch. Do not claim a license beyond the words on her page."
         )
     else:
-        voice = f"{spoken_name(name)} is {where}. {blurb} For a time, use the booking page, not the homepage Book Now button."
+        voice = (
+            f"{spoken_name(name)} is {where}. {blurb} "
+            "For a time, Holistic Center, then Practitioners, then their name. Not the homepage Book Now button."
+        )
         answer = (
             f"{name} is {where}. {blurb} {avail} "
-            f"Booking: {book_lines} "
+            "A time is on their booking page. Do not read a website address out loud. "
+            "Say Holistic Center, then Practitioners, then their name. "
             "Length and price stay on that page. If no time is open, say so and offer the phone, 847-749-3922. "
-            "Homepage Book Now opens the events calendar. This person gets their own page."
+            "Homepage Book Now opens Calendar. This person gets their own page."
         )
     add(
         card_id=cid,
@@ -616,8 +636,8 @@ for cid, name, profile, blurb, avail, bookings, on_dir in PEOPLE:
         answer=answer,
         voice_response=voice,
         navigation=nav(
-            "Holistic Center, Practitioners and Modalities, then their portrait. Or the direct profile link.",
-            "Open their profile link. The phone menu does not list every name.",
+            "Holistic Center, then Practitioners, then their name.",
+            "Holistic Center is under the desktop menu. On a phone, Practitioners is the path.",
             BASE + profile,
         ),
         related_cards=["SG-NAV-BOOK", "SG-NAV-PRACTITIONER"],
@@ -697,9 +717,9 @@ for cid, title, path, answer, keys in ARTS:
             "Where can I read about this?",
             "Do you have something on " + keys[0] + "?",
         ],
-        answer=answer + f" The page is {BASE}{path}.",
-        voice_response=answer.split(".")[0] + ". I can open her essay if you want the longer version.",
-        navigation=nav("Library, Articles, or the direct link.", "Library page, then Articles, or the direct link.", BASE + path),
+        answer=answer + " That essay is under Library, then Articles. Do not read a website address.",
+        voice_response=answer.split(".")[0] + ". That's under Library, then Articles, if you want the longer version.",
+        navigation=nav("Library, then Articles.", "Library in the menu, then Articles on the page.", BASE + path),
         related_cards=["SG-KNOW-LIBRARY", "SG-ART-SMUDGING"],
         keywords=keys,
         source=f"Published essay or guide {path}, October 11, 2026. Topic set chosen with the founder: smudging, sage, clear and clean, and the matching public explainers. No view-count plugin was present.",
@@ -756,9 +776,14 @@ NAVS = [
      ["free events", "free class"]),
     ("SG-NAV-START", "Not sure where to start",
      "Ask what they are carrying, or what they are curious about. Shop if they want to wander. Practitioners if they want a person. Library if they want to read. Observatory if they want the moon, a stone, or a number. Calendar if they want to see the week. Phone if they want a human: 847-749-3922.",
-     "Same destinations. Give the direct link.",
+     "Same destinations. Name the menu item. Do not read a website.",
      "/",
      ["where do I start", "help me", "overwhelmed", "just browsing"]),
+    ("SG-NAV-MONTHLY", "Open Monthly",
+     "Monthly in the top menu. That is the name on the nav. Some people still call it the newsletter. Do not call the menu item the newsletter.",
+     "Monthly in the phone menu.",
+     "/earth-ether/",
+     ["monthly", "newsletter", "earth and ether", "earth & ether"]),
 ]
 
 for cid, title, desktop, mobile, path, keys in NAVS:
@@ -769,8 +794,8 @@ for cid, title, desktop, mobile, path, keys in NAVS:
         title=title,
         purpose=f"Walk a visitor through: {title}.",
         visitor_questions=[title + "?", "How do I " + title.lower() + "?", "Where is that on my phone?"],
-        answer=desktop + " On a phone: " + mobile + f" Direct link: {BASE}{path}.",
-        voice_response=f"I'll take you straight there. {BASE}{path}.",
+        answer=desktop + " On a phone: " + mobile + " Do not read a website address. Name the menu item.",
+        voice_response=f"That's on our nav — {speak_nav(path)}.",
         navigation=nav(desktop, mobile, BASE + path),
         keywords=keys,
         source="Primary menu, mobile menu, and homepage buttons, October 11, 2026. Founder decision 8.",
@@ -785,8 +810,8 @@ add(
     title="Upcoming events must be fetched",
     purpose="Stop the guide from memorizing the calendar.",
     visitor_questions=["What's happening tomorrow?", "What's on this weekend?", "Is meditation on this Tuesday?"],
-    answer="Answer from The Events Calendar at the time of the question. If the lookup fails, say you cannot see the live calendar and give https://shopsacredground.com/events/list/.",
-    voice_response="Let me look at the calendar rather than guess. If I can't see it, I'll give you the events page.",
+    answer="Answer from The Events Calendar at the time of the question. If the lookup fails, say you cannot see the live calendar and point them to Calendar in the menu. Do not read a website address.",
+    voice_response="Let me look at Calendar rather than guess. If I can't see it, that's Calendar in the menu.",
     navigation=nav("Calendar menu.", "Calendar in the phone menu.", BASE + "/events/list/"),
     keywords=["tomorrow", "this week", "schedule"],
     source="The Events Calendar, tribe_events.",
@@ -892,7 +917,7 @@ for c in cards:
     review.append("")
     review.append(c["voice_response"])
     review.append("")
-    review.append(c["navigation"]["direct_url"])
+    review.append(c["navigation"]["desktop"])
     review.append("")
 (ROOT / "cards" / "REVIEW.md").write_text("\n".join(review))
 

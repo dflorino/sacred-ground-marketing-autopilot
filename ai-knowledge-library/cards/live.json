@@ -20,8 +20,8 @@
       "What's on this weekend?",
       "Is meditation on this Tuesday?"
     ],
-    "answer": "Answer from The Events Calendar at the time of the question. If the lookup fails, say you cannot see the live calendar and give https://shopsacredground.com/events/list/.",
-    "voice_response": "Let me look at the calendar rather than guess. If I can't see it, I'll give you the events page.",
+    "answer": "Answer from The Events Calendar at the time of the question. If the lookup fails, say you cannot see the live calendar and point them to Calendar in the menu. Do not read a website address.",
+    "voice_response": "Let me look at Calendar rather than guess. If I can't see it, that's Calendar in the menu.",
     "navigation": {
       "desktop": "Calendar menu.",
       "mobile": "Calendar in the phone menu.",

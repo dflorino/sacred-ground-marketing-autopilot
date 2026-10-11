@@ -18,4 +18,4 @@ Draft for review. Nothing here is installed on the website, and the guide is not
 
 `pack_for_guide.py` picks the cards for one visitor question. The local Ask Deneene sandbox uses it. Nothing is installed on the website.
 
-Layers: voice, knowledge, navigation, live. Membership is omitted on purpose. The Death card is refused on purpose.
+Layers: voice, knowledge, navigation, live. Membership is omitted on purpose. A card we do not display is refused on purpose, and spoken lines never name it.

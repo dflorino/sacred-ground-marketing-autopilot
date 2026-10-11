@@ -174,28 +174,30 @@ def select_cards(question: str, extra_ids: list[str] | None = None, limit: int =
     return [by_id[cid] for cid in picked]
 
 
-def _abs_url(url: str) -> str:
-    u = (url or "").strip()
-    if not u:
-        return "https://shopsacredground.com/events/list/"
-    if u.startswith("http"):
-        return u
-    return "https://shopsacredground.com" + (u if u.startswith("/") else "/" + u)
+def _speak_clock(hm: str) -> str:
+    try:
+        hour, minute = hm.split(":")
+        hour = int(hour)
+    except ValueError:
+        return hm
+    suffix = "AM" if hour < 12 else "PM"
+    hour12 = hour % 12 or 12
+    if minute == "00":
+        return f"{hour12} {suffix}"
+    return f"{hour12}:{minute} {suffix}"
 
 
 def live_events_slice(days: int = 7) -> str:
+    fail = (
+        "LIVE CALENDAR: lookup failed. Tell them that's on Calendar in the menu. "
+        "Do not read a website address."
+    )
     if not EVENTS_PATH.exists():
-        return (
-            "LIVE CALENDAR: lookup failed. Send them to "
-            "https://shopsacredground.com/events/list/"
-        )
+        return fail
     try:
         data = json.loads(EVENTS_PATH.read_text())
     except json.JSONDecodeError:
-        return (
-            "LIVE CALENDAR: lookup failed. Send them to "
-            "https://shopsacredground.com/events/list/"
-        )
+        return fail
     today = datetime.now(CHICAGO).date()
     end = today + timedelta(days=days)
     lines = []
@@ -216,37 +218,33 @@ def live_events_slice(days: int = 7) -> str:
             continue
         seen.add(key)
         when = start.strftime("%A, %B %-d")
-        clock = f"{start_hm}"
+        clock = _speak_clock(start_hm)
         if end_raw:
-            clock += f"–{end_raw}"
-        url = _abs_url(str(ev.get("url") or ""))
-        lines.append(f"- {when} · {clock} · {title} · {url}")
+            clock += f" to {_speak_clock(end_raw)}"
+        lines.append(f"- {when} · {clock} · {title}")
     if not lines:
         return (
             "LIVE CALENDAR (next 7 Chicago days): nothing in the cache. "
-            "Say you cannot see the live list and give "
-            "https://shopsacredground.com/events/list/"
+            "Say you cannot see the live list. That's on Calendar in the menu. "
+            "Do not read a website address."
         )
     return (
         "LIVE CALENDAR from The Events Calendar cache. America/Chicago. "
-        "No prices. Do not invent a seat count or a cost.\n"
+        "No prices. Do not invent a seat count or a cost. "
+        "Tell them they can find this on Calendar in the menu. "
+        "Do not read a website address.\n"
         + "\n".join(lines)
     )
 
 
 def format_card(card: dict) -> str:
     nav = card.get("navigation") or {}
-    url = nav.get("direct_url") or "https://shopsacredground.com/"
-    books = card.get("booking_urls") or []
-    book_line = ""
-    if books:
-        book_line = "Booking: " + " ; ".join(books) + "\n"
+    where = nav.get("desktop") or "the menu"
     return (
         f"### {card['card_id']} — {card.get('title')}\n"
         f"{card.get('answer')}\n"
         f"Say it like: {card.get('voice_response')}\n"
-        f"{book_line}"
-        f"Page: {url}"
+        f"On the nav: {where}"
     )
 
 
@@ -272,17 +270,23 @@ def pack_prompt(question: str, who: str = "deneene") -> str:
         "If they ask whether they are talking to Deneene in the room, use SG-VOICE-IDENTITY. "
         "Do not invent her memories, her sessions, or private stories.\n"
         "Answer ONLY from the cards below and the live calendar slice when it is present. "
-        "Prefer the spoken line, then give the page. "
+        "Prefer the spoken line. "
+        "Never read, type, or spell a website, a /book/ link, or shopsacredground.com. "
+        "Tell them they can find it on our nav. "
+        "Desktop nav: Calendar, Shop, Observatory, Holistic Center, Monthly, Library, Contact. "
+        "A named person is Holistic Center, then Practitioners, then their name. "
+        "Events are Calendar. The newsletter is Monthly.\n"
         "Do not default to “call the store” when a card already has the answer.\n"
-        "Never mention, show, or offer the tarot Death card.\n"
+        "If they ask for a tarot card Sacred Ground does not display, do not name it. "
+        "Say it is not a card we use here, and offer another card or Observatory in the menu.\n"
         "Never mention Tam, Tom Tewell, or BJ. BJ is not a practitioner right now.\n"
         "Leave membership, Inner Circle, and Member Shop out. "
-        "Earth & Ether is the newsletter only.\n"
+        "The menu item is Monthly. Call it Monthly, not the newsletter.\n"
         "Do not invent hours, prices, stock, or a time that is not on a booking page. "
         "Do not say you booked, charged, registered, or shipped anything.\n"
         "Address is always 160 W Campbell Street, Arlington Heights, IL 60005. "
         "Phone 847-749-3922. Working Calendar is staff only — never send a visitor there.\n"
-        "If the cards do not cover it, say so and give the closest page or the phone.\n\n"
+        "If the cards do not cover it, say so and name the closest menu item, or the phone.\n\n"
         f"{body}{live_block}"
     )
 

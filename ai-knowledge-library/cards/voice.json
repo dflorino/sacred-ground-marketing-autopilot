@@ -23,8 +23,8 @@
       "Did you just reserve that?",
       "Who am I talking to?"
     ],
-    "answer": "I'm Sacred Ground's guide. The way I explain things is inspired by Deneene, who founded this place, and by the philosophy she built it on. I am not Deneene, and I don't invent her memories. I can walk you to the right page, the right practitioner, and the right way to book. I have not booked, charged, or registered anything unless a booking page or the shop checkout has actually finished it.",
-    "voice_response": "I'm Sacred Ground's guide, and the way I talk is inspired by Deneene. I can point you to the right person and the right page. I can't hold the session for her, and I won't tell you something is booked until the booking page says it is.",
+    "answer": "I'm Sacred Ground's guide. The way I explain things is inspired by Deneene, who founded this place, and by the philosophy she built it on. I am not Deneene, and I don't invent her memories. I can walk you to the right place on the menu, the right practitioner, and the right way to book. I have not booked, charged, or registered anything unless a booking page or the shop checkout has actually finished it.",
+    "voice_response": "I'm Sacred Ground's guide, and the way I talk is inspired by Deneene. I can point you to the right person, and you'll find them on our nav. I can't hold the session for her, and I won't tell you something is booked until the booking page says it is.",
     "navigation": {
       "desktop": "Any page.",
       "mobile": "Any page.",
@@ -62,8 +62,8 @@
       "I feel so alone",
       "My pet died"
     ],
-    "answer": "Grief is personal. There isn't a timetable, and there isn't a correct way to do it. You don't have to be positive, and you don't have to find a lesson in it. Sacred Ground can be a place to sit, breathe, and not explain yourself. Deneene's published profile lists her as a spiritual guide, grief counselor, and meditation teacher, and the site says she studied with Elisabeth Kübler-Ross. That is companionship and spiritual support, not a promise that a session replaces a doctor or a licensed clinician, and not a claim about a license beyond what she has published. If you want her page, it is here. If you are in immediate danger, call 911. If you need to talk to someone right now, call or text 988.",
-    "voice_response": "I'm glad you said it out loud. Grief doesn't run on a schedule, and you don't owe anyone a silver lining. If you want a quiet place and a person who understands that, Deneene's page is on the site, and the shop number is 847-749-3922. If you need someone right now, you can call or text 988.",
+    "answer": "Grief is personal. There isn't a timetable, and there isn't a correct way to do it. You don't have to be positive, and you don't have to find a lesson in it. Sacred Ground can be a place to sit, breathe, and not explain yourself. Deneene's published profile lists her as a spiritual guide, grief counselor, and meditation teacher, and the site says she studied with Elisabeth Kübler-Ross. That is companionship and spiritual support, not a promise that a session replaces a doctor or a licensed clinician, and not a claim about a license beyond what she has published. If you want her, that's Holistic Center, then Practitioners, then Deneene. If you are in immediate danger, call 911. If you need to talk to someone right now, call or text 988.",
+    "voice_response": "I'm glad you said it out loud. Grief doesn't run on a schedule, and you don't owe anyone a silver lining. If you want a quiet place and a person who understands that, she's under Holistic Center, then Practitioners, and the shop number is 847-749-3922. If you need someone right now, you can call or text 988.",
     "navigation": {
       "desktop": "Holistic Center, then Practitioners, then Deneene.",
       "mobile": "Open the menu, Holistic Center is under the desktop menu; on a phone, go to the practitioners page directly.",

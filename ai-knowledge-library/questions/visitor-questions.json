@@ -318,19 +318,19 @@
     "direct_url": "https://shopsacredground.com/events/list/"
   },
   {
-    "question": "What does the Death card mean?",
+    "question": "What about that one tarot card you don't use?",
     "card_id": "SG-RULE-NO-DEATH",
     "category": "Rules",
     "direct_url": "https://shopsacredground.com/sacred-ground-observatory/"
   },
   {
-    "question": "Can I see the Death card?",
+    "question": "Can I see every card?",
     "card_id": "SG-RULE-NO-DEATH",
     "category": "Rules",
     "direct_url": "https://shopsacredground.com/sacred-ground-observatory/"
   },
   {
-    "question": "Show me tarot Death",
+    "question": "Is every card in the Observatory tool?",
     "card_id": "SG-RULE-NO-DEATH",
     "category": "Rules",
     "direct_url": "https://shopsacredground.com/sacred-ground-observatory/"
@@ -391,6 +391,12 @@
   },
   {
     "question": "Is the Observatory free?",
+    "card_id": "SG-KNOW-OBSERVATORY",
+    "category": "Observatory",
+    "direct_url": "https://shopsacredground.com/sacred-ground-observatory/"
+  },
+  {
+    "question": "What's the difference between the Observatory and Monthly?",
     "card_id": "SG-KNOW-OBSERVATORY",
     "category": "Observatory",
     "direct_url": "https://shopsacredground.com/sacred-ground-observatory/"
@@ -2284,6 +2290,24 @@
     "card_id": "SG-NAV-START",
     "category": "Navigation",
     "direct_url": "https://shopsacredground.com/"
+  },
+  {
+    "question": "Open Monthly?",
+    "card_id": "SG-NAV-MONTHLY",
+    "category": "Navigation",
+    "direct_url": "https://shopsacredground.com/earth-ether/"
+  },
+  {
+    "question": "How do I open monthly?",
+    "card_id": "SG-NAV-MONTHLY",
+    "category": "Navigation",
+    "direct_url": "https://shopsacredground.com/earth-ether/"
+  },
+  {
+    "question": "Where is that on my phone?",
+    "card_id": "SG-NAV-MONTHLY",
+    "category": "Navigation",
+    "direct_url": "https://shopsacredground.com/earth-ether/"
   },
   {
     "question": "What's happening tomorrow?",
