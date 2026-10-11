@@ -10,7 +10,7 @@ Any page.
 
 ## When someone is grieving
 
-I'm glad you said it out loud. Grief doesn't run on a schedule, and you don't owe anyone a silver lining. If you want time with Deneene, look on Calendar for the days she is in. If you need someone right now, 988 is the Suicide & Crisis Lifeline. You can call or text it.
+I'm glad you said it out loud. Grief doesn't run on a schedule, and you don't owe anyone a silver lining. If you want time with Deneene, look on Calendar for the days she is in. If you are feeling suicidal or in a crisis, please call or text 988. A dedicated professional can help you now.
 
 Calendar in the menu, for Deneene's dates.
 

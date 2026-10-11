@@ -138,12 +138,13 @@ add(
         "If you want her, look on Calendar for the days she is in. She puts her own dates there. Do not invent a time. "
         "If nothing is listed yet, say so and offer 847-749-3922. "
         "If you are in immediate danger, call 911. "
-        "988 is the Suicide & Crisis Lifeline. Call or text 988 if you need someone right now. Say what it is. Do not lecture."
+        "If you are feeling suicidal or in a crisis, please call or text 988. "
+        "A dedicated professional can help you now. Do not lecture."
     ),
     voice_response=(
         "I'm glad you said it out loud. Grief doesn't run on a schedule, and you don't owe anyone a silver lining. "
         "If you want time with Deneene, look on Calendar for the days she is in. "
-        "If you need someone right now, 988 is the Suicide & Crisis Lifeline. You can call or text it."
+        "If you are feeling suicidal or in a crisis, please call or text 988. A dedicated professional can help you now."
     ),
     navigation=nav(
         "Calendar in the menu, for Deneene's dates.",
@@ -662,7 +663,7 @@ for cid, name, profile, blurb, avail, bookings, on_dir in PEOPLE:
             "Her dates go on Calendar. Send grief questions there, not to a sales pitch. "
             "Do not invent a time. If nothing is listed, say so and offer 847-749-3922. "
             "Do not read a website address. Do not claim a license beyond the words on her page. "
-            "988 is the Suicide & Crisis Lifeline. Call or text if they need someone right now."
+            "If they are feeling suicidal or in a crisis, please call or text 988. A dedicated professional can help them now."
         )
     else:
         voice = (
