@@ -435,6 +435,8 @@ add(
         "Where is the music?",
         "How do I get back to the Library?",
         "Who writes the articles?",
+        "Do the playlists play here?",
+        "Can I listen on Spotify?",
     ],
     answer=(
         "The Library is a hand-picked collection: articles, books, movies, podcasts, music, and short guides. "
@@ -442,12 +444,14 @@ add(
         "Subjects for books, movies, and podcasts are Spirituality and Wisdom, Science and Nature, UFO and Paranormal, "
         "Wellness and Healing, Consciousness and Psychology, and Meditation and Mindfulness. "
         "Music is its own room, Sacred Sounds, with artists and playlists for meditation, sleep, chant, sound healing, and more. "
+        "The playlists do not play on this website. Copy what you like and paste it into Spotify, Apple Music, or wherever you stream. "
         "Every shelf links back. The Library home is the way back to all six doors. "
         "On a phone, the menu under Library only shows Guides. Articles, books, movies, music, and podcasts are buttons on the Library page itself."
     ),
     voice_response=(
         "The Library is Deneene's collection of articles, books, movies, podcasts, music, and how-to guides. "
-        "On a phone, open Library and you'll see all six. The little menu only shows Guides."
+        "On a phone, open Library and you'll see all six. The little menu only shows Guides. "
+        "The playlists don't play here. Copy what you like and paste it into Spotify, Apple Music, or wherever you stream."
     ),
     navigation=nav(
         "Library in the top menu, then Articles, Books, Movies, Music, Podcasts, or Guides.",
@@ -455,8 +459,40 @@ add(
         BASE + "/library/",
     ),
     related_cards=["SG-ART-SMUDGING", "SG-KNOW-OBSERVATORY", "SG-NAV-LIBRARY"],
-    keywords=["library", "articles", "books", "podcasts", "movies", "sacred sounds"],
-    source="Library page 24588. Counts on October 11, 2026: 48 articles, 101 books, 99 movies, 89 podcasts, 242 artists, 49 playlists, 11 guides.",
+    keywords=["library", "articles", "books", "podcasts", "movies", "sacred sounds", "playlist", "spotify", "apple music"],
+    source="Library page 24588. Counts on October 11, 2026: 48 articles, 101 books, 99 movies, 89 podcasts, 242 artists, 49 playlists, 11 guides. Founder Oct 11: playlists do not play on the site.",
+)
+
+add(
+    card_id="SG-KNOW-PLAYLISTS",
+    category="Library",
+    title="Music playlists",
+    purpose="Say the playlists do not play on the website. People copy them to their own streamer.",
+    visitor_questions=[
+        "Do the playlists play on the website?",
+        "How do I listen to the music?",
+        "Can I put this on Spotify?",
+        "Can I use Apple Music?",
+        "Where do I play the Sacred Sounds playlists?",
+        "The music won't play",
+    ],
+    answer=(
+        "Sacred Sounds is under Library, then Music. Artists and playlists are there for meditation, sleep, chant, sound healing, and more. "
+        "They do not play on this website. Copy the selection and paste it into Spotify, Apple Music, or wherever else you stream. "
+        "Do not read a website address. Do not say the site will start the song."
+    ),
+    voice_response=(
+        "Those playlists don't play here. Copy what you like and paste it into Spotify, Apple Music, or wherever else you stream. "
+        "That's under Library, then Music."
+    ),
+    navigation=nav(
+        "Library in the top menu, then Music.",
+        "Library, then Music on the page. The phone submenu only shows Guides.",
+        BASE + "/library/",
+    ),
+    related_cards=["SG-KNOW-LIBRARY", "SG-NAV-LIBRARY"],
+    keywords=["playlist", "playlists", "spotify", "apple music", "stream", "sacred sounds", "music"],
+    source="Founder, October 11, 2026. Library Sacred Sounds.",
 )
 
 add(

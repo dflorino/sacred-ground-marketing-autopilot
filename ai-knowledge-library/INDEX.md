@@ -1,6 +1,6 @@
 # Sacred Ground AI Knowledge Library
 
-Verified 2026-10-11. 84 cards. 394 visitor questions.
+Verified 2026-10-11. 85 cards. 402 visitor questions.
 Draft for Deneene to read. The guide is not switched on.
 
 Start with `voice/VOICE-BIBLE.md` and `01-DECISIONS.md`.
@@ -21,6 +21,7 @@ Start with `voice/VOICE-BIBLE.md` and `01-DECISIONS.md`.
 - **SG-KNOW-COMMUNITY** — Free community gatherings — https://shopsacredground.com/events/list/
 - **SG-RULE-NO-DEATH** — A card we do not use — https://shopsacredground.com/sacred-ground-observatory/
 - **SG-KNOW-LIBRARY** — The Sacred Ground Library — https://shopsacredground.com/library/
+- **SG-KNOW-PLAYLISTS** — Music playlists — https://shopsacredground.com/library/
 - **SG-KNOW-OBSERVATORY** — The Sacred Ground Observatory — https://shopsacredground.com/sacred-ground-observatory/
 - **SG-MOD-REIKI** — Reiki — https://shopsacredground.com/practitioners-modalities-2/
 - **SG-MOD-MASSAGE** — Massage — https://shopsacredground.com/practitioners-modalities-2/

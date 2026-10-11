@@ -1,7 +1,7 @@
 {
   "generated": "2026-10-11",
-  "card_count": 84,
-  "question_count": 394,
+  "card_count": 85,
+  "question_count": 402,
   "by_category": {
     "Voice": [
       "SG-VOICE-IDENTITY",
@@ -28,7 +28,8 @@
       "SG-RULE-NO-DEATH"
     ],
     "Library": [
-      "SG-KNOW-LIBRARY"
+      "SG-KNOW-LIBRARY",
+      "SG-KNOW-PLAYLISTS"
     ],
     "Observatory": [
       "SG-KNOW-OBSERVATORY"
@@ -303,7 +304,29 @@
       "SG-KNOW-LIBRARY"
     ],
     "sacred sounds": [
-      "SG-KNOW-LIBRARY"
+      "SG-KNOW-LIBRARY",
+      "SG-KNOW-PLAYLISTS"
+    ],
+    "playlist": [
+      "SG-KNOW-LIBRARY",
+      "SG-KNOW-PLAYLISTS"
+    ],
+    "spotify": [
+      "SG-KNOW-LIBRARY",
+      "SG-KNOW-PLAYLISTS"
+    ],
+    "apple music": [
+      "SG-KNOW-LIBRARY",
+      "SG-KNOW-PLAYLISTS"
+    ],
+    "playlists": [
+      "SG-KNOW-PLAYLISTS"
+    ],
+    "stream": [
+      "SG-KNOW-PLAYLISTS"
+    ],
+    "music": [
+      "SG-KNOW-PLAYLISTS"
     ],
     "observatory": [
       "SG-KNOW-OBSERVATORY",
@@ -905,6 +928,7 @@
     ],
     "https://shopsacredground.com/library/": [
       "SG-KNOW-LIBRARY",
+      "SG-KNOW-PLAYLISTS",
       "SG-NAV-LIBRARY"
     ],
     "https://shopsacredground.com/practitioners-modalities-2/": [

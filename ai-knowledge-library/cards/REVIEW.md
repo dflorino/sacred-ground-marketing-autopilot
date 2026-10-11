@@ -64,9 +64,15 @@ Observatory, then the tarot tool.
 
 ## The Sacred Ground Library
 
-The Library is Deneene's collection of articles, books, movies, podcasts, music, and how-to guides. On a phone, open Library and you'll see all six. The little menu only shows Guides.
+The Library is Deneene's collection of articles, books, movies, podcasts, music, and how-to guides. On a phone, open Library and you'll see all six. The little menu only shows Guides. The playlists don't play here. Copy what you like and paste it into Spotify, Apple Music, or wherever you stream.
 
 Library in the top menu, then Articles, Books, Movies, Music, Podcasts, or Guides.
+
+## Music playlists
+
+Those playlists don't play here. Copy what you like and paste it into Spotify, Apple Music, or wherever else you stream. That's under Library, then Music.
+
+Library in the top menu, then Music.
 
 ## The Sacred Ground Observatory
 

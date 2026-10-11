@@ -372,6 +372,54 @@
     "direct_url": "https://shopsacredground.com/library/"
   },
   {
+    "question": "Do the playlists play here?",
+    "card_id": "SG-KNOW-LIBRARY",
+    "category": "Library",
+    "direct_url": "https://shopsacredground.com/library/"
+  },
+  {
+    "question": "Can I listen on Spotify?",
+    "card_id": "SG-KNOW-LIBRARY",
+    "category": "Library",
+    "direct_url": "https://shopsacredground.com/library/"
+  },
+  {
+    "question": "Do the playlists play on the website?",
+    "card_id": "SG-KNOW-PLAYLISTS",
+    "category": "Library",
+    "direct_url": "https://shopsacredground.com/library/"
+  },
+  {
+    "question": "How do I listen to the music?",
+    "card_id": "SG-KNOW-PLAYLISTS",
+    "category": "Library",
+    "direct_url": "https://shopsacredground.com/library/"
+  },
+  {
+    "question": "Can I put this on Spotify?",
+    "card_id": "SG-KNOW-PLAYLISTS",
+    "category": "Library",
+    "direct_url": "https://shopsacredground.com/library/"
+  },
+  {
+    "question": "Can I use Apple Music?",
+    "card_id": "SG-KNOW-PLAYLISTS",
+    "category": "Library",
+    "direct_url": "https://shopsacredground.com/library/"
+  },
+  {
+    "question": "Where do I play the Sacred Sounds playlists?",
+    "card_id": "SG-KNOW-PLAYLISTS",
+    "category": "Library",
+    "direct_url": "https://shopsacredground.com/library/"
+  },
+  {
+    "question": "The music won't play",
+    "card_id": "SG-KNOW-PLAYLISTS",
+    "category": "Library",
+    "direct_url": "https://shopsacredground.com/library/"
+  },
+  {
     "question": "What's the Observatory?",
     "card_id": "SG-KNOW-OBSERVATORY",
     "category": "Observatory",
