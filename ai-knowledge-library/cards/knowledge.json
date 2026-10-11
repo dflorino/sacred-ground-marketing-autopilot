@@ -1099,6 +1099,7 @@
     "update_frequency": "review_quarterly",
     "live_source": "The booking URL for open times and price.",
     "related_cards": [
+      "SG-PRAC-LISAMARIA",
       "SG-NAV-BOOK",
       "SG-NAV-PRACTITIONER"
     ],
@@ -1117,8 +1118,8 @@
       "Is Deneene available?",
       "Tell me about Deneene"
     ],
-    "answer": "Deneene is on the practitioners page. Spiritual guide, grief counselor, and meditation teacher. The site says she studied with Elisabeth Kübler-Ross. She is also the founder. She is adding times herself. The 60-minute booking session is still a draft, so there is no public booking link yet. Her dates go on Calendar. Send grief questions there, not to a sales pitch. Do not invent a time. If nothing is listed, say so and offer 847-749-3922. Do not read a website address. Do not claim a license beyond the words on her page. If they are feeling suicidal or in a crisis, please call or text 988. A dedicated professional can help them now.",
-    "voice_response": "Deneene is the founder. Her page lists her as a spiritual guide, grief counselor, and meditation teacher. If you want time with her, look on Calendar for the days she is in. I can't see a time that isn't published.",
+    "answer": "Deneene is on the practitioners page. Spiritual guide, grief counselor, and meditation teacher. The site says she studied with Elisabeth Kübler-Ross. She is also the founder. She is adding times herself. The 60-minute booking session is still a draft, so there is no public booking link yet. Her dates go on Calendar. Send grief questions there, not to a sales pitch. Do not invent a time. If nothing is listed, say so and offer 847-749-3922. Do not read a website address. Do not claim a license beyond the words on her page. If they are feeling suicidal or in a crisis, please call or text 988. A dedicated professional can help them now. Lisa Maria is one of ours. Use her card when they ask about her. She is Lisa Maria — not Lisa the astrologer, and not Lisa Seyring. Warm intuitive reader. About eight decks, crystals, and a little astrology. Tarot and somatic / biofield tuning in person at Sacred Ground. High demand. Holistic Center, then Practitioners, then Lisa Maria. Do not send her clients to Lisa the astrologer.",
+    "voice_response": "Deneene is the founder. Her page lists her as a spiritual guide, grief counselor, and meditation teacher. If you want time with her, look on Calendar for the days she is in. I can't see a time that isn't published. Lisa Maria is one of ours — tarot and somatic healing, in person here. Not Lisa the astrologer. Holistic Center, then Practitioners, then Lisa Maria.",
     "navigation": {
       "desktop": "Holistic Center, then Practitioners, then their name.",
       "mobile": "Holistic Center is under the desktop menu. On a phone, Practitioners is the path.",
@@ -1625,7 +1626,9 @@
       "Tell me about Lisa Maria",
       "Does Lisa Maria do tarot?",
       "Does Lisa Maria do astrology?",
-      "What is Lisa Maria's reading like?"
+      "What is Lisa Maria's reading like?",
+      "Is Lisa Maria a good reader?",
+      "Should I book Lisa Maria?"
     ],
     "answer": "Lisa Maria is on the practitioners page. This is Lisa Maria Tarot Intuitive — not Lisa the astrologer, and not Lisa Seyring. Do not send her tarot clients to Lisa the astrologer. Lifelong seeker. Artist and teacher for more than twenty years. Kind, passionate, and empathetic. Mother Nature is the teacher she names first. She reads energy and the subconscious. She uses crystals, tarot, and oracle, and she communicates with angels and guides. Founder: she works with about eight decks, and she mixes astrology into the reading. Her Facebook cover names intuitive guidance, healing, art, astrology, and higher self. Her public line is keep shining your light. She is featured in Natural Awakenings Chicago Magazine. People describe the session as comfortable, personal, and fun — a conversation, not a show. She posts from Sacred Ground, including community meditation and her October days in the shop. She also offers somatic healing / biofield and tuning-fork energy work, plus mentoring after a reading. That is energy and sound work. Not a medical treatment. We are not doctors — say that only if they ask whether it treats a symptom or a diagnosis. She also does parties and events, and home energy cleansing. Those book through her, not as a shop product. The directory says she is in high demand. In-person readings are here at Sacred Ground. A time is on her booking pages: tarot, sessions, and class. Do not read a website address. Do not give her personal email, PayPal, Venmo, Cash App, or any price. Say Holistic Center, then Practitioners, then Lisa Maria. If no time is open, say so and offer 847-749-3922. Homepage Book Now opens Calendar. She has her own pages.",
     "voice_response": "Lisa Maria is Lisa Maria — not Lisa the astrologer, and not Lisa Seyring. She's an artist and a teacher, more than twenty years at that, and a warm intuitive reader. She works with about eight decks — tarot and oracle — plus crystals, and she also brings astrology in. She reads energy, and she talks with people's angels and guides. The session feels like a conversation, not a performance. Kind. Empathetic. People leave feeling heard. She also offers somatic and biofield tuning here — energy and sound work, not medicine. The directory says she is in high demand. She reads in person at Sacred Ground. For a time, Holistic Center, then Practitioners, then Lisa Maria.",

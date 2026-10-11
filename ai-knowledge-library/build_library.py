@@ -696,14 +696,21 @@ for cid, name, profile, blurb, avail, bookings, on_dir in PEOPLE:
         voice = (
             "Deneene is the founder. Her page lists her as a spiritual guide, grief counselor, and meditation teacher. "
             "If you want time with her, look on Calendar for the days she is in. "
-            "I can't see a time that isn't published."
+            "I can't see a time that isn't published. "
+            "Lisa Maria is one of ours — tarot and somatic healing, in person here. "
+            "Not Lisa the astrologer. Holistic Center, then Practitioners, then Lisa Maria."
         )
         answer = (
             f"{name} is {where}. {blurb} {avail} "
             "Her dates go on Calendar. Send grief questions there, not to a sales pitch. "
             "Do not invent a time. If nothing is listed, say so and offer 847-749-3922. "
             "Do not read a website address. Do not claim a license beyond the words on her page. "
-            "If they are feeling suicidal or in a crisis, please call or text 988. A dedicated professional can help them now."
+            "If they are feeling suicidal or in a crisis, please call or text 988. A dedicated professional can help them now. "
+            "Lisa Maria is one of ours. Use her card when they ask about her. "
+            "She is Lisa Maria — not Lisa the astrologer, and not Lisa Seyring. "
+            "Warm intuitive reader. About eight decks, crystals, and a little astrology. "
+            "Tarot and somatic / biofield tuning in person at Sacred Ground. High demand. "
+            "Holistic Center, then Practitioners, then Lisa Maria. Do not send her clients to Lisa the astrologer."
         )
     elif cid == "SG-PRAC-LISAMARIA":
         voice = (
@@ -769,7 +776,11 @@ for cid, name, profile, blurb, avail, bookings, on_dir in PEOPLE:
             "Holistic Center is under the desktop menu. On a phone, Practitioners is the path.",
             BASE + profile,
         ),
-        related_cards=["SG-NAV-BOOK", "SG-NAV-PRACTITIONER"],
+        related_cards=(
+            ["SG-PRAC-LISAMARIA", "SG-NAV-BOOK", "SG-NAV-PRACTITIONER"]
+            if cid == "SG-PRAC-DENEENE"
+            else ["SG-NAV-BOOK", "SG-NAV-PRACTITIONER"]
+        ),
         keywords=[name.lower(), name.split()[0].lower()],
         source="Practitioners page 17216 and published booking pages, October 11, 2026.",
         update_frequency="review_quarterly",
@@ -794,6 +805,8 @@ for c in cards:
         "Does Lisa Maria do tarot?",
         "Does Lisa Maria do astrology?",
         "What is Lisa Maria's reading like?",
+        "Is Lisa Maria a good reader?",
+        "Should I book Lisa Maria?",
     ]
     c["keywords"] = [
         "lisa maria",
@@ -1118,5 +1131,24 @@ for c in cards:
     review.append(c["navigation"]["desktop"])
     review.append("")
 (ROOT / "cards" / "REVIEW.md").write_text("\n".join(review))
+
+# Slim pack Ask Deneene reads on live WordPress
+live_dir = ROOT / "live-helper"
+live_dir.mkdir(exist_ok=True)
+slim = []
+for c in cards:
+    slim.append({
+        "card_id": c["card_id"],
+        "title": c["title"],
+        "answer": c["answer"],
+        "voice_response": c["voice_response"],
+        "keywords": c["keywords"],
+        "visitor_questions": c["visitor_questions"],
+        "nav": (c.get("navigation") or {}).get("desktop") or "",
+        "related_cards": c.get("related_cards") or [],
+    })
+(live_dir / "ask-deneene-cards.json").write_text(json.dumps(slim, ensure_ascii=False, separators=(",", ":")) + "\n")
+qs_slim = [{"q": q["question"], "card_id": q["card_id"]} for q in questions]
+(live_dir / "ask-deneene-questions.json").write_text(json.dumps(qs_slim, ensure_ascii=False, separators=(",", ":")) + "\n")
 
 print(f"cards={len(cards)} questions={len(questions)}")

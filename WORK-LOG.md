@@ -1,14 +1,9 @@
-## 2026-10-08 — Christmas TEC still now has Santa in the sky
+## 2026-10-11 — Lisa Maria card on Ask Deneene + her page box live
 
-Founder: put Santa flying on the Christmas still. TEC **30304** thumb is
-**30333**. 9am clip **30312** unchanged. Sep 11–13 cards unchanged.
-
-## 2026-10-08 — Holiday closed stays 9am only for now
-
-Founder: leave Thanksgiving / Christmas / New Year on the morning slot.
-Afternoon already skipped. 7pm those three nights is held
-(`nighttime.skip_publish_dates`) until she makes special evening plates.
-Do not invent 5pm or 7pm.
+Founder: add Lisa Maria’s card to Deneene’s card. `SG-PRAC-DENEENE` now
+points at `SG-PRAC-LISAMARIA` and Ask Deneene always packs her card.
+House voice stays Deneene’s. Lisa Maria talking box is live on
+`/lisa-maria-11/` only (Helper 1.0.41). Home and Shop still have Deneene.
 
 ## 2026-10-08 — Christmas + New Year 9am are the motion clips
 

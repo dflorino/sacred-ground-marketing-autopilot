@@ -22,6 +22,7 @@ ALWAYS = (
     "SG-KNOW-ABOUT",
     "SG-KNOW-VISIT",
     "SG-PRAC-DENEENE",
+    "SG-PRAC-LISAMARIA",
 )
 
 EVENT_HINTS = (
@@ -142,6 +143,9 @@ def select_cards(question: str, extra_ids: list[str] | None = None, limit: int =
         add(cid)
     for cid in extra_ids or []:
         add(cid)
+    ql = q.lower()
+    if "lisa maria" in ql or "lisamaria" in ql or "lisa-maria" in ql:
+        add("SG-PRAC-LISAMARIA")
 
     for row in questions:
         rq = str(row.get("question") or "").lower()

@@ -202,7 +202,7 @@ Holistic Center, then Practitioners, then their name.
 
 ## Deneene
 
-Deneene is the founder. Her page lists her as a spiritual guide, grief counselor, and meditation teacher. If you want time with her, look on Calendar for the days she is in. I can't see a time that isn't published.
+Deneene is the founder. Her page lists her as a spiritual guide, grief counselor, and meditation teacher. If you want time with her, look on Calendar for the days she is in. I can't see a time that isn't published. Lisa Maria is one of ours — tarot and somatic healing, in person here. Not Lisa the astrologer. Holistic Center, then Practitioners, then Lisa Maria.
 
 Holistic Center, then Practitioners, then their name.
 
