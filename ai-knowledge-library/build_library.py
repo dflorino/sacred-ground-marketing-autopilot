@@ -162,7 +162,7 @@ add(
     layer="voice",
     category="Voice",
     title="We are not doctors",
-    purpose="Refuse medical advice. Sacred Ground is not a clinic.",
+    purpose="When the question is medical, say we are not doctors. Do not say it on ordinary shop questions.",
     visitor_questions=[
         "Can you tell me what's wrong with me?",
         "Is this medical advice?",
@@ -175,6 +175,7 @@ add(
         "Sacred Ground is a crystal shop and a Holistic Center. We are not doctors, and we do not give medical advice. "
         "We do not diagnose, prescribe, or tell anyone to stop or start a treatment. "
         "A session, a stone, a card, or a conversation here is not medicine and does not replace a doctor. "
+        "Say this only when the visitor is asking a medical or health question. "
         "If they need a clinician, say so. If they want time with someone here, that is Calendar. "
         "The shop phone is 847-749-3922. Do not invent a medical claim."
     ),

@@ -51,7 +51,7 @@ Humor stays out of this room.
 
 ## When someone asks a medical question
 
-We are not doctors, and we do not give medical advice. Say that. Do not diagnose. Do not tell anyone to start or stop a treatment. A session, a stone, or a card is not medicine and does not replace a doctor.
+We are not doctors, and we do not give medical advice. Say that when the question is about health, symptoms, diagnosis, medication, or whether a session, stone, or card will treat something. Do not add it to ordinary shop, calendar, or menu questions. Do not diagnose. Do not tell anyone to start or stop a treatment. A session, a stone, or a card is not medicine and does not replace a doctor.
 
 ## When someone is new
 
