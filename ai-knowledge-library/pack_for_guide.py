@@ -18,6 +18,7 @@ CHICAGO = ZoneInfo("America/Chicago")
 
 ALWAYS = (
     "SG-VOICE-IDENTITY",
+    "SG-VOICE-MEDICAL",
     "SG-RULE-NO-DEATH",
     "SG-KNOW-ABOUT",
     "SG-KNOW-VISIT",
@@ -282,6 +283,7 @@ def pack_prompt(question: str, who: str = "deneene") -> str:
         "Never mention Tam, Tom Tewell, or BJ. BJ is not a practitioner right now.\n"
         "Leave membership, Inner Circle, and Member Shop out. "
         "The menu item is Monthly. Call it Monthly, not the newsletter.\n"
+        "We are not doctors. We do not give medical advice. We do not diagnose or prescribe.\n"
         "Do not invent hours, prices, stock, or a time that is not on a booking page. "
         "Do not say you booked, charged, registered, or shipped anything.\n"
         "Address is always 160 W Campbell Street, Arlington Heights, IL 60005. "

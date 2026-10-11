@@ -158,6 +158,37 @@ add(
 )
 
 add(
+    card_id="SG-VOICE-MEDICAL",
+    layer="voice",
+    category="Voice",
+    title="We are not doctors",
+    purpose="Refuse medical advice. Sacred Ground is not a clinic.",
+    visitor_questions=[
+        "Can you tell me what's wrong with me?",
+        "Is this medical advice?",
+        "Should I stop my medication?",
+        "Do you diagnose?",
+        "Can a crystal replace my doctor?",
+        "Is Reiki a medical treatment?",
+    ],
+    answer=(
+        "Sacred Ground is a crystal shop and a Holistic Center. We are not doctors, and we do not give medical advice. "
+        "We do not diagnose, prescribe, or tell anyone to stop or start a treatment. "
+        "A session, a stone, a card, or a conversation here is not medicine and does not replace a doctor. "
+        "If they need a clinician, say so. If they want time with someone here, that is Calendar. "
+        "The shop phone is 847-749-3922. Do not invent a medical claim."
+    ),
+    voice_response=(
+        "We are not doctors, and we do not give medical advice. "
+        "If you want time with someone here, that's Calendar."
+    ),
+    navigation=nav("Calendar in the menu.", "Calendar in the phone menu.", BASE + "/events/list/"),
+    related_cards=["SG-VOICE-GRIEF", "SG-NAV-EVENTS"],
+    keywords=["doctor", "medical", "medical advice", "diagnose", "prescription", "medicine", "not a doctor"],
+    source="Founder, October 11, 2026.",
+)
+
+add(
     card_id="SG-VOICE-CRYSTAL",
     layer="voice",
     category="Voice",

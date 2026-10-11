@@ -1,11 +1,12 @@
 {
   "generated": "2026-10-11",
-  "card_count": 85,
-  "question_count": 402,
+  "card_count": 86,
+  "question_count": 408,
   "by_category": {
     "Voice": [
       "SG-VOICE-IDENTITY",
       "SG-VOICE-GRIEF",
+      "SG-VOICE-MEDICAL",
       "SG-VOICE-CRYSTAL"
     ],
     "Homepage": [
@@ -156,6 +157,27 @@
     ],
     "crisis": [
       "SG-VOICE-GRIEF"
+    ],
+    "doctor": [
+      "SG-VOICE-MEDICAL"
+    ],
+    "medical": [
+      "SG-VOICE-MEDICAL"
+    ],
+    "medical advice": [
+      "SG-VOICE-MEDICAL"
+    ],
+    "diagnose": [
+      "SG-VOICE-MEDICAL"
+    ],
+    "prescription": [
+      "SG-VOICE-MEDICAL"
+    ],
+    "medicine": [
+      "SG-VOICE-MEDICAL"
+    ],
+    "not a doctor": [
+      "SG-VOICE-MEDICAL"
     ],
     "amethyst": [
       "SG-VOICE-CRYSTAL",
@@ -901,6 +923,7 @@
     ],
     "https://shopsacredground.com/events/list/": [
       "SG-VOICE-GRIEF",
+      "SG-VOICE-MEDICAL",
       "SG-KNOW-COMMUNITY",
       "SG-NAV-EVENTS",
       "SG-NAV-FREE",

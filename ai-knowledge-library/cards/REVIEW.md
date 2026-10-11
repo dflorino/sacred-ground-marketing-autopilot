@@ -14,6 +14,12 @@ I'm glad you said it out loud. Grief doesn't run on a schedule, and you don't ow
 
 Calendar in the menu, for Deneene's dates.
 
+## We are not doctors
+
+We are not doctors, and we do not give medical advice. If you want time with someone here, that's Calendar.
+
+Calendar in the menu.
+
 ## How to talk about a stone
 
 Amethyst is quartz that came out purple, from iron and a little natural radiation. People have also loved it for a clear head and for intuition. Both of those can be true without one proving the other. If you want to find yours, come hold them. The shop is at 160 W Campbell Street in Arlington Heights.

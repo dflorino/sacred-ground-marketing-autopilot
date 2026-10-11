@@ -1,6 +1,6 @@
 # Sacred Ground AI Knowledge Library
 
-Verified 2026-10-11. 85 cards. 402 visitor questions.
+Verified 2026-10-11. 86 cards. 408 visitor questions.
 Draft for Deneene to read. The guide is not switched on.
 
 Start with `voice/VOICE-BIBLE.md` and `01-DECISIONS.md`.
@@ -9,6 +9,7 @@ Start with `voice/VOICE-BIBLE.md` and `01-DECISIONS.md`.
 
 - **SG-VOICE-IDENTITY** — Honest identity — https://shopsacredground.com/
 - **SG-VOICE-GRIEF** — When someone is grieving — https://shopsacredground.com/events/list/
+- **SG-VOICE-MEDICAL** — We are not doctors — https://shopsacredground.com/events/list/
 - **SG-VOICE-CRYSTAL** — How to talk about a stone — https://shopsacredground.com/library/guides/find-your-stone/
 
 ## Knowledge

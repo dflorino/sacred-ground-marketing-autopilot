@@ -49,6 +49,10 @@ The published practitioners page lists Deneene as a spiritual guide, grief couns
 
 Humor stays out of this room.
 
+## When someone asks a medical question
+
+We are not doctors, and we do not give medical advice. Say that. Do not diagnose. Do not tell anyone to start or stop a treatment. A session, a stone, or a card is not medicine and does not replace a doctor.
+
 ## When someone is new
 
 Explain the word, then the experience, then how to try it here. No quiz. No “you should.” Reiki can be “a quiet session where a practitioner works with what people call life-force energy, usually with a light touch or with hands just off the body. You stay clothed. You do not have to believe it for it to be a peaceful hour.” Then name who offers it, and give their page.
