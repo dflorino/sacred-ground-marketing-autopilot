@@ -558,7 +558,7 @@
       "Is Tarot religious?",
       "How do I book Tarot?"
     ],
-    "answer": "A tarot deck has 78 cards with old images for ordinary human situations. A reading is a conversation with those images, not a locked future. Adie, Andre, and Lisa Maria are on the practitioners page for tarot. Lita now offers tarot with pendulums. People published for this: Adie, Andre, Lisa Maria, Lita. Holistic Center, then Practitioners, then their name. A time and a price stay on their booking page. Do not read a website address. The guide does not invent either.",
+    "answer": "A tarot deck has 78 cards with old images for ordinary human situations. A reading is a conversation with those images, not a locked future. Adie, Andre, and Lisa Maria are on the practitioners page for tarot. Lita now offers tarot with pendulums. Lisa the astrologer also does tarot mixed with astrology. She moved, so she has no current bookings. She comes back now and then for special days — that's on Calendar when she does. People published for this: Adie, Andre, Lisa Maria, Lita. Holistic Center, then Practitioners, then their name. A time and a price stay on their booking page. Do not read a website address. The guide does not invent either.",
     "voice_response": "A tarot deck has 78 cards with old images for ordinary human situations. Here that's Adie, Andre, Lisa Maria, and Lita. You'll find them under Holistic Center, then Practitioners.",
     "navigation": {
       "desktop": "Holistic Center, then Practitioners and Modalities. Choose the practice, then the person's name.",
@@ -654,7 +654,8 @@
       "astrology",
       "birth chart",
       "horoscope",
-      "zodiac"
+      "zodiac",
+      "lisa"
     ],
     "card_id": "SG-MOD-ASTROLOGY",
     "category": "Modalities",
@@ -668,8 +669,8 @@
       "Is Astrology religious?",
       "How do I book Astrology?"
     ],
-    "answer": "A natal chart is a map of the sky when you were born. People use it for temperament, timing, and a language for their life. Linn and Lisa are on the practitioners page. It is interpretive. It is not a medical chart. People published for this: Linn, Lisa. Holistic Center, then Practitioners, then their name. A time and a price stay on their booking page. Do not read a website address. The guide does not invent either.",
-    "voice_response": "A natal chart is a map of the sky when you were born. Here that's Linn and Lisa. You'll find them under Holistic Center, then Practitioners.",
+    "answer": "A natal chart is a map of the sky when you were born. People use it for temperament, timing, and a language for their life. Linn is on the practitioners page. Lisa the astrologer also does astrology, and tarot mixed with astrology. She moved, so she has no current bookings. She comes back now and then for special days — that's on Calendar when she does. It is interpretive. It is not a medical chart. People published for this: Linn. Holistic Center, then Practitioners, then their name. A time and a price stay on their booking page. Do not read a website address. The guide does not invent either.",
+    "voice_response": "A natal chart is a map of the sky when you were born. Here that's Linn. You'll find them under Holistic Center, then Practitioners.",
     "navigation": {
       "desktop": "Holistic Center, then Practitioners and Modalities. Choose the practice, then the person's name.",
       "mobile": "Use the practitioners page directly. The phone menu's shortest path is the link.",
@@ -1530,8 +1531,8 @@
       "Is Lisa available?",
       "Tell me about Lisa"
     ],
-    "answer": "Lisa is on the practitioners page. Astrology. This is Lisa the astrologer, not Lisa Maria and not Lisa Seyring. A few times a month, as the directory says. A time is on their booking page. Do not read a website address out loud. Say Holistic Center, then Practitioners, then their name. Length and price stay on that page. If no time is open, say so and offer the phone, 847-749-3922. Homepage Book Now opens Calendar. This person gets their own page.",
-    "voice_response": "Lisa is on the practitioners page. Astrology. This is Lisa the astrologer, not Lisa Maria and not Lisa Seyring. For a time, Holistic Center, then Practitioners, then their name. Not the homepage Book Now button.",
+    "answer": "Lisa is on the practitioners page. Astrology, and tarot mixed with astrology. This is Lisa the astrologer, not Lisa Maria and not Lisa Seyring. She moved. No current bookings. She comes back occasionally for special days. Do not invent a time or say she is here this week unless Calendar shows her. Do not send her clients to Lisa Maria. Do not read a website address. If they want a day she is in, say Calendar, or call 847-749-3922.",
+    "voice_response": "Lisa is the astrologer — not Lisa Maria, and not Lisa Seyring. She does astrology, and tarot mixed with astrology. She moved, so she has no current bookings. She comes back now and then for special days. When she does, that's on Calendar.",
     "navigation": {
       "desktop": "Holistic Center, then Practitioners, then their name.",
       "mobile": "Holistic Center is under the desktop menu. On a phone, Practitioners is the path.",

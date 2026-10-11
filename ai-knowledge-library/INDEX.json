@@ -425,6 +425,13 @@
     "zodiac": [
       "SG-MOD-ASTROLOGY"
     ],
+    "lisa": [
+      "SG-MOD-ASTROLOGY",
+      "SG-PRAC-LISA",
+      "SG-PRAC-LISA",
+      "SG-PRAC-LISAMARIA",
+      "SG-PRAC-LISAS"
+    ],
     "medium": [
       "SG-MOD-MEDIUM"
     ],
@@ -562,12 +569,6 @@
     ],
     "lita": [
       "SG-PRAC-LITA"
-    ],
-    "lisa": [
-      "SG-PRAC-LISA",
-      "SG-PRAC-LISA",
-      "SG-PRAC-LISAMARIA",
-      "SG-PRAC-LISAS"
     ],
     "lisa maria": [
       "SG-PRAC-LISAMARIA"

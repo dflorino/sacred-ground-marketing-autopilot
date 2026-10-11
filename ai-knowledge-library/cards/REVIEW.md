@@ -124,7 +124,7 @@ Holistic Center, then Practitioners and Modalities. Choose the practice, then th
 
 ## Astrology
 
-A natal chart is a map of the sky when you were born. Here that's Linn and Lisa. You'll find them under Holistic Center, then Practitioners.
+A natal chart is a map of the sky when you were born. Here that's Linn. You'll find them under Holistic Center, then Practitioners.
 
 Holistic Center, then Practitioners and Modalities. Choose the practice, then the person's name.
 
@@ -262,7 +262,7 @@ Holistic Center, then Practitioners, then their name.
 
 ## Lisa
 
-Lisa is on the practitioners page. Astrology. This is Lisa the astrologer, not Lisa Maria and not Lisa Seyring. For a time, Holistic Center, then Practitioners, then their name. Not the homepage Book Now button.
+Lisa is the astrologer — not Lisa Maria, and not Lisa Seyring. She does astrology, and tarot mixed with astrology. She moved, so she has no current bookings. She comes back now and then for special days. When she does, that's on Calendar.
 
 Holistic Center, then Practitioners, then their name.
 

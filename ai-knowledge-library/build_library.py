@@ -508,14 +508,14 @@ MODS = [
      ["Andre", "Kate", "Karen"], ["sound bath", "gong", "singing bowls", "vibration"]),
     ("SG-MOD-MEDITATION", "Meditation", "Sitting, breathing, and a little quiet. Tuesday nights at 7 are the free community hour, 7:00 to 8:00 Central. Deneene is listed as a meditation teacher. You can also come with no experience at all.",
      ["Deneene"], ["meditation", "tuesday", "mindfulness"]),
-    ("SG-MOD-TAROT", "Tarot", "A tarot deck has 78 cards with old images for ordinary human situations. A reading is a conversation with those images, not a locked future. Adie, Andre, and Lisa Maria are on the practitioners page for tarot. Lita now offers tarot with pendulums.",
+    ("SG-MOD-TAROT", "Tarot", "A tarot deck has 78 cards with old images for ordinary human situations. A reading is a conversation with those images, not a locked future. Adie, Andre, and Lisa Maria are on the practitioners page for tarot. Lita now offers tarot with pendulums. Lisa the astrologer also does tarot mixed with astrology. She moved, so she has no current bookings. She comes back now and then for special days — that's on Calendar when she does.",
      ["Adie", "Andre", "Lisa Maria", "Lita"], ["tarot", "cards", "reading", "pendulum"]),
     ("SG-MOD-ANGEL", "Angel readings", "Angel cards and angel communication are a gentler symbolic reading. People ask for comfort, a nudge, or a name for a feeling. Janel and Linn are listed for angel readings. Jill teaches angels and intuition. Melissa has a published Whispers of Angelic Guidance booking page.",
      ["Janel", "Linn", "Jill"], ["angel", "angels", "oracle", "archangel"]),
     ("SG-MOD-AKASHIC", "Akashic Records", "A traditional idea of a record of the soul, read in session as a way to look at patterns and questions. It is a spiritual practice, not a file cabinet science can audit. Janel and Karen both offer it. Janel's booking lets you choose Akashic or angel cards.",
      ["Janel", "Karen"], ["akashic", "akashic records", "soul"]),
-    ("SG-MOD-ASTROLOGY", "Astrology", "A natal chart is a map of the sky when you were born. People use it for temperament, timing, and a language for their life. Linn and Lisa are on the practitioners page. It is interpretive. It is not a medical chart.",
-     ["Linn", "Lisa"], ["astrology", "birth chart", "horoscope", "zodiac"]),
+    ("SG-MOD-ASTROLOGY", "Astrology", "A natal chart is a map of the sky when you were born. People use it for temperament, timing, and a language for their life. Linn is on the practitioners page. Lisa the astrologer also does astrology, and tarot mixed with astrology. She moved, so she has no current bookings. She comes back now and then for special days — that's on Calendar when she does. It is interpretive. It is not a medical chart.",
+     ["Linn"], ["astrology", "birth chart", "horoscope", "zodiac", "lisa"]),
     ("SG-MOD-MEDIUM", "Mediumship", "A mediumship session is a spiritual practice of listening for messages people associate with someone who has died. Melissa is listed for mediumship. Karen offers mediumship development as a class and spirit portraits. Lori has a published intuitive mediumship booking page. Nothing here proves an afterlife, and nothing here replaces grief care.",
      ["Melissa"], ["medium", "mediumship", "loved one", "crossed over"]),
     ("SG-MOD-SHAMANIC", "Shamanic practice", "Melissa and Kate are listed for shamanic healing. Andre is listed for shamanic drumming. These are traditional earth-based practices. Come curious. Do not expect a medical procedure.",
@@ -580,7 +580,7 @@ PEOPLE = [
     ("SG-PRAC-KATE", "Kate Kent", "/kate-11/", "Chakra balancing, sound healing, and shamanic healing. Also paint nights and wheel-of-the-year gatherings on her booking pages.", "One day a month, as the directory says.", [("Chakra", "/book/kate-chakra/"), ("Wheel", "/book/kate-wheel/")], True),
     ("SG-PRAC-LINN", "Linn", "/linn-11/", "Astrology and angel readings. The public name on the directory is Linn. Older pages say Lin Boffeli.", "The directory says call to book. A booking page is also published.", [("Astrology or angel communication", "/book/linn/")], True),
     ("SG-PRAC-LITA", "Lita Keller", "/lita-11/", "Tarot with pendulums, and sacred crafting workshops. New on the directory.", "Open times are on her booking pages.", [("Tarot with pendulums", "/book/lita-tarot/"), ("Besom", "/book/lita-besom/"), ("Crafting", "/book/lita-crafting/")], True),
-    ("SG-PRAC-LISA", "Lisa", "/lisa-astrology-v5-final/", "Astrology. This is Lisa the astrologer, not Lisa Maria and not Lisa Seyring.", "A few times a month, as the directory says.", [("Astrology and tarot", "/book/lisa/")], True),
+    ("SG-PRAC-LISA", "Lisa", "/lisa-astrology-v5-final/", "Astrology, and tarot mixed with astrology. This is Lisa the astrologer, not Lisa Maria and not Lisa Seyring.", "She moved. No current bookings. She comes back occasionally for special days.", [("Astrology and tarot", "/book/lisa/")], True),
     ("SG-PRAC-LISAMARIA", "Lisa Maria", "/lisa-maria-11/", "Intuitive tarot and teaching. Also somatic healing on her booking pages. The directory says she is in high demand.", "Book on her pages. Do not send her tarot clients to Lisa the astrologer.", [("Tarot", "/book/lisa-maria-tarot/"), ("Sessions", "/book/lisa-maria/"), ("Class", "/book/lisa-maria-class/")], True),
     ("SG-PRAC-LISAS", "Lisa Seyring", "/lisa-seyring-11/", "Poem readings. A poem made in the moment, not a tarot spread.", "New on the directory.", [("Poem reading", "/book/lisa-s/")], True),
     ("SG-PRAC-MARY", "Mary Keiser", "/mary-11/", "Reiki, cranial sacral, and intuitive guidance, in one integrated session.", "One day a month, as the directory says.", [("Integrated session", "/mary/")], True),
@@ -599,7 +599,20 @@ PEOPLE = [
 for cid, name, profile, blurb, avail, bookings, on_dir in PEOPLE:
     book_urls = [BASE + path for _, path in bookings]
     where = "on the practitioners page" if on_dir else "by a published booking page, and not yet on the portrait grid"
-    if cid == "SG-PRAC-DENEENE":
+    if cid == "SG-PRAC-LISA":
+        voice = (
+            "Lisa is the astrologer — not Lisa Maria, and not Lisa Seyring. "
+            "She does astrology, and tarot mixed with astrology. "
+            "She moved, so she has no current bookings. "
+            "She comes back now and then for special days. When she does, that's on Calendar."
+        )
+        answer = (
+            f"{name} is {where}. {blurb} {avail} "
+            "Do not invent a time or say she is here this week unless Calendar shows her. "
+            "Do not send her clients to Lisa Maria. Do not read a website address. "
+            "If they want a day she is in, say Calendar, or call 847-749-3922."
+        )
+    elif cid == "SG-PRAC-DENEENE":
         voice = (
             "Deneene is the founder. Her page lists her as a spiritual guide, grief counselor, and meditation teacher. "
             "She is putting her own appointment times up. Until that booking page is public, call 847-749-3922, or find her under Holistic Center, then Practitioners. I can't see a time that isn't published."
