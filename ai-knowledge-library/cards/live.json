@@ -82,7 +82,7 @@
       "Can I buy this online?"
     ],
     "answer": "Check the WooCommerce product. If it is not listed, say you cannot see it online and give the phone and the address. People can also walk in.",
-    "voice_response": "I can only confirm what the shop page shows. If it isn't listed, call the store or come by 160 W Campbell Street.",
+    "voice_response": "I can only confirm what the shop page shows. If it isn't listed, call the store or come by 160 West Campbell Street.",
     "navigation": {
       "desktop": "Shop menu.",
       "mobile": "Shop in the phone menu.",

@@ -22,7 +22,7 @@ Calendar in the menu.
 
 ## How to talk about a stone
 
-Amethyst is quartz that came out purple, from iron and a little natural radiation. People have also loved it for a clear head and for intuition. Both of those can be true without one proving the other. If you want to find yours, come hold them. The shop is at 160 W Campbell Street in Arlington Heights.
+Amethyst is quartz that came out purple, from iron and a little natural radiation. People have also loved it for a clear head and for intuition. Both of those can be true without one proving the other. If you want to find yours, come hold them. The shop is at 160 West Campbell Street in Arlington Heights.
 
 Library, then Guides, then How to Find the Stone That Fits. Or Shop.
 
@@ -40,7 +40,7 @@ Contact menu, then About. The story is also on the homepage.
 
 ## Visit the store
 
-We're at 160 W Campbell Street in Arlington Heights. The phone is 847-749-3922. You can walk in and look around. Hours are on the contact page if you're heading over, because those can change.
+We're at 160 West Campbell Street in Arlington Heights. The phone is 847-749-3922. You can walk in and look around. Hours are on the contact page if you're heading over, because those can change.
 
 Contact in the menu. Hours are also at the bottom of the homepage.
 
@@ -480,7 +480,7 @@ Shop in the top menu. Add to cart, then checkout. It is delivered to the address
 
 That's on our nav — Contact in the menu.
 
-Contact in the menu. Address is 160 W Campbell Street, Arlington Heights, IL 60005.
+Contact in the menu. Address is 160 West Campbell Street, Arlington Heights, IL 60005.
 
 ## Find a free event
 
@@ -514,6 +514,6 @@ The person's booking link.
 
 ## Product stock must be fetched
 
-I can only confirm what the shop page shows. If it isn't listed, call the store or come by 160 W Campbell Street.
+I can only confirm what the shop page shows. If it isn't listed, call the store or come by 160 West Campbell Street.
 
 Shop menu.

@@ -240,10 +240,10 @@
       "How do I hours, address, and the phone?",
       "Where is that on my phone?"
     ],
-    "answer": "Contact in the menu. Address is 160 W Campbell Street, Arlington Heights, IL 60005. On a phone: Contact in the phone menu. Do not read a website address. Name the menu item.",
+    "answer": "Contact in the menu. Address is 160 West Campbell Street, Arlington Heights, IL 60005. On a phone: Contact in the phone menu. Do not read a website address. Name the menu item.",
     "voice_response": "That's on our nav — Contact in the menu.",
     "navigation": {
-      "desktop": "Contact in the menu. Address is 160 W Campbell Street, Arlington Heights, IL 60005.",
+      "desktop": "Contact in the menu. Address is 160 West Campbell Street, Arlington Heights, IL 60005.",
       "mobile": "Contact in the phone menu.",
       "direct_url": "https://shopsacredground.com/contact/"
     },

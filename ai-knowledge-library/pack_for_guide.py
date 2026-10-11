@@ -244,12 +244,73 @@ def live_events_slice(days: int = 7) -> str:
 def format_card(card: dict) -> str:
     nav = card.get("navigation") or {}
     where = nav.get("desktop") or "the menu"
+    page = (nav.get("direct_url") or card.get("page") or "").strip()
+    extra = []
+    if page:
+        extra.append(f"Pressable page: {page}")
+    for row in card.get("booking") or []:
+        if isinstance(row, dict) and row.get("url"):
+            extra.append(f"Pressable booking ({row.get('label') or 'Book'}): {row['url']}")
+        elif isinstance(row, str) and row:
+            extra.append(f"Pressable booking: {row}")
+    for url in card.get("booking_urls") or []:
+        extra.append(f"Pressable booking: {url}")
+    tail = ("\n" + "\n".join(extra)) if extra else ""
     return (
         f"### {card['card_id']} — {card.get('title')}\n"
         f"{card.get('answer')}\n"
         f"Say it like: {card.get('voice_response')}\n"
         f"On the nav: {where}"
+        f"{tail}"
     )
+
+
+def _named_in_question(card_id: str, title: str, question: str) -> bool:
+    q = (question or "").lower()
+    t = (title or "").lower().strip()
+    if card_id == "SG-PRAC-LISAMARIA":
+        return "lisa maria" in q or "lisamaria" in q or "lisa-maria" in q
+    if card_id == "SG-PRAC-LISA":
+        return "lisa" in q and "maria" not in q and "seyring" not in q
+    if card_id == "SG-PRAC-LISAS":
+        return "seyring" in q or "lisa seyring" in q
+    if t and t in q:
+        return True
+    first = t.split()[0] if t else ""
+    return bool(first and re.search(r"\b" + re.escape(first) + r"\b", q))
+
+
+def pressable_links(question: str) -> list[dict]:
+    q = (question or "").lower()
+    out = []
+    seen = set()
+    for card in select_cards(question):
+        cid = str(card.get("card_id") or "")
+        if not cid.startswith("SG-PRAC-"):
+            continue
+        title = str(card.get("title") or "").strip()
+        if not _named_in_question(cid, title, q):
+            continue
+        nav = card.get("navigation") or {}
+        page = str(nav.get("direct_url") or card.get("page") or "").strip()
+        if page.startswith("https://shopsacredground.com/") and page not in seen:
+            seen.add(page)
+            out.append({"label": f"{title}'s page" if title else "Their page", "url": page})
+        rows = list(card.get("booking") or [])
+        if not rows:
+            rows = [{"label": "Book", "url": u} for u in (card.get("booking_urls") or [])]
+        for row in rows:
+            if isinstance(row, str):
+                url, lab = row, f"Book {title}" if title else "Book a time"
+            else:
+                url = str(row.get("url") or "")
+                lab = str(row.get("label") or "").strip() or (f"Book {title}" if title else "Book a time")
+                if title and not lab.lower().startswith("book"):
+                    lab = f"Book {title} — {lab}"
+            if url.startswith("https://shopsacredground.com/") and url not in seen:
+                seen.add(url)
+                out.append({"label": lab, "url": url})
+    return out
 
 
 def pack_prompt(question: str, who: str = "deneene") -> str:
@@ -275,8 +336,9 @@ def pack_prompt(question: str, who: str = "deneene") -> str:
         "Do not invent her memories, her sessions, or private stories.\n"
         "Answer ONLY from the cards below and the live calendar slice when it is present. "
         "Prefer the spoken line. "
-        "Never read, type, or spell a website, a /book/ link, or shopsacredground.com. "
-        "Tell them they can find it on our nav. "
+        "If they ask for a person's page, booking, or a link, the chat may show a pressable button from the card. "
+        "Never invent a URL. Never speak, spell, or read a website or /book/ path out loud. "
+        "The spoken line still names the nav. "
         "Desktop nav: Calendar, Shop, Observatory, Holistic Center, Monthly, Library, Contact. "
         "A named person is Holistic Center, then Practitioners, then their name. "
         "Events are Calendar. The newsletter is Monthly.\n"
@@ -291,7 +353,7 @@ def pack_prompt(question: str, who: str = "deneene") -> str:
         "Do not add it to ordinary shop, calendar, or menu questions.\n"
         "Do not invent hours, prices, stock, or a time that is not on a booking page. "
         "Do not say you booked, charged, registered, or shipped anything.\n"
-        "Address is always 160 W Campbell Street, Arlington Heights, IL 60005. "
+        "Address is always 160 West Campbell Street, Arlington Heights, IL 60005. Say West, never W. "
         "Phone 847-749-3922. Working Calendar is staff only — never send a visitor there.\n"
         "If the cards do not cover it, say so and name the closest menu item, or the phone.\n\n"
         f"{body}{live_block}"

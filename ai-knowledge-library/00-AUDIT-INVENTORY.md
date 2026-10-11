@@ -42,7 +42,7 @@ Page 24589. Sections, in order:
 7. Library highlights. This whole block is hidden on screens under 768px.
 8. Holistic Center Happenings, including private parties, clearings, and group classes. Call 847-749-3922.
 9. Social links and Google reviews.
-10. Map and contact: 160 W Campbell St, Arlington Heights, IL 60005. Phone and hours match the Contact page.
+10. Map and contact: 160 West Campbell Street, Arlington Heights, IL 60005. Phone and hours match the Contact page.
 
 Hero “Book Now” and “Book Session” currently go to `/events/`, the public calendar, not a practitioner booker. Appointment questions should be sent to the Holistic Center and the person’s `/book/...` page.
 
@@ -137,7 +137,7 @@ Earth & Ether, the newsletter, is a different place: https://shopsacredground.co
 
 Address, phone, email, and hours are published on Contact and on the homepage.
 
-- 160 W Campbell Street, Arlington Heights, IL 60005
+- 160 West Campbell Street, Arlington Heights, IL 60005
 - 847-749-3922
 - info@shopsacredground.com
 - Sunday 11–5, Monday 11–6, Tuesday 11–8, Wednesday 11–6, Thursday 11–7, Friday 11–7, Saturday 10–8
@@ -150,7 +150,7 @@ Categories that currently have products: Zodiac Bags, Wellness and Dis-Ease Bags
 
 Also public: cart, checkout, my account, accessibility, privacy, terms, refunds, languages, testimonials, contact.
 
-The homepage map embed searches a different street name than 160 W Campbell. The guide uses Campbell Street, which is the address on Contact, the homepage text, and the business listing.
+The homepage map embed searches a different street name than 160 West Campbell Street. The guide uses Campbell Street, which is the address on Contact, the homepage text, and the business listing.
 
 ### Kept out of the public guide
 
@@ -228,7 +228,7 @@ She reviews the Voice Bible before it governs answers.
 ## Conflicts to settle before the cards are written
 
 1. Homepage fair banner still says October 10. Leave it out of the guide.
-2. Homepage map searches a different street than 160 W Campbell. The guide will say Campbell.
+2. Homepage map searches a different street than 160 West Campbell Street. The guide will say Campbell.
 3. Homepage Book Now opens the events list, not a practitioner booker. The guide will send appointment questions to the book pages.
 4. Deneene’s booking calendar: public or private?
 5. Which page is the real public profile when a person has an older page and a newer one?

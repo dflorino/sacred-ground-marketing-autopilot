@@ -391,10 +391,111 @@ function sg_ask_deneene_events() {
  * @return string
  */
 function sg_ask_deneene_format_card( $card ) {
-	return '### ' . ( $card['card_id'] ?? '' ) . ' — ' . ( $card['title'] ?? '' ) . "\n"
-		. ( $card['answer'] ?? '' ) . "\n"
-		. 'Say it like: ' . ( $card['voice_response'] ?? '' ) . "\n"
-		. 'On the nav: ' . ( $card['nav'] ?? 'the menu' );
+	$lines = array(
+		'### ' . ( $card['card_id'] ?? '' ) . ' — ' . ( $card['title'] ?? '' ),
+		(string) ( $card['answer'] ?? '' ),
+		'Say it like: ' . ( $card['voice_response'] ?? '' ),
+		'On the nav: ' . ( $card['nav'] ?? 'the menu' ),
+	);
+	$page = (string) ( $card['page'] ?? '' );
+	if ( $page !== '' ) {
+		$lines[] = 'Pressable page: ' . $page;
+	}
+	foreach ( (array) ( $card['booking'] ?? array() ) as $row ) {
+		if ( is_string( $row ) && $row !== '' ) {
+			$lines[] = 'Pressable booking: ' . $row;
+			continue;
+		}
+		$url = (string) ( $row['url'] ?? '' );
+		if ( $url === '' ) {
+			continue;
+		}
+		$lab = (string) ( $row['label'] ?? 'Book' );
+		$lines[] = 'Pressable booking (' . $lab . '): ' . $url;
+	}
+	return implode( "\n", $lines );
+}
+
+/**
+ * @param string $url URL.
+ * @return string
+ */
+function sg_ask_deneene_safe_url( $url ) {
+	$url = esc_url_raw( (string) $url );
+	if ( $url === '' ) {
+		return '';
+	}
+	$host = strtolower( (string) wp_parse_url( $url, PHP_URL_HOST ) );
+	if ( $host !== 'shopsacredground.com' && $host !== 'www.shopsacredground.com' ) {
+		return '';
+	}
+	return $url;
+}
+
+/**
+ * @param string $question Question.
+ * @return array<int,array{label:string,url:string}>
+ */
+function sg_ask_deneene_pressable_links( $question ) {
+	$ql   = strtolower( (string) $question );
+	$out  = array();
+	$seen = array();
+	foreach ( sg_ask_deneene_select( $question ) as $card ) {
+		$cid = (string) ( $card['card_id'] ?? '' );
+		if ( strpos( $cid, 'SG-PRAC-' ) !== 0 ) {
+			continue;
+		}
+		$title = trim( (string) ( $card['title'] ?? '' ) );
+		$tl    = strtolower( $title );
+		$hit   = false;
+		if ( $cid === 'SG-PRAC-LISAMARIA' ) {
+			$hit = ( strpos( $ql, 'lisa maria' ) !== false || strpos( $ql, 'lisamaria' ) !== false || strpos( $ql, 'lisa-maria' ) !== false );
+		} elseif ( $cid === 'SG-PRAC-LISA' ) {
+			$hit = ( strpos( $ql, 'lisa' ) !== false && strpos( $ql, 'maria' ) === false && strpos( $ql, 'seyring' ) === false );
+		} elseif ( $cid === 'SG-PRAC-LISAS' ) {
+			$hit = ( strpos( $ql, 'seyring' ) !== false || strpos( $ql, 'lisa seyring' ) !== false );
+		} elseif ( $tl !== '' && strpos( $ql, $tl ) !== false ) {
+			$hit = true;
+		} else {
+			$first = strtolower( (string) strtok( $title, ' ' ) );
+			if ( $first !== '' && preg_match( '/\b' . preg_quote( $first, '/' ) . '\b/', $ql ) ) {
+				$hit = true;
+			}
+		}
+		if ( ! $hit ) {
+			continue;
+		}
+		$page = sg_ask_deneene_safe_url( $card['page'] ?? '' );
+		if ( $page !== '' && ! isset( $seen[ $page ] ) ) {
+			$seen[ $page ] = 1;
+			$out[]         = array(
+				'label' => $title !== '' ? $title . "'s page" : 'Their page',
+				'url'   => $page,
+			);
+		}
+		foreach ( (array) ( $card['booking'] ?? array() ) as $row ) {
+			if ( is_string( $row ) ) {
+				$url = sg_ask_deneene_safe_url( $row );
+				$lab = $title !== '' ? 'Book ' . $title : 'Book a time';
+			} else {
+				$url = sg_ask_deneene_safe_url( $row['url'] ?? '' );
+				$lab = trim( (string) ( $row['label'] ?? '' ) );
+				if ( $lab === '' ) {
+					$lab = $title !== '' ? 'Book ' . $title : 'Book a time';
+				} elseif ( $title !== '' && stripos( $lab, 'book' ) !== 0 ) {
+					$lab = 'Book ' . $title . ' — ' . $lab;
+				}
+			}
+			if ( $url !== '' && ! isset( $seen[ $url ] ) ) {
+				$seen[ $url ] = 1;
+				$out[]        = array(
+					'label' => $lab,
+					'url'   => $url,
+				);
+			}
+		}
+	}
+	return $out;
 }
 
 /**
@@ -425,8 +526,9 @@ function sg_ask_deneene_prompt( $question ) {
 		. "Do not invent her memories, her sessions, or private stories.\n"
 		. "Answer ONLY from the cards below and the live calendar slice when it is present. "
 		. "Prefer the spoken line. "
-		. "Never read, type, or spell a website, a /book/ link, or shopsacredground.com. "
-		. "Tell them they can find it on our nav. "
+		. "If they ask for a person's page, booking, or a link, the chat may show a pressable button from the card. "
+		. "Never invent a URL. Never speak, spell, or read a website or /book/ path out loud. "
+		. "The spoken line still names the nav. "
 		. "Desktop nav: Calendar, Shop, Observatory, Holistic Center, Monthly, Library, Contact. "
 		. "A named person is Holistic Center, then Practitioners, then their name. "
 		. "Events are Calendar. The newsletter is Monthly.\n"
@@ -441,7 +543,7 @@ function sg_ask_deneene_prompt( $question ) {
 		. "Do not add it to ordinary shop, calendar, or menu questions.\n"
 		. "Do not invent hours, prices, stock, or a time that is not on a booking page. "
 		. "Do not say you booked, charged, registered, or shipped anything.\n"
-		. "Address is always 160 W Campbell Street, Arlington Heights, IL 60005. "
+		. "Address is always 160 West Campbell Street, Arlington Heights, IL 60005. Say West, never W. "
 		. "Phone 847-749-3922. Working Calendar is staff only — never send a visitor there.\n"
 		. "If the cards do not cover it, say so and name the closest menu item, or the phone.\n\n"
 		. implode( "\n\n", $body )
@@ -560,7 +662,12 @@ function sg_ask_deneene_rest_chat( $request ) {
 	if ( $text === '' ) {
 		return rest_ensure_response( array( 'reply' => 'The box could not answer just now. Try Calendar in the menu, or call 847-749-3922.' ) );
 	}
-	return rest_ensure_response( array( 'reply' => $text ) );
+	return rest_ensure_response(
+		array(
+			'reply' => $text,
+			'links' => sg_ask_deneene_pressable_links( $question ),
+		)
+	);
 }
 
 /**
@@ -572,6 +679,10 @@ function sg_ask_deneene_rest_speak( $request ) {
 		return new WP_Error( 'sg_ask_deneene_rate', 'Please wait a moment and try again.', array( 'status' => 429 ) );
 	}
 	$text = trim( wp_strip_all_tags( (string) $request->get_param( 'text' ) ) );
+	$text = preg_replace( '/\[([^\]]+)\]\((https?:\/\/[^)]+)\)/', '$1', $text );
+	$text = preg_replace( '#https?://\S+#', '', $text );
+	$text = preg_replace( '/\b160\s+W\.?\s+Campbell\b/i', '160 West Campbell', $text );
+	$text = trim( preg_replace( '/\s+/', ' ', (string) $text ) );
 	if ( $text === '' ) {
 		return new WP_Error( 'sg_ask_deneene_empty', 'Nothing to speak.', array( 'status' => 400 ) );
 	}
@@ -703,6 +814,9 @@ function sg_ask_deneene_footer() {
 #sg-ask-deneene-log .hear{margin-top:8px;}
 #sg-ask-deneene-log .hear span{display:block;font-size:13px;color:#6a5648;margin-bottom:4px;}
 #sg-ask-deneene-log .hear audio{width:100%;height:36px;}
+#sg-ask-deneene-log .sg-b a{color:#4a2c5a;font-weight:600;word-break:break-word;}
+#sg-ask-deneene-log .sg-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;}
+#sg-ask-deneene-log .sg-links a{display:inline-block;background:#c4a35a;color:#1a1410;text-decoration:none;border-radius:12px;padding:8px 12px;font-weight:600;font-size:14px;}
 </style>
 <button id="sg-ask-deneene-open" type="button">
   <img src="<?php echo $photo; ?>" alt=""/>
@@ -734,15 +848,28 @@ function sg_ask_deneene_footer() {
       .then(function(r){return r.ok?r.json():null;})
       .then(function(d){if(d&&d.url) audio.src=d.url;});
   }
-  function add(t,w,voice){
+  function speakText(t){
+    return String(t||"").replace(/\[[^\]]+\]\((https?:\/\/[^)]+)\)/g," ").replace(/https?:\/\/\S+/g," ").replace(/\s+/g," ").trim();
+  }
+  function add(t,w,voice,links){
     var d=document.createElement("div"); d.className="sg-b "+w;
     var p=document.createElement("div"); p.textContent=t; d.appendChild(p);
+    if(w==="them" && links && links.length){
+      var row=document.createElement("div"); row.className="sg-links";
+      links.forEach(function(L){
+        if(!L||!L.url||String(L.url).indexOf("https://shopsacredground.com/")!==0) return;
+        var a=document.createElement("a"); a.href=L.url; a.textContent=L.label||"Open this page";
+        row.appendChild(a);
+      });
+      if(row.childNodes.length) d.appendChild(row);
+    }
     if(w==="them"){
       var wrap=document.createElement("div"); wrap.className="hear";
       var note=document.createElement("span"); note.textContent="Press Play to hear me";
       var audio=document.createElement("audio"); audio.preload="none"; audio.controls=true; audio.setAttribute("playsinline","");
       wrap.appendChild(note); wrap.appendChild(audio); d.appendChild(wrap);
-      if(voice===false) audio.dataset.text=t; else attachVoice(audio,t);
+      var spoken=speakText(t);
+      if(voice===false) audio.dataset.text=spoken; else attachVoice(audio,spoken);
     }
     log.appendChild(d); log.scrollTop=log.scrollHeight;
   }
@@ -785,7 +912,7 @@ function sg_ask_deneene_footer() {
       var res=await fetch(CHAT,{method:"POST",headers:{"Content-Type":"application/json","X-WP-Nonce":NONCE},body:JSON.stringify({messages:history})});
       var data=await res.json(); thinking.remove();
       var reply=(data&&data.reply)||(data&&data.message)||"The box did not answer.";
-      add(reply,"them"); history.push({role:"assistant",content:reply});
+      add(reply,"them",true,data&&data.links); history.push({role:"assistant",content:reply});
     } catch(err) { thinking.remove(); add("The box could not answer just now.","them"); }
   };
 })();

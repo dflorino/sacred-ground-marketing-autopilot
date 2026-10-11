@@ -40,17 +40,21 @@ function sg_ask_lisa_maria_should_show() {
 }
 
 /**
+ * @param int $user_turns How many visitor questions are already in the thread.
  * @return string
  */
-function sg_ask_lisa_maria_prompt() {
+function sg_ask_lisa_maria_prompt( $user_turns = 0 ) {
+	$booking = ( (int) $user_turns < 2 )
+		? "They just started chatting. Answer the question they asked. Do not mention booking, finding a time, or the Book a time button yet.\n"
+		: "You have talked a little. You may now say they can book a time with you. One short humble line. Point them to the Book a time button. Do not sound salesy.\n";
 	return "You are Lisa Maria's talking box on her Sacred Ground practitioner page only.\n"
 		. "Speak as Lisa Maria. Humble. Warm. Inviting. Not a performance.\n"
 		. "The first hello is already on the screen. Never repeat it. "
-		. "Never start again with Hi I'm Lisa Maria, I do tarot, or let's find a time.\n"
-		. "Answer the question they just asked. Then one short invite to book is enough.\n"
+		. "Never start again with Hi I'm Lisa Maria, I do tarot, let's find a time, or let's chat.\n"
+		. "Answer the question they just asked.\n"
+		. $booking
 		. "Never say you are not here for small talk. Never sound curt or dismissive.\n"
 		. "This is NOT the live reading. Do not pull cards. Do not invent a spread, a future, hours, or a price.\n"
-		. "Every answer should gently invite them to book. Point them to the Book a time button. "
 		. "Do not read a website. Do not give email, PayPal, Venmo, Cash App, or a price.\n"
 		. "Not Lisa the astrologer. Not Lisa Seyring.\n"
 		. "I am an artist and teacher for more than twenty years. Intuitive tarot and oracle, about eight decks, "
@@ -59,7 +63,7 @@ function sg_ask_lisa_maria_prompt() {
 		. "Somatic / biofield / tuning-fork work is energy and sound, not medicine. "
 		. "We are not doctors. Say that only if they ask whether a session treats a symptom or a diagnosis.\n"
 		. "If no time is open, say so and offer 847-749-3922.\n"
-		. "Address is 160 W Campbell Street, Arlington Heights, IL 60005.\n";
+		. "Address is 160 West Campbell Street, Arlington Heights, IL 60005. Say West, never W.\n";
 }
 
 /**
@@ -107,8 +111,9 @@ function sg_ask_lisa_maria_rest_chat( $request ) {
 	if ( ! is_array( $messages ) ) {
 		$messages = array();
 	}
-	$question = '';
-	$clean    = array();
+	$question   = '';
+	$clean      = array();
+	$user_turns = 0;
 	foreach ( array_slice( $messages, -8 ) as $row ) {
 		if ( ! is_array( $row ) ) {
 			continue;
@@ -127,10 +132,11 @@ function sg_ask_lisa_maria_rest_chat( $request ) {
 		);
 		if ( $role === 'user' ) {
 			$question = $text;
+			$user_turns++;
 		}
 	}
 	if ( $question === '' ) {
-		return rest_ensure_response( array( 'reply' => 'Ask me how a session feels. When you are ready, we can find a time.' ) );
+		return rest_ensure_response( array( 'reply' => 'Ask me how a session feels. If you have questions, let\'s chat.' ) );
 	}
 
 	$key = sg_ask_lisa_maria_openrouter_key();
@@ -145,7 +151,7 @@ function sg_ask_lisa_maria_rest_chat( $request ) {
 			array(
 				array(
 					'role'    => 'system',
-					'content' => sg_ask_lisa_maria_prompt(),
+					'content' => sg_ask_lisa_maria_prompt( $user_turns ),
 				),
 			),
 			$clean
@@ -202,7 +208,7 @@ function sg_ask_lisa_maria_drop_hello( $text, $question ) {
 			continue;
 		}
 		$check = strtolower( $bit );
-		if ( $skip && ( strpos( $check, "i'm lisa maria" ) !== false || strpos( $check, 'i do tarot' ) !== false || strpos( $check, "let's find a time" ) !== false ) ) {
+		if ( $skip && ( strpos( $check, "i'm lisa maria" ) !== false || strpos( $check, 'i do tarot' ) !== false || strpos( $check, "let's find a time" ) !== false || strpos( $check, "let's chat" ) !== false ) ) {
 			continue;
 		}
 		$skip   = false;
@@ -221,6 +227,7 @@ function sg_ask_lisa_maria_rest_speak( $request ) {
 		return new WP_Error( 'sg_ask_lisa_maria_rate', 'Please wait a moment and try again.', array( 'status' => 429 ) );
 	}
 	$text = trim( wp_strip_all_tags( (string) $request->get_param( 'text' ) ) );
+	$text = preg_replace( '/\b160\s+W\.?\s+Campbell\b/i', '160 West Campbell', $text );
 	if ( $text === '' ) {
 		return new WP_Error( 'sg_ask_lisa_maria_empty', 'Nothing to speak.', array( 'status' => 400 ) );
 	}
@@ -319,7 +326,7 @@ function sg_ask_lisa_maria_footer() {
 	$speak  = esc_url( rest_url( 'sg-helper/v1/ask-lisa-maria/speak' ) );
 	$book   = esc_url( home_url( '/book/lisa-maria/' ) );
 	$nonce  = wp_create_nonce( 'wp_rest' );
-	$opener = "Hi, I'm Lisa Maria. I do tarot and somatic healing. If you have any questions for me, let's find a time.";
+	$opener = "Hi, I'm Lisa Maria. I do tarot and somatic healing. If you have any questions for me, let's chat.";
 	$top    = is_admin_bar_showing() ? '232px' : '200px';
 	?>
 <style id="sg-ask-lisa-maria-css">

@@ -109,8 +109,8 @@
       "What's the address?",
       "Can I just browse?"
     ],
-    "answer": "Sacred Ground is at 160 W Campbell Street, Arlington Heights, Illinois 60005. Call 847-749-3922 or email info@shopsacredground.com. Published hours: Sunday 11 to 5, Monday 11 to 6, Tuesday 11 to 8, Wednesday 11 to 6, Thursday 11 to 7, Friday 11 to 7, Saturday 10 to 8. Hours can change. If you are about to drive over, the Contact page is the check. You can walk in and browse with no appointment. A session with a practitioner is booked on that person's page. The map should always be read as 160 W Campbell Street. An older map search used a different street. Campbell Street is the address.",
-    "voice_response": "We're at 160 W Campbell Street in Arlington Heights. The phone is 847-749-3922. You can walk in and look around. Hours are on the contact page if you're heading over, because those can change.",
+    "answer": "Sacred Ground is at 160 West Campbell Street, Arlington Heights, Illinois 60005. Call 847-749-3922 or email info@shopsacredground.com. Published hours: Sunday 11 to 5, Monday 11 to 6, Tuesday 11 to 8, Wednesday 11 to 6, Thursday 11 to 7, Friday 11 to 7, Saturday 10 to 8. Hours can change. If you are about to drive over, the Contact page is the check. You can walk in and browse with no appointment. A session with a practitioner is booked on that person's page. The map should always be read as 160 West Campbell Street. An older map search used a different street. Campbell Street is the address.",
+    "voice_response": "We're at 160 West Campbell Street in Arlington Heights. The phone is 847-749-3922. You can walk in and look around. Hours are on the contact page if you're heading over, because those can change.",
     "navigation": {
       "desktop": "Contact in the menu. Hours are also at the bottom of the homepage.",
       "mobile": "Contact in the phone menu.",
@@ -1090,6 +1090,16 @@
       "https://shopsacredground.com/cheryl-2/",
       "https://shopsacredground.com/cheryl-yoga/"
     ],
+    "booking": [
+      {
+        "label": "Reflexology",
+        "url": "https://shopsacredground.com/cheryl-2/"
+      },
+      {
+        "label": "Yoga",
+        "url": "https://shopsacredground.com/cheryl-yoga/"
+      }
+    ],
     "on_directory": true
   },
   {
@@ -1127,6 +1137,7 @@
     },
     "source": "Practitioners page 17216 and published booking pages, October 11, 2026.",
     "booking_urls": [],
+    "booking": [],
     "on_directory": true
   },
   {
@@ -1164,6 +1175,12 @@
     "source": "Practitioners page 17216 and published booking pages, October 11, 2026.",
     "booking_urls": [
       "https://shopsacredground.com/book/adie/"
+    ],
+    "booking": [
+      {
+        "label": "Tarot",
+        "url": "https://shopsacredground.com/book/adie/"
+      }
     ],
     "on_directory": true
   },
@@ -1203,6 +1220,12 @@
     "booking_urls": [
       "https://shopsacredground.com/book/amber/"
     ],
+    "booking": [
+      {
+        "label": "Massage",
+        "url": "https://shopsacredground.com/book/amber/"
+      }
+    ],
     "on_directory": true
   },
   {
@@ -1240,6 +1263,12 @@
     "source": "Practitioners page 17216 and published booking pages, October 11, 2026.",
     "booking_urls": [
       "https://shopsacredground.com/book/andrea/"
+    ],
+    "booking": [
+      {
+        "label": "Nervous-system healing",
+        "url": "https://shopsacredground.com/book/andrea/"
+      }
     ],
     "on_directory": true
   },
@@ -1279,6 +1308,16 @@
     "booking_urls": [
       "https://shopsacredground.com/book/andre-tarot/",
       "https://shopsacredground.com/book/andre-sound-healing/"
+    ],
+    "booking": [
+      {
+        "label": "Tarot",
+        "url": "https://shopsacredground.com/book/andre-tarot/"
+      },
+      {
+        "label": "Sound bath",
+        "url": "https://shopsacredground.com/book/andre-sound-healing/"
+      }
     ],
     "on_directory": true
   },
@@ -1322,6 +1361,28 @@
       "https://shopsacredground.com/book/spirit-101/",
       "https://shopsacredground.com/book/spirit-201/"
     ],
+    "booking": [
+      {
+        "label": "Reiki and energy",
+        "url": "https://shopsacredground.com/book/eve/"
+      },
+      {
+        "label": "Energy",
+        "url": "https://shopsacredground.com/book/eve-energy/"
+      },
+      {
+        "label": "Frequency",
+        "url": "https://shopsacredground.com/book/eve-frequency/"
+      },
+      {
+        "label": "Spirit 101",
+        "url": "https://shopsacredground.com/book/spirit-101/"
+      },
+      {
+        "label": "Spirit 201",
+        "url": "https://shopsacredground.com/book/spirit-201/"
+      }
+    ],
     "on_directory": true
   },
   {
@@ -1359,6 +1420,12 @@
     "source": "Practitioners page 17216 and published booking pages, October 11, 2026.",
     "booking_urls": [
       "https://shopsacredground.com/book/janel/"
+    ],
+    "booking": [
+      {
+        "label": "Sessions",
+        "url": "https://shopsacredground.com/book/janel/"
+      }
     ],
     "on_directory": true
   },
@@ -1399,6 +1466,16 @@
       "https://shopsacredground.com/book/jill/",
       "https://shopsacredground.com/book/jill-body/"
     ],
+    "booking": [
+      {
+        "label": "Angels and intuition",
+        "url": "https://shopsacredground.com/book/jill/"
+      },
+      {
+        "label": "Energy body",
+        "url": "https://shopsacredground.com/book/jill-body/"
+      }
+    ],
     "on_directory": true
   },
   {
@@ -1436,6 +1513,12 @@
     "source": "Practitioners page 17216 and published booking pages, October 11, 2026.",
     "booking_urls": [
       "https://shopsacredground.com/karen-akashic/"
+    ],
+    "booking": [
+      {
+        "label": "Akashic",
+        "url": "https://shopsacredground.com/karen-akashic/"
+      }
     ],
     "on_directory": true
   },
@@ -1476,6 +1559,16 @@
       "https://shopsacredground.com/book/kate-chakra/",
       "https://shopsacredground.com/book/kate-wheel/"
     ],
+    "booking": [
+      {
+        "label": "Chakra",
+        "url": "https://shopsacredground.com/book/kate-chakra/"
+      },
+      {
+        "label": "Wheel",
+        "url": "https://shopsacredground.com/book/kate-wheel/"
+      }
+    ],
     "on_directory": true
   },
   {
@@ -1513,6 +1606,12 @@
     "source": "Practitioners page 17216 and published booking pages, October 11, 2026.",
     "booking_urls": [
       "https://shopsacredground.com/book/linn/"
+    ],
+    "booking": [
+      {
+        "label": "Astrology or angel communication",
+        "url": "https://shopsacredground.com/book/linn/"
+      }
     ],
     "on_directory": true
   },
@@ -1554,6 +1653,20 @@
       "https://shopsacredground.com/book/lita-besom/",
       "https://shopsacredground.com/book/lita-crafting/"
     ],
+    "booking": [
+      {
+        "label": "Tarot with pendulums",
+        "url": "https://shopsacredground.com/book/lita-tarot/"
+      },
+      {
+        "label": "Besom",
+        "url": "https://shopsacredground.com/book/lita-besom/"
+      },
+      {
+        "label": "Crafting",
+        "url": "https://shopsacredground.com/book/lita-crafting/"
+      }
+    ],
     "on_directory": true
   },
   {
@@ -1591,6 +1704,12 @@
     "source": "Practitioners page 17216 and published booking pages, October 11, 2026.",
     "booking_urls": [
       "https://shopsacredground.com/book/lisa/"
+    ],
+    "booking": [
+      {
+        "label": "Astrology and tarot",
+        "url": "https://shopsacredground.com/book/lisa/"
+      }
     ],
     "on_directory": true
   },
@@ -1643,6 +1762,20 @@
       "https://shopsacredground.com/book/lisa-maria/",
       "https://shopsacredground.com/book/lisa-maria-class/"
     ],
+    "booking": [
+      {
+        "label": "Tarot",
+        "url": "https://shopsacredground.com/book/lisa-maria-tarot/"
+      },
+      {
+        "label": "Sessions",
+        "url": "https://shopsacredground.com/book/lisa-maria/"
+      },
+      {
+        "label": "Class",
+        "url": "https://shopsacredground.com/book/lisa-maria-class/"
+      }
+    ],
     "on_directory": true
   },
   {
@@ -1681,6 +1814,12 @@
     "booking_urls": [
       "https://shopsacredground.com/book/lisa-s/"
     ],
+    "booking": [
+      {
+        "label": "Poem reading",
+        "url": "https://shopsacredground.com/book/lisa-s/"
+      }
+    ],
     "on_directory": true
   },
   {
@@ -1718,6 +1857,12 @@
     "source": "Practitioners page 17216 and published booking pages, October 11, 2026.",
     "booking_urls": [
       "https://shopsacredground.com/mary/"
+    ],
+    "booking": [
+      {
+        "label": "Integrated session",
+        "url": "https://shopsacredground.com/mary/"
+      }
     ],
     "on_directory": true
   },
@@ -1758,6 +1903,16 @@
       "https://shopsacredground.com/book/melissa/",
       "https://shopsacredground.com/book/melissa-class/"
     ],
+    "booking": [
+      {
+        "label": "Session",
+        "url": "https://shopsacredground.com/book/melissa/"
+      },
+      {
+        "label": "Class",
+        "url": "https://shopsacredground.com/book/melissa-class/"
+      }
+    ],
     "on_directory": true
   },
   {
@@ -1795,6 +1950,12 @@
     "source": "Practitioners page 17216 and published booking pages, October 11, 2026.",
     "booking_urls": [
       "https://shopsacredground.com/book/mother-lotus-moon-circles/"
+    ],
+    "booking": [
+      {
+        "label": "Moon circles",
+        "url": "https://shopsacredground.com/book/mother-lotus-moon-circles/"
+      }
     ],
     "on_directory": true
   },
@@ -1834,6 +1995,12 @@
     "booking_urls": [
       "https://shopsacredground.com/book/richard/"
     ],
+    "booking": [
+      {
+        "label": "Sessions",
+        "url": "https://shopsacredground.com/book/richard/"
+      }
+    ],
     "on_directory": true
   },
   {
@@ -1871,6 +2038,12 @@
     "source": "Practitioners page 17216 and published booking pages, October 11, 2026.",
     "booking_urls": [
       "https://shopsacredground.com/book/robert/"
+    ],
+    "booking": [
+      {
+        "label": "Card reading",
+        "url": "https://shopsacredground.com/book/robert/"
+      }
     ],
     "on_directory": true
   },
@@ -1911,6 +2084,16 @@
       "https://shopsacredground.com/book/rose/",
       "https://shopsacredground.com/book/rose-vision/"
     ],
+    "booking": [
+      {
+        "label": "Reiki",
+        "url": "https://shopsacredground.com/book/rose/"
+      },
+      {
+        "label": "Vision",
+        "url": "https://shopsacredground.com/book/rose-vision/"
+      }
+    ],
     "on_directory": true
   },
   {
@@ -1948,6 +2131,12 @@
     "source": "Practitioners page 17216 and published booking pages, October 11, 2026.",
     "booking_urls": [
       "https://shopsacredground.com/book/renee/"
+    ],
+    "booking": [
+      {
+        "label": "Reiki",
+        "url": "https://shopsacredground.com/book/renee/"
+      }
     ],
     "on_directory": true
   },
@@ -1989,6 +2178,20 @@
       "https://shopsacredground.com/book/tina-sound/",
       "https://shopsacredground.com/book/tina-divine-feminine/"
     ],
+    "booking": [
+      {
+        "label": "Runes class",
+        "url": "https://shopsacredground.com/book/tina-runes-class/"
+      },
+      {
+        "label": "Sound",
+        "url": "https://shopsacredground.com/book/tina-sound/"
+      },
+      {
+        "label": "Divine feminine",
+        "url": "https://shopsacredground.com/book/tina-divine-feminine/"
+      }
+    ],
     "on_directory": true
   },
   {
@@ -2026,6 +2229,12 @@
     "source": "Practitioners page 17216 and published booking pages, October 11, 2026.",
     "booking_urls": [
       "https://shopsacredground.com/sherry/"
+    ],
+    "booking": [
+      {
+        "label": "Tai Chi Gung",
+        "url": "https://shopsacredground.com/sherry/"
+      }
     ],
     "on_directory": false
   },
@@ -2065,6 +2274,12 @@
     "booking_urls": [
       "https://shopsacredground.com/book/hawaiian-massage/"
     ],
+    "booking": [
+      {
+        "label": "Hawaiian massage",
+        "url": "https://shopsacredground.com/book/hawaiian-massage/"
+      }
+    ],
     "on_directory": false
   },
   {
@@ -2102,6 +2317,12 @@
     "source": "Practitioners page 17216 and published booking pages, October 11, 2026.",
     "booking_urls": [
       "https://shopsacredground.com/book/lori-medium/"
+    ],
+    "booking": [
+      {
+        "label": "Mediumship",
+        "url": "https://shopsacredground.com/book/lori-medium/"
+      }
     ],
     "on_directory": false
   },

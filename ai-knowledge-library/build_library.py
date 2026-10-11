@@ -213,7 +213,7 @@ add(
     voice_response=(
         "Amethyst is quartz that came out purple, from iron and a little natural radiation. "
         "People have also loved it for a clear head and for intuition. Both of those can be true without one proving the other. "
-        "If you want to find yours, come hold them. The shop is at 160 W Campbell Street in Arlington Heights."
+        "If you want to find yours, come hold them. The shop is at 160 West Campbell Street in Arlington Heights."
     ),
     navigation=nav(
         "Library, then Guides, then How to Find the Stone That Fits. Or Shop.",
@@ -312,15 +312,15 @@ add(
         "Can I just browse?",
     ],
     answer=(
-        "Sacred Ground is at 160 W Campbell Street, Arlington Heights, Illinois 60005. "
+        "Sacred Ground is at 160 West Campbell Street, Arlington Heights, Illinois 60005. "
         "Call 847-749-3922 or email info@shopsacredground.com. "
         "Published hours: Sunday 11 to 5, Monday 11 to 6, Tuesday 11 to 8, Wednesday 11 to 6, Thursday 11 to 7, Friday 11 to 7, Saturday 10 to 8. "
         "Hours can change. If you are about to drive over, the Contact page is the check. "
         "You can walk in and browse with no appointment. A session with a practitioner is booked on that person's page. "
-        "The map should always be read as 160 W Campbell Street. An older map search used a different street. Campbell Street is the address."
+        "The map should always be read as 160 West Campbell Street. An older map search used a different street. Campbell Street is the address."
     ),
     voice_response=(
-        "We're at 160 W Campbell Street in Arlington Heights. The phone is 847-749-3922. "
+        "We're at 160 West Campbell Street in Arlington Heights. The phone is 847-749-3922. "
         "You can walk in and look around. Hours are on the contact page if you're heading over, because those can change."
     ),
     navigation=nav(
@@ -786,6 +786,7 @@ for cid, name, profile, blurb, avail, bookings, on_dir in PEOPLE:
         update_frequency="review_quarterly",
         live_source="The booking URL for open times and price.",
         booking_urls=book_urls,
+        booking=[{"label": lab, "url": BASE + path} for lab, path in bookings],
         on_directory=on_dir,
     )
 
@@ -945,7 +946,7 @@ NAVS = [
      "/shop/",
      ["buy", "store online", "cart"]),
     ("SG-NAV-HOURS", "Hours, address, and the phone",
-     "Contact in the menu. Address is 160 W Campbell Street, Arlington Heights, IL 60005.",
+     "Contact in the menu. Address is 160 West Campbell Street, Arlington Heights, IL 60005.",
      "Contact in the phone menu.",
      "/contact/",
      ["hours", "address", "call", "directions"]),
@@ -1054,7 +1055,7 @@ add(
     purpose="Stop the guide from inventing inventory.",
     visitor_questions=["Do you have amethyst in the shop?", "Is this in stock?", "Can I buy this online?"],
     answer="Check the WooCommerce product. If it is not listed, say you cannot see it online and give the phone and the address. People can also walk in.",
-    voice_response="I can only confirm what the shop page shows. If it isn't listed, call the store or come by 160 W Campbell Street.",
+    voice_response="I can only confirm what the shop page shows. If it isn't listed, call the store or come by 160 West Campbell Street.",
     navigation=nav("Shop menu.", "Shop in the phone menu.", BASE + "/shop/"),
     keywords=["in stock", "inventory", "do you have"],
     source="WooCommerce.",
@@ -1146,6 +1147,8 @@ for c in cards:
         "visitor_questions": c["visitor_questions"],
         "nav": (c.get("navigation") or {}).get("desktop") or "",
         "related_cards": c.get("related_cards") or [],
+        "page": (c.get("navigation") or {}).get("direct_url") or "",
+        "booking": c.get("booking") or [],
     })
 (live_dir / "ask-deneene-cards.json").write_text(json.dumps(slim, ensure_ascii=False, separators=(",", ":")) + "\n")
 qs_slim = [{"q": q["question"], "card_id": q["card_id"]} for q in questions]
