@@ -1,0 +1,305 @@
+[
+  {
+    "layer": "navigation",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [],
+    "keywords": [
+      "who works there",
+      "find a reader",
+      "help me choose"
+    ],
+    "card_id": "SG-NAV-PRACTITIONER",
+    "category": "Navigation",
+    "title": "Find a practitioner",
+    "purpose": "Walk a visitor through: Find a practitioner.",
+    "visitor_questions": [
+      "Find a practitioner?",
+      "How do I find a practitioner?",
+      "Where is that on my phone?"
+    ],
+    "answer": "Open Holistic Center, then Practitioners and Modalities. Portraits are on that page. Each name goes to the newer profile. On a phone: The phone menu does not list every person. Use the practitioners link directly. Direct link: https://shopsacredground.com/practitioners-modalities-2/.",
+    "voice_response": "I'll take you straight there. https://shopsacredground.com/practitioners-modalities-2/.",
+    "navigation": {
+      "desktop": "Open Holistic Center, then Practitioners and Modalities. Portraits are on that page. Each name goes to the newer profile.",
+      "mobile": "The phone menu does not list every person. Use the practitioners link directly.",
+      "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+    },
+    "source": "Primary menu, mobile menu, and homepage buttons, October 11, 2026. Founder decision 8."
+  },
+  {
+    "layer": "navigation",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [],
+    "keywords": [
+      "book an appointment",
+      "schedule",
+      "reserve"
+    ],
+    "card_id": "SG-NAV-BOOK",
+    "category": "Navigation",
+    "title": "Book a specific person",
+    "purpose": "Walk a visitor through: Book a specific person.",
+    "visitor_questions": [
+      "Book a specific person?",
+      "How do I book a specific person?",
+      "Where is that on my phone?"
+    ],
+    "answer": "Open that person's profile from the practitioners page, then their booking link. Do not use homepage Book Now for a named person. Homepage Book Now opens the events calendar. On a phone: Same. Use their direct profile and booking links. Direct link: https://shopsacredground.com/practitioners-modalities-2/.",
+    "voice_response": "I'll take you straight there. https://shopsacredground.com/practitioners-modalities-2/.",
+    "navigation": {
+      "desktop": "Open that person's profile from the practitioners page, then their booking link. Do not use homepage Book Now for a named person. Homepage Book Now opens the events calendar.",
+      "mobile": "Same. Use their direct profile and booking links.",
+      "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+    },
+    "source": "Primary menu, mobile menu, and homepage buttons, October 11, 2026. Founder decision 8."
+  },
+  {
+    "layer": "navigation",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [],
+    "keywords": [
+      "calendar",
+      "what's on",
+      "this weekend",
+      "tomorrow"
+    ],
+    "card_id": "SG-NAV-EVENTS",
+    "category": "Navigation",
+    "title": "See what is happening",
+    "purpose": "Walk a visitor through: See what is happening.",
+    "visitor_questions": [
+      "See what is happening?",
+      "How do I see what is happening?",
+      "Where is that on my phone?"
+    ],
+    "answer": "Calendar in the top menu opens the events list. You can switch months in The Events Calendar. Open a title for the description. Registering is the booking or ticket link on that event, or a call to the shop. On a phone: Calendar in the phone menu. Your Calendar under it is for bookings you already made, after you sign in. Direct link: https://shopsacredground.com/events/list/.",
+    "voice_response": "I'll take you straight there. https://shopsacredground.com/events/list/.",
+    "navigation": {
+      "desktop": "Calendar in the top menu opens the events list. You can switch months in The Events Calendar. Open a title for the description. Registering is the booking or ticket link on that event, or a call to the shop.",
+      "mobile": "Calendar in the phone menu. Your Calendar under it is for bookings you already made, after you sign in.",
+      "direct_url": "https://shopsacredground.com/events/list/"
+    },
+    "source": "Primary menu, mobile menu, and homepage buttons, October 11, 2026. Founder decision 8."
+  },
+  {
+    "layer": "navigation",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [],
+    "keywords": [
+      "my appointment",
+      "cancel",
+      "reschedule",
+      "I already booked"
+    ],
+    "card_id": "SG-NAV-YOUR-CAL",
+    "category": "Navigation",
+    "title": "See bookings you already made",
+    "purpose": "Walk a visitor through: See bookings you already made.",
+    "visitor_questions": [
+      "See bookings you already made?",
+      "How do I see bookings you already made?",
+      "Where is that on my phone?"
+    ],
+    "answer": "Calendar, then Your Calendar. Sign in with the same email you booked with. Upcoming and past are the two tabs. Reschedule or cancel as early as you can. Less than 24 hours' notice is not eligible for a refund. Questions: 847-749-3922. On a phone: Calendar, then Your Calendar. Same sign-in. Direct link: https://shopsacredground.com/your-calendar/.",
+    "voice_response": "I'll take you straight there. https://shopsacredground.com/your-calendar/.",
+    "navigation": {
+      "desktop": "Calendar, then Your Calendar. Sign in with the same email you booked with. Upcoming and past are the two tabs. Reschedule or cancel as early as you can. Less than 24 hours' notice is not eligible for a refund. Questions: 847-749-3922.",
+      "mobile": "Calendar, then Your Calendar. Same sign-in.",
+      "direct_url": "https://shopsacredground.com/your-calendar/"
+    },
+    "source": "Primary menu, mobile menu, and homepage buttons, October 11, 2026. Founder decision 8."
+  },
+  {
+    "layer": "navigation",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [],
+    "keywords": [
+      "library",
+      "read",
+      "books"
+    ],
+    "card_id": "SG-NAV-LIBRARY",
+    "category": "Navigation",
+    "title": "Browse the Library",
+    "purpose": "Walk a visitor through: Browse the Library.",
+    "visitor_questions": [
+      "Browse the Library?",
+      "How do I browse the library?",
+      "Where is that on my phone?"
+    ],
+    "answer": "Library in the top menu, then Articles, Books, Movies, Music, Podcasts, or Guides. On a phone: Library in the phone menu shows Guides in the submenu. The Library page has all six shelves. Direct link: https://shopsacredground.com/library/.",
+    "voice_response": "I'll take you straight there. https://shopsacredground.com/library/.",
+    "navigation": {
+      "desktop": "Library in the top menu, then Articles, Books, Movies, Music, Podcasts, or Guides.",
+      "mobile": "Library in the phone menu shows Guides in the submenu. The Library page has all six shelves.",
+      "direct_url": "https://shopsacredground.com/library/"
+    },
+    "source": "Primary menu, mobile menu, and homepage buttons, October 11, 2026. Founder decision 8."
+  },
+  {
+    "layer": "navigation",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [],
+    "keywords": [
+      "observatory",
+      "moon",
+      "daily"
+    ],
+    "card_id": "SG-NAV-OBSERVATORY",
+    "category": "Navigation",
+    "title": "Open the Observatory",
+    "purpose": "Walk a visitor through: Open the Observatory.",
+    "visitor_questions": [
+      "Open the Observatory?",
+      "How do I open the observatory?",
+      "Where is that on my phone?"
+    ],
+    "answer": "Observatory in the top menu. On a phone: Observatory in the phone menu. Direct link: https://shopsacredground.com/sacred-ground-observatory/.",
+    "voice_response": "I'll take you straight there. https://shopsacredground.com/sacred-ground-observatory/.",
+    "navigation": {
+      "desktop": "Observatory in the top menu.",
+      "mobile": "Observatory in the phone menu.",
+      "direct_url": "https://shopsacredground.com/sacred-ground-observatory/"
+    },
+    "source": "Primary menu, mobile menu, and homepage buttons, October 11, 2026. Founder decision 8."
+  },
+  {
+    "layer": "navigation",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [],
+    "keywords": [
+      "buy",
+      "store online",
+      "cart"
+    ],
+    "card_id": "SG-NAV-SHOP",
+    "category": "Navigation",
+    "title": "Shop online",
+    "purpose": "Walk a visitor through: Shop online.",
+    "visitor_questions": [
+      "Shop online?",
+      "How do I shop online?",
+      "Where is that on my phone?"
+    ],
+    "answer": "Shop in the top menu. Add to cart, then checkout. On a phone: Shop in the phone menu. Direct link: https://shopsacredground.com/shop/.",
+    "voice_response": "I'll take you straight there. https://shopsacredground.com/shop/.",
+    "navigation": {
+      "desktop": "Shop in the top menu. Add to cart, then checkout.",
+      "mobile": "Shop in the phone menu.",
+      "direct_url": "https://shopsacredground.com/shop/"
+    },
+    "source": "Primary menu, mobile menu, and homepage buttons, October 11, 2026. Founder decision 8."
+  },
+  {
+    "layer": "navigation",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [],
+    "keywords": [
+      "hours",
+      "address",
+      "call",
+      "directions"
+    ],
+    "card_id": "SG-NAV-HOURS",
+    "category": "Navigation",
+    "title": "Hours, address, and the phone",
+    "purpose": "Walk a visitor through: Hours, address, and the phone.",
+    "visitor_questions": [
+      "Hours, address, and the phone?",
+      "How do I hours, address, and the phone?",
+      "Where is that on my phone?"
+    ],
+    "answer": "Contact in the menu. Address is 160 W Campbell Street, Arlington Heights, IL 60005. On a phone: Contact in the phone menu. Direct link: https://shopsacredground.com/contact/.",
+    "voice_response": "I'll take you straight there. https://shopsacredground.com/contact/.",
+    "navigation": {
+      "desktop": "Contact in the menu. Address is 160 W Campbell Street, Arlington Heights, IL 60005.",
+      "mobile": "Contact in the phone menu.",
+      "direct_url": "https://shopsacredground.com/contact/"
+    },
+    "source": "Primary menu, mobile menu, and homepage buttons, October 11, 2026. Founder decision 8."
+  },
+  {
+    "layer": "navigation",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [],
+    "keywords": [
+      "free events",
+      "free class"
+    ],
+    "card_id": "SG-NAV-FREE",
+    "category": "Navigation",
+    "title": "Find a free event",
+    "purpose": "Walk a visitor through: Find a free event.",
+    "visitor_questions": [
+      "Find a free event?",
+      "How do I find a free event?",
+      "Where is that on my phone?"
+    ],
+    "answer": "Open the events list and look for Free in the title, or ask for meditation, educational night, or reiki share. Confirm the date on the calendar. On a phone: Same calendar link. Direct link: https://shopsacredground.com/events/list/.",
+    "voice_response": "I'll take you straight there. https://shopsacredground.com/events/list/.",
+    "navigation": {
+      "desktop": "Open the events list and look for Free in the title, or ask for meditation, educational night, or reiki share. Confirm the date on the calendar.",
+      "mobile": "Same calendar link.",
+      "direct_url": "https://shopsacredground.com/events/list/"
+    },
+    "source": "Primary menu, mobile menu, and homepage buttons, October 11, 2026. Founder decision 8."
+  },
+  {
+    "layer": "navigation",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [],
+    "keywords": [
+      "where do I start",
+      "help me",
+      "overwhelmed",
+      "just browsing"
+    ],
+    "card_id": "SG-NAV-START",
+    "category": "Navigation",
+    "title": "Not sure where to start",
+    "purpose": "Walk a visitor through: Not sure where to start.",
+    "visitor_questions": [
+      "Not sure where to start?",
+      "How do I not sure where to start?",
+      "Where is that on my phone?"
+    ],
+    "answer": "Ask what they are carrying, or what they are curious about. Shop if they want to wander. Practitioners if they want a person. Library if they want to read. Observatory if they want the moon, a stone, or a number. Calendar if they want to see the week. Phone if they want a human: 847-749-3922. On a phone: Same destinations. Give the direct link. Direct link: https://shopsacredground.com/.",
+    "voice_response": "I'll take you straight there. https://shopsacredground.com/.",
+    "navigation": {
+      "desktop": "Ask what they are carrying, or what they are curious about. Shop if they want to wander. Practitioners if they want a person. Library if they want to read. Observatory if they want the moon, a stone, or a number. Calendar if they want to see the week. Phone if they want a human: 847-749-3922.",
+      "mobile": "Same destinations. Give the direct link.",
+      "direct_url": "https://shopsacredground.com/"
+    },
+    "source": "Primary menu, mobile menu, and homepage buttons, October 11, 2026. Founder decision 8."
+  }
+]

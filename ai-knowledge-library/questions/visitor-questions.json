@@ -1,0 +1,2342 @@
+[
+  {
+    "question": "Am I talking to Deneene?",
+    "card_id": "SG-VOICE-IDENTITY",
+    "category": "Voice",
+    "direct_url": "https://shopsacredground.com/"
+  },
+  {
+    "question": "Are you a real person?",
+    "card_id": "SG-VOICE-IDENTITY",
+    "category": "Voice",
+    "direct_url": "https://shopsacredground.com/"
+  },
+  {
+    "question": "Can you book this for me?",
+    "card_id": "SG-VOICE-IDENTITY",
+    "category": "Voice",
+    "direct_url": "https://shopsacredground.com/"
+  },
+  {
+    "question": "Did you just reserve that?",
+    "card_id": "SG-VOICE-IDENTITY",
+    "category": "Voice",
+    "direct_url": "https://shopsacredground.com/"
+  },
+  {
+    "question": "Who am I talking to?",
+    "card_id": "SG-VOICE-IDENTITY",
+    "category": "Voice",
+    "direct_url": "https://shopsacredground.com/"
+  },
+  {
+    "question": "I just lost my mom",
+    "card_id": "SG-VOICE-GRIEF",
+    "category": "Voice",
+    "direct_url": "https://shopsacredground.com/deneene-11/"
+  },
+  {
+    "question": "I'm grieving",
+    "card_id": "SG-VOICE-GRIEF",
+    "category": "Voice",
+    "direct_url": "https://shopsacredground.com/deneene-11/"
+  },
+  {
+    "question": "I don't know how to do this",
+    "card_id": "SG-VOICE-GRIEF",
+    "category": "Voice",
+    "direct_url": "https://shopsacredground.com/deneene-11/"
+  },
+  {
+    "question": "Can a reading fix my grief?",
+    "card_id": "SG-VOICE-GRIEF",
+    "category": "Voice",
+    "direct_url": "https://shopsacredground.com/deneene-11/"
+  },
+  {
+    "question": "I feel so alone",
+    "card_id": "SG-VOICE-GRIEF",
+    "category": "Voice",
+    "direct_url": "https://shopsacredground.com/deneene-11/"
+  },
+  {
+    "question": "My pet died",
+    "card_id": "SG-VOICE-GRIEF",
+    "category": "Voice",
+    "direct_url": "https://shopsacredground.com/deneene-11/"
+  },
+  {
+    "question": "Tell me about amethyst",
+    "card_id": "SG-VOICE-CRYSTAL",
+    "category": "Voice",
+    "direct_url": "https://shopsacredground.com/library/guides/find-your-stone/"
+  },
+  {
+    "question": "Is moldavite real?",
+    "card_id": "SG-VOICE-CRYSTAL",
+    "category": "Voice",
+    "direct_url": "https://shopsacredground.com/library/guides/find-your-stone/"
+  },
+  {
+    "question": "What stone should I get?",
+    "card_id": "SG-VOICE-CRYSTAL",
+    "category": "Voice",
+    "direct_url": "https://shopsacredground.com/library/guides/find-your-stone/"
+  },
+  {
+    "question": "What's the difference between citrine and heat-treated amethyst?",
+    "card_id": "SG-VOICE-CRYSTAL",
+    "category": "Voice",
+    "direct_url": "https://shopsacredground.com/library/guides/find-your-stone/"
+  },
+  {
+    "question": "Do crystals actually work?",
+    "card_id": "SG-VOICE-CRYSTAL",
+    "category": "Voice",
+    "direct_url": "https://shopsacredground.com/library/guides/find-your-stone/"
+  },
+  {
+    "question": "What's on the homepage?",
+    "card_id": "SG-KNOW-HOME",
+    "category": "Homepage",
+    "direct_url": "https://shopsacredground.com/"
+  },
+  {
+    "question": "Where do I start?",
+    "card_id": "SG-KNOW-HOME",
+    "category": "Homepage",
+    "direct_url": "https://shopsacredground.com/"
+  },
+  {
+    "question": "What is Sacred Ground?",
+    "card_id": "SG-KNOW-HOME",
+    "category": "Homepage",
+    "direct_url": "https://shopsacredground.com/"
+  },
+  {
+    "question": "I'm not sure where to start",
+    "card_id": "SG-KNOW-HOME",
+    "category": "Homepage",
+    "direct_url": "https://shopsacredground.com/"
+  },
+  {
+    "question": "What does Book Now do?",
+    "card_id": "SG-KNOW-HOME",
+    "category": "Homepage",
+    "direct_url": "https://shopsacredground.com/"
+  },
+  {
+    "question": "What is Sacred Ground?",
+    "card_id": "SG-KNOW-ABOUT",
+    "category": "About",
+    "direct_url": "https://shopsacredground.com/about/"
+  },
+  {
+    "question": "Tell me about this place",
+    "card_id": "SG-KNOW-ABOUT",
+    "category": "About",
+    "direct_url": "https://shopsacredground.com/about/"
+  },
+  {
+    "question": "What's the difference between the shop and the holistic center?",
+    "card_id": "SG-KNOW-ABOUT",
+    "category": "About",
+    "direct_url": "https://shopsacredground.com/about/"
+  },
+  {
+    "question": "Do I need an appointment to come in?",
+    "card_id": "SG-KNOW-ABOUT",
+    "category": "About",
+    "direct_url": "https://shopsacredground.com/about/"
+  },
+  {
+    "question": "What should I expect the first time?",
+    "card_id": "SG-KNOW-ABOUT",
+    "category": "About",
+    "direct_url": "https://shopsacredground.com/about/"
+  },
+  {
+    "question": "Who founded Sacred Ground?",
+    "card_id": "SG-KNOW-ABOUT",
+    "category": "About",
+    "direct_url": "https://shopsacredground.com/about/"
+  },
+  {
+    "question": "Do I have to be spiritual to come in?",
+    "card_id": "SG-KNOW-ABOUT",
+    "category": "About",
+    "direct_url": "https://shopsacredground.com/about/"
+  },
+  {
+    "question": "Where are you?",
+    "card_id": "SG-KNOW-VISIT",
+    "category": "Store",
+    "direct_url": "https://shopsacredground.com/contact/"
+  },
+  {
+    "question": "What are your hours?",
+    "card_id": "SG-KNOW-VISIT",
+    "category": "Store",
+    "direct_url": "https://shopsacredground.com/contact/"
+  },
+  {
+    "question": "Can I come in without an appointment?",
+    "card_id": "SG-KNOW-VISIT",
+    "category": "Store",
+    "direct_url": "https://shopsacredground.com/contact/"
+  },
+  {
+    "question": "What's the phone number?",
+    "card_id": "SG-KNOW-VISIT",
+    "category": "Store",
+    "direct_url": "https://shopsacredground.com/contact/"
+  },
+  {
+    "question": "Are you in Arlington Heights?",
+    "card_id": "SG-KNOW-VISIT",
+    "category": "Store",
+    "direct_url": "https://shopsacredground.com/contact/"
+  },
+  {
+    "question": "What's the address?",
+    "card_id": "SG-KNOW-VISIT",
+    "category": "Store",
+    "direct_url": "https://shopsacredground.com/contact/"
+  },
+  {
+    "question": "Can I just browse?",
+    "card_id": "SG-KNOW-VISIT",
+    "category": "Store",
+    "direct_url": "https://shopsacredground.com/contact/"
+  },
+  {
+    "question": "Can I buy crystals online?",
+    "card_id": "SG-KNOW-SHOP",
+    "category": "Shop",
+    "direct_url": "https://shopsacredground.com/shop/"
+  },
+  {
+    "question": "What do you sell?",
+    "card_id": "SG-KNOW-SHOP",
+    "category": "Shop",
+    "direct_url": "https://shopsacredground.com/shop/"
+  },
+  {
+    "question": "Do you have jewelry?",
+    "card_id": "SG-KNOW-SHOP",
+    "category": "Shop",
+    "direct_url": "https://shopsacredground.com/shop/"
+  },
+  {
+    "question": "Do you sell sage?",
+    "card_id": "SG-KNOW-SHOP",
+    "category": "Shop",
+    "direct_url": "https://shopsacredground.com/shop/"
+  },
+  {
+    "question": "Can I shop in the store?",
+    "card_id": "SG-KNOW-SHOP",
+    "category": "Shop",
+    "direct_url": "https://shopsacredground.com/shop/"
+  },
+  {
+    "question": "Do you have books?",
+    "card_id": "SG-KNOW-SHOP",
+    "category": "Shop",
+    "direct_url": "https://shopsacredground.com/shop/"
+  },
+  {
+    "question": "What if something is out of stock?",
+    "card_id": "SG-KNOW-SHOP",
+    "category": "Shop",
+    "direct_url": "https://shopsacredground.com/shop/"
+  },
+  {
+    "question": "When is the holistic fair?",
+    "card_id": "SG-KNOW-FAIR",
+    "category": "Events",
+    "direct_url": "https://shopsacredground.com/library/guides/holistic-fair/"
+  },
+  {
+    "question": "Do you have a psychic fair?",
+    "card_id": "SG-KNOW-FAIR",
+    "category": "Events",
+    "direct_url": "https://shopsacredground.com/library/guides/holistic-fair/"
+  },
+  {
+    "question": "How many fairs do you have?",
+    "card_id": "SG-KNOW-FAIR",
+    "category": "Events",
+    "direct_url": "https://shopsacredground.com/library/guides/holistic-fair/"
+  },
+  {
+    "question": "Can I have a table at the fair?",
+    "card_id": "SG-KNOW-FAIR",
+    "category": "Events",
+    "direct_url": "https://shopsacredground.com/library/guides/holistic-fair/"
+  },
+  {
+    "question": "What happens at the fair?",
+    "card_id": "SG-KNOW-FAIR",
+    "category": "Events",
+    "direct_url": "https://shopsacredground.com/library/guides/holistic-fair/"
+  },
+  {
+    "question": "Are there any free events?",
+    "card_id": "SG-KNOW-COMMUNITY",
+    "category": "Events",
+    "direct_url": "https://shopsacredground.com/events/list/"
+  },
+  {
+    "question": "When is meditation?",
+    "card_id": "SG-KNOW-COMMUNITY",
+    "category": "Events",
+    "direct_url": "https://shopsacredground.com/events/list/"
+  },
+  {
+    "question": "What is educational night?",
+    "card_id": "SG-KNOW-COMMUNITY",
+    "category": "Events",
+    "direct_url": "https://shopsacredground.com/events/list/"
+  },
+  {
+    "question": "When is reiki share?",
+    "card_id": "SG-KNOW-COMMUNITY",
+    "category": "Events",
+    "direct_url": "https://shopsacredground.com/events/list/"
+  },
+  {
+    "question": "Do you have free angel readings?",
+    "card_id": "SG-KNOW-COMMUNITY",
+    "category": "Events",
+    "direct_url": "https://shopsacredground.com/events/list/"
+  },
+  {
+    "question": "What's happening this week?",
+    "card_id": "SG-KNOW-COMMUNITY",
+    "category": "Events",
+    "direct_url": "https://shopsacredground.com/events/list/"
+  },
+  {
+    "question": "What does the Death card mean?",
+    "card_id": "SG-RULE-NO-DEATH",
+    "category": "Rules",
+    "direct_url": "https://shopsacredground.com/sacred-ground-observatory/"
+  },
+  {
+    "question": "Can I see the Death card?",
+    "card_id": "SG-RULE-NO-DEATH",
+    "category": "Rules",
+    "direct_url": "https://shopsacredground.com/sacred-ground-observatory/"
+  },
+  {
+    "question": "Show me tarot Death",
+    "card_id": "SG-RULE-NO-DEATH",
+    "category": "Rules",
+    "direct_url": "https://shopsacredground.com/sacred-ground-observatory/"
+  },
+  {
+    "question": "What's the Library?",
+    "card_id": "SG-KNOW-LIBRARY",
+    "category": "Library",
+    "direct_url": "https://shopsacredground.com/library/"
+  },
+  {
+    "question": "Where are the articles?",
+    "card_id": "SG-KNOW-LIBRARY",
+    "category": "Library",
+    "direct_url": "https://shopsacredground.com/library/"
+  },
+  {
+    "question": "Do you have book recommendations?",
+    "card_id": "SG-KNOW-LIBRARY",
+    "category": "Library",
+    "direct_url": "https://shopsacredground.com/library/"
+  },
+  {
+    "question": "Where is the music?",
+    "card_id": "SG-KNOW-LIBRARY",
+    "category": "Library",
+    "direct_url": "https://shopsacredground.com/library/"
+  },
+  {
+    "question": "How do I get back to the Library?",
+    "card_id": "SG-KNOW-LIBRARY",
+    "category": "Library",
+    "direct_url": "https://shopsacredground.com/library/"
+  },
+  {
+    "question": "Who writes the articles?",
+    "card_id": "SG-KNOW-LIBRARY",
+    "category": "Library",
+    "direct_url": "https://shopsacredground.com/library/"
+  },
+  {
+    "question": "What's the Observatory?",
+    "card_id": "SG-KNOW-OBSERVATORY",
+    "category": "Observatory",
+    "direct_url": "https://shopsacredground.com/sacred-ground-observatory/"
+  },
+  {
+    "question": "Where do I find information about the moon?",
+    "card_id": "SG-KNOW-OBSERVATORY",
+    "category": "Observatory",
+    "direct_url": "https://shopsacredground.com/sacred-ground-observatory/"
+  },
+  {
+    "question": "Can I look up a stone?",
+    "card_id": "SG-KNOW-OBSERVATORY",
+    "category": "Observatory",
+    "direct_url": "https://shopsacredground.com/sacred-ground-observatory/"
+  },
+  {
+    "question": "Is the Observatory free?",
+    "card_id": "SG-KNOW-OBSERVATORY",
+    "category": "Observatory",
+    "direct_url": "https://shopsacredground.com/sacred-ground-observatory/"
+  },
+  {
+    "question": "What's the difference between the Observatory and the newsletter?",
+    "card_id": "SG-KNOW-OBSERVATORY",
+    "category": "Observatory",
+    "direct_url": "https://shopsacredground.com/sacred-ground-observatory/"
+  },
+  {
+    "question": "Can I look up my number?",
+    "card_id": "SG-KNOW-OBSERVATORY",
+    "category": "Observatory",
+    "direct_url": "https://shopsacredground.com/sacred-ground-observatory/"
+  },
+  {
+    "question": "Where is the tarot tool?",
+    "card_id": "SG-KNOW-OBSERVATORY",
+    "category": "Observatory",
+    "direct_url": "https://shopsacredground.com/sacred-ground-observatory/"
+  },
+  {
+    "question": "What is Reiki?",
+    "card_id": "SG-MOD-REIKI",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "What happens in a Reiki session?",
+    "card_id": "SG-MOD-REIKI",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "Who does Reiki?",
+    "card_id": "SG-MOD-REIKI",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "I've never tried Reiki",
+    "card_id": "SG-MOD-REIKI",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "Is Reiki religious?",
+    "card_id": "SG-MOD-REIKI",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "How do I book Reiki?",
+    "card_id": "SG-MOD-REIKI",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "What is Massage?",
+    "card_id": "SG-MOD-MASSAGE",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "What happens in a Massage session?",
+    "card_id": "SG-MOD-MASSAGE",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "Who does Massage?",
+    "card_id": "SG-MOD-MASSAGE",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "I've never tried Massage",
+    "card_id": "SG-MOD-MASSAGE",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "Is Massage religious?",
+    "card_id": "SG-MOD-MASSAGE",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "How do I book Massage?",
+    "card_id": "SG-MOD-MASSAGE",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "What is Reflexology?",
+    "card_id": "SG-MOD-REFLEX",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "What happens in a Reflexology session?",
+    "card_id": "SG-MOD-REFLEX",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "Who does Reflexology?",
+    "card_id": "SG-MOD-REFLEX",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "I've never tried Reflexology",
+    "card_id": "SG-MOD-REFLEX",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "Is Reflexology religious?",
+    "card_id": "SG-MOD-REFLEX",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "How do I book Reflexology?",
+    "card_id": "SG-MOD-REFLEX",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "What is Sound healing?",
+    "card_id": "SG-MOD-SOUND",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "What happens in a Sound healing session?",
+    "card_id": "SG-MOD-SOUND",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "Who does Sound healing?",
+    "card_id": "SG-MOD-SOUND",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "I've never tried Sound healing",
+    "card_id": "SG-MOD-SOUND",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "Is Sound healing religious?",
+    "card_id": "SG-MOD-SOUND",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "How do I book Sound healing?",
+    "card_id": "SG-MOD-SOUND",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "What is Meditation?",
+    "card_id": "SG-MOD-MEDITATION",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "What happens in a Meditation session?",
+    "card_id": "SG-MOD-MEDITATION",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "Who does Meditation?",
+    "card_id": "SG-MOD-MEDITATION",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "I've never tried Meditation",
+    "card_id": "SG-MOD-MEDITATION",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "Is Meditation religious?",
+    "card_id": "SG-MOD-MEDITATION",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "How do I book Meditation?",
+    "card_id": "SG-MOD-MEDITATION",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "What is Tarot?",
+    "card_id": "SG-MOD-TAROT",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "What happens in a Tarot session?",
+    "card_id": "SG-MOD-TAROT",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "Who does Tarot?",
+    "card_id": "SG-MOD-TAROT",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "I've never tried Tarot",
+    "card_id": "SG-MOD-TAROT",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "Is Tarot religious?",
+    "card_id": "SG-MOD-TAROT",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "How do I book Tarot?",
+    "card_id": "SG-MOD-TAROT",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "What is Angel readings?",
+    "card_id": "SG-MOD-ANGEL",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "What happens in a Angel readings session?",
+    "card_id": "SG-MOD-ANGEL",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "Who does Angel readings?",
+    "card_id": "SG-MOD-ANGEL",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "I've never tried Angel readings",
+    "card_id": "SG-MOD-ANGEL",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "Is Angel readings religious?",
+    "card_id": "SG-MOD-ANGEL",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "How do I book Angel readings?",
+    "card_id": "SG-MOD-ANGEL",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "What is Akashic Records?",
+    "card_id": "SG-MOD-AKASHIC",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "What happens in a Akashic Records session?",
+    "card_id": "SG-MOD-AKASHIC",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "Who does Akashic Records?",
+    "card_id": "SG-MOD-AKASHIC",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "I've never tried Akashic Records",
+    "card_id": "SG-MOD-AKASHIC",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "Is Akashic Records religious?",
+    "card_id": "SG-MOD-AKASHIC",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "How do I book Akashic Records?",
+    "card_id": "SG-MOD-AKASHIC",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "What is Astrology?",
+    "card_id": "SG-MOD-ASTROLOGY",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "What happens in a Astrology session?",
+    "card_id": "SG-MOD-ASTROLOGY",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "Who does Astrology?",
+    "card_id": "SG-MOD-ASTROLOGY",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "I've never tried Astrology",
+    "card_id": "SG-MOD-ASTROLOGY",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "Is Astrology religious?",
+    "card_id": "SG-MOD-ASTROLOGY",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "How do I book Astrology?",
+    "card_id": "SG-MOD-ASTROLOGY",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "What is Mediumship?",
+    "card_id": "SG-MOD-MEDIUM",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "What happens in a Mediumship session?",
+    "card_id": "SG-MOD-MEDIUM",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "Who does Mediumship?",
+    "card_id": "SG-MOD-MEDIUM",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "I've never tried Mediumship",
+    "card_id": "SG-MOD-MEDIUM",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "Is Mediumship religious?",
+    "card_id": "SG-MOD-MEDIUM",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "How do I book Mediumship?",
+    "card_id": "SG-MOD-MEDIUM",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "What is Shamanic practice?",
+    "card_id": "SG-MOD-SHAMANIC",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "What happens in a Shamanic practice session?",
+    "card_id": "SG-MOD-SHAMANIC",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "Who does Shamanic practice?",
+    "card_id": "SG-MOD-SHAMANIC",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "I've never tried Shamanic practice",
+    "card_id": "SG-MOD-SHAMANIC",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "Is Shamanic practice religious?",
+    "card_id": "SG-MOD-SHAMANIC",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "How do I book Shamanic practice?",
+    "card_id": "SG-MOD-SHAMANIC",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "What is Cranial sacral?",
+    "card_id": "SG-MOD-CRANIAL",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "What happens in a Cranial sacral session?",
+    "card_id": "SG-MOD-CRANIAL",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "Who does Cranial sacral?",
+    "card_id": "SG-MOD-CRANIAL",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "I've never tried Cranial sacral",
+    "card_id": "SG-MOD-CRANIAL",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "Is Cranial sacral religious?",
+    "card_id": "SG-MOD-CRANIAL",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "How do I book Cranial sacral?",
+    "card_id": "SG-MOD-CRANIAL",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "What is Runes and numerology?",
+    "card_id": "SG-MOD-RUNES",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "What happens in a Runes and numerology session?",
+    "card_id": "SG-MOD-RUNES",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "Who does Runes and numerology?",
+    "card_id": "SG-MOD-RUNES",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "I've never tried Runes and numerology",
+    "card_id": "SG-MOD-RUNES",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "Is Runes and numerology religious?",
+    "card_id": "SG-MOD-RUNES",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "How do I book Runes and numerology?",
+    "card_id": "SG-MOD-RUNES",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "What is Yoga?",
+    "card_id": "SG-MOD-YOGA",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "What happens in a Yoga session?",
+    "card_id": "SG-MOD-YOGA",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "Who does Yoga?",
+    "card_id": "SG-MOD-YOGA",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "I've never tried Yoga",
+    "card_id": "SG-MOD-YOGA",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "Is Yoga religious?",
+    "card_id": "SG-MOD-YOGA",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "How do I book Yoga?",
+    "card_id": "SG-MOD-YOGA",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "What is Crystal sessions?",
+    "card_id": "SG-MOD-CRYSTAL-HEAL",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "What happens in a Crystal sessions session?",
+    "card_id": "SG-MOD-CRYSTAL-HEAL",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "Who does Crystal sessions?",
+    "card_id": "SG-MOD-CRYSTAL-HEAL",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "I've never tried Crystal sessions",
+    "card_id": "SG-MOD-CRYSTAL-HEAL",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "Is Crystal sessions religious?",
+    "card_id": "SG-MOD-CRYSTAL-HEAL",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "How do I book Crystal sessions?",
+    "card_id": "SG-MOD-CRYSTAL-HEAL",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "What is Poem readings?",
+    "card_id": "SG-MOD-POEM",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "What happens in a Poem readings session?",
+    "card_id": "SG-MOD-POEM",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "Who does Poem readings?",
+    "card_id": "SG-MOD-POEM",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "I've never tried Poem readings",
+    "card_id": "SG-MOD-POEM",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "Is Poem readings religious?",
+    "card_id": "SG-MOD-POEM",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "How do I book Poem readings?",
+    "card_id": "SG-MOD-POEM",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "What is Women's moon circles?",
+    "card_id": "SG-MOD-MOON",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "What happens in a Women's moon circles session?",
+    "card_id": "SG-MOD-MOON",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "Who does Women's moon circles?",
+    "card_id": "SG-MOD-MOON",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "I've never tried Women's moon circles",
+    "card_id": "SG-MOD-MOON",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "Is Women's moon circles religious?",
+    "card_id": "SG-MOD-MOON",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "How do I book Women's moon circles?",
+    "card_id": "SG-MOD-MOON",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "What is Choosing between similar sessions?",
+    "card_id": "SG-MOD-MASSAGE-NOTE",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "What happens in a Choosing between similar sessions session?",
+    "card_id": "SG-MOD-MASSAGE-NOTE",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "Who does Choosing between similar sessions?",
+    "card_id": "SG-MOD-MASSAGE-NOTE",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "I've never tried Choosing between similar sessions",
+    "card_id": "SG-MOD-MASSAGE-NOTE",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "Is Choosing between similar sessions religious?",
+    "card_id": "SG-MOD-MASSAGE-NOTE",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "How do I book Choosing between similar sessions?",
+    "card_id": "SG-MOD-MASSAGE-NOTE",
+    "category": "Modalities",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "Who is Cheryl?",
+    "card_id": "SG-PRAC-CHERYL",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/cheryl-11/"
+  },
+  {
+    "question": "What does Cheryl do?",
+    "card_id": "SG-PRAC-CHERYL",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/cheryl-11/"
+  },
+  {
+    "question": "How do I book Cheryl?",
+    "card_id": "SG-PRAC-CHERYL",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/cheryl-11/"
+  },
+  {
+    "question": "Is Cheryl available?",
+    "card_id": "SG-PRAC-CHERYL",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/cheryl-11/"
+  },
+  {
+    "question": "Tell me about Cheryl",
+    "card_id": "SG-PRAC-CHERYL",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/cheryl-11/"
+  },
+  {
+    "question": "Who is Deneene?",
+    "card_id": "SG-PRAC-DENEENE",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/deneene-11/"
+  },
+  {
+    "question": "What does Deneene do?",
+    "card_id": "SG-PRAC-DENEENE",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/deneene-11/"
+  },
+  {
+    "question": "How do I book Deneene?",
+    "card_id": "SG-PRAC-DENEENE",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/deneene-11/"
+  },
+  {
+    "question": "Is Deneene available?",
+    "card_id": "SG-PRAC-DENEENE",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/deneene-11/"
+  },
+  {
+    "question": "Tell me about Deneene",
+    "card_id": "SG-PRAC-DENEENE",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/deneene-11/"
+  },
+  {
+    "question": "Who is Adie?",
+    "card_id": "SG-PRAC-ADIE",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/adie-11/"
+  },
+  {
+    "question": "What does Adie do?",
+    "card_id": "SG-PRAC-ADIE",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/adie-11/"
+  },
+  {
+    "question": "How do I book Adie?",
+    "card_id": "SG-PRAC-ADIE",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/adie-11/"
+  },
+  {
+    "question": "Is Adie available?",
+    "card_id": "SG-PRAC-ADIE",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/adie-11/"
+  },
+  {
+    "question": "Tell me about Adie",
+    "card_id": "SG-PRAC-ADIE",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/adie-11/"
+  },
+  {
+    "question": "Who is Amber?",
+    "card_id": "SG-PRAC-AMBER",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/amber-11/"
+  },
+  {
+    "question": "What does Amber do?",
+    "card_id": "SG-PRAC-AMBER",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/amber-11/"
+  },
+  {
+    "question": "How do I book Amber?",
+    "card_id": "SG-PRAC-AMBER",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/amber-11/"
+  },
+  {
+    "question": "Is Amber available?",
+    "card_id": "SG-PRAC-AMBER",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/amber-11/"
+  },
+  {
+    "question": "Tell me about Amber",
+    "card_id": "SG-PRAC-AMBER",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/amber-11/"
+  },
+  {
+    "question": "Who is Andrea?",
+    "card_id": "SG-PRAC-ANDREA",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/andrea-11/"
+  },
+  {
+    "question": "What does Andrea do?",
+    "card_id": "SG-PRAC-ANDREA",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/andrea-11/"
+  },
+  {
+    "question": "How do I book Andrea?",
+    "card_id": "SG-PRAC-ANDREA",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/andrea-11/"
+  },
+  {
+    "question": "Is Andrea available?",
+    "card_id": "SG-PRAC-ANDREA",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/andrea-11/"
+  },
+  {
+    "question": "Tell me about Andrea",
+    "card_id": "SG-PRAC-ANDREA",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/andrea-11/"
+  },
+  {
+    "question": "Who is Andre?",
+    "card_id": "SG-PRAC-ANDRE",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/andre-11/"
+  },
+  {
+    "question": "What does Andre do?",
+    "card_id": "SG-PRAC-ANDRE",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/andre-11/"
+  },
+  {
+    "question": "How do I book Andre?",
+    "card_id": "SG-PRAC-ANDRE",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/andre-11/"
+  },
+  {
+    "question": "Is Andre available?",
+    "card_id": "SG-PRAC-ANDRE",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/andre-11/"
+  },
+  {
+    "question": "Tell me about Andre Peraza",
+    "card_id": "SG-PRAC-ANDRE",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/andre-11/"
+  },
+  {
+    "question": "Who is Eve?",
+    "card_id": "SG-PRAC-EVE",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/eve-11/"
+  },
+  {
+    "question": "What does Eve do?",
+    "card_id": "SG-PRAC-EVE",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/eve-11/"
+  },
+  {
+    "question": "How do I book Eve?",
+    "card_id": "SG-PRAC-EVE",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/eve-11/"
+  },
+  {
+    "question": "Is Eve available?",
+    "card_id": "SG-PRAC-EVE",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/eve-11/"
+  },
+  {
+    "question": "Tell me about Eve",
+    "card_id": "SG-PRAC-EVE",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/eve-11/"
+  },
+  {
+    "question": "Who is Janel?",
+    "card_id": "SG-PRAC-JANEL",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/janel-akashic-records-angel-card-reader/"
+  },
+  {
+    "question": "What does Janel do?",
+    "card_id": "SG-PRAC-JANEL",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/janel-akashic-records-angel-card-reader/"
+  },
+  {
+    "question": "How do I book Janel?",
+    "card_id": "SG-PRAC-JANEL",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/janel-akashic-records-angel-card-reader/"
+  },
+  {
+    "question": "Is Janel available?",
+    "card_id": "SG-PRAC-JANEL",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/janel-akashic-records-angel-card-reader/"
+  },
+  {
+    "question": "Tell me about Janel",
+    "card_id": "SG-PRAC-JANEL",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/janel-akashic-records-angel-card-reader/"
+  },
+  {
+    "question": "Who is Jill?",
+    "card_id": "SG-PRAC-JILL",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/jill-11/"
+  },
+  {
+    "question": "What does Jill do?",
+    "card_id": "SG-PRAC-JILL",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/jill-11/"
+  },
+  {
+    "question": "How do I book Jill?",
+    "card_id": "SG-PRAC-JILL",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/jill-11/"
+  },
+  {
+    "question": "Is Jill available?",
+    "card_id": "SG-PRAC-JILL",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/jill-11/"
+  },
+  {
+    "question": "Tell me about Jill",
+    "card_id": "SG-PRAC-JILL",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/jill-11/"
+  },
+  {
+    "question": "Who is Karen?",
+    "card_id": "SG-PRAC-KAREN",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/karen-11/"
+  },
+  {
+    "question": "What does Karen do?",
+    "card_id": "SG-PRAC-KAREN",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/karen-11/"
+  },
+  {
+    "question": "How do I book Karen?",
+    "card_id": "SG-PRAC-KAREN",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/karen-11/"
+  },
+  {
+    "question": "Is Karen available?",
+    "card_id": "SG-PRAC-KAREN",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/karen-11/"
+  },
+  {
+    "question": "Tell me about Karen",
+    "card_id": "SG-PRAC-KAREN",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/karen-11/"
+  },
+  {
+    "question": "Who is Kate?",
+    "card_id": "SG-PRAC-KATE",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/kate-11/"
+  },
+  {
+    "question": "What does Kate do?",
+    "card_id": "SG-PRAC-KATE",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/kate-11/"
+  },
+  {
+    "question": "How do I book Kate?",
+    "card_id": "SG-PRAC-KATE",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/kate-11/"
+  },
+  {
+    "question": "Is Kate available?",
+    "card_id": "SG-PRAC-KATE",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/kate-11/"
+  },
+  {
+    "question": "Tell me about Kate Kent",
+    "card_id": "SG-PRAC-KATE",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/kate-11/"
+  },
+  {
+    "question": "Who is Linn?",
+    "card_id": "SG-PRAC-LINN",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/linn-11/"
+  },
+  {
+    "question": "What does Linn do?",
+    "card_id": "SG-PRAC-LINN",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/linn-11/"
+  },
+  {
+    "question": "How do I book Linn?",
+    "card_id": "SG-PRAC-LINN",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/linn-11/"
+  },
+  {
+    "question": "Is Linn available?",
+    "card_id": "SG-PRAC-LINN",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/linn-11/"
+  },
+  {
+    "question": "Tell me about Linn",
+    "card_id": "SG-PRAC-LINN",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/linn-11/"
+  },
+  {
+    "question": "Who is Lita?",
+    "card_id": "SG-PRAC-LITA",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/lita-11/"
+  },
+  {
+    "question": "What does Lita do?",
+    "card_id": "SG-PRAC-LITA",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/lita-11/"
+  },
+  {
+    "question": "How do I book Lita?",
+    "card_id": "SG-PRAC-LITA",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/lita-11/"
+  },
+  {
+    "question": "Is Lita available?",
+    "card_id": "SG-PRAC-LITA",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/lita-11/"
+  },
+  {
+    "question": "Tell me about Lita Keller",
+    "card_id": "SG-PRAC-LITA",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/lita-11/"
+  },
+  {
+    "question": "Who is Lisa?",
+    "card_id": "SG-PRAC-LISA",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/lisa-astrology-v5-final/"
+  },
+  {
+    "question": "What does Lisa do?",
+    "card_id": "SG-PRAC-LISA",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/lisa-astrology-v5-final/"
+  },
+  {
+    "question": "How do I book Lisa?",
+    "card_id": "SG-PRAC-LISA",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/lisa-astrology-v5-final/"
+  },
+  {
+    "question": "Is Lisa available?",
+    "card_id": "SG-PRAC-LISA",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/lisa-astrology-v5-final/"
+  },
+  {
+    "question": "Tell me about Lisa",
+    "card_id": "SG-PRAC-LISA",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/lisa-astrology-v5-final/"
+  },
+  {
+    "question": "Who is Lisa?",
+    "card_id": "SG-PRAC-LISAMARIA",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/lisa-maria-11/"
+  },
+  {
+    "question": "What does Lisa do?",
+    "card_id": "SG-PRAC-LISAMARIA",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/lisa-maria-11/"
+  },
+  {
+    "question": "How do I book Lisa?",
+    "card_id": "SG-PRAC-LISAMARIA",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/lisa-maria-11/"
+  },
+  {
+    "question": "Is Lisa available?",
+    "card_id": "SG-PRAC-LISAMARIA",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/lisa-maria-11/"
+  },
+  {
+    "question": "Tell me about Lisa Maria",
+    "card_id": "SG-PRAC-LISAMARIA",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/lisa-maria-11/"
+  },
+  {
+    "question": "Who is Lisa?",
+    "card_id": "SG-PRAC-LISAS",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/lisa-seyring-11/"
+  },
+  {
+    "question": "What does Lisa do?",
+    "card_id": "SG-PRAC-LISAS",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/lisa-seyring-11/"
+  },
+  {
+    "question": "How do I book Lisa?",
+    "card_id": "SG-PRAC-LISAS",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/lisa-seyring-11/"
+  },
+  {
+    "question": "Is Lisa available?",
+    "card_id": "SG-PRAC-LISAS",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/lisa-seyring-11/"
+  },
+  {
+    "question": "Tell me about Lisa Seyring",
+    "card_id": "SG-PRAC-LISAS",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/lisa-seyring-11/"
+  },
+  {
+    "question": "Who is Mary?",
+    "card_id": "SG-PRAC-MARY",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/mary-11/"
+  },
+  {
+    "question": "What does Mary do?",
+    "card_id": "SG-PRAC-MARY",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/mary-11/"
+  },
+  {
+    "question": "How do I book Mary?",
+    "card_id": "SG-PRAC-MARY",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/mary-11/"
+  },
+  {
+    "question": "Is Mary available?",
+    "card_id": "SG-PRAC-MARY",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/mary-11/"
+  },
+  {
+    "question": "Tell me about Mary Keiser",
+    "card_id": "SG-PRAC-MARY",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/mary-11/"
+  },
+  {
+    "question": "Who is Melissa?",
+    "card_id": "SG-PRAC-MELISSA",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/melissa-v5/"
+  },
+  {
+    "question": "What does Melissa do?",
+    "card_id": "SG-PRAC-MELISSA",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/melissa-v5/"
+  },
+  {
+    "question": "How do I book Melissa?",
+    "card_id": "SG-PRAC-MELISSA",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/melissa-v5/"
+  },
+  {
+    "question": "Is Melissa available?",
+    "card_id": "SG-PRAC-MELISSA",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/melissa-v5/"
+  },
+  {
+    "question": "Tell me about Melissa",
+    "card_id": "SG-PRAC-MELISSA",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/melissa-v5/"
+  },
+  {
+    "question": "Who is Mother?",
+    "card_id": "SG-PRAC-LOTUS",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/mother-lotus-11/"
+  },
+  {
+    "question": "What does Mother do?",
+    "card_id": "SG-PRAC-LOTUS",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/mother-lotus-11/"
+  },
+  {
+    "question": "How do I book Mother?",
+    "card_id": "SG-PRAC-LOTUS",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/mother-lotus-11/"
+  },
+  {
+    "question": "Is Mother available?",
+    "card_id": "SG-PRAC-LOTUS",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/mother-lotus-11/"
+  },
+  {
+    "question": "Tell me about Mother Lotus",
+    "card_id": "SG-PRAC-LOTUS",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/mother-lotus-11/"
+  },
+  {
+    "question": "Who is Richard?",
+    "card_id": "SG-PRAC-RICHARD",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/richard-11/"
+  },
+  {
+    "question": "What does Richard do?",
+    "card_id": "SG-PRAC-RICHARD",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/richard-11/"
+  },
+  {
+    "question": "How do I book Richard?",
+    "card_id": "SG-PRAC-RICHARD",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/richard-11/"
+  },
+  {
+    "question": "Is Richard available?",
+    "card_id": "SG-PRAC-RICHARD",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/richard-11/"
+  },
+  {
+    "question": "Tell me about Richard Popp",
+    "card_id": "SG-PRAC-RICHARD",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/richard-11/"
+  },
+  {
+    "question": "Who is Robert?",
+    "card_id": "SG-PRAC-ROBERT",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/robert-11/"
+  },
+  {
+    "question": "What does Robert do?",
+    "card_id": "SG-PRAC-ROBERT",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/robert-11/"
+  },
+  {
+    "question": "How do I book Robert?",
+    "card_id": "SG-PRAC-ROBERT",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/robert-11/"
+  },
+  {
+    "question": "Is Robert available?",
+    "card_id": "SG-PRAC-ROBERT",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/robert-11/"
+  },
+  {
+    "question": "Tell me about Robert MacKay",
+    "card_id": "SG-PRAC-ROBERT",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/robert-11/"
+  },
+  {
+    "question": "Who is Rose?",
+    "card_id": "SG-PRAC-ROSE",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/rose-v5-working/"
+  },
+  {
+    "question": "What does Rose do?",
+    "card_id": "SG-PRAC-ROSE",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/rose-v5-working/"
+  },
+  {
+    "question": "How do I book Rose?",
+    "card_id": "SG-PRAC-ROSE",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/rose-v5-working/"
+  },
+  {
+    "question": "Is Rose available?",
+    "card_id": "SG-PRAC-ROSE",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/rose-v5-working/"
+  },
+  {
+    "question": "Tell me about Rose",
+    "card_id": "SG-PRAC-ROSE",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/rose-v5-working/"
+  },
+  {
+    "question": "Who is Renee?",
+    "card_id": "SG-PRAC-RENEE",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/renee-2/"
+  },
+  {
+    "question": "What does Renee do?",
+    "card_id": "SG-PRAC-RENEE",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/renee-2/"
+  },
+  {
+    "question": "How do I book Renee?",
+    "card_id": "SG-PRAC-RENEE",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/renee-2/"
+  },
+  {
+    "question": "Is Renee available?",
+    "card_id": "SG-PRAC-RENEE",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/renee-2/"
+  },
+  {
+    "question": "Tell me about Renee",
+    "card_id": "SG-PRAC-RENEE",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/renee-2/"
+  },
+  {
+    "question": "Who is Tina?",
+    "card_id": "SG-PRAC-TINA",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/tina-v-5/"
+  },
+  {
+    "question": "What does Tina do?",
+    "card_id": "SG-PRAC-TINA",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/tina-v-5/"
+  },
+  {
+    "question": "How do I book Tina?",
+    "card_id": "SG-PRAC-TINA",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/tina-v-5/"
+  },
+  {
+    "question": "Is Tina available?",
+    "card_id": "SG-PRAC-TINA",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/tina-v-5/"
+  },
+  {
+    "question": "Tell me about Tina Santana",
+    "card_id": "SG-PRAC-TINA",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/tina-v-5/"
+  },
+  {
+    "question": "Who is Sherry?",
+    "card_id": "SG-PRAC-SHERRY",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/sherry/"
+  },
+  {
+    "question": "What does Sherry do?",
+    "card_id": "SG-PRAC-SHERRY",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/sherry/"
+  },
+  {
+    "question": "How do I book Sherry?",
+    "card_id": "SG-PRAC-SHERRY",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/sherry/"
+  },
+  {
+    "question": "Is Sherry available?",
+    "card_id": "SG-PRAC-SHERRY",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/sherry/"
+  },
+  {
+    "question": "Tell me about Sherry Gurley",
+    "card_id": "SG-PRAC-SHERRY",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/sherry/"
+  },
+  {
+    "question": "Who is Kashia?",
+    "card_id": "SG-PRAC-KASHIA",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/book/hawaiian-massage/"
+  },
+  {
+    "question": "What does Kashia do?",
+    "card_id": "SG-PRAC-KASHIA",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/book/hawaiian-massage/"
+  },
+  {
+    "question": "How do I book Kashia?",
+    "card_id": "SG-PRAC-KASHIA",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/book/hawaiian-massage/"
+  },
+  {
+    "question": "Is Kashia available?",
+    "card_id": "SG-PRAC-KASHIA",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/book/hawaiian-massage/"
+  },
+  {
+    "question": "Tell me about Kashia",
+    "card_id": "SG-PRAC-KASHIA",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/book/hawaiian-massage/"
+  },
+  {
+    "question": "Who is Lori?",
+    "card_id": "SG-PRAC-LORI",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/book/lori-medium/"
+  },
+  {
+    "question": "What does Lori do?",
+    "card_id": "SG-PRAC-LORI",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/book/lori-medium/"
+  },
+  {
+    "question": "How do I book Lori?",
+    "card_id": "SG-PRAC-LORI",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/book/lori-medium/"
+  },
+  {
+    "question": "Is Lori available?",
+    "card_id": "SG-PRAC-LORI",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/book/lori-medium/"
+  },
+  {
+    "question": "Tell me about Lori",
+    "card_id": "SG-PRAC-LORI",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/book/lori-medium/"
+  },
+  {
+    "question": "Smudging, sage, and clearing a space?",
+    "card_id": "SG-ART-SMUDGING",
+    "category": "Articles",
+    "direct_url": "https://shopsacredground.com/cleansing-rituals-smudging/"
+  },
+  {
+    "question": "Where can I read about this?",
+    "card_id": "SG-ART-SMUDGING",
+    "category": "Articles",
+    "direct_url": "https://shopsacredground.com/cleansing-rituals-smudging/"
+  },
+  {
+    "question": "Do you have something on smudging?",
+    "card_id": "SG-ART-SMUDGING",
+    "category": "Articles",
+    "direct_url": "https://shopsacredground.com/cleansing-rituals-smudging/"
+  },
+  {
+    "question": "How to clear a crystal and choose one for a room?",
+    "card_id": "SG-ART-CLEAR-CRYSTAL",
+    "category": "Articles",
+    "direct_url": "https://shopsacredground.com/how-to-clean-clear-and-pick-the-right-crystal-for-your-space/"
+  },
+  {
+    "question": "Where can I read about this?",
+    "card_id": "SG-ART-CLEAR-CRYSTAL",
+    "category": "Articles",
+    "direct_url": "https://shopsacredground.com/how-to-clean-clear-and-pick-the-right-crystal-for-your-space/"
+  },
+  {
+    "question": "Do you have something on clear crystal?",
+    "card_id": "SG-ART-CLEAR-CRYSTAL",
+    "category": "Articles",
+    "direct_url": "https://shopsacredground.com/how-to-clean-clear-and-pick-the-right-crystal-for-your-space/"
+  },
+  {
+    "question": "A beginner's guide to crystals?",
+    "card_id": "SG-ART-BEGINNER-CRYSTALS",
+    "category": "Articles",
+    "direct_url": "https://shopsacredground.com/a-beginners-guide-to-working-with-crystals/"
+  },
+  {
+    "question": "Where can I read about this?",
+    "card_id": "SG-ART-BEGINNER-CRYSTALS",
+    "category": "Articles",
+    "direct_url": "https://shopsacredground.com/a-beginners-guide-to-working-with-crystals/"
+  },
+  {
+    "question": "Do you have something on beginner crystals?",
+    "card_id": "SG-ART-BEGINNER-CRYSTALS",
+    "category": "Articles",
+    "direct_url": "https://shopsacredground.com/a-beginners-guide-to-working-with-crystals/"
+  },
+  {
+    "question": "Amethyst?",
+    "card_id": "SG-ART-AMETHYST",
+    "category": "Articles",
+    "direct_url": "https://shopsacredground.com/why-amethyst-is-called-swiss-army-knife-of-crystals/"
+  },
+  {
+    "question": "Where can I read about this?",
+    "card_id": "SG-ART-AMETHYST",
+    "category": "Articles",
+    "direct_url": "https://shopsacredground.com/why-amethyst-is-called-swiss-army-knife-of-crystals/"
+  },
+  {
+    "question": "Do you have something on amethyst?",
+    "card_id": "SG-ART-AMETHYST",
+    "category": "Articles",
+    "direct_url": "https://shopsacredground.com/why-amethyst-is-called-swiss-army-knife-of-crystals/"
+  },
+  {
+    "question": "Stones people use to feel steadier?",
+    "card_id": "SG-ART-GROUND",
+    "category": "Articles",
+    "direct_url": "https://shopsacredground.com/the-top-5-crystals-to-ground-you-and-how-to-use-them/"
+  },
+  {
+    "question": "Where can I read about this?",
+    "card_id": "SG-ART-GROUND",
+    "category": "Articles",
+    "direct_url": "https://shopsacredground.com/the-top-5-crystals-to-ground-you-and-how-to-use-them/"
+  },
+  {
+    "question": "Do you have something on grounding?",
+    "card_id": "SG-ART-GROUND",
+    "category": "Articles",
+    "direct_url": "https://shopsacredground.com/the-top-5-crystals-to-ground-you-and-how-to-use-them/"
+  },
+  {
+    "question": "Setting an intention with a stone?",
+    "card_id": "SG-ART-INTENTION",
+    "category": "Articles",
+    "direct_url": "https://shopsacredground.com/how-to-program-crystals-and-set-intentions/"
+  },
+  {
+    "question": "Where can I read about this?",
+    "card_id": "SG-ART-INTENTION",
+    "category": "Articles",
+    "direct_url": "https://shopsacredground.com/how-to-program-crystals-and-set-intentions/"
+  },
+  {
+    "question": "Do you have something on program a crystal?",
+    "card_id": "SG-ART-INTENTION",
+    "category": "Articles",
+    "direct_url": "https://shopsacredground.com/how-to-program-crystals-and-set-intentions/"
+  },
+  {
+    "question": "What is Reiki??",
+    "card_id": "SG-ART-REIKI",
+    "category": "Articles",
+    "direct_url": "https://shopsacredground.com/what-is-reiki-understanding-energy-healing/"
+  },
+  {
+    "question": "Where can I read about this?",
+    "card_id": "SG-ART-REIKI",
+    "category": "Articles",
+    "direct_url": "https://shopsacredground.com/what-is-reiki-understanding-energy-healing/"
+  },
+  {
+    "question": "Do you have something on what is reiki?",
+    "card_id": "SG-ART-REIKI",
+    "category": "Articles",
+    "direct_url": "https://shopsacredground.com/what-is-reiki-understanding-energy-healing/"
+  },
+  {
+    "question": "Tarot, angel cards, and intuitive readings?",
+    "card_id": "SG-ART-CARDS",
+    "category": "Articles",
+    "direct_url": "https://shopsacredground.com/what-are-card-readings-understanding-tarot-angel-intuitive-guidance/"
+  },
+  {
+    "question": "Where can I read about this?",
+    "card_id": "SG-ART-CARDS",
+    "category": "Articles",
+    "direct_url": "https://shopsacredground.com/what-are-card-readings-understanding-tarot-angel-intuitive-guidance/"
+  },
+  {
+    "question": "Do you have something on tarot vs oracle?",
+    "card_id": "SG-ART-CARDS",
+    "category": "Articles",
+    "direct_url": "https://shopsacredground.com/what-are-card-readings-understanding-tarot-angel-intuitive-guidance/"
+  },
+  {
+    "question": "What is sound healing??",
+    "card_id": "SG-ART-SOUND",
+    "category": "Articles",
+    "direct_url": "https://shopsacredground.com/what-is-sound-healing-understanding-vibrational-healing/"
+  },
+  {
+    "question": "Where can I read about this?",
+    "card_id": "SG-ART-SOUND",
+    "category": "Articles",
+    "direct_url": "https://shopsacredground.com/what-is-sound-healing-understanding-vibrational-healing/"
+  },
+  {
+    "question": "Do you have something on sound healing?",
+    "card_id": "SG-ART-SOUND",
+    "category": "Articles",
+    "direct_url": "https://shopsacredground.com/what-is-sound-healing-understanding-vibrational-healing/"
+  },
+  {
+    "question": "What is meditation??",
+    "card_id": "SG-ART-MEDITATION",
+    "category": "Articles",
+    "direct_url": "https://shopsacredground.com/what-is-meditation-understanding-mindfulness-practice/"
+  },
+  {
+    "question": "Where can I read about this?",
+    "card_id": "SG-ART-MEDITATION",
+    "category": "Articles",
+    "direct_url": "https://shopsacredground.com/what-is-meditation-understanding-mindfulness-practice/"
+  },
+  {
+    "question": "Do you have something on what is meditation?",
+    "card_id": "SG-ART-MEDITATION",
+    "category": "Articles",
+    "direct_url": "https://shopsacredground.com/what-is-meditation-understanding-mindfulness-practice/"
+  },
+  {
+    "question": "What is an Akashic reading??",
+    "card_id": "SG-ART-AKASHIC",
+    "category": "Articles",
+    "direct_url": "https://shopsacredground.com/akashic-record-reading-everything-you-need-to-know/"
+  },
+  {
+    "question": "Where can I read about this?",
+    "card_id": "SG-ART-AKASHIC",
+    "category": "Articles",
+    "direct_url": "https://shopsacredground.com/akashic-record-reading-everything-you-need-to-know/"
+  },
+  {
+    "question": "Do you have something on akashic?",
+    "card_id": "SG-ART-AKASHIC",
+    "category": "Articles",
+    "direct_url": "https://shopsacredground.com/akashic-record-reading-everything-you-need-to-know/"
+  },
+  {
+    "question": "If you feel everything?",
+    "card_id": "SG-ART-EMPATH",
+    "category": "Articles",
+    "direct_url": "https://shopsacredground.com/do-you-easily-cry-are-you-highly-sensitive-to-other-peoples-energy-maybe-you-are-an-empath/"
+  },
+  {
+    "question": "Where can I read about this?",
+    "card_id": "SG-ART-EMPATH",
+    "category": "Articles",
+    "direct_url": "https://shopsacredground.com/do-you-easily-cry-are-you-highly-sensitive-to-other-peoples-energy-maybe-you-are-an-empath/"
+  },
+  {
+    "question": "Do you have something on empath?",
+    "card_id": "SG-ART-EMPATH",
+    "category": "Articles",
+    "direct_url": "https://shopsacredground.com/do-you-easily-cry-are-you-highly-sensitive-to-other-peoples-energy-maybe-you-are-an-empath/"
+  },
+  {
+    "question": "Guide: clean and clear?",
+    "card_id": "SG-GUIDE-CLEAN",
+    "category": "Articles",
+    "direct_url": "https://shopsacredground.com/library/guides/clean-and-clear/"
+  },
+  {
+    "question": "Where can I read about this?",
+    "card_id": "SG-GUIDE-CLEAN",
+    "category": "Articles",
+    "direct_url": "https://shopsacredground.com/library/guides/clean-and-clear/"
+  },
+  {
+    "question": "Do you have something on how to smudge?",
+    "card_id": "SG-GUIDE-CLEAN",
+    "category": "Articles",
+    "direct_url": "https://shopsacredground.com/library/guides/clean-and-clear/"
+  },
+  {
+    "question": "Find a practitioner?",
+    "card_id": "SG-NAV-PRACTITIONER",
+    "category": "Navigation",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "How do I find a practitioner?",
+    "card_id": "SG-NAV-PRACTITIONER",
+    "category": "Navigation",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "Where is that on my phone?",
+    "card_id": "SG-NAV-PRACTITIONER",
+    "category": "Navigation",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "Book a specific person?",
+    "card_id": "SG-NAV-BOOK",
+    "category": "Navigation",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "How do I book a specific person?",
+    "card_id": "SG-NAV-BOOK",
+    "category": "Navigation",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "Where is that on my phone?",
+    "card_id": "SG-NAV-BOOK",
+    "category": "Navigation",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "See what is happening?",
+    "card_id": "SG-NAV-EVENTS",
+    "category": "Navigation",
+    "direct_url": "https://shopsacredground.com/events/list/"
+  },
+  {
+    "question": "How do I see what is happening?",
+    "card_id": "SG-NAV-EVENTS",
+    "category": "Navigation",
+    "direct_url": "https://shopsacredground.com/events/list/"
+  },
+  {
+    "question": "Where is that on my phone?",
+    "card_id": "SG-NAV-EVENTS",
+    "category": "Navigation",
+    "direct_url": "https://shopsacredground.com/events/list/"
+  },
+  {
+    "question": "See bookings you already made?",
+    "card_id": "SG-NAV-YOUR-CAL",
+    "category": "Navigation",
+    "direct_url": "https://shopsacredground.com/your-calendar/"
+  },
+  {
+    "question": "How do I see bookings you already made?",
+    "card_id": "SG-NAV-YOUR-CAL",
+    "category": "Navigation",
+    "direct_url": "https://shopsacredground.com/your-calendar/"
+  },
+  {
+    "question": "Where is that on my phone?",
+    "card_id": "SG-NAV-YOUR-CAL",
+    "category": "Navigation",
+    "direct_url": "https://shopsacredground.com/your-calendar/"
+  },
+  {
+    "question": "Browse the Library?",
+    "card_id": "SG-NAV-LIBRARY",
+    "category": "Navigation",
+    "direct_url": "https://shopsacredground.com/library/"
+  },
+  {
+    "question": "How do I browse the library?",
+    "card_id": "SG-NAV-LIBRARY",
+    "category": "Navigation",
+    "direct_url": "https://shopsacredground.com/library/"
+  },
+  {
+    "question": "Where is that on my phone?",
+    "card_id": "SG-NAV-LIBRARY",
+    "category": "Navigation",
+    "direct_url": "https://shopsacredground.com/library/"
+  },
+  {
+    "question": "Open the Observatory?",
+    "card_id": "SG-NAV-OBSERVATORY",
+    "category": "Navigation",
+    "direct_url": "https://shopsacredground.com/sacred-ground-observatory/"
+  },
+  {
+    "question": "How do I open the observatory?",
+    "card_id": "SG-NAV-OBSERVATORY",
+    "category": "Navigation",
+    "direct_url": "https://shopsacredground.com/sacred-ground-observatory/"
+  },
+  {
+    "question": "Where is that on my phone?",
+    "card_id": "SG-NAV-OBSERVATORY",
+    "category": "Navigation",
+    "direct_url": "https://shopsacredground.com/sacred-ground-observatory/"
+  },
+  {
+    "question": "Shop online?",
+    "card_id": "SG-NAV-SHOP",
+    "category": "Navigation",
+    "direct_url": "https://shopsacredground.com/shop/"
+  },
+  {
+    "question": "How do I shop online?",
+    "card_id": "SG-NAV-SHOP",
+    "category": "Navigation",
+    "direct_url": "https://shopsacredground.com/shop/"
+  },
+  {
+    "question": "Where is that on my phone?",
+    "card_id": "SG-NAV-SHOP",
+    "category": "Navigation",
+    "direct_url": "https://shopsacredground.com/shop/"
+  },
+  {
+    "question": "Hours, address, and the phone?",
+    "card_id": "SG-NAV-HOURS",
+    "category": "Navigation",
+    "direct_url": "https://shopsacredground.com/contact/"
+  },
+  {
+    "question": "How do I hours, address, and the phone?",
+    "card_id": "SG-NAV-HOURS",
+    "category": "Navigation",
+    "direct_url": "https://shopsacredground.com/contact/"
+  },
+  {
+    "question": "Where is that on my phone?",
+    "card_id": "SG-NAV-HOURS",
+    "category": "Navigation",
+    "direct_url": "https://shopsacredground.com/contact/"
+  },
+  {
+    "question": "Find a free event?",
+    "card_id": "SG-NAV-FREE",
+    "category": "Navigation",
+    "direct_url": "https://shopsacredground.com/events/list/"
+  },
+  {
+    "question": "How do I find a free event?",
+    "card_id": "SG-NAV-FREE",
+    "category": "Navigation",
+    "direct_url": "https://shopsacredground.com/events/list/"
+  },
+  {
+    "question": "Where is that on my phone?",
+    "card_id": "SG-NAV-FREE",
+    "category": "Navigation",
+    "direct_url": "https://shopsacredground.com/events/list/"
+  },
+  {
+    "question": "Not sure where to start?",
+    "card_id": "SG-NAV-START",
+    "category": "Navigation",
+    "direct_url": "https://shopsacredground.com/"
+  },
+  {
+    "question": "How do I not sure where to start?",
+    "card_id": "SG-NAV-START",
+    "category": "Navigation",
+    "direct_url": "https://shopsacredground.com/"
+  },
+  {
+    "question": "Where is that on my phone?",
+    "card_id": "SG-NAV-START",
+    "category": "Navigation",
+    "direct_url": "https://shopsacredground.com/"
+  },
+  {
+    "question": "What's happening tomorrow?",
+    "card_id": "SG-LIVE-EVENTS",
+    "category": "Live data",
+    "direct_url": "https://shopsacredground.com/events/list/"
+  },
+  {
+    "question": "What's on this weekend?",
+    "card_id": "SG-LIVE-EVENTS",
+    "category": "Live data",
+    "direct_url": "https://shopsacredground.com/events/list/"
+  },
+  {
+    "question": "Is meditation on this Tuesday?",
+    "card_id": "SG-LIVE-EVENTS",
+    "category": "Live data",
+    "direct_url": "https://shopsacredground.com/events/list/"
+  },
+  {
+    "question": "Is there a time on Friday?",
+    "card_id": "SG-LIVE-BOOKING",
+    "category": "Live data",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "How much is a reading?",
+    "card_id": "SG-LIVE-BOOKING",
+    "category": "Live data",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "How long is the session?",
+    "card_id": "SG-LIVE-BOOKING",
+    "category": "Live data",
+    "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+  },
+  {
+    "question": "Do you have amethyst in the shop?",
+    "card_id": "SG-LIVE-STOCK",
+    "category": "Live data",
+    "direct_url": "https://shopsacredground.com/shop/"
+  },
+  {
+    "question": "Is this in stock?",
+    "card_id": "SG-LIVE-STOCK",
+    "category": "Live data",
+    "direct_url": "https://shopsacredground.com/shop/"
+  },
+  {
+    "question": "Can I buy this online?",
+    "card_id": "SG-LIVE-STOCK",
+    "category": "Live data",
+    "direct_url": "https://shopsacredground.com/shop/"
+  }
+]

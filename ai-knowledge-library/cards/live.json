@@ -1,0 +1,93 @@
+[
+  {
+    "layer": "live",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "live_only",
+    "live_source": "WordPress Events Calendar.",
+    "related_cards": [],
+    "keywords": [
+      "tomorrow",
+      "this week",
+      "schedule"
+    ],
+    "card_id": "SG-LIVE-EVENTS",
+    "category": "Live data",
+    "title": "Upcoming events must be fetched",
+    "purpose": "Stop the guide from memorizing the calendar.",
+    "visitor_questions": [
+      "What's happening tomorrow?",
+      "What's on this weekend?",
+      "Is meditation on this Tuesday?"
+    ],
+    "answer": "Answer from The Events Calendar at the time of the question. If the lookup fails, say you cannot see the live calendar and give https://shopsacredground.com/events/list/.",
+    "voice_response": "Let me look at the calendar rather than guess. If I can't see it, I'll give you the events page.",
+    "navigation": {
+      "desktop": "Calendar menu.",
+      "mobile": "Calendar in the phone menu.",
+      "direct_url": "https://shopsacredground.com/events/list/"
+    },
+    "source": "The Events Calendar, tribe_events."
+  },
+  {
+    "layer": "live",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "live_only",
+    "live_source": "Fluent Booking.",
+    "related_cards": [],
+    "keywords": [
+      "price",
+      "availability",
+      "cost",
+      "how much"
+    ],
+    "card_id": "SG-LIVE-BOOKING",
+    "category": "Live data",
+    "title": "Appointment times and prices must be fetched",
+    "purpose": "Stop the guide from quoting a stale price or an open slot.",
+    "visitor_questions": [
+      "Is there a time on Friday?",
+      "How much is a reading?",
+      "How long is the session?"
+    ],
+    "answer": "Open that practitioner's booking URL. Read the length and price there. If no time is published, say so and offer 847-749-3922. Never say you booked it.",
+    "voice_response": "The booking page has the real times and the real price. I won't guess, and I won't tell you it's reserved until that page finishes it.",
+    "navigation": {
+      "desktop": "The person's booking link.",
+      "mobile": "The person's booking link.",
+      "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+    },
+    "source": "Fluent Booking event pages."
+  },
+  {
+    "layer": "live",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "live_only",
+    "live_source": "WooCommerce.",
+    "related_cards": [],
+    "keywords": [
+      "in stock",
+      "inventory",
+      "do you have"
+    ],
+    "card_id": "SG-LIVE-STOCK",
+    "category": "Live data",
+    "title": "Product stock must be fetched",
+    "purpose": "Stop the guide from inventing inventory.",
+    "visitor_questions": [
+      "Do you have amethyst in the shop?",
+      "Is this in stock?",
+      "Can I buy this online?"
+    ],
+    "answer": "Check the WooCommerce product. If it is not listed, say you cannot see it online and give the phone and the address. People can also walk in.",
+    "voice_response": "I can only confirm what the shop page shows. If it isn't listed, call the store or come by 160 W Campbell Street.",
+    "navigation": {
+      "desktop": "Shop menu.",
+      "mobile": "Shop in the phone menu.",
+      "direct_url": "https://shopsacredground.com/shop/"
+    },
+    "source": "WooCommerce."
+  }
+]

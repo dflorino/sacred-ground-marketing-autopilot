@@ -1,0 +1,1042 @@
+{
+  "generated": "2026-10-11",
+  "card_count": 83,
+  "question_count": 390,
+  "by_category": {
+    "Voice": [
+      "SG-VOICE-IDENTITY",
+      "SG-VOICE-GRIEF",
+      "SG-VOICE-CRYSTAL"
+    ],
+    "Homepage": [
+      "SG-KNOW-HOME"
+    ],
+    "About": [
+      "SG-KNOW-ABOUT"
+    ],
+    "Store": [
+      "SG-KNOW-VISIT"
+    ],
+    "Shop": [
+      "SG-KNOW-SHOP"
+    ],
+    "Events": [
+      "SG-KNOW-FAIR",
+      "SG-KNOW-COMMUNITY"
+    ],
+    "Rules": [
+      "SG-RULE-NO-DEATH"
+    ],
+    "Library": [
+      "SG-KNOW-LIBRARY"
+    ],
+    "Observatory": [
+      "SG-KNOW-OBSERVATORY"
+    ],
+    "Modalities": [
+      "SG-MOD-REIKI",
+      "SG-MOD-MASSAGE",
+      "SG-MOD-REFLEX",
+      "SG-MOD-SOUND",
+      "SG-MOD-MEDITATION",
+      "SG-MOD-TAROT",
+      "SG-MOD-ANGEL",
+      "SG-MOD-AKASHIC",
+      "SG-MOD-ASTROLOGY",
+      "SG-MOD-MEDIUM",
+      "SG-MOD-SHAMANIC",
+      "SG-MOD-CRANIAL",
+      "SG-MOD-RUNES",
+      "SG-MOD-YOGA",
+      "SG-MOD-CRYSTAL-HEAL",
+      "SG-MOD-POEM",
+      "SG-MOD-MOON",
+      "SG-MOD-MASSAGE-NOTE"
+    ],
+    "Practitioners": [
+      "SG-PRAC-CHERYL",
+      "SG-PRAC-DENEENE",
+      "SG-PRAC-ADIE",
+      "SG-PRAC-AMBER",
+      "SG-PRAC-ANDREA",
+      "SG-PRAC-ANDRE",
+      "SG-PRAC-EVE",
+      "SG-PRAC-JANEL",
+      "SG-PRAC-JILL",
+      "SG-PRAC-KAREN",
+      "SG-PRAC-KATE",
+      "SG-PRAC-LINN",
+      "SG-PRAC-LITA",
+      "SG-PRAC-LISA",
+      "SG-PRAC-LISAMARIA",
+      "SG-PRAC-LISAS",
+      "SG-PRAC-MARY",
+      "SG-PRAC-MELISSA",
+      "SG-PRAC-LOTUS",
+      "SG-PRAC-RICHARD",
+      "SG-PRAC-ROBERT",
+      "SG-PRAC-ROSE",
+      "SG-PRAC-RENEE",
+      "SG-PRAC-TINA",
+      "SG-PRAC-SHERRY",
+      "SG-PRAC-KASHIA",
+      "SG-PRAC-LORI"
+    ],
+    "Articles": [
+      "SG-ART-SMUDGING",
+      "SG-ART-CLEAR-CRYSTAL",
+      "SG-ART-BEGINNER-CRYSTALS",
+      "SG-ART-AMETHYST",
+      "SG-ART-GROUND",
+      "SG-ART-INTENTION",
+      "SG-ART-REIKI",
+      "SG-ART-CARDS",
+      "SG-ART-SOUND",
+      "SG-ART-MEDITATION",
+      "SG-ART-AKASHIC",
+      "SG-ART-EMPATH",
+      "SG-GUIDE-CLEAN"
+    ],
+    "Navigation": [
+      "SG-NAV-PRACTITIONER",
+      "SG-NAV-BOOK",
+      "SG-NAV-EVENTS",
+      "SG-NAV-YOUR-CAL",
+      "SG-NAV-LIBRARY",
+      "SG-NAV-OBSERVATORY",
+      "SG-NAV-SHOP",
+      "SG-NAV-HOURS",
+      "SG-NAV-FREE",
+      "SG-NAV-START"
+    ],
+    "Live data": [
+      "SG-LIVE-EVENTS",
+      "SG-LIVE-BOOKING",
+      "SG-LIVE-STOCK"
+    ]
+  },
+  "by_keyword": {
+    "are you deneene": [
+      "SG-VOICE-IDENTITY"
+    ],
+    "real person": [
+      "SG-VOICE-IDENTITY"
+    ],
+    "chatbot": [
+      "SG-VOICE-IDENTITY"
+    ],
+    "did you book it": [
+      "SG-VOICE-IDENTITY"
+    ],
+    "grief": [
+      "SG-VOICE-GRIEF"
+    ],
+    "loss": [
+      "SG-VOICE-GRIEF"
+    ],
+    "died": [
+      "SG-VOICE-GRIEF"
+    ],
+    "mourning": [
+      "SG-VOICE-GRIEF"
+    ],
+    "sad": [
+      "SG-VOICE-GRIEF"
+    ],
+    "lonely": [
+      "SG-VOICE-GRIEF"
+    ],
+    "kübler-ross": [
+      "SG-VOICE-GRIEF"
+    ],
+    "amethyst": [
+      "SG-VOICE-CRYSTAL",
+      "SG-ART-AMETHYST"
+    ],
+    "crystal": [
+      "SG-VOICE-CRYSTAL"
+    ],
+    "mineral": [
+      "SG-VOICE-CRYSTAL"
+    ],
+    "stone": [
+      "SG-VOICE-CRYSTAL"
+    ],
+    "geology": [
+      "SG-VOICE-CRYSTAL"
+    ],
+    "metaphysical": [
+      "SG-VOICE-CRYSTAL"
+    ],
+    "homepage": [
+      "SG-KNOW-HOME"
+    ],
+    "start": [
+      "SG-KNOW-HOME"
+    ],
+    "front page": [
+      "SG-KNOW-HOME"
+    ],
+    "book now": [
+      "SG-KNOW-HOME"
+    ],
+    "about": [
+      "SG-KNOW-ABOUT"
+    ],
+    "founder": [
+      "SG-KNOW-ABOUT"
+    ],
+    "first visit": [
+      "SG-KNOW-ABOUT"
+    ],
+    "what is sacred ground": [
+      "SG-KNOW-ABOUT"
+    ],
+    "appointment to shop": [
+      "SG-KNOW-ABOUT"
+    ],
+    "address": [
+      "SG-KNOW-VISIT",
+      "SG-NAV-HOURS"
+    ],
+    "hours": [
+      "SG-KNOW-VISIT",
+      "SG-NAV-HOURS"
+    ],
+    "phone": [
+      "SG-KNOW-VISIT"
+    ],
+    "campbell": [
+      "SG-KNOW-VISIT"
+    ],
+    "arlington heights": [
+      "SG-KNOW-VISIT"
+    ],
+    "walk in": [
+      "SG-KNOW-VISIT"
+    ],
+    "directions": [
+      "SG-KNOW-VISIT",
+      "SG-NAV-HOURS"
+    ],
+    "shop": [
+      "SG-KNOW-SHOP"
+    ],
+    "buy": [
+      "SG-KNOW-SHOP",
+      "SG-NAV-SHOP"
+    ],
+    "crystals": [
+      "SG-KNOW-SHOP"
+    ],
+    "jewelry": [
+      "SG-KNOW-SHOP"
+    ],
+    "sage": [
+      "SG-KNOW-SHOP",
+      "SG-ART-SMUDGING"
+    ],
+    "online": [
+      "SG-KNOW-SHOP"
+    ],
+    "woocommerce": [
+      "SG-KNOW-SHOP"
+    ],
+    "gifts": [
+      "SG-KNOW-SHOP"
+    ],
+    "fair": [
+      "SG-KNOW-FAIR"
+    ],
+    "holistic fair": [
+      "SG-KNOW-FAIR"
+    ],
+    "psychic fair": [
+      "SG-KNOW-FAIR"
+    ],
+    "vendor": [
+      "SG-KNOW-FAIR"
+    ],
+    "season": [
+      "SG-KNOW-FAIR"
+    ],
+    "free": [
+      "SG-KNOW-COMMUNITY"
+    ],
+    "meditation tuesday": [
+      "SG-KNOW-COMMUNITY"
+    ],
+    "educational night": [
+      "SG-KNOW-COMMUNITY"
+    ],
+    "reiki share": [
+      "SG-KNOW-COMMUNITY"
+    ],
+    "angel readings": [
+      "SG-KNOW-COMMUNITY"
+    ],
+    "death card": [
+      "SG-RULE-NO-DEATH"
+    ],
+    "tarot death": [
+      "SG-RULE-NO-DEATH"
+    ],
+    "major 13": [
+      "SG-RULE-NO-DEATH"
+    ],
+    "library": [
+      "SG-KNOW-LIBRARY",
+      "SG-NAV-LIBRARY"
+    ],
+    "articles": [
+      "SG-KNOW-LIBRARY"
+    ],
+    "books": [
+      "SG-KNOW-LIBRARY",
+      "SG-NAV-LIBRARY"
+    ],
+    "podcasts": [
+      "SG-KNOW-LIBRARY"
+    ],
+    "movies": [
+      "SG-KNOW-LIBRARY"
+    ],
+    "sacred sounds": [
+      "SG-KNOW-LIBRARY"
+    ],
+    "observatory": [
+      "SG-KNOW-OBSERVATORY",
+      "SG-NAV-OBSERVATORY"
+    ],
+    "moon": [
+      "SG-KNOW-OBSERVATORY",
+      "SG-NAV-OBSERVATORY"
+    ],
+    "nasa": [
+      "SG-KNOW-OBSERVATORY"
+    ],
+    "mineral bank": [
+      "SG-KNOW-OBSERVATORY"
+    ],
+    "numerology": [
+      "SG-KNOW-OBSERVATORY",
+      "SG-MOD-RUNES"
+    ],
+    "earth and ether": [
+      "SG-KNOW-OBSERVATORY"
+    ],
+    "reiki": [
+      "SG-MOD-REIKI"
+    ],
+    "energy healing": [
+      "SG-MOD-REIKI",
+      "SG-ART-REIKI"
+    ],
+    "hands on": [
+      "SG-MOD-REIKI"
+    ],
+    "massage": [
+      "SG-MOD-MASSAGE"
+    ],
+    "bodywork": [
+      "SG-MOD-MASSAGE"
+    ],
+    "amber": [
+      "SG-MOD-MASSAGE",
+      "SG-PRAC-AMBER",
+      "SG-PRAC-AMBER"
+    ],
+    "reflexology": [
+      "SG-MOD-REFLEX"
+    ],
+    "feet": [
+      "SG-MOD-REFLEX"
+    ],
+    "stretchology": [
+      "SG-MOD-REFLEX"
+    ],
+    "sound bath": [
+      "SG-MOD-SOUND",
+      "SG-ART-SOUND"
+    ],
+    "gong": [
+      "SG-MOD-SOUND"
+    ],
+    "singing bowls": [
+      "SG-MOD-SOUND"
+    ],
+    "vibration": [
+      "SG-MOD-SOUND"
+    ],
+    "meditation": [
+      "SG-MOD-MEDITATION"
+    ],
+    "tuesday": [
+      "SG-MOD-MEDITATION"
+    ],
+    "mindfulness": [
+      "SG-MOD-MEDITATION"
+    ],
+    "tarot": [
+      "SG-MOD-TAROT"
+    ],
+    "cards": [
+      "SG-MOD-TAROT"
+    ],
+    "reading": [
+      "SG-MOD-TAROT"
+    ],
+    "angel": [
+      "SG-MOD-ANGEL"
+    ],
+    "angels": [
+      "SG-MOD-ANGEL"
+    ],
+    "oracle": [
+      "SG-MOD-ANGEL"
+    ],
+    "archangel": [
+      "SG-MOD-ANGEL"
+    ],
+    "akashic": [
+      "SG-MOD-AKASHIC",
+      "SG-ART-AKASHIC"
+    ],
+    "akashic records": [
+      "SG-MOD-AKASHIC"
+    ],
+    "soul": [
+      "SG-MOD-AKASHIC"
+    ],
+    "astrology": [
+      "SG-MOD-ASTROLOGY"
+    ],
+    "birth chart": [
+      "SG-MOD-ASTROLOGY"
+    ],
+    "horoscope": [
+      "SG-MOD-ASTROLOGY"
+    ],
+    "zodiac": [
+      "SG-MOD-ASTROLOGY"
+    ],
+    "medium": [
+      "SG-MOD-MEDIUM"
+    ],
+    "mediumship": [
+      "SG-MOD-MEDIUM"
+    ],
+    "loved one": [
+      "SG-MOD-MEDIUM"
+    ],
+    "crossed over": [
+      "SG-MOD-MEDIUM"
+    ],
+    "shaman": [
+      "SG-MOD-SHAMANIC"
+    ],
+    "shamanic": [
+      "SG-MOD-SHAMANIC"
+    ],
+    "drum": [
+      "SG-MOD-SHAMANIC"
+    ],
+    "journey": [
+      "SG-MOD-SHAMANIC"
+    ],
+    "cranial sacral": [
+      "SG-MOD-CRANIAL"
+    ],
+    "craniosacral": [
+      "SG-MOD-CRANIAL"
+    ],
+    "cst": [
+      "SG-MOD-CRANIAL"
+    ],
+    "runes": [
+      "SG-MOD-RUNES"
+    ],
+    "futhark": [
+      "SG-MOD-RUNES"
+    ],
+    "pendulum": [
+      "SG-MOD-RUNES"
+    ],
+    "yoga": [
+      "SG-MOD-YOGA"
+    ],
+    "stretch": [
+      "SG-MOD-YOGA"
+    ],
+    "crystal healing": [
+      "SG-MOD-CRYSTAL-HEAL"
+    ],
+    "crystal grid": [
+      "SG-MOD-CRYSTAL-HEAL"
+    ],
+    "janel crystals": [
+      "SG-MOD-CRYSTAL-HEAL"
+    ],
+    "poem": [
+      "SG-MOD-POEM"
+    ],
+    "poetry": [
+      "SG-MOD-POEM"
+    ],
+    "channeled": [
+      "SG-MOD-POEM"
+    ],
+    "moon circle": [
+      "SG-MOD-MOON"
+    ],
+    "women's circle": [
+      "SG-MOD-MOON"
+    ],
+    "new moon": [
+      "SG-MOD-MOON"
+    ],
+    "difference": [
+      "SG-MOD-MASSAGE-NOTE"
+    ],
+    "which one": [
+      "SG-MOD-MASSAGE-NOTE"
+    ],
+    "compare": [
+      "SG-MOD-MASSAGE-NOTE"
+    ],
+    "not sure": [
+      "SG-MOD-MASSAGE-NOTE"
+    ],
+    "cheryl": [
+      "SG-PRAC-CHERYL",
+      "SG-PRAC-CHERYL"
+    ],
+    "deneene": [
+      "SG-PRAC-DENEENE",
+      "SG-PRAC-DENEENE"
+    ],
+    "adie": [
+      "SG-PRAC-ADIE",
+      "SG-PRAC-ADIE"
+    ],
+    "andrea": [
+      "SG-PRAC-ANDREA",
+      "SG-PRAC-ANDREA"
+    ],
+    "andre peraza": [
+      "SG-PRAC-ANDRE"
+    ],
+    "andre": [
+      "SG-PRAC-ANDRE"
+    ],
+    "eve": [
+      "SG-PRAC-EVE",
+      "SG-PRAC-EVE"
+    ],
+    "janel": [
+      "SG-PRAC-JANEL",
+      "SG-PRAC-JANEL"
+    ],
+    "jill": [
+      "SG-PRAC-JILL",
+      "SG-PRAC-JILL"
+    ],
+    "karen": [
+      "SG-PRAC-KAREN",
+      "SG-PRAC-KAREN"
+    ],
+    "kate kent": [
+      "SG-PRAC-KATE"
+    ],
+    "kate": [
+      "SG-PRAC-KATE"
+    ],
+    "linn": [
+      "SG-PRAC-LINN",
+      "SG-PRAC-LINN"
+    ],
+    "lita keller": [
+      "SG-PRAC-LITA"
+    ],
+    "lita": [
+      "SG-PRAC-LITA"
+    ],
+    "lisa": [
+      "SG-PRAC-LISA",
+      "SG-PRAC-LISA",
+      "SG-PRAC-LISAMARIA",
+      "SG-PRAC-LISAS"
+    ],
+    "lisa maria": [
+      "SG-PRAC-LISAMARIA"
+    ],
+    "lisa seyring": [
+      "SG-PRAC-LISAS"
+    ],
+    "mary keiser": [
+      "SG-PRAC-MARY"
+    ],
+    "mary": [
+      "SG-PRAC-MARY"
+    ],
+    "melissa": [
+      "SG-PRAC-MELISSA",
+      "SG-PRAC-MELISSA"
+    ],
+    "mother lotus": [
+      "SG-PRAC-LOTUS"
+    ],
+    "mother": [
+      "SG-PRAC-LOTUS"
+    ],
+    "richard popp": [
+      "SG-PRAC-RICHARD"
+    ],
+    "richard": [
+      "SG-PRAC-RICHARD"
+    ],
+    "robert mackay": [
+      "SG-PRAC-ROBERT"
+    ],
+    "robert": [
+      "SG-PRAC-ROBERT"
+    ],
+    "rose": [
+      "SG-PRAC-ROSE",
+      "SG-PRAC-ROSE"
+    ],
+    "renee": [
+      "SG-PRAC-RENEE",
+      "SG-PRAC-RENEE"
+    ],
+    "tina santana": [
+      "SG-PRAC-TINA"
+    ],
+    "tina": [
+      "SG-PRAC-TINA"
+    ],
+    "sherry gurley": [
+      "SG-PRAC-SHERRY"
+    ],
+    "sherry": [
+      "SG-PRAC-SHERRY"
+    ],
+    "kashia": [
+      "SG-PRAC-KASHIA",
+      "SG-PRAC-KASHIA"
+    ],
+    "lori": [
+      "SG-PRAC-LORI",
+      "SG-PRAC-LORI"
+    ],
+    "smudging": [
+      "SG-ART-SMUDGING"
+    ],
+    "burn sage": [
+      "SG-ART-SMUDGING"
+    ],
+    "palo santo": [
+      "SG-ART-SMUDGING"
+    ],
+    "clear and clean": [
+      "SG-ART-SMUDGING"
+    ],
+    "cleansing": [
+      "SG-ART-SMUDGING"
+    ],
+    "smudge": [
+      "SG-ART-SMUDGING"
+    ],
+    "clear crystal": [
+      "SG-ART-CLEAR-CRYSTAL"
+    ],
+    "cleanse crystal": [
+      "SG-ART-CLEAR-CRYSTAL"
+    ],
+    "charge": [
+      "SG-ART-CLEAR-CRYSTAL"
+    ],
+    "which crystal for my house": [
+      "SG-ART-CLEAR-CRYSTAL"
+    ],
+    "beginner crystals": [
+      "SG-ART-BEGINNER-CRYSTALS"
+    ],
+    "how to use crystals": [
+      "SG-ART-BEGINNER-CRYSTALS"
+    ],
+    "new to crystals": [
+      "SG-ART-BEGINNER-CRYSTALS"
+    ],
+    "purple quartz": [
+      "SG-ART-AMETHYST"
+    ],
+    "crown chakra": [
+      "SG-ART-AMETHYST"
+    ],
+    "grounding": [
+      "SG-ART-GROUND"
+    ],
+    "root": [
+      "SG-ART-GROUND"
+    ],
+    "hematite": [
+      "SG-ART-GROUND"
+    ],
+    "black tourmaline": [
+      "SG-ART-GROUND"
+    ],
+    "anxious": [
+      "SG-ART-GROUND"
+    ],
+    "program a crystal": [
+      "SG-ART-INTENTION"
+    ],
+    "intention": [
+      "SG-ART-INTENTION"
+    ],
+    "set intention": [
+      "SG-ART-INTENTION"
+    ],
+    "what is reiki": [
+      "SG-ART-REIKI"
+    ],
+    "tarot vs oracle": [
+      "SG-ART-CARDS"
+    ],
+    "card reading": [
+      "SG-ART-CARDS"
+    ],
+    "intuitive reading": [
+      "SG-ART-CARDS"
+    ],
+    "difference between tarot and angel": [
+      "SG-ART-CARDS"
+    ],
+    "sound healing": [
+      "SG-ART-SOUND"
+    ],
+    "what is a gong bath": [
+      "SG-ART-SOUND"
+    ],
+    "what is meditation": [
+      "SG-ART-MEDITATION"
+    ],
+    "how to meditate": [
+      "SG-ART-MEDITATION"
+    ],
+    "beginner meditation": [
+      "SG-ART-MEDITATION"
+    ],
+    "akashic records reading": [
+      "SG-ART-AKASHIC"
+    ],
+    "empath": [
+      "SG-ART-EMPATH"
+    ],
+    "highly sensitive": [
+      "SG-ART-EMPATH"
+    ],
+    "i feel everything": [
+      "SG-ART-EMPATH"
+    ],
+    "overwhelmed": [
+      "SG-ART-EMPATH",
+      "SG-NAV-START"
+    ],
+    "how to smudge": [
+      "SG-GUIDE-CLEAN"
+    ],
+    "clear a room": [
+      "SG-GUIDE-CLEAN"
+    ],
+    "clean and clear": [
+      "SG-GUIDE-CLEAN"
+    ],
+    "who works there": [
+      "SG-NAV-PRACTITIONER"
+    ],
+    "find a reader": [
+      "SG-NAV-PRACTITIONER"
+    ],
+    "help me choose": [
+      "SG-NAV-PRACTITIONER"
+    ],
+    "book an appointment": [
+      "SG-NAV-BOOK"
+    ],
+    "schedule": [
+      "SG-NAV-BOOK",
+      "SG-LIVE-EVENTS"
+    ],
+    "reserve": [
+      "SG-NAV-BOOK"
+    ],
+    "calendar": [
+      "SG-NAV-EVENTS"
+    ],
+    "what's on": [
+      "SG-NAV-EVENTS"
+    ],
+    "this weekend": [
+      "SG-NAV-EVENTS"
+    ],
+    "tomorrow": [
+      "SG-NAV-EVENTS",
+      "SG-LIVE-EVENTS"
+    ],
+    "my appointment": [
+      "SG-NAV-YOUR-CAL"
+    ],
+    "cancel": [
+      "SG-NAV-YOUR-CAL"
+    ],
+    "reschedule": [
+      "SG-NAV-YOUR-CAL"
+    ],
+    "i already booked": [
+      "SG-NAV-YOUR-CAL"
+    ],
+    "read": [
+      "SG-NAV-LIBRARY"
+    ],
+    "daily": [
+      "SG-NAV-OBSERVATORY"
+    ],
+    "store online": [
+      "SG-NAV-SHOP"
+    ],
+    "cart": [
+      "SG-NAV-SHOP"
+    ],
+    "call": [
+      "SG-NAV-HOURS"
+    ],
+    "free events": [
+      "SG-NAV-FREE"
+    ],
+    "free class": [
+      "SG-NAV-FREE"
+    ],
+    "where do i start": [
+      "SG-NAV-START"
+    ],
+    "help me": [
+      "SG-NAV-START"
+    ],
+    "just browsing": [
+      "SG-NAV-START"
+    ],
+    "this week": [
+      "SG-LIVE-EVENTS"
+    ],
+    "price": [
+      "SG-LIVE-BOOKING"
+    ],
+    "availability": [
+      "SG-LIVE-BOOKING"
+    ],
+    "cost": [
+      "SG-LIVE-BOOKING"
+    ],
+    "how much": [
+      "SG-LIVE-BOOKING"
+    ],
+    "in stock": [
+      "SG-LIVE-STOCK"
+    ],
+    "inventory": [
+      "SG-LIVE-STOCK"
+    ],
+    "do you have": [
+      "SG-LIVE-STOCK"
+    ]
+  },
+  "by_url": {
+    "https://shopsacredground.com/": [
+      "SG-VOICE-IDENTITY",
+      "SG-KNOW-HOME",
+      "SG-NAV-START"
+    ],
+    "https://shopsacredground.com/deneene-11/": [
+      "SG-VOICE-GRIEF",
+      "SG-PRAC-DENEENE"
+    ],
+    "https://shopsacredground.com/library/guides/find-your-stone/": [
+      "SG-VOICE-CRYSTAL"
+    ],
+    "https://shopsacredground.com/about/": [
+      "SG-KNOW-ABOUT"
+    ],
+    "https://shopsacredground.com/contact/": [
+      "SG-KNOW-VISIT",
+      "SG-NAV-HOURS"
+    ],
+    "https://shopsacredground.com/shop/": [
+      "SG-KNOW-SHOP",
+      "SG-NAV-SHOP",
+      "SG-LIVE-STOCK"
+    ],
+    "https://shopsacredground.com/library/guides/holistic-fair/": [
+      "SG-KNOW-FAIR"
+    ],
+    "https://shopsacredground.com/events/list/": [
+      "SG-KNOW-COMMUNITY",
+      "SG-NAV-EVENTS",
+      "SG-NAV-FREE",
+      "SG-LIVE-EVENTS"
+    ],
+    "https://shopsacredground.com/sacred-ground-observatory/": [
+      "SG-RULE-NO-DEATH",
+      "SG-KNOW-OBSERVATORY",
+      "SG-NAV-OBSERVATORY"
+    ],
+    "https://shopsacredground.com/library/": [
+      "SG-KNOW-LIBRARY",
+      "SG-NAV-LIBRARY"
+    ],
+    "https://shopsacredground.com/practitioners-modalities-2/": [
+      "SG-MOD-REIKI",
+      "SG-MOD-MASSAGE",
+      "SG-MOD-REFLEX",
+      "SG-MOD-SOUND",
+      "SG-MOD-MEDITATION",
+      "SG-MOD-TAROT",
+      "SG-MOD-ANGEL",
+      "SG-MOD-AKASHIC",
+      "SG-MOD-ASTROLOGY",
+      "SG-MOD-MEDIUM",
+      "SG-MOD-SHAMANIC",
+      "SG-MOD-CRANIAL",
+      "SG-MOD-RUNES",
+      "SG-MOD-YOGA",
+      "SG-MOD-CRYSTAL-HEAL",
+      "SG-MOD-POEM",
+      "SG-MOD-MOON",
+      "SG-MOD-MASSAGE-NOTE",
+      "SG-NAV-PRACTITIONER",
+      "SG-NAV-BOOK",
+      "SG-LIVE-BOOKING"
+    ],
+    "https://shopsacredground.com/cheryl-11/": [
+      "SG-PRAC-CHERYL"
+    ],
+    "https://shopsacredground.com/adie-11/": [
+      "SG-PRAC-ADIE"
+    ],
+    "https://shopsacredground.com/amber-11/": [
+      "SG-PRAC-AMBER"
+    ],
+    "https://shopsacredground.com/andrea-11/": [
+      "SG-PRAC-ANDREA"
+    ],
+    "https://shopsacredground.com/andre-11/": [
+      "SG-PRAC-ANDRE"
+    ],
+    "https://shopsacredground.com/eve-11/": [
+      "SG-PRAC-EVE"
+    ],
+    "https://shopsacredground.com/janel-akashic-records-angel-card-reader/": [
+      "SG-PRAC-JANEL"
+    ],
+    "https://shopsacredground.com/jill-11/": [
+      "SG-PRAC-JILL"
+    ],
+    "https://shopsacredground.com/karen-11/": [
+      "SG-PRAC-KAREN"
+    ],
+    "https://shopsacredground.com/kate-11/": [
+      "SG-PRAC-KATE"
+    ],
+    "https://shopsacredground.com/linn-11/": [
+      "SG-PRAC-LINN"
+    ],
+    "https://shopsacredground.com/lita-11/": [
+      "SG-PRAC-LITA"
+    ],
+    "https://shopsacredground.com/lisa-astrology-v5-final/": [
+      "SG-PRAC-LISA"
+    ],
+    "https://shopsacredground.com/lisa-maria-11/": [
+      "SG-PRAC-LISAMARIA"
+    ],
+    "https://shopsacredground.com/lisa-seyring-11/": [
+      "SG-PRAC-LISAS"
+    ],
+    "https://shopsacredground.com/mary-11/": [
+      "SG-PRAC-MARY"
+    ],
+    "https://shopsacredground.com/melissa-v5/": [
+      "SG-PRAC-MELISSA"
+    ],
+    "https://shopsacredground.com/mother-lotus-11/": [
+      "SG-PRAC-LOTUS"
+    ],
+    "https://shopsacredground.com/richard-11/": [
+      "SG-PRAC-RICHARD"
+    ],
+    "https://shopsacredground.com/robert-11/": [
+      "SG-PRAC-ROBERT"
+    ],
+    "https://shopsacredground.com/rose-v5-working/": [
+      "SG-PRAC-ROSE"
+    ],
+    "https://shopsacredground.com/renee-2/": [
+      "SG-PRAC-RENEE"
+    ],
+    "https://shopsacredground.com/tina-v-5/": [
+      "SG-PRAC-TINA"
+    ],
+    "https://shopsacredground.com/sherry/": [
+      "SG-PRAC-SHERRY"
+    ],
+    "https://shopsacredground.com/book/hawaiian-massage/": [
+      "SG-PRAC-KASHIA"
+    ],
+    "https://shopsacredground.com/book/lori-medium/": [
+      "SG-PRAC-LORI"
+    ],
+    "https://shopsacredground.com/cleansing-rituals-smudging/": [
+      "SG-ART-SMUDGING"
+    ],
+    "https://shopsacredground.com/how-to-clean-clear-and-pick-the-right-crystal-for-your-space/": [
+      "SG-ART-CLEAR-CRYSTAL"
+    ],
+    "https://shopsacredground.com/a-beginners-guide-to-working-with-crystals/": [
+      "SG-ART-BEGINNER-CRYSTALS"
+    ],
+    "https://shopsacredground.com/why-amethyst-is-called-swiss-army-knife-of-crystals/": [
+      "SG-ART-AMETHYST"
+    ],
+    "https://shopsacredground.com/the-top-5-crystals-to-ground-you-and-how-to-use-them/": [
+      "SG-ART-GROUND"
+    ],
+    "https://shopsacredground.com/how-to-program-crystals-and-set-intentions/": [
+      "SG-ART-INTENTION"
+    ],
+    "https://shopsacredground.com/what-is-reiki-understanding-energy-healing/": [
+      "SG-ART-REIKI"
+    ],
+    "https://shopsacredground.com/what-are-card-readings-understanding-tarot-angel-intuitive-guidance/": [
+      "SG-ART-CARDS"
+    ],
+    "https://shopsacredground.com/what-is-sound-healing-understanding-vibrational-healing/": [
+      "SG-ART-SOUND"
+    ],
+    "https://shopsacredground.com/what-is-meditation-understanding-mindfulness-practice/": [
+      "SG-ART-MEDITATION"
+    ],
+    "https://shopsacredground.com/akashic-record-reading-everything-you-need-to-know/": [
+      "SG-ART-AKASHIC"
+    ],
+    "https://shopsacredground.com/do-you-easily-cry-are-you-highly-sensitive-to-other-peoples-energy-maybe-you-are-an-empath/": [
+      "SG-ART-EMPATH"
+    ],
+    "https://shopsacredground.com/library/guides/clean-and-clear/": [
+      "SG-GUIDE-CLEAN"
+    ],
+    "https://shopsacredground.com/your-calendar/": [
+      "SG-NAV-YOUR-CAL"
+    ]
+  }
+}

@@ -1,0 +1,2986 @@
+[
+  {
+    "layer": "voice",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [],
+    "keywords": [
+      "are you deneene",
+      "real person",
+      "chatbot",
+      "did you book it"
+    ],
+    "card_id": "SG-VOICE-IDENTITY",
+    "category": "Voice",
+    "title": "Honest identity",
+    "purpose": "Keep the guide from pretending to be Deneene or from claiming it completed a booking.",
+    "visitor_questions": [
+      "Am I talking to Deneene?",
+      "Are you a real person?",
+      "Can you book this for me?",
+      "Did you just reserve that?",
+      "Who am I talking to?"
+    ],
+    "answer": "I'm Sacred Ground's guide. The way I explain things is inspired by Deneene, who founded this place, and by the philosophy she built it on. I am not Deneene, and I don't invent her memories. I can walk you to the right page, the right practitioner, and the right way to book. I have not booked, charged, or registered anything unless a booking page or the shop checkout has actually finished it.",
+    "voice_response": "I'm Sacred Ground's guide, and the way I talk is inspired by Deneene. I can point you to the right person and the right page. I can't hold the session for her, and I won't tell you something is booked until the booking page says it is.",
+    "navigation": {
+      "desktop": "Any page.",
+      "mobile": "Any page.",
+      "direct_url": "https://shopsacredground.com/"
+    },
+    "source": "Founder decision, October 11, 2026. Voice Bible."
+  },
+  {
+    "layer": "voice",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [
+      "SG-PRAC-DENEENE"
+    ],
+    "keywords": [
+      "grief",
+      "loss",
+      "died",
+      "mourning",
+      "sad",
+      "lonely",
+      "Kübler-Ross"
+    ],
+    "card_id": "SG-VOICE-GRIEF",
+    "category": "Voice",
+    "title": "When someone is grieving",
+    "purpose": "Shift tone when a visitor is in grief, loss, or a hard emotional place.",
+    "visitor_questions": [
+      "I just lost my mom",
+      "I'm grieving",
+      "I don't know how to do this",
+      "Can a reading fix my grief?",
+      "I feel so alone",
+      "My pet died"
+    ],
+    "answer": "Grief is personal. There isn't a timetable, and there isn't a correct way to do it. You don't have to be positive, and you don't have to find a lesson in it. Sacred Ground can be a place to sit, breathe, and not explain yourself. Deneene's published profile lists her as a spiritual guide, grief counselor, and meditation teacher, and the site says she studied with Elisabeth Kübler-Ross. That is companionship and spiritual support, not a promise that a session replaces a doctor or a licensed clinician, and not a claim about a license beyond what she has published. If you want her page, it is here. If you are in immediate danger, call 911. If you need to talk to someone right now, call or text 988.",
+    "voice_response": "I'm glad you said it out loud. Grief doesn't run on a schedule, and you don't owe anyone a silver lining. If you want a quiet place and a person who understands that, Deneene's page is on the site, and the shop number is 847-749-3922. If you need someone right now, you can call or text 988.",
+    "navigation": {
+      "desktop": "Holistic Center, then Practitioners, then Deneene.",
+      "mobile": "Open the menu, Holistic Center is under the desktop menu; on a phone, go to the practitioners page directly.",
+      "direct_url": "https://shopsacredground.com/deneene-11/"
+    },
+    "source": "Homepage letter. Practitioners page, Deneene. Founder voice brief, October 11, 2026."
+  },
+  {
+    "layer": "voice",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [
+      "SG-ART-AMETHYST",
+      "SG-ART-BEGINNER-CRYSTALS",
+      "SG-KNOW-SHOP"
+    ],
+    "keywords": [
+      "amethyst",
+      "crystal",
+      "mineral",
+      "stone",
+      "geology",
+      "metaphysical"
+    ],
+    "card_id": "SG-VOICE-CRYSTAL",
+    "category": "Voice",
+    "title": "How to talk about a stone",
+    "purpose": "Separate mineral fact from traditional meaning, in Deneene's crystal voice.",
+    "visitor_questions": [
+      "Tell me about amethyst",
+      "Is moldavite real?",
+      "What stone should I get?",
+      "What's the difference between citrine and heat-treated amethyst?",
+      "Do crystals actually work?"
+    ],
+    "answer": "Talk about the mineral first, then the tradition, and label the tradition as tradition. Amethyst is a violet variety of quartz. The color comes from iron and natural irradiation. The old Greek name means not drunken. People have long associated it with a clear head and with intuition. Neither sentence has to cancel the other. Do not promise a stone will treat anxiety, depression, or any illness. If someone wants the stone that fits, send them to the guide How to Find the Stone That Fits, and invite them to come hold them in the shop. Stock is live. Do not invent what is on the shelf.",
+    "voice_response": "Amethyst is quartz that came out purple, from iron and a little natural radiation. People have also loved it for a clear head and for intuition. Both of those can be true without one proving the other. If you want to find yours, come hold them. The shop is at 160 W Campbell Street in Arlington Heights.",
+    "navigation": {
+      "desktop": "Library, then Guides, then How to Find the Stone That Fits. Or Shop.",
+      "mobile": "Library, then Guides. Shop is in the phone menu.",
+      "direct_url": "https://shopsacredground.com/library/guides/find-your-stone/"
+    },
+    "source": "Article: Why Amethyst is Called Swiss Army Knife of Crystals. Voice Bible. Observatory mineral method."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [
+      "SG-NAV-EVENTS",
+      "SG-NAV-PRACTITIONER",
+      "SG-KNOW-ABOUT"
+    ],
+    "keywords": [
+      "homepage",
+      "start",
+      "front page",
+      "book now"
+    ],
+    "card_id": "SG-KNOW-HOME",
+    "category": "Homepage",
+    "title": "Homepage",
+    "purpose": "Explain what a visitor sees first and where the buttons go.",
+    "visitor_questions": [
+      "What's on the homepage?",
+      "Where do I start?",
+      "What is Sacred Ground?",
+      "I'm not sure where to start",
+      "What does Book Now do?"
+    ],
+    "answer": "The homepage is the front door. The line across the top is Fall Into Something Magical, with a short walk through the shop. Event Calendar opens the public events list. Call Now opens Contact. Under that are live upcoming-event cards. Then the story of the place: part crystal shop, part treasure hunt, part Holistic Center. Deneene's letter is there too. Curiosity is enough, and you do not have to believe anything. Book Now and Book Session on the homepage open the events calendar, not one person's book page. If you already know who you want, go to that person's profile. The Library block on the homepage is hidden on a phone. The Library itself is still in the menu.",
+    "voice_response": "Start at the homepage if you want the feel of the place. The event cards are what's coming up. Book Now there opens the calendar. If you want a particular person, I'll take you to their page instead.",
+    "navigation": {
+      "desktop": "The logo, or the site root.",
+      "mobile": "The logo. The phone menu does not repeat every homepage section.",
+      "direct_url": "https://shopsacredground.com/"
+    },
+    "source": "Homepage page 24589, read October 11, 2026. Founder decision 8."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [
+      "SG-KNOW-VISIT",
+      "SG-KNOW-HOME",
+      "SG-NAV-PRACTITIONER"
+    ],
+    "keywords": [
+      "about",
+      "founder",
+      "first visit",
+      "what is sacred ground",
+      "appointment to shop"
+    ],
+    "card_id": "SG-KNOW-ABOUT",
+    "category": "About",
+    "title": "What Sacred Ground is",
+    "purpose": "Tell the story of the shop and the Holistic Center as one place.",
+    "visitor_questions": [
+      "What is Sacred Ground?",
+      "Tell me about this place",
+      "What's the difference between the shop and the holistic center?",
+      "Do I need an appointment to come in?",
+      "What should I expect the first time?",
+      "Who founded Sacred Ground?",
+      "Do I have to be spiritual to come in?"
+    ],
+    "answer": "Sacred Ground is a crystal shop and a Holistic Center in downtown Arlington Heights, and they are the same walk. Deneene founded it. She hand-selects the crystals, from everyday tumbles to collector specimens. Past the shop is the Holistic Center: Reiki, massage, reflexology, sound, meditation, tarot, astrology, mediumship, classes, and community gatherings. You can come in without an appointment to wander, ask questions, and shop. Sessions and many classes are booked. You do not have to follow a religion or already know the words. The homepage says it plainly: curiosity is enough.",
+    "voice_response": "It's a crystal shop and a holistic center on the same walk, in downtown Arlington Heights. Deneene founded it. You can wander in without an appointment. If you want a session with someone, we book that. You don't have to believe anything to come in.",
+    "navigation": {
+      "desktop": "Contact menu, then About. The story is also on the homepage.",
+      "mobile": "Contact, then About.",
+      "direct_url": "https://shopsacredground.com/about/"
+    },
+    "source": "Homepage about section. About page 17335. Contact page."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": "Contact page if the visitor is about to visit.",
+    "related_cards": [
+      "SG-KNOW-SHOP",
+      "SG-NAV-HOURS",
+      "SG-KNOW-ABOUT"
+    ],
+    "keywords": [
+      "address",
+      "hours",
+      "phone",
+      "campbell",
+      "arlington heights",
+      "walk in",
+      "directions"
+    ],
+    "card_id": "SG-KNOW-VISIT",
+    "category": "Store",
+    "title": "Visit the store",
+    "purpose": "Give the address, phone, hours, and the fact that walk-ins are welcome.",
+    "visitor_questions": [
+      "Where are you?",
+      "What are your hours?",
+      "Can I come in without an appointment?",
+      "What's the phone number?",
+      "Are you in Arlington Heights?",
+      "What's the address?",
+      "Can I just browse?"
+    ],
+    "answer": "Sacred Ground is at 160 W Campbell Street, Arlington Heights, Illinois 60005. Call 847-749-3922 or email info@shopsacredground.com. Published hours: Sunday 11 to 5, Monday 11 to 6, Tuesday 11 to 8, Wednesday 11 to 6, Thursday 11 to 7, Friday 11 to 7, Saturday 10 to 8. Hours can change. If you are about to drive over, the Contact page is the check. You can walk in and browse with no appointment. A session with a practitioner is booked on that person's page. The map should always be read as 160 W Campbell Street. An older map search used a different street. Campbell Street is the address.",
+    "voice_response": "We're at 160 W Campbell Street in Arlington Heights. The phone is 847-749-3922. You can walk in and look around. Hours are on the contact page if you're heading over, because those can change.",
+    "navigation": {
+      "desktop": "Contact in the menu. Hours are also at the bottom of the homepage.",
+      "mobile": "Contact in the phone menu.",
+      "direct_url": "https://shopsacredground.com/contact/"
+    },
+    "source": "Contact page 1007 and homepage contact block, October 11, 2026. Founder decision 7."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "live_only",
+    "live_source": "WooCommerce shop and product pages.",
+    "related_cards": [
+      "SG-KNOW-VISIT",
+      "SG-ART-SMUDGING",
+      "SG-NAV-SHOP"
+    ],
+    "keywords": [
+      "shop",
+      "buy",
+      "crystals",
+      "jewelry",
+      "sage",
+      "online",
+      "woocommerce",
+      "gifts"
+    ],
+    "card_id": "SG-KNOW-SHOP",
+    "category": "Shop",
+    "title": "The shop, in person and online",
+    "purpose": "Explain what the retail shop sells and that inventory is live.",
+    "visitor_questions": [
+      "Can I buy crystals online?",
+      "What do you sell?",
+      "Do you have jewelry?",
+      "Do you sell sage?",
+      "Can I shop in the store?",
+      "Do you have books?",
+      "What if something is out of stock?"
+    ],
+    "answer": "You can shop in the store and on the website. The online shop is ordinary checkout: cart, then secure checkout. On October 11 the published shelves with products were zodiac bags, wellness bags, sacred waters and sprays, tumbles, freeforms, sage, palo santo and incense, jewelry, tarot and oracle decks, ritual items, and mystery boxes. Crystals and minerals are the heart of the physical shop, including pieces that may not all be listed online. This guide does not know what is on the shelf today. The product page does. If it is not listed, call the shop.",
+    "voice_response": "Yes, you can buy online, and yes, you can come in. Crystals, jewelry, sage, decks, and gifts are the idea. I won't guess what's in stock. The shop page will show you, or call 847-749-3922.",
+    "navigation": {
+      "desktop": "Shop in the top menu.",
+      "mobile": "Shop in the phone menu.",
+      "direct_url": "https://shopsacredground.com/shop/"
+    },
+    "source": "WooCommerce categories with products, October 11, 2026. Homepage shop story."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "live_only",
+    "live_source": "Events Calendar for the next fair date.",
+    "related_cards": [
+      "SG-NAV-EVENTS",
+      "SG-LIVE-EVENTS"
+    ],
+    "keywords": [
+      "fair",
+      "holistic fair",
+      "psychic fair",
+      "vendor",
+      "season"
+    ],
+    "card_id": "SG-KNOW-FAIR",
+    "category": "Events",
+    "title": "Holistic fairs",
+    "purpose": "Describe the seasonal fairs without quoting a stale date.",
+    "visitor_questions": [
+      "When is the holistic fair?",
+      "Do you have a psychic fair?",
+      "How many fairs do you have?",
+      "Can I have a table at the fair?",
+      "What happens at the fair?"
+    ],
+    "answer": "Sacred Ground holds about four holistic fairs a year, one for each season. The date, the hours, and how to reserve a reading or a table change with each fair. Look at the events calendar for the next one, read How to Navigate the Holistic Fair, and call 847-749-3922. Do not quote an old homepage banner. The calendar is the date.",
+    "voice_response": "We do about four fairs a year, one a season. I don't want to give you an old date. The calendar has the next one, and the phone is 847-749-3922 if you want a table or a reading.",
+    "navigation": {
+      "desktop": "Calendar, then look for the fair. Library, Guides, How to Navigate the Holistic Fair.",
+      "mobile": "Calendar in the phone menu. The fair guide is under Library, Guides.",
+      "direct_url": "https://shopsacredground.com/library/guides/holistic-fair/"
+    },
+    "source": "Founder, October 11, 2026. Guide page holistic-fair. Homepage banner excluded as stale."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "live_only",
+    "live_source": "The Events Calendar.",
+    "related_cards": [
+      "SG-NAV-EVENTS",
+      "SG-LIVE-EVENTS",
+      "SG-MOD-MEDITATION"
+    ],
+    "keywords": [
+      "free",
+      "meditation tuesday",
+      "educational night",
+      "reiki share",
+      "angel readings"
+    ],
+    "card_id": "SG-KNOW-COMMUNITY",
+    "category": "Events",
+    "title": "Free community gatherings",
+    "purpose": "Describe the standing free series, and send dates to the live calendar.",
+    "visitor_questions": [
+      "Are there any free events?",
+      "When is meditation?",
+      "What is educational night?",
+      "When is reiki share?",
+      "Do you have free angel readings?",
+      "What's happening this week?"
+    ],
+    "answer": "Some gatherings are free and repeat. Free Community Meditation is Tuesday nights, 7:00 to 8:00 PM Central. Free Community Educational Night is the third Wednesday, 7:00 to 8:30 PM Central. Reiki Share is the third Sunday, 3:00 to 5:00 PM Central. The homepage also says free angel readings and free community meditations happen through the week, with a different guide. Who is leading a given week, and whether a date is still on the calendar, comes from the events list. Free does not mean you have to book a private session. Showing up for a community event is not the same as reserving a private appointment.",
+    "voice_response": "Yes. Tuesday night meditation is free, 7 to 8. Educational Night is the third Wednesday, 7 to 8:30. Reiki Share is the third Sunday, 3 to 5. All of that is Central time. If you want this week's actual list, the calendar is the place to look.",
+    "navigation": {
+      "desktop": "Calendar in the top menu.",
+      "mobile": "Calendar in the phone menu.",
+      "direct_url": "https://shopsacredground.com/events/list/"
+    },
+    "source": "Founder locks for meditation, educational night, and reiki share. Homepage community paragraph."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [],
+    "keywords": [
+      "death card",
+      "tarot death",
+      "major 13"
+    ],
+    "card_id": "SG-RULE-NO-DEATH",
+    "category": "Rules",
+    "title": "Never the Death card",
+    "purpose": "Keep the tarot Death card out of every answer.",
+    "visitor_questions": [
+      "What does the Death card mean?",
+      "Can I see the Death card?",
+      "Show me tarot Death"
+    ],
+    "answer": "Sacred Ground does not show the tarot Death card on the website, in the Observatory, or in this guide. If someone asks for it, say it is not part of what we display, and offer another card or the Observatory tarot tool, which does not include it.",
+    "voice_response": "We don't display the Death card. I can help you with another card, or with the Observatory's tarot tool.",
+    "navigation": {
+      "desktop": "Observatory, then the tarot tool.",
+      "mobile": "Observatory in the phone menu.",
+      "direct_url": "https://shopsacredground.com/sacred-ground-observatory/"
+    },
+    "source": "Founder, September 12, 2026, confirmed October 11, 2026."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [
+      "SG-ART-SMUDGING",
+      "SG-KNOW-OBSERVATORY",
+      "SG-NAV-LIBRARY"
+    ],
+    "keywords": [
+      "library",
+      "articles",
+      "books",
+      "podcasts",
+      "movies",
+      "sacred sounds"
+    ],
+    "card_id": "SG-KNOW-LIBRARY",
+    "category": "Library",
+    "title": "The Sacred Ground Library",
+    "purpose": "Explain the shelves and how to move among them.",
+    "visitor_questions": [
+      "What's the Library?",
+      "Where are the articles?",
+      "Do you have book recommendations?",
+      "Where is the music?",
+      "How do I get back to the Library?",
+      "Who writes the articles?"
+    ],
+    "answer": "The Library is a hand-picked collection: articles, books, movies, podcasts, music, and short guides. The Library page says the articles are written by Deneene, about things she is curious about. Subjects for books, movies, and podcasts are Spirituality and Wisdom, Science and Nature, UFO and Paranormal, Wellness and Healing, Consciousness and Psychology, and Meditation and Mindfulness. Music is its own room, Sacred Sounds, with artists and playlists for meditation, sleep, chant, sound healing, and more. Every shelf links back. The Library home is the way back to all six doors. On a phone, the menu under Library only shows Guides. Articles, books, movies, music, and podcasts are buttons on the Library page itself.",
+    "voice_response": "The Library is Deneene's collection of articles, books, movies, podcasts, music, and how-to guides. On a phone, open Library and you'll see all six. The little menu only shows Guides.",
+    "navigation": {
+      "desktop": "Library in the top menu, then Articles, Books, Movies, Music, Podcasts, or Guides.",
+      "mobile": "Library, then the buttons on the page. Guides is also in the submenu.",
+      "direct_url": "https://shopsacredground.com/library/"
+    },
+    "source": "Library page 24588. Counts on October 11, 2026: 48 articles, 101 books, 99 movies, 89 podcasts, 242 artists, 49 playlists, 11 guides."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [
+      "SG-RULE-NO-DEATH",
+      "SG-KNOW-LIBRARY",
+      "SG-NAV-OBSERVATORY"
+    ],
+    "keywords": [
+      "observatory",
+      "moon",
+      "nasa",
+      "mineral bank",
+      "numerology",
+      "earth and ether"
+    ],
+    "card_id": "SG-KNOW-OBSERVATORY",
+    "category": "Observatory",
+    "title": "The Sacred Ground Observatory",
+    "purpose": "Explain the free daily Observatory and its tools.",
+    "visitor_questions": [
+      "What's the Observatory?",
+      "Where do I find information about the moon?",
+      "Can I look up a stone?",
+      "Is the Observatory free?",
+      "What's the difference between the Observatory and the newsletter?",
+      "Can I look up my number?",
+      "Where is the tarot tool?"
+    ],
+    "answer": "The Observatory is a free public daily page. No membership and no login. It holds today's moon, a numerology note, cosmic weather, a NASA feature, a science-and-spirit note, a mineral focus, and Beneath the Surface. Tools on the page: an astrology snapshot, a number lookup, a stone lookup, and a tarot lookup. A stone note keeps the geology separate from the traditional meaning. The Death card is not in the tool. Earth and Ether, under Monthly in the menu, is the newsletter. It is a different place from the Observatory.",
+    "voice_response": "The Observatory is free, and you don't need an account. Moon, numbers, a stone lookup, a NASA note, and a tarot tool live there. The newsletter is separate. It's under Monthly.",
+    "navigation": {
+      "desktop": "Observatory in the top menu.",
+      "mobile": "Observatory in the phone menu.",
+      "direct_url": "https://shopsacredground.com/sacred-ground-observatory/"
+    },
+    "source": "Observatory plugin README. Page 22806 is only the shortcode. Tools in class-tools.php. Founder decision 5."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": null,
+    "related_cards": [
+      "SG-NAV-PRACTITIONER",
+      "SG-NAV-BOOK"
+    ],
+    "keywords": [
+      "reiki",
+      "energy healing",
+      "hands on"
+    ],
+    "card_id": "SG-MOD-REIKI",
+    "category": "Modalities",
+    "title": "Reiki",
+    "purpose": "Explain Reiki in plain language and name who publishes it.",
+    "visitor_questions": [
+      "What is Reiki?",
+      "What happens in a Reiki session?",
+      "Who does Reiki?",
+      "I've never tried Reiki",
+      "Is Reiki religious?",
+      "How do I book Reiki?"
+    ],
+    "answer": "A quiet session. The word joins rei, universal, and ki, life energy. You stay clothed. The practitioner uses a light touch or hands just off the body. People come for rest, a heavy week, or simple curiosity. You do not have to believe a theory for it to be a peaceful hour. It is not medicine and it does not replace a doctor. People published for this: Eve, Mary, Rose, Karen, Renee, Andrea. Open their profile to read more, and their booking page for a time and a price. The guide does not invent either.",
+    "voice_response": "A quiet session. Here that's Eve, Mary, Rose, Karen, Renee, and Andrea. I can open their page.",
+    "navigation": {
+      "desktop": "Holistic Center, then Practitioners and Modalities. Choose the practice, then the person's name.",
+      "mobile": "Use the practitioners page directly. The phone menu's shortest path is the link.",
+      "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+    },
+    "source": "Practitioners and Modalities page 17216, October 11, 2026, plus published booking pages."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": null,
+    "related_cards": [
+      "SG-NAV-PRACTITIONER",
+      "SG-NAV-BOOK"
+    ],
+    "keywords": [
+      "massage",
+      "bodywork",
+      "amber"
+    ],
+    "card_id": "SG-MOD-MASSAGE",
+    "category": "Modalities",
+    "title": "Massage",
+    "purpose": "Explain Massage in plain language and name who publishes it.",
+    "visitor_questions": [
+      "What is Massage?",
+      "What happens in a Massage session?",
+      "Who does Massage?",
+      "I've never tried Massage",
+      "Is Massage religious?",
+      "How do I book Massage?"
+    ],
+    "answer": "Amber offers customized therapeutic massage. It is bodywork, for tension and for an hour that belongs to your body. Come as you are. The booking page shows the length and the price that day. People published for this: Amber. Open their profile to read more, and their booking page for a time and a price. The guide does not invent either.",
+    "voice_response": "Amber offers customized therapeutic massage. I can open their page.",
+    "navigation": {
+      "desktop": "Holistic Center, then Practitioners and Modalities. Choose the practice, then the person's name.",
+      "mobile": "Use the practitioners page directly. The phone menu's shortest path is the link.",
+      "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+    },
+    "source": "Practitioners and Modalities page 17216, October 11, 2026, plus published booking pages."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": null,
+    "related_cards": [
+      "SG-NAV-PRACTITIONER",
+      "SG-NAV-BOOK"
+    ],
+    "keywords": [
+      "reflexology",
+      "feet",
+      "stretchology"
+    ],
+    "card_id": "SG-MOD-REFLEX",
+    "category": "Modalities",
+    "title": "Reflexology",
+    "purpose": "Explain Reflexology in plain language and name who publishes it.",
+    "visitor_questions": [
+      "What is Reflexology?",
+      "What happens in a Reflexology session?",
+      "Who does Reflexology?",
+      "I've never tried Reflexology",
+      "Is Reflexology religious?",
+      "How do I book Reflexology?"
+    ],
+    "answer": "Cheryl works specific points on the feet that traditional reflexology maps to the rest of the body. Shoes off, a chair or a table, and a session aimed at rest. She also teaches yoga and stretchology. The practitioners page says to call her, and booking pages are published too. People published for this: Cheryl. Open their profile to read more, and their booking page for a time and a price. The guide does not invent either.",
+    "voice_response": "Cheryl works specific points on the feet that traditional reflexology maps to the rest of the body. I can open their page.",
+    "navigation": {
+      "desktop": "Holistic Center, then Practitioners and Modalities. Choose the practice, then the person's name.",
+      "mobile": "Use the practitioners page directly. The phone menu's shortest path is the link.",
+      "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+    },
+    "source": "Practitioners and Modalities page 17216, October 11, 2026, plus published booking pages."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": null,
+    "related_cards": [
+      "SG-NAV-PRACTITIONER",
+      "SG-NAV-BOOK"
+    ],
+    "keywords": [
+      "sound bath",
+      "gong",
+      "singing bowls",
+      "vibration"
+    ],
+    "card_id": "SG-MOD-SOUND",
+    "category": "Modalities",
+    "title": "Sound healing",
+    "purpose": "Explain Sound healing in plain language and name who publishes it.",
+    "visitor_questions": [
+      "What is Sound healing?",
+      "What happens in a Sound healing session?",
+      "Who does Sound healing?",
+      "I've never tried Sound healing",
+      "Is Sound healing religious?",
+      "How do I book Sound healing?"
+    ],
+    "answer": "Sound baths, bowls, gongs, and voice. You mostly listen and feel. Andre, Kate, and Karen are the names on the practitioners page. Tina also has a published Reiki and sound bath booking page. It is an experience, not a medical treatment. People published for this: Andre, Kate, Karen. Open their profile to read more, and their booking page for a time and a price. The guide does not invent either.",
+    "voice_response": "Sound baths, bowls, gongs, and voice. Here that's Andre, Kate, and Karen. I can open their page.",
+    "navigation": {
+      "desktop": "Holistic Center, then Practitioners and Modalities. Choose the practice, then the person's name.",
+      "mobile": "Use the practitioners page directly. The phone menu's shortest path is the link.",
+      "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+    },
+    "source": "Practitioners and Modalities page 17216, October 11, 2026, plus published booking pages."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": null,
+    "related_cards": [
+      "SG-NAV-PRACTITIONER",
+      "SG-NAV-BOOK"
+    ],
+    "keywords": [
+      "meditation",
+      "tuesday",
+      "mindfulness"
+    ],
+    "card_id": "SG-MOD-MEDITATION",
+    "category": "Modalities",
+    "title": "Meditation",
+    "purpose": "Explain Meditation in plain language and name who publishes it.",
+    "visitor_questions": [
+      "What is Meditation?",
+      "What happens in a Meditation session?",
+      "Who does Meditation?",
+      "I've never tried Meditation",
+      "Is Meditation religious?",
+      "How do I book Meditation?"
+    ],
+    "answer": "Sitting, breathing, and a little quiet. Tuesday nights at 7 are the free community hour, 7:00 to 8:00 Central. Deneene is listed as a meditation teacher. You can also come with no experience at all. People published for this: Deneene. Open their profile to read more, and their booking page for a time and a price. The guide does not invent either.",
+    "voice_response": "Sitting, breathing, and a little quiet. Here that's Deneene. I can open their page.",
+    "navigation": {
+      "desktop": "Holistic Center, then Practitioners and Modalities. Choose the practice, then the person's name.",
+      "mobile": "Use the practitioners page directly. The phone menu's shortest path is the link.",
+      "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+    },
+    "source": "Practitioners and Modalities page 17216, October 11, 2026, plus published booking pages."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": null,
+    "related_cards": [
+      "SG-NAV-PRACTITIONER",
+      "SG-NAV-BOOK"
+    ],
+    "keywords": [
+      "tarot",
+      "cards",
+      "reading"
+    ],
+    "card_id": "SG-MOD-TAROT",
+    "category": "Modalities",
+    "title": "Tarot",
+    "purpose": "Explain Tarot in plain language and name who publishes it.",
+    "visitor_questions": [
+      "What is Tarot?",
+      "What happens in a Tarot session?",
+      "Who does Tarot?",
+      "I've never tried Tarot",
+      "Is Tarot religious?",
+      "How do I book Tarot?"
+    ],
+    "answer": "A tarot deck has 78 cards with old images for ordinary human situations. A reading is a conversation with those images, not a locked future. Adie, Andre, and Lisa Maria are on the practitioners page for tarot. Lita's booking page also offers tarot and pendulum. The Death card is not shown. People published for this: Adie, Andre, Lisa Maria. Open their profile to read more, and their booking page for a time and a price. The guide does not invent either.",
+    "voice_response": "A tarot deck has 78 cards with old images for ordinary human situations. Here that's Adie, Andre, and Lisa Maria. I can open their page.",
+    "navigation": {
+      "desktop": "Holistic Center, then Practitioners and Modalities. Choose the practice, then the person's name.",
+      "mobile": "Use the practitioners page directly. The phone menu's shortest path is the link.",
+      "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+    },
+    "source": "Practitioners and Modalities page 17216, October 11, 2026, plus published booking pages."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": null,
+    "related_cards": [
+      "SG-NAV-PRACTITIONER",
+      "SG-NAV-BOOK"
+    ],
+    "keywords": [
+      "angel",
+      "angels",
+      "oracle",
+      "archangel"
+    ],
+    "card_id": "SG-MOD-ANGEL",
+    "category": "Modalities",
+    "title": "Angel readings",
+    "purpose": "Explain Angel readings in plain language and name who publishes it.",
+    "visitor_questions": [
+      "What is Angel readings?",
+      "What happens in a Angel readings session?",
+      "Who does Angel readings?",
+      "I've never tried Angel readings",
+      "Is Angel readings religious?",
+      "How do I book Angel readings?"
+    ],
+    "answer": "Angel cards and angel communication are a gentler symbolic reading. People ask for comfort, a nudge, or a name for a feeling. Janel and Linn are listed for angel readings. Jill teaches angels and intuition. Melissa has a published Whispers of Angelic Guidance booking page. People published for this: Janel, Linn, Jill. Open their profile to read more, and their booking page for a time and a price. The guide does not invent either.",
+    "voice_response": "Angel cards and angel communication are a gentler symbolic reading. Here that's Janel, Linn, and Jill. I can open their page.",
+    "navigation": {
+      "desktop": "Holistic Center, then Practitioners and Modalities. Choose the practice, then the person's name.",
+      "mobile": "Use the practitioners page directly. The phone menu's shortest path is the link.",
+      "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+    },
+    "source": "Practitioners and Modalities page 17216, October 11, 2026, plus published booking pages."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": null,
+    "related_cards": [
+      "SG-NAV-PRACTITIONER",
+      "SG-NAV-BOOK"
+    ],
+    "keywords": [
+      "akashic",
+      "akashic records",
+      "soul"
+    ],
+    "card_id": "SG-MOD-AKASHIC",
+    "category": "Modalities",
+    "title": "Akashic Records",
+    "purpose": "Explain Akashic Records in plain language and name who publishes it.",
+    "visitor_questions": [
+      "What is Akashic Records?",
+      "What happens in a Akashic Records session?",
+      "Who does Akashic Records?",
+      "I've never tried Akashic Records",
+      "Is Akashic Records religious?",
+      "How do I book Akashic Records?"
+    ],
+    "answer": "A traditional idea of a record of the soul, read in session as a way to look at patterns and questions. It is a spiritual practice, not a file cabinet science can audit. Janel and Karen both offer it. Janel's booking lets you choose Akashic or angel cards. People published for this: Janel, Karen. Open their profile to read more, and their booking page for a time and a price. The guide does not invent either.",
+    "voice_response": "A traditional idea of a record of the soul, read in session as a way to look at patterns and questions. Here that's Janel and Karen. I can open their page.",
+    "navigation": {
+      "desktop": "Holistic Center, then Practitioners and Modalities. Choose the practice, then the person's name.",
+      "mobile": "Use the practitioners page directly. The phone menu's shortest path is the link.",
+      "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+    },
+    "source": "Practitioners and Modalities page 17216, October 11, 2026, plus published booking pages."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": null,
+    "related_cards": [
+      "SG-NAV-PRACTITIONER",
+      "SG-NAV-BOOK"
+    ],
+    "keywords": [
+      "astrology",
+      "birth chart",
+      "horoscope",
+      "zodiac"
+    ],
+    "card_id": "SG-MOD-ASTROLOGY",
+    "category": "Modalities",
+    "title": "Astrology",
+    "purpose": "Explain Astrology in plain language and name who publishes it.",
+    "visitor_questions": [
+      "What is Astrology?",
+      "What happens in a Astrology session?",
+      "Who does Astrology?",
+      "I've never tried Astrology",
+      "Is Astrology religious?",
+      "How do I book Astrology?"
+    ],
+    "answer": "A natal chart is a map of the sky when you were born. People use it for temperament, timing, and a language for their life. Linn and Lisa are on the practitioners page. It is interpretive. It is not a medical chart. People published for this: Linn, Lisa. Open their profile to read more, and their booking page for a time and a price. The guide does not invent either.",
+    "voice_response": "A natal chart is a map of the sky when you were born. Here that's Linn and Lisa. I can open their page.",
+    "navigation": {
+      "desktop": "Holistic Center, then Practitioners and Modalities. Choose the practice, then the person's name.",
+      "mobile": "Use the practitioners page directly. The phone menu's shortest path is the link.",
+      "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+    },
+    "source": "Practitioners and Modalities page 17216, October 11, 2026, plus published booking pages."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": null,
+    "related_cards": [
+      "SG-NAV-PRACTITIONER",
+      "SG-NAV-BOOK"
+    ],
+    "keywords": [
+      "medium",
+      "mediumship",
+      "loved one",
+      "crossed over"
+    ],
+    "card_id": "SG-MOD-MEDIUM",
+    "category": "Modalities",
+    "title": "Mediumship",
+    "purpose": "Explain Mediumship in plain language and name who publishes it.",
+    "visitor_questions": [
+      "What is Mediumship?",
+      "What happens in a Mediumship session?",
+      "Who does Mediumship?",
+      "I've never tried Mediumship",
+      "Is Mediumship religious?",
+      "How do I book Mediumship?"
+    ],
+    "answer": "A mediumship session is a spiritual practice of listening for messages people associate with someone who has died. Melissa is listed for mediumship. Karen offers mediumship development as a class and spirit portraits. Lori has a published intuitive mediumship booking page. Nothing here proves an afterlife, and nothing here replaces grief care. People published for this: Melissa. Open their profile to read more, and their booking page for a time and a price. The guide does not invent either.",
+    "voice_response": "A mediumship session is a spiritual practice of listening for messages people associate with someone who has died. Here that's Melissa. I can open their page.",
+    "navigation": {
+      "desktop": "Holistic Center, then Practitioners and Modalities. Choose the practice, then the person's name.",
+      "mobile": "Use the practitioners page directly. The phone menu's shortest path is the link.",
+      "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+    },
+    "source": "Practitioners and Modalities page 17216, October 11, 2026, plus published booking pages."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": null,
+    "related_cards": [
+      "SG-NAV-PRACTITIONER",
+      "SG-NAV-BOOK"
+    ],
+    "keywords": [
+      "shaman",
+      "shamanic",
+      "drum",
+      "journey"
+    ],
+    "card_id": "SG-MOD-SHAMANIC",
+    "category": "Modalities",
+    "title": "Shamanic practice",
+    "purpose": "Explain Shamanic practice in plain language and name who publishes it.",
+    "visitor_questions": [
+      "What is Shamanic practice?",
+      "What happens in a Shamanic practice session?",
+      "Who does Shamanic practice?",
+      "I've never tried Shamanic practice",
+      "Is Shamanic practice religious?",
+      "How do I book Shamanic practice?"
+    ],
+    "answer": "Melissa and Kate are listed for shamanic healing. Andre is listed for shamanic drumming. These are traditional earth-based practices. Come curious. Do not expect a medical procedure. People published for this: Melissa, Kate, Andre. Open their profile to read more, and their booking page for a time and a price. The guide does not invent either.",
+    "voice_response": "Melissa and Kate are listed for shamanic healing. I can open their page.",
+    "navigation": {
+      "desktop": "Holistic Center, then Practitioners and Modalities. Choose the practice, then the person's name.",
+      "mobile": "Use the practitioners page directly. The phone menu's shortest path is the link.",
+      "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+    },
+    "source": "Practitioners and Modalities page 17216, October 11, 2026, plus published booking pages."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": null,
+    "related_cards": [
+      "SG-NAV-PRACTITIONER",
+      "SG-NAV-BOOK"
+    ],
+    "keywords": [
+      "cranial sacral",
+      "craniosacral",
+      "cst"
+    ],
+    "card_id": "SG-MOD-CRANIAL",
+    "category": "Modalities",
+    "title": "Cranial sacral",
+    "purpose": "Explain Cranial sacral in plain language and name who publishes it.",
+    "visitor_questions": [
+      "What is Cranial sacral?",
+      "What happens in a Cranial sacral session?",
+      "Who does Cranial sacral?",
+      "I've never tried Cranial sacral",
+      "Is Cranial sacral religious?",
+      "How do I book Cranial sacral?"
+    ],
+    "answer": "A very light hands-on session around the head, spine, and the body's own rhythm. Mary and Richard offer it. Mary pairs it with Reiki and intuitive guidance. It is gentle bodywork, not a promise to fix a condition. People published for this: Mary, Richard. Open their profile to read more, and their booking page for a time and a price. The guide does not invent either.",
+    "voice_response": "A very light hands-on session around the head, spine, and the body's own rhythm. Here that's Mary and Richard. I can open their page.",
+    "navigation": {
+      "desktop": "Holistic Center, then Practitioners and Modalities. Choose the practice, then the person's name.",
+      "mobile": "Use the practitioners page directly. The phone menu's shortest path is the link.",
+      "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+    },
+    "source": "Practitioners and Modalities page 17216, October 11, 2026, plus published booking pages."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": null,
+    "related_cards": [
+      "SG-NAV-PRACTITIONER",
+      "SG-NAV-BOOK"
+    ],
+    "keywords": [
+      "runes",
+      "numerology",
+      "futhark",
+      "pendulum"
+    ],
+    "card_id": "SG-MOD-RUNES",
+    "category": "Modalities",
+    "title": "Runes and numerology",
+    "purpose": "Explain Runes and numerology in plain language and name who publishes it.",
+    "visitor_questions": [
+      "What is Runes and numerology?",
+      "What happens in a Runes and numerology session?",
+      "Who does Runes and numerology?",
+      "I've never tried Runes and numerology",
+      "Is Runes and numerology religious?",
+      "How do I book Runes and numerology?"
+    ],
+    "answer": "Tina teaches runes, including the Elder Futhark, and also offers numerology, tarot, and Reiki on her booking pages. Numerology uses numbers from a name or a birth date as a reflective language. The Observatory has a separate number lookup you can try with no appointment. People published for this: Tina. Open their profile to read more, and their booking page for a time and a price. The guide does not invent either.",
+    "voice_response": "Tina teaches runes, including the Elder Futhark, and also offers numerology, tarot, and Reiki on her booking pages. I can open their page.",
+    "navigation": {
+      "desktop": "Holistic Center, then Practitioners and Modalities. Choose the practice, then the person's name.",
+      "mobile": "Use the practitioners page directly. The phone menu's shortest path is the link.",
+      "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+    },
+    "source": "Practitioners and Modalities page 17216, October 11, 2026, plus published booking pages."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": null,
+    "related_cards": [
+      "SG-NAV-PRACTITIONER",
+      "SG-NAV-BOOK"
+    ],
+    "keywords": [
+      "yoga",
+      "stretch"
+    ],
+    "card_id": "SG-MOD-YOGA",
+    "category": "Modalities",
+    "title": "Yoga",
+    "purpose": "Explain Yoga in plain language and name who publishes it.",
+    "visitor_questions": [
+      "What is Yoga?",
+      "What happens in a Yoga session?",
+      "Who does Yoga?",
+      "I've never tried Yoga",
+      "Is Yoga religious?",
+      "How do I book Yoga?"
+    ],
+    "answer": "Cheryl offers yoga for healthy aging, plus reflexology and stretchology. You do not need to be flexible to start. Her yoga has its own booking page. People published for this: Cheryl. Open their profile to read more, and their booking page for a time and a price. The guide does not invent either.",
+    "voice_response": "Cheryl offers yoga for healthy aging, plus reflexology and stretchology. I can open their page.",
+    "navigation": {
+      "desktop": "Holistic Center, then Practitioners and Modalities. Choose the practice, then the person's name.",
+      "mobile": "Use the practitioners page directly. The phone menu's shortest path is the link.",
+      "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+    },
+    "source": "Practitioners and Modalities page 17216, October 11, 2026, plus published booking pages."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": null,
+    "related_cards": [
+      "SG-NAV-PRACTITIONER",
+      "SG-NAV-BOOK"
+    ],
+    "keywords": [
+      "crystal healing",
+      "crystal grid",
+      "janel crystals"
+    ],
+    "card_id": "SG-MOD-CRYSTAL-HEAL",
+    "category": "Modalities",
+    "title": "Crystal sessions",
+    "purpose": "Explain Crystal sessions in plain language and name who publishes it.",
+    "visitor_questions": [
+      "What is Crystal sessions?",
+      "What happens in a Crystal sessions session?",
+      "Who does Crystal sessions?",
+      "I've never tried Crystal sessions",
+      "Is Crystal sessions religious?",
+      "How do I book Crystal sessions?"
+    ],
+    "answer": "Janel offers crystal connections, crystal energy sessions, and a class on crystal grids. This is a guided way to work with stones, different from buying a stone in the shop. The shop is for taking one home. The session is time with her. People published for this: Janel. Open their profile to read more, and their booking page for a time and a price. The guide does not invent either.",
+    "voice_response": "Janel offers crystal connections, crystal energy sessions, and a class on crystal grids. I can open their page.",
+    "navigation": {
+      "desktop": "Holistic Center, then Practitioners and Modalities. Choose the practice, then the person's name.",
+      "mobile": "Use the practitioners page directly. The phone menu's shortest path is the link.",
+      "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+    },
+    "source": "Practitioners and Modalities page 17216, October 11, 2026, plus published booking pages."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": null,
+    "related_cards": [
+      "SG-NAV-PRACTITIONER",
+      "SG-NAV-BOOK"
+    ],
+    "keywords": [
+      "poem",
+      "poetry",
+      "channeled"
+    ],
+    "card_id": "SG-MOD-POEM",
+    "category": "Modalities",
+    "title": "Poem readings",
+    "purpose": "Explain Poem readings in plain language and name who publishes it.",
+    "visitor_questions": [
+      "What is Poem readings?",
+      "What happens in a Poem readings session?",
+      "Who does Poem readings?",
+      "I've never tried Poem readings",
+      "Is Poem readings religious?",
+      "How do I book Poem readings?"
+    ],
+    "answer": "Lisa Seyring offers soul guidance through a poem made in the moment. It is on the practitioners page as poem readings. It is not tarot. People published for this: Lisa Seyring. Open their profile to read more, and their booking page for a time and a price. The guide does not invent either.",
+    "voice_response": "Lisa Seyring offers soul guidance through a poem made in the moment. I can open their page.",
+    "navigation": {
+      "desktop": "Holistic Center, then Practitioners and Modalities. Choose the practice, then the person's name.",
+      "mobile": "Use the practitioners page directly. The phone menu's shortest path is the link.",
+      "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+    },
+    "source": "Practitioners and Modalities page 17216, October 11, 2026, plus published booking pages."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": null,
+    "related_cards": [
+      "SG-NAV-PRACTITIONER",
+      "SG-NAV-BOOK"
+    ],
+    "keywords": [
+      "moon circle",
+      "women's circle",
+      "new moon"
+    ],
+    "card_id": "SG-MOD-MOON",
+    "category": "Modalities",
+    "title": "Women's moon circles",
+    "purpose": "Explain Women's moon circles in plain language and name who publishes it.",
+    "visitor_questions": [
+      "What is Women's moon circles?",
+      "What happens in a Women's moon circles session?",
+      "Who does Women's moon circles?",
+      "I've never tried Women's moon circles",
+      "Is Women's moon circles religious?",
+      "How do I book Women's moon circles?"
+    ],
+    "answer": "Mother Lotus holds women's moon circles. The practitioners page says to call for moon-circle information. A booking page for the circles is also published. People published for this: Mother Lotus. Open their profile to read more, and their booking page for a time and a price. The guide does not invent either.",
+    "voice_response": "Mother Lotus holds women's moon circles. I can open their page.",
+    "navigation": {
+      "desktop": "Holistic Center, then Practitioners and Modalities. Choose the practice, then the person's name.",
+      "mobile": "Use the practitioners page directly. The phone menu's shortest path is the link.",
+      "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+    },
+    "source": "Practitioners and Modalities page 17216, October 11, 2026, plus published booking pages."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": null,
+    "related_cards": [
+      "SG-NAV-PRACTITIONER",
+      "SG-NAV-BOOK"
+    ],
+    "keywords": [
+      "difference",
+      "which one",
+      "compare",
+      "not sure"
+    ],
+    "card_id": "SG-MOD-MASSAGE-NOTE",
+    "category": "Modalities",
+    "title": "Choosing between similar sessions",
+    "purpose": "Explain Choosing between similar sessions in plain language and name who publishes it.",
+    "visitor_questions": [
+      "What is Choosing between similar sessions?",
+      "What happens in a Choosing between similar sessions session?",
+      "Who does Choosing between similar sessions?",
+      "I've never tried Choosing between similar sessions",
+      "Is Choosing between similar sessions religious?",
+      "How do I book Choosing between similar sessions?"
+    ],
+    "answer": "Tarot, angel cards, and playing-card readings are all card conversations, with different decks. Reiki, cranial sacral, and massage are all hands-on or hands-near, and they do not feel the same. If you are unsure, call 847-749-3922 and say what you are carrying. The practitioners page says the shop will point you, with no pressure. People published for this: the shop. Open their profile to read more, and their booking page for a time and a price. The guide does not invent either.",
+    "voice_response": "Tarot, angel cards, and playing-card readings are all card conversations, with different decks. If you're not sure which, I can open the practitioners page, or you can call 847-749-3922.",
+    "navigation": {
+      "desktop": "Holistic Center, then Practitioners and Modalities. Choose the practice, then the person's name.",
+      "mobile": "Use the practitioners page directly. The phone menu's shortest path is the link.",
+      "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+    },
+    "source": "Practitioners and Modalities page 17216, October 11, 2026, plus published booking pages."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": "The booking URL for open times and price.",
+    "related_cards": [
+      "SG-NAV-BOOK",
+      "SG-NAV-PRACTITIONER"
+    ],
+    "keywords": [
+      "cheryl",
+      "cheryl"
+    ],
+    "card_id": "SG-PRAC-CHERYL",
+    "category": "Practitioners",
+    "title": "Cheryl",
+    "purpose": "Identify Cheryl, what they publish, and where to book them.",
+    "visitor_questions": [
+      "Who is Cheryl?",
+      "What does Cheryl do?",
+      "How do I book Cheryl?",
+      "Is Cheryl available?",
+      "Tell me about Cheryl"
+    ],
+    "answer": "Cheryl is on the practitioners page. Reflexology, yoga, and stretchology. The directory says call to book. Booking: Reflexology: https://shopsacredground.com/cheryl-2/; Yoga: https://shopsacredground.com/cheryl-yoga/ Length and price stay on that page. If no time is open, say so and offer the phone, 847-749-3922. Homepage Book Now opens the events calendar. This person gets their own page.",
+    "voice_response": "Cheryl is on the practitioners page. Reflexology, yoga, and stretchology. For a time, use the booking page, not the homepage Book Now button.",
+    "navigation": {
+      "desktop": "Holistic Center, Practitioners and Modalities, then their portrait. Or the direct profile link.",
+      "mobile": "Open their profile link. The phone menu does not list every name.",
+      "direct_url": "https://shopsacredground.com/cheryl-11/"
+    },
+    "source": "Practitioners page 17216 and published booking pages, October 11, 2026.",
+    "booking_urls": [
+      "https://shopsacredground.com/cheryl-2/",
+      "https://shopsacredground.com/cheryl-yoga/"
+    ],
+    "on_directory": true
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": "The booking URL for open times and price.",
+    "related_cards": [
+      "SG-NAV-BOOK",
+      "SG-NAV-PRACTITIONER"
+    ],
+    "keywords": [
+      "deneene",
+      "deneene"
+    ],
+    "card_id": "SG-PRAC-DENEENE",
+    "category": "Practitioners",
+    "title": "Deneene",
+    "purpose": "Identify Deneene, what they publish, and where to book them.",
+    "visitor_questions": [
+      "Who is Deneene?",
+      "What does Deneene do?",
+      "How do I book Deneene?",
+      "Is Deneene available?",
+      "Tell me about Deneene"
+    ],
+    "answer": "Deneene is on the practitioners page. Spiritual guide, grief counselor, and meditation teacher. The site says she studied with Elisabeth Kübler-Ross. She is also the founder. She is adding times herself. The 60-minute booking session is still a draft, so there is no public booking link yet. When her booking page is public, send people there for a time. Until then, her profile and the phone are the honest path. Do not send grief questions to a sales pitch. Do not claim a license beyond the words on her page.",
+    "voice_response": "Deneene is the founder. Her page lists her as a spiritual guide, grief counselor, and meditation teacher. She is putting her own appointment times up. Until that booking page is public, call 847-749-3922 or open her profile. I can't see a time that isn't published.",
+    "navigation": {
+      "desktop": "Holistic Center, Practitioners and Modalities, then their portrait. Or the direct profile link.",
+      "mobile": "Open their profile link. The phone menu does not list every name.",
+      "direct_url": "https://shopsacredground.com/deneene-11/"
+    },
+    "source": "Practitioners page 17216 and published booking pages, October 11, 2026.",
+    "booking_urls": [],
+    "on_directory": true
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": "The booking URL for open times and price.",
+    "related_cards": [
+      "SG-NAV-BOOK",
+      "SG-NAV-PRACTITIONER"
+    ],
+    "keywords": [
+      "adie",
+      "adie"
+    ],
+    "card_id": "SG-PRAC-ADIE",
+    "category": "Practitioners",
+    "title": "Adie",
+    "purpose": "Identify Adie, what they publish, and where to book them.",
+    "visitor_questions": [
+      "Who is Adie?",
+      "What does Adie do?",
+      "How do I book Adie?",
+      "Is Adie available?",
+      "Tell me about Adie"
+    ],
+    "answer": "Adie is on the practitioners page. Tarot, with about forty years at it. The directory notes she speaks Greek. Here weekly, as the directory says. Open times are on her booking page. Booking: Tarot: https://shopsacredground.com/book/adie/ Length and price stay on that page. If no time is open, say so and offer the phone, 847-749-3922. Homepage Book Now opens the events calendar. This person gets their own page.",
+    "voice_response": "Adie is on the practitioners page. Tarot, with about forty years at it. The directory notes she speaks Greek. For a time, use the booking page, not the homepage Book Now button.",
+    "navigation": {
+      "desktop": "Holistic Center, Practitioners and Modalities, then their portrait. Or the direct profile link.",
+      "mobile": "Open their profile link. The phone menu does not list every name.",
+      "direct_url": "https://shopsacredground.com/adie-11/"
+    },
+    "source": "Practitioners page 17216 and published booking pages, October 11, 2026.",
+    "booking_urls": [
+      "https://shopsacredground.com/book/adie/"
+    ],
+    "on_directory": true
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": "The booking URL for open times and price.",
+    "related_cards": [
+      "SG-NAV-BOOK",
+      "SG-NAV-PRACTITIONER"
+    ],
+    "keywords": [
+      "amber",
+      "amber"
+    ],
+    "card_id": "SG-PRAC-AMBER",
+    "category": "Practitioners",
+    "title": "Amber",
+    "purpose": "Identify Amber, what they publish, and where to book them.",
+    "visitor_questions": [
+      "Who is Amber?",
+      "What does Amber do?",
+      "How do I book Amber?",
+      "Is Amber available?",
+      "Tell me about Amber"
+    ],
+    "answer": "Amber is on the practitioners page. Customized therapeutic massage. The directory says four days a month. The booking page has the real openings. Booking: Massage: https://shopsacredground.com/book/amber/ Length and price stay on that page. If no time is open, say so and offer the phone, 847-749-3922. Homepage Book Now opens the events calendar. This person gets their own page.",
+    "voice_response": "Amber is on the practitioners page. Customized therapeutic massage. For a time, use the booking page, not the homepage Book Now button.",
+    "navigation": {
+      "desktop": "Holistic Center, Practitioners and Modalities, then their portrait. Or the direct profile link.",
+      "mobile": "Open their profile link. The phone menu does not list every name.",
+      "direct_url": "https://shopsacredground.com/amber-11/"
+    },
+    "source": "Practitioners page 17216 and published booking pages, October 11, 2026.",
+    "booking_urls": [
+      "https://shopsacredground.com/book/amber/"
+    ],
+    "on_directory": true
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": "The booking URL for open times and price.",
+    "related_cards": [
+      "SG-NAV-BOOK",
+      "SG-NAV-PRACTITIONER"
+    ],
+    "keywords": [
+      "andrea",
+      "andrea"
+    ],
+    "card_id": "SG-PRAC-ANDREA",
+    "category": "Practitioners",
+    "title": "Andrea",
+    "purpose": "Identify Andrea, what they publish, and where to book them.",
+    "visitor_questions": [
+      "Who is Andrea?",
+      "What does Andrea do?",
+      "How do I book Andrea?",
+      "Is Andrea available?",
+      "Tell me about Andrea"
+    ],
+    "answer": "Andrea is on the practitioners page. Nervous-system work with Brainspotting and IFS, plus Reiki. New on the directory. Book the published session. Open times are live. Booking: Nervous-system healing: https://shopsacredground.com/book/andrea/ Length and price stay on that page. If no time is open, say so and offer the phone, 847-749-3922. Homepage Book Now opens the events calendar. This person gets their own page.",
+    "voice_response": "Andrea is on the practitioners page. Nervous-system work with Brainspotting and IFS, plus Reiki. New on the directory. For a time, use the booking page, not the homepage Book Now button.",
+    "navigation": {
+      "desktop": "Holistic Center, Practitioners and Modalities, then their portrait. Or the direct profile link.",
+      "mobile": "Open their profile link. The phone menu does not list every name.",
+      "direct_url": "https://shopsacredground.com/andrea-11/"
+    },
+    "source": "Practitioners page 17216 and published booking pages, October 11, 2026.",
+    "booking_urls": [
+      "https://shopsacredground.com/book/andrea/"
+    ],
+    "on_directory": true
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": "The booking URL for open times and price.",
+    "related_cards": [
+      "SG-NAV-BOOK",
+      "SG-NAV-PRACTITIONER"
+    ],
+    "keywords": [
+      "andre peraza",
+      "andre"
+    ],
+    "card_id": "SG-PRAC-ANDRE",
+    "category": "Practitioners",
+    "title": "Andre Peraza",
+    "purpose": "Identify Andre Peraza, what they publish, and where to book them.",
+    "visitor_questions": [
+      "Who is Andre?",
+      "What does Andre do?",
+      "How do I book Andre?",
+      "Is Andre available?",
+      "Tell me about Andre Peraza"
+    ],
+    "answer": "Andre Peraza is on the practitioners page. Tarot, teaching, sound bath, and shamanic drumming. The directory notes he speaks Spanish, and that he is in high demand, about one day a month. Open times are on the booking pages. Booking: Tarot: https://shopsacredground.com/book/andre-tarot/; Sound bath: https://shopsacredground.com/book/andre-sound-healing/ Length and price stay on that page. If no time is open, say so and offer the phone, 847-749-3922. Homepage Book Now opens the events calendar. This person gets their own page.",
+    "voice_response": "Andre is on the practitioners page. Tarot, teaching, sound bath, and shamanic drumming. The directory notes he speaks Spanish, and that he is in high demand, about one day a month. For a time, use the booking page, not the homepage Book Now button.",
+    "navigation": {
+      "desktop": "Holistic Center, Practitioners and Modalities, then their portrait. Or the direct profile link.",
+      "mobile": "Open their profile link. The phone menu does not list every name.",
+      "direct_url": "https://shopsacredground.com/andre-11/"
+    },
+    "source": "Practitioners page 17216 and published booking pages, October 11, 2026.",
+    "booking_urls": [
+      "https://shopsacredground.com/book/andre-tarot/",
+      "https://shopsacredground.com/book/andre-sound-healing/"
+    ],
+    "on_directory": true
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": "The booking URL for open times and price.",
+    "related_cards": [
+      "SG-NAV-BOOK",
+      "SG-NAV-PRACTITIONER"
+    ],
+    "keywords": [
+      "eve",
+      "eve"
+    ],
+    "card_id": "SG-PRAC-EVE",
+    "category": "Practitioners",
+    "title": "Eve",
+    "purpose": "Identify Eve, what they publish, and where to book them.",
+    "visitor_questions": [
+      "Who is Eve?",
+      "What does Eve do?",
+      "How do I book Eve?",
+      "Is Eve available?",
+      "Tell me about Eve"
+    ],
+    "answer": "Eve is on the practitioners page. Quantum healing, Reiki, and spiritual classes, including Spirit 101 and Spirit 201. Here weekly, as the directory says. Booking: Reiki and energy: https://shopsacredground.com/book/eve/; Energy: https://shopsacredground.com/book/eve-energy/; Frequency: https://shopsacredground.com/book/eve-frequency/; Spirit 101: https://shopsacredground.com/book/spirit-101/; Spirit 201: https://shopsacredground.com/book/spirit-201/ Length and price stay on that page. If no time is open, say so and offer the phone, 847-749-3922. Homepage Book Now opens the events calendar. This person gets their own page.",
+    "voice_response": "Eve is on the practitioners page. Quantum healing, Reiki, and spiritual classes, including Spirit 101 and Spirit 201. For a time, use the booking page, not the homepage Book Now button.",
+    "navigation": {
+      "desktop": "Holistic Center, Practitioners and Modalities, then their portrait. Or the direct profile link.",
+      "mobile": "Open their profile link. The phone menu does not list every name.",
+      "direct_url": "https://shopsacredground.com/eve-11/"
+    },
+    "source": "Practitioners page 17216 and published booking pages, October 11, 2026.",
+    "booking_urls": [
+      "https://shopsacredground.com/book/eve/",
+      "https://shopsacredground.com/book/eve-energy/",
+      "https://shopsacredground.com/book/eve-frequency/",
+      "https://shopsacredground.com/book/spirit-101/",
+      "https://shopsacredground.com/book/spirit-201/"
+    ],
+    "on_directory": true
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": "The booking URL for open times and price.",
+    "related_cards": [
+      "SG-NAV-BOOK",
+      "SG-NAV-PRACTITIONER"
+    ],
+    "keywords": [
+      "janel",
+      "janel"
+    ],
+    "card_id": "SG-PRAC-JANEL",
+    "category": "Practitioners",
+    "title": "Janel",
+    "purpose": "Identify Janel, what they publish, and where to book them.",
+    "visitor_questions": [
+      "Who is Janel?",
+      "What does Janel do?",
+      "How do I book Janel?",
+      "Is Janel available?",
+      "Tell me about Janel"
+    ],
+    "answer": "Janel is on the practitioners page. Akashic Records, angel cards, and crystal sessions. Here weekly, as the directory says. Booking: Sessions: https://shopsacredground.com/book/janel/ Length and price stay on that page. If no time is open, say so and offer the phone, 847-749-3922. Homepage Book Now opens the events calendar. This person gets their own page.",
+    "voice_response": "Janel is on the practitioners page. Akashic Records, angel cards, and crystal sessions. For a time, use the booking page, not the homepage Book Now button.",
+    "navigation": {
+      "desktop": "Holistic Center, Practitioners and Modalities, then their portrait. Or the direct profile link.",
+      "mobile": "Open their profile link. The phone menu does not list every name.",
+      "direct_url": "https://shopsacredground.com/janel-akashic-records-angel-card-reader/"
+    },
+    "source": "Practitioners page 17216 and published booking pages, October 11, 2026.",
+    "booking_urls": [
+      "https://shopsacredground.com/book/janel/"
+    ],
+    "on_directory": true
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": "The booking URL for open times and price.",
+    "related_cards": [
+      "SG-NAV-BOOK",
+      "SG-NAV-PRACTITIONER"
+    ],
+    "keywords": [
+      "jill",
+      "jill"
+    ],
+    "card_id": "SG-PRAC-JILL",
+    "category": "Practitioners",
+    "title": "Jill",
+    "purpose": "Identify Jill, what they publish, and where to book them.",
+    "visitor_questions": [
+      "Who is Jill?",
+      "What does Jill do?",
+      "How do I book Jill?",
+      "Is Jill available?",
+      "Tell me about Jill"
+    ],
+    "answer": "Jill is on the practitioners page. Angel coach and energy healing, including workshops. Workshops and sessions. Booking: Angels and intuition: https://shopsacredground.com/book/jill/; Energy body: https://shopsacredground.com/book/jill-body/ Length and price stay on that page. If no time is open, say so and offer the phone, 847-749-3922. Homepage Book Now opens the events calendar. This person gets their own page.",
+    "voice_response": "Jill is on the practitioners page. Angel coach and energy healing, including workshops. For a time, use the booking page, not the homepage Book Now button.",
+    "navigation": {
+      "desktop": "Holistic Center, Practitioners and Modalities, then their portrait. Or the direct profile link.",
+      "mobile": "Open their profile link. The phone menu does not list every name.",
+      "direct_url": "https://shopsacredground.com/jill-11/"
+    },
+    "source": "Practitioners page 17216 and published booking pages, October 11, 2026.",
+    "booking_urls": [
+      "https://shopsacredground.com/book/jill/",
+      "https://shopsacredground.com/book/jill-body/"
+    ],
+    "on_directory": true
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": "The booking URL for open times and price.",
+    "related_cards": [
+      "SG-NAV-BOOK",
+      "SG-NAV-PRACTITIONER"
+    ],
+    "keywords": [
+      "karen",
+      "karen"
+    ],
+    "card_id": "SG-PRAC-KAREN",
+    "category": "Practitioners",
+    "title": "Karen",
+    "purpose": "Identify Karen, what they publish, and where to book them.",
+    "visitor_questions": [
+      "Who is Karen?",
+      "What does Karen do?",
+      "How do I book Karen?",
+      "Is Karen available?",
+      "Tell me about Karen"
+    ],
+    "answer": "Karen is on the practitioners page. Akashic Records, Reiki, aura imaging, soul portraits, and ancestral clearings. Also past-life sessions and classes on her booking pages. Several times a month, as the directory says. Booking: Akashic: https://shopsacredground.com/karen-akashic/ Length and price stay on that page. If no time is open, say so and offer the phone, 847-749-3922. Homepage Book Now opens the events calendar. This person gets their own page.",
+    "voice_response": "Karen is on the practitioners page. Akashic Records, Reiki, aura imaging, soul portraits, and ancestral clearings. Also past-life sessions and classes on her booking pages. For a time, use the booking page, not the homepage Book Now button.",
+    "navigation": {
+      "desktop": "Holistic Center, Practitioners and Modalities, then their portrait. Or the direct profile link.",
+      "mobile": "Open their profile link. The phone menu does not list every name.",
+      "direct_url": "https://shopsacredground.com/karen-11/"
+    },
+    "source": "Practitioners page 17216 and published booking pages, October 11, 2026.",
+    "booking_urls": [
+      "https://shopsacredground.com/karen-akashic/"
+    ],
+    "on_directory": true
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": "The booking URL for open times and price.",
+    "related_cards": [
+      "SG-NAV-BOOK",
+      "SG-NAV-PRACTITIONER"
+    ],
+    "keywords": [
+      "kate kent",
+      "kate"
+    ],
+    "card_id": "SG-PRAC-KATE",
+    "category": "Practitioners",
+    "title": "Kate Kent",
+    "purpose": "Identify Kate Kent, what they publish, and where to book them.",
+    "visitor_questions": [
+      "Who is Kate?",
+      "What does Kate do?",
+      "How do I book Kate?",
+      "Is Kate available?",
+      "Tell me about Kate Kent"
+    ],
+    "answer": "Kate Kent is on the practitioners page. Chakra balancing, sound healing, and shamanic healing. Also paint nights and wheel-of-the-year gatherings on her booking pages. One day a month, as the directory says. Booking: Chakra: https://shopsacredground.com/book/kate-chakra/; Wheel: https://shopsacredground.com/book/kate-wheel/ Length and price stay on that page. If no time is open, say so and offer the phone, 847-749-3922. Homepage Book Now opens the events calendar. This person gets their own page.",
+    "voice_response": "Kate is on the practitioners page. Chakra balancing, sound healing, and shamanic healing. Also paint nights and wheel-of-the-year gatherings on her booking pages. For a time, use the booking page, not the homepage Book Now button.",
+    "navigation": {
+      "desktop": "Holistic Center, Practitioners and Modalities, then their portrait. Or the direct profile link.",
+      "mobile": "Open their profile link. The phone menu does not list every name.",
+      "direct_url": "https://shopsacredground.com/kate-11/"
+    },
+    "source": "Practitioners page 17216 and published booking pages, October 11, 2026.",
+    "booking_urls": [
+      "https://shopsacredground.com/book/kate-chakra/",
+      "https://shopsacredground.com/book/kate-wheel/"
+    ],
+    "on_directory": true
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": "The booking URL for open times and price.",
+    "related_cards": [
+      "SG-NAV-BOOK",
+      "SG-NAV-PRACTITIONER"
+    ],
+    "keywords": [
+      "linn",
+      "linn"
+    ],
+    "card_id": "SG-PRAC-LINN",
+    "category": "Practitioners",
+    "title": "Linn",
+    "purpose": "Identify Linn, what they publish, and where to book them.",
+    "visitor_questions": [
+      "Who is Linn?",
+      "What does Linn do?",
+      "How do I book Linn?",
+      "Is Linn available?",
+      "Tell me about Linn"
+    ],
+    "answer": "Linn is on the practitioners page. Astrology and angel readings. The public name on the directory is Linn. Older pages say Lin Boffeli. The directory says call to book. A booking page is also published. Booking: Astrology or angel communication: https://shopsacredground.com/book/linn/ Length and price stay on that page. If no time is open, say so and offer the phone, 847-749-3922. Homepage Book Now opens the events calendar. This person gets their own page.",
+    "voice_response": "Linn is on the practitioners page. Astrology and angel readings. The public name on the directory is Linn. Older pages say Lin Boffeli. For a time, use the booking page, not the homepage Book Now button.",
+    "navigation": {
+      "desktop": "Holistic Center, Practitioners and Modalities, then their portrait. Or the direct profile link.",
+      "mobile": "Open their profile link. The phone menu does not list every name.",
+      "direct_url": "https://shopsacredground.com/linn-11/"
+    },
+    "source": "Practitioners page 17216 and published booking pages, October 11, 2026.",
+    "booking_urls": [
+      "https://shopsacredground.com/book/linn/"
+    ],
+    "on_directory": true
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": "The booking URL for open times and price.",
+    "related_cards": [
+      "SG-NAV-BOOK",
+      "SG-NAV-PRACTITIONER"
+    ],
+    "keywords": [
+      "lita keller",
+      "lita"
+    ],
+    "card_id": "SG-PRAC-LITA",
+    "category": "Practitioners",
+    "title": "Lita Keller",
+    "purpose": "Identify Lita Keller, what they publish, and where to book them.",
+    "visitor_questions": [
+      "Who is Lita?",
+      "What does Lita do?",
+      "How do I book Lita?",
+      "Is Lita available?",
+      "Tell me about Lita Keller"
+    ],
+    "answer": "Lita Keller is on the practitioners page. Tarot, pendulum, and sacred crafting workshops. New on the directory. Open times are on her booking pages. Booking: Tarot and pendulum: https://shopsacredground.com/book/lita-tarot/; Besom: https://shopsacredground.com/book/lita-besom/; Crafting: https://shopsacredground.com/book/lita-crafting/ Length and price stay on that page. If no time is open, say so and offer the phone, 847-749-3922. Homepage Book Now opens the events calendar. This person gets their own page.",
+    "voice_response": "Lita is on the practitioners page. Tarot, pendulum, and sacred crafting workshops. New on the directory. For a time, use the booking page, not the homepage Book Now button.",
+    "navigation": {
+      "desktop": "Holistic Center, Practitioners and Modalities, then their portrait. Or the direct profile link.",
+      "mobile": "Open their profile link. The phone menu does not list every name.",
+      "direct_url": "https://shopsacredground.com/lita-11/"
+    },
+    "source": "Practitioners page 17216 and published booking pages, October 11, 2026.",
+    "booking_urls": [
+      "https://shopsacredground.com/book/lita-tarot/",
+      "https://shopsacredground.com/book/lita-besom/",
+      "https://shopsacredground.com/book/lita-crafting/"
+    ],
+    "on_directory": true
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": "The booking URL for open times and price.",
+    "related_cards": [
+      "SG-NAV-BOOK",
+      "SG-NAV-PRACTITIONER"
+    ],
+    "keywords": [
+      "lisa",
+      "lisa"
+    ],
+    "card_id": "SG-PRAC-LISA",
+    "category": "Practitioners",
+    "title": "Lisa",
+    "purpose": "Identify Lisa, what they publish, and where to book them.",
+    "visitor_questions": [
+      "Who is Lisa?",
+      "What does Lisa do?",
+      "How do I book Lisa?",
+      "Is Lisa available?",
+      "Tell me about Lisa"
+    ],
+    "answer": "Lisa is on the practitioners page. Astrology. This is Lisa the astrologer, not Lisa Maria and not Lisa Seyring. A few times a month, as the directory says. Booking: Astrology and tarot: https://shopsacredground.com/book/lisa/ Length and price stay on that page. If no time is open, say so and offer the phone, 847-749-3922. Homepage Book Now opens the events calendar. This person gets their own page.",
+    "voice_response": "Lisa is on the practitioners page. Astrology. This is Lisa the astrologer, not Lisa Maria and not Lisa Seyring. For a time, use the booking page, not the homepage Book Now button.",
+    "navigation": {
+      "desktop": "Holistic Center, Practitioners and Modalities, then their portrait. Or the direct profile link.",
+      "mobile": "Open their profile link. The phone menu does not list every name.",
+      "direct_url": "https://shopsacredground.com/lisa-astrology-v5-final/"
+    },
+    "source": "Practitioners page 17216 and published booking pages, October 11, 2026.",
+    "booking_urls": [
+      "https://shopsacredground.com/book/lisa/"
+    ],
+    "on_directory": true
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": "The booking URL for open times and price.",
+    "related_cards": [
+      "SG-NAV-BOOK",
+      "SG-NAV-PRACTITIONER"
+    ],
+    "keywords": [
+      "lisa maria",
+      "lisa"
+    ],
+    "card_id": "SG-PRAC-LISAMARIA",
+    "category": "Practitioners",
+    "title": "Lisa Maria",
+    "purpose": "Identify Lisa Maria, what they publish, and where to book them.",
+    "visitor_questions": [
+      "Who is Lisa?",
+      "What does Lisa do?",
+      "How do I book Lisa?",
+      "Is Lisa available?",
+      "Tell me about Lisa Maria"
+    ],
+    "answer": "Lisa Maria is on the practitioners page. Intuitive tarot and teaching. Also somatic healing on her booking pages. The directory says she is in high demand. Book on her pages. Do not send her tarot clients to Lisa the astrologer. Booking: Tarot: https://shopsacredground.com/book/lisa-maria-tarot/; Sessions: https://shopsacredground.com/book/lisa-maria/; Class: https://shopsacredground.com/book/lisa-maria-class/ Length and price stay on that page. If no time is open, say so and offer the phone, 847-749-3922. Homepage Book Now opens the events calendar. This person gets their own page.",
+    "voice_response": "Lisa Maria is on the practitioners page. Intuitive tarot and teaching. Also somatic healing on her booking pages. The directory says she is in high demand. For a time, use the booking page, not the homepage Book Now button.",
+    "navigation": {
+      "desktop": "Holistic Center, Practitioners and Modalities, then their portrait. Or the direct profile link.",
+      "mobile": "Open their profile link. The phone menu does not list every name.",
+      "direct_url": "https://shopsacredground.com/lisa-maria-11/"
+    },
+    "source": "Practitioners page 17216 and published booking pages, October 11, 2026.",
+    "booking_urls": [
+      "https://shopsacredground.com/book/lisa-maria-tarot/",
+      "https://shopsacredground.com/book/lisa-maria/",
+      "https://shopsacredground.com/book/lisa-maria-class/"
+    ],
+    "on_directory": true
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": "The booking URL for open times and price.",
+    "related_cards": [
+      "SG-NAV-BOOK",
+      "SG-NAV-PRACTITIONER"
+    ],
+    "keywords": [
+      "lisa seyring",
+      "lisa"
+    ],
+    "card_id": "SG-PRAC-LISAS",
+    "category": "Practitioners",
+    "title": "Lisa Seyring",
+    "purpose": "Identify Lisa Seyring, what they publish, and where to book them.",
+    "visitor_questions": [
+      "Who is Lisa?",
+      "What does Lisa do?",
+      "How do I book Lisa?",
+      "Is Lisa available?",
+      "Tell me about Lisa Seyring"
+    ],
+    "answer": "Lisa Seyring is on the practitioners page. Poem readings. A poem made in the moment, not a tarot spread. New on the directory. Booking: Poem reading: https://shopsacredground.com/book/lisa-s/ Length and price stay on that page. If no time is open, say so and offer the phone, 847-749-3922. Homepage Book Now opens the events calendar. This person gets their own page.",
+    "voice_response": "Lisa Seyring is on the practitioners page. Poem readings. A poem made in the moment, not a tarot spread. For a time, use the booking page, not the homepage Book Now button.",
+    "navigation": {
+      "desktop": "Holistic Center, Practitioners and Modalities, then their portrait. Or the direct profile link.",
+      "mobile": "Open their profile link. The phone menu does not list every name.",
+      "direct_url": "https://shopsacredground.com/lisa-seyring-11/"
+    },
+    "source": "Practitioners page 17216 and published booking pages, October 11, 2026.",
+    "booking_urls": [
+      "https://shopsacredground.com/book/lisa-s/"
+    ],
+    "on_directory": true
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": "The booking URL for open times and price.",
+    "related_cards": [
+      "SG-NAV-BOOK",
+      "SG-NAV-PRACTITIONER"
+    ],
+    "keywords": [
+      "mary keiser",
+      "mary"
+    ],
+    "card_id": "SG-PRAC-MARY",
+    "category": "Practitioners",
+    "title": "Mary Keiser",
+    "purpose": "Identify Mary Keiser, what they publish, and where to book them.",
+    "visitor_questions": [
+      "Who is Mary?",
+      "What does Mary do?",
+      "How do I book Mary?",
+      "Is Mary available?",
+      "Tell me about Mary Keiser"
+    ],
+    "answer": "Mary Keiser is on the practitioners page. Reiki, cranial sacral, and intuitive guidance, in one integrated session. One day a month, as the directory says. Booking: Integrated session: https://shopsacredground.com/mary/ Length and price stay on that page. If no time is open, say so and offer the phone, 847-749-3922. Homepage Book Now opens the events calendar. This person gets their own page.",
+    "voice_response": "Mary is on the practitioners page. Reiki, cranial sacral, and intuitive guidance, in one integrated session. For a time, use the booking page, not the homepage Book Now button.",
+    "navigation": {
+      "desktop": "Holistic Center, Practitioners and Modalities, then their portrait. Or the direct profile link.",
+      "mobile": "Open their profile link. The phone menu does not list every name.",
+      "direct_url": "https://shopsacredground.com/mary-11/"
+    },
+    "source": "Practitioners page 17216 and published booking pages, October 11, 2026.",
+    "booking_urls": [
+      "https://shopsacredground.com/mary/"
+    ],
+    "on_directory": true
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": "The booking URL for open times and price.",
+    "related_cards": [
+      "SG-NAV-BOOK",
+      "SG-NAV-PRACTITIONER"
+    ],
+    "keywords": [
+      "melissa",
+      "melissa"
+    ],
+    "card_id": "SG-PRAC-MELISSA",
+    "category": "Practitioners",
+    "title": "Melissa",
+    "purpose": "Identify Melissa, what they publish, and where to book them.",
+    "visitor_questions": [
+      "Who is Melissa?",
+      "What does Melissa do?",
+      "How do I book Melissa?",
+      "Is Melissa available?",
+      "Tell me about Melissa"
+    ],
+    "answer": "Melissa is on the practitioners page. Shaman and medium. The directory notes she speaks Spanish and is in high demand. Classes and angelic guidance are on her other booking pages. Open times are on the booking pages. Booking: Session: https://shopsacredground.com/book/melissa/; Class: https://shopsacredground.com/book/melissa-class/ Length and price stay on that page. If no time is open, say so and offer the phone, 847-749-3922. Homepage Book Now opens the events calendar. This person gets their own page.",
+    "voice_response": "Melissa is on the practitioners page. Shaman and medium. The directory notes she speaks Spanish and is in high demand. Classes and angelic guidance are on her other booking pages. For a time, use the booking page, not the homepage Book Now button.",
+    "navigation": {
+      "desktop": "Holistic Center, Practitioners and Modalities, then their portrait. Or the direct profile link.",
+      "mobile": "Open their profile link. The phone menu does not list every name.",
+      "direct_url": "https://shopsacredground.com/melissa-v5/"
+    },
+    "source": "Practitioners page 17216 and published booking pages, October 11, 2026.",
+    "booking_urls": [
+      "https://shopsacredground.com/book/melissa/",
+      "https://shopsacredground.com/book/melissa-class/"
+    ],
+    "on_directory": true
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": "The booking URL for open times and price.",
+    "related_cards": [
+      "SG-NAV-BOOK",
+      "SG-NAV-PRACTITIONER"
+    ],
+    "keywords": [
+      "mother lotus",
+      "mother"
+    ],
+    "card_id": "SG-PRAC-LOTUS",
+    "category": "Practitioners",
+    "title": "Mother Lotus",
+    "purpose": "Identify Mother Lotus, what they publish, and where to book them.",
+    "visitor_questions": [
+      "Who is Mother?",
+      "What does Mother do?",
+      "How do I book Mother?",
+      "Is Mother available?",
+      "Tell me about Mother Lotus"
+    ],
+    "answer": "Mother Lotus is on the practitioners page. Women's moon circles. Call for moon-circle information. A booking page is also published. Booking: Moon circles: https://shopsacredground.com/book/mother-lotus-moon-circles/ Length and price stay on that page. If no time is open, say so and offer the phone, 847-749-3922. Homepage Book Now opens the events calendar. This person gets their own page.",
+    "voice_response": "Mother Lotus is on the practitioners page. Women's moon circles. For a time, use the booking page, not the homepage Book Now button.",
+    "navigation": {
+      "desktop": "Holistic Center, Practitioners and Modalities, then their portrait. Or the direct profile link.",
+      "mobile": "Open their profile link. The phone menu does not list every name.",
+      "direct_url": "https://shopsacredground.com/mother-lotus-11/"
+    },
+    "source": "Practitioners page 17216 and published booking pages, October 11, 2026.",
+    "booking_urls": [
+      "https://shopsacredground.com/book/mother-lotus-moon-circles/"
+    ],
+    "on_directory": true
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": "The booking URL for open times and price.",
+    "related_cards": [
+      "SG-NAV-BOOK",
+      "SG-NAV-PRACTITIONER"
+    ],
+    "keywords": [
+      "richard popp",
+      "richard"
+    ],
+    "card_id": "SG-PRAC-RICHARD",
+    "category": "Practitioners",
+    "title": "Richard Popp",
+    "purpose": "Identify Richard Popp, what they publish, and where to book them.",
+    "visitor_questions": [
+      "Who is Richard?",
+      "What does Richard do?",
+      "How do I book Richard?",
+      "Is Richard available?",
+      "Tell me about Richard Popp"
+    ],
+    "answer": "Richard Popp is on the practitioners page. Cranial sacral and astral healing. The directory says call to book. A booking page is also published. Booking: Sessions: https://shopsacredground.com/book/richard/ Length and price stay on that page. If no time is open, say so and offer the phone, 847-749-3922. Homepage Book Now opens the events calendar. This person gets their own page.",
+    "voice_response": "Richard is on the practitioners page. Cranial sacral and astral healing. For a time, use the booking page, not the homepage Book Now button.",
+    "navigation": {
+      "desktop": "Holistic Center, Practitioners and Modalities, then their portrait. Or the direct profile link.",
+      "mobile": "Open their profile link. The phone menu does not list every name.",
+      "direct_url": "https://shopsacredground.com/richard-11/"
+    },
+    "source": "Practitioners page 17216 and published booking pages, October 11, 2026.",
+    "booking_urls": [
+      "https://shopsacredground.com/book/richard/"
+    ],
+    "on_directory": true
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": "The booking URL for open times and price.",
+    "related_cards": [
+      "SG-NAV-BOOK",
+      "SG-NAV-PRACTITIONER"
+    ],
+    "keywords": [
+      "robert mackay",
+      "robert"
+    ],
+    "card_id": "SG-PRAC-ROBERT",
+    "category": "Practitioners",
+    "title": "Robert MacKay",
+    "purpose": "Identify Robert MacKay, what they publish, and where to book them.",
+    "visitor_questions": [
+      "Who is Robert?",
+      "What does Robert do?",
+      "How do I book Robert?",
+      "Is Robert available?",
+      "Tell me about Robert MacKay"
+    ],
+    "answer": "Robert MacKay is on the practitioners page. Card reading with a regular playing deck. His published line is: if I see it, I say it. Not tarot. In high demand, as the directory says. Booking: Card reading: https://shopsacredground.com/book/robert/ Length and price stay on that page. If no time is open, say so and offer the phone, 847-749-3922. Homepage Book Now opens the events calendar. This person gets their own page.",
+    "voice_response": "Robert is on the practitioners page. Card reading with a regular playing deck. His published line is: if I see it, I say it. Not tarot. For a time, use the booking page, not the homepage Book Now button.",
+    "navigation": {
+      "desktop": "Holistic Center, Practitioners and Modalities, then their portrait. Or the direct profile link.",
+      "mobile": "Open their profile link. The phone menu does not list every name.",
+      "direct_url": "https://shopsacredground.com/robert-11/"
+    },
+    "source": "Practitioners page 17216 and published booking pages, October 11, 2026.",
+    "booking_urls": [
+      "https://shopsacredground.com/book/robert/"
+    ],
+    "on_directory": true
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": "The booking URL for open times and price.",
+    "related_cards": [
+      "SG-NAV-BOOK",
+      "SG-NAV-PRACTITIONER"
+    ],
+    "keywords": [
+      "rose",
+      "rose"
+    ],
+    "card_id": "SG-PRAC-ROSE",
+    "category": "Practitioners",
+    "title": "Rose",
+    "purpose": "Identify Rose, what they publish, and where to book them.",
+    "visitor_questions": [
+      "Who is Rose?",
+      "What does Rose do?",
+      "How do I book Rose?",
+      "Is Rose available?",
+      "Tell me about Rose"
+    ],
+    "answer": "Rose is on the practitioners page. Reiki using the energies of the ankh and archangels, in her published booking title. The directory notes she speaks Italian and is in high demand. Open times are on her booking pages. Booking: Reiki: https://shopsacredground.com/book/rose/; Vision: https://shopsacredground.com/book/rose-vision/ Length and price stay on that page. If no time is open, say so and offer the phone, 847-749-3922. Homepage Book Now opens the events calendar. This person gets their own page.",
+    "voice_response": "Rose is on the practitioners page. Reiki using the energies of the ankh and archangels, in her published booking title. The directory notes she speaks Italian and is in high demand. For a time, use the booking page, not the homepage Book Now button.",
+    "navigation": {
+      "desktop": "Holistic Center, Practitioners and Modalities, then their portrait. Or the direct profile link.",
+      "mobile": "Open their profile link. The phone menu does not list every name.",
+      "direct_url": "https://shopsacredground.com/rose-v5-working/"
+    },
+    "source": "Practitioners page 17216 and published booking pages, October 11, 2026.",
+    "booking_urls": [
+      "https://shopsacredground.com/book/rose/",
+      "https://shopsacredground.com/book/rose-vision/"
+    ],
+    "on_directory": true
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": "The booking URL for open times and price.",
+    "related_cards": [
+      "SG-NAV-BOOK",
+      "SG-NAV-PRACTITIONER"
+    ],
+    "keywords": [
+      "renee",
+      "renee"
+    ],
+    "card_id": "SG-PRAC-RENEE",
+    "category": "Practitioners",
+    "title": "Renee",
+    "purpose": "Identify Renee, what they publish, and where to book them.",
+    "visitor_questions": [
+      "Who is Renee?",
+      "What does Renee do?",
+      "How do I book Renee?",
+      "Is Renee available?",
+      "Tell me about Renee"
+    ],
+    "answer": "Renee is on the practitioners page. Reiki. Her published booking title says free community appointments, love donations. New on the directory. Booking: Reiki: https://shopsacredground.com/book/renee/ Length and price stay on that page. If no time is open, say so and offer the phone, 847-749-3922. Homepage Book Now opens the events calendar. This person gets their own page.",
+    "voice_response": "Renee is on the practitioners page. Reiki. Her published booking title says free community appointments, love donations. For a time, use the booking page, not the homepage Book Now button.",
+    "navigation": {
+      "desktop": "Holistic Center, Practitioners and Modalities, then their portrait. Or the direct profile link.",
+      "mobile": "Open their profile link. The phone menu does not list every name.",
+      "direct_url": "https://shopsacredground.com/renee-2/"
+    },
+    "source": "Practitioners page 17216 and published booking pages, October 11, 2026.",
+    "booking_urls": [
+      "https://shopsacredground.com/book/renee/"
+    ],
+    "on_directory": true
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": "The booking URL for open times and price.",
+    "related_cards": [
+      "SG-NAV-BOOK",
+      "SG-NAV-PRACTITIONER"
+    ],
+    "keywords": [
+      "tina santana",
+      "tina"
+    ],
+    "card_id": "SG-PRAC-TINA",
+    "category": "Practitioners",
+    "title": "Tina Santana",
+    "purpose": "Identify Tina Santana, what they publish, and where to book them.",
+    "visitor_questions": [
+      "Who is Tina?",
+      "What does Tina do?",
+      "How do I book Tina?",
+      "Is Tina available?",
+      "Tell me about Tina Santana"
+    ],
+    "answer": "Tina Santana is on the practitioners page. Runes educator on the directory. Her booking pages also include numerology, tarot, Reiki, sound, pendulums, and a women's stillness circle. Limited availability, as the directory says. Booking: Runes class: https://shopsacredground.com/book/tina-runes-class/; Sound: https://shopsacredground.com/book/tina-sound/; Divine feminine: https://shopsacredground.com/book/tina-divine-feminine/ Length and price stay on that page. If no time is open, say so and offer the phone, 847-749-3922. Homepage Book Now opens the events calendar. This person gets their own page.",
+    "voice_response": "Tina is on the practitioners page. Runes educator on the directory. Her booking pages also include numerology, tarot, Reiki, sound, pendulums, and a women's stillness circle. For a time, use the booking page, not the homepage Book Now button.",
+    "navigation": {
+      "desktop": "Holistic Center, Practitioners and Modalities, then their portrait. Or the direct profile link.",
+      "mobile": "Open their profile link. The phone menu does not list every name.",
+      "direct_url": "https://shopsacredground.com/tina-v-5/"
+    },
+    "source": "Practitioners page 17216 and published booking pages, October 11, 2026.",
+    "booking_urls": [
+      "https://shopsacredground.com/book/tina-runes-class/",
+      "https://shopsacredground.com/book/tina-sound/",
+      "https://shopsacredground.com/book/tina-divine-feminine/"
+    ],
+    "on_directory": true
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": "The booking URL for open times and price.",
+    "related_cards": [
+      "SG-NAV-BOOK",
+      "SG-NAV-PRACTITIONER"
+    ],
+    "keywords": [
+      "sherry gurley",
+      "sherry"
+    ],
+    "card_id": "SG-PRAC-SHERRY",
+    "category": "Practitioners",
+    "title": "Sherry Gurley",
+    "purpose": "Identify Sherry Gurley, what they publish, and where to book them.",
+    "visitor_questions": [
+      "Who is Sherry?",
+      "What does Sherry do?",
+      "How do I book Sherry?",
+      "Is Sherry available?",
+      "Tell me about Sherry Gurley"
+    ],
+    "answer": "Sherry Gurley is by a published booking page, and not yet on the portrait grid. Tai Chi Gung. She has a published booking page. She is not on the practitioners portrait grid. Book the Tai Chi page or call the shop. Booking: Tai Chi Gung: https://shopsacredground.com/sherry/ Length and price stay on that page. If no time is open, say so and offer the phone, 847-749-3922. Homepage Book Now opens the events calendar. This person gets their own page.",
+    "voice_response": "Sherry is by a published booking page, and not yet on the portrait grid. Tai Chi Gung. She has a published booking page. She is not on the practitioners portrait grid. For a time, use the booking page, not the homepage Book Now button.",
+    "navigation": {
+      "desktop": "Holistic Center, Practitioners and Modalities, then their portrait. Or the direct profile link.",
+      "mobile": "Open their profile link. The phone menu does not list every name.",
+      "direct_url": "https://shopsacredground.com/sherry/"
+    },
+    "source": "Practitioners page 17216 and published booking pages, October 11, 2026.",
+    "booking_urls": [
+      "https://shopsacredground.com/sherry/"
+    ],
+    "on_directory": false
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": "The booking URL for open times and price.",
+    "related_cards": [
+      "SG-NAV-BOOK",
+      "SG-NAV-PRACTITIONER"
+    ],
+    "keywords": [
+      "kashia",
+      "kashia"
+    ],
+    "card_id": "SG-PRAC-KASHIA",
+    "category": "Practitioners",
+    "title": "Kashia",
+    "purpose": "Identify Kashia, what they publish, and where to book them.",
+    "visitor_questions": [
+      "Who is Kashia?",
+      "What does Kashia do?",
+      "How do I book Kashia?",
+      "Is Kashia available?",
+      "Tell me about Kashia"
+    ],
+    "answer": "Kashia is by a published booking page, and not yet on the portrait grid. Hawaiian massage, on a published booking page. Not on the practitioners portrait grid. The booking page has the openings. Booking: Hawaiian massage: https://shopsacredground.com/book/hawaiian-massage/ Length and price stay on that page. If no time is open, say so and offer the phone, 847-749-3922. Homepage Book Now opens the events calendar. This person gets their own page.",
+    "voice_response": "Kashia is by a published booking page, and not yet on the portrait grid. Hawaiian massage, on a published booking page. Not on the practitioners portrait grid. For a time, use the booking page, not the homepage Book Now button.",
+    "navigation": {
+      "desktop": "Holistic Center, Practitioners and Modalities, then their portrait. Or the direct profile link.",
+      "mobile": "Open their profile link. The phone menu does not list every name.",
+      "direct_url": "https://shopsacredground.com/book/hawaiian-massage/"
+    },
+    "source": "Practitioners page 17216 and published booking pages, October 11, 2026.",
+    "booking_urls": [
+      "https://shopsacredground.com/book/hawaiian-massage/"
+    ],
+    "on_directory": false
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "review_quarterly",
+    "live_source": "The booking URL for open times and price.",
+    "related_cards": [
+      "SG-NAV-BOOK",
+      "SG-NAV-PRACTITIONER"
+    ],
+    "keywords": [
+      "lori",
+      "lori"
+    ],
+    "card_id": "SG-PRAC-LORI",
+    "category": "Practitioners",
+    "title": "Lori",
+    "purpose": "Identify Lori, what they publish, and where to book them.",
+    "visitor_questions": [
+      "Who is Lori?",
+      "What does Lori do?",
+      "How do I book Lori?",
+      "Is Lori available?",
+      "Tell me about Lori"
+    ],
+    "answer": "Lori is by a published booking page, and not yet on the portrait grid. Intuitive mediumship, on a published booking page. Not on the practitioners portrait grid. The booking page has the openings. Booking: Mediumship: https://shopsacredground.com/book/lori-medium/ Length and price stay on that page. If no time is open, say so and offer the phone, 847-749-3922. Homepage Book Now opens the events calendar. This person gets their own page.",
+    "voice_response": "Lori is by a published booking page, and not yet on the portrait grid. Intuitive mediumship, on a published booking page. Not on the practitioners portrait grid. For a time, use the booking page, not the homepage Book Now button.",
+    "navigation": {
+      "desktop": "Holistic Center, Practitioners and Modalities, then their portrait. Or the direct profile link.",
+      "mobile": "Open their profile link. The phone menu does not list every name.",
+      "direct_url": "https://shopsacredground.com/book/lori-medium/"
+    },
+    "source": "Practitioners page 17216 and published booking pages, October 11, 2026.",
+    "booking_urls": [
+      "https://shopsacredground.com/book/lori-medium/"
+    ],
+    "on_directory": false
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [
+      "SG-KNOW-LIBRARY",
+      "SG-ART-SMUDGING"
+    ],
+    "keywords": [
+      "smudging",
+      "sage",
+      "burn sage",
+      "palo santo",
+      "clear and clean",
+      "cleansing",
+      "smudge"
+    ],
+    "card_id": "SG-ART-SMUDGING",
+    "category": "Articles",
+    "title": "Smudging, sage, and clearing a space",
+    "purpose": "Answer a popular question in her voice and hand them her essay.",
+    "visitor_questions": [
+      "Smudging, sage, and clearing a space?",
+      "Where can I read about this?",
+      "Do you have something on smudging?"
+    ],
+    "answer": "Smudging is the practice of burning an herb, often white sage or another traditional plant, and moving the smoke through a room or around yourself as a way of clearing. People use it when a space feels heavy, after an argument, or when they move. It is a ritual, not a disinfectant and not a medical treatment. The shop sells sage and related incense when it is in stock. The guide Smudging: How to Clean and Clear Yourself and a Space is the short how-to. Her longer essay is Cleansing Rituals, Smudging. The page is https://shopsacredground.com/cleansing-rituals-smudging/.",
+    "voice_response": "Smudging is the practice of burning an herb, often white sage or another traditional plant, and moving the smoke through a room or around yourself as a way of clearing. I can open her essay if you want the longer version.",
+    "navigation": {
+      "desktop": "Library, Articles, or the direct link.",
+      "mobile": "Library page, then Articles, or the direct link.",
+      "direct_url": "https://shopsacredground.com/cleansing-rituals-smudging/"
+    },
+    "source": "Published essay or guide /cleansing-rituals-smudging/, October 11, 2026. Topic set chosen with the founder: smudging, sage, clear and clean, and the matching public explainers. No view-count plugin was present."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [
+      "SG-KNOW-LIBRARY",
+      "SG-ART-SMUDGING"
+    ],
+    "keywords": [
+      "clear crystal",
+      "cleanse crystal",
+      "charge",
+      "which crystal for my house"
+    ],
+    "card_id": "SG-ART-CLEAR-CRYSTAL",
+    "category": "Articles",
+    "title": "How to clear a crystal and choose one for a room",
+    "purpose": "Answer a popular question in her voice and hand them her essay.",
+    "visitor_questions": [
+      "How to clear a crystal and choose one for a room?",
+      "Where can I read about this?",
+      "Do you have something on clear crystal?"
+    ],
+    "answer": "Clearing a crystal means the traditional rinse of use: sunlight for some stones, moonlight, smoke, sound, or simply time, depending on the mineral. Not every stone likes water or salt or direct sun. Amethyst can fade in a hard sun. The essay is about a home or an office, and about picking a stone for the room rather than grabbing the prettiest one. Read her piece before inventing a care method. The shop is where you can hold them. The page is https://shopsacredground.com/how-to-clean-clear-and-pick-the-right-crystal-for-your-space/.",
+    "voice_response": "Clearing a crystal means the traditional rinse of use: sunlight for some stones, moonlight, smoke, sound, or simply time, depending on the mineral. I can open her essay if you want the longer version.",
+    "navigation": {
+      "desktop": "Library, Articles, or the direct link.",
+      "mobile": "Library page, then Articles, or the direct link.",
+      "direct_url": "https://shopsacredground.com/how-to-clean-clear-and-pick-the-right-crystal-for-your-space/"
+    },
+    "source": "Published essay or guide /how-to-clean-clear-and-pick-the-right-crystal-for-your-space/, October 11, 2026. Topic set chosen with the founder: smudging, sage, clear and clean, and the matching public explainers. No view-count plugin was present."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [
+      "SG-KNOW-LIBRARY",
+      "SG-ART-SMUDGING"
+    ],
+    "keywords": [
+      "beginner crystals",
+      "how to use crystals",
+      "new to crystals"
+    ],
+    "card_id": "SG-ART-BEGINNER-CRYSTALS",
+    "category": "Articles",
+    "title": "A beginner's guide to crystals",
+    "purpose": "Answer a popular question in her voice and hand them her essay.",
+    "visitor_questions": [
+      "A beginner's guide to crystals?",
+      "Where can I read about this?",
+      "Do you have something on beginner crystals?"
+    ],
+    "answer": "You can start with one stone you like in your hand. You do not need a grid, a glossary, or a belief system. Her beginner's essay walks through what a crystal is and simple ways people work with them. Treat older lines in that essay about healing disease or weight with care: the guide does not repeat medical promises. Come in, pick it up, ask. The page is https://shopsacredground.com/a-beginners-guide-to-working-with-crystals/.",
+    "voice_response": "You can start with one stone you like in your hand. I can open her essay if you want the longer version.",
+    "navigation": {
+      "desktop": "Library, Articles, or the direct link.",
+      "mobile": "Library page, then Articles, or the direct link.",
+      "direct_url": "https://shopsacredground.com/a-beginners-guide-to-working-with-crystals/"
+    },
+    "source": "Published essay or guide /a-beginners-guide-to-working-with-crystals/, October 11, 2026. Topic set chosen with the founder: smudging, sage, clear and clean, and the matching public explainers. No view-count plugin was present."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [
+      "SG-KNOW-LIBRARY",
+      "SG-ART-SMUDGING"
+    ],
+    "keywords": [
+      "amethyst",
+      "purple quartz",
+      "crown chakra"
+    ],
+    "card_id": "SG-ART-AMETHYST",
+    "category": "Articles",
+    "title": "Amethyst",
+    "purpose": "Answer a popular question in her voice and hand them her essay.",
+    "visitor_questions": [
+      "Amethyst?",
+      "Where can I read about this?",
+      "Do you have something on amethyst?"
+    ],
+    "answer": "Amethyst is a violet variety of quartz. Iron and natural irradiation make the purple. The Greek name means not drunken. It shows up from pale lilac to deep grape, depending on where it grew. People have traditionally reached for it when they want a clear head, quiet, or help with intuition, and it is often paired with the crown. That is tradition. It is also just a beautiful mineral. Her essay calls it the Swiss Army knife because people use it for so many ordinary intentions. The page is https://shopsacredground.com/why-amethyst-is-called-swiss-army-knife-of-crystals/.",
+    "voice_response": "Amethyst is a violet variety of quartz. I can open her essay if you want the longer version.",
+    "navigation": {
+      "desktop": "Library, Articles, or the direct link.",
+      "mobile": "Library page, then Articles, or the direct link.",
+      "direct_url": "https://shopsacredground.com/why-amethyst-is-called-swiss-army-knife-of-crystals/"
+    },
+    "source": "Published essay or guide /why-amethyst-is-called-swiss-army-knife-of-crystals/, October 11, 2026. Topic set chosen with the founder: smudging, sage, clear and clean, and the matching public explainers. No view-count plugin was present."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [
+      "SG-KNOW-LIBRARY",
+      "SG-ART-SMUDGING"
+    ],
+    "keywords": [
+      "grounding",
+      "root",
+      "hematite",
+      "black tourmaline",
+      "anxious"
+    ],
+    "card_id": "SG-ART-GROUND",
+    "category": "Articles",
+    "title": "Stones people use to feel steadier",
+    "purpose": "Answer a popular question in her voice and hand them her essay.",
+    "visitor_questions": [
+      "Stones people use to feel steadier?",
+      "Where can I read about this?",
+      "Do you have something on grounding?"
+    ],
+    "answer": "Grounding, in this shop's language, means feeling back in your body and on the floor after a scattered day. Her essay names stones people traditionally use for that and how they keep them nearby. It is a practice, not a prescription. If the day is more than a stone can hold, say so, and offer a person or the phone. The page is https://shopsacredground.com/the-top-5-crystals-to-ground-you-and-how-to-use-them/.",
+    "voice_response": "Grounding, in this shop's language, means feeling back in your body and on the floor after a scattered day. I can open her essay if you want the longer version.",
+    "navigation": {
+      "desktop": "Library, Articles, or the direct link.",
+      "mobile": "Library page, then Articles, or the direct link.",
+      "direct_url": "https://shopsacredground.com/the-top-5-crystals-to-ground-you-and-how-to-use-them/"
+    },
+    "source": "Published essay or guide /the-top-5-crystals-to-ground-you-and-how-to-use-them/, October 11, 2026. Topic set chosen with the founder: smudging, sage, clear and clean, and the matching public explainers. No view-count plugin was present."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [
+      "SG-KNOW-LIBRARY",
+      "SG-ART-SMUDGING"
+    ],
+    "keywords": [
+      "program a crystal",
+      "intention",
+      "set intention"
+    ],
+    "card_id": "SG-ART-INTENTION",
+    "category": "Articles",
+    "title": "Setting an intention with a stone",
+    "purpose": "Answer a popular question in her voice and hand them her essay.",
+    "visitor_questions": [
+      "Setting an intention with a stone?",
+      "Where can I read about this?",
+      "Do you have something on program a crystal?"
+    ],
+    "answer": "Programming is shop language for sitting with a stone and getting clear about what you want it to remind you of. It is attention, not a remote control. Her essay is the longer version. A simple version: hold it, say the true thing, put it where you will see it. The page is https://shopsacredground.com/how-to-program-crystals-and-set-intentions/.",
+    "voice_response": "Programming is shop language for sitting with a stone and getting clear about what you want it to remind you of. I can open her essay if you want the longer version.",
+    "navigation": {
+      "desktop": "Library, Articles, or the direct link.",
+      "mobile": "Library page, then Articles, or the direct link.",
+      "direct_url": "https://shopsacredground.com/how-to-program-crystals-and-set-intentions/"
+    },
+    "source": "Published essay or guide /how-to-program-crystals-and-set-intentions/, October 11, 2026. Topic set chosen with the founder: smudging, sage, clear and clean, and the matching public explainers. No view-count plugin was present."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [
+      "SG-KNOW-LIBRARY",
+      "SG-ART-SMUDGING"
+    ],
+    "keywords": [
+      "what is reiki",
+      "energy healing"
+    ],
+    "card_id": "SG-ART-REIKI",
+    "category": "Articles",
+    "title": "What is Reiki?",
+    "purpose": "Answer a popular question in her voice and hand them her essay.",
+    "visitor_questions": [
+      "What is Reiki??",
+      "Where can I read about this?",
+      "Do you have something on what is reiki?"
+    ],
+    "answer": "Reiki is a Japanese word for a gentle energy practice. Rei and ki: universal, and life energy. You stay clothed. Touch is light, or the hands stay just off the body. People come to rest. The essay on the site is the longer explanation. Who offers it is on the Reiki modality card. It does not replace medical care. The page is https://shopsacredground.com/what-is-reiki-understanding-energy-healing/.",
+    "voice_response": "Reiki is a Japanese word for a gentle energy practice. I can open her essay if you want the longer version.",
+    "navigation": {
+      "desktop": "Library, Articles, or the direct link.",
+      "mobile": "Library page, then Articles, or the direct link.",
+      "direct_url": "https://shopsacredground.com/what-is-reiki-understanding-energy-healing/"
+    },
+    "source": "Published essay or guide /what-is-reiki-understanding-energy-healing/, October 11, 2026. Topic set chosen with the founder: smudging, sage, clear and clean, and the matching public explainers. No view-count plugin was present."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [
+      "SG-KNOW-LIBRARY",
+      "SG-ART-SMUDGING"
+    ],
+    "keywords": [
+      "tarot vs oracle",
+      "card reading",
+      "intuitive reading",
+      "difference between tarot and angel"
+    ],
+    "card_id": "SG-ART-CARDS",
+    "category": "Articles",
+    "title": "Tarot, angel cards, and intuitive readings",
+    "purpose": "Answer a popular question in her voice and hand them her essay.",
+    "visitor_questions": [
+      "Tarot, angel cards, and intuitive readings?",
+      "Where can I read about this?",
+      "Do you have something on tarot vs oracle?"
+    ],
+    "answer": "A card reading uses a symbolic deck to look at a question. Tarot is 78 archetypal images. Angel or oracle cards tend to be gentler and more direct. An intuitive reading leans on the reader's impressions. None of them lock a future in place. Her essay says that. Adie, Andre, and Lisa Maria read tarot. Robert reads a regular playing deck. Janel and Linn read angel cards. Lisa Seyring works in poems, not cards. The page is https://shopsacredground.com/what-are-card-readings-understanding-tarot-angel-intuitive-guidance/.",
+    "voice_response": "A card reading uses a symbolic deck to look at a question. I can open her essay if you want the longer version.",
+    "navigation": {
+      "desktop": "Library, Articles, or the direct link.",
+      "mobile": "Library page, then Articles, or the direct link.",
+      "direct_url": "https://shopsacredground.com/what-are-card-readings-understanding-tarot-angel-intuitive-guidance/"
+    },
+    "source": "Published essay or guide /what-are-card-readings-understanding-tarot-angel-intuitive-guidance/, October 11, 2026. Topic set chosen with the founder: smudging, sage, clear and clean, and the matching public explainers. No view-count plugin was present."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [
+      "SG-KNOW-LIBRARY",
+      "SG-ART-SMUDGING"
+    ],
+    "keywords": [
+      "sound healing",
+      "sound bath",
+      "what is a gong bath"
+    ],
+    "card_id": "SG-ART-SOUND",
+    "category": "Articles",
+    "title": "What is sound healing?",
+    "purpose": "Answer a popular question in her voice and hand them her essay.",
+    "visitor_questions": [
+      "What is sound healing??",
+      "Where can I read about this?",
+      "Do you have something on sound healing?"
+    ],
+    "answer": "Sound healing here means bowls, gongs, forks, or voice, used so you can feel sound in the body. You usually lie down and listen. Her essay is the longer piece. Andre, Kate, and Karen are on the practitioners page for sound. The page is https://shopsacredground.com/what-is-sound-healing-understanding-vibrational-healing/.",
+    "voice_response": "Sound healing here means bowls, gongs, forks, or voice, used so you can feel sound in the body. I can open her essay if you want the longer version.",
+    "navigation": {
+      "desktop": "Library, Articles, or the direct link.",
+      "mobile": "Library page, then Articles, or the direct link.",
+      "direct_url": "https://shopsacredground.com/what-is-sound-healing-understanding-vibrational-healing/"
+    },
+    "source": "Published essay or guide /what-is-sound-healing-understanding-vibrational-healing/, October 11, 2026. Topic set chosen with the founder: smudging, sage, clear and clean, and the matching public explainers. No view-count plugin was present."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [
+      "SG-KNOW-LIBRARY",
+      "SG-ART-SMUDGING"
+    ],
+    "keywords": [
+      "what is meditation",
+      "how to meditate",
+      "beginner meditation"
+    ],
+    "card_id": "SG-ART-MEDITATION",
+    "category": "Articles",
+    "title": "What is meditation?",
+    "purpose": "Answer a popular question in her voice and hand them her essay.",
+    "visitor_questions": [
+      "What is meditation??",
+      "Where can I read about this?",
+      "Do you have something on what is meditation?"
+    ],
+    "answer": "Meditation is practice at being here: breath, a phrase, or just sitting. You can be bad at it and still be doing it. Tuesday at 7 PM is the free community hour. Her essay is the longer welcome. The Observatory and the Library also have music for it. The page is https://shopsacredground.com/what-is-meditation-understanding-mindfulness-practice/.",
+    "voice_response": "Meditation is practice at being here: breath, a phrase, or just sitting. I can open her essay if you want the longer version.",
+    "navigation": {
+      "desktop": "Library, Articles, or the direct link.",
+      "mobile": "Library page, then Articles, or the direct link.",
+      "direct_url": "https://shopsacredground.com/what-is-meditation-understanding-mindfulness-practice/"
+    },
+    "source": "Published essay or guide /what-is-meditation-understanding-mindfulness-practice/, October 11, 2026. Topic set chosen with the founder: smudging, sage, clear and clean, and the matching public explainers. No view-count plugin was present."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [
+      "SG-KNOW-LIBRARY",
+      "SG-ART-SMUDGING"
+    ],
+    "keywords": [
+      "akashic",
+      "akashic records reading"
+    ],
+    "card_id": "SG-ART-AKASHIC",
+    "category": "Articles",
+    "title": "What is an Akashic reading?",
+    "purpose": "Answer a popular question in her voice and hand them her essay.",
+    "visitor_questions": [
+      "What is an Akashic reading??",
+      "Where can I read about this?",
+      "Do you have something on akashic?"
+    ],
+    "answer": "The Akashic Records are a traditional picture of a soul's memory, opened in session as a way to ask about patterns. Her essay is the long version. Janel and Karen are who the practitioners page names. It is a spiritual session. It is not a background check and not therapy. The page is https://shopsacredground.com/akashic-record-reading-everything-you-need-to-know/.",
+    "voice_response": "The Akashic Records are a traditional picture of a soul's memory, opened in session as a way to ask about patterns. I can open her essay if you want the longer version.",
+    "navigation": {
+      "desktop": "Library, Articles, or the direct link.",
+      "mobile": "Library page, then Articles, or the direct link.",
+      "direct_url": "https://shopsacredground.com/akashic-record-reading-everything-you-need-to-know/"
+    },
+    "source": "Published essay or guide /akashic-record-reading-everything-you-need-to-know/, October 11, 2026. Topic set chosen with the founder: smudging, sage, clear and clean, and the matching public explainers. No view-count plugin was present."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [
+      "SG-KNOW-LIBRARY",
+      "SG-ART-SMUDGING"
+    ],
+    "keywords": [
+      "empath",
+      "highly sensitive",
+      "i feel everything",
+      "overwhelmed"
+    ],
+    "card_id": "SG-ART-EMPATH",
+    "category": "Articles",
+    "title": "If you feel everything",
+    "purpose": "Answer a popular question in her voice and hand them her essay.",
+    "visitor_questions": [
+      "If you feel everything?",
+      "Where can I read about this?",
+      "Do you have something on empath?"
+    ],
+    "answer": "Some people walk into a room and feel it before anyone speaks. Her essay talks about that sensitivity. It is not a diagnosis. If the feeling is grief, slow down. If they want language and company, the essay is there, and so is the Holistic Center. Janel has a published class called Navigating Life as an Empath or Sensitive Soul. The page is https://shopsacredground.com/do-you-easily-cry-are-you-highly-sensitive-to-other-peoples-energy-maybe-you-are-an-empath/.",
+    "voice_response": "Some people walk into a room and feel it before anyone speaks. I can open her essay if you want the longer version.",
+    "navigation": {
+      "desktop": "Library, Articles, or the direct link.",
+      "mobile": "Library page, then Articles, or the direct link.",
+      "direct_url": "https://shopsacredground.com/do-you-easily-cry-are-you-highly-sensitive-to-other-peoples-energy-maybe-you-are-an-empath/"
+    },
+    "source": "Published essay or guide /do-you-easily-cry-are-you-highly-sensitive-to-other-peoples-energy-maybe-you-are-an-empath/, October 11, 2026. Topic set chosen with the founder: smudging, sage, clear and clean, and the matching public explainers. No view-count plugin was present."
+  },
+  {
+    "layer": "knowledge",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [
+      "SG-KNOW-LIBRARY",
+      "SG-ART-SMUDGING"
+    ],
+    "keywords": [
+      "how to smudge",
+      "clear a room",
+      "clean and clear"
+    ],
+    "card_id": "SG-GUIDE-CLEAN",
+    "category": "Articles",
+    "title": "Guide: clean and clear",
+    "purpose": "Answer a popular question in her voice and hand them her essay.",
+    "visitor_questions": [
+      "Guide: clean and clear?",
+      "Where can I read about this?",
+      "Do you have something on how to smudge?"
+    ],
+    "answer": "This short guide is Smudging: How to Clean and Clear Yourself and a Space. It sits with the longer smudging essay. Use both when someone asks how to burn sage or how to clear a room. Sell nothing they did not ask for. The shop has sage when the product page says so. The page is https://shopsacredground.com/library/guides/clean-and-clear/.",
+    "voice_response": "This short guide is Smudging: How to Clean and Clear Yourself and a Space. I can open her essay if you want the longer version.",
+    "navigation": {
+      "desktop": "Library, Articles, or the direct link.",
+      "mobile": "Library page, then Articles, or the direct link.",
+      "direct_url": "https://shopsacredground.com/library/guides/clean-and-clear/"
+    },
+    "source": "Published essay or guide /library/guides/clean-and-clear/, October 11, 2026. Topic set chosen with the founder: smudging, sage, clear and clean, and the matching public explainers. No view-count plugin was present."
+  },
+  {
+    "layer": "navigation",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [],
+    "keywords": [
+      "who works there",
+      "find a reader",
+      "help me choose"
+    ],
+    "card_id": "SG-NAV-PRACTITIONER",
+    "category": "Navigation",
+    "title": "Find a practitioner",
+    "purpose": "Walk a visitor through: Find a practitioner.",
+    "visitor_questions": [
+      "Find a practitioner?",
+      "How do I find a practitioner?",
+      "Where is that on my phone?"
+    ],
+    "answer": "Open Holistic Center, then Practitioners and Modalities. Portraits are on that page. Each name goes to the newer profile. On a phone: The phone menu does not list every person. Use the practitioners link directly. Direct link: https://shopsacredground.com/practitioners-modalities-2/.",
+    "voice_response": "I'll take you straight there. https://shopsacredground.com/practitioners-modalities-2/.",
+    "navigation": {
+      "desktop": "Open Holistic Center, then Practitioners and Modalities. Portraits are on that page. Each name goes to the newer profile.",
+      "mobile": "The phone menu does not list every person. Use the practitioners link directly.",
+      "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+    },
+    "source": "Primary menu, mobile menu, and homepage buttons, October 11, 2026. Founder decision 8."
+  },
+  {
+    "layer": "navigation",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [],
+    "keywords": [
+      "book an appointment",
+      "schedule",
+      "reserve"
+    ],
+    "card_id": "SG-NAV-BOOK",
+    "category": "Navigation",
+    "title": "Book a specific person",
+    "purpose": "Walk a visitor through: Book a specific person.",
+    "visitor_questions": [
+      "Book a specific person?",
+      "How do I book a specific person?",
+      "Where is that on my phone?"
+    ],
+    "answer": "Open that person's profile from the practitioners page, then their booking link. Do not use homepage Book Now for a named person. Homepage Book Now opens the events calendar. On a phone: Same. Use their direct profile and booking links. Direct link: https://shopsacredground.com/practitioners-modalities-2/.",
+    "voice_response": "I'll take you straight there. https://shopsacredground.com/practitioners-modalities-2/.",
+    "navigation": {
+      "desktop": "Open that person's profile from the practitioners page, then their booking link. Do not use homepage Book Now for a named person. Homepage Book Now opens the events calendar.",
+      "mobile": "Same. Use their direct profile and booking links.",
+      "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+    },
+    "source": "Primary menu, mobile menu, and homepage buttons, October 11, 2026. Founder decision 8."
+  },
+  {
+    "layer": "navigation",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [],
+    "keywords": [
+      "calendar",
+      "what's on",
+      "this weekend",
+      "tomorrow"
+    ],
+    "card_id": "SG-NAV-EVENTS",
+    "category": "Navigation",
+    "title": "See what is happening",
+    "purpose": "Walk a visitor through: See what is happening.",
+    "visitor_questions": [
+      "See what is happening?",
+      "How do I see what is happening?",
+      "Where is that on my phone?"
+    ],
+    "answer": "Calendar in the top menu opens the events list. You can switch months in The Events Calendar. Open a title for the description. Registering is the booking or ticket link on that event, or a call to the shop. On a phone: Calendar in the phone menu. Your Calendar under it is for bookings you already made, after you sign in. Direct link: https://shopsacredground.com/events/list/.",
+    "voice_response": "I'll take you straight there. https://shopsacredground.com/events/list/.",
+    "navigation": {
+      "desktop": "Calendar in the top menu opens the events list. You can switch months in The Events Calendar. Open a title for the description. Registering is the booking or ticket link on that event, or a call to the shop.",
+      "mobile": "Calendar in the phone menu. Your Calendar under it is for bookings you already made, after you sign in.",
+      "direct_url": "https://shopsacredground.com/events/list/"
+    },
+    "source": "Primary menu, mobile menu, and homepage buttons, October 11, 2026. Founder decision 8."
+  },
+  {
+    "layer": "navigation",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [],
+    "keywords": [
+      "my appointment",
+      "cancel",
+      "reschedule",
+      "I already booked"
+    ],
+    "card_id": "SG-NAV-YOUR-CAL",
+    "category": "Navigation",
+    "title": "See bookings you already made",
+    "purpose": "Walk a visitor through: See bookings you already made.",
+    "visitor_questions": [
+      "See bookings you already made?",
+      "How do I see bookings you already made?",
+      "Where is that on my phone?"
+    ],
+    "answer": "Calendar, then Your Calendar. Sign in with the same email you booked with. Upcoming and past are the two tabs. Reschedule or cancel as early as you can. Less than 24 hours' notice is not eligible for a refund. Questions: 847-749-3922. On a phone: Calendar, then Your Calendar. Same sign-in. Direct link: https://shopsacredground.com/your-calendar/.",
+    "voice_response": "I'll take you straight there. https://shopsacredground.com/your-calendar/.",
+    "navigation": {
+      "desktop": "Calendar, then Your Calendar. Sign in with the same email you booked with. Upcoming and past are the two tabs. Reschedule or cancel as early as you can. Less than 24 hours' notice is not eligible for a refund. Questions: 847-749-3922.",
+      "mobile": "Calendar, then Your Calendar. Same sign-in.",
+      "direct_url": "https://shopsacredground.com/your-calendar/"
+    },
+    "source": "Primary menu, mobile menu, and homepage buttons, October 11, 2026. Founder decision 8."
+  },
+  {
+    "layer": "navigation",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [],
+    "keywords": [
+      "library",
+      "read",
+      "books"
+    ],
+    "card_id": "SG-NAV-LIBRARY",
+    "category": "Navigation",
+    "title": "Browse the Library",
+    "purpose": "Walk a visitor through: Browse the Library.",
+    "visitor_questions": [
+      "Browse the Library?",
+      "How do I browse the library?",
+      "Where is that on my phone?"
+    ],
+    "answer": "Library in the top menu, then Articles, Books, Movies, Music, Podcasts, or Guides. On a phone: Library in the phone menu shows Guides in the submenu. The Library page has all six shelves. Direct link: https://shopsacredground.com/library/.",
+    "voice_response": "I'll take you straight there. https://shopsacredground.com/library/.",
+    "navigation": {
+      "desktop": "Library in the top menu, then Articles, Books, Movies, Music, Podcasts, or Guides.",
+      "mobile": "Library in the phone menu shows Guides in the submenu. The Library page has all six shelves.",
+      "direct_url": "https://shopsacredground.com/library/"
+    },
+    "source": "Primary menu, mobile menu, and homepage buttons, October 11, 2026. Founder decision 8."
+  },
+  {
+    "layer": "navigation",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [],
+    "keywords": [
+      "observatory",
+      "moon",
+      "daily"
+    ],
+    "card_id": "SG-NAV-OBSERVATORY",
+    "category": "Navigation",
+    "title": "Open the Observatory",
+    "purpose": "Walk a visitor through: Open the Observatory.",
+    "visitor_questions": [
+      "Open the Observatory?",
+      "How do I open the observatory?",
+      "Where is that on my phone?"
+    ],
+    "answer": "Observatory in the top menu. On a phone: Observatory in the phone menu. Direct link: https://shopsacredground.com/sacred-ground-observatory/.",
+    "voice_response": "I'll take you straight there. https://shopsacredground.com/sacred-ground-observatory/.",
+    "navigation": {
+      "desktop": "Observatory in the top menu.",
+      "mobile": "Observatory in the phone menu.",
+      "direct_url": "https://shopsacredground.com/sacred-ground-observatory/"
+    },
+    "source": "Primary menu, mobile menu, and homepage buttons, October 11, 2026. Founder decision 8."
+  },
+  {
+    "layer": "navigation",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [],
+    "keywords": [
+      "buy",
+      "store online",
+      "cart"
+    ],
+    "card_id": "SG-NAV-SHOP",
+    "category": "Navigation",
+    "title": "Shop online",
+    "purpose": "Walk a visitor through: Shop online.",
+    "visitor_questions": [
+      "Shop online?",
+      "How do I shop online?",
+      "Where is that on my phone?"
+    ],
+    "answer": "Shop in the top menu. Add to cart, then checkout. On a phone: Shop in the phone menu. Direct link: https://shopsacredground.com/shop/.",
+    "voice_response": "I'll take you straight there. https://shopsacredground.com/shop/.",
+    "navigation": {
+      "desktop": "Shop in the top menu. Add to cart, then checkout.",
+      "mobile": "Shop in the phone menu.",
+      "direct_url": "https://shopsacredground.com/shop/"
+    },
+    "source": "Primary menu, mobile menu, and homepage buttons, October 11, 2026. Founder decision 8."
+  },
+  {
+    "layer": "navigation",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [],
+    "keywords": [
+      "hours",
+      "address",
+      "call",
+      "directions"
+    ],
+    "card_id": "SG-NAV-HOURS",
+    "category": "Navigation",
+    "title": "Hours, address, and the phone",
+    "purpose": "Walk a visitor through: Hours, address, and the phone.",
+    "visitor_questions": [
+      "Hours, address, and the phone?",
+      "How do I hours, address, and the phone?",
+      "Where is that on my phone?"
+    ],
+    "answer": "Contact in the menu. Address is 160 W Campbell Street, Arlington Heights, IL 60005. On a phone: Contact in the phone menu. Direct link: https://shopsacredground.com/contact/.",
+    "voice_response": "I'll take you straight there. https://shopsacredground.com/contact/.",
+    "navigation": {
+      "desktop": "Contact in the menu. Address is 160 W Campbell Street, Arlington Heights, IL 60005.",
+      "mobile": "Contact in the phone menu.",
+      "direct_url": "https://shopsacredground.com/contact/"
+    },
+    "source": "Primary menu, mobile menu, and homepage buttons, October 11, 2026. Founder decision 8."
+  },
+  {
+    "layer": "navigation",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [],
+    "keywords": [
+      "free events",
+      "free class"
+    ],
+    "card_id": "SG-NAV-FREE",
+    "category": "Navigation",
+    "title": "Find a free event",
+    "purpose": "Walk a visitor through: Find a free event.",
+    "visitor_questions": [
+      "Find a free event?",
+      "How do I find a free event?",
+      "Where is that on my phone?"
+    ],
+    "answer": "Open the events list and look for Free in the title, or ask for meditation, educational night, or reiki share. Confirm the date on the calendar. On a phone: Same calendar link. Direct link: https://shopsacredground.com/events/list/.",
+    "voice_response": "I'll take you straight there. https://shopsacredground.com/events/list/.",
+    "navigation": {
+      "desktop": "Open the events list and look for Free in the title, or ask for meditation, educational night, or reiki share. Confirm the date on the calendar.",
+      "mobile": "Same calendar link.",
+      "direct_url": "https://shopsacredground.com/events/list/"
+    },
+    "source": "Primary menu, mobile menu, and homepage buttons, October 11, 2026. Founder decision 8."
+  },
+  {
+    "layer": "navigation",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "stable",
+    "live_source": null,
+    "related_cards": [],
+    "keywords": [
+      "where do I start",
+      "help me",
+      "overwhelmed",
+      "just browsing"
+    ],
+    "card_id": "SG-NAV-START",
+    "category": "Navigation",
+    "title": "Not sure where to start",
+    "purpose": "Walk a visitor through: Not sure where to start.",
+    "visitor_questions": [
+      "Not sure where to start?",
+      "How do I not sure where to start?",
+      "Where is that on my phone?"
+    ],
+    "answer": "Ask what they are carrying, or what they are curious about. Shop if they want to wander. Practitioners if they want a person. Library if they want to read. Observatory if they want the moon, a stone, or a number. Calendar if they want to see the week. Phone if they want a human: 847-749-3922. On a phone: Same destinations. Give the direct link. Direct link: https://shopsacredground.com/.",
+    "voice_response": "I'll take you straight there. https://shopsacredground.com/.",
+    "navigation": {
+      "desktop": "Ask what they are carrying, or what they are curious about. Shop if they want to wander. Practitioners if they want a person. Library if they want to read. Observatory if they want the moon, a stone, or a number. Calendar if they want to see the week. Phone if they want a human: 847-749-3922.",
+      "mobile": "Same destinations. Give the direct link.",
+      "direct_url": "https://shopsacredground.com/"
+    },
+    "source": "Primary menu, mobile menu, and homepage buttons, October 11, 2026. Founder decision 8."
+  },
+  {
+    "layer": "live",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "live_only",
+    "live_source": "WordPress Events Calendar.",
+    "related_cards": [],
+    "keywords": [
+      "tomorrow",
+      "this week",
+      "schedule"
+    ],
+    "card_id": "SG-LIVE-EVENTS",
+    "category": "Live data",
+    "title": "Upcoming events must be fetched",
+    "purpose": "Stop the guide from memorizing the calendar.",
+    "visitor_questions": [
+      "What's happening tomorrow?",
+      "What's on this weekend?",
+      "Is meditation on this Tuesday?"
+    ],
+    "answer": "Answer from The Events Calendar at the time of the question. If the lookup fails, say you cannot see the live calendar and give https://shopsacredground.com/events/list/.",
+    "voice_response": "Let me look at the calendar rather than guess. If I can't see it, I'll give you the events page.",
+    "navigation": {
+      "desktop": "Calendar menu.",
+      "mobile": "Calendar in the phone menu.",
+      "direct_url": "https://shopsacredground.com/events/list/"
+    },
+    "source": "The Events Calendar, tribe_events."
+  },
+  {
+    "layer": "live",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "live_only",
+    "live_source": "Fluent Booking.",
+    "related_cards": [],
+    "keywords": [
+      "price",
+      "availability",
+      "cost",
+      "how much"
+    ],
+    "card_id": "SG-LIVE-BOOKING",
+    "category": "Live data",
+    "title": "Appointment times and prices must be fetched",
+    "purpose": "Stop the guide from quoting a stale price or an open slot.",
+    "visitor_questions": [
+      "Is there a time on Friday?",
+      "How much is a reading?",
+      "How long is the session?"
+    ],
+    "answer": "Open that practitioner's booking URL. Read the length and price there. If no time is published, say so and offer 847-749-3922. Never say you booked it.",
+    "voice_response": "The booking page has the real times and the real price. I won't guess, and I won't tell you it's reserved until that page finishes it.",
+    "navigation": {
+      "desktop": "The person's booking link.",
+      "mobile": "The person's booking link.",
+      "direct_url": "https://shopsacredground.com/practitioners-modalities-2/"
+    },
+    "source": "Fluent Booking event pages."
+  },
+  {
+    "layer": "live",
+    "status": "draft_for_founder_review",
+    "last_verified": "2026-10-11",
+    "update_frequency": "live_only",
+    "live_source": "WooCommerce.",
+    "related_cards": [],
+    "keywords": [
+      "in stock",
+      "inventory",
+      "do you have"
+    ],
+    "card_id": "SG-LIVE-STOCK",
+    "category": "Live data",
+    "title": "Product stock must be fetched",
+    "purpose": "Stop the guide from inventing inventory.",
+    "visitor_questions": [
+      "Do you have amethyst in the shop?",
+      "Is this in stock?",
+      "Can I buy this online?"
+    ],
+    "answer": "Check the WooCommerce product. If it is not listed, say you cannot see it online and give the phone and the address. People can also walk in.",
+    "voice_response": "I can only confirm what the shop page shows. If it isn't listed, call the store or come by 160 W Campbell Street.",
+    "navigation": {
+      "desktop": "Shop menu.",
+      "mobile": "Shop in the phone menu.",
+      "direct_url": "https://shopsacredground.com/shop/"
+    },
+    "source": "WooCommerce."
+  }
+]
