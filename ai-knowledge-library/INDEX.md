@@ -8,7 +8,7 @@ Start with `voice/VOICE-BIBLE.md` and `01-DECISIONS.md`.
 ## Voice
 
 - **SG-VOICE-IDENTITY** — Honest identity — https://shopsacredground.com/
-- **SG-VOICE-GRIEF** — When someone is grieving — https://shopsacredground.com/deneene-11/
+- **SG-VOICE-GRIEF** — When someone is grieving — https://shopsacredground.com/events/list/
 - **SG-VOICE-CRYSTAL** — How to talk about a stone — https://shopsacredground.com/library/guides/find-your-stone/
 
 ## Knowledge

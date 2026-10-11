@@ -151,6 +151,12 @@
     "kübler-ross": [
       "SG-VOICE-GRIEF"
     ],
+    "988": [
+      "SG-VOICE-GRIEF"
+    ],
+    "crisis": [
+      "SG-VOICE-GRIEF"
+    ],
     "amethyst": [
       "SG-VOICE-CRYSTAL",
       "SG-ART-AMETHYST"
@@ -893,9 +899,12 @@
       "SG-KNOW-HOME",
       "SG-NAV-START"
     ],
-    "https://shopsacredground.com/deneene-11/": [
+    "https://shopsacredground.com/events/list/": [
       "SG-VOICE-GRIEF",
-      "SG-PRAC-DENEENE"
+      "SG-KNOW-COMMUNITY",
+      "SG-NAV-EVENTS",
+      "SG-NAV-FREE",
+      "SG-LIVE-EVENTS"
     ],
     "https://shopsacredground.com/library/guides/find-your-stone/": [
       "SG-VOICE-CRYSTAL"
@@ -914,12 +923,6 @@
     ],
     "https://shopsacredground.com/library/guides/holistic-fair/": [
       "SG-KNOW-FAIR"
-    ],
-    "https://shopsacredground.com/events/list/": [
-      "SG-KNOW-COMMUNITY",
-      "SG-NAV-EVENTS",
-      "SG-NAV-FREE",
-      "SG-LIVE-EVENTS"
     ],
     "https://shopsacredground.com/sacred-ground-observatory/": [
       "SG-RULE-NO-DEATH",
@@ -956,6 +959,9 @@
     ],
     "https://shopsacredground.com/cheryl-11/": [
       "SG-PRAC-CHERYL"
+    ],
+    "https://shopsacredground.com/deneene-11/": [
+      "SG-PRAC-DENEENE"
     ],
     "https://shopsacredground.com/adie-11/": [
       "SG-PRAC-ADIE"

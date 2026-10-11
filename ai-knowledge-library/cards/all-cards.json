@@ -39,7 +39,8 @@
     "update_frequency": "stable",
     "live_source": null,
     "related_cards": [
-      "SG-PRAC-DENEENE"
+      "SG-PRAC-DENEENE",
+      "SG-NAV-EVENTS"
     ],
     "keywords": [
       "grief",
@@ -48,7 +49,9 @@
       "mourning",
       "sad",
       "lonely",
-      "Kübler-Ross"
+      "Kübler-Ross",
+      "988",
+      "crisis"
     ],
     "card_id": "SG-VOICE-GRIEF",
     "category": "Voice",
@@ -62,12 +65,12 @@
       "I feel so alone",
       "My pet died"
     ],
-    "answer": "Grief is personal. There isn't a timetable, and there isn't a correct way to do it. You don't have to be positive, and you don't have to find a lesson in it. Sacred Ground can be a place to sit, breathe, and not explain yourself. Deneene's published profile lists her as a spiritual guide, grief counselor, and meditation teacher, and the site says she studied with Elisabeth Kübler-Ross. That is companionship and spiritual support, not a promise that a session replaces a doctor or a licensed clinician, and not a claim about a license beyond what she has published. If you want her, that's Holistic Center, then Practitioners, then Deneene. If you are in immediate danger, call 911. If you need to talk to someone right now, call or text 988.",
-    "voice_response": "I'm glad you said it out loud. Grief doesn't run on a schedule, and you don't owe anyone a silver lining. If you want a quiet place and a person who understands that, she's under Holistic Center, then Practitioners, and the shop number is 847-749-3922. If you need someone right now, you can call or text 988.",
+    "answer": "Grief is personal. There isn't a timetable, and there isn't a correct way to do it. You don't have to be positive, and you don't have to find a lesson in it. Sacred Ground can be a place to sit, breathe, and not explain yourself. Deneene's published profile lists her as a spiritual guide, grief counselor, and meditation teacher, and the site says she studied with Elisabeth Kübler-Ross. That is companionship and spiritual support, not a promise that a session replaces a doctor or a licensed clinician, and not a claim about a license beyond what she has published. If you want her, look on Calendar for the days she is in. She puts her own dates there. Do not invent a time. If nothing is listed yet, say so and offer 847-749-3922. If you are in immediate danger, call 911. 988 is the Suicide & Crisis Lifeline. Call or text 988 if you need someone right now. Say what it is. Do not lecture.",
+    "voice_response": "I'm glad you said it out loud. Grief doesn't run on a schedule, and you don't owe anyone a silver lining. If you want time with Deneene, look on Calendar for the days she is in. If you need someone right now, 988 is the Suicide & Crisis Lifeline. You can call or text it.",
     "navigation": {
-      "desktop": "Holistic Center, then Practitioners, then Deneene.",
-      "mobile": "Open the menu, Holistic Center is under the desktop menu; on a phone, go to the practitioners page directly.",
-      "direct_url": "https://shopsacredground.com/deneene-11/"
+      "desktop": "Calendar in the menu, for Deneene's dates.",
+      "mobile": "Calendar in the phone menu.",
+      "direct_url": "https://shopsacredground.com/events/list/"
     },
     "source": "Homepage letter. Practitioners page, Deneene. Founder voice brief, October 11, 2026."
   },
@@ -1224,8 +1227,8 @@
       "Is Deneene available?",
       "Tell me about Deneene"
     ],
-    "answer": "Deneene is on the practitioners page. Spiritual guide, grief counselor, and meditation teacher. The site says she studied with Elisabeth Kübler-Ross. She is also the founder. She is adding times herself. The 60-minute booking session is still a draft, so there is no public booking link yet. When her booking page is public, send people there for a time. Until then, Holistic Center then Practitioners, or the phone. Do not read a website address. Do not send grief questions to a sales pitch. Do not claim a license beyond the words on her page.",
-    "voice_response": "Deneene is the founder. Her page lists her as a spiritual guide, grief counselor, and meditation teacher. She is putting her own appointment times up. Until that booking page is public, call 847-749-3922, or find her under Holistic Center, then Practitioners. I can't see a time that isn't published.",
+    "answer": "Deneene is on the practitioners page. Spiritual guide, grief counselor, and meditation teacher. The site says she studied with Elisabeth Kübler-Ross. She is also the founder. She is adding times herself. The 60-minute booking session is still a draft, so there is no public booking link yet. Her dates go on Calendar. Send grief questions there, not to a sales pitch. Do not invent a time. If nothing is listed, say so and offer 847-749-3922. Do not read a website address. Do not claim a license beyond the words on her page. 988 is the Suicide & Crisis Lifeline. Call or text if they need someone right now.",
+    "voice_response": "Deneene is the founder. Her page lists her as a spiritual guide, grief counselor, and meditation teacher. If you want time with her, look on Calendar for the days she is in. I can't see a time that isn't published.",
     "navigation": {
       "desktop": "Holistic Center, then Practitioners, then their name.",
       "mobile": "Holistic Center is under the desktop menu. On a phone, Practitioners is the path.",

@@ -10,9 +10,9 @@ Any page.
 
 ## When someone is grieving
 
-I'm glad you said it out loud. Grief doesn't run on a schedule, and you don't owe anyone a silver lining. If you want a quiet place and a person who understands that, she's under Holistic Center, then Practitioners, and the shop number is 847-749-3922. If you need someone right now, you can call or text 988.
+I'm glad you said it out loud. Grief doesn't run on a schedule, and you don't owe anyone a silver lining. If you want time with Deneene, look on Calendar for the days she is in. If you need someone right now, 988 is the Suicide & Crisis Lifeline. You can call or text it.
 
-Holistic Center, then Practitioners, then Deneene.
+Calendar in the menu, for Deneene's dates.
 
 ## How to talk about a stone
 
@@ -196,7 +196,7 @@ Holistic Center, then Practitioners, then their name.
 
 ## Deneene
 
-Deneene is the founder. Her page lists her as a spiritual guide, grief counselor, and meditation teacher. She is putting her own appointment times up. Until that booking page is public, call 847-749-3922, or find her under Holistic Center, then Practitioners. I can't see a time that isn't published.
+Deneene is the founder. Her page lists her as a spiritual guide, grief counselor, and meditation teacher. If you want time with her, look on Calendar for the days she is in. I can't see a time that isn't published.
 
 Holistic Center, then Practitioners, then their name.
 

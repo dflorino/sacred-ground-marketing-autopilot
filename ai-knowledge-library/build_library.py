@@ -135,20 +135,23 @@ add(
         "Deneene's published profile lists her as a spiritual guide, grief counselor, and meditation teacher, "
         "and the site says she studied with Elisabeth Kübler-Ross. That is companionship and spiritual support, "
         "not a promise that a session replaces a doctor or a licensed clinician, and not a claim about a license beyond what she has published. "
-        "If you want her, that's Holistic Center, then Practitioners, then Deneene. If you are in immediate danger, call 911. If you need to talk to someone right now, call or text 988."
+        "If you want her, look on Calendar for the days she is in. She puts her own dates there. Do not invent a time. "
+        "If nothing is listed yet, say so and offer 847-749-3922. "
+        "If you are in immediate danger, call 911. "
+        "988 is the Suicide & Crisis Lifeline. Call or text 988 if you need someone right now. Say what it is. Do not lecture."
     ),
     voice_response=(
         "I'm glad you said it out loud. Grief doesn't run on a schedule, and you don't owe anyone a silver lining. "
-        "If you want a quiet place and a person who understands that, she's under Holistic Center, then Practitioners, and the shop number is 847-749-3922. "
-        "If you need someone right now, you can call or text 988."
+        "If you want time with Deneene, look on Calendar for the days she is in. "
+        "If you need someone right now, 988 is the Suicide & Crisis Lifeline. You can call or text it."
     ),
     navigation=nav(
-        "Holistic Center, then Practitioners, then Deneene.",
-        "Open the menu, Holistic Center is under the desktop menu; on a phone, go to the practitioners page directly.",
-        BASE + "/deneene-11/",
+        "Calendar in the menu, for Deneene's dates.",
+        "Calendar in the phone menu.",
+        BASE + "/events/list/",
     ),
-    related_cards=["SG-PRAC-DENEENE"],
-    keywords=["grief", "loss", "died", "mourning", "sad", "lonely", "Kübler-Ross"],
+    related_cards=["SG-PRAC-DENEENE", "SG-NAV-EVENTS"],
+    keywords=["grief", "loss", "died", "mourning", "sad", "lonely", "Kübler-Ross", "988", "crisis"],
     source="Homepage letter. Practitioners page, Deneene. Founder voice brief, October 11, 2026.",
     update_frequency="stable",
 )
@@ -651,12 +654,15 @@ for cid, name, profile, blurb, avail, bookings, on_dir in PEOPLE:
     elif cid == "SG-PRAC-DENEENE":
         voice = (
             "Deneene is the founder. Her page lists her as a spiritual guide, grief counselor, and meditation teacher. "
-            "She is putting her own appointment times up. Until that booking page is public, call 847-749-3922, or find her under Holistic Center, then Practitioners. I can't see a time that isn't published."
+            "If you want time with her, look on Calendar for the days she is in. "
+            "I can't see a time that isn't published."
         )
         answer = (
             f"{name} is {where}. {blurb} {avail} "
-            "When her booking page is public, send people there for a time. Until then, Holistic Center then Practitioners, or the phone. "
-            "Do not read a website address. Do not send grief questions to a sales pitch. Do not claim a license beyond the words on her page."
+            "Her dates go on Calendar. Send grief questions there, not to a sales pitch. "
+            "Do not invent a time. If nothing is listed, say so and offer 847-749-3922. "
+            "Do not read a website address. Do not claim a license beyond the words on her page. "
+            "988 is the Suicide & Crisis Lifeline. Call or text if they need someone right now."
         )
     else:
         voice = (

@@ -1113,8 +1113,8 @@
       "Is Deneene available?",
       "Tell me about Deneene"
     ],
-    "answer": "Deneene is on the practitioners page. Spiritual guide, grief counselor, and meditation teacher. The site says she studied with Elisabeth Kübler-Ross. She is also the founder. She is adding times herself. The 60-minute booking session is still a draft, so there is no public booking link yet. When her booking page is public, send people there for a time. Until then, Holistic Center then Practitioners, or the phone. Do not read a website address. Do not send grief questions to a sales pitch. Do not claim a license beyond the words on her page.",
-    "voice_response": "Deneene is the founder. Her page lists her as a spiritual guide, grief counselor, and meditation teacher. She is putting her own appointment times up. Until that booking page is public, call 847-749-3922, or find her under Holistic Center, then Practitioners. I can't see a time that isn't published.",
+    "answer": "Deneene is on the practitioners page. Spiritual guide, grief counselor, and meditation teacher. The site says she studied with Elisabeth Kübler-Ross. She is also the founder. She is adding times herself. The 60-minute booking session is still a draft, so there is no public booking link yet. Her dates go on Calendar. Send grief questions there, not to a sales pitch. Do not invent a time. If nothing is listed, say so and offer 847-749-3922. Do not read a website address. Do not claim a license beyond the words on her page. 988 is the Suicide & Crisis Lifeline. Call or text if they need someone right now.",
+    "voice_response": "Deneene is the founder. Her page lists her as a spiritual guide, grief counselor, and meditation teacher. If you want time with her, look on Calendar for the days she is in. I can't see a time that isn't published.",
     "navigation": {
       "desktop": "Holistic Center, then Practitioners, then their name.",
       "mobile": "Holistic Center is under the desktop menu. On a phone, Practitioners is the path.",
