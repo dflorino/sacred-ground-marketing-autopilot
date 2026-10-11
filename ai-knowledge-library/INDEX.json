@@ -1,7 +1,7 @@
 {
   "generated": "2026-10-11",
   "card_count": 86,
-  "question_count": 408,
+  "question_count": 415,
   "by_category": {
     "Voice": [
       "SG-VOICE-IDENTITY",
@@ -275,6 +275,18 @@
     "gifts": [
       "SG-KNOW-SHOP"
     ],
+    "shop page": [
+      "SG-KNOW-SHOP",
+      "SG-NAV-SHOP"
+    ],
+    "checkout": [
+      "SG-KNOW-SHOP",
+      "SG-NAV-SHOP"
+    ],
+    "delivered": [
+      "SG-KNOW-SHOP",
+      "SG-NAV-SHOP"
+    ],
     "fair": [
       "SG-KNOW-FAIR"
     ],
@@ -480,7 +492,6 @@
       "SG-MOD-ASTROLOGY",
       "SG-PRAC-LISA",
       "SG-PRAC-LISA",
-      "SG-PRAC-LISAMARIA",
       "SG-PRAC-LISAS"
     ],
     "medium": [
@@ -622,6 +633,27 @@
       "SG-PRAC-LITA"
     ],
     "lisa maria": [
+      "SG-PRAC-LISAMARIA"
+    ],
+    "lisa maria tarot": [
+      "SG-PRAC-LISAMARIA"
+    ],
+    "lisamaria": [
+      "SG-PRAC-LISAMARIA"
+    ],
+    "eight decks": [
+      "SG-PRAC-LISAMARIA"
+    ],
+    "8 decks": [
+      "SG-PRAC-LISAMARIA"
+    ],
+    "biofield": [
+      "SG-PRAC-LISAMARIA"
+    ],
+    "somatic": [
+      "SG-PRAC-LISAMARIA"
+    ],
+    "tuning fork": [
       "SG-PRAC-LISAMARIA"
     ],
     "lisa seyring": [
@@ -861,6 +893,9 @@
       "SG-NAV-SHOP"
     ],
     "cart": [
+      "SG-NAV-SHOP"
+    ],
+    "order": [
       "SG-NAV-SHOP"
     ],
     "call": [

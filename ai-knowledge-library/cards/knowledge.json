@@ -137,7 +137,10 @@
       "sage",
       "online",
       "woocommerce",
-      "gifts"
+      "gifts",
+      "shop page",
+      "checkout",
+      "delivered"
     ],
     "card_id": "SG-KNOW-SHOP",
     "category": "Shop",
@@ -150,10 +153,11 @@
       "Do you sell sage?",
       "Can I shop in the store?",
       "Do you have books?",
-      "What if something is out of stock?"
+      "What if something is out of stock?",
+      "How do I use the shop page to buy things?"
     ],
-    "answer": "You can shop in the store and on the website. The online shop is ordinary checkout: cart, then secure checkout. On October 11 the published shelves with products were zodiac bags, wellness bags, sacred waters and sprays, tumbles, freeforms, sage, palo santo and incense, jewelry, tarot and oracle decks, ritual items, and mystery boxes. Crystals and minerals are the heart of the physical shop, including pieces that may not all be listed online. This guide does not know what is on the shelf today. The product page does. If it is not listed, call the shop.",
-    "voice_response": "Yes, you can buy online, and yes, you can come in. Crystals, jewelry, sage, decks, and gifts are the idea. I won't guess what's in stock. The shop page will show you, or call 847-749-3922.",
+    "answer": "You can shop in the store and on the website. The online shop is ordinary checkout: cart, then secure checkout. Then it will be delivered straight to the address you provide to us. That simple. You are buying from Sacred Ground. We genuinely appreciate your purchase. All of this helps us remain a strong brick and mortar in the community. As the owner, I appreciate it. On October 11 the published shelves with products were zodiac bags, wellness bags, sacred waters and sprays, tumbles, freeforms, sage, palo santo and incense, jewelry, tarot and oracle decks, ritual items, and mystery boxes. Crystals and minerals are the heart of the physical shop, including pieces that may not all be listed online. This guide does not know what is on the shelf today. The product page does. If it is not listed, call the shop.",
+    "voice_response": "Yes, you can buy online, and yes, you can come in. Crystals, jewelry, sage, decks, and gifts are the idea. I won't guess what's in stock. The shop page will show you, or call 847-749-3922. On the shop page, add what you want to your cart and check out. Then it will be delivered straight to the address you provide to us. That simple. You're buying from Sacred Ground. We genuinely appreciate your purchase. All of this helps us remain a strong brick and mortar in the community. As the owner, I appreciate it.",
     "navigation": {
       "desktop": "Shop in the top menu.",
       "mobile": "Shop in the phone menu.",
@@ -1601,27 +1605,36 @@
     ],
     "keywords": [
       "lisa maria",
-      "lisa"
+      "lisa maria tarot",
+      "lisamaria",
+      "eight decks",
+      "8 decks",
+      "biofield",
+      "somatic",
+      "tuning fork"
     ],
     "card_id": "SG-PRAC-LISAMARIA",
     "category": "Practitioners",
     "title": "Lisa Maria",
-    "purpose": "Identify Lisa Maria, what they publish, and where to book them.",
+    "purpose": "Identify Lisa Maria from her Sacred Ground page, her Facebook, and how she actually reads — so the guide does not mix her up with Lisa the astrologer.",
     "visitor_questions": [
-      "Who is Lisa?",
-      "What does Lisa do?",
-      "How do I book Lisa?",
-      "Is Lisa available?",
-      "Tell me about Lisa Maria"
+      "Who is Lisa Maria?",
+      "What does Lisa Maria do?",
+      "How do I book Lisa Maria?",
+      "Is Lisa Maria available?",
+      "Tell me about Lisa Maria",
+      "Does Lisa Maria do tarot?",
+      "Does Lisa Maria do astrology?",
+      "What is Lisa Maria's reading like?"
     ],
-    "answer": "Lisa Maria is on the practitioners page. Intuitive tarot and teaching. Also somatic healing on her booking pages. The directory says she is in high demand. Book on her pages. Do not send her tarot clients to Lisa the astrologer. A time is on their booking page. Do not read a website address out loud. Say Holistic Center, then Practitioners, then their name. Length and price stay on that page. If no time is open, say so and offer the phone, 847-749-3922. Homepage Book Now opens Calendar. This person gets their own page.",
-    "voice_response": "Lisa Maria is on the practitioners page. Intuitive tarot and teaching. Also somatic healing on her booking pages. The directory says she is in high demand. For a time, Holistic Center, then Practitioners, then their name. Not the homepage Book Now button.",
+    "answer": "Lisa Maria is on the practitioners page. This is Lisa Maria Tarot Intuitive — not Lisa the astrologer, and not Lisa Seyring. Do not send her tarot clients to Lisa the astrologer. Lifelong seeker. Artist and teacher for more than twenty years. Kind, passionate, and empathetic. Mother Nature is the teacher she names first. She reads energy and the subconscious. She uses crystals, tarot, and oracle, and she communicates with angels and guides. Founder: she works with about eight decks, and she mixes astrology into the reading. Her Facebook cover names intuitive guidance, healing, art, astrology, and higher self. Her public line is keep shining your light. She is featured in Natural Awakenings Chicago Magazine. People describe the session as comfortable, personal, and fun — a conversation, not a show. She posts from Sacred Ground, including community meditation and her October days in the shop. She also offers somatic healing / biofield and tuning-fork energy work, plus mentoring after a reading. That is energy and sound work. Not a medical treatment. We are not doctors — say that only if they ask whether it treats a symptom or a diagnosis. She also does parties and events, and home energy cleansing. Those book through her, not as a shop product. The directory says she is in high demand. In-person readings are here at Sacred Ground. A time is on her booking pages: tarot, sessions, and class. Do not read a website address. Do not give her personal email, PayPal, Venmo, Cash App, or any price. Say Holistic Center, then Practitioners, then Lisa Maria. If no time is open, say so and offer 847-749-3922. Homepage Book Now opens Calendar. She has her own pages.",
+    "voice_response": "Lisa Maria is Lisa Maria — not Lisa the astrologer, and not Lisa Seyring. She's an artist and a teacher, more than twenty years at that, and a warm intuitive reader. She works with about eight decks — tarot and oracle — plus crystals, and she also brings astrology in. She reads energy, and she talks with people's angels and guides. The session feels like a conversation, not a performance. Kind. Empathetic. People leave feeling heard. She also offers somatic and biofield tuning here — energy and sound work, not medicine. The directory says she is in high demand. She reads in person at Sacred Ground. For a time, Holistic Center, then Practitioners, then Lisa Maria.",
     "navigation": {
-      "desktop": "Holistic Center, then Practitioners, then their name.",
-      "mobile": "Holistic Center is under the desktop menu. On a phone, Practitioners is the path.",
+      "desktop": "Holistic Center, then Practitioners, then Lisa Maria.",
+      "mobile": "Holistic Center is under the desktop menu. On a phone, Practitioners, then Lisa Maria.",
       "direct_url": "https://shopsacredground.com/lisa-maria-11/"
     },
-    "source": "Practitioners page 17216 and published booking pages, October 11, 2026.",
+    "source": "Sacred Ground page 16755, practitioners directory, Fluent booking pages, Lisa Maria Tarot Intuitive Facebook, and her public About / services copy, October 11, 2026. Founder: eight decks plus astrology.",
     "booking_urls": [
       "https://shopsacredground.com/book/lisa-maria-tarot/",
       "https://shopsacredground.com/book/lisa-maria/",

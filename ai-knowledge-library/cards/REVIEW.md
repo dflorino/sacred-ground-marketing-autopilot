@@ -46,7 +46,7 @@ Contact in the menu. Hours are also at the bottom of the homepage.
 
 ## The shop, in person and online
 
-Yes, you can buy online, and yes, you can come in. Crystals, jewelry, sage, decks, and gifts are the idea. I won't guess what's in stock. The shop page will show you, or call 847-749-3922.
+Yes, you can buy online, and yes, you can come in. Crystals, jewelry, sage, decks, and gifts are the idea. I won't guess what's in stock. The shop page will show you, or call 847-749-3922. On the shop page, add what you want to your cart and check out. Then it will be delivered straight to the address you provide to us. That simple. You're buying from Sacred Ground. We genuinely appreciate your purchase. All of this helps us remain a strong brick and mortar in the community. As the owner, I appreciate it.
 
 Shop in the top menu.
 
@@ -280,9 +280,9 @@ Holistic Center, then Practitioners, then their name.
 
 ## Lisa Maria
 
-Lisa Maria is on the practitioners page. Intuitive tarot and teaching. Also somatic healing on her booking pages. The directory says she is in high demand. For a time, Holistic Center, then Practitioners, then their name. Not the homepage Book Now button.
+Lisa Maria is Lisa Maria — not Lisa the astrologer, and not Lisa Seyring. She's an artist and a teacher, more than twenty years at that, and a warm intuitive reader. She works with about eight decks — tarot and oracle — plus crystals, and she also brings astrology in. She reads energy, and she talks with people's angels and guides. The session feels like a conversation, not a performance. Kind. Empathetic. People leave feeling heard. She also offers somatic and biofield tuning here — energy and sound work, not medicine. The directory says she is in high demand. She reads in person at Sacred Ground. For a time, Holistic Center, then Practitioners, then Lisa Maria.
 
-Holistic Center, then Practitioners, then their name.
+Holistic Center, then Practitioners, then Lisa Maria.
 
 ## Lisa Seyring
 
@@ -472,9 +472,9 @@ Observatory in the top menu.
 
 ## Shop online
 
-That's on our nav — Shop in the menu.
+Shop is in the menu at the top. Browse what's there, add what you want to your cart, and check out from the page. Then it will be delivered straight to the address you provide to us. That simple. You're buying from Sacred Ground. We genuinely appreciate your purchase. All of this helps us remain a strong brick and mortar in the community. As the owner, I appreciate it.
 
-Shop in the top menu. Add to cart, then checkout.
+Shop in the top menu. Add to cart, then checkout. It is delivered to the address they give us.
 
 ## Hours, address, and the phone
 

@@ -348,9 +348,13 @@ add(
         "Can I shop in the store?",
         "Do you have books?",
         "What if something is out of stock?",
+        "How do I use the shop page to buy things?",
     ],
     answer=(
         "You can shop in the store and on the website. The online shop is ordinary checkout: cart, then secure checkout. "
+        "Then it will be delivered straight to the address you provide to us. That simple. "
+        "You are buying from Sacred Ground. We genuinely appreciate your purchase. "
+        "All of this helps us remain a strong brick and mortar in the community. As the owner, I appreciate it. "
         "On October 11 the published shelves with products were zodiac bags, wellness bags, sacred waters and sprays, tumbles, freeforms, "
         "sage, palo santo and incense, jewelry, tarot and oracle decks, ritual items, and mystery boxes. "
         "Crystals and minerals are the heart of the physical shop, including pieces that may not all be listed online. "
@@ -358,11 +362,15 @@ add(
     ),
     voice_response=(
         "Yes, you can buy online, and yes, you can come in. Crystals, jewelry, sage, decks, and gifts are the idea. "
-        "I won't guess what's in stock. The shop page will show you, or call 847-749-3922."
+        "I won't guess what's in stock. The shop page will show you, or call 847-749-3922. "
+        "On the shop page, add what you want to your cart and check out. "
+        "Then it will be delivered straight to the address you provide to us. That simple. "
+        "You're buying from Sacred Ground. We genuinely appreciate your purchase. "
+        "All of this helps us remain a strong brick and mortar in the community. As the owner, I appreciate it."
     ),
     navigation=nav("Shop in the top menu.", "Shop in the phone menu.", BASE + "/shop/"),
     related_cards=["SG-KNOW-VISIT", "SG-ART-SMUDGING", "SG-NAV-SHOP"],
-    keywords=["shop", "buy", "crystals", "jewelry", "sage", "online", "woocommerce", "gifts"],
+        keywords=["shop", "buy", "crystals", "jewelry", "sage", "online", "woocommerce", "gifts", "shop page", "checkout", "delivered"],
     source="WooCommerce categories with products, October 11, 2026. Homepage shop story.",
     update_frequency="live_only",
     live_source="WooCommerce shop and product pages.",
@@ -697,6 +705,39 @@ for cid, name, profile, blurb, avail, bookings, on_dir in PEOPLE:
             "Do not read a website address. Do not claim a license beyond the words on her page. "
             "If they are feeling suicidal or in a crisis, please call or text 988. A dedicated professional can help them now."
         )
+    elif cid == "SG-PRAC-LISAMARIA":
+        voice = (
+            "Lisa Maria is Lisa Maria — not Lisa the astrologer, and not Lisa Seyring. "
+            "She's an artist and a teacher, more than twenty years at that, and a warm intuitive reader. "
+            "She works with about eight decks — tarot and oracle — plus crystals, and she also brings astrology in. "
+            "She reads energy, and she talks with people's angels and guides. "
+            "The session feels like a conversation, not a performance. Kind. Empathetic. People leave feeling heard. "
+            "She also offers somatic and biofield tuning here — energy and sound work, not medicine. "
+            "The directory says she is in high demand. She reads in person at Sacred Ground. "
+            "For a time, Holistic Center, then Practitioners, then Lisa Maria."
+        )
+        answer = (
+            "Lisa Maria is on the practitioners page. This is Lisa Maria Tarot Intuitive — not Lisa the astrologer, "
+            "and not Lisa Seyring. Do not send her tarot clients to Lisa the astrologer. "
+            "Lifelong seeker. Artist and teacher for more than twenty years. Kind, passionate, and empathetic. "
+            "Mother Nature is the teacher she names first. "
+            "She reads energy and the subconscious. She uses crystals, tarot, and oracle, and she communicates with "
+            "angels and guides. Founder: she works with about eight decks, and she mixes astrology into the reading. "
+            "Her Facebook cover names intuitive guidance, healing, art, astrology, and higher self. "
+            "Her public line is keep shining your light. "
+            "She is featured in Natural Awakenings Chicago Magazine. "
+            "People describe the session as comfortable, personal, and fun — a conversation, not a show. "
+            "She posts from Sacred Ground, including community meditation and her October days in the shop. "
+            "She also offers somatic healing / biofield and tuning-fork energy work, plus mentoring after a reading. "
+            "That is energy and sound work. Not a medical treatment. We are not doctors — say that only if they ask "
+            "whether it treats a symptom or a diagnosis. "
+            "She also does parties and events, and home energy cleansing. Those book through her, not as a shop product. "
+            "The directory says she is in high demand. In-person readings are here at Sacred Ground. "
+            "A time is on her booking pages: tarot, sessions, and class. Do not read a website address. "
+            "Do not give her personal email, PayPal, Venmo, Cash App, or any price. "
+            "Say Holistic Center, then Practitioners, then Lisa Maria. "
+            "If no time is open, say so and offer 847-749-3922. Homepage Book Now opens Calendar. She has her own pages."
+        )
     else:
         voice = (
             f"{spoken_name(name)} is {where}. {blurb} "
@@ -735,6 +776,44 @@ for cid, name, profile, blurb, avail, bookings, on_dir in PEOPLE:
         live_source="The booking URL for open times and price.",
         booking_urls=book_urls,
         on_directory=on_dir,
+    )
+
+for c in cards:
+    if c["card_id"] != "SG-PRAC-LISAMARIA":
+        continue
+    c["purpose"] = (
+        "Identify Lisa Maria from her Sacred Ground page, her Facebook, and how she actually reads — "
+        "so the guide does not mix her up with Lisa the astrologer."
+    )
+    c["visitor_questions"] = [
+        "Who is Lisa Maria?",
+        "What does Lisa Maria do?",
+        "How do I book Lisa Maria?",
+        "Is Lisa Maria available?",
+        "Tell me about Lisa Maria",
+        "Does Lisa Maria do tarot?",
+        "Does Lisa Maria do astrology?",
+        "What is Lisa Maria's reading like?",
+    ]
+    c["keywords"] = [
+        "lisa maria",
+        "lisa maria tarot",
+        "lisamaria",
+        "eight decks",
+        "8 decks",
+        "biofield",
+        "somatic",
+        "tuning fork",
+    ]
+    c["source"] = (
+        "Sacred Ground page 16755, practitioners directory, Fluent booking pages, "
+        "Lisa Maria Tarot Intuitive Facebook, and her public About / services copy, October 11, 2026. "
+        "Founder: eight decks plus astrology."
+    )
+    c["navigation"] = nav(
+        "Holistic Center, then Practitioners, then Lisa Maria.",
+        "Holistic Center is under the desktop menu. On a phone, Practitioners, then Lisa Maria.",
+        BASE + "/lisa-maria-11/",
     )
 
 # --- Articles ---------------------------------------------------------------
@@ -887,6 +966,37 @@ for cid, title, desktop, mobile, path, keys in NAVS:
         navigation=nav(desktop, mobile, BASE + path),
         keywords=keys,
         source="Primary menu, mobile menu, and homepage buttons, October 11, 2026. Founder decision 8.",
+    )
+
+for c in cards:
+    if c["card_id"] != "SG-NAV-SHOP":
+        continue
+    c["visitor_questions"] = [
+        "Shop online?",
+        "How do I shop online?",
+        "How do I use the shop page to buy things?",
+        "How do I buy something on the shop page?",
+        "How does checkout work?",
+        "Where is that on my phone?",
+    ]
+    c["keywords"] = ["buy", "store online", "cart", "shop page", "checkout", "order", "delivered"]
+    c["answer"] = (
+        "Shop is in the top menu. Browse what's there, add what you want to your cart, and check out from the page. "
+        "Then it will be delivered straight to the address you provide to us. That simple. "
+        "You are buying from Sacred Ground. We genuinely appreciate your purchase. "
+        "All of this helps us remain a strong brick and mortar in the community. As the owner, I appreciate it. "
+        "On a phone: open the menu and tap Shop. Do not read a website address. Name the menu item."
+    )
+    c["voice_response"] = (
+        "Shop is in the menu at the top. Browse what's there, add what you want to your cart, and check out from the page. "
+        "Then it will be delivered straight to the address you provide to us. That simple. "
+        "You're buying from Sacred Ground. We genuinely appreciate your purchase. "
+        "All of this helps us remain a strong brick and mortar in the community. As the owner, I appreciate it."
+    )
+    c["navigation"] = nav(
+        "Shop in the top menu. Add to cart, then checkout. It is delivered to the address they give us.",
+        "Shop in the phone menu.",
+        BASE + "/shop/",
     )
 
 # --- Live map cards (instructions, not cached facts) ------------------------

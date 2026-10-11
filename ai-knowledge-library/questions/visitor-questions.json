@@ -288,6 +288,12 @@
     "direct_url": "https://shopsacredground.com/shop/"
   },
   {
+    "question": "How do I use the shop page to buy things?",
+    "card_id": "SG-KNOW-SHOP",
+    "category": "Shop",
+    "direct_url": "https://shopsacredground.com/shop/"
+  },
+  {
     "question": "When is the holistic fair?",
     "card_id": "SG-KNOW-FAIR",
     "category": "Events",
@@ -1572,31 +1578,49 @@
     "direct_url": "https://shopsacredground.com/lisa-astrology-v5-final/"
   },
   {
-    "question": "Who is Lisa?",
+    "question": "Who is Lisa Maria?",
     "card_id": "SG-PRAC-LISAMARIA",
     "category": "Practitioners",
     "direct_url": "https://shopsacredground.com/lisa-maria-11/"
   },
   {
-    "question": "What does Lisa do?",
+    "question": "What does Lisa Maria do?",
     "card_id": "SG-PRAC-LISAMARIA",
     "category": "Practitioners",
     "direct_url": "https://shopsacredground.com/lisa-maria-11/"
   },
   {
-    "question": "How do I book Lisa?",
+    "question": "How do I book Lisa Maria?",
     "card_id": "SG-PRAC-LISAMARIA",
     "category": "Practitioners",
     "direct_url": "https://shopsacredground.com/lisa-maria-11/"
   },
   {
-    "question": "Is Lisa available?",
+    "question": "Is Lisa Maria available?",
     "card_id": "SG-PRAC-LISAMARIA",
     "category": "Practitioners",
     "direct_url": "https://shopsacredground.com/lisa-maria-11/"
   },
   {
     "question": "Tell me about Lisa Maria",
+    "card_id": "SG-PRAC-LISAMARIA",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/lisa-maria-11/"
+  },
+  {
+    "question": "Does Lisa Maria do tarot?",
+    "card_id": "SG-PRAC-LISAMARIA",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/lisa-maria-11/"
+  },
+  {
+    "question": "Does Lisa Maria do astrology?",
+    "card_id": "SG-PRAC-LISAMARIA",
+    "category": "Practitioners",
+    "direct_url": "https://shopsacredground.com/lisa-maria-11/"
+  },
+  {
+    "question": "What is Lisa Maria's reading like?",
     "card_id": "SG-PRAC-LISAMARIA",
     "category": "Practitioners",
     "direct_url": "https://shopsacredground.com/lisa-maria-11/"
@@ -2311,6 +2335,24 @@
   },
   {
     "question": "How do I shop online?",
+    "card_id": "SG-NAV-SHOP",
+    "category": "Navigation",
+    "direct_url": "https://shopsacredground.com/shop/"
+  },
+  {
+    "question": "How do I use the shop page to buy things?",
+    "card_id": "SG-NAV-SHOP",
+    "category": "Navigation",
+    "direct_url": "https://shopsacredground.com/shop/"
+  },
+  {
+    "question": "How do I buy something on the shop page?",
+    "card_id": "SG-NAV-SHOP",
+    "category": "Navigation",
+    "direct_url": "https://shopsacredground.com/shop/"
+  },
+  {
+    "question": "How does checkout work?",
     "card_id": "SG-NAV-SHOP",
     "category": "Navigation",
     "direct_url": "https://shopsacredground.com/shop/"

@@ -1,6 +1,6 @@
 # Sacred Ground AI Knowledge Library
 
-Verified 2026-10-11. 86 cards. 408 visitor questions.
+Verified 2026-10-11. 86 cards. 415 visitor questions.
 Draft for Deneene to read. The guide is not switched on.
 
 Start with `voice/VOICE-BIBLE.md` and `01-DECISIONS.md`.

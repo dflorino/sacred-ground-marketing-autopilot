@@ -191,7 +191,11 @@
     "keywords": [
       "buy",
       "store online",
-      "cart"
+      "cart",
+      "shop page",
+      "checkout",
+      "order",
+      "delivered"
     ],
     "card_id": "SG-NAV-SHOP",
     "category": "Navigation",
@@ -200,12 +204,15 @@
     "visitor_questions": [
       "Shop online?",
       "How do I shop online?",
+      "How do I use the shop page to buy things?",
+      "How do I buy something on the shop page?",
+      "How does checkout work?",
       "Where is that on my phone?"
     ],
-    "answer": "Shop in the top menu. Add to cart, then checkout. On a phone: Shop in the phone menu. Do not read a website address. Name the menu item.",
-    "voice_response": "That's on our nav — Shop in the menu.",
+    "answer": "Shop is in the top menu. Browse what's there, add what you want to your cart, and check out from the page. Then it will be delivered straight to the address you provide to us. That simple. You are buying from Sacred Ground. We genuinely appreciate your purchase. All of this helps us remain a strong brick and mortar in the community. As the owner, I appreciate it. On a phone: open the menu and tap Shop. Do not read a website address. Name the menu item.",
+    "voice_response": "Shop is in the menu at the top. Browse what's there, add what you want to your cart, and check out from the page. Then it will be delivered straight to the address you provide to us. That simple. You're buying from Sacred Ground. We genuinely appreciate your purchase. All of this helps us remain a strong brick and mortar in the community. As the owner, I appreciate it.",
     "navigation": {
-      "desktop": "Shop in the top menu. Add to cart, then checkout.",
+      "desktop": "Shop in the top menu. Add to cart, then checkout. It is delivered to the address they give us.",
       "mobile": "Shop in the phone menu.",
       "direct_url": "https://shopsacredground.com/shop/"
     },
