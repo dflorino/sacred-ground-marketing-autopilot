@@ -336,23 +336,24 @@ function sg_ask_lisa_maria_footer() {
 #sg-ask-lisa-maria-open span{font-size:9px;color:#6a5648;}
 #sg-ask-lisa-maria-back{display:none;position:fixed;inset:0;background:rgba(20,12,8,.45);align-items:center;justify-content:flex-start;padding:16px;z-index:99950;}
 #sg-ask-lisa-maria-back.open{display:flex;}
-#sg-ask-lisa-maria-box{width:min(420px,calc(100vw - 32px));height:min(70vh,620px);max-height:calc(100vh - 32px);min-height:0;background:#fff;border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 20px 50px rgba(0,0,0,.28);font-family:"Avenir Next","Avenir","Helvetica Neue",sans-serif;color:#1a1410;}
-#sg-ask-lisa-maria-box .sg-top{position:relative;background:#efe6d8;display:flex;justify-content:center;padding:14px 16px 6px;flex-shrink:0;}
-#sg-ask-lisa-maria-box .sg-top img{width:88px;height:88px;border-radius:50%;object-fit:cover;object-position:center top;display:block;background:#efe6d8;}
-#sg-ask-lisa-maria-box .sg-x{position:absolute;top:10px;right:10px;border:0;background:rgba(255,255,255,.92);width:36px;height:36px;border-radius:50%;font-size:20px;cursor:pointer;}
-#sg-ask-lisa-maria-box .sg-who{padding:8px 16px 6px;flex-shrink:0;}
-#sg-ask-lisa-maria-box .sg-who strong{display:block;font-size:22px;}
-#sg-ask-lisa-maria-box .sg-who em{font-style:normal;color:#6a5648;font-size:14px;}
-#sg-ask-lisa-maria-log{flex:1 1 auto;min-height:0;overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:8px 16px 12px;display:flex;flex-direction:column;gap:10px;}
-#sg-ask-lisa-maria-log .sg-b{max-width:88%;padding:10px 12px;border-radius:14px;line-height:1.4;font-size:16px;}
+#sg-ask-lisa-maria-box{width:min(360px,calc(100vw - 32px));height:min(46vh,380px);max-height:calc(100vh - 48px);min-height:0;background:#fff;border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 20px 50px rgba(0,0,0,.28);font-family:"Avenir Next","Avenir","Helvetica Neue",sans-serif;color:#1a1410;}
+#sg-ask-lisa-maria-box .sg-top{position:relative;background:#efe6d8;display:flex;justify-content:center;padding:8px 12px 4px;flex-shrink:0;}
+#sg-ask-lisa-maria-box .sg-top img{width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:center top;display:block;background:#efe6d8;}
+#sg-ask-lisa-maria-box .sg-x{position:absolute;top:6px;right:6px;border:0;background:rgba(255,255,255,.92);width:28px;height:28px;border-radius:50%;font-size:18px;cursor:pointer;}
+#sg-ask-lisa-maria-box .sg-who{padding:4px 12px 2px;flex-shrink:0;}
+#sg-ask-lisa-maria-box .sg-who strong{display:block;font-size:16px;}
+#sg-ask-lisa-maria-box .sg-who em{font-style:normal;color:#6a5648;font-size:12px;}
+#sg-ask-lisa-maria-log{flex:1 1 auto;min-height:0;overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:6px 12px 8px;display:flex;flex-direction:column;gap:8px;}
+#sg-ask-lisa-maria-log .sg-b{max-width:88%;padding:8px 10px;border-radius:12px;line-height:1.35;font-size:14px;}
 #sg-ask-lisa-maria-log .them{background:#efe6d8;align-self:flex-start;}
 #sg-ask-lisa-maria-log .me{background:#4a2c5a;color:#fff;align-self:flex-end;}
-#sg-ask-lisa-maria-book{display:block;margin:0 16px 10px;text-align:center;text-decoration:none;border-radius:12px;background:#c4a35a;color:#1a1410;padding:10px 14px;font-weight:600;flex-shrink:0;}
-#sg-ask-lisa-maria-form{display:flex;gap:8px;padding:12px 16px 16px;border-top:1px solid #eadfce;flex-shrink:0;}
-#sg-ask-lisa-maria-form input{flex:1;border:1px solid #d5c6b2;border-radius:12px;padding:10px 12px;font:inherit;}
-#sg-ask-lisa-maria-form button{border:0;border-radius:12px;background:#4a2c5a;color:#fff;padding:10px 14px;font:inherit;cursor:pointer;}
-#sg-ask-lisa-maria-form button.mic{background:#efe6d8;color:#1a1410;}
-#sg-ask-lisa-maria-form button.mic.on{background:#c4a35a;}
+#sg-ask-lisa-maria-book{display:block;margin:0 12px 8px;text-align:center;text-decoration:none;border-radius:12px;background:#ffc63f;color:#111;padding:8px 12px;font-weight:600;flex-shrink:0;}
+#sg-ask-lisa-maria-form{display:flex;gap:8px;padding:8px 12px 12px;border-top:1px solid #eadfce;flex-shrink:0;}
+#sg-ask-lisa-maria-form input{flex:1;border:1px solid #d5c6b2;border-radius:12px;padding:8px 10px;font:inherit;font-size:14px;}
+#sg-ask-lisa-maria-form button{border:0;border-radius:12px;background:#4a2c5a;color:#fff;padding:8px 12px;font:inherit;font-size:14px;cursor:pointer;}
+#sg-ask-lisa-maria-form button.mic{background:#ffc63f;color:#111;width:40px;height:40px;padding:0;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+#sg-ask-lisa-maria-form button.mic.on{background:#f8c038;box-shadow:0 0 0 3px rgba(255,198,63,.45);}
+#sg-ask-lisa-maria-form button.mic svg{display:block;}
 #sg-ask-lisa-maria-log .hear{margin-top:8px;}
 #sg-ask-lisa-maria-log .hear span{display:block;font-size:13px;color:#6a5648;margin-bottom:4px;}
 #sg-ask-lisa-maria-log .hear audio{width:100%;height:36px;}
@@ -370,7 +371,7 @@ function sg_ask_lisa_maria_footer() {
     <div class="sg-who"><strong>Chat with Lisa Maria</strong><em>Not the live reading. Ask how a session feels.</em></div>
     <div id="sg-ask-lisa-maria-log"></div>
     <a class="sg-book" id="sg-ask-lisa-maria-book" href="<?php echo $book; ?>">Book a time</a>
-    <form id="sg-ask-lisa-maria-form"><input id="sg-ask-lisa-maria-q" type="text" placeholder="Type or speak a question…" autocomplete="off"/><button type="button" class="mic" id="sg-ask-lisa-maria-mic" aria-label="Speak">Speak</button><button type="submit">Send</button></form>
+    <form id="sg-ask-lisa-maria-form"><input id="sg-ask-lisa-maria-q" type="text" placeholder="Ask a question…" autocomplete="off"/><button type="button" class="mic" id="sg-ask-lisa-maria-mic" aria-label="Use microphone" title="Use microphone"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"/></svg></button><button type="submit">Send</button></form>
   </div>
 </div>
 <script>
@@ -426,24 +427,33 @@ function sg_ask_lisa_maria_footer() {
   (function(){
     var btn=document.getElementById("sg-ask-lisa-maria-mic");
     var form=document.getElementById("sg-ask-lisa-maria-form");
+    if(!btn||!form) return;
     var SR=window.SpeechRecognition||window.webkitSpeechRecognition;
-    if(!SR||!btn){ if(btn) btn.hidden=true; return; }
-    var rec=new SR(); rec.lang="en-US"; rec.interimResults=true; rec.continuous=false; var on=false;
-    rec.onresult=function(e){
-      var t=""; for(var i=0;i<e.results.length;i++) t+=e.results[i][0].transcript;
-      q.value=t;
-      if(e.results[e.results.length-1].isFinal){
-        on=false; btn.classList.remove("on"); btn.setAttribute("aria-pressed","false");
-        if(t.trim()){ if(form.requestSubmit) form.requestSubmit(); else form.dispatchEvent(new Event("submit",{cancelable:true,bubbles:true})); }
-      }
-    };
-    rec.onend=function(){ on=false; btn.classList.remove("on"); btn.setAttribute("aria-pressed","false"); };
-    rec.onerror=function(){ on=false; btn.classList.remove("on"); btn.setAttribute("aria-pressed","false"); };
-    btn.onclick=function(){
-      if(on){ try{rec.stop();}catch(err){} return; }
-      on=true; btn.classList.add("on"); btn.setAttribute("aria-pressed","true");
-      try{rec.start();}catch(err){ on=false; btn.classList.remove("on"); }
-    };
+    var rec=null, on=false;
+    function off(){ on=false; btn.classList.remove("on"); btn.setAttribute("aria-pressed","false"); try{ if(rec) rec.stop(); }catch(err){} }
+    function send(){
+      var t=(q.value||"").trim(); if(!t) return;
+      try{ if(form.requestSubmit) form.requestSubmit(); else form.dispatchEvent(new Event("submit",{cancelable:true,bubbles:true})); }catch(err){}
+    }
+    btn.addEventListener("click", function(ev){
+      ev.preventDefault();
+      if(!SR){ q.placeholder="Type your question — this browser can't hear you"; q.focus(); return; }
+      if(on){ off(); return; }
+      try{
+        rec=new SR(); rec.lang="en-US"; rec.interimResults=true; rec.continuous=false;
+        rec.onresult=function(e){
+          try{
+            var t=""; for(var i=0;i<e.results.length;i++) t+=e.results[i][0].transcript;
+            q.value=t;
+            if(e.results[e.results.length-1].isFinal){ off(); send(); }
+          }catch(err){ off(); }
+        };
+        rec.onend=function(){ on=false; btn.classList.remove("on"); };
+        rec.onerror=function(){ off(); };
+        on=true; btn.classList.add("on"); btn.setAttribute("aria-pressed","true");
+        rec.start();
+      }catch(err){ off(); q.placeholder="Type your question — the mic didn't start"; q.focus(); }
+    });
   })();
   document.getElementById("sg-ask-lisa-maria-form").onsubmit=async function(e){
     e.preventDefault(); var text=q.value.trim(); if(!text) return; q.value=""; add(text,"me"); history.push({role:"user",content:text});

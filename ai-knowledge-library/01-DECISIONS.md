@@ -12,3 +12,7 @@ These override the open questions in the audit.
 8. “Book Now” on the homepage opens the events calendar. If the visitor is asking about a specific practitioner, the guide goes to that person’s profile, and to that person’s booking page when they want a time.
 9. We send text messages a couple of times a week. Most sales are posted on those texts. Do not invent a signup URL. Send them to the shop or 847-749-3922 to get on the list. Monthly in the menu is not the text list.
 10. Benz and Lauren Andrews do wire wrapping. Benz can make anything with wire. Benz has a Transcendence page. Do not invent a Lauren page or a price.
+11. The chat box is the half-size look she approved Oct 12: about 360px wide and min(46vh, 380px) tall. Do not open it huge again.
+12. The listen control is a gold microphone picture. Never the word Speak. Gold is website Call Now `#ffc63f`. Open their page / Book a time uses that same gold.
+13. Press Play only. Never autoplay her voice. Never start the microphone until they tap it.
+14. Always sandbox first. Preserve the live site. Deneene’s box stays off individual practitioner pages. Lisa Maria’s box stays on `lisa-maria-11` only.

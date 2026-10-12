@@ -1,0 +1,6 @@
+.openrouter-local
+.elevenlabs-local
+voice/
+photos/
+*.mp3
+.DS_Store

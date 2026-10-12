@@ -107,3 +107,15 @@ Not in a row. Thursdays **5:00 PM** America/Chicago. Regular 5pm still skipped t
 | **Thu Oct 8** | Hallway door then light | **28482** | `sg-hero-door-then-light-locked-1.mp4` |
 
 Do **not** trash **28505**. Do **not** overwrite its files.
+
+## Mobile headline (Oct 12, 2026)
+
+The three stacked lines are **Fall Into / Something / Magical.**
+On widths ≤980px the hero used `padding: 28px 20px 16px`, so **Fall Into** sat under the nav.
+
+Live homepage **24589** media query is now:
+
+- `.sg-hero-inner` padding `100px 20px 20px`
+- `.sg-hero h1` `clamp(2rem, 7.5vw, 2.8rem)`, line-height 1.15, overflow visible
+
+Do not put the 28px top padding back.

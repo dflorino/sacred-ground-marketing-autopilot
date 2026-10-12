@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Hero mobile — Fall Into Something Magical</title>
+<style>
+:root { --sg-white:#fff; --sg-head-font: Poppins, sans-serif; }
+body { margin:0; background:#1a0e27; }
+.fake-nav { position:sticky; top:0; z-index:20; height:72px; background:#241351; color:#fff; display:flex; align-items:center; justify-content:space-between; padding:0 16px; }
+.sg-hero { background: linear-gradient(180deg, #2d1b4e 0%, #1a0e27 100%); }
+.sg-hero-inner { max-width:1280px; margin:0 auto; display:grid; grid-template-columns:1fr; padding:100px 20px 20px; }
+.sg-hero h1 { font-family: var(--sg-head-font); font-size: clamp(2rem, 7.5vw, 2.8rem); font-weight:500; line-height:1.15; letter-spacing:-0.5px; color:var(--sg-white); text-shadow:1px 1px 18px #14083b; margin:0; overflow:visible; }
+.sg-hero h1 span { display:block; overflow:visible; }
+.sg-hero-btns { display:flex; gap:12px; margin-top:28px; }
+.sg-btn { display:inline-block; padding:12px 14px; border-radius:8px; text-decoration:none; font:600 14px/1 Avenir Next, sans-serif; }
+.dark { background:#2a1c4b; color:#fff; }
+.gold { background:#ffc63f; color:#1a202c; }
+</style>
+</head>
+<body>
+<div class="fake-nav"><strong>Sacred Ground</strong><span>☰</span></div>
+<section class="sg-hero">
+  <div class="sg-hero-inner">
+    <h1><span>Fall Into</span><span>Something</span><span>Magical.</span></h1>
+    <div class="sg-hero-btns">
+      <a class="sg-btn dark" href="#">Event Calendar</a>
+      <a class="sg-btn gold" href="#">Call Now</a>
+    </div>
+  </div>
+</section>
+</body>
+</html>

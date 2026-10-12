@@ -1,12 +1,12 @@
 # Paste this to the agent that is building the Sacred Ground guide
 
-Open this project first: `sacred-ground-marketing-autopilot`.
-The knowledge library is already on disk in `ai-knowledge-library/`.
-It is not on GitHub yet. Do not look for it in another repo.
+Open this project first: `sacred-ground-marketing-autopilot` on GitHub `dflorino/sacred-ground-marketing-autopilot`.
+The knowledge library is `ai-knowledge-library/`.
+The talking-box sandbox you can copy is `ai-knowledge-library/sandbox/` — read `sandbox/README.md` first.
 
 ---
 
-You are continuing the Sacred Ground website knowledge library. Do not rebuild it from scratch. Do not install an agent on the website. Do not edit the live site.
+You are continuing Ask Deneene and the Sacred Ground knowledge library. Do not rebuild it from scratch. Do not install an agent. Always sandbox first. Preserve the live site.
 
 Read these files before you change anything:
 
@@ -21,7 +21,9 @@ Read these files before you change anything:
 
 The import files are `cards/voice.json`, `cards/knowledge.json`, `cards/navigation.json`, `cards/live.json`, and `cards/all-cards.json`. Questions are in `questions/visitor-questions.json`. `build_library.py` rebuilds the JSON. Edit the facts, then run the script. Do not hand-edit the JSON and the script in two directions.
 
-The local Ask Deneene sandbox (port 8766) packs cards with `pack_for_guide.py`. Practitioners on their own pages still use their fact sheets. Live site is unchanged. Do not install this on the website.
+The Ask Deneene sandbox lives in `ai-knowledge-library/sandbox/`. Run `SG_SANDBOX_PORT=8769 python3 serve.py`. It packs cards with `pack_for_guide.py`. Lisa Maria has her own page in that folder. Live Helper copies are `live-helper/ask-deneene.php` and `ask-lisa-maria.php`. Always prove the sandbox with no errors before any live write. Do not full-replace live Helper with an unproven file.
+
+Approved Oct 12 look: half-size box, gold mic picture (never the word Speak), Open their page and the mic both `#ffc63f`.
 
 ## What this library is
 
@@ -80,10 +82,13 @@ The Voice Bible is a draft until Deneene adds a crystal paragraph, a grief note,
 
 ## Do not
 
-- Edit shopsacredground.com.
-- Build the chat widget yet.
+- Rebuild the library or install an agent.
+- Full-replace live Helper without a sandbox proof.
+- Put Deneene on individual practitioner pages.
+- Put Lisa Maria anywhere except `lisa-maria-11`.
 - Include membership.
 - Mention the Death card.
 - Send visitors to the Working Calendar.
 - Use an older practitioner bio when a newer profile exists.
 - Store today’s events, prices, or open times inside a static card.
+- Commit API keys or the gitignored Hub folder.

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Sandbox — Lisa Maria</title>
+<style>
+:root { --cream:#f6efe4; --ink:#1a1410; --eggplant:#4a2c5a; --gold:#ffc63f; }
+* { box-sizing:border-box; }
+body { margin:0; font-family:"Avenir Next","Avenir","Helvetica Neue",sans-serif; background:var(--cream); color:var(--ink); }
+.banner { background:#7a2e2e; color:#fff; text-align:center; padding:8px 16px; font-size:14px; }
+.nav { display:flex; flex-wrap:wrap; gap:14px; padding:12px 20px; background:#2a1830; }
+.nav a { color:#f6efe4; text-decoration:none; }
+main { max-width:820px; margin:0 auto; padding:28px 20px 160px 220px; }
+h1 { font-size:32px; margin:0 0 8px; }
+.circles { display:flex; flex-wrap:wrap; gap:18px; margin-top:20px; }
+.circles a { width:110px; text-align:center; color:inherit; text-decoration:none; font-size:13px; }
+.circles img { width:110px; height:110px; border-radius:50%; object-fit:cover; display:block; margin-bottom:6px; }
+.widget { position:fixed; left:20px; right:auto; top:128px; bottom:auto; display:flex; align-items:center; gap:6px; border:0; padding:4px 10px 4px 4px; background:#fff; border-radius:999px; box-shadow:0 10px 28px rgba(40,20,10,.22); cursor:pointer; z-index:20; text-align:left; font:inherit; color:inherit; }
+.widget img { width:38px; height:38px; border-radius:50%; object-fit:cover; object-position:center top; }
+.widget strong { display:block; font-size:12px; line-height:1.15; }
+.widget span { font-size:9px; color:#6a5648; }
+.backdrop { display:none; position:fixed; inset:0; background:rgba(20,12,8,.45); align-items:flex-start; justify-content:flex-start; padding:16px; z-index:30; }
+.backdrop.open { display:flex; }
+.box { width:min(360px,calc(100vw - 32px)); height:min(46vh,380px); max-height:calc(100vh - 48px); min-height:0; background:#fff; border-radius:18px; overflow:hidden; display:flex; flex-direction:column; box-shadow:0 20px 50px rgba(0,0,0,.28); }
+.box-top { position:relative; background:#efe6d8; display:flex; justify-content:center; padding:8px 12px 4px; flex-shrink:0; }
+.box-top img { width:64px; height:64px; border-radius:50%; object-fit:cover; object-position:center top; display:block; background:#efe6d8; }
+.close { position:absolute; top:6px; right:6px; border:0; background:rgba(255,255,255,.92); width:28px; height:28px; border-radius:50%; font-size:18px; cursor:pointer; }
+.who { padding:4px 12px 2px; flex-shrink:0; }
+.who strong { display:block; font-size:16px; }
+.who em { font-style:normal; color:#6a5648; font-size:12px; }
+.log { flex:1 1 auto; min-height:0; overflow-x:hidden; overflow-y:auto; padding:6px 12px 8px; display:flex; flex-direction:column; gap:8px; }
+.bubble { max-width:88%; padding:8px 10px; border-radius:12px; line-height:1.35; font-size:14px; }
+.them { background:#efe6d8; align-self:flex-start; }
+.me { background:var(--eggplant); color:#fff; align-self:flex-end; }
+form { display:flex; gap:8px; padding:8px 12px 12px; border-top:1px solid #eadfce; flex-shrink:0; }
+form input { flex:1; border:1px solid #d5c6b2; border-radius:12px; padding:8px 10px; font:inherit; font-size:14px; }
+form button, .book { border:0; border-radius:12px; background:var(--eggplant); color:#fff; padding:8px 12px; font:inherit; font-size:14px; cursor:pointer; }
+form button.mic { background:var(--gold); color:#111; width:40px; height:40px; padding:0; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+form button.mic.on { background:#f8c038; box-shadow:0 0 0 3px rgba(255,198,63,.45); }
+form button.mic svg { display:block; }
+.book { display:block; text-align:center; text-decoration:none; margin:0 12px 8px; background:var(--gold); color:#111; font-weight:600; }
+.hear { margin-top:8px; }
+.hear span { display:block; font-size:13px; color:#6a5648; margin-bottom:4px; }
+.hear audio { width:100%; height:36px; }
+</style></head>
+<body>
+<div class="banner">SANDBOX ONLY — not on the live website</div>
+
+<nav class="nav">
+  <a href="index.html">Home</a>
+  <a href="calendar.html">Calendar</a>
+  <a href="observatory.html">Observatory</a>
+  <a href="holistic.html">Holistic Center</a>
+  <a href="practitioners.html">Practitioners</a>
+  <a href="library.html">Library</a>
+</nav>
+
+<main>
+<h1>Lisa Maria</h1><p>Tarot Reader & Spiritual Guide</p><p>Sandbox stand-in for their page. Only their bubble is here — not Deneene’s site guide.</p>
+</main>
+<button class="widget" id="open" type="button">
+  <img src="https://shopsacredground.com/wp-content/uploads/239415714409977658.jpg" alt=""/>
+  <div><strong>Chat with Lisa Maria</strong><span>Ask a question</span></div>
+</button>
+<div class="backdrop" id="backdrop">
+  <div class="box" role="dialog">
+    <div class="box-top">
+      <img src="https://shopsacredground.com/wp-content/uploads/239415714409977658.jpg" alt="Lisa Maria"/>
+      <button class="close" id="close" type="button">×</button>
+    </div>
+    <div class="who"><strong>Chat with Lisa Maria</strong><em>Not the live reading. Ask how a session feels.</em></div>
+    <div class="log" id="log"></div>
+    <a class="book" href="https://shopsacredground.com/book/lisa-maria/" target="_blank" rel="noopener">Book a time</a>
+    <form id="form"><input id="q" type="text" placeholder="Ask a question…" autocomplete="off"/><button type="button" class="mic" id="mic" aria-label="Use microphone" title="Use microphone"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"/></svg></button><button type="submit">Send</button></form>
+  </div>
+</div>
+<script>
+const WHO='lisa-maria';
+const OPENER="Hi, I'm Lisa Maria. I do tarot and somatic healing. If you have any questions for me, let's chat.";
+const log=document.getElementById("log"); const q=document.getElementById("q");
+const history=[{role:"assistant",content:OPENER}];
+let primed=false;
+function attachVoice(audio,text){
+  fetch("/speak",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({who:WHO,text})})
+    .then(r=>r.ok?r.blob():null)
+    .then(b=>{if(b) audio.src=URL.createObjectURL(b);});
+}
+function add(t,w,voice){
+  const d=document.createElement("div"); d.className="bubble "+w;
+  const p=document.createElement("div"); p.textContent=t; d.appendChild(p);
+  if(w==="them"){
+    const wrap=document.createElement("div"); wrap.className="hear";
+    const note=document.createElement("span"); note.textContent="Press Play to hear me";
+    const audio=document.createElement("audio"); audio.preload="none"; audio.controls=true; audio.setAttribute("playsinline","");
+    wrap.appendChild(note); wrap.appendChild(audio); d.appendChild(wrap);
+    if(voice===false) audio.dataset.text=t; else attachVoice(audio,t);
+  }
+  log.appendChild(d); log.scrollTop=log.scrollHeight;
+}
+add(OPENER,"them",false);
+(function(){
+  const open=document.getElementById("open");
+  if(!open) return;
+  function place(){
+    const nav=document.querySelector(".nav");
+    const bottom=nav?nav.getBoundingClientRect().bottom:80;
+    open.style.top=Math.round((bottom<80?80:bottom)+12)+"px";
+  }
+  place();
+  window.addEventListener("resize", place);
+})();
+document.getElementById("open").onclick=()=>{
+  document.getElementById("backdrop").classList.add("open"); q.focus();
+  if(!primed){ primed=true; const a=log.querySelector("audio"); if(a&&a.dataset.text) attachVoice(a,a.dataset.text); }
+};
+document.getElementById("close").onclick=()=>document.getElementById("backdrop").classList.remove("open");
+document.getElementById("backdrop").addEventListener("click",e=>{if(e.target.id==="backdrop") e.currentTarget.classList.remove("open");});
+(function(){
+  var btn=document.getElementById("mic");
+  var form=document.getElementById("form");
+  if(!btn||!form) return;
+  var SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  var rec=null, on=false;
+  function off(){ on=false; btn.classList.remove("on"); btn.setAttribute("aria-pressed","false"); try{ if(rec) rec.stop(); }catch(err){} }
+  function send(){
+    var t=(q.value||"").trim(); if(!t) return;
+    try{ if(form.requestSubmit) form.requestSubmit(); else form.dispatchEvent(new Event("submit",{cancelable:true,bubbles:true})); }catch(err){}
+  }
+  btn.addEventListener("click", function(ev){
+    ev.preventDefault();
+    if(!SR){ q.placeholder="Type your question — this browser can't hear you"; q.focus(); return; }
+    if(on){ off(); return; }
+    try{
+      rec=new SR(); rec.lang="en-US"; rec.interimResults=true; rec.continuous=false;
+      rec.onresult=function(e){
+        try{
+          var t=""; for(var i=0;i<e.results.length;i++) t+=e.results[i][0].transcript;
+          q.value=t;
+          if(e.results[e.results.length-1].isFinal){ off(); send(); }
+        }catch(err){ off(); }
+      };
+      rec.onend=function(){ on=false; btn.classList.remove("on"); };
+      rec.onerror=function(){ off(); };
+      on=true; btn.classList.add("on"); btn.setAttribute("aria-pressed","true");
+      rec.start();
+    }catch(err){ off(); q.placeholder="Type your question — the mic didn't start"; q.focus(); }
+  });
+})();
+document.getElementById("form").onsubmit=async e=>{
+  e.preventDefault(); const text=q.value.trim(); if(!text) return; q.value=""; add(text,"me"); history.push({role:"user",content:text});
+  const thinking=document.createElement("div"); thinking.className="bubble them"; thinking.textContent="…"; log.appendChild(thinking);
+  try {
+    const res=await fetch("/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({who:WHO,messages:history})});
+    const data=await res.json(); thinking.remove(); const reply=data.reply||data.error||"The box did not answer.";
+    add(reply,"them"); history.push({role:"assistant",content:reply});
+  } catch(err) { thinking.remove(); add("The sandbox box is not running.","them"); }
+};
+</script>
+</body></html>

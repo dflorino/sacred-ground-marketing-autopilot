@@ -1,0 +1,20 @@
+How we feed the talking box (sandbox)
+
+It does not wander the live website by itself.
+
+Deneene (Home, Library, Observatory, Holistic, Practitioners directory, Calendar)
+  Answers from ai-knowledge-library/ — cards + visitor questions.
+  serve.py packs the matching cards for each question.
+  Today / this week comes from live TEC via pack_for_guide.py (no prices).
+  Edit facts in build_library.py, then rebuild the JSON. Do not hand-edit both.
+
+Lisa Maria (her page only)
+  facts/lisa-maria.txt plus her opener. Book after two user questions.
+
+Everyone else (sandbox pages)
+  Short fact sheet in facts/{name}.txt
+  That person only. Not the whole library.
+
+When someone types, the box is only allowed to use that pack.
+
+Always sandbox first. Live Helper PHP is a copy in live-helper/.

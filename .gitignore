@@ -43,3 +43,6 @@ remotion/.remotion/
 # Morning flyer concept R&D plates (large; keep local)
 data/composites/flyer-concepts-v1/*.png
 data/composites/flyer-concepts-v1/**/*.png
+
+# Local Hub sandbox (Robert photos + local key — never live, never git)
+assets/_week_show/oct_ideas/_hub-robert-sandbox/
