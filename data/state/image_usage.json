@@ -457,6 +457,34 @@
       "campaign": "week_ahead"
     },
     {
+      "date": "2026-09-25",
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Add-elegant-gold-serif-title-a-1788751458.jpg",
+      "rule": "week_ahead_creative_pool",
+      "campaign": "week_ahead",
+      "platform": "facebook"
+    },
+    {
+      "date": "2026-09-26",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-full-moon-1.png",
+      "rule": "week_ahead_full_moon",
+      "campaign": "week_ahead",
+      "platform": "facebook"
+    },
+    {
+      "date": "2026-09-27",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-bat-signal-1.png",
+      "rule": "week_ahead_creative_bat_signal",
+      "campaign": "week_ahead",
+      "platform": "facebook"
+    },
+    {
+      "date": "2026-09-28",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-fair-flag-2026-09-28.jpg",
+      "rule": "week_ahead_date_plate",
+      "campaign": "week_ahead",
+      "platform": "facebook"
+    },
+    {
       "date": "2026-09-29",
       "url": "https://shopsacredground.com/wp-content/uploads/sg-night-fair-flag-2026-09-29-noglyph.jpg",
       "rule": "week_ahead_date_plate",
@@ -483,6 +511,96 @@
       "rule": "week_ahead_date_plate",
       "campaign": "week_ahead",
       "platform": "tiktok"
+    },
+    {
+      "date": "2026-09-30",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-fair-flag-2026-09-30-noglyph.jpg",
+      "rule": "week_ahead_date_plate",
+      "campaign": "week_ahead",
+      "platform": "facebook"
+    },
+    {
+      "date": "2026-10-01",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-fair-flag-2026-10-01.jpg",
+      "rule": "week_ahead_date_plate",
+      "campaign": "week_ahead",
+      "platform": "facebook"
+    },
+    {
+      "date": "2026-10-02",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-fair-flag-2026-10-02-noglyph.jpg",
+      "rule": "week_ahead_date_plate",
+      "campaign": "week_ahead",
+      "platform": "facebook"
+    },
+    {
+      "date": "2026-10-03",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-fair-flag-2026-10-03.jpg",
+      "rule": "week_ahead_date_plate",
+      "campaign": "week_ahead",
+      "platform": "facebook"
+    },
+    {
+      "date": "2026-10-04",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-fair-flag-2026-10-04.jpg",
+      "rule": "week_ahead_date_plate",
+      "campaign": "week_ahead",
+      "platform": "facebook"
+    },
+    {
+      "date": "2026-10-05",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-fair-flag-2026-10-05.jpg",
+      "rule": "week_ahead_date_plate",
+      "campaign": "week_ahead",
+      "platform": "facebook"
+    },
+    {
+      "date": "2026-10-06",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-fair-flag-2026-10-06.jpg",
+      "rule": "week_ahead_date_plate",
+      "campaign": "week_ahead",
+      "platform": "facebook"
+    },
+    {
+      "date": "2026-10-07",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-fair-flag-2026-10-07.jpg",
+      "rule": "week_ahead_date_plate",
+      "campaign": "week_ahead",
+      "platform": "facebook"
+    },
+    {
+      "date": "2026-10-08",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-fair-flag-2026-10-08.jpg",
+      "rule": "week_ahead_date_plate",
+      "campaign": "week_ahead",
+      "platform": "facebook"
+    },
+    {
+      "date": "2026-10-09",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-2026-10-09-get-ready-1010.jpg",
+      "rule": "week_ahead_date_plate",
+      "campaign": "week_ahead",
+      "platform": "facebook"
+    },
+    {
+      "date": "2026-10-10",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-2026-10-10-1010-portal-1.jpg",
+      "rule": "week_ahead_celestial_event",
+      "campaign": "week_ahead",
+      "platform": "facebook"
+    },
+    {
+      "date": "2026-10-11",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-rain-test-2026-10-11-v3-1.mp4",
+      "rule": "week_ahead_creative_rain_night_shop",
+      "campaign": "week_ahead"
+    },
+    {
+      "date": "2026-10-11",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-2026-10-11.jpg",
+      "rule": "week_ahead_creative_rain_night_shop",
+      "campaign": "week_ahead",
+      "platform": "facebook"
     }
   ],
   "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-EQUAL-WEIGHT-mul-1787594477.jpg": {
