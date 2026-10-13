@@ -9,6 +9,7 @@ from .classify import format_when, is_community_meditation, short_blurb
 from .meditation import (
     format_tuesday_meditation_opener,
     meditation_event_block,
+    public_meditation_title,
 )
 from .models import Event
 from .paths import voice
@@ -620,15 +621,22 @@ def caption_afternoon_spotlight(event: Event | None, platform: str, day: date) -
         openers = list(voice().get("afternoon_spotlight_tomorrow_openers") or [])
         fallback = "Looking ahead — {title} at Sacred Ground."
     raw = _pick_rotating(openers, f"{seed}|opener", fallback)
-    hook = raw.replace("{title}", event.title)
-
-    parts = [hook, when]
-    if note:
-        parts.append(note)
-    if blurb:
-        parts.append(blurb)
-    parts.append(event.url)
-    parts.append("847-749-3922")
+    # Standing Tuesday meditation: never name who leads (Founder Aug 9).
+    if is_community_meditation(event):
+        hook = raw.replace("{title}", public_meditation_title(event))
+        parts = [hook, meditation_event_block(day=day, event=event)]
+        if event.url:
+            parts.append(event.url)
+        parts.append("847-749-3922")
+    else:
+        hook = raw.replace("{title}", event.title)
+        parts = [hook, when]
+        if note:
+            parts.append(note)
+        if blurb:
+            parts.append(blurb)
+        parts.append(event.url)
+        parts.append("847-749-3922")
     body = _with_house_invite(
         "\n\n".join(parts), day, "afternoon_spotlight", after_hook=hook
     )
