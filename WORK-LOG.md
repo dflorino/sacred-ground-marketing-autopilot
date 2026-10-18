@@ -1,3 +1,10 @@
+## 2026-10-18 — Latest Witches' Night Out flyer on TEC + 5pm
+
+Founder: this is the latest and greatest. Full poster **33470** on TEC
+**32873**. 5pm uses **33471** (4:5 pad). Caption + calendar copy now follow
+the plate: Eve, Kate, Robert, Karen. Desktop copy updated. Old plates stay
+in the library.
+
 ## 2026-10-18 — Kate on the Witches' Night Out Facebook caption
 
 Founder: add Mix Up a Little Magic with Kate (mocktails + spell jars) to the
