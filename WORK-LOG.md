@@ -1,3 +1,9 @@
+## 2026-10-18 — October 31st + phone on the Witches' Night Out flyer
+
+Founder: still need the date 31st, and 847-749-3922. Painted onto her
+latest plate. TEC **32873** featured **33518**. 5pm **33519**. Desktop
+updated. Hours still Oct 31 7–10 PM America/Chicago.
+
 ## 2026-10-18 — Halloween night is October 31
 
 All Hallows' Eve = Halloween night = Oct 31, not Oct 30. Flyer has no
