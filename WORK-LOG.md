@@ -1,3 +1,9 @@
+## 2026-10-18 — Kate on the Witches' Night Out Facebook caption
+
+Founder: add Mix Up a Little Magic with Kate (mocktails + spell jars) to the
+Facebook desc. Same copy on TEC **32873**. 5pm caption_body now has Kate with
+Eve and Karen. Flyer unchanged.
+
 ## 2026-10-18 — Witches' Night Out flyer: 7–10 PM + bolder Eve
 
 Founder: ribbon said 5 PM; hours are 7–10. Also make Eve's name bolder.
