@@ -409,8 +409,11 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
         spotlight_ev = classify.pick_afternoon_spotlight(
             events, day, after=as_of_dt
         )
+        day_events = classify.events_on_day(events, day)
+        pinned_af = images._afternoon_plate_for_day(day)
+        list_day = bool(pinned_af and pinned_af.get("list_day_events"))
         empty_af = bool(af_cfg.get("empty_day_fallback", True))
-        if spotlight_ev or empty_af:
+        if spotlight_ev or empty_af or list_day:
             sched_af = schedule.schedule_afternoon_spotlight(day)
             af_events = [spotlight_ev] if spotlight_ev else []
             # Single-image mode: same media URL on Facebook and Instagram.
@@ -444,24 +447,37 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
                 for platform in campaign_platforms("afternoon_spotlight"):
                     img = shared_af
                     cap = captions.caption_afternoon_spotlight(
-                        spotlight_ev, platform, day
+                        spotlight_ev,
+                        platform,
+                        day,
+                        day_events=day_events,
                     )
                     af_notes = notes_base + ["afternoon_spotlight_5pm"]
+                    if list_day and pinned_af:
+                        af_notes.append(
+                            "repeat_window:"
+                            + str(pinned_af.get("id") or "afternoon_repeat")
+                        )
                     if spotlight_ev:
                         af_notes.append(f"spotlight_event:{spotlight_ev.id}")
                     else:
                         af_notes.append("empty_afternoon_brand")
                     if img.rule:
                         af_notes.append(f"image_rule:{img.rule}")
+                    extra_fp = ""
+                    if list_day and pinned_af:
+                        extra_fp = str(pinned_af.get("id") or "afternoon_repeat")
+                    elif not spotlight_ev:
+                        extra_fp = "brand_visit"
                     draft = _make_draft(
                         campaign="afternoon_spotlight",
                         platform=platform,
                         date_key=day.isoformat(),
-                        events=af_events,
+                        events=day_events if list_day else af_events,
                         caption=cap,
                         image=img,
                         sched=sched_af,
-                        extra_fp="" if spotlight_ev else "brand_visit",
+                        extra_fp=extra_fp,
                         notes=af_notes,
                     )
                     if draft:
@@ -490,15 +506,7 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
 
     # --- Week ahead (daily 7pm planner: next 2 days starting tomorrow) ---
     wa_cfg = (cfg.get("campaigns") or {}).get("week_ahead") or {}
-    if wa_cfg.get("enabled", True) and images.skip_week_ahead_publish(day):
-        skipped_drafts.append(
-            {
-                "campaign": "week_ahead",
-                "reason": "awaiting_evening_plate",
-                "detail": day.isoformat(),
-            }
-        )
-    elif wa_cfg.get("enabled", True):
+    if wa_cfg.get("enabled", True):
         # Sat 7pm → Sun+Mon only. Never include the publish day's calendar
         # (morning through night / same-day evening). Morning campaign owns tonight.
         ahead_events, window_start, horizon = classify.week_ahead_lineup_events(

@@ -1,7 +1,7 @@
 {
   "timezone": "America/Chicago",
   "note": "Founder-confirmed WordPress Media Library IDs for Cursor / ML Social video posts. Use these \u2014 never 26546 or lowercase s01e01-store-quest.mp4 for S1E1.",
-  "updated": "2026-10-05",
+  "updated": "2026-10-14",
   "brand_coverage_hard_rule": {
     "updated": "2026-09-09",
     "summary": "Every episode must hit Facebook + Instagram + TikTok + YouTube + Threads on Sacred Ground BRAND accounts. YouTube must be the Sacred Ground brand channel \u2014 never personal @deneeneflorino4711. Use contentType reel or story. FB Story must use Zernio CDN (media.zernio.com).",
@@ -415,6 +415,45 @@
         "threads": "2026-10-07T18:00:00-05:00"
       },
       "updated_at": "2026-10-05T20:48:00-05:00"
+    },
+    "s1e15": {
+      "season": 1,
+      "episode": 15,
+      "library_name": "S1E15",
+      "title": "Crystal Three",
+      "media_id": 32241,
+      "plate_id": 32006,
+      "plate_library_name": "S1E15 USE plate 32006",
+      "poster_id": 32243,
+      "file": "ml-persona-20261014-192816-bUGMAc-6202044315.mp4",
+      "url": "https://shopsacredground.com/wp-content/uploads/ml-persona-20261014-192816-bUGMAc-6202044315.mp4",
+      "admin": "https://shopsacredground.com/wp-admin/upload.php?item=32241",
+      "filebird_folder": "SG Reels",
+      "mime_type": "video/mp4",
+      "schedule_status": "published_now_2026-10-14_evening_CT",
+      "handed_off": "2026-10-14",
+      "note": "Founder Oct 14: send S1E15 media 32241 now to all SM. KEEP clip #120. Do not post gen 117 / 31680 or sound-only Luca 31687. Plate 32243 still only.",
+      "do_not_use": {
+        "plate_id": 32243,
+        "gen117": 31680,
+        "luca_sound_only": 31687,
+        "note": "32243 plate still only. USE video 32241 only."
+      },
+      "ml_social_ids": {
+        "instagram": "6ad02ec959a0b5ccb84a507e",
+        "facebook": "6ad02ecb24dcdf5f6eaba749",
+        "tiktok": "6ad02ecd24dcdf5f6eaba758",
+        "youtube": "6ad02ed059a0b5ccb84a509c",
+        "threads": "6ad02ed124dcdf5f6eaba760"
+      },
+      "live_urls": {
+        "instagram": "https://www.instagram.com/reel/DefzFxuADUa/",
+        "facebook": "https://www.facebook.com/watch/?v=1156430443707631",
+        "tiktok": "https://www.tiktok.com/@shopsacredground/video/7696703209842150670",
+        "youtube": "https://www.youtube.com/watch?v=3aML_-wcDgQ",
+        "threads": "https://www.threads.com/@shopsacredground/post/DefzIiOAU1j"
+      },
+      "updated_at": "2026-10-14T20:40:00-05:00"
     }
   }
 }

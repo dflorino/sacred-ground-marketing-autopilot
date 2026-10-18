@@ -509,19 +509,26 @@ def caption_week_ahead(events: List[Event], platform: str, day: date) -> Dict:
     shop listings still follow when present.
     """
     from . import celestial as cel_mod
+    from .atmosphere import atmosphere_config
 
     cel = cel_mod.celestial_night_for(day)
     cel_opener = ""
     if cel:
         cel_opener = str(cel[1].get("caption_tomorrow") or "").strip()
+    date_plate = ((atmosphere_config().get("nighttime") or {}).get("date_plates") or {}).get(
+        day.isoformat()
+    )
+    plate_opener = ""
+    if isinstance(date_plate, dict):
+        plate_opener = str(date_plate.get("caption_opener") or "").strip()
 
-    if not events and not cel_opener:
+    if not events and not (plate_opener or cel_opener):
         raise ValueError("week_ahead caption requires events")
 
     cfg = voice()
     seed = f"week_ahead|{day.isoformat()}|{platform}"
     # Separate seeds so opener / night block / closer don't lock to the same index.
-    hook = cel_opener or _week_ahead_opener(f"{seed}|opener")
+    hook = plate_opener or cel_opener or _week_ahead_opener(f"{seed}|opener")
     if events:
         rest = _join_event_blocks_by_day(events, True)
     else:
@@ -580,11 +587,61 @@ def caption_tuesday_meditation(platform: str, day: date) -> Dict:
     )
 
 
-def caption_afternoon_spotlight(event: Event | None, platform: str, day: date) -> Dict:
-    """Single-event afternoon spotlight (or warm brand invite when empty)."""
+def caption_afternoon_spotlight(
+    event: Event | None,
+    platform: str,
+    day: date,
+    *,
+    day_events: List[Event] | None = None,
+) -> Dict:
+    """Afternoon 5pm: pinned campaign plate, then that day's other events below."""
     seed = f"afternoon_spotlight|{day.isoformat()}|{platform}"
+    from .images import _afternoon_plate_for_day
+
+    pinned = _afternoon_plate_for_day(day) or {}
+    plate_opener = str(pinned.get("caption_opener") or "").strip()
+    plate_body = str(pinned.get("caption_body") or "").strip()
+    if plate_body:
+        hook = plate_opener or "This afternoon from Sacred Ground."
+        exclude: set = set()
+        raw_id = pinned.get("spotlight_event_id")
+        if raw_id is not None and str(raw_id).strip() != "":
+            try:
+                exclude.add(int(raw_id))
+            except (TypeError, ValueError):
+                exclude.add(raw_id)
+        others = [
+            ev
+            for ev in (day_events or [])
+            if getattr(ev, "id", None) not in exclude
+        ]
+        if (
+            not others
+            and event is not None
+            and getattr(event, "id", None) not in exclude
+        ):
+            others = [event]
+        parts = [hook, plate_body]
+        if others:
+            parts.append(
+                "Also today at Sacred Ground\n\n" + _join_event_blocks(others)
+            )
+        parts.append("847-749-3922")
+        body = _with_house_invite(
+            "\n\n".join(parts), day, "afternoon_spotlight", after_hook=hook
+        )
+        body += "\n\n" + _signoff(seed, platform)
+        tags = _hashtags(platform)
+        text = body + "\n\n" + " ".join(tags)
+        _assert_not_generic(text)
+        return _with_social_proof(
+            {"text": text, "hashtags": tags, "hook": hook},
+            campaign="afternoon_spotlight",
+            platform=platform,
+            day_key=day.isoformat(),
+        )
     if event is None:
-        hook = "A little afternoon light from Sacred Ground."
+        hook = plate_opener or "A little afternoon light from Sacred Ground."
         body = (
             f"{hook}\n\n"
             "Crystals, curious finds, and a soft place to land in Arlington Heights.\n"
@@ -620,7 +677,7 @@ def caption_afternoon_spotlight(event: Event | None, platform: str, day: date) -
         openers = list(voice().get("afternoon_spotlight_tomorrow_openers") or [])
         fallback = "Looking ahead — {title} at Sacred Ground."
     raw = _pick_rotating(openers, f"{seed}|opener", fallback)
-    hook = raw.replace("{title}", event.title)
+    hook = plate_opener or raw.replace("{title}", event.title)
 
     parts = [hook, when]
     if note:

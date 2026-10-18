@@ -182,7 +182,34 @@ def afternoon_spotlight_plates() -> Dict[str, Any]:
     return data
 
 
+def _parse_iso_day(raw: Any) -> Optional[date]:
+    try:
+        return date.fromisoformat(str(raw or "")[:10])
+    except ValueError:
+        return None
+
+
+def _afternoon_repeat_window_for_day(day: date) -> Optional[Dict[str, Any]]:
+    """Founder-locked plate that repeats on every Chicago day in [from, through]."""
+    windows = afternoon_spotlight_plates().get("repeat_windows") or []
+    if not isinstance(windows, list):
+        return None
+    for window in windows:
+        if not isinstance(window, dict) or window.get("do_not_publish"):
+            continue
+        start = _parse_iso_day(window.get("from"))
+        end = _parse_iso_day(window.get("through"))
+        if start and end and start <= day <= end:
+            return window
+    return None
+
+
 def _afternoon_plate_for_day(day: date) -> Optional[Dict[str, Any]]:
+    # Repeat windows win so a Founder event flyer can own every 5pm in range
+    # (Witches Night 2026) instead of that day's one-off plate.
+    window = _afternoon_repeat_window_for_day(day)
+    if window:
+        return window
     plates = afternoon_spotlight_plates().get("plates") or {}
     entry = plates.get(day.isoformat())
     return entry if isinstance(entry, dict) else None
@@ -191,15 +218,6 @@ def _afternoon_plate_for_day(day: date) -> Optional[Dict[str, Any]]:
 def skip_afternoon_publish(day: date) -> bool:
     """True when a cinematic short (or other Founder slot) owns 5pm that day."""
     skips = afternoon_spotlight_plates().get("skip_publish_dates") or []
-    return day.isoformat() in {str(x) for x in skips}
-
-
-def skip_week_ahead_publish(day: date) -> bool:
-    """True when Founder is holding 7pm until a special evening plate exists."""
-    from .atmosphere import atmosphere_config
-
-    night = atmosphere_config().get("nighttime") or {}
-    skips = night.get("skip_publish_dates") or []
     return day.isoformat() in {str(x) for x in skips}
 
 
@@ -771,11 +789,12 @@ def plan_image(
         pinned = _afternoon_plate_for_day(on)
         if pinned and not pinned.get("do_not_publish"):
             pin_url = str(pinned.get("url") or "").strip()
+            allow_repeat = bool(pinned.get("allow_repeat"))
             if (
                 pin_url
-                and pin_url not in blocked
                 and pin_url not in excluded
                 and not is_banned_social_image_url(pin_url)
+                and (pin_url not in blocked or allow_repeat)
             ):
                 pre = pinned.get("prebranded")
                 if pre is None:
@@ -912,17 +931,6 @@ def plan_image(
         from .ingest import today_local
 
         on = day or today_local()
-        if skip_week_ahead_publish(on):
-            return ImagePlan(
-                source="awaiting_evening_plate",
-                url=None,
-                recommendation=(
-                    f"Week-ahead {on.isoformat()} is held — Founder will make "
-                    "the evening plate. Do not invent a night still."
-                ),
-                rule="awaiting_evening_plate",
-                prebranded=False,
-            )
         cross_blocked = cooldown_blocked_urls(
             on,
             exclude_campaign="week_ahead",

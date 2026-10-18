@@ -142,7 +142,7 @@ Daily single-event afternoon spotlight (Facebook + Instagram + TikTok + Threads)
 
 **Why 5pm:** Meta Insights showed strong early traction on a ~5pm Lions Gate–style promo; leaves a clear gap before 7pm `week_ahead` without stacking too close. Flip `campaigns.afternoon_spotlight.schedule_local_time` to `16:00` for 4pm.
 
-**Content:** one engaging spotlight — prefer tonight’s best remaining evening event; else tomorrow’s standout; else warm brand/visit. Not a full calendar dump (morning + week_ahead already cover the calendar).
+**Content:** one engaging spotlight — prefer tonight’s best remaining evening event; else tomorrow’s standout; else warm brand/visit. Not a full calendar dump (morning + week_ahead already cover the calendar). **Through Halloween 2026:** Founder-locked Witches Night TEC flyer every 5pm; caption lists that day’s other events underneath.
 
 ## Daily commands (Cloud Agent)
 
@@ -174,7 +174,7 @@ Hard rules:
 8. Do not publish today / week_ahead / tuesday_meditation.
 9. Platforms must be **Facebook + Instagram + TikTok + Threads** (same plate). Do not MCP-publish FB+IG only.
 10. NEVER publish or republish Reels / video episodes from this image job unless Founder explicitly asks.
-11. Caption is a single-event spotlight (or brand visit). Summarize event + platforms + Zernio links.
+11. Caption is a single-event spotlight (or brand visit), except Witches Night 2026 (Oct 17–31): her TEC flyer + that day’s other events listed underneath. Summarize event + platforms + Zernio links.
 ```
 
 ## Editor checklist — afternoon

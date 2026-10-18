@@ -1,14 +1,40 @@
 {
-  "notes": "Date-keyed Founder-locked afternoon spotlight plates. When present for America/Chicago day, plan_image(afternoon_spotlight) uses this URL before event_featured / pool. Never reuse morning plate URLs. Single-image FB+IG. skip_publish_dates = 5pm still does not go out (a cinematic short owns that slot). Missing plate on a planned theme (needs_creative / afternoon_companion / zodiac_season) = required_plate_missing, 5pm STOP.",
+  "notes": "Date-keyed Founder-locked afternoon spotlight plates. When present for America/Chicago day, plan_image(afternoon_spotlight) uses this URL before event_featured / pool. repeat_windows win over one-off plates so a Founder event flyer can own every 5pm in range (allow_repeat is a Founder exception to lifetime never-reuse for that URL only). Never reuse morning plate URLs. Single-image FB+IG. skip_publish_dates = 5pm still does not go out (a cinematic short owns that slot). Missing plate on a planned theme (needs_creative / afternoon_companion / zodiac_season) = required_plate_missing, 5pm STOP.",
   "skip_publish_dates": [
     "2026-09-19",
     "2026-09-20",
     "2026-09-24",
     "2026-10-01",
-    "2026-10-20",
     "2026-11-26",
     "2026-12-25",
     "2027-01-01"
+  ],
+  "repeat_windows": [
+    {
+      "id": "witches_night_2026",
+      "from": "2026-10-17",
+      "through": "2026-10-31",
+      "allow_repeat": true,
+      "list_day_events": true,
+      "label": "Witches' Night Out: An All Hallows' Eve Celebration!",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-witches-night-2026-7-10.jpg",
+      "local": "assets/sg-afternoon-spotlight-witches-night-2026-7-10.jpg",
+      "media_id": 33460,
+      "tec_media_id": 33459,
+      "prior_media_id": 33456,
+      "spotlight_event_id": 32873,
+      "event_url": "https://shopsacredground.com/event/witches-night-at-sacred-ground/",
+      "prebranded": true,
+      "pride_baked_in": true,
+      "founder_requested": true,
+      "founder_approved": true,
+      "do_not_publish": false,
+      "do_not_remake": true,
+      "caption_opener": "Witches' Night Out — an All Hallows' Eve celebration at Sacred Ground.",
+      "caption_body": "FREE community party · Saturday, October 31 · 7:00–10:00 PM\nSomething wickedly wonderful is brewing.\n\nIntuitive readings. Spooky mocktails. Music. Mystical surprises.\nMake Room for Magic: The Witch's Sweep with Eve — release & receive.\nKaren's Aura Expression Art — your energy field as a one-of-a-kind piece.\nCome dressed in your witchy best, or simply as you are.\n\nAdmission is FREE. Love donations for our practitioners and a women's charity are warmly welcomed.\n\nhttps://shopsacredground.com/event/witches-night-at-sacred-ground/",
+      "note": "Founder Oct 18: her flyer, ribbon 7-10 PM, Eve bolder. TEC featured 33459 (full poster). 5pm uses 33460 (same art, 4:5 pad so Instagram can publish). Caption lists that day's other events underneath.",
+      "updated_at": "2026-10-18T09:45:00-05:00"
+    }
   ],
   "cinematic_weekly_threshold": {
     "notes": "Founder Sep 22: use all 3 movement clips for afternoon, one a week, not consecutive days. Regular 5pm still is skipped those dates. Schedule the assigned MP4 at 5:00 PM America/Chicago (FB+IG+TT+Threads) with that day's store hours. Do not invent a still.",
@@ -45,7 +71,7 @@
         "do_not_remake": true,
         "founder_approved": true,
         "founder_approved_at": "2026-10-07T10:54:00-05:00",
-        "note": "Founder Oct 7: KEEP the dance. Afternoon only, write nothing on it. Not the same week as Oct 13 Abbey Road morning still 29410. 5pm still is skipped."
+        "note": "Founder Oct 7: KEEP the dance. Founder Oct 17: Witches Night owns every 5pm through Halloween, including Oct 20. Clip 29738 stays unused until she asks."
       }
     }
   },
@@ -346,7 +372,9 @@
       "status": "founder_approved",
       "do_not_remake": true,
       "founder_approved_at": "2026-10-06T14:51:00-05:00",
-      "updated_at": "2026-10-06T14:51:00-05:00"
+      "superseded_by": "witches_night_2026",
+      "note": "Founder Oct 17: Witches Night flyer owns 5pm through Halloween. This plate stays on disk unused.",
+      "updated_at": "2026-10-17T10:45:00-05:00"
     },
     "2026-10-18": {
       "label": "Reiki Share circle",
@@ -361,7 +389,9 @@
       "status": "founder_approved",
       "do_not_remake": true,
       "founder_approved_at": "2026-10-06T14:51:00-05:00",
-      "updated_at": "2026-10-06T14:51:00-05:00"
+      "superseded_by": "witches_night_2026",
+      "note": "Founder Oct 17: Witches Night flyer owns 5pm through Halloween. This plate stays on disk unused.",
+      "updated_at": "2026-10-17T10:45:00-05:00"
     },
     "2026-10-19": {
       "label": "Airline destination",
@@ -376,7 +406,9 @@
       "status": "founder_approved",
       "do_not_remake": true,
       "founder_approved_at": "2026-10-06T14:51:00-05:00",
-      "updated_at": "2026-10-06T14:51:00-05:00"
+      "superseded_by": "witches_night_2026",
+      "note": "Founder Oct 17: Witches Night flyer owns 5pm through Halloween. This plate stays on disk unused.",
+      "updated_at": "2026-10-17T10:45:00-05:00"
     }
   }
 }

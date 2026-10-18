@@ -2649,6 +2649,110 @@ class AutopilotTests(unittest.TestCase):
         self.assertIn("DESIGNED-IN SHOP PRIDE", prompt)
 
 
+    def test_witches_night_repeat_window_owns_5pm_and_lists_day_events(self) -> None:
+        """Founder Oct 17: same TEC flyer every 5pm; that day's other events below."""
+        import json
+        from marketing import captions, images
+        from marketing.models import Event
+
+        witches_url = (
+            "https://shopsacredground.com/wp-content/uploads/"
+            "witches-night-sacred-ground.jpg"
+        )
+        plates_path = os.path.join(self._tmpdir, "afternoon_spotlight_plates.json")
+        with open(plates_path, "w", encoding="utf-8") as fh:
+            json.dump(
+                {
+                    "prebranded_default": True,
+                    "repeat_windows": [
+                        {
+                            "id": "witches_night_2026",
+                            "from": "2026-10-17",
+                            "through": "2026-10-31",
+                            "allow_repeat": True,
+                            "list_day_events": True,
+                            "url": witches_url,
+                            "prebranded": True,
+                            "spotlight_event_id": 32873,
+                            "caption_opener": "Halloween night at Sacred Ground — Witches Night.",
+                            "caption_body": (
+                                "Saturday, October 31 · 7:00–10:00 PM\n"
+                                "Mocktails. Mini spell-jar crafts.\n"
+                                "https://shopsacredground.com/event/"
+                                "witches-night-at-sacred-ground/"
+                            ),
+                        }
+                    ],
+                    "plates": {
+                        "2026-10-17": {
+                            "label": "superseded still",
+                            "url": "https://shopsacredground.com/wp-content/uploads/17-Saturday.jpg",
+                            "prebranded": True,
+                        }
+                    },
+                },
+                fh,
+            )
+        prev_path = images.AFTERNOON_PLATES_PATH
+        usage_path = images.IMAGE_USAGE_PATH
+        images.AFTERNOON_PLATES_PATH = plates_path
+        images.IMAGE_USAGE_PATH = os.path.join(self._tmpdir, "state", "image_usage.json")
+        images.afternoon_spotlight_plates.cache_clear()
+        images.image_rules.cache_clear()
+        try:
+            adie = Event(
+                id=24045,
+                title="Tarot with Adie",
+                start_date="2026-10-17 11:00:00",
+                end_date="2026-10-17 15:00:00",
+                url="https://shopsacredground.com/book/adie/",
+            )
+            witches = Event(
+                id=32873,
+                title="Witches Night at Sacred Ground",
+                start_date="2026-10-31 19:00:00",
+                end_date="2026-10-31 22:00:00",
+                url="https://shopsacredground.com/event/witches-night-at-sacred-ground/",
+            )
+            first = images.plan_image(
+                [adie],
+                "afternoon_spotlight",
+                day=date(2026, 10, 17),
+                platform="facebook",
+            )
+            self.assertEqual(first.rule, "afternoon_spotlight_plate")
+            self.assertEqual(first.url, witches_url)
+            images.record_image_use(
+                day=date(2026, 10, 17),
+                url=witches_url,
+                rule="afternoon_spotlight_plate",
+                campaign="afternoon_spotlight",
+            )
+            second = images.plan_image(
+                [adie],
+                "afternoon_spotlight",
+                day=date(2026, 10, 18),
+                platform="facebook",
+            )
+            self.assertEqual(second.url, witches_url)
+            cap = captions.caption_afternoon_spotlight(
+                witches,
+                "facebook",
+                date(2026, 10, 17),
+                day_events=[adie, witches],
+            )["text"]
+            self.assertIn("Witches Night", cap)
+            self.assertIn("Mocktails", cap)
+            self.assertIn("Also today at Sacred Ground", cap)
+            self.assertIn("Tarot with Adie", cap)
+            self.assertNotIn("• Witches Night at Sacred Ground", cap)
+            self.assertLess(cap.find("Witches Night"), cap.find("Tarot with Adie"))
+        finally:
+            images.AFTERNOON_PLATES_PATH = prev_path
+            images.IMAGE_USAGE_PATH = usage_path
+            images.afternoon_spotlight_plates.cache_clear()
+
+
 class TestBannedNavyPilNeverShips(unittest.TestCase):
     """Founder Aug 25 2026: pride-baked navy PIL reached FB/IG — never again."""
 

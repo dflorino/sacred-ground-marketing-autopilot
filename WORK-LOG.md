@@ -1,3 +1,50 @@
+## 2026-10-18 — Witches' Night Out flyer: 7–10 PM + bolder Eve
+
+Founder: ribbon said 5 PM; hours are 7–10. Also make Eve's name bolder.
+Surgical edit of her flyer — rest of the plate unchanged. TEC **32873**
+featured image is now **33459** (`witches-night-out-founder-7-10.jpg`).
+5pm Autopilot uses **33460** (same art, 4:5 pad). Old 5 PM plates **33455**
+/ **33456** stay in the library. Hours still Oct 31 7:00–10:00 PM
+America/Chicago, cost Free.
+
+## 2026-10-18 — Founder's Witches' Night Out flyer on TEC
+
+Founder: use her All Hallows' Eve flyer. Library **33455** is the calendar
+picture on TEC **32873**. Title and body match her copy. Hours stay
+Oct 31 7–10 PM America/Chicago, cost Free. 5pm Autopilot uses **33456**
+(same art, 4:5 pad so Instagram can publish). Caption lists that day's
+other events underneath. Superseded same morning by **33459** / **33460**.
+
+## 2026-10-17 — Witches Night remake on TEC
+
+Founder's flyer remade as media **33173**. Set as featured image on TEC
+**32873** (Oct 31 7–10 PM America/Chicago). Founder deleted original **32872**.
+5pm Autopilot uses **33173** through Halloween.
+
+## 2026-10-17 — Witches Night owns 5pm through Halloween
+
+Founder: her TEC flyer (media **32872**, event **32873**) on every afternoon
+spotlight through Sat Oct 31. Caption leads Witches Night (mocktails, store
+sales, mini spell-jar crafts, readers, spooky music, Kate / Samhain, dress-up,
+charity) then lists that day’s other events underneath. Same URL may repeat
+(`allow_repeat` on `repeat_windows`). Oct 20 Abbey Road dance stays unused.
+Do not remake the flyer.
+
+## 2026-10-14 — S1E15 live on all five
+
+Founder: send S1E15 now. KEEP media **32241** (clip #120). Same minute,
+publishNow, brand accounts only. All five published. Do not remake
+**32241**. Do not post gen **117** / **31680** or sound-only Luca **31687**.
+Plate **32006** / poster **32243** still-only.
+
+| Platform | URL |
+|---|---|
+| Instagram | https://www.instagram.com/reel/DefzFxuADUa/ |
+| Facebook | https://www.facebook.com/watch/?v=1156430443707631 |
+| TikTok | https://www.tiktok.com/@shopsacredground/video/7696703209842150670 |
+| YouTube | https://www.youtube.com/watch?v=3aML_-wcDgQ |
+| Threads | https://www.threads.com/@shopsacredground/post/DefzIiOAU1j |
+
 ## 2026-10-11 — Lisa Maria card on Ask Deneene + her page box live
 
 Founder: add Lisa Maria’s card to Deneene’s card. `SG-PRAC-DENEENE` now
