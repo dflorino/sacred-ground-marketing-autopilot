@@ -1,3 +1,9 @@
+## 2026-10-18 — Halloween night is October 31
+
+All Hallows' Eve = Halloween night = Oct 31, not Oct 30. Flyer has no
+printed date; Facebook caption and TEC copy now lead with Halloween night
+· Saturday, October 31 · 7–10 PM. Plate unchanged.
+
 ## 2026-10-18 — Latest Witches' Night Out flyer on TEC + 5pm
 
 Founder: this is the latest and greatest. Full poster **33470** on TEC
