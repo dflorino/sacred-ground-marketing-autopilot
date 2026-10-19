@@ -2,7 +2,7 @@
 /**
  * Chat with Lisa Maria — her practitioner page only.
  *
- * Same placement and size as Ask Deneene. Her face. Stem 2 voice.
+ * Same placement and size as Ask Deneene. Her face. Her recorded take.
  * Never uses Deneene's locked voice.
  */
 
@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'SG_ASK_LISA_MARIA_VOICE', '21m00Tcm4TlvDq8ikWAM' );
+define( 'SG_ASK_LISA_MARIA_VOICE', 'XNYedqSGriVXOuSFJcta' );
 define( 'SG_ASK_LISA_MARIA_PHOTO', 'https://shopsacredground.com/wp-content/uploads/239415714409977658.jpg' );
 define( 'SG_ASK_LISA_MARIA_MODEL', 'openai/gpt-4.1-mini' );
 define( 'SG_ASK_LISA_MARIA_SLUG', 'lisa-maria-11' );
@@ -241,7 +241,7 @@ function sg_ask_lisa_maria_rest_speak( $request ) {
 	if ( ! is_dir( $dir ) ) {
 		wp_mkdir_p( $dir );
 	}
-	$hash = md5( $voice . '|0.88|' . $text );
+	$hash = md5( $voice . '|clone|' . $text );
 	$file = $dir . '/' . $hash . '.mp3';
 	$url  = trailingslashit( $uploads['baseurl'] ) . 'sg-ask-lisa-maria/' . $hash . '.mp3';
 	if ( is_readable( $file ) && filesize( $file ) > 200 ) {
@@ -267,10 +267,11 @@ function sg_ask_lisa_maria_rest_speak( $request ) {
 					'text'            => $text,
 					'model_id'        => 'eleven_multilingual_v2',
 					'voice_settings'  => array(
-						'stability'        => 0.52,
-						'similarity_boost' => 0.78,
-						'style'            => 0.12,
-						'speed'            => 0.88,
+						'stability'         => 0.32,
+						'similarity_boost'  => 0.78,
+						'style'             => 0.42,
+						'speed'             => 1.04,
+						'use_speaker_boost' => true,
 					),
 				)
 			),
@@ -336,24 +337,31 @@ function sg_ask_lisa_maria_footer() {
 #sg-ask-lisa-maria-open span{font-size:9px;color:#6a5648;}
 #sg-ask-lisa-maria-back{display:none;position:fixed;inset:0;background:rgba(20,12,8,.45);align-items:center;justify-content:flex-start;padding:16px;z-index:99950;}
 #sg-ask-lisa-maria-back.open{display:flex;}
-#sg-ask-lisa-maria-box{width:min(360px,calc(100vw - 32px));height:min(46vh,380px);max-height:calc(100vh - 48px);min-height:0;background:#fff;border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 20px 50px rgba(0,0,0,.28);font-family:"Avenir Next","Avenir","Helvetica Neue",sans-serif;color:#1a1410;}
+#sg-ask-lisa-maria-box{width:min(640px,calc(100vw - 32px));height:min(86vh,860px);max-height:calc(100vh - 48px);min-height:0;background:#fff;border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 20px 50px rgba(0,0,0,.28);font-family:"Avenir Next","Avenir","Helvetica Neue",sans-serif;color:#1a1410;}
 #sg-ask-lisa-maria-box .sg-top{position:relative;background:#efe6d8;display:flex;justify-content:center;padding:8px 12px 4px;flex-shrink:0;}
 #sg-ask-lisa-maria-box .sg-top img{width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:center top;display:block;background:#efe6d8;}
 #sg-ask-lisa-maria-box .sg-x{position:absolute;top:6px;right:6px;border:0;background:rgba(255,255,255,.92);width:28px;height:28px;border-radius:50%;font-size:18px;cursor:pointer;}
 #sg-ask-lisa-maria-box .sg-who{padding:4px 12px 2px;flex-shrink:0;}
-#sg-ask-lisa-maria-box .sg-who strong{display:block;font-size:16px;}
+#sg-ask-lisa-maria-box .sg-who strong{display:block;font-size:22px;}
 #sg-ask-lisa-maria-box .sg-who em{font-style:normal;color:#6a5648;font-size:12px;}
 #sg-ask-lisa-maria-log{flex:1 1 auto;min-height:0;overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:6px 12px 8px;display:flex;flex-direction:column;gap:8px;}
-#sg-ask-lisa-maria-log .sg-b{max-width:88%;padding:8px 10px;border-radius:12px;line-height:1.35;font-size:14px;}
+#sg-ask-lisa-maria-log .sg-b{max-width:88%;padding:8px 10px;border-radius:12px;line-height:1.45;font-size:18px;}
 #sg-ask-lisa-maria-log .them{background:#efe6d8;align-self:flex-start;}
 #sg-ask-lisa-maria-log .me{background:#4a2c5a;color:#fff;align-self:flex-end;}
 #sg-ask-lisa-maria-book{display:block;margin:0 12px 8px;text-align:center;text-decoration:none;border-radius:12px;background:#ffc63f;color:#111;padding:8px 12px;font-weight:600;flex-shrink:0;}
-#sg-ask-lisa-maria-form{display:flex;gap:8px;padding:8px 12px 12px;border-top:1px solid #eadfce;flex-shrink:0;}
-#sg-ask-lisa-maria-form input{flex:1;border:1px solid #d5c6b2;border-radius:12px;padding:8px 10px;font:inherit;font-size:14px;}
+#sg-ask-lisa-maria-form{display:flex;gap:6px;padding:10px 10px 12px;border-top:1px solid #eadfce;flex-shrink:0;}
+#sg-ask-lisa-maria-form input{flex:1;min-width:0;border:1px solid #d5c6b2;border-radius:12px;padding:8px 10px;font:inherit;font-size:14px;}
 #sg-ask-lisa-maria-form button{border:0;border-radius:12px;background:#4a2c5a;color:#fff;padding:8px 12px;font:inherit;font-size:14px;cursor:pointer;}
 #sg-ask-lisa-maria-form button.mic{background:#ffc63f;color:#111;width:40px;height:40px;padding:0;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-#sg-ask-lisa-maria-form button.mic.on{background:#f8c038;box-shadow:0 0 0 3px rgba(255,198,63,.45);}
+#sg-ask-lisa-maria-form button.mic.on{background:#f8c038;box-shadow:0 0 0 4px rgba(255,198,63,.55);animation:sg-lisa-mic-pulse 1.1s ease-in-out infinite;}
 #sg-ask-lisa-maria-form button.mic svg{display:block;}
+@keyframes sg-lisa-mic-pulse{0%,100%{box-shadow:0 0 0 4px rgba(255,198,63,.4)}50%{box-shadow:0 0 0 10px rgba(255,198,63,.12)}}
+#sg-ask-lisa-maria-listen{display:none;margin:0 12px 8px;padding:10px 12px;border-radius:12px;background:#fff6d6;border:1px solid #ffc63f;flex-shrink:0;}
+#sg-ask-lisa-maria-listen.show{display:block;}
+#sg-ask-lisa-maria-listen strong{display:block;font-size:16px;}
+#sg-ask-lisa-maria-listen em{display:block;font-style:normal;color:#6a5648;font-size:13px;margin-top:4px;}
+#sg-ask-lisa-maria-listen .sg-bars{display:flex;align-items:flex-end;gap:4px;height:22px;margin:8px 0 2px;}
+#sg-ask-lisa-maria-listen .sg-bars i{display:block;width:5px;height:6px;background:#ffc63f;border-radius:3px;}
 #sg-ask-lisa-maria-log .hear{margin-top:8px;}
 #sg-ask-lisa-maria-log .hear span{display:block;font-size:13px;color:#6a5648;margin-bottom:4px;}
 #sg-ask-lisa-maria-log .hear audio{width:100%;height:36px;}
@@ -371,6 +379,7 @@ function sg_ask_lisa_maria_footer() {
     <div class="sg-who"><strong>Chat with Lisa Maria</strong><em>Not the live reading. Ask how a session feels.</em></div>
     <div id="sg-ask-lisa-maria-log"></div>
     <a class="sg-book" id="sg-ask-lisa-maria-book" href="<?php echo $book; ?>">Book a time</a>
+    <div class="sg-listen" id="sg-ask-lisa-maria-listen" aria-live="polite"><strong>I'm listening.</strong><span class="sg-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><em>Talk to me — tap the gold mic when you're done.</em></div>
     <form id="sg-ask-lisa-maria-form"><input id="sg-ask-lisa-maria-q" type="text" placeholder="Ask a question…" autocomplete="off"/><button type="button" class="mic" id="sg-ask-lisa-maria-mic" aria-label="Use microphone" title="Use microphone"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"/></svg></button><button type="submit">Send</button></form>
   </div>
 </div>
@@ -427,32 +436,51 @@ function sg_ask_lisa_maria_footer() {
   (function(){
     var btn=document.getElementById("sg-ask-lisa-maria-mic");
     var form=document.getElementById("sg-ask-lisa-maria-form");
-    if(!btn||!form) return;
-    var SR=window.SpeechRecognition||window.webkitSpeechRecognition;
-    var rec=null, on=false;
-    function off(){ on=false; btn.classList.remove("on"); btn.setAttribute("aria-pressed","false"); try{ if(rec) rec.stop(); }catch(err){} }
-    function send(){
-      var t=(q.value||"").trim(); if(!t) return;
-      try{ if(form.requestSubmit) form.requestSubmit(); else form.dispatchEvent(new Event("submit",{cancelable:true,bubbles:true})); }catch(err){}
-    }
-    btn.addEventListener("click", function(ev){
-      ev.preventDefault();
-      if(!SR){ q.placeholder="Type your question — this browser can't hear you"; q.focus(); return; }
-      if(on){ off(); return; }
+    var boxQ=document.getElementById("sg-ask-lisa-maria-q");
+    var ear=document.getElementById("sg-ask-lisa-maria-listen");
+    if(!btn||!form||!boxQ) return;
+    var LISTEN=(typeof CHAT==="string")?CHAT.replace(/ask-(deneene|lisa-maria)\/chat/,"ask-deneene/listen"):"/wp-json/sg-helper/v1/ask-deneene/listen";
+    var on=false,rec=null,chunks=[],stream=null,hold="Ask a question…",ctx=null,raf=0;
+    function say(title,hint){ if(!ear) return; var s=ear.querySelector("strong"); var e=ear.querySelector("em"); if(s) s.textContent=title; if(e) e.textContent=hint||""; }
+    function show(v){ if(ear){ if(v) ear.classList.add("show"); else ear.classList.remove("show"); } }
+    function light(v){ on=v; btn.classList.toggle("on",v); btn.setAttribute("aria-pressed",v?"true":"false"); }
+    function quiet(){ try{ if(raf) cancelAnimationFrame(raf); }catch(err){} raf=0; try{ if(ctx) ctx.close(); }catch(err){} ctx=null; }
+    function bars(st){
+      quiet(); if(!ear||!st) return;
       try{
-        rec=new SR(); rec.lang="en-US"; rec.interimResults=true; rec.continuous=false;
-        rec.onresult=function(e){
-          try{
-            var t=""; for(var i=0;i<e.results.length;i++) t+=e.results[i][0].transcript;
-            q.value=t;
-            if(e.results[e.results.length-1].isFinal){ off(); send(); }
-          }catch(err){ off(); }
-        };
-        rec.onend=function(){ on=false; btn.classList.remove("on"); };
-        rec.onerror=function(){ off(); };
-        on=true; btn.classList.add("on"); btn.setAttribute("aria-pressed","true");
-        rec.start();
-      }catch(err){ off(); q.placeholder="Type your question — the mic didn't start"; q.focus(); }
+        ctx=new (window.AudioContext||window.webkitAudioContext)();
+        var src=ctx.createMediaStreamSource(st); var an=ctx.createAnalyser(); an.fftSize=256; src.connect(an);
+        var data=new Uint8Array(an.frequencyBinCount); var marks=ear.querySelectorAll(".sg-bars i");
+        function tick(){ if(!on) return; an.getByteFrequencyData(data); for(var i=0;i<marks.length;i++){ var v=data[Math.floor((i+1)*data.length/(marks.length+2))]/255; marks[i].style.height=Math.max(4,Math.round(4+v*20))+"px"; } raf=requestAnimationFrame(tick); }
+        if(ctx.state==="suspended") ctx.resume(); tick();
+      }catch(err){}
+    }
+    function stopTracks(){ quiet(); try{ if(stream) stream.getTracks().forEach(function(t){t.stop();}); }catch(err){} stream=null; }
+    function fail(msg){ light(false); stopTracks(); show(false); boxQ.placeholder=msg||hold; boxQ.focus(); }
+    async function finish(blob){
+      if(!blob||blob.size<800){ fail("I didn't catch that — tap the mic and try again"); return; }
+      say("Hearing you…","One moment."); boxQ.placeholder="Hearing you…";
+      try{
+        var fd=new FormData(); fd.append("audio",blob,"ask.webm");
+        var res=await fetch(LISTEN,{method:"POST",headers:{"X-WP-Nonce":NONCE},body:fd});
+        var data=await res.json(); var t=(data&&data.text)?String(data.text).trim():"";
+        show(false);
+        if(!t){ fail("I didn't catch that — tap the mic and try again"); return; }
+        boxQ.value=t; boxQ.placeholder=hold;
+        try{ if(form.requestSubmit) form.requestSubmit(); else form.dispatchEvent(new Event("submit",{cancelable:true,bubbles:true})); }catch(err){}
+      }catch(err){ fail("The mic could not send just now — type your question"); }
+    }
+    btn.addEventListener("click", async function(ev){
+      ev.preventDefault(); ev.stopPropagation();
+      if(on){ light(false); try{ if(rec&&rec.state==="recording") rec.stop(); }catch(err){} return; }
+      if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia){ fail("This browser can't hear you — type your question"); return; }
+      try{
+        stream=await navigator.mediaDevices.getUserMedia({audio:true}); chunks=[];
+        rec=new MediaRecorder(stream);
+        rec.ondataavailable=function(e){ if(e.data&&e.data.size) chunks.push(e.data); };
+        rec.onstop=function(){ var mime=rec.mimeType||"audio/webm"; stopTracks(); finish(new Blob(chunks,{type:mime})); };
+        rec.start(); light(true); say("I'm listening.","Talk to me — tap the gold mic when you're done."); show(true); bars(stream); boxQ.placeholder="I'm listening…";
+      }catch(err){ fail("Allow the microphone, then tap it again"); }
     });
   })();
   document.getElementById("sg-ask-lisa-maria-form").onsubmit=async function(e){

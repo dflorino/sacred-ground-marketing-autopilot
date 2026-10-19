@@ -1,3 +1,9 @@
+## 2026-10-19 — Lisa Maria chat uses her recorded take
+
+Lisa Maria sat at the Mac and saved a take. Clone voice is now on
+Chat with Lisa Maria (`lisa-maria-11` only). Hello and every answer
+use that take. Press Play. Not Deneene’s voice. Shop still 200.
+
 ## 2026-10-18 — October 31st + phone on the Witches' Night Out flyer
 
 Founder: still need the date 31st, and 847-749-3922. Painted onto her

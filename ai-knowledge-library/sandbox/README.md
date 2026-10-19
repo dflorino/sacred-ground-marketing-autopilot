@@ -9,7 +9,7 @@ The old local folder `assets/_week_show/oct_ideas/_hub-robert-sandbox/` stays gi
 
 ## Founder-approved look (Oct 12, 2026)
 
-- Half-size chat: `360px` wide, `min(46vh, 380px)` tall
+- Chat box: `315px` wide, `min(53vh, 465px)` tall (25% smaller than the 420×620 live start)
 - Mic is a gold circle picture. Never the word Speak
 - **Open their page** and the mic use website gold `#ffc63f` (same as Call Now)
 - Send stays eggplant
@@ -18,8 +18,8 @@ The old local folder `assets/_week_show/oct_ideas/_hub-robert-sandbox/` stays gi
 
 ## Who appears where
 
-- Deneene: public pages only (Home, Library, Observatory, Holistic Center, Practitioners directory, Calendar, Shop, Contact). Never individual `*-11` practitioner pages except the directory
-- Lisa Maria: `lisa-maria-11` only. Her face. Stem 2 voice. Not Deneene’s voice
+- Deneene: header-nav pages only (Home, Calendar, Your Calendar, Shop, Observatory, Holistic Center, Practitioners & Modalities directory, Monthly, Library, Contact). Never Working Calendar, Staff Daily, consent forms, or individual `*-11` practitioner pages. Directory stays. Each practitioner page gets their own box later. The box floats and can be dragged.
+- Lisa Maria: `lisa-maria-11` only. Her face. Her recorded take. Not Deneene’s voice
 - BJ is not a practitioner right now. No Tam. No Tom Tewell
 - Never name the banned tarot card
 

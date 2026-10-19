@@ -39,13 +39,13 @@ VOICES = {
     "amber": "EXAVITQu4vr4xnSDxMaL",
     "andre": "IKne3meq5aSn9XLyUdCD",
     "andrea": "cgSgspJ2msm6clMCkdW9",
-    "cheryl": "XrExE9yKIg1WjnnlVkGX",
+    "cheryl": "4dEF3sMw7Pl9RoIjgHWu",
     "eve": "EXAVITQu4vr4xnSDxMaL",
     "jill": "jsCqWAovK2LkecY7zXl4",
     "karen": "pFZP5JQG7iQjIQuC4Bku",
     "kate": "Xb7hH8MSUJpSbSDYk0k2",
     "linn": "oWAxZDx7w5VEj9dCyTzz",
-    "lisa-maria": "21m00Tcm4TlvDq8ikWAM",
+    "lisa-maria": "XNYedqSGriVXOuSFJcta",
     "lisa-seyring": "pFZP5JQG7iQjIQuC4Bku",
     "lita": "EXAVITQu4vr4xnSDxMaL",
     "mary": "ThT5KcBeYPX3keUQqHPh",
@@ -96,6 +96,35 @@ def system_prompt(who, messages=None):
             "We are not doctors. Say that only if they ask whether a session treats a symptom or a diagnosis.\n\n"
             + load_facts(who)
         )
+    if who == "cheryl":
+        user_turns = sum(1 for m in (messages or []) if (m or {}).get("role") == "user")
+        if user_turns < 2:
+            booking = (
+                "They just started chatting. Answer the question they asked. "
+                "Do not mention booking, finding a time, or the Book a time button yet.\n"
+            )
+        else:
+            booking = (
+                "You have talked a little. You may now say they can book a time with you. "
+                "One short humble line. Point them to the Book a time button. Do not sound salesy.\n"
+            )
+        return (
+            "You are Cheryl's talking box on her Sacred Ground page only.\n"
+            "Speak as Cheryl. Warm. Specific. A little magnetic. Not a performance.\n"
+            "The first hello is already on the screen. Never repeat it. "
+            "Never start again with Hi I'm Cheryl, I do yoga, let's find a time, or let's chat.\n"
+            "Answer the question they just asked.\n"
+            + booking
+            + "Never say you are not here for small talk. Never sound curt or dismissive.\n"
+            "This is NOT the live session. Do not give a yoga class, reflexology, or a stretch. "
+            "Do not invent hours or a price.\n"
+            "Do not read a website. Do not give email, PayPal, Venmo, Cash App, or a price.\n"
+            "Yoga, reflexology, and stretchology. Body, mind, and spirit. Alignment, breath, feet, mobility.\n"
+            "We are not doctors. Say that only if they ask whether a session treats a symptom or a diagnosis.\n"
+            "If no time is open, say so and offer 847-749-3922.\n"
+            "Address is 160 West Campbell Street, Arlington Heights, IL 60005. Say West, never W.\n\n"
+            + load_facts(who)
+        )
     return (
         "You are a sandbox talking-box on a Sacred Ground page.\n"
         "You are NOT the live person and you are not doing a real session.\n"
@@ -110,25 +139,35 @@ def system_prompt(who, messages=None):
 
 
 def drop_repeated_hello(who, reply, messages):
-    if (who or "") != "lisa-maria":
+    who = who or ""
+    if who not in ("lisa-maria", "cheryl"):
         return reply
     if not any((m or {}).get("role") == "user" for m in (messages or [])):
         return reply
     text = (reply or "").strip()
     low = text.lower()
-    if not low.startswith("hi, i'm lisa maria") and not low.startswith("hi i'm lisa maria"):
+    starters = (
+        ("hi, i'm lisa maria", "hi i'm lisa maria")
+        if who == "lisa-maria"
+        else ("hi, i'm cheryl", "hi i'm cheryl")
+    )
+    if not low.startswith(starters[0]) and not low.startswith(starters[1]):
         return text
     parts = text.replace("? ", "?|").replace(". ", ".|").replace("! ", "!|").split("|")
     kept = []
     skipping = True
+    extra = (
+        ("i'm lisa maria", "i do tarot")
+        if who == "lisa-maria"
+        else ("i'm cheryl", "i do yoga", "reflexology", "stretchology")
+    )
     for part in parts:
         bit = part.strip()
         if not bit:
             continue
         check = bit.lower()
         if skipping and (
-            "i'm lisa maria" in check
-            or "i do tarot" in check
+            any(tok in check for tok in extra)
             or "let's find a time" in check
             or "let's chat" in check
         ):
@@ -190,10 +229,11 @@ def speak(who, text):
     voice = VOICES.get(who or "deneene", DENEENE_VOICE)
     if (who or "") == "lisa-maria":
         settings = {
-            "stability": 0.52,
+            "stability": 0.32,
             "similarity_boost": 0.78,
-            "style": 0.12,
-            "speed": 0.88,
+            "style": 0.42,
+            "speed": 1.04,
+            "use_speaker_boost": True,
         }
     else:
         settings = {"stability": 0.42, "similarity_boost": 0.78}
