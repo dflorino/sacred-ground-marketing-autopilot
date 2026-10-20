@@ -9,12 +9,6 @@
   },
   "nighttime": {
     "campaign": "week_ahead",
-    "skip_publish_dates": [
-      "2026-11-26",
-      "2026-12-25",
-      "2027-01-01"
-    ],
-    "skip_publish_dates_note": "Founder Oct 8: holiday closed 9am is locked. Afternoon + evening plates later. Do not invent a 7pm still those nights.",
     "mode": "creative_sky_rotation",
     "priority": [
       "celestial",
@@ -1503,9 +1497,121 @@
         "do_not_remake": true,
         "founder_approved": true,
         "founder_approved_at": "2026-10-06T15:20:00-05:00"
+      },
+      "2026-10-21": {
+        "id": "halloween_comet_moons",
+        "label": "Halloween comet moons over the shop",
+        "mode": "creative",
+        "holiday": "halloween",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-2026-10-21.jpg",
+        "local": "assets/sg-night-2026-10-21.jpg",
+        "media_id": 34115,
+        "prebranded": true,
+        "pride_baked_in": true,
+        "do_not_remake": true,
+        "founder_approved": true,
+        "founder_approved_at": "2026-10-20T09:29:00-05:00"
+      },
+      "2026-10-22": {
+        "id": "halloween_rotary_cosmos",
+        "label": "Halloween rotary phone over the shop",
+        "mode": "creative",
+        "holiday": "halloween",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-2026-10-22.jpg",
+        "local": "assets/sg-night-2026-10-22.jpg",
+        "media_id": 34116,
+        "prebranded": true,
+        "pride_baked_in": true,
+        "do_not_remake": true,
+        "founder_approved": true,
+        "founder_approved_at": "2026-10-20T09:29:00-05:00"
+      },
+      "2026-10-23": {
+        "id": "halloween_pumpkin_highway",
+        "label": "Halloween pumpkin cosmic highway",
+        "mode": "creative",
+        "holiday": "halloween",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-2026-10-23.jpg",
+        "local": "assets/sg-night-2026-10-23.jpg",
+        "media_id": 34117,
+        "prebranded": true,
+        "pride_baked_in": true,
+        "do_not_remake": true,
+        "founder_approved": true,
+        "founder_approved_at": "2026-10-20T09:29:00-05:00"
+      },
+      "2026-10-25": {
+        "id": "halloween_crystal_ball",
+        "label": "Halloween crystal-ball storefront",
+        "mode": "creative",
+        "holiday": "halloween",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-2026-10-25.jpg",
+        "local": "assets/sg-night-2026-10-25.jpg",
+        "media_id": 34118,
+        "prebranded": true,
+        "pride_baked_in": true,
+        "do_not_remake": true,
+        "founder_approved": true,
+        "founder_approved_at": "2026-10-20T09:29:00-05:00"
+      },
+      "2026-10-26": {
+        "id": "halloween_underwater_night",
+        "label": "Halloween underwater storefront",
+        "mode": "creative",
+        "holiday": "halloween",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-2026-10-26.jpg",
+        "local": "assets/sg-night-2026-10-26.jpg",
+        "media_id": 34120,
+        "prebranded": true,
+        "pride_baked_in": true,
+        "do_not_remake": true,
+        "founder_approved": true,
+        "founder_approved_at": "2026-10-20T09:29:00-05:00"
+      },
+      "2026-10-27": {
+        "id": "halloween_carnival",
+        "label": "Halloween cosmic carnival storefront",
+        "mode": "creative",
+        "holiday": "halloween",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-2026-10-27.jpg",
+        "local": "assets/sg-night-2026-10-27.jpg",
+        "media_id": 34121,
+        "prebranded": true,
+        "pride_baked_in": true,
+        "do_not_remake": true,
+        "founder_approved": true,
+        "founder_approved_at": "2026-10-20T09:29:00-05:00"
+      },
+      "2026-10-28": {
+        "id": "halloween_lighthouse",
+        "label": "Halloween cosmic lighthouse shop",
+        "mode": "creative",
+        "holiday": "halloween",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-2026-10-28.jpg",
+        "local": "assets/sg-night-2026-10-28.jpg",
+        "media_id": 34119,
+        "prebranded": true,
+        "pride_baked_in": true,
+        "do_not_remake": true,
+        "founder_approved": true,
+        "founder_approved_at": "2026-10-20T09:29:00-05:00"
+      },
+      "2026-10-29": {
+        "id": "halloween_star_veil",
+        "label": "Halloween star-curtain twin shops",
+        "mode": "creative",
+        "holiday": "halloween",
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-night-2026-10-29.jpg",
+        "local": "assets/sg-night-2026-10-29.jpg",
+        "media_id": 34122,
+        "prebranded": true,
+        "pride_baked_in": true,
+        "do_not_remake": true,
+        "founder_approved": true,
+        "founder_approved_at": "2026-10-20T09:29:00-05:00"
       }
     },
-    "date_plates_note": "Founder Sep 28 2026: unlock reviewed fair-flag nights for 7pm starting tonight. Sep 27 already posted a different live night — do not remake. Founder Oct 2: Oct 9 night is get-ready 10/10; Oct 10 night is 10/10 Portal (date plate wins over Egypt pin). Founder Oct 6: lock Oct 11–19 nights after review (rain shop, Machu, moon sun-mark, Petra, Halloween 15–19). Founder Oct 7–8: all night plates stay locked unless remade in this motion pass — then replace that date only. Oct 13 moon-rise 29817. Oct 11 rain 30087. Oct 12 galaxy 30093. Oct 15 pumpkin spin 30122. Date plates win over civ pins and the Halloween pool."
+    "date_plates_note": "Founder Sep 28 2026: unlock reviewed fair-flag nights for 7pm starting tonight. Sep 27 already posted a different live night — do not remake. Founder Oct 2: Oct 9 night is get-ready 10/10; Oct 10 night is 10/10 Portal (date plate wins over Egypt pin). Founder Oct 6: lock Oct 11–19 nights after review (rain shop, Machu, moon sun-mark, Petra, Halloween 15–19). Founder Oct 7–8: all night plates stay locked unless remade in this motion pass — then replace that date only. Oct 13 moon-rise 29817. Oct 11 rain 30087. Oct 12 galaxy 30093. Oct 15 pumpkin spin 30122. Date plates win over civ pins and the Halloween pool. Founder Oct 20: KEEP cosmic Halloween nights 21–23 and 25–29. Leave Oct 20 Orionids / Oct 24 Taurus / Oct 30 Samhain celestial nights locked."
   },
   "_meta_remake_v4": {
     "at": "2026-08-16T23:32:00-05:00",
