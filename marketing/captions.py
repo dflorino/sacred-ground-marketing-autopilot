@@ -9,6 +9,7 @@ from .classify import format_when, is_community_meditation, short_blurb
 from .meditation import (
     format_tuesday_meditation_opener,
     meditation_event_block,
+    public_meditation_title,
 )
 from .models import Event
 from .paths import voice
@@ -626,6 +627,19 @@ def caption_afternoon_spotlight(
             parts.append(
                 "Also today at Sacred Ground\n\n" + _join_event_blocks(others)
             )
+        # Threads (500) and TikTok title (~90) otherwise collapse to the same
+        # Founder opener every day of a repeat window. Zernio then 409s
+        # "exact content within 24 hours" against yesterday's post.
+        if platform in ("threads", "tiktok"):
+            day_mark = f"{day.strftime('%A')} {day.month}/{day.day}"
+            dated = f"{hook} ({day_mark})"
+            if platform != "tiktok" or len(dated) <= 90:
+                hook = dated
+            else:
+                short = (plate_opener or hook).split("—")[0].strip() or hook
+                hook = f"{short} ({day_mark})"
+            if parts:
+                parts[0] = hook
         parts.append("847-749-3922")
         body = _with_house_invite(
             "\n\n".join(parts), day, "afternoon_spotlight", after_hook=hook
@@ -677,15 +691,22 @@ def caption_afternoon_spotlight(
         openers = list(voice().get("afternoon_spotlight_tomorrow_openers") or [])
         fallback = "Looking ahead — {title} at Sacred Ground."
     raw = _pick_rotating(openers, f"{seed}|opener", fallback)
-    hook = plate_opener or raw.replace("{title}", event.title)
-
-    parts = [hook, when]
-    if note:
-        parts.append(note)
-    if blurb:
-        parts.append(blurb)
-    parts.append(event.url)
-    parts.append("847-749-3922")
+    # Standing Tuesday meditation: never name who leads (Founder Aug 9).
+    if is_community_meditation(event):
+        hook = plate_opener or raw.replace("{title}", public_meditation_title(event))
+        parts = [hook, meditation_event_block(day=day, event=event)]
+        if event.url:
+            parts.append(event.url)
+        parts.append("847-749-3922")
+    else:
+        hook = plate_opener or raw.replace("{title}", event.title)
+        parts = [hook, when]
+        if note:
+            parts.append(note)
+        if blurb:
+            parts.append(blurb)
+        parts.append(event.url)
+        parts.append("847-749-3922")
     body = _with_house_invite(
         "\n\n".join(parts), day, "afternoon_spotlight", after_hook=hook
     )
