@@ -94,7 +94,8 @@
     "oct_grocery",
     "oct_through_the_ages",
     "oct_tiny_people_crystals",
-    "oct_cosmic_newspaper"
+    "oct_cosmic_newspaper",
+    "oct_impossible_emergence"
   ],
   "rotation_order": [
     "magritte_floating_door",
@@ -691,6 +692,23 @@
       "layout": "on_photo_schedule",
       "prompt_brief": "1940s newspaper from another dimension, cream paper, galactic ink accents. Blank equal columns. No letters painted (PIL later). No logo.",
       "pride_placement": "Masthead pride; cream footer."
+    },
+    "oct_impossible_emergence": {
+      "id": "oct_impossible_emergence",
+      "label": "The ordinary person, then the world pours out",
+      "family": "oct_impossible_emergence",
+      "verdict": "IN \u2014 Founder Oct 20 2026. Mix with existing Oct ideas. Not a copy of any Facebook graphic.",
+      "status": "active",
+      "pool": "oct_out_of_the_box",
+      "layout": "on_photo_schedule",
+      "episodes": [
+        "world pouring from the crown of a real person's head",
+        "world pouring from two open palms",
+        "world pouring from someone's feet as they walk",
+        "plain Arlington Heights sidewalk that becomes a tapestry of today's Sacred Ground a few steps ahead"
+      ],
+      "prompt_brief": "Photoreal editorial, not mystic-silhouette Facebook art. An ordinary real person (not a galaxy body, not a stock yogi). Something impossible pours out of them or the ground in front of them: today's Sacred Ground (shop, readers, healers) appearing as a living tapestry. Episode rotates: out of the top of the head, out of two palms, out of the feet, or a blank sidewalk that turns into that tapestry a few steps ahead. Jewel color, stop-scroll, shop-made. Leave a clean lower band for later type. No letters, no prices, no Death, no copied telescope graphic.",
+      "pride_placement": "Designed-in Chicagoland pride in the scene; cream footer website + phone."
     }
   },
   "archived_out": {

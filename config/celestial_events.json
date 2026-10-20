@@ -300,8 +300,8 @@
       "label": "New Moon in Libra",
       "event_date": "2026-10-10",
       "post_night_before": "2026-10-09",
-      "caption_tomorrow": "Tomorrow new moon in Libra…",
-      "caption_today": "Today’s new moon in Libra…",
+      "caption_tomorrow": "Tomorrow is the 10/10 Portal — and the new moon in Libra…",
+      "caption_today": "Today is the 10/10 Portal — and the new moon in Libra…",
       "one_liner_night": "Art-deco Libra scales with SG logo as fulcrum.",
       "one_liner_morning": "Rose-gold Libra scales on soft morning lacquer — deco geometry.",
       "night": {
@@ -386,22 +386,30 @@
         "awaiting_founder_review": false
       },
       "morning": {
-        "look": "frost-blue early morning Orionids with sharp constellation lines",
-        "sg_anchor": "SG bat-signal faint in morning mist",
+        "look": "frost morning Orionids over the real Sacred Ground storefront",
+        "sg_anchor": "real eggplant-awning Sacred Ground storefront",
         "urls": [
-          "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-10-21-orionids-2.png"
+          "https://shopsacredground.com/wp-content/uploads/ai-generated-Remove-the-duplicate-lower-tit-1792505023.jpg"
         ],
-        "local": "assets/celestial-2026/sg-morning-celestial-2026-10-21-orionids.png",
+        "local": "assets/celestial-2026/sg-morning-celestial-2026-10-21-orionids.jpg",
         "prebranded": true,
-        "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Replace-existing-title-blocks-1788752007.jpg",
-        "wp_media_id": 27705,
+        "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Remove-the-duplicate-lower-tit-1792505023.jpg",
+        "wp_media_id": 34075,
         "sg_identity": "pass",
         "logo_baked": true,
-        "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-10-21-orionids-2.png",
+        "pride_baked_in": true,
+        "prior_url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Replace-existing-title-blocks-1788752007.jpg",
+        "prior_media_id": 27705,
         "title_on_image": true,
-        "title_restored_at": "2026-09-07T03:35:31.746647+00:00",
+        "founder_approved": true,
+        "founder_approved_at": "2026-10-20T09:08:00-05:00",
+        "do_not_remake": true,
+        "do_not_publish": false,
+        "awaiting_founder_review": false,
+        "note": "Founder Oct 20 KEEP. Shop in the photo. Replaced sky-only plate that had no Sacred Ground.",
         "prior_urls": [
-          "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-10-21-orionids-2.png"
+          "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-10-21-orionids-2.png",
+          "https://shopsacredground.com/wp-content/uploads/ai-generated-Replace-existing-title-blocks-1788752007.jpg"
         ]
       },
       "updated_at": "2026-09-06T22:05:48Z",
@@ -417,52 +425,58 @@
       "one_liner_night": "Cream harvest Taurus moon over orchard storefront.",
       "one_liner_morning": "Golden morning orchard under lingering Taurus moon.",
       "night": {
-        "look": "Former Taurus morning plate now used as evening — store + moon",
+        "look": "Harvest Taurus moon over the real Sacred Ground storefront — no zodiac on the building",
         "sg_anchor": "lit eggplant-awning Sacred Ground storefront",
         "urls": [
-          "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-10-25-full-moon-taurus-1.png"
+          "https://shopsacredground.com/wp-content/uploads/ai-generated-Keep-this-exact-Sacred-Ground-1792505068.jpg"
         ],
-        "local": "assets/celestial-2026/sg-night-celestial-2026-10-25-full-moon-taurus.png",
-        "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Add-elegant-gold-serif-title-t-1788751369.jpg",
-        "wp_media_id": 27685,
+        "local": "assets/celestial-2026/sg-night-celestial-2026-10-25-full-moon-taurus.jpg",
+        "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Keep-this-exact-Sacred-Ground-1792505068.jpg",
+        "wp_media_id": 34078,
         "sg_identity": "pass",
         "logo_baked": true,
-        "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-10-25-full-moon-taurus-1.png",
-        "prior_media_id": 26063,
+        "prior_url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Add-elegant-gold-serif-title-t-1788751369.jpg",
+        "prior_media_id": 27685,
         "status": "ready",
-        "note": "Founder 2026-09-06 remake — locked storefront continuity",
+        "note": "Founder Oct 20 KEEP. Zodiac glyph taken off the building. Title stays FULL MOON IN TAURUS in the sky only.",
         "pride_baked_in": true,
         "title_on_image": true,
-        "title_restored_at": "2026-09-07T03:35:31.746647+00:00",
-        "prior_urls": [
-          "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-10-25-full-moon-taurus-1.png"
-        ],
         "founder_approved": true,
+        "founder_approved_at": "2026-10-20T09:08:00-05:00",
+        "do_not_remake": true,
         "do_not_publish": false,
-        "awaiting_founder_review": false
+        "awaiting_founder_review": false,
+        "prior_urls": [
+          "https://shopsacredground.com/wp-content/uploads/sg-night-celestial-2026-10-25-full-moon-taurus-1.png",
+          "https://shopsacredground.com/wp-content/uploads/ai-generated-Add-elegant-gold-serif-title-t-1788751369.jpg"
+        ]
       },
       "morning": {
-        "look": "misty prairie harvest dawn under natural Taurus full moon — Sacred Ground shop along the path (single cohesive scene)",
-        "sg_anchor": "Sacred Ground eggplant-awning storefront in misty prairie path (no logo-in-moon)",
+        "look": "Taurus full moon over the real Sacred Ground storefront — no zodiac on the building",
+        "sg_anchor": "Sacred Ground eggplant-awning storefront",
         "urls": [
-          "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-10-25-full-moon-taurus-1.png"
+          "https://shopsacredground.com/wp-content/uploads/ai-generated-Surgical-erase-the-gold-Virgo-1792505023.jpg"
         ],
-        "local": "assets/celestial-2026/sg-morning-celestial-2026-10-25-full-moon-taurus.png",
+        "local": "assets/celestial-2026/sg-morning-celestial-2026-10-25-full-moon-taurus.jpg",
         "prebranded": true,
-        "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Add-elegant-gold-serif-title-t-1788751347.jpg",
-        "wp_media_id": 27683,
+        "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Surgical-erase-the-gold-Virgo-1792505023.jpg",
+        "wp_media_id": 34076,
         "sg_identity": "pass",
         "logo_baked": true,
-        "notes": "2026-08-11: Founder rejected -5 (shop cutout + logo jammed in moon). Trashed to assets/celestial-2026/_trash/. Regenerated -6 prairie mist single-generation plate; identity via storefront awning; natural moon.",
-        "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-10-25-full-moon-taurus-1.png",
-        "prior_media_id": 27524,
+        "prior_url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Add-elegant-gold-serif-title-t-1788751347.jpg",
+        "prior_media_id": 27683,
         "pride_baked_in": true,
         "status": "ready",
-        "note": "Founder 2026-09-06 remake — locked storefront continuity",
+        "note": "Founder Oct 20 KEEP. Virgo glyph taken off the pillar. Do not put any zodiac on the building.",
         "title_on_image": true,
-        "title_restored_at": "2026-09-07T03:35:31.746647+00:00",
+        "founder_approved": true,
+        "founder_approved_at": "2026-10-20T09:08:00-05:00",
+        "do_not_remake": true,
+        "do_not_publish": false,
+        "awaiting_founder_review": false,
         "prior_urls": [
-          "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-10-25-full-moon-taurus-1.png"
+          "https://shopsacredground.com/wp-content/uploads/sg-morning-celestial-2026-10-25-full-moon-taurus-1.png",
+          "https://shopsacredground.com/wp-content/uploads/ai-generated-Add-elegant-gold-serif-title-t-1788751347.jpg"
         ]
       },
       "updated_at": "2026-09-06T23:47:56Z",

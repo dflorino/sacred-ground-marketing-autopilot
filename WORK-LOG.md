@@ -1,3 +1,11 @@
+## 2026-10-20 — Celestial remakes locked (SG in photo, no glyph on building)
+
+Founder KEEP: Orionids morning **34075** (shop in the picture; old sky-only plate
+retired). Full Moon in Taurus morning **34076** (Virgo off the pillar). Taurus
+night **34078** (glyph off the building; title stays FULL MOON IN TAURUS in the
+sky). Hard rules: Sacred Ground must be in the photo; never paint a season
+glyph on the building.
+
 ## 2026-10-19 — Lisa Maria chat uses her recorded take
 
 Lisa Maria sat at the Mac and saved a take. Clone voice is now on
