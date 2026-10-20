@@ -626,6 +626,19 @@ def caption_afternoon_spotlight(
             parts.append(
                 "Also today at Sacred Ground\n\n" + _join_event_blocks(others)
             )
+        # Threads (500) and TikTok title (~90) otherwise collapse to the same
+        # Founder opener every day of a repeat window. Zernio then 409s
+        # "exact content within 24 hours" against yesterday's post.
+        if platform in ("threads", "tiktok"):
+            day_mark = f"{day.strftime('%A')} {day.month}/{day.day}"
+            dated = f"{hook} ({day_mark})"
+            if platform != "tiktok" or len(dated) <= 90:
+                hook = dated
+            else:
+                short = (plate_opener or hook).split("—")[0].strip() or hook
+                hook = f"{short} ({day_mark})"
+            if parts:
+                parts[0] = hook
         parts.append("847-749-3922")
         body = _with_house_invite(
             "\n\n".join(parts), day, "afternoon_spotlight", after_hook=hook

@@ -2747,6 +2747,22 @@ class AutopilotTests(unittest.TestCase):
             self.assertIn("Tarot with Adie", cap)
             self.assertNotIn("• Witches Night at Sacred Ground", cap)
             self.assertLess(cap.find("Witches Night"), cap.find("Tarot with Adie"))
+            th = captions.caption_afternoon_spotlight(
+                witches,
+                "threads",
+                date(2026, 10, 17),
+                day_events=[adie, witches],
+            )
+            tt = captions.caption_afternoon_spotlight(
+                witches,
+                "tiktok",
+                date(2026, 10, 18),
+                day_events=[adie, witches],
+            )
+            self.assertIn("(Saturday 10/17)", th["hook"])
+            self.assertIn("(Sunday 10/18)", tt["hook"])
+            self.assertLessEqual(len(tt["hook"]), 90)
+            self.assertNotEqual(th["hook"], tt["hook"])
         finally:
             images.AFTERNOON_PLATES_PATH = prev_path
             images.IMAGE_USAGE_PATH = usage_path
