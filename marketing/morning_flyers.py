@@ -292,6 +292,11 @@ def morning_image_url_is_authorized(
     locked = founder_approved_flyer_url(day, platform)
     if locked:
         return u == locked
+    from . import celestial as cel_mod
+
+    cel_url = cel_mod.morning_is_locked_for_publish(day)
+    if cel_url:
+        return u == cel_url
     entry = flyer_entry_for_day(day)
     if not entry:
         return True
@@ -537,7 +542,12 @@ def flyer_entry_is_held(entry: Optional[Dict[str, Any]]) -> bool:
 
 
 def today_auto_publish_allowed(day: date) -> bool:
-    """Send at 9am only for a scheduled, Founder-approved plate that is not on hold."""
+    """Send at 9am only for a scheduled, Founder-approved plate that is not on hold.
+
+    Founder-approved celestial mornings (Oct 21 Orionids / Oct 25 Taurus) may
+    send even when morning_flyers.json has no date-keyed flyer — or only an
+    empty needs_ai_art stub. A held regular flyer still wins and blocks send.
+    """
     try:
         from .paths import settings
 
@@ -548,7 +558,13 @@ def today_auto_publish_allowed(day: date) -> bool:
         return False
     if camp.get("auto_publish_only_scheduled_approved", True):
         entry = flyer_entry_for_day(day)
-        if not flyer_day_is_scheduled(entry) or flyer_entry_is_held(entry):
+        if flyer_entry_is_held(entry):
+            return False
+        from . import celestial as cel_mod
+
+        if cel_mod.morning_is_locked_for_publish(day):
+            return True
+        if not flyer_day_is_scheduled(entry):
             return False
         if not entry.get("founder_approved"):
             return False
@@ -2042,6 +2058,23 @@ def ensure_flyer_for_day(
         and not force
     ):
         return _scheduled_skip_result(day, existing, reason="already_scheduled")
+    # Founder Oct 20: Oct 21/25 mornings stay locked celestial. Do not invent
+    # Magritte/Einstein at 9am when celestial_events.json owns the slot.
+    if not force:
+        from . import celestial as cel_mod
+
+        if cel_mod.celestial_morning_owns_slot(day):
+            return _scheduled_skip_result(
+                day,
+                existing
+                or {
+                    "label": "celestial_morning",
+                    "url": cel_mod.morning_is_locked_for_publish(day) or "",
+                    "visual_style": "celestial_morning",
+                    "celestial_owns_slot": True,
+                },
+                reason="celestial_owns_slot",
+            )
 
     day_events = _day_events(day, events)
     copy = build_flyer_copy(day, day_events)
