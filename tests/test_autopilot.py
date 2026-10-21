@@ -2045,6 +2045,28 @@ class AutopilotTests(unittest.TestCase):
         self.assertEqual(held_info.get("reason"), "held")
         self.assertFalse(mf.today_auto_publish_allowed(held))
 
+    def test_ensure_skips_invent_when_celestial_owns_morning(self) -> None:
+        """Oct 21/25 celestial mornings must not grow empty Magritte stubs at 9am."""
+        from marketing import morning_flyers as mf
+
+        data = mf.load_flyers_config()
+        data.get("flyers") or data.setdefault("flyers", {})
+        data["flyers"].pop("2026-10-21", None)
+        data["flyers"].pop("2026-10-25", None)
+        mf.save_flyers_config(data)
+
+        oct21 = mf.ensure_flyer_for_day(date(2026, 10, 21), [], force=False)
+        self.assertEqual(oct21["action"], "scheduled_skip")
+        self.assertEqual(oct21.get("reason"), "celestial_owns_slot")
+        self.assertFalse(oct21.get("needs_ai_generation"))
+        self.assertTrue(mf.today_auto_publish_allowed(date(2026, 10, 21)))
+
+        oct25 = mf.ensure_flyer_for_day(date(2026, 10, 25), [], force=False)
+        self.assertEqual(oct25["action"], "scheduled_skip")
+        self.assertEqual(oct25.get("reason"), "celestial_owns_slot")
+        self.assertFalse(oct25.get("needs_ai_generation"))
+        self.assertTrue(mf.today_auto_publish_allowed(date(2026, 10, 25)))
+
     def test_config_morning_flyers_price_free(self) -> None:
         """Repo morning_flyers.json labels/covers must never carry $ prices."""
         from marketing import morning_flyers as mf

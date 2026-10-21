@@ -105,6 +105,39 @@ def night_plan(
     }
 
 
+def morning_block_is_held(block: Dict[str, Any]) -> bool:
+    """True when Founder parked this celestial morning (skip / review)."""
+    if not isinstance(block, dict):
+        return True
+    if block.get("do_not_publish") or block.get("awaiting_founder_review"):
+        return True
+    status = str(block.get("status") or "").strip().lower()
+    return status.startswith("skipped") or status in {"founder_trashed", "held"}
+
+
+def morning_is_locked_for_publish(day: date) -> Optional[str]:
+    """Founder-approved celestial morning URL, or empty when 9am must not send it."""
+    hit = celestial_morning_for(day)
+    if not hit:
+        return None
+    _cid, meta = hit
+    block = meta.get("morning") or {}
+    if morning_block_is_held(block):
+        return None
+    if block.get("founder_approved") is not True:
+        return None
+    url = str(block.get("url") or "").strip()
+    if url:
+        return url
+    urls = _urls_from_block(block)
+    return str(urls[0]).strip() if urls else None
+
+
+def celestial_morning_owns_slot(day: date) -> bool:
+    """True when a celestial morning-of row owns 9am — do not invent Magritte."""
+    return celestial_morning_for(day) is not None
+
+
 def morning_plan(
     day: date,
     platform: Optional[str] = None,
@@ -115,6 +148,8 @@ def morning_plan(
         return None
     cid, meta = hit
     block = meta.get("morning") or {}
+    if morning_block_is_held(block):
+        return None
     url = _pick_url(_urls_from_block(block), day, platform, exclude_urls)
     if not url:
         return None

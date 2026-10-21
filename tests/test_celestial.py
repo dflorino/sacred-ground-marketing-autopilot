@@ -9,7 +9,9 @@ from marketing.captions import caption_today, caption_week_ahead
 from marketing.celestial import (
     celestial_config,
     celestial_morning_for,
+    celestial_morning_owns_slot,
     celestial_night_for,
+    morning_is_locked_for_publish,
     morning_plan,
     night_plan,
     schedule_rows,
@@ -87,6 +89,44 @@ class CelestialCadenceTests(unittest.TestCase):
         self.assertIsNone(celestial_morning_for(date(2026, 8, 11)))
         # Non-celestial ordinary night
         self.assertIsNone(celestial_night_for(date(2026, 8, 20)))
+
+    def test_orionids_oct21_founder_lock_owns_morning(self) -> None:
+        """Founder Oct 20: Oct 21 9am is Orionids celestial — not Magritte invent."""
+        from marketing import morning_flyers as mf
+
+        day = date(2026, 10, 21)
+        self.assertEqual(celestial_morning_for(day)[0], "orionids_peak_2026")
+        self.assertTrue(celestial_morning_owns_slot(day))
+        url = morning_is_locked_for_publish(day)
+        self.assertTrue(url)
+        self.assertIn("1792505023", url)
+        plan = morning_plan(day, platform="facebook")
+        self.assertIsNotNone(plan)
+        assert plan is not None
+        self.assertEqual(plan["id"], "orionids_peak_2026")
+        self.assertEqual(plan["image_url"], url)
+        img_url, rule, _ = select_today_image([], day, platform="facebook")
+        self.assertEqual(rule, "celestial_morning")
+        self.assertEqual(img_url, url)
+        self.assertTrue(mf.today_auto_publish_allowed(day))
+        self.assertTrue(
+            mf.morning_image_url_is_authorized(day, url, platform="facebook")
+        )
+        self.assertFalse(
+            mf.morning_image_url_is_authorized(
+                day,
+                "https://shopsacredground.com/wp-content/uploads/sg-morning-akashic.png",
+                platform="facebook",
+            )
+        )
+
+    def test_held_celestial_morning_does_not_plan(self) -> None:
+        """Oct 10 Libra morning is skipped so the cosmic Egypt flyer can own 9am."""
+        day = date(2026, 10, 10)
+        self.assertEqual(celestial_morning_for(day)[0], "new_moon_libra_2026")
+        self.assertTrue(celestial_morning_owns_slot(day))
+        self.assertIsNone(morning_is_locked_for_publish(day))
+        self.assertIsNone(morning_plan(day, platform="facebook"))
 
 
 if __name__ == "__main__":

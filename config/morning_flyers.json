@@ -2304,22 +2304,6 @@
       "do_not_remake": true,
       "founder_trashed": false,
       "founder_approved_at": "2026-10-08T20:29:00-05:00"
-    },
-    "2026-10-21": {
-      "label": "Free Community Educational Night + Tina’s Intuitive Tarot, Runes & Reiki Experience +",
-      "covers": [
-        "Free Community Educational Night",
-        "Tina’s Intuitive Tarot, Runes & Reiki Experience",
-        "Soul Alignment w/ Karen: Intuitive Energy Reiki or Akashic Record Reading •"
-      ],
-      "local": "",
-      "url": "",
-      "prebranded": true,
-      "template": "thursday-style",
-      "visual_style": "surprise_where_landed",
-      "pride_baked_in": true,
-      "generation_source": "needs_ai_art",
-      "banned_pil_cleared": true
     }
   },
   "template": {
@@ -2364,16 +2348,18 @@
     "timezone": "America/Chicago",
     "days": [
       "2026-10-20",
+      "2026-10-21",
       "2026-10-22",
       "2026-10-23",
       "2026-10-24",
+      "2026-10-25",
       "2026-10-26",
       "2026-10-27",
       "2026-10-28",
       "2026-10-29",
       "2026-10-30"
     ],
-    "note": "Founder Oct 20: KEEP cosmic stretch. Oct 20 moon today; Oct 27 planet next Tuesday. Oct 21/25 mornings stay locked celestial."
+    "note": "Founder Oct 20: KEEP cosmic stretch. Oct 20 moon today; Oct 27 planet next Tuesday. Oct 21/25 mornings stay locked celestial in celestial_events.json — no Magritte/Einstein invent at 9am."
   },
   "last_batch_aug16_night": {
     "at": "2026-08-16T23:00:44-05:00",
