@@ -1,7 +1,7 @@
 {
   "timezone": "America/Chicago",
   "note": "Founder-confirmed WordPress Media Library IDs for Cursor / ML Social video posts. Use these \u2014 never 26546 or lowercase s01e01-store-quest.mp4 for S1E1.",
-  "updated": "2026-10-14",
+  "updated": "2026-10-26",
   "brand_coverage_hard_rule": {
     "updated": "2026-09-09",
     "summary": "Every episode must hit Facebook + Instagram + TikTok + YouTube + Threads on Sacred Ground BRAND accounts. YouTube must be the Sacred Ground brand channel \u2014 never personal @deneeneflorino4711. Use contentType reel or story. FB Story must use Zernio CDN (media.zernio.com).",
@@ -454,6 +454,49 @@
         "threads": "https://www.threads.com/@shopsacredground/post/DefzIiOAU1j"
       },
       "updated_at": "2026-10-14T20:40:00-05:00"
+    },
+    "s1e16": {
+      "season": 1,
+      "episode": 16,
+      "library_name": "S1E16",
+      "title": "Mars Touchdown",
+      "media_id": 34892,
+      "plate_id": 34857,
+      "plate_library_name": "S1E16 plate",
+      "poster_id": 34893,
+      "file": "ml-persona-20261027-015927-oUFi0c-a565981076.mp4",
+      "url": "https://shopsacredground.com/wp-content/uploads/ml-persona-20261027-015927-oUFi0c-a565981076.mp4",
+      "admin": "https://shopsacredground.com/wp-admin/upload.php?item=34892",
+      "filebird_folder": "SG Reels (54)",
+      "mime_type": "video/mp4",
+      "runtime_seconds": 24,
+      "gen": 121,
+      "schedule_status": "scheduled_same_minute_2026-10-27_6pm",
+      "handed_off": "2026-10-26",
+      "note": "Founder Oct 26: KEEP gen 121 / media 34892 ready for tomorrow. All five Tue Oct 27 2026 6:00 PM America/Chicago. Do not remake. Do not post plate 34857, doorway 34849, or poster 34893. Voices 34889 / 34890 / 34891 stay stems only.",
+      "do_not_use": {
+        "plate_id": 34857,
+        "doorway_still": 34849,
+        "poster_id": 34893,
+        "voice_stems": [34889, 34890, 34891],
+        "note": "34857 and 34849 still only. 34893 poster still only. USE video 34892 only."
+      },
+      "ml_social_ids": {
+        "parent": "6ae01393f8ba48393a3c5e1d",
+        "instagram": "6ae01393f8ba48393a3c5e18",
+        "facebook": "6ae01393f8ba48393a3c5e19",
+        "tiktok": "6ae01393f8ba48393a3c5e1a",
+        "youtube": "6ae01393f8ba48393a3c5e1b",
+        "threads": "6ae01393f8ba48393a3c5e1c"
+      },
+      "scheduled_for": {
+        "instagram": "2026-10-27T18:00:00-05:00",
+        "facebook": "2026-10-27T18:00:00-05:00",
+        "tiktok": "2026-10-27T18:00:00-05:00",
+        "youtube": "2026-10-27T18:00:00-05:00",
+        "threads": "2026-10-27T18:00:00-05:00"
+      },
+      "updated_at": "2026-10-26T21:59:00-05:00"
     }
   }
 }
