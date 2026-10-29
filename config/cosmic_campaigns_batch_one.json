@@ -1,0 +1,112 @@
+{
+  "title": "Sacred Ground Cosmic Campaigns",
+  "batch": "Batch One — Reality Has Left the Building",
+  "approved_by": "Founder",
+  "approved_at": "2026-10-29T10:09:00-05:00",
+  "timezone": "America/Chicago",
+  "hard": [
+    "Picture is the idea.",
+    "Never invent SACRED GROUND type. Stamp media 21848 long or 21849 stacked on blank tapestry / bag / sign / window.",
+    "Add the headline in the design pass. Leave the upper band clear in the generation.",
+    "Circular sun is the corner mark only.",
+    "Never the tarot Death card.",
+    "Stills first. Video concepts wait for Founder go. No TopView without permission.",
+    "Use approved brand assets when the shop appears."
+  ],
+  "concepts": [
+    {
+      "n": 1,
+      "id": "cosmic_last_supper_scheduling",
+      "label": "The Last Supper Has a Scheduling Conflict",
+      "kind": "still",
+      "headline": "Someone ordered the house crystal.",
+      "twist": "The waiter’s bill lists one item: A minor disturbance in reality. Stamp the real wordmark on the tapestry.",
+      "visual": "Lavish Renaissance banquet. Thirteen astronomers. Levitating geode splits the table. Wine flows upward. Unimpressed waiter. Downtown Arlington Heights through the windows."
+    },
+    {
+      "n": 2,
+      "id": "cosmic_houston_gift_shop",
+      "label": "Houston, We Have a Gift Shop",
+      "kind": "video",
+      "headline": "We said bring something small back.",
+      "twist": "The second astronaut is trying to fit Saturn back into the bag.",
+      "visual": "Astronaut opens a tiny Sacred Ground bag on the moon. Full-size Saturn emerges. Rings knock over the rover.",
+      "hold": "Video. Wait for Founder go."
+    },
+    {
+      "n": 3,
+      "id": "cosmic_unexplained_purchases",
+      "label": "The Department of Unexplained Purchases",
+      "kind": "still",
+      "headline": "Anything to declare? Another dimension.",
+      "twist": "A tiny customs officer from the other dimension inspects our agent through the monitor.",
+      "visual": "Airport X-ray. Sacred Ground bag contains a spiral staircase to another civilization."
+    },
+    {
+      "n": 4,
+      "id": "cosmic_botticelli_parking",
+      "label": "Botticelli’s Parking Problem",
+      "kind": "still",
+      "headline": "Goddess energy. Mortal parking rules.",
+      "twist": "Two cherubs feed pearls into the parking meter.",
+      "visual": "Venus in a gigantic scallop shell occupying three spaces. Parking officer writing a ticket. Illustrative boutique, not the exact real storefront."
+    },
+    {
+      "n": 5,
+      "id": "cosmic_einstein_personal_day",
+      "label": "Einstein Takes a Personal Day",
+      "kind": "still",
+      "headline": "Even spacetime needs to lie down.",
+      "twist": "Chalkboard reads E = me time.",
+      "visual": "Einstein in a chair. Spacetime sags like a hammock."
+    },
+    {
+      "n": 6,
+      "id": "cosmic_black_hole_taste",
+      "label": "The Black Hole Has Taste",
+      "kind": "video",
+      "headline": "It came to consume everything. It got distracted.",
+      "twist": "Light bends into a giant curious eye around the shop window.",
+      "visual": "Black hole eats the street except Sacred Ground, stopped at a crystal.",
+      "hold": "Video. Wait for Founder go."
+    },
+    {
+      "n": 7,
+      "id": "cosmic_minotaur_directions",
+      "label": "The Minotaur Needs Directions",
+      "kind": "still",
+      "headline": "Your spiritual journey has been recalculating.",
+      "twist": "Every sign points to Sacred Ground. He is still lost.",
+      "visual": "Overhead marble labyrinth. Tiny shop at the center. Minotaur on a wall with a phone."
+    },
+    {
+      "n": 8,
+      "id": "cosmic_museum_escapes",
+      "label": "The Museum Exhibit Escapes",
+      "kind": "video",
+      "headline": "They stood still for centuries. Then we opened.",
+      "twist": "A marble philosopher brought a folding chair.",
+      "visual": "Statues queue outside at midnight. Pedestals follow like dogs.",
+      "hold": "Video. Wait for Founder go."
+    },
+    {
+      "n": 9,
+      "id": "cosmic_first_contact_service",
+      "label": "First Contact, Excellent Customer Service",
+      "kind": "still",
+      "headline": "Take us to your crystal person.",
+      "twist": "The commander brought a rock to identify.",
+      "visual": "Mothership tractor-beams a service bell onto the counter."
+    },
+    {
+      "n": 10,
+      "id": "cosmic_downtown_upgraded",
+      "label": "Downtown Has Been Upgraded",
+      "kind": "video",
+      "headline": "Same downtown. Slightly larger universe.",
+      "twist": "Sandwich board: Yes, we’re open.",
+      "visual": "Front door opens onto a desert. A crystal cathedral walks on architectural legs.",
+      "hold": "Video. Wait for Founder go."
+    }
+  ]
+}
