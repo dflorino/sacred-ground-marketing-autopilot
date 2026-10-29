@@ -62,9 +62,9 @@ Founder list, 2026-10-29. Chat screenshots + the 13–25 table. Build from `conf
 
 | # | Title | Headline |
 |---|---|---|
-| 13 | The Mona Lisa Escapes | After 500 Years, She Finally Found Something to Smile About. |
-| 14 | The Great Pyramid Delivery | Your Crystal Order Has Arrived. |
-| 15 | The Black Hole Clearance Sale | Some Attractions Are Stronger Than Gravity. |
+| 13 | The Mona Lisa Escapes | KEEP 2026-10-29 — After 500 Years, She Finally Found Something to Smile About. |
+| 14 | The Great Pyramid Delivery | KEEP 2026-10-29 — Your Crystal Order Has Arrived. |
+| 15 | The Black Hole Clearance Sale | KEEP 2026-10-29 — Some Attractions Are Stronger Than Gravity. |
 | 16 | Michelangelo's New Creation | HOLD — Sistine Chapel / Christian holy scene. |
 | 17 | The Galactic Traffic Jam | Apparently Everyone Heard About Us. |
 | 18 | The Tarot Card That Escaped | Your Future Is Looking Bigger Than Expected. NEVER Death. |

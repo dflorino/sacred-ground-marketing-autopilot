@@ -1,3 +1,11 @@
+## 2026-10-29 — Cosmic 13–15 KEEP
+
+Founder locked Batch Two stills:
+- **13 Mona Lisa** media **34974** — bag sticker + white headline
+- **14 Pyramid** media **34975** — street lifted, white headline
+- **15 Black hole** media **34976** — real wordmark on the sign
+16 Michelangelo stays HOLD (Christian holy scene). Next review: 17 traffic, 18 The Star, 19 moon.
+
 ## 2026-10-20 — Celestial remakes locked (SG in photo, no glyph on building)
 
 Founder KEEP: Orionids morning **34075** (shop in the picture; old sky-only plate

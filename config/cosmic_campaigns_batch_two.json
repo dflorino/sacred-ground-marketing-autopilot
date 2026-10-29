@@ -109,24 +109,48 @@
       "id": "cosmic_mona_lisa_escapes",
       "label": "The Mona Lisa Escapes",
       "kind": "still",
+      "status": "founder_approved",
+      "founder_approved": true,
+      "do_not_remake": true,
+      "founder_approved_at": "2026-10-29T10:33:00-05:00",
       "headline": "After 500 Years, She Finally Found Something to Smile About.",
-      "visual": "The Mona Lisa steps out of her frame carrying a Sacred Ground shopping bag."
+      "visual": "The Mona Lisa steps out of her frame carrying a Sacred Ground shopping bag.",
+      "local": "assets/sg-cosmic-13-mona-lisa.jpg",
+      "look": "assets/_look/cosmic-batch-one/13-mona-lisa.jpg",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-cosmic-13-mona-lisa.jpg",
+      "media_id": 34974
     },
     {
       "n": 14,
       "id": "cosmic_pyramid_delivery",
       "label": "The Great Pyramid Delivery",
       "kind": "still",
+      "status": "founder_approved",
+      "founder_approved": true,
+      "do_not_remake": true,
+      "founder_approved_at": "2026-10-29T10:33:00-05:00",
       "headline": "Your Crystal Order Has Arrived.",
-      "visual": "A pyramid floats above downtown, carried by extraterrestrial drones."
+      "visual": "A pyramid floats above downtown, carried by extraterrestrial drones.",
+      "local": "assets/sg-cosmic-14-pyramid.jpg",
+      "look": "assets/_look/cosmic-batch-one/14-pyramid.jpg",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-cosmic-14-pyramid.jpg",
+      "media_id": 34975
     },
     {
       "n": 15,
       "id": "cosmic_black_hole_clearance",
       "label": "The Black Hole Clearance Sale",
       "kind": "still",
+      "status": "founder_approved",
+      "founder_approved": true,
+      "do_not_remake": true,
+      "founder_approved_at": "2026-10-29T10:33:00-05:00",
       "headline": "Some Attractions Are Stronger Than Gravity.",
-      "visual": "A black hole sucks in everything except the Sacred Ground storefront."
+      "visual": "A black hole sucks in everything except the Sacred Ground storefront.",
+      "local": "assets/sg-cosmic-15-black-hole.jpg",
+      "look": "assets/_look/cosmic-batch-one/15-black-hole.jpg",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-cosmic-15-black-hole.jpg",
+      "media_id": 34976
     },
     {
       "n": 16,
