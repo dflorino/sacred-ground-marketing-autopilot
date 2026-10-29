@@ -167,24 +167,48 @@
       "id": "cosmic_galactic_traffic",
       "label": "The Galactic Traffic Jam",
       "kind": "still",
+      "status": "founder_approved",
+      "founder_approved": true,
+      "do_not_remake": true,
+      "founder_approved_at": "2026-10-29T10:41:00-05:00",
       "headline": "Apparently Everyone Heard About Us.",
-      "visual": "UFOs, dragons, flying carpets, and spaceships are all stuck in traffic outside Sacred Ground."
+      "visual": "UFOs, dragons, flying carpets, and spaceships are all stuck in traffic outside Sacred Ground.",
+      "local": "assets/sg-cosmic-17-traffic.jpg",
+      "look": "assets/_look/cosmic-batch-one/17-traffic.jpg",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-cosmic-17-traffic.jpg",
+      "media_id": 34983
     },
     {
       "n": 18,
       "id": "cosmic_tarot_escaped",
       "label": "The Tarot Card That Escaped",
       "kind": "still",
+      "status": "founder_approved",
+      "founder_approved": true,
+      "do_not_remake": true,
+      "founder_approved_at": "2026-10-29T10:41:00-05:00",
       "headline": "Your Future Is Looking Bigger Than Expected.",
-      "visual": "A gigantic three-dimensional tarot card rises out of the pavement and towers above the town. NEVER Death. Use The Star only."
+      "visual": "A gigantic three-dimensional tarot card rises out of the pavement and towers above the town. NEVER Death. Use The Star only.",
+      "local": "assets/sg-cosmic-18-star.jpg",
+      "look": "assets/_look/cosmic-batch-one/18-star.jpg",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-cosmic-18-star.jpg",
+      "media_id": 34984
     },
     {
       "n": 19,
       "id": "cosmic_moon_moved",
       "label": "The Moon Has Moved",
       "kind": "still",
+      "status": "founder_approved",
+      "founder_approved": true,
+      "do_not_remake": true,
+      "founder_approved_at": "2026-10-29T10:41:00-05:00",
       "headline": "Even the Moon Needed to Recharge.",
-      "visual": "The moon is sitting in Sacred Ground's parking space with a parking ticket on it."
+      "visual": "The moon is sitting in Sacred Ground's parking space with a parking ticket on it.",
+      "local": "assets/sg-cosmic-19-moon.jpg",
+      "look": "assets/_look/cosmic-batch-one/19-moon.jpg",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-cosmic-19-moon.jpg",
+      "media_id": 34985
     },
     {
       "n": 20,

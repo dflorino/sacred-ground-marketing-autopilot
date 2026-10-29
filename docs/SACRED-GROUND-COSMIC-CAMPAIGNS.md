@@ -66,9 +66,9 @@ Founder list, 2026-10-29. Chat screenshots + the 13–25 table. Build from `conf
 | 14 | The Great Pyramid Delivery | KEEP 2026-10-29 — Your Crystal Order Has Arrived. |
 | 15 | The Black Hole Clearance Sale | KEEP 2026-10-29 — Some Attractions Are Stronger Than Gravity. |
 | 16 | Michelangelo's New Creation | HOLD — Sistine Chapel / Christian holy scene. |
-| 17 | The Galactic Traffic Jam | Apparently Everyone Heard About Us. |
-| 18 | The Tarot Card That Escaped | Your Future Is Looking Bigger Than Expected. NEVER Death. |
-| 19 | The Moon Has Moved | Even the Moon Needed to Recharge. |
+| 17 | The Galactic Traffic Jam | KEEP 2026-10-29 — Apparently Everyone Heard About Us. |
+| 18 | The Tarot Card That Escaped | KEEP 2026-10-29 — Your Future Is Looking Bigger Than Expected. The Star only. |
+| 19 | The Moon Has Moved | KEEP 2026-10-29 — Even the Moon Needed to Recharge. |
 | 20 | The Cosmic Vending Machine | Choose Your Vibration. |
 | 21 | The Interdimensional Book Club | Great Minds Think Beyond Time. |
 | 22 | The Crystal That Ate Chicago | We May Have Ordered the Large. |

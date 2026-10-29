@@ -1,3 +1,8 @@
+## 2026-10-29 — Cosmic 17–19 KEEP
+
+Founder locked: **17 traffic** **34983**, **18 The Star** **34984**, **19 moon** **34985**
+(original moon with the yellow ticket). 16 Michelangelo still HOLD.
+
 ## 2026-10-29 — Cosmic 13–15 KEEP
 
 Founder locked Batch Two stills:
