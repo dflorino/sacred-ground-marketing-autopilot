@@ -131,13 +131,25 @@ def _meditation_cfg() -> Dict:
 
 
 def is_community_meditation(event: Event) -> bool:
-    """True for Free Community Meditation / Meditation Free Community Event titles."""
+    """True for the standing Tuesday Free Community Meditation series.
+
+    Matches title needles and the TEC series slug. Themed titles such as
+    ``Meditation with Lisa Maria – Free Community Event`` still count when
+    the URL contains ``meditation-free-community``. Lions Gate / Sacred
+    Stillness / named paid classes do not use that slug.
+    """
     low = (event.title or "").lower()
     needles = _meditation_cfg().get("title_match_any") or [
         "community meditation",
         "meditation free community",
     ]
-    return any(str(n).lower() in low for n in needles)
+    if any(str(n).lower() in low for n in needles):
+        return True
+    url_needles = _meditation_cfg().get("url_match_any") or [
+        "meditation-free-community",
+    ]
+    url = (event.url or "").lower()
+    return any(str(n).lower() in url for n in url_needles)
 
 
 def _meditation_stub_for_day(day: date) -> Event:
