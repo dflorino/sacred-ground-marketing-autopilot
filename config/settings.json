@@ -159,6 +159,9 @@
       "community meditation",
       "meditation free community"
     ],
+    "url_match_any": [
+      "meditation-free-community"
+    ],
     "stub": {
       "id": 0,
       "title": "Free Community Meditation",
