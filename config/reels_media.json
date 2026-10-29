@@ -1,7 +1,7 @@
 {
   "timezone": "America/Chicago",
   "note": "Founder-confirmed WordPress Media Library IDs for Cursor / ML Social video posts. Use these \u2014 never 26546 or lowercase s01e01-store-quest.mp4 for S1E1.",
-  "updated": "2026-10-26",
+  "updated": "2026-10-28",
   "brand_coverage_hard_rule": {
     "updated": "2026-09-09",
     "summary": "Every episode must hit Facebook + Instagram + TikTok + YouTube + Threads on Sacred Ground BRAND accounts. YouTube must be the Sacred Ground brand channel \u2014 never personal @deneeneflorino4711. Use contentType reel or story. FB Story must use Zernio CDN (media.zernio.com).",
@@ -497,6 +497,50 @@
         "threads": "2026-10-27T18:00:00-05:00"
       },
       "updated_at": "2026-10-26T21:59:00-05:00"
+    },
+    "s1e17": {
+      "season": 1,
+      "episode": 17,
+      "library_name": "S1E17",
+      "title": "Three Pyramids",
+      "media_id": 34919,
+      "plate_id": 34909,
+      "plate_library_name": "S1E17 plate",
+      "poster_id": 34920,
+      "file": "ml-persona-20261028-142329-mqua2y-5723776295.mp4",
+      "url": "https://shopsacredground.com/wp-content/uploads/ml-persona-20261028-142329-mqua2y-5723776295.mp4",
+      "admin": "https://shopsacredground.com/wp-admin/upload.php?item=34919",
+      "filebird_folder": "SG Reels (54)",
+      "mime_type": "video/mp4",
+      "runtime_seconds": 30,
+      "gen": 122,
+      "schedule_status": "scheduled_same_minute_2026-11-04_6pm",
+      "handed_off": "2026-10-28",
+      "note": "Founder Oct 28: KEEP gen 122 / media 34919 locked. All five Wed Nov 4 2026 6:00 PM America/Chicago. Do not remake. Do not post plate 34909, earlier stills 34906/34901, or poster 34920. Voices 34912 / 34916 / 34917 stay stems only.",
+      "do_not_use": {
+        "plate_id": 34909,
+        "earlier_stills": [34906, 34901],
+        "poster_id": 34920,
+        "voice_stems": [34912, 34916, 34917],
+        "retired_stems": [34913, 34914],
+        "note": "34909 plate still only. 34920 poster still only. USE video 34919 only."
+      },
+      "ml_social_ids": {
+        "parent": "6ae2cb0c518c2229050fea6f",
+        "instagram": "6ae2cb0c518c2229050fea6a",
+        "facebook": "6ae2cb0c518c2229050fea6b",
+        "tiktok": "6ae2cb0c518c2229050fea6c",
+        "youtube": "6ae2cb0c518c2229050fea6d",
+        "threads": "6ae2cb0c518c2229050fea6e"
+      },
+      "scheduled_for": {
+        "instagram": "2026-11-04T18:00:00-06:00",
+        "facebook": "2026-11-04T18:00:00-06:00",
+        "tiktok": "2026-11-04T18:00:00-06:00",
+        "youtube": "2026-11-04T18:00:00-06:00",
+        "threads": "2026-11-04T18:00:00-06:00"
+      },
+      "updated_at": "2026-10-28T23:26:00-05:00"
     }
   }
 }
