@@ -1,0 +1,214 @@
+{
+  "title": "Sacred Ground Cosmic Campaigns",
+  "batch": "Batch Two — More ideas that are wonderfully ridiculous",
+  "approved_by": "Founder",
+  "approved_at": "2026-10-29T10:16:00-05:00",
+  "source": "Founder Chat list + Cosmic Campaign Ideas screenshots",
+  "timezone": "America/Chicago",
+  "hard": [
+    "Build from this list. Do not invent a different scene.",
+    "Never invent SACRED GROUND type. Stamp 21848 or 21849 on a blank bag, window, or sign.",
+    "Add the headline in the design pass.",
+    "Never the tarot Death card. If a tarot card appears, use The Star or The Sun only.",
+    "Circular sun is the corner mark only."
+  ],
+  "recurring_series": [
+    {
+      "id": "cosmic_breaking_news",
+      "label": "Sacred Ground: Cosmic Breaking News",
+      "idea": "Fake intergalactic news bulletins reporting bizarre events at Sacred Ground. Vintage newsreels, dramatic announcers, outrageous cosmic discoveries."
+    },
+    {
+      "id": "historical_figures_behaving_badly",
+      "label": "Historical Figures Behaving Badly",
+      "idea": "Da Vinci, Einstein, Cleopatra, Galileo, Newton and other legends discovering Sacred Ground across time."
+    },
+    {
+      "id": "meanwhile_another_dimension",
+      "label": "Meanwhile, in Another Dimension…",
+      "idea": "Impossible scenes where Sacred Ground exists in alternate realities: underwater Atlantis, a distant galaxy, prehistoric Earth, or the year 3026."
+    }
+  ],
+  "universe_lost_its_mind": [
+    {
+      "n": 1,
+      "label": "Saturn Has a Shopping Problem",
+      "headline": "Even Saturn Shops at Sacred Ground.",
+      "visual": "Saturn is parked above downtown Arlington Heights. Its rings are made entirely of crystals. A giant cosmic shopping bag hangs from the planet. Tiny spacecraft lined up outside the store waiting for parking."
+    },
+    {
+      "n": 2,
+      "label": "NASA Discovers a Portal in Arlington Heights",
+      "headline": "NASA Calls It An Anomaly. We Call It Tuesday.",
+      "visual": "A colossal swirling wormhole opens above Sacred Ground. Astronauts, scientists, and news crews are staring at it."
+    },
+    {
+      "n": 3,
+      "label": "The Great Crystal Meteor Shower",
+      "headline": "We Told You New Inventory Was Coming.",
+      "visual": "Giant amethyst and quartz meteors streak across the night sky, landing gently outside Sacred Ground."
+    },
+    {
+      "n": 4,
+      "label": "The Aliens Finally Found Us",
+      "headline": "They Traveled 40 Light-Years for Our Crystal Selection.",
+      "visual": "An enormous UFO hovers over Sacred Ground. A beam of light is lifting a gigantic amethyst geode into the spaceship."
+    },
+    {
+      "n": 5,
+      "label": "Da Vinci's Secret Final Invention",
+      "headline": "500 Years Ahead of His Time. Still Couldn't Find a Better Crystal Shop.",
+      "visual": "Leonardo stands before an enormous blueprint of a crystal-powered flying machine, covered in sacred geometry."
+    },
+    {
+      "n": 6,
+      "label": "Einstein Finally Solves Everything",
+      "headline": "It's All Relative Except Great Crystals.",
+      "visual": "Einstein's chalkboard is filled with complicated equations. At the bottom, circled in chalk: E = SG²."
+    },
+    {
+      "n": 7,
+      "label": "Cleopatra's Royal Shopping Expedition",
+      "headline": "She Ruled Egypt. But She'd Shop at Sacred Ground.",
+      "visual": "Cleopatra arriving in a golden chariot with celestial sphinxes, attendants carrying enormous crystals."
+    },
+    {
+      "n": 8,
+      "label": "Newton Discovers Crystal Gravity",
+      "headline": "What Goes Up Must Come Down. Unless It's Our Energy.",
+      "visual": "Instead of an apple, a gigantic amethyst is falling toward Newton's head."
+    },
+    {
+      "n": 9,
+      "label": "The Galactic Octopus Wants a Reading",
+      "headline": "When You Have Eight Questions, One Reading Isn't Enough.",
+      "visual": "A 300-foot cosmic octopus reaches down from another dimension, holding a different tarot card in each tentacle. NEVER Death."
+    },
+    {
+      "n": 10,
+      "label": "The World's Most Unusual Bank Robbery",
+      "headline": "They Left the Money. Took the Amethyst.",
+      "visual": "Masked intergalactic thieves ignore stacks of cash and try to steal one enormous crystal."
+    },
+    {
+      "n": 11,
+      "label": "Houston, We Have Inner Peace",
+      "headline": "Houston, He's Not Coming Back. He Found His Center.",
+      "visual": "An astronaut meditating on the moon while mission control frantically tries to reach him."
+    },
+    {
+      "n": 12,
+      "label": "The Universe Is Actually Run by a Cat",
+      "headline": "The Universe Has Spoken. It Wants More Crystals.",
+      "visual": "A colossal celestial cat sits on Earth like a toy, batting Saturn across the galaxy."
+    }
+  ],
+  "concepts": [
+    {
+      "n": 13,
+      "id": "cosmic_mona_lisa_escapes",
+      "label": "The Mona Lisa Escapes",
+      "kind": "still",
+      "headline": "After 500 Years, She Finally Found Something to Smile About.",
+      "visual": "The Mona Lisa steps out of her frame carrying a Sacred Ground shopping bag."
+    },
+    {
+      "n": 14,
+      "id": "cosmic_pyramid_delivery",
+      "label": "The Great Pyramid Delivery",
+      "kind": "still",
+      "headline": "Your Crystal Order Has Arrived.",
+      "visual": "A pyramid floats above downtown, carried by extraterrestrial drones."
+    },
+    {
+      "n": 15,
+      "id": "cosmic_black_hole_clearance",
+      "label": "The Black Hole Clearance Sale",
+      "kind": "still",
+      "headline": "Some Attractions Are Stronger Than Gravity.",
+      "visual": "A black hole sucks in everything except the Sacred Ground storefront."
+    },
+    {
+      "n": 16,
+      "id": "cosmic_michelangelo_creation",
+      "label": "Michelangelo's New Creation",
+      "kind": "still",
+      "headline": "The Divine Touch. Now Available Downtown.",
+      "status": "hold",
+      "hold_why": "Sistine Chapel / Creation of Adam is a Christian holy scene. Same class as retired Last Supper until Founder says go.",
+      "visual": "HOLD. Sistine Chapel-inspired fresco, two hands passing a glowing amethyst."
+    },
+    {
+      "n": 17,
+      "id": "cosmic_galactic_traffic",
+      "label": "The Galactic Traffic Jam",
+      "kind": "still",
+      "headline": "Apparently Everyone Heard About Us.",
+      "visual": "UFOs, dragons, flying carpets, and spaceships are all stuck in traffic outside Sacred Ground."
+    },
+    {
+      "n": 18,
+      "id": "cosmic_tarot_escaped",
+      "label": "The Tarot Card That Escaped",
+      "kind": "still",
+      "headline": "Your Future Is Looking Bigger Than Expected.",
+      "visual": "A gigantic three-dimensional tarot card rises out of the pavement and towers above the town. NEVER Death. Use The Star only."
+    },
+    {
+      "n": 19,
+      "id": "cosmic_moon_moved",
+      "label": "The Moon Has Moved",
+      "kind": "still",
+      "headline": "Even the Moon Needed to Recharge.",
+      "visual": "The moon is sitting in Sacred Ground's parking space with a parking ticket on it."
+    },
+    {
+      "n": 20,
+      "id": "cosmic_vending_skyscraper",
+      "label": "The Cosmic Vending Machine",
+      "kind": "still",
+      "headline": "Choose Your Vibration.",
+      "visual": "A vending machine the size of a skyscraper dispenses planets, stars, and crystals."
+    },
+    {
+      "n": 21,
+      "id": "cosmic_interdimensional_book_club",
+      "label": "The Interdimensional Book Club",
+      "kind": "still",
+      "headline": "Great Minds Think Beyond Time.",
+      "visual": "Shakespeare, an alien, a medieval wizard, and a robot sit around a table reading metaphysical books."
+    },
+    {
+      "n": 22,
+      "id": "cosmic_crystal_ate_chicago",
+      "label": "The Crystal That Ate Chicago",
+      "kind": "still",
+      "headline": "We May Have Ordered the Large.",
+      "visual": "An enormous amethyst geode rises above the Chicago skyline."
+    },
+    {
+      "n": 23,
+      "id": "cosmic_universe_lost_found",
+      "label": "The Universe's Lost & Found",
+      "kind": "still",
+      "headline": "Find What You've Been Looking For.",
+      "visual": "An enormous celestial lost-and-found counter holds missing stars, forgotten dreams, lost socks, and one glowing crystal."
+    },
+    {
+      "n": 24,
+      "id": "cosmic_tsa",
+      "label": "The Cosmic TSA",
+      "kind": "still",
+      "headline": "Ma'am, You'll Need to Explain the Amethyst.",
+      "visual": "Alien airport security scans someone's luggage and discovers 47 crystals."
+    },
+    {
+      "n": 25,
+      "id": "cosmic_renaissance_reiki",
+      "label": "The Renaissance Reiki Session",
+      "kind": "still",
+      "headline": "Even Royalty Needs to Unwind.",
+      "visual": "An entire Renaissance court floats above the floor during a sound bath, wigs and robes suspended in midair."
+    }
+  ]
+}
