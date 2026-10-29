@@ -22,6 +22,19 @@ ASSETS_DIR = os.path.join(ROOT, "assets")
 LOGO_PATH = os.path.join(
     CONFIG_DIR, "brand", "sacred-ground-logo-circle-transparent.png"
 )
+WORDMARK_LONG_PATH = os.path.join(CONFIG_DIR, "brand", "sacred-ground-logo-long.png")
+WORDMARK_STACKED_PATH = os.path.join(
+    CONFIG_DIR, "brand", "sacred-ground-logo-stacked-white.png"
+)
+WORDMARK_MEDIA_IDS = (21848, 21849)
+WORDMARK_LOCK = (
+    " REAL LOGO LOCK (Founder Oct 28 2026): NEVER invent SACRED GROUND "
+    "lettering on awnings, windows, or signs — the model garbles it. "
+    "Use ONLY the real wordmark files (media 21848 long, 21849 stacked; "
+    "white SACRED GROUND + gold wave). Pass those as reference images or "
+    "leave the awning/window blank and stamp the PNG after. Circular sun "
+    "is the corner mark only — it does not replace the wordmark."
+)
 TINA_CIRCLE_REFS = (
     os.path.join(ASSETS_DIR, "ref-tina-circle-from-meditation.png"),
     os.path.join(ASSETS_DIR, "ref-tina-circle-from-tarot.png"),
@@ -1280,7 +1293,7 @@ def build_generation_prompt(
         f"{events_bit}{visit}{free_bit} {equal_rule} "
         "Mixed expressive fonts (not one rigid template), circular Sacred Ground "
         f"sun-face logo, footer with {WEBSITE} and {PHONE}. Prebranded finished "
-        "flyer. CRITICAL: do NOT include any prices, dollar signs, ticket costs, "
+        f"flyer.{WORDMARK_LOCK} CRITICAL: do NOT include any prices, dollar signs, ticket costs, "
         "or dollar amounts anywhere on the graphic. FREE / Free Community for "
         "free community gatherings is allowed and preferred. No invented "
         "practitioner faces unless a real photo reference is provided. "

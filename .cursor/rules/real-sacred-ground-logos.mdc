@@ -1,0 +1,31 @@
+---
+description: HARD — Only use the real Sacred Ground wordmarks. Never invent shop-name lettering.
+alwaysApply: true
+---
+
+# Real Sacred Ground logos only (HARD — Founder Oct 28, 2026)
+
+On awnings, windows, signs, and any place the shop name appears: **only the real wordmark files**. Do not let the model invent SACRED GROUND type. That is how plates come back as SACREED / GROUNDD / REALED.
+
+## The only shop-name logos
+
+| File | Media | Use |
+|---|---|---|
+| `config/brand/sacred-ground-logo-long.png` | **21848** | Awnings, wide signs |
+| `config/brand/sacred-ground-logo-stacked-white.png` | **21849** | Windows, stacked lockups |
+
+WordPress: `Sacred-Ground-logo-3.png` (long) and `Sacred-Ground-logo-Stacked-white-1.png` (stacked). White SACRED GROUND + gold wave.
+
+## How to put them on a plate
+
+1. Pass `selectedImages: [21848, 21849]` on every new gen that shows a shop / awning / window.
+2. Or leave the awning/window **blank** and **stamp** these PNGs after. Stamping is safer.
+3. Circular sun (`sacred-ground-logo-circle-transparent.png`) stays the **corner mark** only — it does **not** replace the wordmark on awnings.
+
+## Never
+
+- Invent SACRED GROUND / Sacred Ground lettering (the model garbles it)
+- Invent a new sun, stick-sun, or generic sans shop name
+- Paint “white SACRED GROUND, blank between words, no swoosh” — that old line caused this. Use the real files. The real wordmark **has** the gold wave.
+
+Incident: Nov 1–2 2026 morning tries. Founder: “only use our logo.”
