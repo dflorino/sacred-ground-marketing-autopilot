@@ -30,7 +30,7 @@ Creative surroundings are OK (mountains, side streets, water, celestial skies).
 Sacred Ground storefront** customers would recognize:
 
 - Front of shop, **eggplant-purple awning**, tan stone architecture
-- Real **long wordmark** on the awning (`config/brand/sacred-ground-logo-long.png`, media **21848**) — stamp the file, do not invent letters
+- **Optima Regular** `SACRED GROUND` on the awning — tight lockup, tipped to the roof when the photo is angled. Do not paste/stretch the logo PNGs. Do not let the model invent letters.
 - Reference look: `assets/sg-night-fall.png`, `assets/sg-night-summer.png`,
   `assets/sg-example-night-fall-storefront.png`, `assets/refs/exterior-*.png`
 
@@ -88,7 +88,7 @@ onto the image (e.g. “week-ahead plate”, “Sacred Ground NIGHT”).
 
 Allowed on-photo text only:
 
-- Real long wordmark on the eggplant awning (media **21848**) — never invented shop-name type
+- Optima Regular `SACRED GROUND` on the eggplant awning — tight lockup, never invented shop-name type, never a pasted logo PNG
 - Real circular **sun-face** logo (`config/brand/sacred-ground-logo-circle-transparent.png`)
   bottom-left — never invent archer / zodiac seals
 - Shop pride stays in caption / first-comment (do not invent gold Voted #1 stickers)

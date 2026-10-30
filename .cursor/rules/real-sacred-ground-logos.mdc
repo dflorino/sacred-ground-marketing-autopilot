@@ -1,31 +1,45 @@
 ---
-description: HARD — Only use the real Sacred Ground wordmarks. Never invent shop-name lettering.
+description: HARD — Set SACRED GROUND in Optima Regular. Do not paste the logo PNG.
 alwaysApply: true
 ---
 
-# Real Sacred Ground logos only (HARD — Founder Oct 28, 2026)
+# Shop name in Optima Regular (HARD — Founder Oct 30, 2026)
 
-On awnings, windows, signs, and any place the shop name appears: **only the real wordmark files**. Do not let the model invent SACRED GROUND type. That is how plates come back as SACREED / GROUNDD / REALED.
+On awnings, windows, signs, and any place the shop name appears: **set SACRED GROUND in Optima Regular**, tight, like the Saturn lockup. Do **not** paste or stretch the long / stacked logo PNGs.
 
-## The only shop-name logos
+The image model still must never invent the letters. That is how plates come back as SACREED / GROUNDD / REALED.
 
-| File | Media | Use |
-|---|---|---|
-| `config/brand/sacred-ground-logo-long.png` | **21848** | Awnings, wide signs |
-| `config/brand/sacred-ground-logo-stacked-white.png` | **21849** | Windows, stacked lockups |
+## The lock (Founder Oct 30, 2026)
 
-WordPress: `Sacred-Ground-logo-3.png` (long) and `Sacred-Ground-logo-Stacked-white-1.png` (stacked). White SACRED GROUND + gold wave.
+| Do this | Not this |
+|---|---|
+| **Optima Regular** — `SACRED GROUND` as one tight lockup | Paste / stretch `sacred-ground-logo-long.png` (21848) or stacked (21849) onto a fascia |
+| Words together — same tightness as Saturn | Wide gap between SACRED and GROUND |
+| Tip the type to the roof / awning when the photo is angled (S up, far end down) | Level type on a sloped roof |
+| Leave the awning blank in the generation, then set the type | Ask the model to paint the name, or pass 21848 / 21849 as `selectedImages` for it to copy |
 
-## How to put them on a plate
+Circular sun (`sacred-ground-logo-circle-transparent.png`) stays the **corner mark** only.
 
-1. Pass `selectedImages: [21848, 21849]` on every new gen that shows a shop / awning / window.
-2. Or leave the awning/window **blank** and **stamp** these PNGs after. Stamping is safer.
-3. Circular sun (`sacred-ground-logo-circle-transparent.png`) stays the **corner mark** only — it does **not** replace the wordmark on awnings.
+## How to put the name on a plate
+
+1. Generation: awning / window / sign stays **blank**. No shop-name letters in the prompt.
+2. Design pass: **Optima Regular** (`/System/Library/Fonts/Optima.ttc` on this Mac). Tracking tight. One space, not a stretched sticker.
+3. If the building is angled, rotate the lockup a little so it sits on the fascia.
+4. Optional gold wave only if the words stay together. If the wave opens a hole, drop the wave and keep the type tight.
+
+## Campaign sentences on dark plates
+
+Large type, **Sacred Ground gold** `(238, 191, 42)` — not white on a busy night photo. Aliens 04 headline is the read.
+
+## Reference
+
+- Saturn awning — tightness
+- Aliens 04 (`assets/_look/cosmic-batch-one/04-aliens.jpg`) — tightness + roof angle. KEEP the awning.
 
 ## Never
 
-- Invent SACRED GROUND / Sacred Ground lettering (the model garbles it)
-- Invent a new sun, stick-sun, or generic sans shop name
-- Paint “white SACRED GROUND, blank between words, no swoosh” — that old line caused this. Use the real files. The real wordmark **has** the gold wave.
+- Paste the logo files onto awnings / windows / signs
+- Let the model invent SACRED GROUND lettering
+- Invent a new sun or a generic sans shop name
 
-Incident: Nov 1–2 2026 morning tries. Founder: “only use our logo.”
+Oct 28 stamp-the-PNG lock is retired. Oct 30 Founder: use the font that way on everything.

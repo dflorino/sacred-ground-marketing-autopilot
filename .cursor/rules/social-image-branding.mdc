@@ -8,7 +8,7 @@ alwaysApply: true
 Every Sacred Ground social graphic for Autopilot / ML Social / Zernio **must** include:
 
 1. **Sacred Ground circular logo** — `config/brand/sacred-ground-logo-circle-transparent.png` (corner mark)
-2. **Real wordmark on awnings / windows / signs** — long **21848** + stacked **21849** only. Never invent SACRED GROUND type. See `real-sacred-ground-logos.mdc`.
+2. **Optima Regular on awnings / windows / signs** — tight `SACRED GROUND` lockup. Do not paste the logo PNGs. Never invent SACRED GROUND type. See `real-sacred-ground-logos.mdc`.
 3. **Short text overlay** on the photo (no black/dark panel behind text)
 4. **Website + phone in a clean footer band under the photo** (always)
 
@@ -81,7 +81,8 @@ Every Sacred Ground social graphic for Autopilot / ML Social / Zernio **must** i
 
 ## Logo
 
-- Circular only; strip black/square background to true transparency
+- Shop name on awnings / windows / signs: **Optima Regular**, tight lockup — do not paste the logo PNGs (Founder Oct 30 2026). See `real-sacred-ground-logos.mdc`
+- Circular sun only for the corner mark; strip black/square background to true transparency
 - **Darker translucent** — about **80–90% opacity** (a smidge darker than a faint watermark; still not fully opaque)
 - Corner mark ~10–13% of image width; prefer bottom-left of the **photo** area (above footer)
 - Logo does **not** replace on-image event text

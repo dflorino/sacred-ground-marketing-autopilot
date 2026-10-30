@@ -28,12 +28,13 @@ WORDMARK_STACKED_PATH = os.path.join(
 )
 WORDMARK_MEDIA_IDS = (21848, 21849)
 WORDMARK_LOCK = (
-    " REAL LOGO LOCK (Founder Oct 28 2026): NEVER invent SACRED GROUND "
+    " SHOP NAME LOCK (Founder Oct 30 2026): NEVER invent SACRED GROUND "
     "lettering on awnings, windows, or signs — the model garbles it. "
-    "Use ONLY the real wordmark files (media 21848 long, 21849 stacked; "
-    "white SACRED GROUND + gold wave). Pass those as reference images or "
-    "leave the awning/window blank and stamp the PNG after. Circular sun "
-    "is the corner mark only — it does not replace the wordmark."
+    "Leave the awning/window/sign BLANK in the generation. Do NOT stamp "
+    "or stretch the long/stacked logo PNGs (21848 / 21849). After, set "
+    "SACRED GROUND in Optima Regular as one tight lockup (Saturn tightness; "
+    "tip to the roof when the photo is angled). Circular sun is the "
+    "corner mark only — it does not replace the shop name."
 )
 TINA_CIRCLE_REFS = (
     os.path.join(ASSETS_DIR, "ref-tina-circle-from-meditation.png"),

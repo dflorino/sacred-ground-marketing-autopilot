@@ -7,7 +7,7 @@
   "timezone": "America/Chicago",
   "hard": [
     "Build from this list. Do not invent a different scene.",
-    "Never invent SACRED GROUND type. Stamp 21848 or 21849 on a blank bag, window, or sign.",
+    "Never invent SACRED GROUND type. Leave bag / window / sign blank. Set Optima Regular SACRED GROUND as a tight lockup. Do not paste the logo PNGs. Dark headlines are Sacred Ground gold (238, 191, 42).",
     "Add the headline in the design pass.",
     "Never the tarot Death card. If a tarot card appears, use The Star or The Sun only.",
     "Circular sun is the corner mark only."
@@ -52,19 +52,31 @@
       "n": 4,
       "label": "The Aliens Finally Found Us",
       "headline": "They Traveled 40 Light-Years for Our Crystal Selection.",
-      "visual": "An enormous UFO hovers over Sacred Ground. A beam of light is lifting a gigantic amethyst geode into the spaceship."
+      "visual": "An enormous UFO hovers over Sacred Ground. A beam of light is lifting a gigantic amethyst geode into the spaceship.",
+      "look": "assets/_look/cosmic-batch-one/04-aliens.jpg",
+      "note": "Awning KEEP 2026-10-30. Headline is Sacred Ground gold, one size up from the white pass."
     },
     {
       "n": 5,
       "label": "Da Vinci's Secret Final Invention",
       "headline": "500 Years Ahead of His Time. Still Couldn't Find a Better Crystal Shop.",
-      "visual": "Leonardo stands before an enormous blueprint of a crystal-powered flying machine, covered in sacred geometry."
+      "visual": "Leonardo stands before an enormous blueprint of a crystal-powered flying machine, covered in sacred geometry.",
+      "status": "founder_approved",
+      "founder_approved": true,
+      "do_not_remake": true,
+      "founder_approved_at": "2026-10-29T14:39:00-05:00",
+      "look": "assets/_look/cosmic-batch-one/05-davinci.jpg"
     },
     {
       "n": 6,
       "label": "Einstein Finally Solves Everything",
       "headline": "It's All Relative Except Great Crystals.",
-      "visual": "Einstein's chalkboard is filled with complicated equations. At the bottom, circled in chalk: E = SG²."
+      "visual": "Einstein's chalkboard is filled with complicated equations. At the bottom, circled in chalk: E = SG².",
+      "status": "founder_approved",
+      "founder_approved": true,
+      "do_not_remake": true,
+      "founder_approved_at": "2026-10-29T14:06:00-05:00",
+      "look": "assets/_look/cosmic-batch-one/06-einstein.jpg"
     },
     {
       "n": 7,

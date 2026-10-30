@@ -9,7 +9,7 @@ Source: Founder brief in chat. Locked here so the list is on disk and GitHub.
 **Hard**
 
 - Picture is the idea.
-- Do not invent SACRED GROUND type. Stamp real wordmarks only (`21848` long, `21849` stacked). Leave tapestries, bags, awnings, and signs blank in the generation, then stamp.
+- Do not invent SACRED GROUND type. Leave tapestries, bags, awnings, and signs blank in the generation. Set **Optima Regular** `SACRED GROUND` as one tight lockup in the design pass — do not paste the logo PNGs. Tip the type to the roof when the photo is angled. Dark-plate headlines are Sacred Ground gold `(238, 191, 42)`, not white.
 - Add the headline in the final design pass. Leave the upper band clear.
 - Circular sun is the corner mark only.
 - Never the tarot Death card.
@@ -48,9 +48,9 @@ Founder list, 2026-10-29. Chat screenshots + the 13–25 table. Build from `conf
 | 1 | Saturn Has a Shopping Problem | Even Saturn Shops at Sacred Ground. |
 | 2 | NASA Discovers a Portal in Arlington Heights | NASA Calls It An Anomaly. We Call It Tuesday. |
 | 3 | The Great Crystal Meteor Shower | We Told You New Inventory Was Coming. |
-| 4 | The Aliens Finally Found Us | They Traveled 40 Light-Years for Our Crystal Selection. |
-| 5 | Da Vinci's Secret Final Invention | 500 Years Ahead of His Time. Still Couldn't Find a Better Crystal Shop. |
-| 6 | Einstein Finally Solves Everything | It's All Relative Except Great Crystals. |
+| 4 | The Aliens Finally Found Us | KEEP awning 2026-10-30 — They Traveled 40 Light-Years for Our Crystal Selection. Gold headline. |
+| 5 | Da Vinci's Secret Final Invention | KEEP 2026-10-29 — 500 Years Ahead of His Time. Still Couldn't Find a Better Crystal Shop. |
+| 6 | Einstein Finally Solves Everything | KEEP 2026-10-29 — It's All Relative Except Great Crystals. |
 | 7 | Cleopatra's Royal Shopping Expedition | She Ruled Egypt. But She'd Shop at Sacred Ground. |
 | 8 | Newton Discovers Crystal Gravity | What Goes Up Must Come Down. Unless It's Our Energy. |
 | 9 | The Galactic Octopus Wants a Reading | When You Have Eight Questions, One Reading Isn't Enough. |
