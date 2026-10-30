@@ -53,8 +53,12 @@
       "label": "The Aliens Finally Found Us",
       "headline": "They Traveled 40 Light-Years for Our Crystal Selection.",
       "visual": "An enormous UFO hovers over Sacred Ground. A beam of light is lifting a gigantic amethyst geode into the spaceship.",
+      "status": "founder_approved",
+      "founder_approved": true,
+      "do_not_remake": true,
+      "founder_approved_at": "2026-10-30T09:35:00-05:00",
       "look": "assets/_look/cosmic-batch-one/04-aliens.jpg",
-      "note": "Awning KEEP 2026-10-30. Headline is Sacred Ground gold, one size up from the white pass."
+      "note": "KEEP 2026-10-30. Awning tipped to the roof. Headline white."
     },
     {
       "n": 5,

@@ -48,7 +48,7 @@ Founder list, 2026-10-29. Chat screenshots + the 13–25 table. Build from `conf
 | 1 | Saturn Has a Shopping Problem | Even Saturn Shops at Sacred Ground. |
 | 2 | NASA Discovers a Portal in Arlington Heights | NASA Calls It An Anomaly. We Call It Tuesday. |
 | 3 | The Great Crystal Meteor Shower | We Told You New Inventory Was Coming. |
-| 4 | The Aliens Finally Found Us | KEEP awning 2026-10-30 — They Traveled 40 Light-Years for Our Crystal Selection. Gold headline. |
+| 4 | The Aliens Finally Found Us | KEEP 2026-10-30 — They Traveled 40 Light-Years for Our Crystal Selection. White headline. |
 | 5 | Da Vinci's Secret Final Invention | KEEP 2026-10-29 — 500 Years Ahead of His Time. Still Couldn't Find a Better Crystal Shop. |
 | 6 | Einstein Finally Solves Everything | KEEP 2026-10-29 — It's All Relative Except Great Crystals. |
 | 7 | Cleopatra's Royal Shopping Expedition | She Ruled Egypt. But She'd Shop at Sacred Ground. |
