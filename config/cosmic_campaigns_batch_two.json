@@ -34,19 +34,37 @@
       "n": 1,
       "label": "Saturn Has a Shopping Problem",
       "headline": "Even Saturn Shops at Sacred Ground.",
-      "visual": "Saturn is parked above downtown Arlington Heights. Its rings are made entirely of crystals. A giant cosmic shopping bag hangs from the planet. Tiny spacecraft lined up outside the store waiting for parking."
+      "visual": "Saturn is parked above downtown Arlington Heights. Its rings are made entirely of crystals. A giant cosmic shopping bag hangs from the planet. Tiny spacecraft lined up outside the store waiting for parking.",
+      "status": "founder_approved",
+      "founder_approved": true,
+      "do_not_remake": true,
+      "founder_approved_at": "2026-10-31T13:00:00-05:00",
+      "look": "assets/_look/cosmic-batch-one/01-saturn.jpg",
+      "note": "KEEP 2026-10-31. No storefront. Renaissance-style: picture + white headline + footer."
     },
     {
       "n": 2,
       "label": "NASA Discovers a Portal in Arlington Heights",
       "headline": "NASA Calls It An Anomaly. We Call It Tuesday.",
-      "visual": "A colossal swirling wormhole opens above Sacred Ground. Astronauts, scientists, and news crews are staring at it."
+      "visual": "A colossal swirling wormhole opens above Sacred Ground. Astronauts, scientists, and news crews are staring at it.",
+      "status": "founder_approved",
+      "founder_approved": true,
+      "do_not_remake": true,
+      "founder_approved_at": "2026-10-31T13:00:00-05:00",
+      "look": "assets/_look/cosmic-batch-one/02-nasa.jpg",
+      "note": "KEEP 2026-10-31. No storefront. Wormhole + crew. White headline."
     },
     {
       "n": 3,
       "label": "The Great Crystal Meteor Shower",
       "headline": "We Told You New Inventory Was Coming.",
-      "visual": "Giant amethyst and quartz meteors streak across the night sky, landing gently outside Sacred Ground."
+      "visual": "Giant amethyst and quartz meteors streak across the night sky, landing gently outside Sacred Ground.",
+      "status": "founder_approved",
+      "founder_approved": true,
+      "do_not_remake": true,
+      "founder_approved_at": "2026-10-31T13:00:00-05:00",
+      "look": "assets/_look/cosmic-batch-one/03-meteor.jpg",
+      "note": "KEEP 2026-10-31. No storefront. Crystals on the road. White headline."
     },
     {
       "n": 4,
@@ -85,38 +103,68 @@
     {
       "n": 7,
       "label": "Cleopatra's Royal Shopping Expedition",
-      "headline": "She Ruled Egypt. But She'd Shop at Sacred Ground.",
-      "visual": "Cleopatra arriving in a golden chariot with celestial sphinxes, attendants carrying enormous crystals."
+      "headline": "She Ruled Egypt. But She Shops at Sacred Ground.",
+      "visual": "Cleopatra arriving in a golden chariot with celestial sphinxes, attendants carrying enormous crystals.",
+      "status": "founder_approved",
+      "founder_approved": true,
+      "do_not_remake": true,
+      "founder_approved_at": "2026-10-30T14:43:00-05:00",
+      "look": "assets/_look/cosmic-batch-one/07-cleopatra.jpg"
     },
     {
       "n": 8,
       "label": "Newton Discovers Crystal Gravity",
       "headline": "What Goes Up Must Come Down. Unless It's Our Energy.",
-      "visual": "Instead of an apple, a gigantic amethyst is falling toward Newton's head."
+      "visual": "Instead of an apple, a gigantic amethyst is falling toward Newton's head.",
+      "status": "founder_approved",
+      "founder_approved": true,
+      "do_not_remake": true,
+      "founder_approved_at": "2026-10-30T09:52:00-05:00",
+      "look": "assets/_look/cosmic-batch-one/08-newton.jpg"
     },
     {
       "n": 9,
       "label": "The Galactic Octopus Wants a Reading",
       "headline": "When You Have Eight Questions, One Reading Isn't Enough.",
-      "visual": "A 300-foot cosmic octopus reaches down from another dimension, holding a different tarot card in each tentacle. NEVER Death."
+      "visual": "A 300-foot cosmic octopus reaches down from another dimension, holding a different tarot card in each tentacle. NEVER Death.",
+      "status": "founder_approved",
+      "founder_approved": true,
+      "do_not_remake": true,
+      "founder_approved_at": "2026-10-30T14:00:00-05:00",
+      "look": "assets/_look/cosmic-batch-one/09-octopus.jpg"
     },
     {
       "n": 10,
       "label": "The World's Most Unusual Bank Robbery",
       "headline": "They Left the Money. Took the Amethyst.",
-      "visual": "Masked intergalactic thieves ignore stacks of cash and try to steal one enormous crystal."
+      "visual": "Masked intergalactic thieves ignore stacks of cash and try to steal one enormous crystal.",
+      "status": "founder_approved",
+      "founder_approved": true,
+      "do_not_remake": true,
+      "founder_approved_at": "2026-10-31T10:30:00-05:00",
+      "look": "assets/_look/cosmic-batch-one/10-bank.jpg"
     },
     {
       "n": 11,
       "label": "Houston, We Have Inner Peace",
       "headline": "Houston, He's Not Coming Back. He Found His Center.",
-      "visual": "An astronaut meditating on the moon while mission control frantically tries to reach him."
+      "visual": "An astronaut meditating on the moon while mission control frantically tries to reach him.",
+      "status": "founder_approved",
+      "founder_approved": true,
+      "do_not_remake": true,
+      "founder_approved_at": "2026-10-31T10:30:00-05:00",
+      "look": "assets/_look/cosmic-batch-one/11-houston.jpg"
     },
     {
       "n": 12,
       "label": "The Universe Is Actually Run by a Cat",
       "headline": "The Universe Has Spoken. It Wants More Crystals.",
-      "visual": "A colossal celestial cat sits on Earth like a toy, batting Saturn across the galaxy."
+      "visual": "A colossal celestial cat sits on Earth like a toy, batting Saturn across the galaxy.",
+      "status": "founder_approved",
+      "founder_approved": true,
+      "do_not_remake": true,
+      "founder_approved_at": "2026-10-31T10:30:00-05:00",
+      "look": "assets/_look/cosmic-batch-one/12-cat.jpg"
     }
   ],
   "concepts": [
@@ -232,7 +280,13 @@
       "label": "The Cosmic Vending Machine",
       "kind": "still",
       "headline": "Choose Your Vibration.",
-      "visual": "A vending machine the size of a skyscraper dispenses planets, stars, and crystals."
+      "visual": "A vending machine the size of a skyscraper dispenses planets, stars, and crystals.",
+      "status": "founder_approved",
+      "founder_approved": true,
+      "do_not_remake": true,
+      "founder_approved_at": "2026-10-31T13:00:00-05:00",
+      "look": "assets/_look/cosmic-batch-one/20-vending.jpg",
+      "note": "KEEP 2026-10-31. Shop name off the machine. Headline only: Choose Your Vibration."
     },
     {
       "n": 21,
@@ -240,7 +294,12 @@
       "label": "The Interdimensional Book Club",
       "kind": "still",
       "headline": "Great Minds Think Beyond Time.",
-      "visual": "Shakespeare, an alien, a medieval wizard, and a robot sit around a table reading metaphysical books."
+      "visual": "Shakespeare, an alien, a medieval wizard, and a robot sit around a table reading metaphysical books.",
+      "status": "founder_approved",
+      "founder_approved": true,
+      "do_not_remake": true,
+      "founder_approved_at": "2026-10-31T10:55:00-05:00",
+      "look": "assets/_look/cosmic-batch-one/21-book-club.jpg"
     },
     {
       "n": 22,
@@ -248,7 +307,12 @@
       "label": "The Crystal That Ate Chicago",
       "kind": "still",
       "headline": "We May Have Ordered the Large.",
-      "visual": "An enormous amethyst geode rises above the Chicago skyline."
+      "visual": "An enormous amethyst geode rises above the Chicago skyline.",
+      "status": "founder_approved",
+      "founder_approved": true,
+      "do_not_remake": true,
+      "founder_approved_at": "2026-10-31T10:55:00-05:00",
+      "look": "assets/_look/cosmic-batch-one/22-chicago.jpg"
     },
     {
       "n": 23,
@@ -256,7 +320,12 @@
       "label": "The Universe's Lost & Found",
       "kind": "still",
       "headline": "Find What You've Been Looking For.",
-      "visual": "An enormous celestial lost-and-found counter holds missing stars, forgotten dreams, lost socks, and one glowing crystal."
+      "visual": "An enormous celestial lost-and-found counter holds missing stars, forgotten dreams, lost socks, and one glowing crystal.",
+      "status": "founder_approved",
+      "founder_approved": true,
+      "do_not_remake": true,
+      "founder_approved_at": "2026-10-29T11:28:00-05:00",
+      "look": "assets/_look/cosmic-batch-one/23-lost-found.jpg"
     },
     {
       "n": 24,
@@ -264,7 +333,13 @@
       "label": "The Cosmic TSA",
       "kind": "still",
       "headline": "Ma'am, You'll Need to Explain the Amethyst.",
-      "visual": "Alien airport security scans someone's luggage and discovers 47 crystals."
+      "visual": "Alien airport security scans someone's luggage and discovers 47 crystals.",
+      "status": "founder_approved",
+      "founder_approved": true,
+      "do_not_remake": true,
+      "founder_approved_at": "2026-10-29T11:28:00-05:00",
+      "look": "assets/_look/cosmic-batch-one/24-tsa.jpg",
+      "note": "KEEP Oct 29. Optima on hanging sign and suitcase lid."
     },
     {
       "n": 25,
@@ -272,7 +347,13 @@
       "label": "The Renaissance Reiki Session",
       "kind": "still",
       "headline": "Even Royalty Needs to Unwind.",
-      "visual": "An entire Renaissance court floats above the floor during a sound bath, wigs and robes suspended in midair."
+      "visual": "An entire Renaissance court floats above the floor during a sound bath, wigs and robes suspended in midair.",
+      "status": "founder_approved",
+      "founder_approved": true,
+      "do_not_remake": true,
+      "founder_approved_at": "2026-10-29T11:34:00-05:00",
+      "look": "assets/_look/cosmic-batch-one/25-renaissance.jpg",
+      "note": "KEEP Oct 29. White headline. Time Travel with Sacred Ground under."
     }
   ]
 }

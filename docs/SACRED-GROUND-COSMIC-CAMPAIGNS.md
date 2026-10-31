@@ -45,18 +45,18 @@ Founder list, 2026-10-29. Chat screenshots + the 13–25 table. Build from `conf
 
 | # | Title | Headline |
 |---|---|---|
-| 1 | Saturn Has a Shopping Problem | Even Saturn Shops at Sacred Ground. |
-| 2 | NASA Discovers a Portal in Arlington Heights | NASA Calls It An Anomaly. We Call It Tuesday. |
-| 3 | The Great Crystal Meteor Shower | We Told You New Inventory Was Coming. |
+| 1 | Saturn Has a Shopping Problem | KEEP 2026-10-31 — Even Saturn Shops at Sacred Ground. No storefront. |
+| 2 | NASA Discovers a Portal in Arlington Heights | KEEP 2026-10-31 — NASA Calls It An Anomaly. We Call It Tuesday. No storefront. |
+| 3 | The Great Crystal Meteor Shower | KEEP 2026-10-31 — We Told You New Inventory Was Coming. No storefront. |
 | 4 | The Aliens Finally Found Us | KEEP 2026-10-30 — They Traveled 40 Light-Years for Our Crystal Selection. White headline. |
 | 5 | Da Vinci's Secret Final Invention | KEEP 2026-10-29 — 500 Years Ahead of His Time. Still Couldn't Find a Better Crystal Shop. |
 | 6 | Einstein Finally Solves Everything | KEEP 2026-10-29 — It's All Relative Except Great Crystals. |
-| 7 | Cleopatra's Royal Shopping Expedition | She Ruled Egypt. But She'd Shop at Sacred Ground. |
+| 7 | Cleopatra's Royal Shopping Expedition | KEEP 2026-10-30 — She Ruled Egypt. But She Shops at Sacred Ground. |
 | 8 | Newton Discovers Crystal Gravity | What Goes Up Must Come Down. Unless It's Our Energy. |
 | 9 | The Galactic Octopus Wants a Reading | When You Have Eight Questions, One Reading Isn't Enough. |
-| 10 | The World's Most Unusual Bank Robbery | They Left the Money. Took the Amethyst. |
-| 11 | Houston, We Have Inner Peace | Houston, He's Not Coming Back. He Found His Center. |
-| 12 | The Universe Is Actually Run by a Cat | The Universe Has Spoken. It Wants More Crystals. |
+| 10 | The World's Most Unusual Bank Robbery | KEEP 2026-10-31 — They Left the Money. Took the Amethyst. |
+| 11 | Houston, We Have Inner Peace | KEEP 2026-10-31 — Houston, He's Not Coming Back. He Found His Center. |
+| 12 | The Universe Is Actually Run by a Cat | KEEP 2026-10-31 — The Universe Has Spoken. It Wants More Crystals. |
 
 ### 13–25
 
@@ -69,9 +69,9 @@ Founder list, 2026-10-29. Chat screenshots + the 13–25 table. Build from `conf
 | 17 | The Galactic Traffic Jam | KEEP 2026-10-29 — Apparently Everyone Heard About Us. |
 | 18 | The Tarot Card That Escaped | KEEP 2026-10-29 — Your Future Is Looking Bigger Than Expected. The Star only. |
 | 19 | The Moon Has Moved | KEEP 2026-10-29 — Even the Moon Needed to Recharge. |
-| 20 | The Cosmic Vending Machine | Choose Your Vibration. |
-| 21 | The Interdimensional Book Club | Great Minds Think Beyond Time. |
-| 22 | The Crystal That Ate Chicago | We May Have Ordered the Large. |
-| 23 | The Universe's Lost & Found | Find What You've Been Looking For. |
-| 24 | The Cosmic TSA | Ma'am, You'll Need to Explain the Amethyst. |
-| 25 | The Renaissance Reiki Session | Even Royalty Needs to Unwind. |
+| 20 | The Cosmic Vending Machine | KEEP 2026-10-31 — Choose Your Vibration. Shop name off the machine. |
+| 21 | The Interdimensional Book Club | KEEP 2026-10-31 — Great Minds Think Beyond Time. |
+| 22 | The Crystal That Ate Chicago | KEEP 2026-10-31 — We May Have Ordered the Large. |
+| 23 | The Universe's Lost & Found | KEEP 2026-10-29 — Find What You've Been Looking For. |
+| 24 | The Cosmic TSA | KEEP 2026-10-29 — Ma'am, You'll Need to Explain the Amethyst. Lid + hanging sign. |
+| 25 | The Renaissance Reiki Session | KEEP 2026-10-29 — Even Royalty Needs to Unwind. White headline. Time Travel with Sacred Ground. |
