@@ -11,6 +11,7 @@ Source: Founder brief in chat. Locked here so the list is on disk and GitHub.
 - Picture is the idea.
 - Do not invent SACRED GROUND type. Leave tapestries, bags, awnings, and signs blank in the generation. Set **Optima Regular** `SACRED GROUND` as one tight lockup in the design pass — do not paste the logo PNGs. Tip the type to the roof when the photo is angled. Dark-plate headlines are Sacred Ground gold `(238, 191, 42)`, not white.
 - Add the headline in the final design pass. Leave the upper band clear.
+- **Footer lock (Founder 2026-10-31):** cream `188px`. Date Avenir Next Medium 24. Names Bold 36. Times Bold 24. Contact Medium 20. How Saturn looks now is the lock. Do not shrink.
 - Circular sun is the corner mark only.
 - Never the tarot Death card.
 - **No Christian holy-scene parody.** Last Supper / Jesus / apostles is retired (Founder 2026-10-29). Do not generate it. Hold Sistine Chapel / Michelangelo Creation for the same reason until she says otherwise.
@@ -20,13 +21,13 @@ Source: Founder brief in chat. Locked here so the list is on disk and GitHub.
 |---|---|---|---|
 | 01 | The Last Supper Has a Scheduling Conflict | RETIRED | Do not use — Christian holy scene. |
 | 02 | Houston, We Have a Gift Shop | video | We said bring something small back. |
-| 03 | The Department of Unexplained Purchases | still | Anything to declare? Another dimension. |
-| 04 | Botticelli’s Parking Problem | still | Goddess energy. Mortal parking rules. |
-| 05 | Einstein Takes a Personal Day | still | Even spacetime needs to lie down. |
+| 03 | The Department of Unexplained Purchases | KEEP 2026-10-31 | Anything to declare? Did you buy those crystals at Sacred Ground? We have heard so much about that store. Sun on the bag. |
+| 04 | Botticelli’s Parking Problem | KEEP 2026-10-31 | Goddess energy. Arlington Heights parking rules… Come anyway to Sacred Ground. You won't be sorry. Crystal windows. Black type at the top. |
+| 05 | Einstein Takes a Personal Day | KEEP 2026-10-31 | Spacetime needs a break. Come get elevated at Sacred Ground. |
 | 06 | The Black Hole Has Taste | video | It came to consume everything. It got distracted. |
-| 07 | The Minotaur Needs Directions | still | Your spiritual journey has been recalculating. |
+| 07 | The Minotaur Needs Directions | KEEP 2026-10-31 | Your spiritual journey has been recalculating. Sacred Ground is that way. |
 | 08 | The Museum Exhibit Escapes | video | They stood still for centuries. Then we opened. |
-| 09 | First Contact, Excellent Customer Service | still | Take us to your crystal person. |
+| 09 | First Contact, Excellent Customer Service | KEEP 2026-10-31 | Take us to your crystal person at this Sacred Ground we have heard so much about. |
 | 10 | Downtown Has Been Upgraded | video | Same downtown. Slightly larger universe. |
 
 Full visual concepts live in `config/cosmic_campaigns_batch_one.json`.
@@ -49,10 +50,10 @@ Founder list, 2026-10-29. Chat screenshots + the 13–25 table. Build from `conf
 | 2 | NASA Discovers a Portal in Arlington Heights | KEEP 2026-10-31 — NASA Calls It An Anomaly. We Call It Tuesday. No storefront. |
 | 3 | The Great Crystal Meteor Shower | KEEP 2026-10-31 — We Told You New Inventory Was Coming. No storefront. |
 | 4 | The Aliens Finally Found Us | KEEP 2026-10-30 — They Traveled 40 Light-Years for Our Crystal Selection. White headline. |
-| 5 | Da Vinci's Secret Final Invention | KEEP 2026-10-29 — 500 Years Ahead of His Time. Still Couldn't Find a Better Crystal Shop. |
-| 6 | Einstein Finally Solves Everything | KEEP 2026-10-29 — It's All Relative Except Great Crystals. |
+| 5 | Da Vinci's Secret Final Invention | KEEP 2026-10-29 — 500 Years Ahead of His Time. Still Couldn't Find a Better Crystal Shop. Morning OK. |
+| 6 | Einstein Finally Solves Everything | KEEP 2026-10-29 — It's All Relative Except Great Crystals. Morning OK. |
 | 7 | Cleopatra's Royal Shopping Expedition | KEEP 2026-10-30 — She Ruled Egypt. But She Shops at Sacred Ground. |
-| 8 | Newton Discovers Crystal Gravity | What Goes Up Must Come Down. Unless It's Our Energy. |
+| 8 | Newton Discovers Crystal Gravity | KEEP 2026-10-30 — What Goes Up Must Come Down. Unless It's Our Energy. Morning OK. |
 | 9 | The Galactic Octopus Wants a Reading | When You Have Eight Questions, One Reading Isn't Enough. |
 | 10 | The World's Most Unusual Bank Robbery | KEEP 2026-10-31 — They Left the Money. Took the Amethyst. |
 | 11 | Houston, We Have Inner Peace | KEEP 2026-10-31 — Houston, He's Not Coming Back. He Found His Center. |
@@ -65,7 +66,7 @@ Founder list, 2026-10-29. Chat screenshots + the 13–25 table. Build from `conf
 | 13 | The Mona Lisa Escapes | KEEP 2026-10-29 — After 500 Years, She Finally Found Something to Smile About. |
 | 14 | The Great Pyramid Delivery | KEEP 2026-10-29 — Your Crystal Order Has Arrived. |
 | 15 | The Black Hole Clearance Sale | KEEP 2026-10-29 — Some Attractions Are Stronger Than Gravity. |
-| 16 | Michelangelo's New Creation | HOLD — Sistine Chapel / Christian holy scene. |
+| 16 | Michelangelo's New Creation | KEEP 2026-10-31 — The Divine Touch. Now Available at Sacred Ground. |
 | 17 | The Galactic Traffic Jam | KEEP 2026-10-29 — Apparently Everyone Heard About Us. |
 | 18 | The Tarot Card That Escaped | KEEP 2026-10-29 — Your Future Is Looking Bigger Than Expected. The Star only. |
 | 19 | The Moon Has Moved | KEEP 2026-10-29 — Even the Moon Needed to Recharge. |

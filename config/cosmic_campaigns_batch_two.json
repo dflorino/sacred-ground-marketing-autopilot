@@ -9,6 +9,8 @@
     "Build from this list. Do not invent a different scene.",
     "Never invent SACRED GROUND type. Leave bag / window / sign blank. Set Optima Regular SACRED GROUND as a tight lockup. Do not paste the logo PNGs. Dark headlines are Sacred Ground gold (238, 191, 42).",
     "Add the headline in the design pass.",
+    "Footer lock (Founder 2026-10-31): cream 188px. Date Avenir Next Medium 24. Names Bold 36. Times Bold 24. Contact Medium 20. Do not shrink. How Saturn looks now is the lock.",
+    "Morning plates: no storefront. Same construction as Renaissance — picture, white headline, footer.",
     "Never the tarot Death card. If a tarot card appears, use The Star or The Sun only.",
     "Circular sun is the corner mark only."
   ],
@@ -87,7 +89,8 @@
       "founder_approved": true,
       "do_not_remake": true,
       "founder_approved_at": "2026-10-29T14:39:00-05:00",
-      "look": "assets/_look/cosmic-batch-one/05-davinci.jpg"
+      "look": "assets/_look/cosmic-batch-one/05-davinci.jpg",
+      "note": "KEEP. Morning OK — no storefront. Footer bold 2026-10-31."
     },
     {
       "n": 6,
@@ -98,7 +101,8 @@
       "founder_approved": true,
       "do_not_remake": true,
       "founder_approved_at": "2026-10-29T14:06:00-05:00",
-      "look": "assets/_look/cosmic-batch-one/06-einstein.jpg"
+      "look": "assets/_look/cosmic-batch-one/06-einstein.jpg",
+      "note": "KEEP. Morning OK — no storefront. Footer bold 2026-10-31."
     },
     {
       "n": 7,
@@ -120,7 +124,8 @@
       "founder_approved": true,
       "do_not_remake": true,
       "founder_approved_at": "2026-10-30T09:52:00-05:00",
-      "look": "assets/_look/cosmic-batch-one/08-newton.jpg"
+      "look": "assets/_look/cosmic-batch-one/08-newton.jpg",
+      "note": "KEEP. Morning OK — no storefront. Footer bold 2026-10-31."
     },
     {
       "n": 9,
@@ -153,7 +158,8 @@
       "founder_approved": true,
       "do_not_remake": true,
       "founder_approved_at": "2026-10-31T10:30:00-05:00",
-      "look": "assets/_look/cosmic-batch-one/11-houston.jpg"
+      "look": "assets/_look/cosmic-batch-one/11-houston.jpg",
+      "note": "KEEP. Morning OK — no storefront. Footer bold 2026-10-31."
     },
     {
       "n": 12,
@@ -164,7 +170,8 @@
       "founder_approved": true,
       "do_not_remake": true,
       "founder_approved_at": "2026-10-31T10:30:00-05:00",
-      "look": "assets/_look/cosmic-batch-one/12-cat.jpg"
+      "look": "assets/_look/cosmic-batch-one/12-cat.jpg",
+      "note": "KEEP. Morning OK — no storefront. Footer bold 2026-10-31."
     }
   ],
   "concepts": [
@@ -221,10 +228,14 @@
       "id": "cosmic_michelangelo_creation",
       "label": "Michelangelo's New Creation",
       "kind": "still",
-      "headline": "The Divine Touch. Now Available Downtown.",
-      "status": "hold",
-      "hold_why": "Sistine Chapel / Creation of Adam is a Christian holy scene. Same class as retired Last Supper until Founder says go.",
-      "visual": "HOLD. Sistine Chapel-inspired fresco, two hands passing a glowing amethyst."
+      "headline": "The Divine Touch. Now Available at Sacred Ground.",
+      "status": "founder_approved",
+      "founder_approved": true,
+      "do_not_remake": true,
+      "founder_approved_at": "2026-10-31T13:18:00-05:00",
+      "look": "assets/_look/cosmic-batch-one/16-michelangelo.jpg",
+      "note": "KEEP 2026-10-31. Headline: The Divine Touch. Now Available at Sacred Ground.",
+      "visual": "Sistine Chapel-inspired fresco, two hands passing a glowing amethyst."
     },
     {
       "n": 17,

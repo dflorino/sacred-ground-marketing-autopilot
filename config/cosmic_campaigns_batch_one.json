@@ -40,27 +40,43 @@
       "id": "cosmic_unexplained_purchases",
       "label": "The Department of Unexplained Purchases",
       "kind": "still",
-      "headline": "Anything to declare? Another dimension.",
+      "headline": "Anything to declare? Did you buy those crystals at Sacred Ground? We have heard so much about that store.",
       "twist": "A tiny customs officer from the other dimension inspects our agent through the monitor.",
-      "visual": "Airport X-ray. Sacred Ground bag contains a spiral staircase to another civilization."
+      "visual": "Airport X-ray. Sacred Ground bag contains a spiral staircase to another civilization.",
+      "look": "assets/_look/cosmic-batch-one/b1-03-purchases.jpg",
+      "status": "founder_approved",
+      "founder_approved": true,
+      "do_not_remake": true,
+      "founder_approved_at": "2026-10-31T13:38:00-05:00"
     },
     {
       "n": 4,
       "id": "cosmic_botticelli_parking",
       "label": "Botticelli’s Parking Problem",
       "kind": "still",
-      "headline": "Goddess energy. Mortal parking rules.",
+      "headline": "Goddess energy. Arlington Heights parking rules… Come anyway to Sacred Ground. You won't be sorry.",
       "twist": "Two cherubs feed pearls into the parking meter.",
-      "visual": "Venus in a gigantic scallop shell occupying three spaces. Parking officer writing a ticket. Illustrative boutique, not the exact real storefront."
+      "visual": "Venus in a gigantic scallop shell occupying three spaces. Parking officer writing a ticket. Illustrative boutique, not the exact real storefront.",
+      "look": "assets/_look/cosmic-batch-one/b1-04-botticelli.jpg",
+      "status": "founder_approved",
+      "founder_approved": true,
+      "do_not_remake": true,
+      "founder_approved_at": "2026-10-31T13:44:00-05:00",
+      "note": "KEEP 2026-10-31. Black type at the top of the frame. Crystal windows."
     },
     {
       "n": 5,
       "id": "cosmic_einstein_personal_day",
       "label": "Einstein Takes a Personal Day",
       "kind": "still",
-      "headline": "Even spacetime needs to lie down.",
+      "headline": "Spacetime needs a break. Come get elevated at Sacred Ground.",
       "twist": "Chalkboard reads E = me time.",
-      "visual": "Einstein in a chair. Spacetime sags like a hammock."
+      "visual": "Einstein in a chair. Spacetime sags like a hammock.",
+      "look": "assets/_look/cosmic-batch-one/b1-05-einstein-day.jpg",
+      "status": "founder_approved",
+      "founder_approved": true,
+      "do_not_remake": true,
+      "founder_approved_at": "2026-10-31T13:38:00-05:00"
     },
     {
       "n": 6,
@@ -77,9 +93,14 @@
       "id": "cosmic_minotaur_directions",
       "label": "The Minotaur Needs Directions",
       "kind": "still",
-      "headline": "Your spiritual journey has been recalculating.",
+      "headline": "Your spiritual journey has been recalculating. Sacred Ground is that way.",
       "twist": "Every sign points to Sacred Ground. He is still lost.",
-      "visual": "Overhead marble labyrinth. Tiny shop at the center. Minotaur on a wall with a phone."
+      "visual": "Overhead marble labyrinth. Tiny shop at the center. Minotaur on a wall with a phone.",
+      "look": "assets/_look/cosmic-batch-one/b1-07-minotaur.jpg",
+      "status": "founder_approved",
+      "founder_approved": true,
+      "do_not_remake": true,
+      "founder_approved_at": "2026-10-31T13:38:00-05:00"
     },
     {
       "n": 8,
@@ -96,9 +117,14 @@
       "id": "cosmic_first_contact_service",
       "label": "First Contact, Excellent Customer Service",
       "kind": "still",
-      "headline": "Take us to your crystal person.",
+      "headline": "Take us to your crystal person at this Sacred Ground we have heard so much about.",
       "twist": "The commander brought a rock to identify.",
-      "visual": "Mothership tractor-beams a service bell onto the counter."
+      "visual": "Mothership tractor-beams a service bell onto the counter.",
+      "look": "assets/_look/cosmic-batch-one/b1-09-first-contact.jpg",
+      "status": "founder_approved",
+      "founder_approved": true,
+      "do_not_remake": true,
+      "founder_approved_at": "2026-10-31T13:38:00-05:00"
     },
     {
       "n": 10,
