@@ -1038,7 +1038,7 @@ def plan_image(
         return ImagePlan(
             source="meditation_pool",
             url=url,
-            recommendation="Tuesday meditation post — rotating Om / silhouette / journey / morning meditation pool.",
+            recommendation="Tuesday meditation post — rotating Om / silhouette / journey pool.",
             rule="tuesday_meditation_pool",
         )
 
