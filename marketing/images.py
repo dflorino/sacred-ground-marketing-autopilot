@@ -19,6 +19,8 @@ _HARD_BANNED_SOCIAL_URLS = (
     "https://shopsacredground.com/wp-content/uploads/13-death-1.png",
     "https://shopsacredground.com/wp-content/uploads/13-death-2.png",
     "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-Tarot-DEATH-Rom-1788890685.jpg",
+    # Observatory major-13 still (media 23492) — filename has no "death" token.
+    "https://shopsacredground.com/wp-content/uploads/D37816E2-4108-4A9D-8DD3-CE54147BCD68-1.png",
 )
 _HARD_BANNED_SOCIAL_SUBSTRINGS = (
     "5d89500f-d388-47af-a46c-e08ee1b5ead0",
@@ -27,6 +29,7 @@ _HARD_BANNED_SOCIAL_SUBSTRINGS = (
     "sacred-ground-tarot-death",
     "/tarot-6.png",
     "/tarot-7.png",
+    "d37816e2-4108-4a9d-8dd3-ce54147bcd68",
 )
 _DEATH_FILENAME_RE = re.compile(r"(^|[/_-])death([/_.-]|$)", re.IGNORECASE)
 

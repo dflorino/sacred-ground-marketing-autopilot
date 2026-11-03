@@ -1,6 +1,24 @@
 {
   "history": [
     {
+      "date": "2026-03-05",
+      "url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.15-AM.png",
+      "rule": "store_exterior",
+      "campaign": "store_exterior_block"
+    },
+    {
+      "date": "2026-03-05",
+      "url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.28-AM-1.png",
+      "rule": "store_exterior",
+      "campaign": "store_exterior_block"
+    },
+    {
+      "date": "2026-03-05",
+      "url": "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.38-AM-1.png",
+      "rule": "store_exterior",
+      "campaign": "store_exterior_block"
+    },
+    {
       "date": "2026-08-03",
       "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Intuitive-tarot-cards-floating_1762837337.png",
       "rule": "tarot",
@@ -169,6 +187,18 @@
       "rule": "morning_flyer",
       "campaign": "today",
       "platform": "instagram"
+    },
+    {
+      "date": "2026-08-11",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-akashic.png",
+      "rule": "akashic_records",
+      "campaign": "today"
+    },
+    {
+      "date": "2026-08-11",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-meditation.png",
+      "rule": "tuesday_daily",
+      "campaign": "tuesday_meditation"
     },
     {
       "date": "2026-08-11",
@@ -457,6 +487,78 @@
       "campaign": "week_ahead"
     },
     {
+      "date": "2026-09-23",
+      "url": "https://shopsacredground.com/wp-content/uploads/ai_generated_Ethereal-angel-wings-made-of-g_1764775330.png",
+      "rule": "event_featured",
+      "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-09-23",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-fall-store-oak-sidewalk.png",
+      "rule": "week_ahead_creative",
+      "campaign": "week_ahead"
+    },
+    {
+      "date": "2026-09-24",
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-square-11-shop-1788806437.jpg",
+      "rule": "morning_flyer",
+      "campaign": "today"
+    },
+    {
+      "date": "2026-09-24",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-creative-fall-store-teal-copper-aurora-1.png",
+      "rule": "week_ahead_creative",
+      "campaign": "week_ahead"
+    },
+    {
+      "date": "2026-09-25",
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Add-elegant-gold-serif-title-a-1788751458.jpg",
+      "rule": "week_ahead_date_plate",
+      "campaign": "week_ahead"
+    },
+    {
+      "date": "2026-09-25",
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-square-11-shop-1788804135.jpg",
+      "rule": "morning_flyer",
+      "campaign": "today"
+    },
+    {
+      "date": "2026-09-26",
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Add-elegant-gold-serif-title-a-1788751765.jpg",
+      "rule": "celestial_morning",
+      "campaign": "today"
+    },
+    {
+      "date": "2026-09-26",
+      "url": "https://shopsacredground.com/wp-content/uploads/fb5852e6-5f92-405f-a1e0-abaab4d8af77.png",
+      "rule": "event_featured",
+      "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-09-27",
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-square-11-shop-1788806431.jpg",
+      "rule": "morning_flyer",
+      "campaign": "today"
+    },
+    {
+      "date": "2026-09-27",
+      "url": "https://shopsacredground.com/wp-content/uploads/lisa-maria-tarot-somatic-cosmic-v1.jpg",
+      "rule": "event_featured",
+      "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-09-29",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-09-29-kate-sound-bath.jpg",
+      "rule": "afternoon_spotlight_plate",
+      "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-09-29",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-09-29-archangel-day-v4.jpg",
+      "rule": "morning_flyer",
+      "campaign": "today"
+    },
+    {
       "date": "2026-09-29",
       "url": "https://shopsacredground.com/wp-content/uploads/sg-night-fair-flag-2026-09-29-noglyph.jpg",
       "rule": "week_ahead_date_plate",
@@ -483,15 +585,281 @@
       "rule": "week_ahead_date_plate",
       "campaign": "week_ahead",
       "platform": "tiktok"
+    },
+    {
+      "date": "2026-09-30",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-chime-candles-lying-altar.png",
+      "rule": "event_featured",
+      "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-09-30",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-09-30-fair-flag.jpg",
+      "rule": "morning_flyer",
+      "campaign": "today"
+    },
+    {
+      "date": "2026-10-02",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-10-02-fair-carousel.jpg",
+      "rule": "afternoon_spotlight_plate",
+      "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-10-02",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-10-02-fair-flag.jpg",
+      "rule": "morning_flyer",
+      "campaign": "today"
+    },
+    {
+      "date": "2026-10-03",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-10-03-fair-folk.jpg",
+      "rule": "afternoon_spotlight_plate",
+      "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-10-03",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-10-03-fair-flag.jpg",
+      "rule": "morning_flyer",
+      "campaign": "today"
+    },
+    {
+      "date": "2026-10-04",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-10-04-fair-lanterns.jpg",
+      "rule": "afternoon_spotlight_plate",
+      "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-10-05",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-10-05-fair-travel.jpg",
+      "rule": "afternoon_spotlight_plate",
+      "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-10-06",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-10-06-fair-harvest.jpg",
+      "rule": "afternoon_spotlight_plate",
+      "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-10-06",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-10-06-fair-flag.jpg",
+      "rule": "morning_flyer",
+      "campaign": "today"
+    },
+    {
+      "date": "2026-10-07",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-10-07-fair-birdseye.jpg",
+      "rule": "afternoon_spotlight_plate",
+      "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-10-07",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-10-07-fair-flag.jpg",
+      "rule": "morning_flyer",
+      "campaign": "today"
+    },
+    {
+      "date": "2026-10-08",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-10-08-fair-cart.jpg",
+      "rule": "afternoon_spotlight_plate",
+      "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-10-08",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-10-08-fair-flag.jpg",
+      "rule": "morning_flyer",
+      "campaign": "today"
+    },
+    {
+      "date": "2026-10-09",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-10-09-fair-lantern.jpg",
+      "rule": "afternoon_spotlight_plate",
+      "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-10-10",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-10-10-1010-portal.jpg",
+      "rule": "afternoon_spotlight_plate",
+      "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-10-10",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-10-10-fair-portal-1.jpg",
+      "rule": "morning_flyer",
+      "campaign": "today"
+    },
+    {
+      "date": "2026-10-11",
+      "url": "https://shopsacredground.com/wp-content/uploads/11-Sunday.jpg",
+      "rule": "afternoon_spotlight_plate",
+      "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-10-12",
+      "url": "https://shopsacredground.com/wp-content/uploads/12-Monday.jpg",
+      "rule": "afternoon_spotlight_plate",
+      "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-10-13",
+      "url": "https://shopsacredground.com/wp-content/uploads/13-Tuesday.jpg",
+      "rule": "afternoon_spotlight_plate",
+      "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-10-14",
+      "url": "https://shopsacredground.com/wp-content/uploads/14-Wednesday.jpg",
+      "rule": "afternoon_spotlight_plate",
+      "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-10-15",
+      "url": "https://shopsacredground.com/wp-content/uploads/15-Thursday.jpg",
+      "rule": "afternoon_spotlight_plate",
+      "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-10-16",
+      "url": "https://shopsacredground.com/wp-content/uploads/16-Friday.jpg",
+      "rule": "afternoon_spotlight_plate",
+      "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-10-17",
+      "url": "https://shopsacredground.com/wp-content/uploads/17-Saturday.jpg",
+      "rule": "afternoon_spotlight_plate",
+      "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-10-18",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-10-18.jpg",
+      "rule": "morning_flyer",
+      "campaign": "today"
+    },
+    {
+      "date": "2026-10-19",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-10-19.jpg",
+      "rule": "morning_flyer",
+      "campaign": "today"
+    },
+    {
+      "date": "2026-10-20",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-10-20.jpg",
+      "rule": "morning_flyer",
+      "campaign": "today"
+    },
+    {
+      "date": "2026-10-21",
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Remove-the-duplicate-lower-tit-1792505023.jpg",
+      "rule": "celestial_morning",
+      "campaign": "today"
+    },
+    {
+      "date": "2026-10-22",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-10-22.jpg",
+      "rule": "morning_flyer",
+      "campaign": "today"
+    },
+    {
+      "date": "2026-10-23",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-10-23.jpg",
+      "rule": "morning_flyer",
+      "campaign": "today"
+    },
+    {
+      "date": "2026-10-24",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-10-24.jpg",
+      "rule": "morning_flyer",
+      "campaign": "today"
+    },
+    {
+      "date": "2026-10-25",
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Surgical-erase-the-gold-Virgo-1792505023.jpg",
+      "rule": "celestial_morning",
+      "campaign": "today"
+    },
+    {
+      "date": "2026-10-26",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-10-26.jpg",
+      "rule": "morning_flyer",
+      "campaign": "today"
+    },
+    {
+      "date": "2026-10-27",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-10-27.jpg",
+      "rule": "morning_flyer",
+      "campaign": "today"
+    },
+    {
+      "date": "2026-10-28",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-witches-night-oct18-date.jpg",
+      "rule": "afternoon_spotlight_plate",
+      "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-10-28",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-10-28.jpg",
+      "rule": "morning_flyer",
+      "campaign": "today",
+      "note": "lifetime_block_from_afternoon_job"
+    },
+    {
+      "date": "2026-10-29",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-witches-night-oct18-date.jpg",
+      "rule": "afternoon_spotlight_plate",
+      "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-10-29",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-10-29.jpg",
+      "rule": "morning_flyer",
+      "campaign": "today",
+      "note": "lifetime_block_from_afternoon_job"
+    },
+    {
+      "date": "2026-10-30",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-witches-night-oct18-date.jpg",
+      "rule": "afternoon_spotlight_plate",
+      "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-10-30",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-10-30.jpg",
+      "rule": "morning_flyer",
+      "campaign": "today",
+      "note": "lifetime_block_from_afternoon_job"
+    },
+    {
+      "date": "2026-10-31",
+      "url": "https://media.zernio.com/media/1793455786596_7b6da6e51c8b4318_6326ba93-89ea-4615-907e-7205c7cfd589.jpg",
+      "rule": "morning_flyer",
+      "campaign": "today",
+      "note": "lifetime_block_from_afternoon_job_9am_samhain"
+    },
+    {
+      "date": "2026-10-31",
+      "url": "https://shopsacredground.com/wp-content/uploads/ai-generated-Ensure-elegant-gold-serif-titl-1788751582.jpg",
+      "rule": "celestial_morning",
+      "campaign": "today",
+      "note": "lifetime_block_from_afternoon_job_unused_today_draft_source"
+    },
+    {
+      "date": "2026-10-31",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-witches-night-oct18-date.jpg",
+      "rule": "afternoon_spotlight_plate",
+      "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-10-31",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-night-halloween.png",
+      "rule": "week_ahead_creative",
+      "campaign": "week_ahead"
+    },
+    {
+      "date": "2026-11-01",
+      "url": "https://shopsacredground.com/wp-content/uploads/b2e57902-88b0-422f-b423-3dbc52fd2b92.png",
+      "rule": "tarot",
+      "campaign": "afternoon_spotlight"
     }
-  ],
-  "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-EQUAL-WEIGHT-mul-1787594477.jpg": {
-    "last_used": "2026-08-28T10:31:48-05:00",
-    "campaign": "today",
-    "platforms": [
-      "facebook",
-      "instagram"
-    ],
-    "note": "2026-08-28 Magritte morning republish"
-  }
+  ]
 }
