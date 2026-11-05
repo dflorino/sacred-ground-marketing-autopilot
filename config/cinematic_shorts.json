@@ -32,6 +32,26 @@
         "clip": "hero_door_then_light",
         "status": "deferred_founder_wanted_still",
         "note": "Founder Oct 2: 5pm is the Fair prize-wheel still. Hallway clip unused until she asks."
+      },
+      {
+        "run_at": "2026-11-05T17:00:00-06:00",
+        "run_slot": "afternoon_spotlight",
+        "mp4_media": 28482,
+        "mp4_url": "https://shopsacredground.com/wp-content/uploads/sg-hero-door-then-light-locked-1.mp4",
+        "clip": "hero_door_then_light",
+        "status": "scheduled",
+        "zernio_post_id": "6aec9e8950560a477d4d30fb",
+        "note": "Founder Nov 5: use leftover movement clips in November. Regular 5pm still skipped."
+      },
+      {
+        "run_at": "2026-11-12T17:00:00-06:00",
+        "run_slot": "afternoon_spotlight",
+        "mp4_media": 35369,
+        "mp4_url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-10-20-abbey-dance.mp4",
+        "clip": "abbey_road_dance",
+        "status": "scheduled",
+        "zernio_post_id": "6aec9e8bf0235f5d8292d2a8",
+        "note": "Founder Nov 5: Abbey KEEP that Halloween blocked. Re-uploaded after 29738 404."
       }
     ]
   },

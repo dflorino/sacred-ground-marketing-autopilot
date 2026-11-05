@@ -5,6 +5,8 @@
     "2026-09-20",
     "2026-09-24",
     "2026-10-01",
+    "2026-11-05",
+    "2026-11-12",
     "2026-11-26",
     "2026-12-25",
     "2027-01-01"
@@ -57,8 +59,8 @@
         "mp4_media": 28482,
         "url": "https://shopsacredground.com/wp-content/uploads/sg-hero-door-then-light-locked-1.mp4",
         "label": "Hallway — door opens, then the light (locked walls)",
-        "status": "deferred",
-        "note": "Founder Oct 2: not sure what cinematic short means — 5pm is a Fair still instead. Clip 28482 stays unused until she asks."
+        "status": "deferred_then_used_2026-11-05",
+        "note": "Founder Oct 2: Fair still owned Oct 8. Founder Nov 5: hallway clip moves to Thursday Nov 5 5pm."
       },
       "2026-10-20": {
         "clip": "abbey_road_dance",
@@ -71,7 +73,36 @@
         "do_not_remake": true,
         "founder_approved": true,
         "founder_approved_at": "2026-10-07T10:54:00-05:00",
-        "note": "Founder Oct 7: KEEP the dance. Founder Oct 17: Witches Night owns every 5pm through Halloween, including Oct 20. Clip 29738 stays unused until she asks."
+        "status": "superseded_witches_then_moved",
+        "note": "Founder Oct 7: KEEP the dance. Founder Oct 17: Witches Night owned Oct 20. Founder Nov 5: use the unused movement clips in November. Same file now media 35369 on 2026-11-12."
+      },
+      "2026-11-05": {
+        "clip": "hero_door_then_light",
+        "mp4_media": 28482,
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-hero-door-then-light-locked-1.mp4",
+        "label": "Hallway — door opens, then the light (locked walls)",
+        "prebranded": true,
+        "no_writing_on_image": true,
+        "do_not_remake": true,
+        "founder_approved": true,
+        "founder_approved_at": "2026-11-05T09:14:00-06:00",
+        "zernio_post_id": "6aec9e8950560a477d4d30fb",
+        "note": "Founder Nov 5: use the unused movement clips in November. First leftover clip, Thursday 5pm. Regular still skipped. Scheduled FB+IG+TT+Threads."
+      },
+      "2026-11-12": {
+        "clip": "abbey_road_dance",
+        "mp4_media": 35369,
+        "prior_mp4_media": 29738,
+        "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-10-20-abbey-dance.mp4",
+        "local": "assets/sg-afternoon-spotlight-2026-10-20-abbey-dance.mp4",
+        "label": "Abbey Road dance-walk — no type on the picture",
+        "prebranded": true,
+        "no_writing_on_image": true,
+        "do_not_remake": true,
+        "founder_approved": true,
+        "founder_approved_at": "2026-10-07T10:54:00-05:00",
+        "zernio_post_id": "6aec9e8bf0235f5d8292d2a8",
+        "note": "Founder Nov 5: use the unused movement clips in November. Old 29738 URL 404'd; re-uploaded KEEP as 35369. Regular still skipped. Scheduled FB+IG+TT+Threads."
       }
     }
   },
@@ -409,6 +440,91 @@
       "superseded_by": "witches_night_2026",
       "note": "Founder Oct 17: Witches Night flyer owns 5pm through Halloween. This plate stays on disk unused.",
       "updated_at": "2026-10-17T10:45:00-05:00"
+    },
+    "2026-11-09": {
+      "label": "New Moon in Scorpio",
+      "caption_opener": "Plant it in the dark. Come to Sacred Ground.",
+      "local": "assets/sg-afternoon-spotlight-2026-11-09-scorpio.jpg",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-11-09-scorpio.jpg",
+      "media_id": 35366,
+      "source_gen_media_id": 35071,
+      "prebranded": true,
+      "pride_baked_in": true,
+      "do_not_publish": false,
+      "founder_approved": true,
+      "status": "founder_approved",
+      "do_not_remake": true,
+      "founder_approved_at": "2026-11-05T09:04:00-06:00",
+      "note": "Founder Nov 5: lock the November 5pm holes. Tonight-only. Scene 35071 still-only.",
+      "updated_at": "2026-11-05T09:05:00-06:00"
+    },
+    "2026-11-11": {
+      "label": "11/11 Portal",
+      "caption_opener": "The door is already open. Walk through to Sacred Ground.",
+      "local": "assets/sg-afternoon-spotlight-2026-11-11-portal.jpg",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-11-11-portal.jpg",
+      "media_id": 35365,
+      "source_gen_media_id": 35072,
+      "prebranded": true,
+      "pride_baked_in": true,
+      "do_not_publish": false,
+      "founder_approved": true,
+      "status": "founder_approved",
+      "do_not_remake": true,
+      "founder_approved_at": "2026-11-05T09:04:00-06:00",
+      "note": "Founder Nov 5: lock the November 5pm holes. Tonight-only. Scene 35072 still-only.",
+      "updated_at": "2026-11-05T09:05:00-06:00"
+    },
+    "2026-11-20": {
+      "label": "Andre — cards already talking",
+      "caption_opener": "Tonight the cards are already talking at Sacred Ground.",
+      "local": "assets/sg-afternoon-spotlight-2026-11-20-andre.jpg",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-11-20-andre.jpg",
+      "media_id": 35368,
+      "source_gen_media_id": 35075,
+      "prebranded": true,
+      "pride_baked_in": true,
+      "do_not_publish": false,
+      "founder_approved": true,
+      "status": "founder_approved",
+      "do_not_remake": true,
+      "founder_approved_at": "2026-11-05T09:04:00-06:00",
+      "note": "Founder Nov 5: lock the November 5pm holes. Tonight-only. Scene 35075 still-only.",
+      "updated_at": "2026-11-05T09:05:00-06:00"
+    },
+    "2026-11-22": {
+      "label": "Sagittarius Season Begins",
+      "caption_opener": "The arrow already knows. It points to Sacred Ground.",
+      "local": "assets/sg-afternoon-spotlight-2026-11-22-sagittarius.jpg",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-11-22-sagittarius.jpg",
+      "media_id": 35367,
+      "source_gen_media_id": 35073,
+      "prebranded": true,
+      "pride_baked_in": true,
+      "do_not_publish": false,
+      "founder_approved": true,
+      "status": "founder_approved",
+      "do_not_remake": true,
+      "founder_approved_at": "2026-11-05T09:04:00-06:00",
+      "note": "Founder Nov 5: lock the November 5pm holes. Zodiac-season fail-closed gate. Scene 35073 still-only.",
+      "updated_at": "2026-11-05T09:05:00-06:00"
+    },
+    "2026-11-24": {
+      "label": "Full Moon / Supermoon",
+      "caption_opener": "Closer than it looks. Stand under it at Sacred Ground.",
+      "local": "assets/sg-afternoon-spotlight-2026-11-24-supermoon.jpg",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-11-24-supermoon.jpg",
+      "media_id": 35364,
+      "source_gen_media_id": 35074,
+      "prebranded": true,
+      "pride_baked_in": true,
+      "do_not_publish": false,
+      "founder_approved": true,
+      "status": "founder_approved",
+      "do_not_remake": true,
+      "founder_approved_at": "2026-11-05T09:04:00-06:00",
+      "note": "Founder Nov 5: lock the November 5pm holes. Tonight-only. Scene 35074 still-only.",
+      "updated_at": "2026-11-05T09:05:00-06:00"
     }
   }
 }
