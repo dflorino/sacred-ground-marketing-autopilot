@@ -541,6 +541,33 @@
         "threads": "2026-11-04T18:00:00-06:00"
       },
       "updated_at": "2026-10-28T23:26:00-05:00"
+    },
+    "s1e19": {
+      "season": 1,
+      "episode": 19,
+      "library_name": "S1E19",
+      "title": "Yellow into the Merkabah",
+      "media_id": 35360,
+      "plate_id": 35093,
+      "plate_library_name": "S1E19 plate",
+      "poster_id": 35361,
+      "file": "ml-persona-20261105-030017-IzI0HY-f050415273.mp4",
+      "url": "https://shopsacredground.com/wp-content/uploads/ml-persona-20261105-030017-IzI0HY-f050415273.mp4",
+      "admin": "https://shopsacredground.com/wp-admin/upload.php?item=35360",
+      "filebird_folder": "SG Reels (54)",
+      "mime_type": "video/mp4",
+      "runtime_seconds": 30,
+      "gen": 125,
+      "schedule_status": "keeper_she_schedules",
+      "handed_off": "2026-11-04",
+      "note": "Founder Nov 4: item 35360 is the next Galactic reel. KEEP gen 125 / media 35360. She schedules. Do not remake. Do not post plate 35093 or poster 35361. Voices 35355-35359 stay stems only.",
+      "do_not_use": {
+        "plate_id": 35093,
+        "poster_id": 35361,
+        "voice_stems": [35355, 35356, 35357, 35358, 35359],
+        "note": "35093 plate still only. 35361 poster still only. USE video 35360 only."
+      },
+      "updated_at": "2026-11-04T21:10:00-06:00"
     }
   }
 }
