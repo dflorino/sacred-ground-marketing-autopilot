@@ -19,6 +19,8 @@ _HARD_BANNED_SOCIAL_URLS = (
     "https://shopsacredground.com/wp-content/uploads/13-death-1.png",
     "https://shopsacredground.com/wp-content/uploads/13-death-2.png",
     "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-Tarot-DEATH-Rom-1788890685.jpg",
+    # Observatory major-13 still (media 23492) — filename has no "death" token.
+    "https://shopsacredground.com/wp-content/uploads/D37816E2-4108-4A9D-8DD3-CE54147BCD68-1.png",
 )
 _HARD_BANNED_SOCIAL_SUBSTRINGS = (
     "5d89500f-d388-47af-a46c-e08ee1b5ead0",
@@ -27,12 +29,17 @@ _HARD_BANNED_SOCIAL_SUBSTRINGS = (
     "sacred-ground-tarot-death",
     "/tarot-6.png",
     "/tarot-7.png",
+    "d37816e2-4108-4a9d-8dd3-ce54147bcd68",
 )
 _DEATH_FILENAME_RE = re.compile(r"(^|[/_-])death([/_.-]|$)", re.IGNORECASE)
 
 STORE_EXTERIOR_DEFAULT = (
     "https://shopsacredground.com/wp-content/uploads/Screenshot-2026-03-05-at-9.20.15-AM.png"
 )
+# Founder screenshot trio — never an afternoon 5pm plate (blocked in ledger).
+_FOUNDER_SCREENSHOT_MARK = "Screenshot-2026-03-05"
+# Banned mystic lotus/rainbow-chakra look (also 404s on WP/Jetpack).
+_MYSTIC_CHAKRA_MARK = "sg-morning-chakra.png"
 STORE_INTERIOR_DEFAULT = (
     "https://shopsacredground.com/wp-content/uploads/CD3C3C2E-620B-4933-BC24-11ED63552132-1.png"
 )
@@ -821,6 +828,9 @@ def plan_image(
             if (
                 featured not in blocked
                 and not is_banned_social_image_url(featured)
+                and not is_instagram_unsafe_url(featured)
+                and _FOUNDER_SCREENSHOT_MARK not in featured
+                and _MYSTIC_CHAKRA_MARK not in featured
             ):
                 return ImagePlan(
                     source="event_featured",
@@ -843,11 +853,27 @@ def plan_image(
             campaign="afternoon_spotlight",
             allow_morning_plates=False,
         )
-        if rule_id == "reuse_blocked" or not url or is_banned_social_image_url(url):
+        if (
+            rule_id == "reuse_blocked"
+            or not url
+            or is_banned_social_image_url(url)
+            or is_instagram_unsafe_url(url)
+            or _MYSTIC_CHAKRA_MARK in str(url)
+        ):
             return reuse_blocked_plan("afternoon_spotlight")
-        if rule_id in morning_owned or url in blocked:
+        if (
+            rule_id in morning_owned
+            or url in blocked
+            or _FOUNDER_SCREENSHOT_MARK in str(url)
+            or _MYSTIC_CHAKRA_MARK in str(url)
+        ):
             exterior = store_exterior_url()
-            if exterior and exterior not in blocked:
+            if (
+                exterior
+                and exterior not in blocked
+                and _FOUNDER_SCREENSHOT_MARK not in exterior
+                and _MYSTIC_CHAKRA_MARK not in exterior
+            ):
                 url = exterior
                 rule_id = "store_exterior"
                 rec = (
