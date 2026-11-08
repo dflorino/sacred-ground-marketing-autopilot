@@ -35,7 +35,7 @@ The old world: different face in the **video**, the **FB still**, and the **emai
 **Lock instead:**
 
 1. **Same cast / same look** from reel → any still you pull for posts.
-2. **Thumbnail / featured still** should come **from the KEEP video** (frame grab or Persona “set as featured image”), not a new AI face.
+2. **Thumbnail / featured still** should come **from the KEEP video** (frame grab or Persona “set as featured image”), not a new AI face. For Galactic episodes the thumbnail **is** the mute-test punch (S1E17 Martians on the cliff) — see `.cursor/rules/galactic-reel-first-frame.mdc`.
 3. **One strong plate per slot** — FB + IG share the **same** media URL (single-image mode). Do not ship a weaker separate IG variant.
 4. After a **KEEP** reel take: **back-fill the actor record** from that media (reference sheet frame + clip + voice trim) before the next episode — Spencer’s “make a thousand until one is great, then lock.”
 

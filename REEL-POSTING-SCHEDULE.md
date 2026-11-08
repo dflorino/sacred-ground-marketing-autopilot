@@ -94,6 +94,7 @@ Canonical file: **`config/reels_media.json`**. Agents must use these IDs / URLs 
 | Season 1 Episode 15 — Crystal Three | **S1E15** | **32241** (plate **32006**) | `https://shopsacredground.com/wp-content/uploads/ml-persona-20261014-192816-bUGMAc-6202044315.mp4` |
 | Season 1 Episode 16 — Mars Touchdown | **S1E16** | **34892** (plate **34857**) | `https://shopsacredground.com/wp-content/uploads/ml-persona-20261027-015927-oUFi0c-a565981076.mp4` |
 | Season 1 Episode 17 — Three Pyramids | **S1E17** | **34919** (plate **34909**) | `https://shopsacredground.com/wp-content/uploads/ml-persona-20261028-142329-mqua2y-5723776295.mp4` |
+| Season 1 Episode 18 — Under the Skylight | **S1E18** | **34949** (plate **34924**) | `https://shopsacredground.com/wp-content/uploads/ml-persona-20261029-053319-9Hw64L-3233531559.mp4` |
 | Season 1 Episode 19 — Yellow Merkabah | **S1E19** | **35360** (plate **35093**) | `https://shopsacredground.com/wp-content/uploads/ml-persona-20261105-030017-IzI0HY-f050415273.mp4` |
 
 **Do not use** media ID **26546** or `…/s01e01-store-quest.mp4` for S1E1 — use **26545** / `S1E1-Store-Quest.mp4`.  
@@ -106,8 +107,9 @@ Canonical file: **`config/reels_media.json`**. Agents must use these IDs / URLs 
 **S1E14** — USE video **29023** only (gen 114). Plate **28854** still-only. Never post archive **29036** / gen 115 or withdrawn plates **28846 / 28847**. All five **Wed Oct 7 2026 6:00 PM** America/Chicago.  
 **S1E15** — USE video **32241** only (clip #120). Plate **32006** still-only. WP poster **32243** still-only. Do not post gen **117** / **31680** or sound-only Luca **31687**. All five **Wed Oct 14 2026 ~8:39 PM** America/Chicago.  
 **S1E16** — USE video **34892** only (clip #121). Plate **34857** still-only. Doorway **34849** still-only. Poster **34893** still-only. Do not remake. All five **Tue Oct 27 2026 6:00 PM** America/Chicago.  
-**S1E17** — USE video **34919** only (clip #122). Plate **34909** still-only. Poster **34920** still-only. Do not remake. All five **Wed Nov 4 2026 6:00 PM** America/Chicago.  
-**S1E19** — USE video **35360** only (clip #125). Plate **35093** still-only. Poster **35361** still-only. Do not remake. She schedules.
+**S1E17** — USE video **34919** only (clip #122). Plate **34909** still-only. Poster **34920** still-only. Do not remake. All five **Wed Nov 4 2026 6:00 PM** America/Chicago. Instagram bar **2,202 views / 28% skip** — mute-first-frame engine, see `.cursor/rules/galactic-reel-first-frame.mdc`.  
+**S1E18** — USE video **34949** only (clip #123). Plate **34924** still-only. Do not remake. KEEP **unscheduled** — Martian continuation (crystal handoff). Do not queue until Founder names the Wednesday.  
+**S1E19** — USE video **35360** only (clip #125). Library title **S1E19**. FileBird **SG Reels (54)**. Plate **35093** still-only. Poster **35361** still-only. Do not remake. All five **Wed Nov 18 2026 6:00 PM** America/Chicago. KEEP cabin plate — do not remake to chase the Martian bar. Next **new** plate after this must pass the mute test.
 
 ## S1E1 Store Quest (media 26545)
 

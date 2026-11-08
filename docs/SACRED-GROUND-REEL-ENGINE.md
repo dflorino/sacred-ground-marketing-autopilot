@@ -31,6 +31,8 @@ Idea bank: `docs/WHAT-IF-YOU-COULD-SEE-IT.md`
 Machine: `.cursor/rules/cinematic-shorts.mdc` · `docs/CINEMATIC-SHORTS.md`
 IDs: `config/reel_engine.json` · `config/cinematic_shorts.json`
 
+**Two machines.** This document is the 7–10s cinematic What If engine. Galactic cartoon episodes use `.cursor/rules/galactic-reel-first-frame.mdc` — S1E17 Actual Martians (plate **34909** / video **34919**, Instagram 2,202 / 28% skip) is that bar. Do not mash them.
+
 ---
 
 ## Before any reel — five questions
