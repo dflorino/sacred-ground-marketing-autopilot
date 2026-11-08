@@ -747,6 +747,25 @@
       "id": "2026-11-04_taurid-meteor-shower_024"
     },
     {
+      "date": "2026-11-08",
+      "title": "Diwali",
+      "stars": 4,
+      "themes": [
+        "festival of lights",
+        "diyas",
+        "prosperity",
+        "light over darkness"
+      ],
+      "series": [
+        "observance",
+        "do_not_miss"
+      ],
+      "emoji": "🪔",
+      "do_not_miss": true,
+      "id": "2026-11-08_diwali_024b",
+      "note": "Founder Nov 8 2026: missed at 9am because it was never on this calendar. Afternoon 5pm took it. Keep it on the calendar so it is not missed again."
+    },
+    {
       "date": "2026-11-09",
       "title": "New Moon in Scorpio",
       "stars": 4,
