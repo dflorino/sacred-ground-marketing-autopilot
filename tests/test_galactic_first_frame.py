@@ -66,6 +66,7 @@ class GalacticFirstFrameTests(unittest.TestCase):
         self.assertEqual(ep.get("plate_id"), 34924)
         self.assertEqual(ep.get("schedule_status"), "scheduled_same_minute_2026-11-11_6pm")
         self.assertEqual((ep.get("scheduled_for") or {}).get("instagram"), "2026-11-11T18:00:00-06:00")
+        self.assertTrue(ep.get("do_not_repost"))
 
 
 if __name__ == "__main__":

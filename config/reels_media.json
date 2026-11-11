@@ -593,7 +593,8 @@
       "gen": 123,
       "schedule_status": "scheduled_same_minute_2026-11-11_6pm",
       "handed_off": "2026-10-29",
-      "note": "Founder Nov 11: KEEP gen 123 / media 34949 goes tonight. All five Wed Nov 11 2026 6:00 PM America/Chicago. Do not remake. Do not post plate 34924. Voices 34934 / 34926 / 34937 stay stems only. S1E19 stays Wed Nov 18.",
+      "do_not_repost": true,
+      "note": "Founder Nov 11: KEEP gen 123 / media 34949 goes once, Wed Nov 11 2026 6:00 PM America/Chicago, all five. Do not repost this video. Next Wednesday is a different episode, S1E19 media 35360. Do not remake. Do not post plate 34924. Voices 34934 / 34926 / 34937 stay stems only.",
       "do_not_use": {
         "plate_id": 34924,
         "earlier_still": 34923,
