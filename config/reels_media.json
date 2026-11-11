@@ -1,7 +1,7 @@
 {
   "timezone": "America/Chicago",
   "note": "Founder-confirmed WordPress Media Library IDs for Cursor / ML Social video posts. Use these \u2014 never 26546 or lowercase s01e01-store-quest.mp4 for S1E1.",
-  "updated": "2026-11-08",
+  "updated": "2026-11-11",
   "galactic_first_frame_engine": {
     "locked_at": "2026-11-08",
     "founder": "S1E17 Actual Martians is the engine. Mute the first frame. If a stranger cannot name the punch in one glance, do not roll TopView.",
@@ -591,16 +591,31 @@
       "mime_type": "video/mp4",
       "runtime_seconds": 30,
       "gen": 123,
-      "schedule_status": "keep_unscheduled",
+      "schedule_status": "scheduled_same_minute_2026-11-11_6pm",
       "handed_off": "2026-10-29",
-      "note": "Founder Oct 29: KEEP gen 123 / media 34949. Martian continuation — crystal handoff under the skylight. Do not remake. Do not post plate 34924. Voices 34934 / 34926 / 34937 stay stems only. Do not queue until Founder names the Wednesday (after S1E19 Nov 18 unless she says otherwise).",
+      "note": "Founder Nov 11: KEEP gen 123 / media 34949 goes tonight. All five Wed Nov 11 2026 6:00 PM America/Chicago. Do not remake. Do not post plate 34924. Voices 34934 / 34926 / 34937 stay stems only. S1E19 stays Wed Nov 18.",
       "do_not_use": {
         "plate_id": 34924,
         "earlier_still": 34923,
         "voice_stems": [34934, 34926, 34937],
         "note": "34924 plate still only. USE video 34949 only."
       },
-      "updated_at": "2026-11-08T11:40:00-06:00"
+      "ml_social_ids": {
+        "parent": "6af4f65e02400ba62408b165",
+        "facebook": "6af4f65e02400ba62408b166",
+        "instagram": "6af4f65e02400ba62408b167",
+        "tiktok": "6af4f65e02400ba62408b168",
+        "youtube": "6af4f65e02400ba62408b169",
+        "threads": "6af4f65e02400ba62408b16a"
+      },
+      "scheduled_for": {
+        "instagram": "2026-11-11T18:00:00-06:00",
+        "facebook": "2026-11-11T18:00:00-06:00",
+        "tiktok": "2026-11-11T18:00:00-06:00",
+        "youtube": "2026-11-11T18:00:00-06:00",
+        "threads": "2026-11-11T18:00:00-06:00"
+      },
+      "updated_at": "2026-11-11T17:12:00-06:00"
     },
     "s1e19": {
       "season": 1,

@@ -108,7 +108,7 @@ Canonical file: **`config/reels_media.json`**. Agents must use these IDs / URLs 
 **S1E15** — USE video **32241** only (clip #120). Plate **32006** still-only. WP poster **32243** still-only. Do not post gen **117** / **31680** or sound-only Luca **31687**. All five **Wed Oct 14 2026 ~8:39 PM** America/Chicago.  
 **S1E16** — USE video **34892** only (clip #121). Plate **34857** still-only. Doorway **34849** still-only. Poster **34893** still-only. Do not remake. All five **Tue Oct 27 2026 6:00 PM** America/Chicago.  
 **S1E17** — USE video **34919** only (clip #122). Plate **34909** still-only. Poster **34920** still-only. Do not remake. All five **Wed Nov 4 2026 6:00 PM** America/Chicago. Instagram bar **2,202 views / 28% skip** — mute-first-frame engine, see `.cursor/rules/galactic-reel-first-frame.mdc`.  
-**S1E18** — USE video **34949** only (clip #123). Plate **34924** still-only. Do not remake. KEEP **unscheduled** — Martian continuation (crystal handoff). Do not queue until Founder names the Wednesday.  
+**S1E18** — USE video **34949** only (clip #123). Plate **34924** still-only. Do not remake. Founder Nov 11: all five **Wed Nov 11 2026 6:00 PM** America/Chicago. Martian hands her the yellow crystal.  
 **S1E19** — USE video **35360** only (clip #125). Library title **S1E19**. FileBird **SG Reels (54)**. Plate **35093** still-only. Poster **35361** still-only. Do not remake. All five **Wed Nov 18 2026 6:00 PM** America/Chicago. KEEP cabin plate — do not remake to chase the Martian bar. Next **new** plate after this must pass the mute test.
 
 ## S1E1 Store Quest (media 26545)

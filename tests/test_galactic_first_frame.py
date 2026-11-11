@@ -58,13 +58,14 @@ class GalacticFirstFrameTests(unittest.TestCase):
         self.assertEqual(gate["will_block"], [])
         self.assertEqual(gate["opener_kind"], "discovery")
 
-    def test_s1e18_is_wired_keep_unscheduled(self) -> None:
+    def test_s1e18_is_scheduled_tonight(self) -> None:
         from marketing.galactic_first_frame import load_reels_media
 
         ep = (load_reels_media().get("episodes") or {}).get("s1e18") or {}
         self.assertEqual(ep.get("media_id"), 34949)
         self.assertEqual(ep.get("plate_id"), 34924)
-        self.assertEqual(ep.get("schedule_status"), "keep_unscheduled")
+        self.assertEqual(ep.get("schedule_status"), "scheduled_same_minute_2026-11-11_6pm")
+        self.assertEqual((ep.get("scheduled_for") or {}).get("instagram"), "2026-11-11T18:00:00-06:00")
 
 
 if __name__ == "__main__":
