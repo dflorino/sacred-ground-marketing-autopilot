@@ -31,10 +31,9 @@ class SlotReadinessTests(unittest.TestCase):
         """Oct 23 Scorpio is inside the Witches Night 5pm window — plate ready."""
         self.assertIsNone(slot_readiness.afternoon_block(date(2026, 10, 23)))
 
-    def test_sagittarius_season_fails_closed(self) -> None:
-        block = slot_readiness.afternoon_block(date(2026, 11, 22))
-        self.assertIsNotNone(block)
-        self.assertEqual(block["reason"], "required_plate_missing")
+    def test_sagittarius_season_has_founder_plate(self) -> None:
+        """Founder Nov 13 pinned the Sagittarius 5pm still — plate ready."""
+        self.assertIsNone(slot_readiness.afternoon_block(date(2026, 11, 22)))
 
     def test_check_range_reports_libra(self) -> None:
         report = slot_readiness.check_range(days=1, start=date(2026, 9, 22))
