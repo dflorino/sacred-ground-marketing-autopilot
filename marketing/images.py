@@ -613,6 +613,12 @@ def select_today_image(
         if flyer:
             from . import morning_flyers as mf
 
+            # Founder Nov 15: leftover Oct 29 cream on a founder_approved JPEG
+            # still shipped. Fail closed — do not fall through to a pool plate.
+            block = mf.entry_publish_block_reason(flyer)
+            if block:
+                return ("", "morning_flyer_blocked", str(block))
+
             locked = mf.founder_approved_flyer_url(day, platform)
             if locked and locked not in blocked and not is_banned_social_image_url(locked):
                 label = flyer.get("label") or day.isoformat()

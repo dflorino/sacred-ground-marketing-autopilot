@@ -235,7 +235,45 @@ def flyer_passes_publish_gates(path: str) -> bool:
     """All gates required before a morning plate may publish."""
     if flyer_is_banned_mystic_navy_pil(path):
         return False
+    if flyer_has_leftover_stacked_cream(path):
+        return False
     return flyer_passes_visual_energy(path)
+
+
+# Cosmic mock leftover (Founder Nov 15 2026): Thursday October 29 · Adie /
+# Renee / Women's Circle stacked above the real day's hosts. That extra
+# cream is ~268px on a 1350 plate. Locked footer is 188px.
+_CREAM_FOOTER = (245, 236, 214)
+_LEFTOVER_CREAM_H = 220  # locked footer is 188px; leftover mock dates stacked above it
+
+
+def cream_band_height(path: str) -> int:
+    """Height of the cream footer, measured on the left margin (avoids dark type)."""
+    if not path or not os.path.isfile(path):
+        return 0
+    low = path.lower()
+    if not low.endswith((".jpg", ".jpeg", ".png", ".webp")):
+        return 0
+    from PIL import Image
+
+    im = Image.open(path).convert("RGB")
+    w, h = im.size
+    px = im.load()
+    start = h
+    x = min(18, w - 1)
+    cr, cg, cb = _CREAM_FOOTER
+    for y in range(h - 1, -1, -1):
+        r, g, b = px[x, y]
+        if abs(r - cr) < 35 and abs(g - cg) < 35 and abs(b - cb) < 35:
+            start = y
+        else:
+            break
+    return h - start
+
+
+def flyer_has_leftover_stacked_cream(path: str) -> bool:
+    """True when a mock date (Oct 29) is stacked above the real cream hosts."""
+    return cream_band_height(path) > _LEFTOVER_CREAM_H
 
 
 # Generation sources that must never reach Facebook / Instagram.
@@ -288,6 +326,8 @@ def founder_approved_flyer_url(
     """Locked morning plate URL from morning_flyers.json (Founder sign-off)."""
     entry = flyer_entry_for_day(day)
     if not entry or not entry.get("founder_approved"):
+        return ""
+    if entry_publish_block_reason(entry):
         return ""
     chosen, _ = select_flyer_url_for_platform(entry, platform)
     return str(chosen or "").strip()
@@ -351,6 +391,10 @@ def entry_publish_block_reason(entry: Optional[Dict[str, Any]]) -> Optional[str]
         if "-pride-" in local.replace("\\", "/").lower():
             return f"banned_compositor_pride_local:{local}"
         abs_path = _abs_asset(local)
+        if abs_path and os.path.isfile(abs_path) and flyer_has_leftover_stacked_cream(
+            abs_path
+        ):
+            return f"leftover_stacked_cream:{local}"
         if (
             not skip_local_navy
             and abs_path

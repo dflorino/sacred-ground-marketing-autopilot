@@ -2804,6 +2804,36 @@ class TestBannedNavyPilNeverShips(unittest.TestCase):
             self.mf.bake_pride_band_new_asset(path, day=date(2026, 8, 25))
         )
 
+    def test_leftover_stacked_cream_blocks_even_founder_approved(self):
+        leftover = os.path.join(
+            ROOT, "assets", "sg-morning-flyer-2026-11-15-pyramid.jpg"
+        )
+        clean = os.path.join(
+            ROOT, "assets", "sg-morning-flyer-2026-11-15-pyramid-today.jpg"
+        )
+        self.assertTrue(os.path.isfile(leftover), leftover)
+        self.assertTrue(os.path.isfile(clean), clean)
+        self.assertGreater(self.mf.cream_band_height(leftover), 220)
+        self.assertTrue(self.mf.flyer_has_leftover_stacked_cream(leftover))
+        self.assertFalse(self.mf.flyer_has_leftover_stacked_cream(clean))
+        blocked = self.mf.entry_publish_block_reason(
+            {
+                "local": "assets/sg-morning-flyer-2026-11-15-pyramid.jpg",
+                "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-11-15-pyramid.jpg",
+                "founder_approved": True,
+            }
+        )
+        self.assertIsNotNone(blocked)
+        self.assertIn("leftover_stacked_cream", blocked)
+        ok = self.mf.entry_publish_block_reason(
+            {
+                "local": "assets/sg-morning-flyer-2026-11-15-pyramid-today.jpg",
+                "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-11-15-pyramid-today.jpg",
+                "founder_approved": True,
+            }
+        )
+        self.assertIsNone(ok)
+
     def test_publish_can_schedule_blocks_banned_url(self):
         from unittest.mock import patch
 
