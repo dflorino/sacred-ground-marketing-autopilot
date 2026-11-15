@@ -1,0 +1,40 @@
+{
+  "completed_at_chicago": "2026-11-15T11:50:00-06:00",
+  "mission": "Delete already-posted dated social flyers from WP media library; keep only still-wired plates, night pool, reels, TEC thumbs, brand.",
+  "deleted_count": 65,
+  "deleted_ids": [
+    28797, 28798, 28799, 28800, 28801, 28944, 29403, 29404, 29405, 29406, 29407, 29408, 29409, 29410,
+    34094, 34095, 34108, 34109, 34110, 34111, 34112, 34113, 34114,
+    35094, 35095, 35096, 35097, 35098, 35099, 35100, 35101, 35102, 35103, 35104, 35105, 35106,
+    35107, 35108, 35110, 35111, 35112,
+    28921, 28922, 28923, 28925, 28935, 28943, 29443, 29444, 29445, 29446, 29447, 29448, 29449, 29450, 29451,
+    35365, 35366, 35374, 35495, 35496,
+    33456, 33460, 33471, 33519
+  ],
+  "kept_examples": {
+    "today_morning": 35635,
+    "tomorrow_morning": 35637,
+    "nov17_michelangelo": 35109,
+    "today_afternoon_reiki": 35497,
+    "s1e19": 35360,
+    "abbey_keep": 35369,
+    "educational_night_tec": 26165,
+    "circle_logo": 26058
+  },
+  "excluded": [
+    "Future morning/afternoon plates (Nov 15 afternoon through Nov 30)",
+    "Night creative pool and season storefronts",
+    "SG Reels / S1E19 35360",
+    "Abbey KEEP 35369",
+    "TEC thumbs 26165/22436/20041",
+    "Brand logo",
+    "WooCommerce products",
+    "Tarot deck",
+    "Email heroes"
+  ],
+  "filebird_social_media_folder_55": {
+    "before": 134,
+    "after": 122,
+    "note": "Most deleted flyers lived in Uncategorized, not folder 55. Night pool files in 55 were left."
+  }
+}
