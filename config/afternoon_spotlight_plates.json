@@ -529,6 +529,7 @@
     "2026-11-15": {
       "label": "Reiki Share",
       "caption_opener": "Reiki Share is this afternoon.",
+      "spotlight_event_id": 23844,
       "local": "assets/sg-afternoon-spotlight-2026-11-15-reiki-share.jpg",
       "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-11-15-reiki-share.jpg",
       "media_id": 35497,
@@ -546,6 +547,7 @@
     "2026-11-16": {
       "label": "Lisa Maria",
       "caption_opener": "Lisa Maria is here until 5.",
+      "spotlight_event_id": 23879,
       "local": "assets/sg-afternoon-spotlight-2026-11-16-lisa-maria.jpg",
       "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-11-16-lisa-maria.jpg",
       "media_id": 35498,
