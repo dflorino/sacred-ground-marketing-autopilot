@@ -36,6 +36,27 @@ def _image_never_reuse_blocked(image) -> bool:
     return rule == "reuse_blocked" or not url
 
 
+def _apply_plate_spotlight_event(
+    events: List[Event],
+    pinned: Optional[Dict[str, Any]],
+    picked: Optional[Event],
+) -> Optional[Event]:
+    """Honor afternoon_spotlight_plates.json spotlight_event_id when present."""
+    if not pinned:
+        return picked
+    raw_id = pinned.get("spotlight_event_id")
+    if raw_id is None or str(raw_id).strip() == "":
+        return picked
+    try:
+        want = int(raw_id)
+    except (TypeError, ValueError):
+        return picked
+    for ev in events:
+        if int(getattr(ev, "id", 0) or 0) == want:
+            return ev
+    return picked
+
+
 def _make_draft(
     *,
     campaign: str,
@@ -411,6 +432,10 @@ def generate_batch(source: str = "auto", as_of: Optional[datetime] = None) -> Di
         )
         day_events = classify.events_on_day(events, day)
         pinned_af = images._afternoon_plate_for_day(day)
+        # Founder-locked date plates may pin the session on the still
+        # (Nov 14 Robert cards leftover / Nov 15 Reiki Share 3–5) even when
+        # start hour is before 17.
+        spotlight_ev = _apply_plate_spotlight_event(events, pinned_af, spotlight_ev)
         list_day = bool(pinned_af and pinned_af.get("list_day_events"))
         empty_af = bool(af_cfg.get("empty_day_fallback", True))
         if spotlight_ev or empty_af or list_day:
