@@ -1,7 +1,7 @@
 {
   "timezone": "America/Chicago",
   "note": "Founder-confirmed WordPress Media Library IDs for Cursor / ML Social video posts. Use these \u2014 never 26546 or lowercase s01e01-store-quest.mp4 for S1E1.",
-  "updated": "2026-11-11",
+  "updated": "2026-11-16",
   "galactic_first_frame_engine": {
     "locked_at": "2026-11-08",
     "founder": "S1E17 Actual Martians is the engine. Mute the first frame. If a stranger cannot name the punch in one glance, do not roll TopView.",
@@ -636,7 +636,7 @@
       "gen": 125,
       "schedule_status": "scheduled_same_minute_2026-11-18_6pm",
       "handed_off": "2026-11-04",
-      "note": "Founder Nov 4: USE library S1E19 / media 35360 / SG Reels (54). KEEP gen 125. All five Wed Nov 18 2026 6:00 PM America/Chicago. Do not remake. Do not post plate 35093 or poster 35361. Voices 35355-35359 stay stems only.",
+      "note": "Founder Nov 4: USE library S1E19 / media 35360 / SG Reels (54). KEEP gen 125. All five Wed Nov 18 2026 6:00 PM America/Chicago. Do not remake. Do not post plate 35093 or poster 35361. Voices 35355-35359 stay stems only. Next KEEP is S1E20 media 35691 — not this Wednesday.",
       "ml_social_ids": {
         "parent": "6aebfb97e82b693cfe2ae6ab",
         "instagram": "6aebfb97e82b693cfe2ae6a6",
@@ -659,6 +659,35 @@
         "note": "35093 plate still only. 35361 poster still only. USE video 35360 only."
       },
       "updated_at": "2026-11-04T21:44:00-06:00"
+    },
+    "s1e20": {
+      "season": 1,
+      "episode": 20,
+      "library_name": "S1E20",
+      "title": "Bermuda Tow Yard",
+      "media_id": 35691,
+      "plate_id": 35680,
+      "plate_library_name": "S1E20 start frame",
+      "poster_id": 35692,
+      "file": "s01e20-gen127-kobi-try.mp4",
+      "url": "https://shopsacredground.com/wp-content/uploads/s01e20-gen127-kobi-try.mp4",
+      "admin": "https://shopsacredground.com/wp-admin/upload.php?item=35691",
+      "filebird_folder": "SG Reels (54)",
+      "mime_type": "video/mp4",
+      "runtime_seconds": 30,
+      "gen": 127,
+      "schedule_status": "keep_locked_library",
+      "handed_off": "2026-11-16",
+      "note": "Founder Nov 16: USE library S1E20 / media 35691 / SG Reels (54). KEEP gen 127 Kobi remux of take 2. Do not remake. Do not roll TopView. Do not post plate 35680 or poster 35692. Stems 35682-35684 stay stems only. 35688 is take 2 before the Kobi remux. 35659 is gen 126. Not scheduled — S1E19 owns Wed Nov 18 6pm. Next Galactic Wednesday is Nov 25 unless Founder names another.",
+      "do_not_use": {
+        "plate_id": 35680,
+        "poster_id": 35692,
+        "earlier_take": 35688,
+        "gen_126": 35659,
+        "voice_stems": [35682, 35683, 35684],
+        "note": "35680 start-frame still only. 35692 poster still only. 35688 is take 2 before Kobi remux. 35659 is gen 126. USE video 35691 only."
+      },
+      "updated_at": "2026-11-16T08:32:00-06:00"
     }
   }
 }

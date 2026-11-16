@@ -68,6 +68,19 @@ class GalacticFirstFrameTests(unittest.TestCase):
         self.assertEqual((ep.get("scheduled_for") or {}).get("instagram"), "2026-11-11T18:00:00-06:00")
         self.assertTrue(ep.get("do_not_repost"))
 
+    def test_s1e20_is_locked_keep(self) -> None:
+        from marketing.galactic_first_frame import load_reels_media
+
+        ep = (load_reels_media().get("episodes") or {}).get("s1e20") or {}
+        self.assertEqual(ep.get("media_id"), 35691)
+        self.assertEqual(ep.get("plate_id"), 35680)
+        self.assertEqual(ep.get("poster_id"), 35692)
+        self.assertEqual(ep.get("library_name"), "S1E20")
+        self.assertEqual(ep.get("filebird_folder"), "SG Reels (54)")
+        self.assertEqual(ep.get("schedule_status"), "keep_locked_library")
+        self.assertEqual(ep.get("file"), "s01e20-gen127-kobi-try.mp4")
+        self.assertIsNone((ep.get("scheduled_for") or {}).get("instagram"))
+
 
 if __name__ == "__main__":
     unittest.main()
