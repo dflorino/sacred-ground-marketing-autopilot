@@ -512,6 +512,7 @@
     "2026-11-14": {
       "label": "Robert and Frequency Reset",
       "caption_opener": "The cards are out until 7:30.",
+      "spotlight_event_id": 23965,
       "local": "assets/sg-afternoon-spotlight-2026-11-14-cards.jpg",
       "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-11-14-cards.jpg",
       "media_id": 35496,
@@ -529,6 +530,7 @@
     "2026-11-15": {
       "label": "Reiki Share",
       "caption_opener": "Reiki Share is this afternoon.",
+      "spotlight_event_id": 23844,
       "local": "assets/sg-afternoon-spotlight-2026-11-15-reiki-share.jpg",
       "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-11-15-reiki-share.jpg",
       "media_id": 35497,
@@ -546,6 +548,7 @@
     "2026-11-16": {
       "label": "Lisa Maria",
       "caption_opener": "Lisa Maria is here until 5.",
+      "spotlight_event_id": 23879,
       "local": "assets/sg-afternoon-spotlight-2026-11-16-lisa-maria.jpg",
       "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-11-16-lisa-maria.jpg",
       "media_id": 35498,
@@ -557,12 +560,13 @@
       "status": "founder_approved",
       "do_not_remake": true,
       "founder_approved_at": "2026-11-13T09:45:00-06:00",
-      "note": "Founder Nov 13: make the open 5pm stills. Lisa Maria 12:00–5:00. Scene 35485 still-only.",
-      "updated_at": "2026-11-13T09:45:00-06:00"
+      "note": "Founder Nov 13: make the open 5pm stills. Lisa Maria 12:00–5:00. Scene 35485 still-only. Monday leftover: Lisa 12–5 and Lori 12–3 both start < 17 — pin TEC 23879 so the caption matches the still.",
+      "updated_at": "2026-11-16T16:10:00-06:00"
     },
     "2026-11-17": {
       "label": "Robert — cards until 8",
       "caption_opener": "Robert is here until 8.",
+      "spotlight_event_id": 27308,
       "local": "assets/sg-afternoon-spotlight-2026-11-17-robert.jpg",
       "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-11-17-robert.jpg",
       "media_id": 35499,
@@ -574,12 +578,13 @@
       "status": "founder_approved",
       "do_not_remake": true,
       "founder_approved_at": "2026-11-13T09:45:00-06:00",
-      "note": "Founder Nov 13: make the open 5pm stills. Tuesday is Robert 3:00–8:00. Not the meditation plate. Scene 35493 still-only.",
-      "updated_at": "2026-11-13T09:45:00-06:00"
+      "note": "Founder Nov 13: make the open 5pm stills. Tuesday is Robert 3:00–8:00. Not the meditation plate. Scene 35493 still-only. Tuesday leftover: Robert 3–8 start < 17; skip_tuesday_meditation_duplicate owns 7pm Free Community Meditation — pin TEC 27308 so the caption matches the still.",
+      "updated_at": "2026-11-16T16:10:00-06:00"
     },
     "2026-11-18": {
       "label": "Educational Night",
       "caption_opener": "Educational Night is at 7.",
+      "spotlight_event_id": 24231,
       "local": "assets/sg-afternoon-spotlight-2026-11-18-educational-night.jpg",
       "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-11-18-educational-night.jpg",
       "media_id": 35500,
@@ -591,8 +596,8 @@
       "status": "founder_approved",
       "do_not_remake": true,
       "founder_approved_at": "2026-11-13T09:45:00-06:00",
-      "note": "Founder Nov 13: make the open 5pm stills. Educational Night 7:00–8:30. Tina until 6. Not the calendar thumb. Scene 35489 still-only.",
-      "updated_at": "2026-11-13T09:45:00-06:00"
+      "note": "Founder Nov 13: make the open 5pm stills. Educational Night 7:00–8:30. Tina until 6. Not the calendar thumb. Scene 35489 still-only. Pin TEC 24231 so the caption matches the still.",
+      "updated_at": "2026-11-17T16:10:00-06:00"
     },
     "2026-11-19": {
       "label": "TarotHeads",
