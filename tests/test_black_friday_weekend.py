@@ -121,6 +121,40 @@ class BlackFridayWeekendTests(unittest.TestCase):
         )["text"]
         self.assertIn("20% off while supplies last", text)
 
+    def test_afternoon_caption_is_single_event_plus_sale(self) -> None:
+        from marketing.captions import caption_afternoon_spotlight
+        from marketing.models import Event
+
+        day = date(2026, 11, 18)
+        edu = Event(
+            id=24231,
+            title="Free Community Educational Night",
+            start_date="2026-11-18 19:00:00",
+            end_date="2026-11-18 20:30:00",
+            url="https://shopsacredground.com/event/free-community-educational-night-2/",
+            cost="Free",
+        )
+        tina = Event(
+            id=1,
+            title="Tina Tarot",
+            start_date="2026-11-18 12:00:00",
+            end_date="2026-11-18 18:00:00",
+            url="https://shopsacredground.com/book/tina/",
+        )
+        text = caption_afternoon_spotlight(
+            edu, "facebook", day, day_events=[edu, tina]
+        )["text"]
+        self.assertIn("Educational Night is at 7.", text)
+        self.assertIn("20% off while supplies last", text)
+        self.assertIn(
+            "https://shopsacredground.com/event/free-community-educational-night-2/",
+            text,
+        )
+        self.assertNotIn("Also today at Sacred Ground", text)
+        self.assertNotIn("Tina Tarot", text)
+        th = caption_afternoon_spotlight(edu, "threads", day, day_events=[edu])
+        self.assertIn("(Wednesday 11/18)", th["hook"])
+
     def test_afternoon_json_keeps_thanksgiving_skip(self) -> None:
         path = os.path.join(ROOT, "config/afternoon_spotlight_plates.json")
         with open(path, encoding="utf-8") as fh:
