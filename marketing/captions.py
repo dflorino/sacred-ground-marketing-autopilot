@@ -363,6 +363,13 @@ def caption_today(
         body = hook + "\n\n" + _tomorrow_multi_section()
 
     invite_day = publish_day or flyer_day or day
+    from . import morning_flyers as mf
+
+    flyer = mf.flyer_entry_for_day(invite_day) or {}
+    sale = str(flyer.get("caption_sale") or "").strip()
+    if sale and sale not in body:
+        rest = body[len(hook) :].lstrip("\n") if body.startswith(hook) else body
+        body = hook + "\n\n" + sale + ("\n\n" + rest if rest else "")
     body = _with_house_invite(body, invite_day, "today", after_hook=hook)
     body += "\n\n" + _signoff(seed, platform)
     tags = _hashtags(platform)

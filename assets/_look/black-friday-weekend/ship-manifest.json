@@ -1,0 +1,251 @@
+[
+  {
+    "slot": "morning",
+    "date": "2026-11-19",
+    "local": "assets/sg-morning-flyer-2026-11-19-bf.jpg",
+    "title": "SG morning 2026-11-19 Black Friday"
+  },
+  {
+    "slot": "morning",
+    "date": "2026-11-20",
+    "local": "assets/sg-morning-flyer-2026-11-20-bf.jpg",
+    "title": "SG morning 2026-11-20 Black Friday"
+  },
+  {
+    "slot": "morning",
+    "date": "2026-11-21",
+    "local": "assets/sg-morning-flyer-2026-11-21-bf.jpg",
+    "title": "SG morning 2026-11-21 Black Friday"
+  },
+  {
+    "slot": "morning",
+    "date": "2026-11-22",
+    "local": "assets/sg-morning-flyer-2026-11-22-bf.jpg",
+    "title": "SG morning 2026-11-22 Black Friday"
+  },
+  {
+    "slot": "morning",
+    "date": "2026-11-23",
+    "local": "assets/sg-morning-flyer-2026-11-23-bf.jpg",
+    "title": "SG morning 2026-11-23 Black Friday"
+  },
+  {
+    "slot": "morning",
+    "date": "2026-11-24",
+    "local": "assets/sg-morning-flyer-2026-11-24-bf.jpg",
+    "title": "SG morning 2026-11-24 Black Friday"
+  },
+  {
+    "slot": "morning",
+    "date": "2026-11-25",
+    "local": "assets/sg-morning-flyer-2026-11-25-bf.jpg",
+    "title": "SG morning 2026-11-25 Black Friday"
+  },
+  {
+    "slot": "morning",
+    "date": "2026-11-26",
+    "local": "assets/sg-morning-flyer-2026-11-26-bf.jpg",
+    "title": "SG morning 2026-11-26 Black Friday"
+  },
+  {
+    "slot": "morning",
+    "date": "2026-11-27",
+    "local": "assets/sg-morning-flyer-2026-11-27-bf.jpg",
+    "title": "SG morning 2026-11-27 Black Friday"
+  },
+  {
+    "slot": "morning",
+    "date": "2026-11-28",
+    "local": "assets/sg-morning-flyer-2026-11-28-bf.jpg",
+    "title": "SG morning 2026-11-28 Black Friday"
+  },
+  {
+    "slot": "afternoon",
+    "date": "2026-11-18",
+    "local": "assets/sg-afternoon-spotlight-2026-11-18-bf-educational-night.jpg",
+    "title": "SG afternoon 2026-11-18 Black Friday educational-night",
+    "label": "Educational Night",
+    "caption_opener": "Educational Night is at 7.",
+    "caption_body": "Black Friday sales: 20% off while supplies last.\nCome as you are \u2014 Arlington Heights.\nhttps://shopsacredground.com/"
+  },
+  {
+    "slot": "afternoon",
+    "date": "2026-11-19",
+    "local": "assets/sg-afternoon-spotlight-2026-11-19-bf-tarotheads.jpg",
+    "title": "SG afternoon 2026-11-19 Black Friday tarotheads",
+    "label": "TarotHeads with Andre",
+    "caption_opener": "TarotHeads is at 7.",
+    "caption_body": "Black Friday sales: 20% off while supplies last.\nCome as you are \u2014 Arlington Heights.\nhttps://shopsacredground.com/"
+  },
+  {
+    "slot": "afternoon",
+    "date": "2026-11-20",
+    "local": "assets/sg-afternoon-spotlight-2026-11-20-bf-andre.jpg",
+    "title": "SG afternoon 2026-11-20 Black Friday andre",
+    "label": "Andre",
+    "caption_opener": "Tonight the cards are already talking at Sacred Ground.",
+    "caption_body": "Black Friday sales: 20% off while supplies last.\nCome as you are \u2014 Arlington Heights.\nhttps://shopsacredground.com/"
+  },
+  {
+    "slot": "afternoon",
+    "date": "2026-11-21",
+    "local": "assets/sg-afternoon-spotlight-2026-11-21-bf-rose-robert.jpg",
+    "title": "SG afternoon 2026-11-21 Black Friday rose-robert",
+    "label": "Rose and Robert",
+    "caption_opener": "Rose and Robert are here this evening.",
+    "caption_body": "Black Friday sales: 20% off while supplies last.\nCome as you are \u2014 Arlington Heights.\nhttps://shopsacredground.com/"
+  },
+  {
+    "slot": "afternoon",
+    "date": "2026-11-22",
+    "local": "assets/sg-afternoon-spotlight-2026-11-22-bf-sagittarius.jpg",
+    "title": "SG afternoon 2026-11-22 Black Friday sagittarius",
+    "label": "Sagittarius Season",
+    "caption_opener": "The arrow already knows. It points to Sacred Ground.",
+    "caption_body": "Black Friday sales: 20% off while supplies last.\nCome as you are \u2014 Arlington Heights.\nhttps://shopsacredground.com/"
+  },
+  {
+    "slot": "afternoon",
+    "date": "2026-11-23",
+    "local": "assets/sg-afternoon-spotlight-2026-11-23-bf-past-life.jpg",
+    "title": "SG afternoon 2026-11-23 Black Friday past-life",
+    "label": "Karen",
+    "caption_opener": "Past life regression is at 6.",
+    "caption_body": "Black Friday sales: 20% off while supplies last.\nCome as you are \u2014 Arlington Heights.\nhttps://shopsacredground.com/"
+  },
+  {
+    "slot": "afternoon",
+    "date": "2026-11-24",
+    "local": "assets/sg-afternoon-spotlight-2026-11-24-bf-supermoon.jpg",
+    "title": "SG afternoon 2026-11-24 Black Friday supermoon",
+    "label": "Gemini Supermoon",
+    "caption_opener": "Closer than it looks. Stand under it at Sacred Ground.",
+    "caption_body": "Black Friday sales: 20% off while supplies last.\nCome as you are \u2014 Arlington Heights.\nhttps://shopsacredground.com/"
+  },
+  {
+    "slot": "afternoon",
+    "date": "2026-11-25",
+    "local": "assets/sg-afternoon-spotlight-2026-11-25-bf-lita.jpg",
+    "title": "SG afternoon 2026-11-25 Black Friday lita",
+    "label": "Lita",
+    "caption_opener": "Lita is here until 5.",
+    "caption_body": "Black Friday sales: 20% off while supplies last.\nCome as you are \u2014 Arlington Heights.\nhttps://shopsacredground.com/"
+  },
+  {
+    "slot": "afternoon",
+    "date": "2026-11-27",
+    "local": "assets/sg-afternoon-spotlight-2026-11-27-bf-tina-lisa.jpg",
+    "title": "SG afternoon 2026-11-27 Black Friday tina-lisa",
+    "label": "Tina and Lisa Maria",
+    "caption_opener": "Tina and Lisa Maria are here this evening.",
+    "caption_body": "Black Friday sales: 20% off while supplies last.\nCome as you are \u2014 Arlington Heights.\nhttps://shopsacredground.com/"
+  },
+  {
+    "slot": "afternoon",
+    "date": "2026-11-28",
+    "local": "assets/sg-afternoon-spotlight-2026-11-28-bf-deep-rest.jpg",
+    "title": "SG afternoon 2026-11-28 Black Friday deep-rest",
+    "label": "Deep Rest",
+    "caption_opener": "Deep Rest is at 7.",
+    "caption_body": "Small Business Saturday: 20% off while supplies last.\nCome as you are \u2014 Arlington Heights.\nhttps://shopsacredground.com/"
+  },
+  {
+    "slot": "night",
+    "date": "2026-11-18",
+    "local": "assets/sg-night-2026-11-18-bf.jpg",
+    "title": "SG night 2026-11-18 Black Friday",
+    "id": "bf_night_2026-11-18",
+    "label": "Black Friday / Small Business Saturday night flag",
+    "caption_opener": "Black Friday sales: 20% off while supplies last."
+  },
+  {
+    "slot": "night",
+    "date": "2026-11-19",
+    "local": "assets/sg-night-2026-11-19-bf.jpg",
+    "title": "SG night 2026-11-19 Black Friday",
+    "id": "bf_night_2026-11-19",
+    "label": "Black Friday / Small Business Saturday night flag",
+    "caption_opener": "Black Friday sales: 20% off while supplies last."
+  },
+  {
+    "slot": "night",
+    "date": "2026-11-20",
+    "local": "assets/sg-night-2026-11-20-bf.jpg",
+    "title": "SG night 2026-11-20 Black Friday",
+    "id": "bf_night_2026-11-20",
+    "label": "Black Friday / Small Business Saturday night flag",
+    "caption_opener": "Black Friday sales: 20% off while supplies last."
+  },
+  {
+    "slot": "night",
+    "date": "2026-11-21",
+    "local": "assets/sg-night-2026-11-21-bf.jpg",
+    "title": "SG night 2026-11-21 Black Friday",
+    "id": "bf_night_2026-11-21",
+    "label": "Black Friday / Small Business Saturday night flag",
+    "caption_opener": "Black Friday sales: 20% off while supplies last."
+  },
+  {
+    "slot": "night",
+    "date": "2026-11-22",
+    "local": "assets/sg-night-2026-11-22-bf.jpg",
+    "title": "SG night 2026-11-22 Black Friday",
+    "id": "bf_night_2026-11-22",
+    "label": "Black Friday / Small Business Saturday night flag",
+    "caption_opener": "Black Friday sales: 20% off while supplies last."
+  },
+  {
+    "slot": "night",
+    "date": "2026-11-23",
+    "local": "assets/sg-night-2026-11-23-bf.jpg",
+    "title": "SG night 2026-11-23 Black Friday",
+    "id": "bf_night_2026-11-23",
+    "label": "Black Friday / Small Business Saturday night flag",
+    "caption_opener": "Black Friday sales: 20% off while supplies last."
+  },
+  {
+    "slot": "night",
+    "date": "2026-11-24",
+    "local": "assets/sg-night-2026-11-24-bf.jpg",
+    "title": "SG night 2026-11-24 Black Friday",
+    "id": "bf_night_2026-11-24",
+    "label": "Black Friday / Small Business Saturday night flag",
+    "caption_opener": "Black Friday sales: 20% off while supplies last."
+  },
+  {
+    "slot": "night",
+    "date": "2026-11-25",
+    "local": "assets/sg-night-2026-11-25-bf.jpg",
+    "title": "SG night 2026-11-25 Black Friday",
+    "id": "bf_night_2026-11-25",
+    "label": "Black Friday / Small Business Saturday night flag",
+    "caption_opener": "Black Friday sales: 20% off while supplies last."
+  },
+  {
+    "slot": "night",
+    "date": "2026-11-26",
+    "local": "assets/sg-night-2026-11-26-bf.jpg",
+    "title": "SG night 2026-11-26 Black Friday",
+    "id": "bf_night_2026-11-26",
+    "label": "Black Friday / Small Business Saturday night flag",
+    "caption_opener": "Black Friday sales: 20% off while supplies last."
+  },
+  {
+    "slot": "night",
+    "date": "2026-11-27",
+    "local": "assets/sg-night-2026-11-27-bf.jpg",
+    "title": "SG night 2026-11-27 Black Friday",
+    "id": "bf_night_2026-11-27",
+    "label": "Black Friday / Small Business Saturday night flag",
+    "caption_opener": "Black Friday sales: 20% off while supplies last."
+  },
+  {
+    "slot": "night",
+    "date": "2026-11-28",
+    "local": "assets/sg-night-2026-11-28-bf.jpg",
+    "title": "SG night 2026-11-28 Black Friday",
+    "id": "bf_night_2026-11-28",
+    "label": "Black Friday / Small Business Saturday night flag",
+    "caption_opener": "Small Business Saturday: 20% off while supplies last."
+  }
+]
