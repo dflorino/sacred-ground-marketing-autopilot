@@ -4,11 +4,16 @@
 from __future__ import annotations
 
 import shutil
+import sys
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parents[3]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from marketing.type_contrast import type_fill_for_band
 OUT = Path(__file__).resolve().parent
 TRASH = Path("/Users/deneene/Library/Mobile Documents/.Trash")
 LOGO = ROOT / "config/brand/sacred-ground-logo-circle-transparent.png"
@@ -19,7 +24,6 @@ FOOTER_H = 188
 PHOTO_H = H - FOOTER_H
 CREAM = (245, 236, 214)
 INK = (18, 14, 12)
-SALE = "20% off while supplies last"
 
 SIX = [
     "Sacred-Ground-Copper-and-Pine.jpg",
@@ -93,7 +97,6 @@ def footer(canvas: Image.Image, date_line: str, name: str, details: list[str]) -
     detail_size = 20
     detail_font = bold(detail_size)
     date_font = medium(22)
-    sale_font = bold(24)
     site_font = medium(18)
     block = (
         24
@@ -103,8 +106,6 @@ def footer(canvas: Image.Image, date_line: str, name: str, details: list[str]) -
         + detail_size * len(details)
         + 3 * (len(details) - 1)
         + 6
-        + 26
-        + 6
         + 20
     )
     y = y0 + max(8, (FOOTER_H - block) // 2)
@@ -113,14 +114,35 @@ def footer(canvas: Image.Image, date_line: str, name: str, details: list[str]) -
     for detail in details:
         y += center(draw, y, detail, detail_font) + 3
     y += 6
-    y += center(draw, y, SALE, sale_font) + 6
     center(draw, y, "shopsacredground.com  ·  847-749-3922", site_font)
 
 
-def compose(src: Path, dest: Path, date_line: str, name: str, details: list[str]) -> Path:
+def paint_sale_on_photo(canvas: Image.Image) -> None:
+    """20% sits on the sale photo with Black Friday / Small Business Saturday."""
+    band_h = 56
+    y = PHOTO_H - band_h - 18
+    photo = canvas.crop((0, 0, W, PHOTO_H))
+    fill = type_fill_for_band(photo, y, band_h)
+    draw = ImageDraw.Draw(canvas)
+    fnt = bold(34)
+    text = "20% off while supplies last"
+    box = draw.textbbox((0, 0), text, font=fnt)
+    x = (W - (box[2] - box[0])) / 2
+    draw.text((x, y - box[1]), text, font=fnt, fill=fill)
+
+
+def compose(
+    src: Path,
+    dest: Path,
+    date_line: str,
+    name: str,
+    details: list[str],
+    flag_lines: list[str] | None = None,
+) -> Path:
     photo = fit_cover(crop_price_bar(Image.open(src)), W, PHOTO_H)
     canvas = Image.new("RGB", (W, H), CREAM)
     canvas.paste(photo, (0, 0))
+    paint_sale_on_photo(canvas)
     paste_logo(canvas)
     footer(canvas, date_line, name, details)
     dest.parent.mkdir(parents=True, exist_ok=True)

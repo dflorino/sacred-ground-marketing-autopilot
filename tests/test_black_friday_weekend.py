@@ -39,7 +39,10 @@ class BlackFridayWeekendTests(unittest.TestCase):
             url = str(entry.get("url") or "")
             local = os.path.join(ROOT, str(entry.get("local") or ""))
             self.assertTrue(entry.get("founder_approved"), day)
-            self.assertIn("-bf.jpg", url, day)
+            if day >= date(2026, 11, 20):
+                self.assertIn("-bf-offer.jpg", url, day)
+            else:
+                self.assertIn("-bf.jpg", url, day)
             self.assertTrue(os.path.isfile(local), local)
             self.assertFalse(flyer_has_leftover_stacked_cream(local), local)
             self.assertIn("20% off while supplies last", str(entry.get("caption_sale") or ""))
@@ -69,7 +72,10 @@ class BlackFridayWeekendTests(unittest.TestCase):
             url = str(plate.get("url") or "")
             local = os.path.join(ROOT, str(plate.get("local") or ""))
             self.assertTrue(plate.get("founder_approved"), day)
-            self.assertIn("-bf-", url, day)
+            if day >= date(2026, 11, 20):
+                self.assertIn("-bf-offer-", url, day)
+            else:
+                self.assertIn("-bf-", url, day)
             self.assertIn("20% off while supplies last", str(plate.get("caption_body") or ""))
             self.assertTrue(os.path.isfile(local), local)
             urls.append(url)
@@ -95,7 +101,10 @@ class BlackFridayWeekendTests(unittest.TestCase):
             plan = nighttime_plan(day)
             url = str(plan.get("image_url") or "")
             self.assertTrue(plan.get("prebranded"), day)
-            self.assertIn(f"sg-night-{day.isoformat()}-bf.jpg", url, day)
+            if day >= date(2026, 11, 20):
+                self.assertIn(f"sg-night-{day.isoformat()}-bf-offer.jpg", url, day)
+            else:
+                self.assertIn(f"sg-night-{day.isoformat()}-bf.jpg", url, day)
             plate = ((atmosphere_config().get("nighttime") or {}).get("date_plates") or {}).get(
                 day.isoformat()
             )

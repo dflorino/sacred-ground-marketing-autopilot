@@ -120,7 +120,11 @@ def make_pennant(lines: list[str], *, wide: int = 268, tall: int = 156) -> Image
         t = i / 9
         sx = int(x0 + 14 + (wide - 28) * t)
         draw.line((sx, y0 + 14, sx + 6, y0 + 14), fill=GOLD + (180,), width=2)
-    if len(lines) == 3:
+    if len(lines) >= 4:
+        sizes = [22, 32, 16, 20, 13][: len(lines)]
+    elif len(lines) == 3 and any("20%" in line for line in lines):
+        sizes = [24, 34, 16]
+    elif len(lines) == 3:
         sizes = [24, 36, 18]
     elif lines[0].startswith("SMALL"):
         sizes = [22, 22]
@@ -128,15 +132,25 @@ def make_pennant(lines: list[str], *, wide: int = 268, tall: int = 156) -> Image
         sizes = [26, 40]
     else:
         sizes = [26, 32]
-    fonts = [bold(s) for s in sizes[: len(lines)]]
+    inner = wide - 24
+    fonts = []
+    for line, size in zip(lines, sizes[: len(lines)]):
+        s = size
+        fnt = bold(s)
+        box = draw.textbbox((0, 0), line, font=fnt)
+        while (box[2] - box[0]) > inner and s > 12:
+            s -= 1
+            fnt = bold(s)
+            box = draw.textbbox((0, 0), line, font=fnt)
+        fonts.append(fnt)
     boxes = [draw.textbbox((0, 0), line, font=fnt) for line, fnt in zip(lines, fonts)]
-    text_h = sum(b[3] - b[1] for b in boxes) + 6 * (len(lines) - 1)
-    ty = y0 + 22 + max(0, (tall - bite - 18 - text_h) // 2)
+    text_h = sum(b[3] - b[1] for b in boxes) + 4 * (len(lines) - 1)
+    ty = y0 + 20 + max(0, (tall - bite - 16 - text_h) // 2)
     for line, fnt, box in zip(lines, fonts, boxes):
         tw = box[2] - box[0]
         tx = x0 + (wide - tw) / 2
         draw.text((tx, ty - box[1]), line, font=fnt, fill=GOLD)
-        ty += (box[3] - box[1]) + 6
+        ty += (box[3] - box[1]) + 4
     # grommet
     gx, gy = x1 - 18, y0 + 10
     draw.ellipse((gx - 7, gy - 7, gx + 7, gy + 7), fill=GOLD + (255,))
@@ -164,30 +178,22 @@ def hang_pennant(
 
 
 SALE = "20% off while supplies last"
+SALE_FLAG = ["20% OFF", "while supplies last"]
+BF_FLAG = ["BLACK FRIDAY", "SALES", *SALE_FLAG]
+SBS_FLAG = ["SMALL BUSINESS", "SATURDAY", *SALE_FLAG]
+NIGHT_BOTH = ["BLACK FRIDAY", "SALES", "Small Business Saturday", *SALE_FLAG]
 
 
 def cream_sale_line(im: Image.Image, photo_h: int, date_line: str) -> None:
-    """Redraw the date row plus the offer. Stay above the host names (~51px)."""
-    draw = ImageDraw.Draw(im)
-    draw.rectangle((0, photo_h, W, photo_h + 48), fill=CREAM)
-    date_fnt = medium(18)
-    sale_fnt = bold(20)
-    y = photo_h + 6
-    box = draw.textbbox((0, 0), date_line, font=date_fnt)
-    x = (W - (box[2] - box[0])) / 2
-    draw.text((x, y - box[1]), date_line, font=date_fnt, fill=INK)
-    y += (box[3] - box[1]) + 3
-    box = draw.textbbox((0, 0), SALE, font=sale_fnt)
-    x = (W - (box[2] - box[0])) / 2
-    draw.text((x, y - box[1]), SALE, font=sale_fnt, fill=INK)
+    """Retired — 20% lives on the flag, not in cream. Keep for old look scripts."""
+    return
 
 
 def morning_flag() -> Path:
     src = ROOT / "assets/sg-morning-flyer-2026-11-19-star-clean.jpg"
     im = Image.open(src).convert("RGB")
     photo_h = cream_start(im)
-    hang_pennant(im, ["BLACK FRIDAY", "SALES"], photo_h=photo_h, top=86)
-    cream_sale_line(im, photo_h, "Thu Nov 19  ·  #1 Chicagoland")
+    hang_pennant(im, BF_FLAG, photo_h=photo_h, top=72, wide=300, tall=210)
     dest = OUT / "01-morning-flag.jpg"
     im.save(dest, quality=93, optimize=True)
     return dest
@@ -197,8 +203,7 @@ def saturday_morning_flag() -> Path:
     src = ROOT / "assets/sg-morning-flyer-2026-11-19-star-clean.jpg"
     im = Image.open(src).convert("RGB")
     photo_h = cream_start(im)
-    hang_pennant(im, ["SMALL BUSINESS", "SATURDAY"], photo_h=photo_h, top=86)
-    cream_sale_line(im, photo_h, "Sat Nov 28  ·  #1 Chicagoland")
+    hang_pennant(im, SBS_FLAG, photo_h=photo_h, top=72, wide=300, tall=210)
     dest = OUT / "04-saturday-morning-flag.jpg"
     im.save(dest, quality=93, optimize=True)
     return dest
@@ -255,19 +260,18 @@ def night_flag() -> Path:
     draw.text((x, 42 - box[1]), line, font=gn, fill=WHITE)
     hang_pennant(
         canvas,
-        ["BLACK FRIDAY", "SALES", "Small Business Saturday"],
+        NIGHT_BOTH,
         photo_h=PHOTO_H,
-        top=18,
+        top=12,
         angle=-10.0,
-        wide=300,
-        tall=188,
+        wide=320,
+        tall=236,
     )
     paste_logo(canvas, PHOTO_H)
     footer(
         canvas,
         [
             (medium(24), "Thu + Fri  ·  #1 Chicagoland"),
-            (bold(28), "20% off while supplies last"),
             (medium(20), "shopsacredground.com  ·  847-749-3922"),
         ],
     )

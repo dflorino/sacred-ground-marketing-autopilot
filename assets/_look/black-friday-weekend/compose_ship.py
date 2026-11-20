@@ -10,14 +10,16 @@ from pathlib import Path
 from PIL import Image, ImageDraw
 
 from compose_look import (
+    BF_FLAG,
     CREAM,
     FOOTER_H,
     H,
+    NIGHT_BOTH,
     PHOTO_H,
     SALE,
+    SBS_FLAG,
     W,
     bold,
-    cream_sale_line,
     cream_start,
     fit_cover,
     hang_pennant,
@@ -30,9 +32,7 @@ ROOT = Path(__file__).resolve().parents[3]
 LOOK = Path(__file__).resolve().parent
 SIX_DIR = LOOK / "six"
 
-BF_FLAG = ["BLACK FRIDAY", "SALES"]
-SBS_FLAG = ["SMALL BUSINESS", "SATURDAY"]
-NIGHT_BOTH = ["BLACK FRIDAY", "SALES", "Small Business Saturday"]
+OFFER_SUFFIX = "-bf-offer.jpg"
 
 MORNINGS = [
     ("2026-11-19", "sg-morning-flyer-2026-11-19-star-clean.jpg", "Thu Nov 19"),
@@ -198,13 +198,14 @@ def stamp_morning(src: Path, dest: Path, ymd: str, short: str) -> Path:
         photo = fit_cover(photo, W, PHOTO_H)
         im = Image.new("RGB", (W, H), CREAM)
         im.paste(photo, (0, 0))
-        hang_pennant(im, morning_flag_lines(ymd), photo_h=PHOTO_H, top=86)
+        hang_pennant(
+            im, morning_flag_lines(ymd), photo_h=PHOTO_H, top=72, wide=300, tall=210
+        )
         draw = ImageDraw.Draw(im)
         draw.rectangle((0, PHOTO_H, W, H), fill=CREAM)
         rows = [
             (medium(22), date_line(short)),
             (bold(32), "We're closed  ·  Happy Thanksgiving"),
-            (bold(24), SALE),
             (medium(18), "shopsacredground.com  ·  847-749-3922"),
         ]
         heights = []
@@ -222,8 +223,9 @@ def stamp_morning(src: Path, dest: Path, ymd: str, short: str) -> Path:
     else:
         im = src_im
         photo_h = cream_start(im)
-        hang_pennant(im, morning_flag_lines(ymd), photo_h=photo_h, top=86)
-        cream_sale_line(im, photo_h, date_line(short))
+        hang_pennant(
+            im, morning_flag_lines(ymd), photo_h=photo_h, top=72, wide=300, tall=210
+        )
     dest.parent.mkdir(parents=True, exist_ok=True)
     im.save(dest, quality=93, optimize=True)
     return dest
@@ -240,16 +242,15 @@ def compose_night(src: Path, dest: Path, day: date) -> Path:
     x = (W - (box[2] - box[0])) / 2
     draw.text((x, 42 - box[1]), line, font=gn, fill=(255, 255, 255))
     lines = night_flag_lines(day)
-    kwargs = {"photo_h": PHOTO_H, "top": 18, "angle": -10.0}
-    if len(lines) == 3:
-        kwargs.update(wide=300, tall=188)
+    kwargs = {"photo_h": PHOTO_H, "top": 12, "angle": -10.0, "wide": 300, "tall": 210}
+    if len(lines) >= 4:
+        kwargs.update(wide=320, tall=236)
     hang_pennant(canvas, lines, **kwargs)
     paste_logo(canvas, PHOTO_H)
     y0 = PHOTO_H
     draw.rectangle((0, y0, W, H), fill=CREAM)
     rows = [
         (medium(24), two_day_line(day)),
-        (bold(28), SALE),
         (medium(20), "shopsacredground.com  ·  847-749-3922"),
     ]
     heights = []
@@ -285,7 +286,7 @@ def main() -> None:
     manifest: list[dict] = []
 
     for ymd, fname, short in MORNINGS:
-        dest = ROOT / f"assets/sg-morning-flyer-{ymd}-bf.jpg"
+        dest = ROOT / f"assets/sg-morning-flyer-{ymd}{OFFER_SUFFIX}"
         stamp_morning(ROOT / "assets" / fname, dest, ymd, short)
         manifest.append(
             {
@@ -298,7 +299,7 @@ def main() -> None:
         print("am", dest.name, dest.stat().st_size)
 
     for ymd, idx, dline, name, details, slug, opener in AFTERNOONS:
-        dest = ROOT / f"assets/sg-afternoon-spotlight-{ymd}-bf-{slug}.jpg"
+        dest = ROOT / f"assets/sg-afternoon-spotlight-{ymd}-bf-offer-{slug}.jpg"
         compose_afternoon(SIX_DIR / SIX[idx], dest, dline, name, details)
         manifest.append(
             {
@@ -314,7 +315,7 @@ def main() -> None:
         print("5pm", dest.name, dest.stat().st_size)
 
     for i, day in enumerate(NIGHT_DAYS):
-        dest = ROOT / f"assets/sg-night-{day.isoformat()}-bf.jpg"
+        dest = ROOT / f"assets/sg-night-{day.isoformat()}{OFFER_SUFFIX}"
         compose_night(ROOT / "assets" / NIGHT_SRC[i], dest, day)
         if day.isoformat() >= "2026-11-28":
             opener = "Small Business Saturday: 20% off while supplies last."
