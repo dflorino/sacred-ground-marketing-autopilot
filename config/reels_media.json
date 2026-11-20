@@ -1,7 +1,7 @@
 {
   "timezone": "America/Chicago",
   "note": "Founder-confirmed WordPress Media Library IDs for Cursor / ML Social video posts. Use these \u2014 never 26546 or lowercase s01e01-store-quest.mp4 for S1E1.",
-  "updated": "2026-11-16",
+  "updated": "2026-11-19",
   "galactic_first_frame_engine": {
     "locked_at": "2026-11-08",
     "founder": "S1E17 Actual Martians is the engine. Mute the first frame. If a stranger cannot name the punch in one glance, do not roll TopView.",
@@ -676,9 +676,24 @@
       "mime_type": "video/mp4",
       "runtime_seconds": 30,
       "gen": 127,
-      "schedule_status": "keep_locked_library",
+      "schedule_status": "scheduled_same_minute_2026-11-25_6pm",
       "handed_off": "2026-11-16",
-      "note": "Founder Nov 16: USE library S1E20 / media 35691 / SG Reels (54). KEEP gen 127 Kobi remux of take 2. Do not remake. Do not roll TopView. Do not post plate 35680 or poster 35692. Stems 35682-35684 stay stems only. 35688 is take 2 before the Kobi remux. 35659 is gen 126. Not scheduled — S1E19 owns Wed Nov 18 6pm. Next Galactic Wednesday is Nov 25 unless Founder names another.",
+      "note": "Founder Nov 19: USE library S1E20 / media 35691 / SG Reels (54). KEEP gen 127 junkyard. All five Wed Nov 25 2026 6:00 PM America/Chicago. Do not remake. Do not roll TopView. Do not post plate 35680 or poster 35692. Stems 35682-35684 stay stems only. 35688 is take 2 before the Kobi remux. 35659 is gen 126. Gift shop 35796 is S1E21, not this file.",
+      "ml_social_ids": {
+        "parent": "6affb674b1e889e3514a67dc",
+        "instagram": "6affb674b1e889e3514a67de",
+        "facebook": "6affb674b1e889e3514a67df",
+        "tiktok": "6affb674b1e889e3514a67e0",
+        "youtube": "6affb674b1e889e3514a67e1",
+        "threads": "6affb674b1e889e3514a67e2"
+      },
+      "scheduled_for": {
+        "instagram": "2026-11-25T18:00:00-06:00",
+        "facebook": "2026-11-25T18:00:00-06:00",
+        "tiktok": "2026-11-25T18:00:00-06:00",
+        "youtube": "2026-11-25T18:00:00-06:00",
+        "threads": "2026-11-25T18:00:00-06:00"
+      },
       "do_not_use": {
         "plate_id": 35680,
         "poster_id": 35692,
@@ -687,7 +702,48 @@
         "voice_stems": [35682, 35683, 35684],
         "note": "35680 start-frame still only. 35692 poster still only. 35688 is take 2 before Kobi remux. 35659 is gen 126. USE video 35691 only."
       },
-      "updated_at": "2026-11-16T08:32:00-06:00"
+      "updated_at": "2026-11-19T20:54:00-06:00"
+    },
+    "s1e21": {
+      "season": 1,
+      "episode": 21,
+      "library_name": "S1E21",
+      "title": "Gift Shop",
+      "media_id": 35796,
+      "poster_id": 35797,
+      "file": "giftshop-gen128-globe.mp4",
+      "url": "https://shopsacredground.com/wp-content/uploads/giftshop-gen128-globe.mp4",
+      "admin": "https://shopsacredground.com/wp-admin/upload.php?item=35796",
+      "filebird_folder": "SG Reels (54)",
+      "mime_type": "video/mp4",
+      "runtime_seconds": 30,
+      "gen": 128,
+      "schedule_status": "scheduled_same_minute_2026-12-02_6pm",
+      "handed_off": "2026-11-19",
+      "note": "Founder Nov 19: USE library S1E21 / media 35796 / SG Reels (54). KEEP gen 128 gift shop globe. All five Wed Dec 2 2026 6:00 PM America/Chicago. Do not remake. Do not roll TopView. Do not post poster 35797 or earlier gift-shop tries. Junkyard 35691 is S1E20, not this file.",
+      "ml_social_ids": {
+        "parent": "6affb6746c829a4ae26f6c3d",
+        "instagram": "6affb6746c829a4ae26f6c3e",
+        "facebook": "6affb6746c829a4ae26f6c3f",
+        "tiktok": "6affb6746c829a4ae26f6c40",
+        "youtube": "6affb6746c829a4ae26f6c41",
+        "threads": "6affb6746c829a4ae26f6c42"
+      },
+      "scheduled_for": {
+        "instagram": "2026-12-02T18:00:00-06:00",
+        "facebook": "2026-12-02T18:00:00-06:00",
+        "tiktok": "2026-12-02T18:00:00-06:00",
+        "youtube": "2026-12-02T18:00:00-06:00",
+        "threads": "2026-12-02T18:00:00-06:00"
+      },
+      "do_not_use": {
+        "poster_id": 35797,
+        "earlier_takes": [35782, 35785, 35787, 35790, 35793, 35795],
+        "stills": [35788, 35789, 35792],
+        "voice_stem": 35781,
+        "note": "35797 poster still only. Earlier gift-shop tries stay off the clock. USE video 35796 only."
+      },
+      "updated_at": "2026-11-19T20:54:00-06:00"
     }
   }
 }

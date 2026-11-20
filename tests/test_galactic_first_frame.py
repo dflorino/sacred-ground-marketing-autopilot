@@ -68,7 +68,7 @@ class GalacticFirstFrameTests(unittest.TestCase):
         self.assertEqual((ep.get("scheduled_for") or {}).get("instagram"), "2026-11-11T18:00:00-06:00")
         self.assertTrue(ep.get("do_not_repost"))
 
-    def test_s1e20_is_locked_keep(self) -> None:
+    def test_s1e20_is_scheduled_nov25(self) -> None:
         from marketing.galactic_first_frame import load_reels_media
 
         ep = (load_reels_media().get("episodes") or {}).get("s1e20") or {}
@@ -77,9 +77,22 @@ class GalacticFirstFrameTests(unittest.TestCase):
         self.assertEqual(ep.get("poster_id"), 35692)
         self.assertEqual(ep.get("library_name"), "S1E20")
         self.assertEqual(ep.get("filebird_folder"), "SG Reels (54)")
-        self.assertEqual(ep.get("schedule_status"), "keep_locked_library")
+        self.assertEqual(ep.get("schedule_status"), "scheduled_same_minute_2026-11-25_6pm")
         self.assertEqual(ep.get("file"), "s01e20-gen127-kobi-try.mp4")
-        self.assertIsNone((ep.get("scheduled_for") or {}).get("instagram"))
+        self.assertEqual((ep.get("scheduled_for") or {}).get("instagram"), "2026-11-25T18:00:00-06:00")
+
+    def test_s1e21_is_scheduled_dec2(self) -> None:
+        from marketing.galactic_first_frame import load_reels_media
+
+        ep = (load_reels_media().get("episodes") or {}).get("s1e21") or {}
+        self.assertEqual(ep.get("media_id"), 35796)
+        self.assertEqual(ep.get("poster_id"), 35797)
+        self.assertEqual(ep.get("library_name"), "S1E21")
+        self.assertEqual(ep.get("filebird_folder"), "SG Reels (54)")
+        self.assertEqual(ep.get("schedule_status"), "scheduled_same_minute_2026-12-02_6pm")
+        self.assertEqual(ep.get("file"), "giftshop-gen128-globe.mp4")
+        self.assertEqual((ep.get("scheduled_for") or {}).get("instagram"), "2026-12-02T18:00:00-06:00")
+        self.assertNotEqual(ep.get("media_id"), 35691)
 
 
 if __name__ == "__main__":

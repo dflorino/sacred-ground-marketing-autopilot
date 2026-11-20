@@ -97,6 +97,7 @@ Canonical file: **`config/reels_media.json`**. Agents must use these IDs / URLs 
 | Season 1 Episode 18 — Under the Skylight | **S1E18** | **34949** (plate **34924**) | `https://shopsacredground.com/wp-content/uploads/ml-persona-20261029-053319-9Hw64L-3233531559.mp4` |
 | Season 1 Episode 19 — Yellow Merkabah | **S1E19** | **35360** (plate **35093**) | `https://shopsacredground.com/wp-content/uploads/ml-persona-20261105-030017-IzI0HY-f050415273.mp4` |
 | Season 1 Episode 20 — Bermuda Tow Yard | **S1E20** | **35691** (plate **35680**) | `https://shopsacredground.com/wp-content/uploads/s01e20-gen127-kobi-try.mp4` |
+| Season 1 Episode 21 — Gift Shop | **S1E21** | **35796** (poster **35797**) | `https://shopsacredground.com/wp-content/uploads/giftshop-gen128-globe.mp4` |
 
 **Do not use** media ID **26546** or `…/s01e01-store-quest.mp4` for S1E1 — use **26545** / `S1E1-Store-Quest.mp4`.  
 **S1E2** — KEEP **26738** (not old Lemuria **26537**).  
@@ -111,7 +112,8 @@ Canonical file: **`config/reels_media.json`**. Agents must use these IDs / URLs 
 **S1E17** — USE video **34919** only (clip #122). Plate **34909** still-only. Poster **34920** still-only. Do not remake. All five **Wed Nov 4 2026 6:00 PM** America/Chicago. Instagram bar **2,202 views / 28% skip** — mute-first-frame engine, see `.cursor/rules/galactic-reel-first-frame.mdc`.  
 **S1E18** — USE video **34949** only (clip #123). Plate **34924** still-only. Do not remake. Founder Nov 11: all five **Wed Nov 11 2026 6:00 PM** America/Chicago, **once**. Do not repost this video. Next Wednesday is **S1E19**.  
 **S1E19** — USE video **35360** only (clip #125). Library title **S1E19**. FileBird **SG Reels (54)**. Plate **35093** still-only. Poster **35361** still-only. Do not remake. All five **Wed Nov 18 2026 6:00 PM** America/Chicago. KEEP cabin plate — do not remake to chase the Martian bar. Next KEEP is **S1E20** media **35691**.  
-**S1E20** — USE video **35691** only (clip #127, Kobi remux of take 2). Library title **S1E20**. FileBird **SG Reels (54)**. Plate **35680** still-only. Poster **35692** still-only. Do not remake. Do not post take 2 **35688** or gen 126 **35659**. Founder Nov 16 locked. Not scheduled — S1E19 owns Wed Nov 18.
+**S1E20** — USE video **35691** only (clip #127, junkyard). Library title **S1E20**. FileBird **SG Reels (54)**. Plate **35680** still-only. Poster **35692** still-only. Do not remake. Do not post take 2 **35688** or gen 126 **35659**. All five **Wed Nov 25 2026 6:00 PM** America/Chicago. Gift shop **35796** is S1E21.  
+**S1E21** — USE video **35796** only (clip #128, gift shop globe). Library title **S1E21**. FileBird **SG Reels (54)**. Poster **35797** still-only. Do not remake. Do not post earlier gift-shop tries. All five **Wed Dec 2 2026 6:00 PM** America/Chicago. Junkyard **35691** is S1E20.
 
 ## S1E1 Store Quest (media 26545)
 
