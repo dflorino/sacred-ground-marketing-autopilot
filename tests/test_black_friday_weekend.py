@@ -39,17 +39,22 @@ class BlackFridayWeekendTests(unittest.TestCase):
             url = str(entry.get("url") or "")
             local = os.path.join(ROOT, str(entry.get("local") or ""))
             self.assertTrue(entry.get("founder_approved"), day)
-            if day >= date(2026, 11, 20):
+            if day >= date(2026, 11, 22):
+                self.assertIn("-bf-flag.jpg", url, day)
+                self.assertIn("15 to 20% off", str(entry.get("caption_sale") or ""))
+            elif day >= date(2026, 11, 20):
                 self.assertIn("-bf-offer.jpg", url, day)
+                self.assertIn("20% off while supplies last", str(entry.get("caption_sale") or ""))
             else:
                 self.assertIn("-bf.jpg", url, day)
+                self.assertIn("20% off while supplies last", str(entry.get("caption_sale") or ""))
             self.assertTrue(os.path.isfile(local), local)
             self.assertFalse(flyer_has_leftover_stacked_cream(local), local)
-            self.assertIn("20% off while supplies last", str(entry.get("caption_sale") or ""))
             urls.append(url)
         self.assertEqual(len(urls), len(set(urls)))
         sat = flyer_entry_for_day(date(2026, 11, 28)) or {}
         self.assertIn("Small Business Saturday", str(sat.get("caption_sale") or ""))
+        self.assertIn("15 to 20% off", str(sat.get("caption_sale") or ""))
 
     def test_afternoons_rotate_sale_photos_and_skip_thanksgiving(self) -> None:
         skips = afternoon_spotlight_plates().get("skip_publish_dates") or []
@@ -72,11 +77,15 @@ class BlackFridayWeekendTests(unittest.TestCase):
             url = str(plate.get("url") or "")
             local = os.path.join(ROOT, str(plate.get("local") or ""))
             self.assertTrue(plate.get("founder_approved"), day)
-            if day >= date(2026, 11, 20):
+            if day >= date(2026, 11, 21):
+                self.assertIn("-bf-flag-", url, day)
+                self.assertIn("15 to 20% off", str(plate.get("caption_body") or ""))
+            elif day >= date(2026, 11, 20):
                 self.assertIn("-bf-offer-", url, day)
+                self.assertIn("20% off while supplies last", str(plate.get("caption_body") or ""))
             else:
                 self.assertIn("-bf-", url, day)
-            self.assertIn("20% off while supplies last", str(plate.get("caption_body") or ""))
+                self.assertIn("20% off while supplies last", str(plate.get("caption_body") or ""))
             self.assertTrue(os.path.isfile(local), local)
             urls.append(url)
         self.assertEqual(len(urls), len(set(urls)))
@@ -101,14 +110,20 @@ class BlackFridayWeekendTests(unittest.TestCase):
             plan = nighttime_plan(day)
             url = str(plan.get("image_url") or "")
             self.assertTrue(plan.get("prebranded"), day)
-            if day >= date(2026, 11, 20):
+            if day >= date(2026, 11, 21):
+                self.assertIn(f"sg-night-{day.isoformat()}-bf-flag.jpg", url, day)
+            elif day >= date(2026, 11, 20):
                 self.assertIn(f"sg-night-{day.isoformat()}-bf-offer.jpg", url, day)
             else:
                 self.assertIn(f"sg-night-{day.isoformat()}-bf.jpg", url, day)
             plate = ((atmosphere_config().get("nighttime") or {}).get("date_plates") or {}).get(
                 day.isoformat()
             )
-            self.assertIn("20% off while supplies last", str((plate or {}).get("caption_opener") or ""))
+            opener = str((plate or {}).get("caption_opener") or "")
+            if day >= date(2026, 11, 21):
+                self.assertIn("15 to 20% off", opener)
+            else:
+                self.assertIn("20% off while supplies last", opener)
             urls.append(url)
         self.assertEqual(len(urls), len(set(urls)))
 

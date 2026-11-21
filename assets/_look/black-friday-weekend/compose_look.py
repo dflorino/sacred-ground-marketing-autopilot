@@ -26,6 +26,18 @@ GOLD = (238, 191, 42)
 EGGPLANT = (74, 28, 92)
 EGGPLANT_EDGE = (48, 16, 62)
 SHADOW = (12, 8, 6)
+SALE = "15 to 20% off while supplies last"
+SALE_FLAG = [
+    "15 to 20% OFF",
+    "BLACK FRIDAY",
+    "Small Business Saturday",
+    "while supplies last",
+]
+FLAG_WIDE = 410
+FLAG_TALL = 272
+BF_FLAG = SALE_FLAG
+SBS_FLAG = SALE_FLAG
+NIGHT_BOTH = SALE_FLAG
 
 
 def bold(size: int) -> ImageFont.FreeTypeFont:
@@ -120,10 +132,10 @@ def make_pennant(lines: list[str], *, wide: int = 268, tall: int = 156) -> Image
         t = i / 9
         sx = int(x0 + 14 + (wide - 28) * t)
         draw.line((sx, y0 + 14, sx + 6, y0 + 14), fill=GOLD + (180,), width=2)
-    if len(lines) >= 4:
-        sizes = [22, 32, 16, 20, 13][: len(lines)]
-    elif len(lines) == 3 and any("20%" in line for line in lines):
-        sizes = [24, 34, 16]
+    if lines == SALE_FLAG:
+        sizes = [36, 26, 22, 17]
+    elif len(lines) >= 4:
+        sizes = [28, 24, 20, 16][: len(lines)]
     elif len(lines) == 3:
         sizes = [24, 36, 18]
     elif lines[0].startswith("SMALL"):
@@ -132,13 +144,13 @@ def make_pennant(lines: list[str], *, wide: int = 268, tall: int = 156) -> Image
         sizes = [26, 40]
     else:
         sizes = [26, 32]
-    inner = wide - 24
+    inner = wide - 28
     fonts = []
     for line, size in zip(lines, sizes[: len(lines)]):
         s = size
         fnt = bold(s)
         box = draw.textbbox((0, 0), line, font=fnt)
-        while (box[2] - box[0]) > inner and s > 12:
+        while (box[2] - box[0]) > inner and s > 14:
             s -= 1
             fnt = bold(s)
             box = draw.textbbox((0, 0), line, font=fnt)
@@ -177,13 +189,6 @@ def hang_pennant(
     canvas.paste(flag, (x, y), flag)
 
 
-SALE = "20% off while supplies last"
-SALE_FLAG = ["20% OFF", "while supplies last"]
-BF_FLAG = ["BLACK FRIDAY", "SALES", *SALE_FLAG]
-SBS_FLAG = ["SMALL BUSINESS", "SATURDAY", *SALE_FLAG]
-NIGHT_BOTH = ["BLACK FRIDAY", "SALES", "Small Business Saturday", *SALE_FLAG]
-
-
 def cream_sale_line(im: Image.Image, photo_h: int, date_line: str) -> None:
     """Retired — 20% lives on the flag, not in cream. Keep for old look scripts."""
     return
@@ -193,7 +198,7 @@ def morning_flag() -> Path:
     src = ROOT / "assets/sg-morning-flyer-2026-11-19-star-clean.jpg"
     im = Image.open(src).convert("RGB")
     photo_h = cream_start(im)
-    hang_pennant(im, BF_FLAG, photo_h=photo_h, top=72, wide=300, tall=210)
+    hang_pennant(im, SALE_FLAG, photo_h=photo_h, top=28, wide=FLAG_WIDE, tall=FLAG_TALL)
     dest = OUT / "01-morning-flag.jpg"
     im.save(dest, quality=93, optimize=True)
     return dest
@@ -203,7 +208,7 @@ def saturday_morning_flag() -> Path:
     src = ROOT / "assets/sg-morning-flyer-2026-11-19-star-clean.jpg"
     im = Image.open(src).convert("RGB")
     photo_h = cream_start(im)
-    hang_pennant(im, SBS_FLAG, photo_h=photo_h, top=72, wide=300, tall=210)
+    hang_pennant(im, SALE_FLAG, photo_h=photo_h, top=28, wide=FLAG_WIDE, tall=FLAG_TALL)
     dest = OUT / "04-saturday-morning-flag.jpg"
     im.save(dest, quality=93, optimize=True)
     return dest
@@ -255,17 +260,15 @@ def night_flag() -> Path:
     gn = bold(48)
     line = "Goodnight."
     box = draw.textbbox((0, 0), line, font=gn)
-    x = (W - (box[2] - box[0])) / 2
-    # Sky is the dark band.
-    draw.text((x, 42 - box[1]), line, font=gn, fill=WHITE)
+    draw.text((36, 42 - box[1]), line, font=gn, fill=WHITE)
     hang_pennant(
         canvas,
-        NIGHT_BOTH,
+        SALE_FLAG,
         photo_h=PHOTO_H,
-        top=12,
-        angle=-10.0,
-        wide=320,
-        tall=236,
+        top=8,
+        angle=-8.0,
+        wide=FLAG_WIDE,
+        tall=FLAG_TALL,
     )
     paste_logo(canvas, PHOTO_H)
     footer(

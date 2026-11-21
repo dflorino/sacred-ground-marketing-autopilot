@@ -13,7 +13,8 @@ ROOT = Path(__file__).resolve().parents[3]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from marketing.type_contrast import type_fill_for_band
+from compose_look import FLAG_TALL, FLAG_WIDE, SALE_FLAG, hang_pennant
+
 OUT = Path(__file__).resolve().parent
 TRASH = Path("/Users/deneene/Library/Mobile Documents/.Trash")
 LOGO = ROOT / "config/brand/sacred-ground-logo-circle-transparent.png"
@@ -117,20 +118,6 @@ def footer(canvas: Image.Image, date_line: str, name: str, details: list[str]) -
     center(draw, y, "shopsacredground.com  ·  847-749-3922", site_font)
 
 
-def paint_sale_on_photo(canvas: Image.Image) -> None:
-    """20% sits on the sale photo with Black Friday / Small Business Saturday."""
-    band_h = 56
-    y = PHOTO_H - band_h - 18
-    photo = canvas.crop((0, 0, W, PHOTO_H))
-    fill = type_fill_for_band(photo, y, band_h)
-    draw = ImageDraw.Draw(canvas)
-    fnt = bold(34)
-    text = "20% off while supplies last"
-    box = draw.textbbox((0, 0), text, font=fnt)
-    x = (W - (box[2] - box[0])) / 2
-    draw.text((x, y - box[1]), text, font=fnt, fill=fill)
-
-
 def compose(
     src: Path,
     dest: Path,
@@ -142,7 +129,15 @@ def compose(
     photo = fit_cover(crop_price_bar(Image.open(src)), W, PHOTO_H)
     canvas = Image.new("RGB", (W, H), CREAM)
     canvas.paste(photo, (0, 0))
-    paint_sale_on_photo(canvas)
+    hang_pennant(
+        canvas,
+        flag_lines or SALE_FLAG,
+        photo_h=PHOTO_H,
+        top=PHOTO_H - 20,
+        angle=-8.0,
+        wide=FLAG_WIDE,
+        tall=FLAG_TALL,
+    )
     paste_logo(canvas)
     footer(canvas, date_line, name, details)
     dest.parent.mkdir(parents=True, exist_ok=True)

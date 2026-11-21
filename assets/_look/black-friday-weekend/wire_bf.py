@@ -9,56 +9,48 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[3]
 WP = "https://shopsacredground.com/wp-content/uploads"
 NOTE = (
-    "Founder Nov 19: 20% off while supplies last lives on the Black Friday / "
-    "Small Business Saturday talk, not the cream banner. Unique URL. Do not reuse old KEEP."
+    "Founder Nov 21: sale copy lives only on the flag — 15 to 20% OFF, "
+    "Black Friday, Small Business Saturday, while supplies last. Not in cream. Unique URL."
 )
-STAMP = "2026-11-19T21:55:00-06:00"
-SALE_OPENER = "Black Friday sales: 20% off while supplies last."
-SBS_OPENER = "Small Business Saturday: 20% off while supplies last."
+STAMP = "2026-11-21T09:20:00-06:00"
+SALE_OPENER = "Black Friday · Small Business Saturday: 15 to 20% off while supplies last."
+SBS_OPENER = SALE_OPENER
 SALE_BODY = (
-    "Black Friday sales: 20% off while supplies last.\n"
+    "Black Friday · Small Business Saturday: 15 to 20% off while supplies last.\n"
     "Come as you are — Arlington Heights.\n"
     "https://shopsacredground.com/"
 )
-SBS_BODY = (
-    "Small Business Saturday: 20% off while supplies last.\n"
-    "Come as you are — Arlington Heights.\n"
-    "https://shopsacredground.com/"
-)
+SBS_BODY = SALE_BODY
 
 MORNINGS = {
-    "2026-11-20": ("sg-morning-flyer-2026-11-20-bf-offer.jpg", 35798),
-    "2026-11-21": ("sg-morning-flyer-2026-11-21-bf-offer.jpg", 35799),
-    "2026-11-22": ("sg-morning-flyer-2026-11-22-bf-offer.jpg", 35801),
-    "2026-11-23": ("sg-morning-flyer-2026-11-23-bf-offer.jpg", 35800),
-    "2026-11-24": ("sg-morning-flyer-2026-11-24-bf-offer.jpg", 35802),
-    "2026-11-25": ("sg-morning-flyer-2026-11-25-bf-offer.jpg", 35803),
-    "2026-11-26": ("sg-morning-flyer-2026-11-26-bf-offer.jpg", 35804),
-    "2026-11-27": ("sg-morning-flyer-2026-11-27-bf-offer.jpg", 35805),
-    "2026-11-28": ("sg-morning-flyer-2026-11-28-bf-offer.jpg", 35806),
+    "2026-11-22": ("sg-morning-flyer-2026-11-22-bf-flag.jpg", 35837),
+    "2026-11-23": ("sg-morning-flyer-2026-11-23-bf-flag.jpg", 35831),
+    "2026-11-24": ("sg-morning-flyer-2026-11-24-bf-flag.jpg", 35836),
+    "2026-11-25": ("sg-morning-flyer-2026-11-25-bf-flag.jpg", 35832),
+    "2026-11-26": ("sg-morning-flyer-2026-11-26-bf-flag.jpg", 35834),
+    "2026-11-27": ("sg-morning-flyer-2026-11-27-bf-flag.jpg", 35833),
+    "2026-11-28": ("sg-morning-flyer-2026-11-28-bf-flag.jpg", 35835),
 }
 
 AFTERNOONS = {
-    "2026-11-20": ("sg-afternoon-spotlight-2026-11-20-bf-offer-andre.jpg", 35807, "Andre — cards already talking", "Tonight the cards are already talking at Sacred Ground."),
-    "2026-11-21": ("sg-afternoon-spotlight-2026-11-21-bf-offer-rose-robert.jpg", 35808, "Rose and Robert", "Rose and Robert are here this evening."),
-    "2026-11-22": ("sg-afternoon-spotlight-2026-11-22-bf-offer-sagittarius.jpg", 35809, "Sagittarius Season Begins", "The arrow already knows. It points to Sacred Ground."),
-    "2026-11-23": ("sg-afternoon-spotlight-2026-11-23-bf-offer-past-life.jpg", 35810, "Karen past life regression", "Past life regression is at 6."),
-    "2026-11-24": ("sg-afternoon-spotlight-2026-11-24-bf-offer-supermoon.jpg", 35811, "Full Moon / Supermoon", "Closer than it looks. Stand under it at Sacred Ground."),
-    "2026-11-25": ("sg-afternoon-spotlight-2026-11-25-bf-offer-lita.jpg", 35812, "Lita tarot and pendulum", "Lita is here until 5."),
-    "2026-11-27": ("sg-afternoon-spotlight-2026-11-27-bf-offer-tina-lisa.jpg", 35813, "Tina and Lisa Maria", "Tina and Lisa Maria are here this evening."),
-    "2026-11-28": ("sg-afternoon-spotlight-2026-11-28-bf-offer-deep-rest.jpg", 35814, "Deep Rest", "Deep Rest is at 7."),
+    "2026-11-21": ("sg-afternoon-spotlight-2026-11-21-bf-flag-rose-robert.jpg", 35838, "Rose and Robert", "Rose and Robert are here this evening."),
+    "2026-11-22": ("sg-afternoon-spotlight-2026-11-22-bf-flag-sagittarius.jpg", 35839, "Sagittarius Season Begins", "The arrow already knows. It points to Sacred Ground."),
+    "2026-11-23": ("sg-afternoon-spotlight-2026-11-23-bf-flag-past-life.jpg", 35840, "Karen past life regression", "Past life regression is at 6."),
+    "2026-11-24": ("sg-afternoon-spotlight-2026-11-24-bf-flag-supermoon.jpg", 35841, "Full Moon / Supermoon", "Closer than it looks. Stand under it at Sacred Ground."),
+    "2026-11-25": ("sg-afternoon-spotlight-2026-11-25-bf-flag-lita.jpg", 35842, "Lita tarot and pendulum", "Lita is here until 5."),
+    "2026-11-27": ("sg-afternoon-spotlight-2026-11-27-bf-flag-tina-lisa.jpg", 35845, "Tina and Lisa Maria", "Tina and Lisa Maria are here this evening."),
+    "2026-11-28": ("sg-afternoon-spotlight-2026-11-28-bf-flag-deep-rest.jpg", 35843, "Deep Rest", "Deep Rest is at 7."),
 }
 
 NIGHTS = {
-    "2026-11-20": 35817,
-    "2026-11-21": 35816,
-    "2026-11-22": 35815,
-    "2026-11-23": 35818,
-    "2026-11-24": 35819,
-    "2026-11-25": 35820,
-    "2026-11-26": 35821,
-    "2026-11-27": 35823,
-    "2026-11-28": 35822,
+    "2026-11-21": 35844,
+    "2026-11-22": 35846,
+    "2026-11-23": 35847,
+    "2026-11-24": 35848,
+    "2026-11-25": 35849,
+    "2026-11-26": 35851,
+    "2026-11-27": 35850,
+    "2026-11-28": 35852,
 }
 
 
@@ -115,7 +107,7 @@ def wire_afternoons() -> None:
         row["updated_at"] = STAMP
         row["caption_opener"] = opener
         row["caption_body"] = SBS_BODY if ymd >= "2026-11-28" else SALE_BODY
-        row["note"] = NOTE + " Event info in cream. 20% sits on the sale photo with Black Friday / Small Business Saturday."
+        row["note"] = NOTE + " Event info in cream. Sale copy is on the flag only."
     dump(path, data)
 
 
@@ -124,7 +116,7 @@ def wire_nights() -> None:
     data = json.loads(path.read_text())
     plates = data["nighttime"]["date_plates"]
     for ymd, media_id in NIGHTS.items():
-        fname = f"sg-night-{ymd}-bf-offer.jpg"
+        fname = f"sg-night-{ymd}-bf-flag.jpg"
         plates[ymd] = {
             "id": f"bf_night_{ymd}",
             "label": "Black Friday / Small Business Saturday night flag",
@@ -142,8 +134,8 @@ def wire_nights() -> None:
         }
     prior_note = str(data["nighttime"].get("date_plates_note") or "").rstrip()
     extra = (
-        " Founder Nov 19: remaining night flags Nov 20–28 put 20% off while supplies last "
-        "on the Black Friday / Small Business Saturday tag, not the cream. Date plates win over pool."
+        " Founder Nov 21: remaining night flags put 15 to 20% off, Black Friday, "
+        "Small Business Saturday, while supplies last on the flag only. Date plates win over pool."
     )
     if extra.strip() not in prior_note:
         data["nighttime"]["date_plates_note"] = (prior_note + extra).strip()
