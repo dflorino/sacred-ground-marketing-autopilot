@@ -553,6 +553,42 @@
       "rule": "morning_flyer",
       "campaign": "today",
       "platform": "tiktok"
+    },
+    {
+      "date": "2026-11-20",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-11-20-bf-offer-andre.jpg",
+      "rule": "afternoon_spotlight_plate",
+      "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-11-20",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-11-20-bf-offer.jpg",
+      "rule": "morning_flyer",
+      "campaign": "today"
+    },
+    {
+      "date": "2026-11-21",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-11-21-bf-flag-rose-robert.jpg",
+      "rule": "afternoon_spotlight_plate",
+      "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-11-21",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-11-21-bf-offer.jpg",
+      "rule": "morning_flyer",
+      "campaign": "today"
+    },
+    {
+      "date": "2026-11-22",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-11-22-bf-flag-sagittarius.jpg",
+      "rule": "afternoon_spotlight_plate",
+      "campaign": "afternoon_spotlight"
+    },
+    {
+      "date": "2026-11-22",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-11-22-bf-flag.jpg",
+      "rule": "morning_flyer",
+      "campaign": "today"
     }
   ],
   "https://shopsacredground.com/wp-content/uploads/ai-generated-Sacred-Ground-EQUAL-WEIGHT-mul-1787594477.jpg": {
