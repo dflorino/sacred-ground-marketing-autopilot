@@ -640,6 +640,7 @@
     "2026-11-22": {
       "label": "Sagittarius Season Begins",
       "caption_opener": "The arrow already knows. It points to Sacred Ground.",
+      "spotlight_event_id": 35449,
       "local": "assets/sg-afternoon-spotlight-2026-11-22-bf-flag-sagittarius.jpg",
       "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-11-22-bf-flag-sagittarius.jpg",
       "media_id": 35839,
@@ -660,6 +661,7 @@
     "2026-11-24": {
       "label": "Full Moon / Supermoon",
       "caption_opener": "Closer than it looks. Stand under it at Sacred Ground.",
+      "spotlight_event_id": 27310,
       "local": "assets/sg-afternoon-spotlight-2026-11-24-bf-flag-supermoon.jpg",
       "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-11-24-bf-flag-supermoon.jpg",
       "media_id": 35841,
@@ -680,6 +682,7 @@
     "2026-11-21": {
       "label": "Rose and Robert",
       "caption_opener": "Rose and Robert are here this evening.",
+      "spotlight_event_id": 34873,
       "local": "assets/sg-afternoon-spotlight-2026-11-21-bf-flag-rose-robert.jpg",
       "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-11-21-bf-flag-rose-robert.jpg",
       "media_id": 35838,
@@ -700,6 +703,7 @@
     "2026-11-23": {
       "label": "Karen past life regression",
       "caption_opener": "Past life regression is at 6.",
+      "spotlight_event_id": 28167,
       "local": "assets/sg-afternoon-spotlight-2026-11-23-bf-flag-past-life.jpg",
       "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-11-23-bf-flag-past-life.jpg",
       "media_id": 35840,
