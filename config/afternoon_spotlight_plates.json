@@ -661,6 +661,7 @@
     "2026-11-24": {
       "label": "Full Moon / Supermoon",
       "caption_opener": "Closer than it looks. Stand under it at Sacred Ground.",
+      "spotlight_event_id": 27310,
       "local": "assets/sg-afternoon-spotlight-2026-11-24-bf-flag-supermoon.jpg",
       "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-11-24-bf-flag-supermoon.jpg",
       "media_id": 35841,
