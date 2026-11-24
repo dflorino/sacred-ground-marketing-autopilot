@@ -9,6 +9,7 @@ from .classify import format_when, is_community_meditation, short_blurb
 from .meditation import (
     format_tuesday_meditation_opener,
     meditation_event_block,
+    public_meditation_title,
 )
 from .models import Event
 from .paths import voice
@@ -601,13 +602,14 @@ def caption_afternoon_spotlight(
     *,
     day_events: List[Event] | None = None,
 ) -> Dict:
-    """Afternoon 5pm: pinned campaign plate, then that day's other events below."""
+    """Afternoon 5pm: pinned campaign plate; sale-body stays single-event."""
     seed = f"afternoon_spotlight|{day.isoformat()}|{platform}"
     from .images import _afternoon_plate_for_day
 
     pinned = _afternoon_plate_for_day(day) or {}
     plate_opener = str(pinned.get("caption_opener") or "").strip()
     plate_body = str(pinned.get("caption_body") or "").strip()
+    list_day = bool(pinned.get("list_day_events"))
     if plate_body:
         hook = plate_opener or "This afternoon from Sacred Ground."
         exclude: set = set()
@@ -617,22 +619,55 @@ def caption_afternoon_spotlight(
                 exclude.add(int(raw_id))
             except (TypeError, ValueError):
                 exclude.add(raw_id)
-        others = [
-            ev
-            for ev in (day_events or [])
-            if getattr(ev, "id", None) not in exclude
-        ]
-        if (
-            not others
-            and event is not None
-            and getattr(event, "id", None) not in exclude
-        ):
-            others = [event]
-        parts = [hook, plate_body]
-        if others:
-            parts.append(
-                "Also today at Sacred Ground\n\n" + _join_event_blocks(others)
-            )
+        parts = [hook]
+        # Sale / Founder body plates stay single-event unless the plate
+        # explicitly lists the rest of the day (Witches Night).
+        if not list_day and event is not None:
+            if is_community_meditation(event):
+                parts.append(meditation_event_block(day=day, event=event))
+                if event.url:
+                    parts.append(event.url)
+            else:
+                when = format_when(event)
+                note = _free_community_note(event)
+                blurb = short_blurb(event, 200)
+                parts.append(when)
+                if note:
+                    parts.append(note)
+                if blurb:
+                    parts.append(blurb)
+                if event.url:
+                    parts.append(event.url)
+        parts.append(plate_body)
+        if list_day:
+            others = [
+                ev
+                for ev in (day_events or [])
+                if getattr(ev, "id", None) not in exclude
+            ]
+            if (
+                not others
+                and event is not None
+                and getattr(event, "id", None) not in exclude
+            ):
+                others = [event]
+            if others:
+                parts.append(
+                    "Also today at Sacred Ground\n\n" + _join_event_blocks(others)
+                )
+        # Threads (500) and TikTok title (~90) otherwise collapse to the same
+        # Founder opener every day of a repeat window. Zernio then 409s
+        # "exact content within 24 hours" against yesterday's post.
+        if platform in ("threads", "tiktok"):
+            day_mark = f"{day.strftime('%A')} {day.month}/{day.day}"
+            dated = f"{hook} ({day_mark})"
+            if platform != "tiktok" or len(dated) <= 90:
+                hook = dated
+            else:
+                short = (plate_opener or hook).split("—")[0].strip() or hook
+                hook = f"{short} ({day_mark})"
+            if parts:
+                parts[0] = hook
         parts.append("847-749-3922")
         body = _with_house_invite(
             "\n\n".join(parts), day, "afternoon_spotlight", after_hook=hook
@@ -684,15 +719,22 @@ def caption_afternoon_spotlight(
         openers = list(voice().get("afternoon_spotlight_tomorrow_openers") or [])
         fallback = "Looking ahead — {title} at Sacred Ground."
     raw = _pick_rotating(openers, f"{seed}|opener", fallback)
-    hook = plate_opener or raw.replace("{title}", event.title)
-
-    parts = [hook, when]
-    if note:
-        parts.append(note)
-    if blurb:
-        parts.append(blurb)
-    parts.append(event.url)
-    parts.append("847-749-3922")
+    # Standing Tuesday meditation: never name who leads (Founder Aug 9).
+    if is_community_meditation(event):
+        hook = plate_opener or raw.replace("{title}", public_meditation_title(event))
+        parts = [hook, meditation_event_block(day=day, event=event)]
+        if event.url:
+            parts.append(event.url)
+        parts.append("847-749-3922")
+    else:
+        hook = plate_opener or raw.replace("{title}", event.title)
+        parts = [hook, when]
+        if note:
+            parts.append(note)
+        if blurb:
+            parts.append(blurb)
+        parts.append(event.url)
+        parts.append("847-749-3922")
     body = _with_house_invite(
         "\n\n".join(parts), day, "afternoon_spotlight", after_hook=hook
     )
