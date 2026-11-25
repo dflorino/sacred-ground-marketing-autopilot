@@ -2288,9 +2288,45 @@
           "message": "Post published successfully"
         }
       }
+    },
+    "afternoon_spotlight|2026-11-25|facebook|34905": {
+      "draft_id": "sgma-2026-11-25-afternoon_spotlight-fb-75f8eb23",
+      "posted_at": "2026-11-25T17:06:31-06:00",
+      "external": {
+        "zernio_id": "6b075bdc1ccb5826c985c325",
+        "platformPostUrl": "https://www.facebook.com/101428372368870_1185485440660026",
+        "confirmed_at": "2026-11-25T17:06:31-06:00"
+      }
+    },
+    "afternoon_spotlight|2026-11-25|instagram|34905": {
+      "draft_id": "sgma-2026-11-25-afternoon_spotlight-ig-f7714315",
+      "posted_at": "2026-11-25T17:06:31-06:00",
+      "external": {
+        "zernio_id": "6b075bdc9c8468b08cc2040f",
+        "platformPostUrl": "https://www.instagram.com/p/DgLqe2TjKpM/",
+        "confirmed_at": "2026-11-25T17:06:31-06:00"
+      }
+    },
+    "afternoon_spotlight|2026-11-25|threads|34905": {
+      "draft_id": "sgma-2026-11-25-afternoon_spotlight-th-350a18b1",
+      "posted_at": "2026-11-25T17:06:31-06:00",
+      "external": {
+        "zernio_id": "6b075bdd9c8468b08cc20413",
+        "platformPostUrl": "https://www.threads.com/@shopsacredground/post/DgLqfKIiHnf",
+        "confirmed_at": "2026-11-25T17:06:31-06:00"
+      }
+    },
+    "afternoon_spotlight|2026-11-25|tiktok|34905": {
+      "draft_id": "sgma-2026-11-25-afternoon_spotlight-ti-e3f34ca0",
+      "posted_at": "2026-11-25T17:06:31-06:00",
+      "external": {
+        "zernio_id": "6b075bddb6bba3239c1c4bb0",
+        "platformPostUrl": "https://www.tiktok.com/@shopsacredground/video/7712248225100533006",
+        "confirmed_at": "2026-11-25T17:06:31-06:00"
+      }
     }
   },
-  "updated_at": "2026-09-15T12:31:55.297461-05:00",
+  "updated_at": "2026-11-25T17:06:31-06:00",
   "sgma-2026-08-28-today-fb-magritte-repost": {
     "campaign": "today",
     "platform": "facebook",
