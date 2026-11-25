@@ -640,6 +640,7 @@
     "2026-11-22": {
       "label": "Sagittarius Season Begins",
       "caption_opener": "The arrow already knows. It points to Sacred Ground.",
+      "spotlight_event_id": 35449,
       "local": "assets/sg-afternoon-spotlight-2026-11-22-bf-flag-sagittarius.jpg",
       "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-11-22-bf-flag-sagittarius.jpg",
       "media_id": 35839,
@@ -660,6 +661,7 @@
     "2026-11-24": {
       "label": "Full Moon / Supermoon",
       "caption_opener": "Closer than it looks. Stand under it at Sacred Ground.",
+      "spotlight_event_id": 27310,
       "local": "assets/sg-afternoon-spotlight-2026-11-24-bf-flag-supermoon.jpg",
       "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-11-24-bf-flag-supermoon.jpg",
       "media_id": 35841,
@@ -680,6 +682,7 @@
     "2026-11-21": {
       "label": "Rose and Robert",
       "caption_opener": "Rose and Robert are here this evening.",
+      "spotlight_event_id": 34873,
       "local": "assets/sg-afternoon-spotlight-2026-11-21-bf-flag-rose-robert.jpg",
       "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-11-21-bf-flag-rose-robert.jpg",
       "media_id": 35838,
@@ -700,6 +703,7 @@
     "2026-11-23": {
       "label": "Karen past life regression",
       "caption_opener": "Past life regression is at 6.",
+      "spotlight_event_id": 28167,
       "local": "assets/sg-afternoon-spotlight-2026-11-23-bf-flag-past-life.jpg",
       "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-11-23-bf-flag-past-life.jpg",
       "media_id": 35840,
@@ -720,6 +724,7 @@
     "2026-11-25": {
       "label": "Lita tarot and pendulum",
       "caption_opener": "Lita is here until 5.",
+      "spotlight_event_id": 34905,
       "local": "assets/sg-afternoon-spotlight-2026-11-25-bf-flag-lita.jpg",
       "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-11-25-bf-flag-lita.jpg",
       "media_id": 35842,
@@ -740,6 +745,7 @@
     "2026-11-27": {
       "label": "Tina and Lisa Maria",
       "caption_opener": "Tina and Lisa Maria are here this evening.",
+      "spotlight_event_id": 28074,
       "local": "assets/sg-afternoon-spotlight-2026-11-27-bf-flag-tina-lisa.jpg",
       "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-11-27-bf-flag-tina-lisa.jpg",
       "media_id": 35845,
@@ -760,6 +766,7 @@
     "2026-11-28": {
       "label": "Deep Rest",
       "caption_opener": "Deep Rest is at 7.",
+      "spotlight_event_id": 28249,
       "local": "assets/sg-afternoon-spotlight-2026-11-28-bf-flag-deep-rest.jpg",
       "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-11-28-bf-flag-deep-rest.jpg",
       "media_id": 35843,
