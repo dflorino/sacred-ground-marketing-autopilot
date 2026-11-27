@@ -740,6 +740,7 @@
     "2026-11-27": {
       "label": "Tina and Lisa Maria",
       "caption_opener": "Tina and Lisa Maria are here this evening.",
+      "spotlight_event_id": 28074,
       "local": "assets/sg-afternoon-spotlight-2026-11-27-bf-flag-tina-lisa.jpg",
       "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-11-27-bf-flag-tina-lisa.jpg",
       "media_id": 35845,
@@ -760,6 +761,7 @@
     "2026-11-28": {
       "label": "Deep Rest",
       "caption_opener": "Deep Rest is at 7.",
+      "spotlight_event_id": 28249,
       "local": "assets/sg-afternoon-spotlight-2026-11-28-bf-flag-deep-rest.jpg",
       "url": "https://shopsacredground.com/wp-content/uploads/sg-afternoon-spotlight-2026-11-28-bf-flag-deep-rest.jpg",
       "media_id": 35843,

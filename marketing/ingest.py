@@ -135,7 +135,7 @@ def fetch_tec_events(
     start: Optional[date] = None,
     end: Optional[date] = None,
     per_page: int = 50,
-    timeout: int = 30,
+    timeout: int = 90,
 ) -> List[Event]:
     """Pull upcoming events from The Events Calendar REST API."""
     cfg = settings()
