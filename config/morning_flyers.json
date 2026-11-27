@@ -2899,14 +2899,13 @@
       "caption_sale": "Black Friday · Small Business Saturday: 15 to 20% off while supplies last."
     },
     "2026-11-27": {
-      "label": "Tina + Lisa Maria + Sacred Creations — Renaissance",
+      "label": "Tina Runes Reiki + Lisa Maria Tarot — Renaissance",
       "covers": [
-        "Tina's Intuitive Tarot, Runes & Reiki Experience",
-        "*Lisa Maria Intuitive Tarot",
-        "Sacred Creations – A Monthly Creative & Spiritual Gathering"
+        "Tina — Runes and Reiki",
+        "*Lisa Maria Intuitive Tarot"
       ],
-      "local": "assets/sg-morning-flyer-2026-11-27-bf-flag.jpg",
-      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-11-27-bf-flag.jpg",
+      "local": "assets/sg-morning-flyer-2026-11-27-runes-bf-flag.jpg",
+      "url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-11-27-runes-bf-flag.jpg",
       "prebranded": true,
       "visual_style": "cosmic_renaissance",
       "pride_baked_in": true,
@@ -2915,13 +2914,14 @@
       "do_not_publish": false,
       "awaiting_founder_review": false,
       "locked_until_founder_review": false,
-      "note": "Founder Nov 21: sale copy lives only on the flag — 15 to 20% OFF, Black Friday, Small Business Saturday, while supplies last. Not in cream. Unique URL.",
-      "updated_at": "2026-11-21T09:20:00-06:00",
-      "media_id": 35833,
+      "note": "Founder Nov 27: Tina is Runes and Reiki, not Tarot. Lisa Maria stays Tarot. Unique URL. Live wrong posts deleted and this plate reposted.",
+      "updated_at": "2026-11-27T09:20:00-06:00",
+      "media_id": 35882,
       "do_not_remake": true,
       "founder_trashed": false,
-      "founder_approved_at": "2026-10-31T13:00:00-05:00",
-      "replaced_media_id": 35805,
+      "founder_approved_at": "2026-11-27T09:20:00-06:00",
+      "replaced_media_id": 35833,
+      "prior_url": "https://shopsacredground.com/wp-content/uploads/sg-morning-flyer-2026-11-27-bf-flag.jpg",
       "caption_sale": "Black Friday · Small Business Saturday: 15 to 20% off while supplies last."
     },
     "2026-11-28": {
