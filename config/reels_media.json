@@ -1,7 +1,7 @@
 {
   "timezone": "America/Chicago",
   "note": "Founder-confirmed WordPress Media Library IDs for Cursor / ML Social video posts. Use these \u2014 never 26546 or lowercase s01e01-store-quest.mp4 for S1E1.",
-  "updated": "2026-11-19",
+  "updated": "2026-11-28",
   "galactic_first_frame_engine": {
     "locked_at": "2026-11-08",
     "founder": "S1E17 Actual Martians is the engine. Mute the first frame. If a stranger cannot name the punch in one glance, do not roll TopView.",
@@ -720,7 +720,7 @@
       "gen": 128,
       "schedule_status": "scheduled_same_minute_2026-12-02_6pm",
       "handed_off": "2026-11-19",
-      "note": "Founder Nov 19: USE library S1E21 / media 35796 / SG Reels (54). KEEP gen 128 gift shop globe. All five Wed Dec 2 2026 6:00 PM America/Chicago. Do not remake. Do not roll TopView. Do not post poster 35797 or earlier gift-shop tries. Junkyard 35691 is S1E20, not this file.",
+      "note": "Founder Nov 19: USE library S1E21 / media 35796 / SG Reels (54). KEEP gen 128 gift shop globe. All five Wed Dec 2 2026 6:00 PM America/Chicago. Do not remake. Do not roll TopView. Do not post poster 35797 or earlier gift-shop tries. Junkyard 35691 is S1E20. Next KEEP is S1E22 media 35941.",
       "ml_social_ids": {
         "parent": "6affb6746c829a4ae26f6c3d",
         "instagram": "6affb6746c829a4ae26f6c3e",
@@ -744,6 +744,44 @@
         "note": "35797 poster still only. Earlier gift-shop tries stay off the clock. USE video 35796 only."
       },
       "updated_at": "2026-11-19T20:54:00-06:00"
+    },
+    "s1e22": {
+      "season": 1,
+      "episode": 22,
+      "library_name": "S1E22",
+      "title": "North Pole",
+      "media_id": 35941,
+      "poster_id": 35942,
+      "file": "ml-persona-20261128-152534-2VhkZA-8404582817.mp4",
+      "url": "https://shopsacredground.com/wp-content/uploads/ml-persona-20261128-152534-2VhkZA-8404582817.mp4",
+      "admin": "https://shopsacredground.com/wp-admin/upload.php?item=35941",
+      "filebird_folder": "SG Reels (54)",
+      "mime_type": "video/mp4",
+      "runtime_seconds": 30,
+      "clip": 129,
+      "schedule_status": "scheduled_same_minute_2026-12-09_6pm",
+      "handed_off": "2026-11-28",
+      "note": "Founder Nov 28: USE library S1E22 / media 35941 / North Pole take. KEEP clip #129. All five Wed Dec 9 2026 6:00 PM America/Chicago. Do not remake. Do not roll TopView. Do not post poster 35942. Gift shop 35796 is S1E21, not this file.",
+      "ml_social_ids": {
+        "parent": "6b0afe6484991f3748f1278a",
+        "instagram": "6b0afe6584991f3748f1278b",
+        "facebook": "6b0afe6584991f3748f1278c",
+        "tiktok": "6b0afe6584991f3748f1278d",
+        "youtube": "6b0afe6584991f3748f1278e",
+        "threads": "6b0afe6584991f3748f1278f"
+      },
+      "scheduled_for": {
+        "instagram": "2026-12-09T18:00:00-06:00",
+        "facebook": "2026-12-09T18:00:00-06:00",
+        "tiktok": "2026-12-09T18:00:00-06:00",
+        "youtube": "2026-12-09T18:00:00-06:00",
+        "threads": "2026-12-09T18:00:00-06:00"
+      },
+      "do_not_use": {
+        "poster_id": 35942,
+        "note": "35942 poster still only. USE video 35941 only."
+      },
+      "updated_at": "2026-11-28T10:16:00-06:00"
     }
   }
 }

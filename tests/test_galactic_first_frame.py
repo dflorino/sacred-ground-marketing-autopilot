@@ -94,6 +94,18 @@ class GalacticFirstFrameTests(unittest.TestCase):
         self.assertEqual((ep.get("scheduled_for") or {}).get("instagram"), "2026-12-02T18:00:00-06:00")
         self.assertNotEqual(ep.get("media_id"), 35691)
 
+    def test_s1e22_is_scheduled_dec9(self) -> None:
+        from marketing.galactic_first_frame import load_reels_media
+
+        ep = (load_reels_media().get("episodes") or {}).get("s1e22") or {}
+        self.assertEqual(ep.get("media_id"), 35941)
+        self.assertEqual(ep.get("poster_id"), 35942)
+        self.assertEqual(ep.get("library_name"), "S1E22")
+        self.assertEqual(ep.get("schedule_status"), "scheduled_same_minute_2026-12-09_6pm")
+        self.assertEqual(ep.get("file"), "ml-persona-20261128-152534-2VhkZA-8404582817.mp4")
+        self.assertEqual((ep.get("scheduled_for") or {}).get("instagram"), "2026-12-09T18:00:00-06:00")
+        self.assertNotEqual(ep.get("media_id"), 35796)
+
 
 if __name__ == "__main__":
     unittest.main()
